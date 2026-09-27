@@ -9,7 +9,7 @@ O projeto continua sendo uma página estática e usa Supabase para contas e recu
 
 ## Preparar o projeto
 
-1. No painel Supabase, abra **SQL Editor** e execute a migração em `migrations/202609270001_online_game.sql`.
+1. No painel Supabase, abra **SQL Editor** e execute, em ordem, `migrations/202609270001_online_game.sql`, `migrations/202609270002_progression_store.sql`, `migrations/202609270003_admin_console.sql` e `migrations/202609270004_profile_icons_and_intro.sql`. A última adiciona o ícone chibi à loja e inclui Nick/ícone do adversário nos dados da apresentação pré-batalha.
 2. Em **Project Settings → API**, copie o Project URL e a chave **publishable** (ou a antiga `anon`). São valores próprios para uso no cliente web; nunca coloque a `service_role` no site ou no GitHub.
 3. Coloque esses dois valores em `supabase-config.js` e publique os arquivos estáticos pelo GitHub.
 4. Em **Authentication → URL Configuration**, inclua o endereço publicado do site em Site URL e Redirect URLs.
