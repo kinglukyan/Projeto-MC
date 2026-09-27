@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="672" height="780" viewBox="0 0 336 390" role="img" aria-labelledby="title desc">
+<title id="title">Mythic Clash: Card Game — opção 10</title>
+<desc id="desc">Versão isolada da décima opção, mantendo o desenho e as proporções da prancha.</desc>
+<defs>
+ <linearGradient id="g" x2="0" y2="1"><stop stop-color="#fff1ba"/><stop offset=".45" stop-color="#e6b653"/><stop offset="1" stop-color="#9a5726"/></linearGradient>
+ <style>.sub{font:600 10px Arial,sans-serif;letter-spacing:4px;fill:#e8d9b5;text-anchor:middle}</style>
+</defs>
+<rect width="336" height="390" rx="18" fill="#111827"/>
+<path d="M168 83 180 124 221 137 180 150 168 192 156 150 115 137 156 124Z" fill="url(#g)"/>
+<path d="M168 97v80M128 137h80" stroke="#fff0bd" stroke-width="2"/>
+<text x="168" y="244" text-anchor="middle" font-family="Georgia" font-size="29" font-weight="700" letter-spacing="1" fill="#f0d17a">MYTHIC</text>
+<text x="168" y="286" text-anchor="middle" font-family="Georgia" font-size="43" font-weight="700" letter-spacing="3" fill="#fff1ba">CLASH</text>
+<path d="M82 304H254" stroke="#ce9a47"/>
+<text class="sub" x="168" y="328">CARD GAME</text>
+</svg>
