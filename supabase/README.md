@@ -15,4 +15,4 @@ O projeto continua sendo uma página estática e usa Supabase para contas e recu
 4. Em **Authentication → URL Configuration**, inclua o endereço publicado do site em Site URL e Redirect URLs.
 5. Ative **Realtime** para as tabelas `friend_messages`, `game_invites`, `game_matches` e `matchmaking_queue` (a migração tenta adicioná-las à publicação automaticamente).
 
-As políticas RLS protegem as tabelas. As funções de perfil, amizade, convite e fila são chamadas autenticadas. A classificação não deve ser atualizada pelo cliente: a conclusão de partidas ranqueadas precisa passar por lógica confiável no servidor (por exemplo, uma Edge Function), junto com as ações do jogo.
+As políticas RLS protegem as tabelas. As funções de perfil, amizade, convite, fila e ações da partida exigem uma sessão autenticada. O navegador não altera diretamente o estado do tabuleiro ou a classificação; as jogadas e a atualização de resultados passam pelas funções do banco.

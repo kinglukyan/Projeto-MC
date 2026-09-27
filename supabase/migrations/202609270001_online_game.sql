@@ -140,6 +140,17 @@ create policy "Players can read their matches" on public.game_matches for select
 grant select on public.game_matches to authenticated;
 -- Match state changes are reserved for trusted server functions, never direct browser updates.
 
+create or replace function public.get_online_match(p_match_id uuid)
+returns jsonb language sql security definer set search_path = '' stable as $$
+  select jsonb_build_object('match',to_jsonb(g),'opponent_name',p.display_name)
+  from public.game_matches g
+  join public.profiles p on p.id=case when g.player_one=auth.uid() then g.player_two else g.player_one end
+  where g.id=p_match_id and auth.uid() in (g.player_one,g.player_two)
+  limit 1;
+$$;
+revoke all on function public.get_online_match(uuid) from public,anon;
+grant execute on function public.get_online_match(uuid) to authenticated;
+
 drop policy if exists "Players can read their invitations" on public.game_invites;
 create policy "Players can read their invitations" on public.game_invites for select to authenticated using (auth.uid() in (host_id,invited_user_id,guest_id));
 grant select on public.game_invites to authenticated;
@@ -283,7 +294,7 @@ declare
   action_type text:=p_action->>'type'; card_id text; card_idx integer; lane integer; hand_array jsonb; deck_array jsonb; field_array jsonb; unit jsonb;
   target_idx integer; target_power integer; candidate_power integer; best_bonus integer; zones jsonb;
   current_player uuid; next_player uuid; one_score integer; two_score integer; one_total integer; two_total integer; next_round integer;
-  one_state jsonb; two_state jsonb; winner uuid; finished boolean:=false; round_advanced boolean:=false; i integer; ids jsonb;
+  one_state jsonb; two_state jsonb; winner uuid; finished boolean:=false; round_advanced boolean:=false; i integer; j integer; ids jsonb;
 begin
   if auth.uid() is null then raise exception 'Faça login para jogar.'; end if;
   select * into g from public.game_matches where id=p_match_id for update;
@@ -352,7 +363,7 @@ begin
       ids:=jsonb_set(ids,'{roundPenalty}','0'::jsonb,true);ids:=jsonb_set(ids,'{greekAura}','0'::jsonb,true);ids:=jsonb_set(ids,'{norseAura}','0'::jsonb,true);
       ids:=jsonb_set(ids,'{playedThisTurn}','false'::jsonb,true);ids:=jsonb_set(ids,'{passed}','false'::jsonb,true);ids:=jsonb_set(ids,'{turnsTaken}','0'::jsonb,true);
       deck_array:=coalesce(ids->'deck','[]'::jsonb);hand_array:=coalesce(ids->'hand','[]'::jsonb);
-      for i in 1..2 loop if jsonb_array_length(deck_array)>0 then hand_array:=hand_array||jsonb_build_array(deck_array->0);select coalesce(jsonb_agg(value order by ordinality),'[]'::jsonb) into deck_array from jsonb_array_elements(deck_array) with ordinality e(value,ordinality) where ordinality>1;end if;end loop;
+      for j in 1..2 loop if jsonb_array_length(deck_array)>0 then hand_array:=hand_array||jsonb_build_array(deck_array->0);select coalesce(jsonb_agg(value order by ordinality),'[]'::jsonb) into deck_array from jsonb_array_elements(deck_array) with ordinality e(value,ordinality) where ordinality>1;end if;end loop;
       ids:=jsonb_set(ids,'{hand}',hand_array,true);ids:=jsonb_set(ids,'{deck}',deck_array,true);
       if i=1 then one_state:=ids;else two_state:=ids;end if;
     end loop;

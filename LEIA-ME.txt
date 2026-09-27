@@ -14,9 +14,11 @@ RECURSOS LOCAIS
 - Baralho editável de 12 a 20 cartas, até 3 cópias por carta, salvo no navegador.
 - Regras acessíveis pela seção Universo.
 
-CONEXÃO SUPABASE EM PREPARAÇÃO
-- Há telas de conta, perfil, amigos/chat, configurações, fila normal/ranqueada e desafio por código.
-- Para ativá-las, configure a Project URL e a chave pública em supabase-config.js e aplique supabase/migrations/202609270001_online_game.sql no SQL Editor do Supabase.
-- O banco reserva partidas e protege o estado do jogo contra alterações diretas do navegador. A sincronização das ações no tabuleiro online e validação de resultados ranqueados ainda precisa ser ligada antes de partidas PvP funcionarem de ponta a ponta.
+CONTA E PARTIDAS ONLINE
+- As telas e fluxos de cadastro/login, perfil, amigos, solicitações, chat, configurações, fila normal/ranqueada e desafio por código estão preparados.
+- A arena online carrega salas aceitas/encontradas e envia jogadas e passagens de turno para validação no Supabase.
+- Para conectar sua instância, preencha Project URL e a chave pública (publishable/anon) em supabase-config.js e execute supabase/migrations/202609270001_online_game.sql no SQL Editor.
+- Cadastre o endereço HTTPS publicado em Authentication → URL Configuration e habilite Realtime para as tabelas indicadas em supabase/README.md.
+- O banco protege o estado e as ações do duelo contra alterações diretas do navegador. A migração ainda precisa ser aplicada e verificada na sua instância antes de abrir partidas reais.
 - Não coloque a chave service_role no site. Ela dá acesso administrativo e nunca deve ser publicada no GitHub.
 - O Supabase Auth precisa ser acessado por um endereço HTTPS/localhost, não abrindo o arquivo index.html diretamente como file://.

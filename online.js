@@ -2,8 +2,8 @@
   const $ = selector => document.querySelector(selector);
   const config = window.MYTHIC_SUPABASE_CONFIG || {};
   const configured = Boolean(config.url && config.publishableKey);
-  let supabase = null, session = null, profile = null, activeFriend = null;
-  let messageChannel = null, inviteChannel = null, queueChannel = null, queueTimeout = null;
+  let supabase = null, session = null, profile = null, activeFriend = null, activeMatchId = null, actionPending = false;
+  let messageChannel = null, inviteChannel = null, queueChannel = null, gameChannel = null, queueTimeout = null;
   const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
   const notify = message => { const toast=$("#toast"); if(!toast)return; toast.textContent=message; toast.classList.add("show"); setTimeout(()=>toast.classList.remove("show"),2800); };
   const showAuthMessage = message => { $("#auth-message").textContent=message||""; };
@@ -35,7 +35,8 @@
     if(messageChannel)supabase.removeChannel(messageChannel);
     if(inviteChannel)supabase.removeChannel(inviteChannel);
     if(queueChannel)supabase.removeChannel(queueChannel);
-    messageChannel=inviteChannel=queueChannel=null;
+    if(gameChannel)supabase.removeChannel(gameChannel);
+    messageChannel=inviteChannel=queueChannel=gameChannel=null;activeMatchId=null;
   }
 
   async function loadProfile(){
@@ -107,8 +108,36 @@
 
   function listenForInvites(){
     if(inviteChannel)supabase.removeChannel(inviteChannel);
-    inviteChannel=supabase.channel(`invites-${session.user.id}`).on("postgres_changes",{event:"UPDATE",schema:"public",table:"game_invites",filter:`host_id=eq.${session.user.id}`},payload=>{if(payload.new.status==="accepted")notify("Seu desafio foi aceito. A sala está pronta para iniciar.");}).subscribe();
+    inviteChannel=supabase.channel(`invites-${session.user.id}`).on("postgres_changes",{event:"UPDATE",schema:"public",table:"game_invites",filter:`host_id=eq.${session.user.id}`},payload=>{if(payload.new.status==="accepted"&&payload.new.match_id){notify("Seu desafio foi aceito. Abrindo a partida…");loadOnlineMatch(payload.new.match_id);}}).subscribe();
   }
+
+  async function loadOnlineMatch(matchId){
+    if(!session||!matchId)return;
+    activeMatchId=matchId;$("#queue-status").hidden=true;
+    const {data,error}=await supabase.rpc("get_online_match",{p_match_id:matchId});
+    if(error){notify("Não foi possível abrir a partida: "+displayError(error));return;}
+    const match=data?.match;if(!match){notify("Partida não encontrada para esta conta.");return;}
+    if(gameChannel)supabase.removeChannel(gameChannel);
+    gameChannel=supabase.channel(`game-${matchId}`).on("postgres_changes",{event:"UPDATE",schema:"public",table:"game_matches",filter:`id=eq.${matchId}`},()=>refreshOnlineMatch(matchId)).subscribe();
+    window.dispatchEvent(new CustomEvent("mythic-online-match",{detail:{match,userId:session.user.id,opponentName:data.opponent_name}}));
+  }
+
+  async function refreshOnlineMatch(matchId){
+    if(!session||activeMatchId!==matchId)return;
+    const {data,error}=await supabase.rpc("get_online_match",{p_match_id:matchId});
+    if(!error&&data?.match)window.dispatchEvent(new CustomEvent("mythic-online-match",{detail:{match:data.match,userId:session.user.id,opponentName:data.opponent_name}}));
+  }
+
+  async function submitAction(action){
+    if(!session||!activeMatchId||actionPending)return;
+    actionPending=true;const button=$("#end-turn");button.disabled=true;
+    const {error}=await supabase.rpc("submit_game_action",{p_match_id:activeMatchId,p_action:action});
+    actionPending=false;
+    if(error){notify(displayError(error));refreshOnlineMatch(activeMatchId);return;}
+    await refreshOnlineMatch(activeMatchId);
+  }
+
+  function leaveMatch(){if(gameChannel)supabase.removeChannel(gameChannel);gameChannel=null;activeMatchId=null;actionPending=false;}
 
   async function startQueue(mode){
     if(!requireLogin())return;
@@ -119,12 +148,12 @@
     if(entry?.queue_status==="matched"){
       $("#queue-status-text").textContent=`Oponente encontrado. Sala ${entry.match_id.slice(0,8)} criada; carregando partida…`;
       $("#cancel-queue").hidden=true;
-      notify("Partida encontrada. A sincronização do campo online está sendo preparada.");
+      notify("Partida encontrada. Abrindo a arena…");loadOnlineMatch(entry.match_id);
       return;
     }
     $("#cancel-queue").hidden=false;
     queueChannel=supabase.channel(`queue-${session.user.id}`).on("postgres_changes",{event:"UPDATE",schema:"public",table:"matchmaking_queue",filter:`user_id=eq.${session.user.id}`},payload=>{
-      if(payload.new.status==="matched"){$("#queue-status-text").textContent="Oponente encontrado. Conectando à partida…";$("#cancel-queue").hidden=true;notify("Partida encontrada. A sincronização do campo online está sendo preparada.");}
+      if(payload.new.status==="matched"){$("#queue-status-text").textContent="Oponente encontrado. Conectando à partida…";$("#cancel-queue").hidden=true;notify("Partida encontrada. Abrindo a arena…");loadOnlineMatch(payload.new.match_id);}
     }).subscribe();
   }
 
@@ -151,6 +180,6 @@
   $("#settings-form").addEventListener("submit",async event=>{event.preventDefault();if(!session)return requireLogin();const settings={...(profile?.settings||{}),music:$("#setting-music").checked,effects:$("#setting-effects").checked,notifications:$("#setting-notifications").checked};const {error}=await supabase.from("profiles").update({settings}).eq("id",session.user.id);$("#settings-save-status").textContent=error?displayError(error):"Preferências salvas.";if(!error){profile.settings=settings;const toggle=$("#music-toggle"),currentlyOn=toggle.getAttribute("aria-pressed")==="true";if(currentlyOn!==settings.music)toggle.click();}});
   $("#cancel-queue").addEventListener("click",cancelQueue);
   $("#create-invite-form").addEventListener("submit",async event=>{event.preventDefault();if(!requireLogin())return;const friendCode=$("#invite-friend-code").value.trim().toUpperCase()||null;const {data,error}=await supabase.rpc("create_game_invite",{p_mode:"friend",p_invited_friend_code:friendCode});if(error){$("#created-invite-code").textContent=displayError(error);return;}const invite=Array.isArray(data)?data[0]:data;$("#created-invite-code").textContent=`Código do desafio: ${invite.invite_code} · válido por 15 minutos`;});
-  $("#join-invite-form").addEventListener("submit",async event=>{event.preventDefault();if(!requireLogin())return;const {data,error}=await supabase.rpc("join_game_invite",{p_code:$("#join-invite-code").value.trim().toUpperCase()});const match=Array.isArray(data)?data[0]:data;$("#joined-invite-status").textContent=error?displayError(error):`Desafio aceito. Sala ${match.match_id.slice(0,8)} criada; carregando partida…`;});
-  window.MythicOnline={saveDeckCounts,isConnected:()=>Boolean(session)};
+  $("#join-invite-form").addEventListener("submit",async event=>{event.preventDefault();if(!requireLogin())return;const {data,error}=await supabase.rpc("join_game_invite",{p_code:$("#join-invite-code").value.trim().toUpperCase()});const match=Array.isArray(data)?data[0]:data;$("#joined-invite-status").textContent=error?displayError(error):`Desafio aceito. Abrindo partida…`;if(!error&&match?.match_id)loadOnlineMatch(match.match_id);});
+  window.MythicOnline={saveDeckCounts,isConnected:()=>Boolean(session),submitAction,leaveMatch};
 })();
