@@ -529,6 +529,13 @@ html.card-detail-open,body.card-detail-open{overflow:hidden!important;overscroll
 body.card-detail-open{position:fixed!important;inset-inline:0;width:100%;touch-action:none}
 .card-detail-backdrop{overscroll-behavior:contain;touch-action:pan-x}
 .card-detail-modal{overscroll-behavior:contain;touch-action:pan-x}
+@media(max-width:760px){
+  .enemy-side .enemy-deck{left:17px!important;top:-8px!important;width:58px!important;height:82px!important;transform:rotate(90deg)!important;transform-origin:center center!important}
+  .enemy-side .enemy-deck .deck-pile-count{top:-8px!important;right:auto!important;left:-8px!important;transform:rotate(-90deg)!important}
+}
+@media(max-width:390px){
+  .enemy-side .enemy-deck{left:16px!important;top:15px!important;width:54px!important;height:76px!important}
+}
 .profile-link{width:100%;min-width:0;padding:11px 9px;border:1px solid rgba(212,173,100,.2);border-top:1px solid rgba(212,173,100,.2);border-radius:9px;background:linear-gradient(135deg,rgba(212,173,100,.09),rgba(21,31,46,.7));text-align:left;cursor:pointer;transition:border-color .16s,background .16s}
 .profile-link:hover{border-color:rgba(240,209,138,.55);background:linear-gradient(135deg,rgba(212,173,100,.15),rgba(21,31,46,.9))}
 .profile-link:focus-visible{outline:2px solid var(--bright);outline-offset:2px}
