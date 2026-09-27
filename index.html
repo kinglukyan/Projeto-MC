@@ -10,7 +10,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
   <title>Mythic Clash — Arena</title>
-  <link rel="stylesheet" href="styles.css?v=116">
+  <link rel="stylesheet" href="styles.css?v=117">
 </head>
 <body>
   <div class="loading-screen" id="loading-screen" role="status" aria-live="polite">
@@ -24,7 +24,7 @@
       <a class="brand" href="#arena" aria-label="Mythic Clash, início"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5 14.5 9.5 21.5 12 14.5 14.5 12 21.5 9.5 14.5 2.5 12 9.5 9.5Z"/></svg></span><span class="brand-name">MYTHIC <b>CLASH</b><small>CARD GAME</small></span></a>
       <div class="nav-group"><p class="nav-label">JOGAR</p><nav class="main-nav" aria-label="Jogar"><button class="nav-item active" data-view="arena"><span class="nav-icon">⚔</span><span>Arena</span></button><button class="nav-item" data-view="collection"><span class="nav-icon">▤</span><span>Coleção</span><i class="nav-count" id="nav-card-count">08</i></button><button class="nav-item" data-view="decks"><span class="nav-icon">▧</span><span>Baralhos</span></button><button class="nav-item" data-view="friends"><span class="nav-icon">♙</span><span>Amigos</span></button></nav></div>
       <div class="nav-group nav-group-universe"><p class="nav-label">UNIVERSO</p><nav class="main-nav" aria-label="Universo"><button class="nav-item" data-view="lore"><span class="nav-icon">✧</span><span>Universo</span></button><button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span><span>Configurações</span></button></nav></div>
-      <div class="sidebar-bottom"><div class="prototype-card"><span>✦</span><div><b id="account-status-title">Conta online</b><small id="account-status-caption">Entre para salvar seu perfil.</small></div></div><button class="profile profile-link" data-view="profile"><span class="profile-avatar" id="sidebar-avatar">MC</span><span><b id="sidebar-player-name">Visitante</b><small id="sidebar-player-rank">Convidado</small></span></button></div>
+      <div class="sidebar-bottom"><button class="profile profile-link" data-view="profile" aria-label="Abrir perfil do jogador"><span class="profile-avatar" id="sidebar-avatar">MC</span><span class="profile-summary"><b id="sidebar-player-name">Visitante</b><small id="sidebar-player-rank">Perfil local</small><small id="sidebar-player-record">0 vitórias · 0 derrotas</small><small id="sidebar-player-code">Código: —</small></span><span class="profile-chevron" aria-hidden="true">›</span></button></div>
     </aside>
 
     <main class="main-content">
@@ -83,9 +83,9 @@
       </section>
 
       <section class="view" id="view-profile" hidden>
-        <div class="page-heading"><div><p class="eyebrow">✦ &nbsp; SUA LENDA</p><h1>Perfil do jogador<span>.</span></h1><p>Seu nome, classificação, resultados e código de amigo.</p></div></div>
-        <section class="player-profile-card panel"><div class="player-profile-avatar" id="profile-avatar">MC</div><div><small>JOGADOR</small><h2 id="profile-display-name">Visitante</h2><span id="profile-email">Entre para conectar sua conta.</span></div><div class="profile-stats"><span><b id="profile-rating">1000</b><small>CLASSIFICAÇÃO</small></span><span><b id="profile-wins">0</b><small>VITÓRIAS</small></span><span><b id="profile-losses">0</b><small>DERROTAS</small></span></div></section>
-        <form class="profile-edit-form panel" id="profile-edit-form"><label>Nome público<input id="profile-name-input" minlength="2" maxlength="24" required placeholder="Como você aparece para os outros"></label><button class="button button-primary" type="submit">Salvar perfil</button><p id="profile-save-status" aria-live="polite"></p></form>
+        <div class="page-heading"><div><p class="eyebrow">✦ &nbsp; SUA LENDA</p><h1>Perfil do jogador<span>.</span></h1><p>Gerencie seus dados e acompanhe sua jornada na arena.</p></div></div>
+        <section class="player-profile-card panel"><div class="player-profile-avatar" id="profile-avatar">MC</div><div class="profile-identity"><small>JOGADOR</small><h2 id="profile-display-name">Visitante</h2><span class="profile-email-label">E-MAIL DA CONTA</span><span id="profile-email">Entre para conectar sua conta.</span><span class="profile-code-line">CÓDIGO DE AMIGO <b id="profile-friend-code">—</b><button class="text-link" id="copy-profile-friend-code" type="button">Copiar</button></span></div><div class="profile-stats"><span><b id="profile-rating">1000</b><small>CLASSIFICAÇÃO</small></span><span><b id="profile-wins">0</b><small>VITÓRIAS</small></span><span><b id="profile-losses">0</b><small>DERROTAS</small></span></div></section>
+        <form class="profile-edit-form panel" id="profile-edit-form"><div class="profile-form-heading"><small>INFORMAÇÕES PÚBLICAS</small><p>Seu nome aparece para amigos e adversários. O e-mail é usado para entrar na conta.</p></div><label>Nome público<input id="profile-name-input" minlength="2" maxlength="24" required placeholder="Como você aparece para os outros"></label><button class="button button-primary" type="submit">Salvar alterações</button><p id="profile-save-status" aria-live="polite"></p></form>
       </section>
 
       <section class="view" id="view-settings" hidden>
@@ -121,6 +121,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script src="supabase-config.js?v=2" defer></script>
   <script src="app.js?v=93" defer></script>
-  <script src="online.js?v=3" defer></script>
+  <script src="online.js?v=4" defer></script>
 </body>
 </html>

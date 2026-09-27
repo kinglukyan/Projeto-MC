@@ -16,12 +16,8 @@
 
   if(!configured){
     $("#connection-status-text").textContent="Supabase sem configuração";
-    $("#account-status-title").textContent="Recursos online";
-    $("#account-status-caption").textContent="URL/chave pública não configurada";
   } else if(!window.supabase?.createClient){
     $("#connection-status-text").textContent="Biblioteca indisponível";
-    $("#account-status-title").textContent="Supabase aguardando conexão";
-    $("#account-status-caption").textContent="Verifique a conexão com a internet";
   } else {
     supabase=window.supabase.createClient(config.url,config.publishableKey);
     $("#connection-status-text").textContent="Conectando";
@@ -34,9 +30,7 @@
     if(!configured){gate.hidden=true;return;}
     gate.hidden=Boolean(session);
     $("#connection-status-text").textContent=session?"Online":"Entre na conta";
-    $("#account-status-title").textContent=session?"Conta conectada":"Entre na sua conta";
-    $("#account-status-caption").textContent=session?"Perfil e amigos sincronizados":"Use seu e-mail e senha";
-    if(session){loadProfile();loadFriends();listenForInvites();}else{profile=null;activeFriend=null;cleanupChannels();$("#sidebar-player-name").textContent="Visitante";$("#sidebar-player-rank").textContent="Convidado";$("#profile-email").textContent="Entre para conectar sua conta.";}
+    if(session){loadProfile();loadFriends();listenForInvites();}else{profile=null;activeFriend=null;cleanupChannels();$("#sidebar-player-name").textContent="Visitante";$("#sidebar-player-rank").textContent="Perfil local";$("#sidebar-player-record").textContent="0 vitórias · 0 derrotas";$("#sidebar-player-code").textContent="Código: —";$("#profile-email").textContent="Entre para ver os dados da conta.";}
   }
 
   function cleanupChannels(){
@@ -53,9 +47,9 @@
     if(error){notify(displayError(error));return;}
     profile=data;if(!profile)return;
     const initials=profile.display_name.trim().split(/\s+/).slice(0,2).map(part=>part[0]).join("").toUpperCase();
-    $("#sidebar-player-name").textContent=profile.display_name;$("#sidebar-player-rank").textContent=`${profile.rating_points} de classificação`;
+    $("#sidebar-player-name").textContent=profile.display_name;$("#sidebar-player-rank").textContent=`${profile.rating_points} de classificação`;$("#sidebar-player-record").textContent=`${profile.wins} vitórias · ${profile.losses} derrotas`;$("#sidebar-player-code").textContent=`Código: ${profile.friend_code}`;
     $("#sidebar-avatar").textContent=initials;$("#profile-avatar").textContent=initials;$("#profile-display-name").textContent=profile.display_name;
-    $("#profile-name-input").value=profile.display_name;$("#profile-email").textContent=session.user.email||"Conta conectada";
+    $("#profile-name-input").value=profile.display_name;$("#profile-email").textContent=session.user.email||"E-mail não disponível";$("#profile-friend-code").textContent=profile.friend_code;
     $("#profile-rating").textContent=profile.rating_points;$("#profile-wins").textContent=profile.wins;$("#profile-losses").textContent=profile.losses;
     $("#my-friend-code").textContent=profile.friend_code;
     const settings=profile.settings||{};$("#setting-music").checked=settings.music!==false;$("#setting-effects").checked=settings.effects!==false;$("#setting-notifications").checked=settings.notifications!==false;
@@ -183,6 +177,7 @@
   $("#friend-search-form").addEventListener("submit",event=>{event.preventDefault();searchFriend($("#friend-search-code").value.trim());});
   $("#refresh-friends").addEventListener("click",loadFriends);
   $("#copy-friend-code").addEventListener("click",async()=>{if(!profile)return notify("Entre para ver seu código de amigo.");try{await navigator.clipboard.writeText(profile.friend_code);notify("Código copiado.");}catch{notify("Seu código é "+profile.friend_code);}});
+  $("#copy-profile-friend-code").addEventListener("click",async()=>{if(!profile)return notify("Entre para ver seu código de amigo.");try{await navigator.clipboard.writeText(profile.friend_code);notify("Código copiado.");}catch{notify("Seu código é "+profile.friend_code);}});
   $("#friend-message-form").addEventListener("submit",async event=>{event.preventDefault();if(!activeFriend||!session)return;const input=$("#friend-message-input"),body=input.value.trim();if(!body)return;input.value="";const {error}=await supabase.from("friend_messages").insert({friendship_id:activeFriend.friendshipId,sender_id:session.user.id,body});if(error){input.value=body;notify(displayError(error));}});
   $("#profile-edit-form").addEventListener("submit",async event=>{event.preventDefault();if(!session)return requireLogin();const name=$("#profile-name-input").value.trim();const {error}=await supabase.from("profiles").update({display_name:name}).eq("id",session.user.id);$("#profile-save-status").textContent=error?displayError(error):"Perfil atualizado.";if(!error)loadProfile();});
   $("#settings-form").addEventListener("submit",async event=>{event.preventDefault();if(!session)return requireLogin();const settings={...(profile?.settings||{}),music:$("#setting-music").checked,effects:$("#setting-effects").checked,notifications:$("#setting-notifications").checked};const {error}=await supabase.from("profiles").update({settings}).eq("id",session.user.id);$("#settings-save-status").textContent=error?displayError(error):"Preferências salvas.";if(!error){profile.settings=settings;const toggle=$("#music-toggle"),currentlyOn=toggle.getAttribute("aria-pressed")==="true";if(currentlyOn!==settings.music)toggle.click();}});
