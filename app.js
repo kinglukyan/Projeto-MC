@@ -15,6 +15,8 @@
   const viewNames = {arena:"Arena",duel:"Duelo",collection:"Coleção",decks:"Baralhos",lore:"Universo",friends:"Amigos",profile:"Perfil",settings:"Configurações"};
   let activeView = "arena", activeFilter = "all", toastTimer, duel = null, storageAvailable = true;
   let handFocusIndex = 0, detailHandIndex = null, underworldCardIds = [], underworldFocusIndex = 0, handGesture = null, detailGestureStart = null, suppressHandClickUntil = 0;
+  const cardDetailBackdrop = $("#card-detail-backdrop"); let cardDetailScrollY = 0;
+  new MutationObserver(()=>{if(!cardDetailBackdrop)return;if(!cardDetailBackdrop.hidden){if(!document.body.classList.contains("card-detail-open")){cardDetailScrollY=window.scrollY;document.body.style.top=`-${cardDetailScrollY}px`;document.body.classList.add("card-detail-open");document.documentElement.classList.add("card-detail-open");}}else if(document.body.classList.contains("card-detail-open")){document.body.classList.remove("card-detail-open");document.documentElement.classList.remove("card-detail-open");document.body.style.top="";window.scrollTo(0,cardDetailScrollY);}}).observe(cardDetailBackdrop,{attributes:true,attributeFilter:["hidden"]});
   const pendingDrawAnimations=[];
   let deckCounts = loadDeck();
   const $ = selector => document.querySelector(selector);

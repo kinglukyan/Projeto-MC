@@ -511,6 +511,24 @@ body.duel-fullscreen{overflow-x:hidden}body.duel-fullscreen .sidebar{display:non
   .player-side .player-corner-stack>.deck-pile{width:48px;height:68px}
   .enemy-side .enemy-deck{width:61px;height:44px}
 }
+/* Espaço seguro do iPhone e gestos previsíveis ao navegar cartas ampliadas. */
+@media(max-width:760px){
+  .main-content{padding-top:max(18px,env(safe-area-inset-top,0px))}
+  .topbar{min-height:58px;height:auto;padding-top:4px}
+  .topbar-right{padding-right:3px}
+  .battle-board{overflow:hidden}
+  .shared-zones-wrap{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important;padding:3px 0!important}
+  .enemy-side .enemy-layout{grid-template-columns:minmax(0,1fr)!important}
+  .enemy-side .enemy-corner-stack{grid-column:1/-1!important;grid-row:1!important}
+  .enemy-side .enemy-field{grid-column:1/-1!important;grid-row:2!important;width:100%;max-width:100%;margin:0}
+  .enemy-side .enemy-identity{width:min(100%,220px);margin:0 auto}
+  .enemy-side .enemy-deck{z-index:12;border-radius:6px;background-image:linear-gradient(rgba(145,31,41,.5),rgba(145,31,41,.5)),url("assets/card-back.svg");background-position:center;background-size:100% 100%;background-repeat:no-repeat;box-shadow:2px 2px 0 #70252d,4px 5px 9px #0008}
+  .enemy-side .enemy-deck:before{display:block}
+}
+html.card-detail-open,body.card-detail-open{overflow:hidden!important;overscroll-behavior:none!important}
+body.card-detail-open{position:fixed!important;inset-inline:0;width:100%;touch-action:none}
+.card-detail-backdrop{overscroll-behavior:contain;touch-action:pan-x}
+.card-detail-modal{overscroll-behavior:contain;touch-action:pan-x}
 .profile-link{width:100%;min-width:0;padding:11px 9px;border:1px solid rgba(212,173,100,.2);border-top:1px solid rgba(212,173,100,.2);border-radius:9px;background:linear-gradient(135deg,rgba(212,173,100,.09),rgba(21,31,46,.7));text-align:left;cursor:pointer;transition:border-color .16s,background .16s}
 .profile-link:hover{border-color:rgba(240,209,138,.55);background:linear-gradient(135deg,rgba(212,173,100,.15),rgba(21,31,46,.9))}
 .profile-link:focus-visible{outline:2px solid var(--bright);outline-offset:2px}
