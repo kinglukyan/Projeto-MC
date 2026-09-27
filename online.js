@@ -8,7 +8,11 @@
   const notify = message => { const toast=$("#toast"); if(!toast)return; toast.textContent=message; toast.classList.add("show"); setTimeout(()=>toast.classList.remove("show"),2800); };
   const showAuthMessage = message => { $("#auth-message").textContent=message||""; };
   const requireLogin = () => { if(session)return true; if(configured)$("#account-gate").hidden=false; else notify("Conecte o Supabase para usar os recursos online."); return false; };
-  const displayError = error => error?.message || "Não foi possível concluir. Tente novamente.";
+  const displayError = error => {
+    const message=String(error?.message||"");
+    if(/email rate limit exceeded|over_email_send_rate_limit|over_email_rate_limit/i.test(message))return "O Supabase limitou temporariamente o envio de e-mails de cadastro. Aguarde ou configure um SMTP próprio no painel do Supabase.";
+    return message||"Não foi possível concluir. Tente novamente.";
+  };
 
   if(!configured){
     $("#connection-status-text").textContent="Supabase sem configuração";
