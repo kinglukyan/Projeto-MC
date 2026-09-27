@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 320" role="img" aria-labelledby="title">
+<title id="title">Verso de carta Mythic Clash</title>
+<defs>
+ <linearGradient id="bg" x2=".8" y2="1"><stop stop-color="#26394c"/><stop offset=".48" stop-color="#101a28"/><stop offset="1" stop-color="#090f19"/></linearGradient>
+ <radialGradient id="glow"><stop stop-color="#c39a53" stop-opacity=".3"/><stop offset="1" stop-color="#c39a53" stop-opacity="0"/></radialGradient>
+ <pattern id="greek" width="28" height="20" patternUnits="userSpaceOnUse"><path d="M1 2h17v7H8v5h10v4H2v-8h10V6H1z" fill="none" stroke="#c9a35e" stroke-width="1.4" opacity=".7"/></pattern>
+ <filter id="shadow"><feGaussianBlur stdDeviation="3"/></filter>
+</defs>
+<rect x="2" y="2" width="216" height="316" rx="22" fill="#070b12" stroke="#d8b971" stroke-width="3"/>
+<rect x="10" y="10" width="200" height="300" rx="17" fill="url(#bg)" stroke="#805d2f" stroke-width="2"/>
+<rect x="18" y="18" width="184" height="284" rx="14" fill="none" stroke="#edcf88" stroke-width="1.5"/>
+<rect x="23" y="23" width="174" height="274" rx="11" fill="none" stroke="#b78946" stroke-width="1"/>
+<rect x="21" y="21" width="178" height="18" fill="url(#greek)"/><rect x="21" y="281" width="178" height="18" fill="url(#greek)"/>
+<rect x="21" y="39" width="13" height="242" fill="url(#greek)"/><rect x="186" y="39" width="13" height="242" fill="url(#greek)"/>
+<circle cx="110" cy="160" r="72" fill="url(#glow)"/><circle cx="110" cy="160" r="47" fill="#0d1724" stroke="#d0aa60" stroke-width="2"/><circle cx="110" cy="160" r="39" fill="none" stroke="#f0d591" stroke-width="1"/>
+<path d="M110 119 119 149 149 160 119 170 110 201 100 170 70 160 100 149z" fill="#f4d58d" stroke="#fff0be" stroke-width="1.5"/>
+<path d="M110 130v60M80 160h60" stroke="#fff1c7" stroke-width="1" opacity=".6"/>
+<text x="110" y="245" text-anchor="middle" font-family="Georgia,serif" font-size="10" letter-spacing="2.2" fill="#f0d18a">MYTHIC CLASH</text>
+</svg>

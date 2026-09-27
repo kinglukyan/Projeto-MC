@@ -1,176 +1,221 @@
 (() => {
-  const viewNames = {
-    arena: "Arena",
-    collection: "Coleção",
-    decks: "Meus baralhos",
-    lore: "O universo",
-  };
+  const cards = [
+    {id:"soldado-esparta",name:"Soldado de Esparta",type:"Companheiro",faction:"Grécia",symbol:"Λ",power:3,cost:1,kind:"unit",glow:"rgba(210,159,76,.38)",art:"assets/soldado-esparta-sem-pontas-azuis.png",ability:"Cada outro Soldado de Esparta aliado dobra o poder desta carta. O efeito é recíproco e acumulativo.",story:["Esta carta representa um personagem original inspirado nos guerreiros da antiga Esparta. Desde jovem, ele treinou para manter a posição ao lado dos outros: escudo firme, lança pronta e atenção ao companheiro.","Na arena, a Formação Espartana transforma essa disciplina em poder. Cada soldado fortalece os demais e também recebe o mesmo impulso: um soldado tem 3 de poder; dois têm 6 cada; três têm 12 cada.","Releitura fantástica; o personagem não representa uma pessoa histórica específica."]},
+    {id:"athena",name:"Atena, Guardiã",type:"Personagem",faction:"Grécia",symbol:"♙",power:5,cost:3,kind:"unit",glow:"rgba(190,194,207,.34)",ability:"Ao entrar em campo, compre uma carta.",story:["A deusa da sabedoria observa o campo antes de agir. Sua presença inspira estratégia e clareza mesmo no momento mais caótico.","Habilidade — Conselho de Atena: ao entrar em campo, compra uma carta.","Reinterpretação mitológica criada para o universo Mythic Clash."]},
+    {id:"lobo-alfa",name:"Lobisomem Alfa",type:"Personagem",faction:"Monstros",symbol:"☾",power:4,cost:2,kind:"unit",glow:"rgba(154,93,76,.38)",ability:"Ao entrar em campo, recebe +1 de poder nesta rodada.",story:["O Alfa lidera a matilha pelo faro e pela coragem. Seu uivo atravessa a noite e anuncia que a caçada começou.","Habilidade — Uivo de Caçada: ao entrar em campo, recebe +1 de poder nesta rodada.","Criatura fantástica original do universo Mythic Clash."]},
+    {id:"guardiao-nordico",name:"Guardião Nórdico",type:"Companheiro",faction:"Nórdicos",symbol:"ᚠ",power:2,cost:1,kind:"unit",glow:"rgba(106,155,175,.35)",ability:"As Runas Nórdicas aumentam seu poder enquanto estiver em campo.",story:["Forjado pelas tempestades do norte, o guardião protege sua gente e mantém a posição mesmo quando o gelo racha sob seus pés.","Habilidade — Vontade do Norte: recebe o poder concedido por Runas Nórdicas aliadas.","Personagem original inspirado em tradições nórdicas."]},
+    {id:"mjolnir",name:"Mjölnir",type:"Relíquia",faction:"Nórdicos",symbol:"⚒",power:0,cost:2,kind:"relic",glow:"rgba(118,161,192,.4)",ability:"Ao jogar, concede +2 de poder ao personagem aliado mais forte.",story:["O martelo lendário retorna à mão digna que o empunha. Seu trovão anuncia uma virada no campo de batalha.","Habilidade — Golpe do Trovão: ao jogar, concede +2 de poder ao seu personagem mais forte.","Relíquia da mitologia nórdica, recriada em uma versão fantástica."]},
+    {id:"runas-nordicas",name:"Runas Nórdicas",type:"Melhoria",faction:"Nórdicos",symbol:"ᚱ",power:0,cost:2,kind:"rune",glow:"rgba(101,171,172,.35)",ability:"Concede +2 de poder a todos os seus personagens nórdicos em campo.",story:["Entalhadas em pedra e madeira, as runas guardam palavras antigas de proteção e coragem.","Habilidade — Marca Rúnica: seus personagens nórdicos em campo recebem +2 de poder.","Inspirada nos alfabetos rúnicos históricos; seu efeito é fantástico."]},
+    {id:"grecia",name:"Grécia",type:"Local",faction:"Grécia",symbol:"⌂",power:0,cost:2,kind:"location",glow:"rgba(99,153,188,.36)",ability:"Enquanto estiver ativa, seus personagens gregos recebem +1 de poder.",story:["Entre montanhas, ilhas e cidades, a Grécia reúne histórias de heróis, deuses e desafios.","Habilidade — Terra dos Heróis: seus personagens gregos em campo e os que entrarem depois recebem +1 de poder.","O local representa uma ambientação mitológica ampla, não um único sítio histórico."]},
+    {id:"eclipse",name:"Eclipse",type:"Evento",faction:"Universal",symbol:"◐",power:0,cost:2,kind:"event",glow:"rgba(139,102,169,.38)",ability:"Ao jogar, reduz em 3 a soma de poder das cartas do oponente nesta rodada.",story:["Por alguns instantes, o dia escurece e as regras do mundo parecem suspensas. Cada facção interpreta o sinal de um jeito.","Habilidade — Sombra Repentina: reduz em 3 a soma de poder das cartas do oponente nesta rodada.","Evento fantástico, disponível a todas as facções."]}
+  ];
+  const cardById = Object.fromEntries(cards.map(card => [card.id, card]));
+  const suggestedDeck = {"soldado-esparta":3,athena:2,"lobo-alfa":2,"guardiao-nordico":2,mjolnir:1,"runas-nordicas":1,grecia:1,eclipse:2};
+  const filters = [["all","Todas"],["Personagem","Personagens"],["Companheiro","Companheiros"],["Relíquia","Relíquias"],["Melhoria","Melhorias"],["Local","Locais"],["Evento","Eventos"]];
+  const viewNames = {arena:"Arena",duel:"Duelo",collection:"Coleção",decks:"Baralhos",lore:"Universo",friends:"Amigos",profile:"Perfil",settings:"Configurações"};
+  let activeView = "arena", activeFilter = "all", toastTimer, duel = null, storageAvailable = true;
+  let handFocusIndex = 0, detailHandIndex = null, underworldCardIds = [], underworldFocusIndex = 0, handGesture = null, detailGestureStart = null, suppressHandClickUntil = 0;
+  const pendingDrawAnimations=[];
+  let deckCounts = loadDeck();
+  const $ = selector => document.querySelector(selector);
+  const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
+  const deckTotal = () => Object.values(deckCounts).reduce((sum,count) => sum + count, 0);
+  const ownedCopies = card => Number.isInteger(card.collectionCopies)?Math.max(0,card.collectionCopies):3;
+  function loadDeck(){try{const stored=JSON.parse(localStorage.getItem("mythic-clash-deck"));if(stored&&typeof stored==="object")return Object.fromEntries(cards.map(card=>[card.id,Math.max(0,Math.min(ownedCopies(card),Number(stored[card.id])||0))]));}catch{storageAvailable=false;}return {...suggestedDeck};}
+  function saveDeck(showMessage=true){try{localStorage.setItem("mythic-clash-deck",JSON.stringify(deckCounts));storageAvailable=true;}catch{storageAvailable=false;}window.MythicOnline?.saveDeckCounts({...deckCounts});renderDeck();if(showMessage){$("#deck-save-status").textContent=storageAvailable?"Baralho salvo neste navegador.":"Salvamento bloqueado pelo navegador; alterações valem nesta sessão.";showToast(storageAvailable?"Baralho salvo.":"O navegador bloqueou o salvamento local.");}}
+  window.MythicLocalDeck={get:()=>({...deckCounts}),set:counts=>{deckCounts=Object.fromEntries(cards.map(card=>[card.id,Math.max(0,Math.min(ownedCopies(card),Number(counts?.[card.id])||0))]));try{localStorage.setItem("mythic-clash-deck",JSON.stringify(deckCounts));}catch{}renderDeck();}};
+  function saveDuel(){try{if(duel)localStorage.setItem("mythic-clash-current-duel",JSON.stringify(duel));else localStorage.removeItem("mythic-clash-current-duel");}catch{storageAvailable=false;}}
+  function loadDuel(){try{const saved=JSON.parse(localStorage.getItem("mythic-clash-current-duel"));if(saved&&saved.player&&saved.enemy&&Array.isArray(saved.player.hand)&&Array.isArray(saved.player.deck)&&Array.isArray(saved.player.field)&&Array.isArray(saved.enemy.hand)&&Array.isArray(saved.enemy.deck)&&Array.isArray(saved.enemy.field)&&["player","enemy"].includes(saved.owner)){saved.rulesVersion=6;saved.sharedZones=saved.sharedZones||{local:null,terrain:null,climate:null};saved.round=saved.round||1;saved.roundCycles=0;saved.totalPoints=saved.totalPoints||{player:0,enemy:0};saved.roundWins=saved.roundWins||{player:0,enemy:0};for(const side of [saved.player,saved.enemy]){side.trixx=Number.isInteger(side.trixx)?side.trixx:2;side.roundPenalty=side.roundPenalty||0;side.turnsTaken=side.turnsTaken||0;side.passed=Boolean(side.passed);side.playedThisTurn=Boolean(side.playedThisTurn);delete side.energy;delete side.maxEnergy;side.underworld=Array.isArray(side.underworld)?side.underworld:[];side.field.forEach((unit,index)=>{unit.bonus=unit.bonus||0;unit.lane=Number.isInteger(unit.lane)?unit.lane:index%3;});delete side.life;}saved.finished=Boolean(saved.finished);if(saved.finished)saved.resultAnimationShown=false;return saved;}}catch{storageAvailable=false;}return null;}
+  function showToast(message){const toast=$("#toast");toast.textContent=message;toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),2400);}
+  const menuMusic=$("#menu-music"),battleMusic=$("#battle-music"),musicToggle=$("#music-toggle");
+  let menuMusicEnabled=true;
+  try{menuMusicEnabled=localStorage.getItem("mythic-clash-menu-music")!=="off";}catch{}
+  function updateMusicToggle(){musicToggle.setAttribute("aria-pressed",String(menuMusicEnabled));musicToggle.setAttribute("aria-label",menuMusicEnabled?"Desativar música":"Ativar música");musicToggle.title=menuMusicEnabled?"Música ligada":"Música desligada";musicToggle.classList.toggle("is-playing",menuMusicEnabled);}
+  function syncMenuMusic(){if(!menuMusic||!battleMusic)return;if(!menuMusicEnabled){menuMusic.pause();battleMusic.pause();return;}const activeTrack=activeView==="duel"?battleMusic:menuMusic,inactiveTrack=activeView==="duel"?menuMusic:battleMusic;inactiveTrack.pause();activeTrack.volume=.42;const playback=activeTrack.play();if(playback&&typeof playback.catch==="function")playback.catch(()=>{});}
+  musicToggle.addEventListener("click",()=>{menuMusicEnabled=!menuMusicEnabled;try{localStorage.setItem("mythic-clash-menu-music",menuMusicEnabled?"on":"off");}catch{}updateMusicToggle();syncMenuMusic();});
+  updateMusicToggle();
+  document.addEventListener("pointerdown",()=>{if(menuMusicEnabled)syncMenuMusic();},{once:true});
+  document.addEventListener("keydown",()=>{if(menuMusicEnabled)syncMenuMusic();},{once:true});
+  function showView(name){if(!viewNames[name])return;activeView=name;syncMenuMusic();document.body.classList.toggle("duel-fullscreen",name==="duel");document.querySelectorAll(".view").forEach(view=>{const active=view.id===`view-${name}`;view.hidden=!active;view.classList.toggle("active",active);});document.querySelectorAll(".nav-item[data-view]").forEach(button=>button.classList.toggle("active",button.dataset.view===name));$("#breadcrumb-current").textContent=viewNames[name];document.title=`Mythic Clash — ${viewNames[name]}`;window.scrollTo({top:0,behavior:"smooth"});if(name==="collection")renderCollection();if(name==="decks")renderDeck();if(name==="lore")renderStories();if(name==="duel")renderDuel();}
+  document.addEventListener("click",event=>{const target=event.target.closest("[data-view]");if(target)showView(target.dataset.view);});
+  $("#open-rules").addEventListener("click",()=>{showView("lore");setTimeout(()=>$(".rules-overview").scrollIntoView({behavior:"smooth",block:"start"}),40);});
+  $("#go-decks").addEventListener("click",()=>showView("decks"));
+  $("#create-match").addEventListener("click",startDuel);
+  $("#leave-duel").addEventListener("click",()=>{duel=null;saveDuel();$("#card-detail-backdrop").hidden=true;showView("arena");});
+  $("#help-button").addEventListener("click",()=>showToast("Protótipo local: o duelo usa um oponente automático. O PvP online será conectado depois."));
 
-  const views = [...document.querySelectorAll(".view")];
-  const navButtons = [...document.querySelectorAll(".nav-item[data-view]")];
-  const breadcrumb = document.querySelector("#breadcrumb-current");
-  const modalBackdrop = document.querySelector("#modal-backdrop");
-  const modalTitle = document.querySelector("#modal-title");
-  const modalCopy = document.querySelector("#modal-copy");
-  const modalKicker = document.querySelector("#modal-kicker");
-  const modalAction = document.querySelector("#modal-action");
-  const inviteRow = document.querySelector("#invite-code-row");
-  const joinField = document.querySelector("#join-code-field");
-  const toast = document.querySelector("#toast");
-  let modalMode = "invite";
-  let activeFilter = "all";
-  let toastTimer;
-
-  function showView(name) {
-    if (!viewNames[name]) return;
-    views.forEach((view) => {
-      const active = view.id === `view-${name}`;
-      view.hidden = !active;
-      view.classList.toggle("active", active);
-    });
-    navButtons.forEach((button) => {
-      const active = button.dataset.view === name;
-      button.classList.toggle("active", active);
-      if (active) button.setAttribute("aria-current", "page");
-      else button.removeAttribute("aria-current");
-    });
-    breadcrumb.textContent = viewNames[name];
-    document.title = `Mythic Clash — ${viewNames[name]}`;
-    window.scrollTo({ top: 0, behavior: "smooth" });
+  function cardArt(card,small=false){if(card.art)return `<img src="${card.art}" alt="Carta ${escapeHTML(card.name)}">`;return `<span class="${small?"generic-art":"lore-story-glyph"}" style="--card-glow:${card.glow}">${card.symbol}</span>`;}
+  function renderCollection(){
+    const factionSelect=$("#faction-filter"), selectedFaction=factionSelect.value||"all";
+    const factions=[...new Set(cards.map(card=>card.faction))].sort();
+    factionSelect.innerHTML='<option value="all">Todas as facções</option>'+factions.map(faction=>`<option value="${escapeHTML(faction)}">${escapeHTML(faction)}</option>`).join("");factionSelect.value=factions.includes(selectedFaction)?selectedFaction:"all";
+    const counts={all:cards.length};cards.forEach(card=>counts[card.type]=(counts[card.type]||0)+1);
+    $("#filter-tabs").innerHTML=filters.map(([value,label])=>`<button class="filter-tab ${activeFilter===value?"active":""}" data-filter="${value}">${label}${value==="all"?` <small>${cards.length}</small>`:""}</button>`).join("");
+    const query=$("#card-search").value.trim().toLocaleLowerCase("pt-BR"), faction=factionSelect.value;
+    const visible=cards.filter(card=>(activeFilter==="all"||card.type===activeFilter)&&(faction==="all"||card.faction===faction)&&(!query||`${card.name} ${card.type} ${card.faction}`.toLocaleLowerCase("pt-BR").includes(query)));
+    $("#collection-grid").innerHTML=visible.map(card=>`<article class="collection-card" style="--card-glow:${card.glow}"><button class="collection-art-button" data-card="${card.id}" aria-label="Ver detalhes de ${escapeHTML(card.name)}">${cardArt(card,true)}</button><div class="collection-card-info"><div><span class="card-kind">${card.type.toLocaleUpperCase("pt-BR")} · ${card.faction.toLocaleUpperCase("pt-BR")}</span><h2>${escapeHTML(card.name)}</h2></div><span class="power-chip">${card.power||"—"}<small>${card.power?"PODER":"ESPECIAL"}</small></span></div><p class="collection-card-rule">${escapeHTML(card.ability)}</p><button class="card-detail-button" data-card="${card.id}">Ver carta, habilidade e história</button></article>`).join("");
+    $("#empty-search").hidden=visible.length>0;$("#nav-card-count").textContent=String(cards.length).padStart(2,"0");
   }
-
-  document.addEventListener("click", (event) => {
-    const target = event.target.closest("[data-view]");
-    if (target) showView(target.dataset.view);
-  });
-
-  document.querySelectorAll(".lore-story-toggle").forEach((button) => {
-    button.addEventListener("click", () => {
-      const story = document.getElementById(button.getAttribute("aria-controls"));
-      const isOpen = button.getAttribute("aria-expanded") === "true";
-      button.setAttribute("aria-expanded", String(!isOpen));
-      story.hidden = isOpen;
-      button.innerHTML = isOpen ? 'Ler história <span>＋</span>' : 'Fechar história <span>−</span>';
-    });
-  });
-  function openModal(mode) {
-    modalMode = mode;
-    const isJoin = mode === "join";
-    const isHelp = mode === "help";
-    modalKicker.textContent = isHelp ? "PROTÓTIPO LOCAL" : isJoin ? "ENTRAR EM UMA SALA" : "SALA PRIVADA";
-    modalTitle.textContent = isHelp
-      ? "Um universo em construção"
-      : isJoin
-        ? "Entre com um código"
-        : "Convide alguém para a arena";
-    modalCopy.textContent = isHelp
-      ? "Esta é uma base visual para moldarmos juntos. Partidas online, regras, contas e salvamento ainda não estão conectados."
-      : isJoin
-        ? "Cole o código de convite recebido para simular a entrada em uma sala."
-        : "Crie um código de demonstração para compartilhar com seu oponente.";
-    inviteRow.hidden = isJoin || isHelp;
-    joinField.hidden = !isJoin;
-    modalAction.textContent = isHelp ? "Entendi" : isJoin ? "Continuar" : "Sala pronta";
-    if (!isJoin && !isHelp) {
-      document.querySelector("#invite-code").textContent = `MYTH-${Math.floor(1000 + Math.random() * 9000)}`;
-    }
-    modalBackdrop.hidden = false;
-    if (isJoin) window.setTimeout(() => document.querySelector("#join-code-input").focus(), 20);
-    else modalAction.focus();
+  $("#filter-tabs").addEventListener("click",event=>{const button=event.target.closest("[data-filter]");if(!button)return;activeFilter=button.dataset.filter;renderCollection();});
+  $("#card-search").addEventListener("input",renderCollection);$("#faction-filter").addEventListener("change",renderCollection);
+  function fullCardPreview(card){if(card.art)return `<img src="${card.art}" alt="Carta completa: ${escapeHTML(card.name)}">`;return `<article class="full-card-preview" style="--card-glow:${card.glow}"><header>MYTHIC CLASH</header><div class="full-card-symbol">${card.symbol}</div><h3>${escapeHTML(card.name)}</h3><small>${card.type.toLocaleUpperCase("pt-BR")} · ${card.faction.toLocaleUpperCase("pt-BR")}</small><p>${escapeHTML(card.ability)}</p><footer><span>${card.power?`${card.power} PODER`:card.type.toLocaleUpperCase("pt-BR")}</span></footer></article>`;}
+  function openUnderworldGallery(sideKey){if(!duel)return;underworldCardIds=duel[sideKey].underworld.filter(id=>cardById[id]);if(!underworldCardIds.length){showToast("Não há cartas no Submundo.");return;}underworldFocusIndex=0;openCardDetail(underworldCardIds[0],null,false,true);}
+  function closeUnderworldGallery(){$("#underworld-gallery").hidden=true;}
+  $("#underworld-gallery-close").addEventListener("click",closeUnderworldGallery);$("#underworld-gallery").addEventListener("click",event=>{if(event.target.id==="underworld-gallery")closeUnderworldGallery();});
+  document.addEventListener("keydown",event=>{if(event.key==="Escape")closeUnderworldGallery();});
+  function renderExpandedHandFan(selectedIndex,cardIds=duel?.player.hand||[]){
+    const fan=$("#expanded-hand-fan");
+    if(!duel||!Number.isInteger(selectedIndex)){fan.innerHTML="";fan.hidden=true;return;}
+    fan.innerHTML=cardIds.map((id,index)=>{
+      if(index===selectedIndex)return "";
+      const other=cardById[id],offset=index-selectedIndex;
+      return `<div class="fan-card" style="--fan-x:${offset*174}px;--fan-y:${Math.abs(offset)*16}px;--fan-rotate:${offset*13}deg;--fan-z:${10-Math.abs(offset)};--card-glow:${other.glow}">${fullCardPreview(other)}</div>`;
+    }).join("");
+    fan.hidden=cardIds.length<2;
   }
+  function openCardDetail(id,handIndex=null,fromField=false,fromUnderworld=false,fromDeck=false){const card=cardById[id];if(!card)return;detailHandIndex=Number.isInteger(handIndex)?handIndex:null;const art=$("#card-detail-art"),isHandCard=detailHandIndex!==null,underworldIndex=fromUnderworld?underworldCardIds.indexOf(id):-1;if(fromUnderworld&&underworldIndex>=0)underworldFocusIndex=underworldIndex;$("#card-detail-modal").classList.toggle("duel-card-expanded",isHandCard||fromUnderworld);$("#card-detail-modal").classList.toggle("underworld-card-expanded",fromUnderworld);$("#card-detail-modal").classList.toggle("field-card-expanded",Boolean(fromField));$("#card-detail-modal").classList.toggle("deck-card-expanded",fromDeck);renderExpandedHandFan(fromUnderworld?underworldFocusIndex:detailHandIndex,fromUnderworld?underworldCardIds:undefined);art.style.setProperty("--card-glow",card.glow);art.innerHTML=fullCardPreview(card);$("#card-detail-kind").textContent=card.type.toLocaleUpperCase("pt-BR");$("#card-detail-title").textContent=card.name;$("#card-detail-faction").textContent=`Facção: ${card.faction}`;$("#card-detail-power").textContent=card.power||"—";$("#card-detail-ability").textContent=card.ability;$("#card-detail-story").innerHTML=card.story.map(paragraph=>`<p>${escapeHTML(paragraph)}</p>`).join("");const canBrowse=isHandCard||(fromUnderworld&&underworldCardIds.length>1);$("#card-detail-prev").hidden=!canBrowse;$("#card-detail-next").hidden=!canBrowse;$("#card-detail-count").hidden=!canBrowse;$("#card-detail-action").hidden=!isHandCard;$("#detail-play-hint").hidden=!isHandCard;if(isHandCard){$("#card-detail-count").textContent=`${detailHandIndex+1} / ${duel.player.hand.length}`;updateDetailPlayState(card);}else if(fromUnderworld){$("#card-detail-count").textContent=`${underworldFocusIndex+1} / ${underworldCardIds.length}`;}$("#card-detail-backdrop").hidden=false;$("#card-detail-close").focus();}
+  document.addEventListener("click",event=>{const button=event.target.closest("[data-card]");if(button)openCardDetail(button.dataset.card,null,false,false,button.classList.contains("deck-card-thumb"));});
+  function playBlockReason(side,card,laneIndex=null){if(!duel||duel.finished)return "Este duelo já terminou.";if(side.passed)return "Você já passou nesta rodada e não pode jogar mais cartas.";if(duel.owner!=="player")return "Aguarde o fim do turno do oponente.";if(side.playedThisTurn)return "Você já jogou uma carta neste turno.";if(card.kind==="relic"&&!side.field.length)return "Jogue um personagem antes de usar esta relíquia.";if(card.kind==="location"&&duel.sharedZones.local)return "O espaço compartilhado de Local já está ocupado.";if(card.kind==="event"&&duel.sharedZones.climate)return "O espaço compartilhado de Clima já está ocupado.";return "";}
+  function updateDetailPlayState(card){const reason=playBlockReason(duel.player,card),button=$("#card-detail-action");button.disabled=Boolean(reason);$("#detail-play-hint").textContent=reason||"Arraste a carta para o campo ou jogue por este botão.";}
+  function tryPlayHandCard(index,laneIndex=null){if(!duel||index<0||index>=duel.player.hand.length)return false;const id=duel.player.hand[index],card=cardById[id];if(card.kind==="unit"&&!Number.isInteger(laneIndex))laneIndex=duel.player.field.length%3;const reason=playBlockReason(duel.player,card,laneIndex);if(reason){showToast(reason);return false;}playCard(duel.player,id,false,laneIndex);if(duel.player.passed)log("Você ficou sem cartas e passou automaticamente.");duel.owner="enemy";detailHandIndex=null;$("#card-detail-backdrop").hidden=true;handFocusIndex=Math.min(index,duel.player.hand.length-1);renderDuel();setTimeout(enemyTurn,500);return true;}
+  function moveHandDetail(step){if(detailHandIndex===null||!duel?.player.hand.length)return;detailHandIndex=(detailHandIndex+step+duel.player.hand.length)%duel.player.hand.length;handFocusIndex=detailHandIndex;renderDuel();openCardDetail(duel.player.hand[detailHandIndex],detailHandIndex);}
+  function closeCardDetail(){$("#card-detail-backdrop").hidden=true;detailHandIndex=null;underworldCardIds=[];$("#card-detail-modal").classList.remove("field-card-expanded","underworld-card-expanded","duel-card-expanded","deck-card-expanded");}
+  $("#card-detail-close").addEventListener("click",closeCardDetail);$("#card-detail-backdrop").addEventListener("click",event=>{if(event.target.id==="card-detail-backdrop")closeCardDetail();});$("#card-detail-modal").addEventListener("click",event=>{if(!$("#card-detail-modal").classList.contains("duel-card-expanded"))return;if(event.target.closest(".card-detail-art,.detail-swipe,.modal-close,.detail-play-button"))return;closeCardDetail();});document.addEventListener("keydown",event=>{if(event.key==="Escape")closeCardDetail();});
+  function moveUnderworldDetail(step){if(!underworldCardIds.length)return;underworldFocusIndex=(underworldFocusIndex+step+underworldCardIds.length)%underworldCardIds.length;openCardDetail(underworldCardIds[underworldFocusIndex],null,false,true);}
+  $("#card-detail-prev").addEventListener("click",()=>$("#card-detail-modal").classList.contains("underworld-card-expanded")?moveUnderworldDetail(-1):moveHandDetail(-1));$("#card-detail-next").addEventListener("click",()=>$("#card-detail-modal").classList.contains("underworld-card-expanded")?moveUnderworldDetail(1):moveHandDetail(1));
+  $("#card-detail-action").addEventListener("click",()=>{if(detailHandIndex!==null)tryPlayHandCard(detailHandIndex);});
+  $("#card-detail-modal").addEventListener("pointerdown",event=>{if(detailHandIndex!==null||$("#card-detail-modal").classList.contains("underworld-card-expanded"))detailGestureStart={x:event.clientX,y:event.clientY};});
+  $("#card-detail-modal").addEventListener("pointerup",event=>{if(!detailGestureStart)return;const dx=event.clientX-detailGestureStart.x,dy=event.clientY-detailGestureStart.y;detailGestureStart=null;if(Math.abs(dx)>55&&Math.abs(dx)>Math.abs(dy)){if($("#card-detail-modal").classList.contains("underworld-card-expanded"))moveUnderworldDetail(dx<0?1:-1);else moveHandDetail(dx<0?1:-1);}});
+  function renderStories(){$("#lore-story-list").innerHTML=cards.map(card=>`<article class="lore-story-card" style="--card-glow:${card.glow}"><div class="lore-story-art">${cardArt(card,false)}</div><div class="lore-story-copy"><div class="lore-story-meta"><span>${card.type.toLocaleUpperCase("pt-BR")} · ${card.faction.toLocaleUpperCase("pt-BR")}</span><span>${card.power?`✦ ${card.power} PODER`:card.type.toLocaleUpperCase("pt-BR")}</span></div><h3>${escapeHTML(card.name)}</h3><p>${escapeHTML(card.story[0])}</p><div class="lore-story-full" hidden>${card.story.slice(1).map(paragraph=>`<p>${escapeHTML(paragraph)}</p>`).join("")}<p><b>Habilidade:</b> ${escapeHTML(card.ability)}</p></div><button class="story-toggle" aria-expanded="false">Ler história completa ＋</button></div></article>`).join("");}
+  $("#lore-story-list").addEventListener("click",event=>{const button=event.target.closest(".story-toggle");if(!button)return;const full=button.parentElement.querySelector(".lore-story-full"),opening=full.hidden;full.hidden=!opening;button.setAttribute("aria-expanded",String(opening));button.textContent=opening?"Fechar história −":"Ler história completa ＋";});
 
-  function closeModal() {
-    modalBackdrop.hidden = true;
+  function renderDeck(){
+    const total=deckTotal();
+    $("#deck-total").textContent=total+" / 20 cartas";
+    $("#deck-rule").textContent=total<12?"Faltam "+(12-total)+" cartas para iniciar um duelo.":total>20?"O baralho passou do limite de 20 cartas.":"Baralho pronto para um duelo local.";
+    $("#deck-card-list").innerHTML=cards.map(card=>{
+      const inDeck=deckCounts[card.id]||0,owned=ownedCopies(card);
+      const thumb=card.art?`<img src="${card.art}" alt="">`:`<span class="deck-thumb-brand">MYTHIC CLASH</span><span class="deck-thumb-symbol">${escapeHTML(card.symbol)}</span><b>${escapeHTML(card.name)}</b><small>${card.type.toLocaleUpperCase("pt-BR")} · ${escapeHTML(card.faction.toLocaleUpperCase("pt-BR"))}</small><p>${escapeHTML(card.ability)}</p><strong>${card.power?card.power+" PODER":card.type.toLocaleUpperCase("pt-BR")}</strong>`;
+      return `<article class="deck-row"><button class="deck-card-thumb ${card.art?"has-art":""}" data-card="${card.id}" aria-label="Abrir ${escapeHTML(card.name)}. Você tem ${owned} cópias." style="--card-glow:${card.glow}">${thumb}<span class="deck-owned-count" aria-hidden="true">${owned}×</span></button><div class="deck-row-copy"><b>${escapeHTML(card.name)}</b><small>${card.type} · ${card.faction} · ${card.power?card.power+" poder":"efeito"}</small></div><div class="deck-count-control"><button data-deck-change="-1" data-card-id="${card.id}" aria-label="Remover ${escapeHTML(card.name)}" ${inDeck===0?"hidden":""}>−</button><b>${inDeck}</b><button data-deck-change="1" data-card-id="${card.id}" aria-label="Adicionar ${escapeHTML(card.name)}" ${inDeck>=owned||total>=20?"hidden":""}>＋</button></div></article>`;
+    }).join("");
   }
+  $("#deck-card-list").addEventListener("click",event=>{
+    const button=event.target.closest("[data-deck-change]");if(!button)return;
+    const id=button.dataset.cardId,card=cardById[id],next=(deckCounts[id]||0)+Number(button.dataset.deckChange);
+    if(next<0||next>ownedCopies(card)){showToast("Você não tem mais cópias disponíveis dessa carta.");return;}
+    if(next>deckCounts[id]&&deckTotal()>=20){showToast("O baralho aceita no máximo 20 cartas.");return;}
+    deckCounts[id]=next;saveDeck(false);
+    $("#deck-save-status").textContent=storageAvailable?"Alteração salva automaticamente neste navegador.":"Salvamento local bloqueado; a alteração vale nesta sessão.";
+  });
+  $("#save-deck").addEventListener("click",()=>saveDeck(true));$("#reset-deck").addEventListener("click",()=>{deckCounts={...suggestedDeck};saveDeck(false);$("#deck-save-status").textContent="Sugestão de baralho restaurada.";showToast("Baralho de demonstração restaurado.");});
 
-  function showToast(message) {
-    toast.textContent = message;
-    toast.classList.add("show");
-    window.clearTimeout(toastTimer);
-    toastTimer = window.setTimeout(() => toast.classList.remove("show"), 2600);
+  function shuffle(items){for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]];}return items;}
+  function makeDeck(counts){return shuffle(Object.entries(counts).flatMap(([id,count])=>Array(count).fill(id)));}
+  function startDuel(){
+    if(deckTotal()<12){showToast("Seu baralho precisa ter pelo menos 12 cartas.");showView("decks");return;}
+    menuMusic.pause();battleMusic.currentTime=0;const battlePlayback=menuMusicEnabled?battleMusic.play():null;if(battlePlayback&&typeof battlePlayback.catch==="function")battlePlayback.catch(()=>{});duel=null;saveDuel();
+    const loader=$("#duel-loading-screen"),startButton=$("#create-match");loader.hidden=false;loader.setAttribute("aria-hidden","false");startButton.disabled=true;
+    setTimeout(()=>{
+      duel={rulesVersion:5,turn:0,round:1,roundCycles:0,sharedZones:{local:null,terrain:null,climate:null},totalPoints:{player:0,enemy:0},roundWins:{player:0,enemy:0},owner:"player",player:{trixx:2,roundPenalty:0,turnsTaken:0,passed:false,playedThisTurn:false,deck:makeDeck(deckCounts),hand:[],field:[],underworld:[],greekAura:0,norseAura:0},enemy:{trixx:2,roundPenalty:0,turnsTaken:0,passed:false,playedThisTurn:false,deck:makeDeck(suggestedDeck),hand:[],field:[],underworld:[],greekAura:0,norseAura:0},log:[],finished:false};
+      draw(duel.player,4);draw(duel.enemy,4);startTurn(duel.player,"player");log("O duelo começou. A rodada termina quando ambos passarem ou não tiverem mais cartas.");
+      loader.hidden=true;loader.setAttribute("aria-hidden","true");startButton.disabled=false;showView("duel");renderDuel();
+    },2000);
   }
-
-  document.querySelector("#create-match").addEventListener("click", () => openModal("invite"));
-  document.querySelector("#invite-friend").addEventListener("click", () => openModal("invite"));
-  document.querySelector("#join-match").addEventListener("click", () => openModal("join"));
-  document.querySelector("#help-button").addEventListener("click", () => openModal("help"));
-  document.querySelector("#modal-close").addEventListener("click", closeModal);
-  modalBackdrop.addEventListener("click", (event) => {
-    if (event.target === modalBackdrop) closeModal();
-  });
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape" && !modalBackdrop.hidden) closeModal();
-  });
-
-  modalAction.addEventListener("click", () => {
-    if (modalMode === "join") {
-      const code = document.querySelector("#join-code-input").value.trim();
-      if (!code) {
-        showToast("Digite um código para continuar.");
-        return;
-      }
-      closeModal();
-      showToast("Entrada demonstrativa registrada. A conexão online será adicionada depois.");
-      return;
-    }
-    if (modalMode === "help") {
-      closeModal();
-      return;
-    }
-    closeModal();
-    showToast("Sala de demonstração criada. Compartilhe o código de convite.");
-  });
-
-  document.querySelector("#copy-code").addEventListener("click", async () => {
-    const code = document.querySelector("#invite-code").textContent;
-    try {
-      await navigator.clipboard.writeText(code);
-      showToast("Código copiado.");
-    } catch {
-      const helper = document.createElement("textarea");
-      helper.value = code;
-      helper.style.position = "fixed";
-      helper.style.opacity = "0";
-      document.body.appendChild(helper);
-      helper.select();
-      document.execCommand("copy");
-      helper.remove();
-      showToast("Código copiado.");
-    }
-  });
-
-  function filterCollection() {
-    const query = document.querySelector("#card-search").value.trim().toLocaleLowerCase("pt-BR");
-    const cards = [...document.querySelectorAll(".collection-card")];
-    let visibleCount = 0;
-    cards.forEach((card) => {
-      const matchesFilter = activeFilter === "all" || card.dataset.category.split(" ").includes(activeFilter);
-      const matchesSearch = !query || card.dataset.name.includes(query);
-      const visible = matchesFilter && matchesSearch;
-      card.hidden = !visible;
-      if (visible) visibleCount += 1;
-    });
-    document.querySelector("#add-card-tile").hidden = activeFilter !== "all" || Boolean(query);
-    document.querySelector("#empty-search").hidden = visibleCount > 0 || activeFilter === "all" && !query;
+  function draw(side,count=1){for(let i=0;i<count;i++){if(side.deck.length){side.hand.push(side.deck.pop());pendingDrawAnimations.push(side===duel?.enemy?"enemy":"player");}}}
+  function animateDraws(){if(!pendingDrawAnimations.length)return;const draws=pendingDrawAnimations.splice(0),board=document.body;draws.forEach((side,index)=>setTimeout(()=>{const from=$(side==="enemy"?"#enemy-deck":"#player-deck"),to=$(side==="enemy"?"#enemy-hidden-hand":"#player-hand");if(!from||!to)return;const a=from.getBoundingClientRect(),b=to.getBoundingClientRect();if(!a.width||!b.width)return;const card=document.createElement("span");card.className="card-draw-flight"+(side==="enemy"?" enemy-draw":"");card.setAttribute("aria-hidden","true");board.append(card);const start={left:a.left+a.width/2,top:a.top+a.height/2},end={left:b.left+b.width/2,top:b.top+b.height/2};const motion=card.animate([{left:start.left+"px",top:start.top+"px",transform:"translate(-50%,-50%) rotate(0deg) scale(.82)",opacity:1},{left:end.left+"px",top:end.top+"px",transform:"translate(-50%,-50%) rotate("+(side==="enemy"?"-7deg":"7deg")+") scale(.58)",opacity:.25}],{duration:680,easing:"cubic-bezier(.22,.72,.28,1)",fill:"forwards"});motion.onfinish=()=>card.remove();},index*105));}
+  function log(message){duel.log.unshift(message);duel.log=duel.log.slice(0,8);}
+  function currentPower(side,unit){const card=cardById[unit.cardId],same=side.field.filter(other=>other.cardId==="soldado-esparta").length;let power=card.power+unit.bonus;if(card.id==="soldado-esparta")power*=2**Math.max(0,same-1);if(card.faction==="Grécia")power+=side.greekAura+(duel.sharedZones.local?1:0);if(card.faction==="Nórdicos")power+=side.norseAura;return Math.max(0,power);}
+  function roundScore(side){if(duel?.finished&&duel.lastRoundPoints)return side===duel.player?duel.lastRoundPoints.player:duel.lastRoundPoints.enemy;return Math.max(0,side.field.reduce((sum,unit)=>sum+currentPower(side,unit),0)-side.roundPenalty);}
+  function renderTrixx(side){const star='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5 14.5 9.5 21.5 12 14.5 14.5 12 21.5 9.5 14.5 2.5 12 9.5 9.5Z"/></svg>';return [0,1].map(index=>'<span class="trixx-star '+(index<side.trixx?'active':'')+'">'+star+'</span>').join("");}
+  function canPlay(side,card){if(side.passed||side.playedThisTurn)return false;if(card.kind==="relic"&&!side.field.length)return false;if(card.kind==="location"&&duel.sharedZones.local)return false;if(card.kind==="event"&&duel.sharedZones.climate)return false;return true;}
+  function laneSlot(side,lane){return side.field.filter(unit=>unit.lane===lane).length;}
+  function playCard(side,cardId,isEnemy=false,laneIndex=null){
+    const card=cardById[cardId],handIndex=side.hand.indexOf(cardId);if(!card||handIndex<0||!canPlay(side,card))return false;
+    side.hand.splice(handIndex,1);
+    if(card.kind==="unit"){
+      if(!Number.isInteger(laneIndex))laneIndex=[0,1,2].sort((a,b)=>side.field.filter(unit=>unit.lane===a).length-side.field.filter(unit=>unit.lane===b).length)[0];const unit={cardId:cardId,bonus:card.id==="lobo-alfa"?1:0,lane:laneIndex,slot:laneSlot(side,laneIndex)};side.field.push(unit);
+      if(card.id==="athena")draw(side,1);
+      if(card.id==="lobo-alfa")log((isEnemy?"O Guardião":"Você")+" ativou Uivo de Caçada: +1 poder nesta rodada.");
+      log((isEnemy?"O Guardião":"Você")+" jogou "+card.name+".");
+    }else if(card.kind==="relic"){
+      const target=side.field.reduce((best,unit)=>!best||currentPower(side,unit)>currentPower(side,best)?unit:best,null);target.bonus+=2;log((isEnemy?"O Guardião":"Você")+" equipou Mjölnir: +2 de poder.");
+    }else if(card.kind==="rune"){side.norseAura+=2;log((isEnemy?"O Guardião":"Você")+" ativou as Runas Nórdicas: +2 aos nórdicos.");}
+    else if(card.kind==="location"){duel.sharedZones.local=cardId;log((isEnemy?"O Guardião":"Você")+" estabeleceu Grécia para os dois lados: +1 aos gregos.");}
+    else if(card.kind==="event"){duel.sharedZones.climate=cardId;const target=isEnemy?duel.player:duel.enemy;target.roundPenalty+=3;log((isEnemy?"O Guardião":"Você")+" invocou Eclipse no espaço de clima: -3 pontos na soma do oponente nesta rodada.");}
+    side.playedThisTurn=true;if(!side.hand.length&&!side.deck.length)side.passed=true;
+    return true;
   }
+  function startTurn(side,owner){if(side.passed)return;side.playedThisTurn=false;side.turnsTaken=(side.turnsTaken||0)+1;if(side.turnsTaken===1||side.turnsTaken%2===1){const before=side.hand.length;draw(side,1);if(side.hand.length>before)log((owner==="player"?"Você":"O Guardião")+" comprou uma carta.");}if(!side.hand.length&&!side.deck.length)side.passed=true;duel.owner=owner;duel.turn=owner==="player"?duel.turn+1:duel.turn;}
+  function startNextRound(){duel.roundCycles=0;duel.sharedZones={local:null,terrain:null,climate:null};for(const side of [duel.player,duel.enemy]){side.field=[];side.playedThisTurn=false;side.greekAura=0;side.norseAura=0;side.roundPenalty=0;side.passed=false;side.turnsTaken=0;draw(side,2);}startTurn(duel.player,"player");log("Rodada "+duel.round+" começou. As cartas restantes ficam na mão; cada jogador compra 2 e recebe a compra do primeiro turno.");if(duel.player.passed){log("Você não tem mais cartas e passou automaticamente.");duel.owner="enemy";}renderDuel();if(duel.player.passed)setTimeout(enemyTurn,450);}
+  function finishRound(){
+    const playerRound=roundScore(duel.player),enemyRound=roundScore(duel.enemy);
+    duel.lastRoundPoints={player:playerRound,enemy:enemyRound};
+    duel.totalPoints.player+=playerRound;duel.totalPoints.enemy+=enemyRound;
+    duel.roundWins.player+=playerRound>enemyRound?1:0;duel.roundWins.enemy+=enemyRound>playerRound?1:0;
+    if(playerRound>enemyRound){duel.enemy.trixx=Math.max(0,duel.enemy.trixx-1);log("Rodada "+duel.round+": você venceu por "+playerRound+" a "+enemyRound+". O Guardião perde uma Trixx.");}
+    else if(enemyRound>playerRound){duel.player.trixx=Math.max(0,duel.player.trixx-1);log("Rodada "+duel.round+": o Guardião venceu por "+enemyRound+" a "+playerRound+". Você perde uma Trixx.");}
+    else log("Rodada "+duel.round+": empate em "+playerRound+" pontos.");
+    for(const side of [duel.player,duel.enemy]){side.underworld.push(...side.field.map(unit=>unit.cardId));side.field=[];side.greekAura=0;side.norseAura=0;side.roundPenalty=0;}
+    if(duel.round===1){duel.round=2;startNextRound();return;}
+    if(duel.round===2&&duel.totalPoints.player===duel.totalPoints.enemy){duel.round=3;log("A soma ficou empatada após duas rodadas. Começa a rodada decisiva.");startNextRound();return;}
+    let winner;
+    winner=duel.totalPoints.player===duel.totalPoints.enemy?null:duel.totalPoints.player>duel.totalPoints.enemy?"player":"enemy";
+    duel.finished=true;duel.winner=winner==="player"?"Você venceu o duelo pela soma de pontos!":winner==="enemy"?"O Guardião venceu o duelo pela soma de pontos!":"Empate no duelo.";log(duel.winner);renderDuel();
+  }
+  function continueAfterEnemyTurn(){if(duel.player.passed&&duel.enemy.passed){finishRound();return;}if(duel.player.passed){duel.owner="enemy";renderDuel();setTimeout(enemyTurn,550);return;}startTurn(duel.player,"player");if(duel.player.passed){log("Você não tem mais cartas e passou automaticamente.");duel.owner="enemy";renderDuel();setTimeout(enemyTurn,550);return;}log("Seu turno começou. Jogue uma carta ou passe a vez.");renderDuel();}
+  function enemyTurn(){if(duel.finished)return;if(duel.enemy.passed){continueAfterEnemyTurn();return;}startTurn(duel.enemy,"enemy");if(!duel.enemy.passed){log("Turno do Guardião.");if(roundScore(duel.enemy)>roundScore(duel.player)&&duel.enemy.hand.length)duel.enemy.passed=true;else{const nextCard=duel.enemy.hand.map(id=>cardById[id]).find(card=>canPlay(duel.enemy,card));if(nextCard)playCard(duel.enemy,nextCard.id,true);else if(!duel.enemy.deck.length)duel.enemy.passed=true;}}if(duel.enemy.passed)log("O Guardião passou a vez e não jogará mais nesta rodada.");continueAfterEnemyTurn();}
+  function renderHand(player){
+    if(!player.hand.length)return '<p class="battle-empty">Sem cartas na mão. Aguarde uma compra ou passe a vez.</p>';
+    handFocusIndex=Math.min(handFocusIndex,player.hand.length-1);
+    return player.hand.map((id,index)=>{
+      const card=cardById[id];
+      const art=card.art?`<img class="hand-full-art" src="${card.art}" alt="Carta completa: ${escapeHTML(card.name)}">`:card.symbol;
+      const contents=card.art?art:`<span class="hand-glyph">${art}</span><b>${escapeHTML(card.name)}</b><small>${escapeHTML(card.ability)}</small><span class="hand-power">${card.power?`${card.power} poder`:card.type}</span>`;
+      return `<button class="hand-card ${index===handFocusIndex?"selected":""} ${card.art?"has-full-art":""}" draggable="true" data-hand-index="${index}" data-card-id="${card.id}" style="--card-glow:${card.glow}" aria-pressed="${index===handFocusIndex}" aria-label="Ampliar ${escapeHTML(card.name)}">${contents}</button>`;
+    }).join("");
+  }
+  function renderZones(){return [["local","LOCAL","⌂"],["terrain","TERRENO","▱"],["climate","CLIMA","◌"]].map(([key,label,glyph])=>{const cardId=duel.sharedZones&&duel.sharedZones[key],card=cardId&&cardById[cardId];if(!card)return '<div class="battle-zone" aria-label="'+label+': vazio"><small>'+label+'</small><span class="zone-glyph">'+glyph+'</span><b>Vazio</b></div>';const art=card.art?'<img src="'+card.art+'" alt="">':'<span>'+escapeHTML(card.symbol)+'</span>';return '<div class="battle-zone occupied" role="button" tabindex="0" data-zone-card="'+cardId+'" aria-label="Ampliar carta '+escapeHTML(card.name)+' em '+label+'"><article class="zone-card-mini" style="--card-glow:'+card.glow+'" title="'+escapeHTML(card.name)+'"><header><span>'+escapeHTML(card.faction.toLocaleUpperCase("pt-BR"))+'</span><b>'+escapeHTML(card.symbol)+'</b></header><div class="zone-card-mini-art">'+art+'</div><strong>'+escapeHTML(card.name)+'</strong><small>'+escapeHTML(card.type.toLocaleUpperCase("pt-BR"))+'</small></article></div>';}).join("");}
+  $("#shared-zones").addEventListener("click",event=>{const slot=event.target.closest("[data-zone-card]");if(slot)openCardDetail(slot.dataset.zoneCard,null,true);});
+  $("#shared-zones").addEventListener("keydown",event=>{if(event.key!=="Enter"&&event.key!==" ")return;const slot=event.target.closest("[data-zone-card]");if(!slot)return;event.preventDefault();openCardDetail(slot.dataset.zoneCard,null,true);});
+  function renderField(side){return [0,1,2].map(lane=>{const units=side.field.filter(unit=>unit.lane===lane);const slots=units.map((unit,index)=>{const card=cardById[unit.cardId],power=currentPower(side,unit),image=card.art?'<img src="'+card.art+'" alt="Miniatura de '+escapeHTML(card.name)+'">':'<span class="mini-glyph" style="--card-glow:'+card.glow+'">'+escapeHTML(card.symbol)+'</span>';return '<article class="battle-mini-card ' +(card.art?"has-card-art":"")+'" data-field-index="'+side.field.indexOf(unit)+'" data-card-id="'+card.id+'" title="'+escapeHTML(card.name)+' · '+power+' poder">'+image+'<span class="mini-card-meta"><b>'+escapeHTML(card.name)+'</b><strong>'+power+'</strong></span>'+'</article>';}).join("");return '<div class="battle-lane" data-lane-index="'+lane+'" aria-label="Linha '+(lane+1)+'">'+slots+'</div>';}).join("");}
+  function renderEnemyHand(hand){return hand.map((_,index)=>'<span class="enemy-hand-back" style="--back-x:'+((index-(hand.length-1)/2)*27)+'px;--back-angle:'+((index-(hand.length-1)/2)*4)+'deg;--back-z:'+index+'" aria-hidden="true"></span>').join("");}
+  function renderUnderworldPile(side,pileId,stackId,countId,label){
+    const cards=side.underworld;
+    $(countId).textContent=cards.length;
+    $(pileId).setAttribute("aria-label",label+": "+cards.length+" cartas");
+    $(stackId).innerHTML=cards.slice(-5).map((id,index,array)=>{
+      const card=cardById[id],middle=(array.length-1)/2,left=(index-middle)*9,angle=(index-middle)*7;
+      const face=card.art?'<img src="'+card.art+'" alt="">':'<span class="underworld-glyph">'+escapeHTML(card.symbol)+'</span>';
+      return '<span class="underworld-card" title="'+escapeHTML(card.name)+'" style="left:calc(50% + '+left+'px);z-index:'+index+';transform:translateX(-50%) rotate('+angle+'deg)">'+face+'<b>'+escapeHTML(card.name)+'</b></span>';
+    }).join("")||'<span class="underworld-empty-mark">✦</span>';
+  }
+  function showMatchResult(){if(!duel?.finished||duel.resultAnimationShown)return;const banner=$("#match-result-banner"),title=$("#match-result-title"),loader=$("#duel-loading-screen"),caption=loader.querySelector(".loading-caption"),result=duel.totalPoints.player>duel.totalPoints.enemy?"victory":duel.totalPoints.enemy>duel.totalPoints.player?"defeat":"draw";banner.classList.remove("victory","defeat","draw");banner.classList.add(result);title.textContent=result==="victory"?"Victory":result==="defeat"?"Defeat":"Draw";banner.hidden=false;duel.resultAnimationShown=true;setTimeout(()=>{banner.hidden=true;if(!duel?.finished)return;caption.textContent="RETORNANDO À ARENA";loader.hidden=false;loader.setAttribute("aria-hidden","false");setTimeout(()=>{if(!duel?.finished)return;loader.hidden=true;loader.setAttribute("aria-hidden","true");caption.textContent="INVOCANDO AS LENDAS";$("#card-detail-backdrop").hidden=true;duel=null;saveDuel();showView("arena");},2800);},3500);}
+  function renderDuel(){if(!duel)return;showMatchResult();const player=duel.player,enemy=duel.enemy;$("#player-trixx").innerHTML=renderTrixx(player);$("#enemy-trixx").innerHTML=renderTrixx(enemy);$("#player-score").textContent=roundScore(player);$("#enemy-score").textContent=roundScore(enemy);$("#hand-count").textContent=player.hand.length+" cartas";$("#deck-remaining").textContent=player.deck.length;$("#player-deck").setAttribute("aria-label","Baralho: "+player.deck.length+" cartas restantes");$("#turn-label").textContent=duel.finished?"DUELO ENCERRADO":"RODADA "+duel.round+(duel.round===3?" · DESEMPATE":" · "+duel.round+"/2")+" · "+(duel.owner==="player"?"SEU TURNO":"TURNO DO OPONENTE");$("#turn-phase").textContent=duel.finished?duel.winner:duel.owner==="player"?"Jogue uma carta ou passe a vez nesta rodada.":"O Guardião está jogando…";$("#end-turn").disabled=duel.owner!=="player"||duel.finished;$("#end-turn").textContent=duel.finished?"Duelo encerrado":"Encerrar turno →";renderUnderworldPile(player,"#underworld-pile","#underworld-stack","#underworld-count","Submundo");renderUnderworldPile(enemy,"#enemy-underworld","#enemy-underworld-stack","#enemy-underworld-count","Submundo do oponente");$("#enemy-deck-remaining").textContent=enemy.deck.length;$("#enemy-deck").setAttribute("aria-label","Baralho do oponente: "+enemy.deck.length+" cartas restantes");$("#enemy-hidden-hand").innerHTML=renderEnemyHand(enemy.hand);$("#enemy-hidden-hand").setAttribute("aria-label","Mão do oponente: "+enemy.hand.length+(enemy.hand.length===1?" carta":" cartas"));$("#shared-zones").innerHTML=renderZones();
+    $("#enemy-field").innerHTML=renderField(enemy);$("#player-field").innerHTML=renderField(player);$("#underworld-cards").innerHTML=player.underworld.length?player.underworld.slice(-4).map(id=>"<span>"+escapeHTML(cardById[id].name)+"</span>").join(""):"<span>Nenhuma carta destruída</span>";$("#enemy-underworld-cards").innerHTML=enemy.underworld.length?enemy.underworld.slice(-4).map(id=>"<span>"+escapeHTML(cardById[id].name)+"</span>").join(""):"<span>Nenhuma carta no Submundo</span>";$("#player-hand").innerHTML=renderHand(player);
+    $("#battle-log").innerHTML=duel.log.map(line=>'<li>'+escapeHTML(line)+'</li>').join("");$("#turn-phase").textContent=duel.finished?duel.winner:duel.owner==="player"?(player.passed?"Você passou. O Guardião continua jogando.":"Jogue suas cartas ou passe para encerrar suas jogadas nesta rodada."):"O Guardião está jogando…";$("#end-turn").disabled=duel.owner!=="player"||duel.finished||player.passed;$("#end-turn").textContent=duel.finished?"Duelo encerrado":player.passed?"Você passou":"Passar a vez";animateDraws();saveDuel();}
 
-  document.querySelectorAll(".filter-tab").forEach((button) => {
-    button.addEventListener("click", () => {
-      document.querySelectorAll(".filter-tab").forEach((tab) => tab.classList.toggle("active", tab === button));
-      activeFilter = button.dataset.filter;
-      filterCollection();
-    });
-  });
-  document.querySelector("#card-search").addEventListener("input", filterCollection);
+  const handElement=$("#player-hand");
+  handElement.addEventListener("click",event=>{if(Date.now()<suppressHandClickUntil)return;const button=event.target.closest(".hand-card");if(!button)return;const index=Number(button.dataset.handIndex),id=button.dataset.cardId;handFocusIndex=index;renderDuel();openCardDetail(id,index);});
+  handElement.addEventListener("pointerdown",event=>{if(event.pointerType==="mouse"||!duel||duel.owner!=="player")return;const button=event.target.closest(".hand-card");if(!button)return;handGesture={pointerId:event.pointerId,startX:event.clientX,startY:event.clientY,index:Number(button.dataset.handIndex),cardId:button.dataset.cardId,moved:false};});
+  document.addEventListener("pointermove",event=>{if(!handGesture||event.pointerId!==handGesture.pointerId)return;const dx=event.clientX-handGesture.startX,dy=event.clientY-handGesture.startY;if(Math.max(Math.abs(dx),Math.abs(dy))<12)return;handGesture.moved=true;const dropHint=$("#drag-drop-indicator");dropHint.hidden=false;dropHint.setAttribute("aria-hidden","false");const card=handElement.querySelector(`[data-hand-index="${handGesture.index}"]`);if(card){card.classList.add("dragging");card.style.transform=`translate(${dx}px,${dy}px) scale(.96)`;card.style.pointerEvents="none";}const overTarget=document.elementFromPoint(event.clientX,event.clientY)?.closest("#player-field, .battle-lane, #drag-drop-indicator");$("#player-field").classList.toggle("drop-ready",Boolean(overTarget&&dy< -20));$("#player-field").querySelectorAll(".battle-lane").forEach(lane=>lane.classList.toggle("drop-ready",Boolean(overTarget===lane&&dy< -20)));dropHint.classList.toggle("active",Boolean(overTarget&&dy< -20));});
+  document.addEventListener("pointerup",event=>{if(!handGesture||event.pointerId!==handGesture.pointerId)return;const gesture=handGesture;handGesture=null;const pointerDropTarget=document.elementFromPoint(event.clientX,event.clientY)?.closest(".battle-lane, #drag-drop-indicator");$("#drag-drop-indicator").hidden=true;$("#drag-drop-indicator").setAttribute("aria-hidden","true");$("#drag-drop-indicator").classList.remove("active");handElement.querySelectorAll(".dragging").forEach(card=>{card.classList.remove("dragging");card.style.removeProperty("transform");card.style.removeProperty("pointer-events");});$("#player-field").classList.remove("drop-ready");$("#player-field").querySelectorAll(".battle-lane").forEach(lane=>lane.classList.remove("drop-ready"));if(!gesture.moved)return;suppressHandClickUntil=Date.now()+450;const dx=event.clientX-gesture.startX,dy=event.clientY-gesture.startY,dropTarget=pointerDropTarget;if(dropTarget&&dy< -25){const lane=dropTarget.closest(".battle-lane"),card=cardById[gesture.cardId];if(card.kind==="unit")tryPlayHandCard(gesture.index,lane?Number(lane.dataset.laneIndex):duel.player.field.length%3);else tryPlayHandCard(gesture.index);return;}if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){if(duel?.player.hand.length){handFocusIndex=(gesture.index+(dx<0?1:-1)+duel.player.hand.length)%duel.player.hand.length;renderDuel();handElement.querySelector(`[data-hand-index="${handFocusIndex}"]`)?.scrollIntoView({behavior:"smooth",block:"nearest",inline:"center"});}return;}});
+  document.addEventListener("pointercancel",event=>{if(handGesture&&event.pointerId===handGesture.pointerId){handGesture=null;handElement.querySelectorAll(".dragging").forEach(card=>{card.classList.remove("dragging");card.style.removeProperty("transform");card.style.removeProperty("pointer-events");});$("#player-field").classList.remove("drop-ready");$("#player-field").querySelectorAll(".battle-lane").forEach(lane=>lane.classList.remove("drop-ready"));$("#drag-drop-indicator").hidden=true;$("#drag-drop-indicator").setAttribute("aria-hidden","true");$("#drag-drop-indicator").classList.remove("active");}});
+  handElement.addEventListener("dragstart",event=>{const button=event.target.closest(".hand-card");if(!button)return;event.dataTransfer.setData("text/plain",button.dataset.handIndex);event.dataTransfer.effectAllowed="move";button.classList.add("dragging");});
+  handElement.addEventListener("dragend",event=>event.target.closest(".hand-card")?.classList.remove("dragging"));
+  $("#player-field").addEventListener("dragover",event=>{event.preventDefault();event.target.closest(".battle-lane")?.classList.add("drop-ready");});
+  $("#player-field").addEventListener("dragleave",event=>{if(!event.currentTarget.contains(event.relatedTarget))event.target.closest(".battle-lane")?.classList.remove("drop-ready");});
+  $("#player-field").addEventListener("drop",event=>{event.preventDefault();$("#player-field").classList.remove("drop-ready");$("#player-field").querySelectorAll(".battle-lane").forEach(lane=>lane.classList.remove("drop-ready"));const index=Number(event.dataTransfer.getData("text/plain")),lane=event.target.closest(".battle-lane");tryPlayHandCard(index,lane?Number(lane.dataset.laneIndex):null);});
+  $("#underworld-pile").addEventListener("click",()=>openUnderworldGallery("player"));$("#enemy-underworld").addEventListener("click",()=>openUnderworldGallery("enemy"));
+  $("#player-field").addEventListener("click",event=>{const mini=event.target.closest(".battle-mini-card");if(mini)openCardDetail(mini.dataset.cardId,null,true);});
+  $("#enemy-field").addEventListener("click",event=>{const mini=event.target.closest(".battle-mini-card");if(mini)openCardDetail(mini.dataset.cardId,null,true);});
+  $("#end-turn").addEventListener("click",()=>{if(!duel||duel.owner!=="player"||duel.finished||duel.player.passed)return;duel.player.passed=true;log("Você passou a vez e não jogará mais nesta rodada.");duel.owner="enemy";renderDuel();setTimeout(enemyTurn,500);});
 
-  ["#add-card", "#add-card-tile", "#new-deck"].forEach((selector) => {
-    document.querySelector(selector).addEventListener("click", () => {
-      showToast("O editor será uma das próximas partes que vamos moldar.");
-    });
-  });
+  function revealArena(){const loader=$("#loading-screen");if(!loader)return;const remaining=Math.max(0,2000-(performance.now()-loadingStartedAt));setTimeout(()=>{loader.classList.add("is-hidden");loader.setAttribute("aria-hidden","true");setTimeout(()=>loader.remove(),400);},remaining);}
+  const loadingStartedAt=performance.now();
+  if(document.readyState==="complete")revealArena();else window.addEventListener("load",revealArena,{once:true});
+  renderCollection();renderDeck();renderStories();
+  const savedDuel=loadDuel();if(savedDuel){duel=savedDuel;showView("duel");if(duel.owner==="enemy"&&!duel.finished)setTimeout(enemyTurn,450);}
+  if("serviceWorker" in navigator&&location.protocol!=="file:")window.addEventListener("load",()=>navigator.serviceWorker.register("./sw.js").catch(()=>{}));
 })();
 
 
-if ('serviceWorker' in navigator && location.protocol !== 'file:') {
-  window.addEventListener('load', () => navigator.serviceWorker.register('./sw.js').catch(() => {}));
-}

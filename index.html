@@ -2,177 +2,125 @@
 <html lang="pt-BR">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#101725">
+  <meta name="description" content="Mythic Clash: duelos de cartas entre lendas de diferentes mundos e eras.">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="apple-touch-icon" href="assets/app-icon.svg">
-  <meta name="description" content="Mythic Clash — duelos de cartas entre lendas de diferentes mundos e eras.">
+  <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
   <title>Mythic Clash — Arena</title>
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles.css?v=116">
 </head>
 <body>
+  <div class="loading-screen" id="loading-screen" role="status" aria-live="polite">
+    <span class="loading-emblem" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5 14.5 9.5 21.5 12 14.5 14.5 12 21.5 9.5 14.5 2.5 12 9.5 9.5Z"/></svg></span>
+    <span class="loading-title">MYTHIC <b>CLASH</b></span>
+    <span class="loading-caption">PREPARANDO A ARENA</span>
+    <span class="loading-track" aria-hidden="true"><i></i></span>
+  </div>
   <div class="app-shell">
-    <aside class="sidebar" aria-label="Navegação principal">
-      <a class="brand" href="#arena" aria-label="Mythic Clash, início">
-        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" focusable="false"><path d="M12 2.5 14.5 9.5 21.5 12 14.5 14.5 12 21.5 9.5 14.5 2.5 12 9.5 9.5Z"/></svg></span>
-        <span class="brand-name">MYTHIC <b>CLASH</b><small>CARD GAME</small></span>
-      </a>
-
-      <div class="nav-caption">JOGAR</div>
-      <nav class="main-nav">
-        <button class="nav-item active" data-view="arena"><span class="nav-icon">⚔</span><span>Arena</span><span class="nav-current"></span></button>
-        <button class="nav-item" data-view="collection"><span class="nav-icon">▤</span><span>Coleção</span><span class="nav-count">01</span></button>
-        <button class="nav-item" data-view="decks"><span class="nav-icon">▧</span><span>Meus baralhos</span></button>
-              <button class="nav-item mobile-universe-link" data-view="lore"><span class="nav-icon">✧</span><span>Universo</span><span class="nav-current"></span></button>
-      </nav>
-
-      <div class="nav-caption nav-caption-spaced">UNIVERSO</div>
-      <nav class="main-nav">
-        <button class="nav-item" data-view="lore"><span class="nav-icon">✧</span><span>O universo</span></button>
-      </nav>
-
-      <div class="sidebar-bottom">
-        <div class="prototype-card">
-          <span class="prototype-spark">✦</span>
-          <div><strong>Protótipo em criação</strong><p>Seu mundo, suas regras.</p></div>
-        </div>
-        <button class="profile-button" type="button" aria-label="Perfil do jogador">
-          <span class="profile-avatar">MC</span>
-          <span class="profile-copy"><strong>Jogador</strong><small>Iniciante</small></span>
-          <span class="profile-dots">···</span>
-        </button>
-      </div>
+    <aside class="sidebar">
+      <a class="brand" href="#arena" aria-label="Mythic Clash, início"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5 14.5 9.5 21.5 12 14.5 14.5 12 21.5 9.5 14.5 2.5 12 9.5 9.5Z"/></svg></span><span class="brand-name">MYTHIC <b>CLASH</b><small>CARD GAME</small></span></a>
+      <div class="nav-group"><p class="nav-label">JOGAR</p><nav class="main-nav" aria-label="Jogar"><button class="nav-item active" data-view="arena"><span class="nav-icon">⚔</span><span>Arena</span></button><button class="nav-item" data-view="collection"><span class="nav-icon">▤</span><span>Coleção</span><i class="nav-count" id="nav-card-count">08</i></button><button class="nav-item" data-view="decks"><span class="nav-icon">▧</span><span>Baralhos</span></button><button class="nav-item" data-view="friends"><span class="nav-icon">♙</span><span>Amigos</span></button></nav></div>
+      <div class="nav-group nav-group-universe"><p class="nav-label">UNIVERSO</p><nav class="main-nav" aria-label="Universo"><button class="nav-item" data-view="lore"><span class="nav-icon">✧</span><span>Universo</span></button><button class="nav-item" data-view="settings"><span class="nav-icon">⚙</span><span>Configurações</span></button></nav></div>
+      <div class="sidebar-bottom"><div class="prototype-card"><span>✦</span><div><b id="account-status-title">Conta online</b><small id="account-status-caption">Entre para salvar seu perfil.</small></div></div><button class="profile profile-link" data-view="profile"><span class="profile-avatar" id="sidebar-avatar">MC</span><span><b id="sidebar-player-name">Visitante</b><small id="sidebar-player-rank">Convidado</small></span></button></div>
     </aside>
 
     <main class="main-content">
-      <header class="topbar">
-        <div class="breadcrumb"><span>MYTHIC CLASH</span><i>/</i><strong id="breadcrumb-current">Arena</strong></div>
-        <div class="topbar-actions">
-          <span class="local-status"><i></i> Protótipo local</span>
-          <button class="icon-button" id="help-button" type="button" aria-label="Sobre o protótipo">?</button>
-        </div>
-      </header>
+      <header class="topbar"><div class="breadcrumb">MYTHIC CLASH <i>/</i> <b id="breadcrumb-current">Arena</b></div><div class="topbar-right"><span class="local-status" id="connection-status"><i></i><b id="connection-status-text">Conta offline</b></span><button class="icon-button" data-view="profile" aria-label="Perfil do jogador">♙</button><button class="icon-button music-toggle" id="music-toggle" type="button" aria-label="Desativar música" aria-pressed="true" title="Música do menu">♫</button><button class="icon-button" id="help-button" aria-label="Sobre este protótipo">?</button></div></header>
 
-      <section class="view active" id="view-arena" aria-labelledby="arena-title">
-        <div class="page-heading">
-          <div>
-            <p class="eyebrow"><span class="eyebrow-line"></span> O CAMPO ESTÁ ABERTO</p>
-            <h1 id="arena-title">A arena te espera<span class="heading-period">.</span></h1>
-            <p class="heading-copy">Reúna suas lendas. Desafie outro mundo.</p>
-          </div>
-          <button class="button button-primary" id="create-match" type="button"><span>＋</span> Criar partida</button>
-        </div>
-
+      <section class="view active" id="view-arena">
+        <div class="page-heading"><div><p class="eyebrow">✦ &nbsp; O CAMPO ESTÁ ABERTO</p><h1>A arena te espera<span>.</span></h1><p>Escolha como quer entrar na batalha.</p></div><button class="button button-primary" id="create-match">⚔ &nbsp; Guardião da Arena</button></div>
+        <section class="arena-mode-grid" aria-label="Modos de batalha"><button class="arena-mode-card" data-online-mode="normal"><span>⚔</span><b>Jogo normal</b><small>Encontre outro jogador para uma partida amistosa.</small><i>ENCONTRAR PARTIDA →</i></button><button class="arena-mode-card ranked-mode" data-online-mode="ranked"><span>✦</span><b>Ranqueada</b><small>Busque um adversário próximo da sua classificação.</small><i>BUSCAR ADVERSÁRIO →</i></button><button class="arena-mode-card friend-mode" data-open-challenge><span>⌘</span><b>Desafiar</b><small>Convide um amigo ou entre com um código.</small><i>CRIAR OU ENTRAR →</i></button></section>
+        <div class="online-queue-status" id="queue-status" hidden><span id="queue-status-text"></span><button class="button button-secondary" id="cancel-queue">Cancelar busca</button></div>
+        <section class="challenge-panel panel" id="challenge-panel" hidden><header><div><small>DESAFIO DIRETO</small><h2>Convide alguém para a Arena</h2></div><button class="modal-close" type="button" data-close-challenge aria-label="Fechar">×</button></header><div class="challenge-columns"><form id="create-invite-form"><label>Código de amigo (opcional)<input id="invite-friend-code" maxlength="8" placeholder="Ex.: A1B2C3D4"></label><button class="button button-primary" type="submit">Criar código de desafio</button><output id="created-invite-code"></output></form><form id="join-invite-form"><label>Código recebido<input id="join-invite-code" required maxlength="8" placeholder="Digite o código"></label><button class="button button-secondary" type="submit">Entrar no desafio</button><output id="joined-invite-status"></output></form></div></section>
         <div class="arena-layout">
-          <section class="duel-panel" aria-label="Painel da arena">
-            <div class="panel-topline"><div><span class="panel-kicker">ARENA DE DUELO</span><span class="live-pill"><i></i> SALA ABERTA</span></div><button class="text-button" id="join-match" type="button">Entrar com código <span>↗</span></button></div>
-            <div class="duel-stage">
-              <div class="stage-glow"></div><div class="stage-ornament stage-ornament-left">✧</div><div class="stage-ornament stage-ornament-right">✧</div>
-              <div class="combatant combatant-you">
-                <div class="combatant-avatar avatar-you"><span>MC</span><i class="ready-dot"></i></div>
-                <span class="combatant-label">JOGADOR</span>
-                <h2>Você</h2>
-                <span class="combatant-meta">Baralho de demonstração</span>
-              </div>
-              <div class="versus"><span class="versus-rule"></span><b>VS</b><span class="versus-rule"></span><small>PRONTO PARA O DUELO</small></div>
-              <div class="combatant combatant-opponent">
-                <div class="combatant-avatar avatar-opponent"><span>?</span><i class="search-pulse"></i></div>
-                <span class="combatant-label">ADVERSÁRIO</span>
-                <h2>Aguardando</h2>
-                <span class="combatant-meta">Convide alguém para jogar</span>
-              </div>
-            </div>
-            <div class="arena-footer">
-              <div class="arena-note"><span class="note-mark">✦</span><span><strong>Seu próximo duelo começa aqui</strong><small>Crie uma sala privada ou entre com um código de convite.</small></span></div>
-              <button class="button button-secondary" id="invite-friend" type="button">Convidar amigo <span>↗</span></button>
-            </div>
-          </section>
-
-          <aside class="featured-card-panel">
-            <div class="featured-heading"><div><span class="panel-kicker">EM DESTAQUE</span><h2>Uma lenda desperta</h2></div><span class="card-index">01 <i>/</i> 01</span></div>
-            <button class="featured-card-button" data-view="collection" type="button" aria-label="Abrir coleção e ver Soldado de Esparta">
-              <img class="featured-card" src="assets/soldado-esparta.png" alt="Carta Soldado de Esparta, com poder 3 e a habilidade Formação Espartana">
-              <span class="card-halo"></span>
-            </button>
-            <div class="featured-caption"><span class="caption-rarity"><i></i> COMPANHEIRO · GRÉCIA</span><span class="caption-power"><span>✦</span> 3 PODER</span></div>
-          </aside>
+          <section class="panel arena-panel"><div class="panel-heading"><div><small>ARENA DE DUELO</small><h2>Uma partida de demonstração</h2></div><span class="live-pill"><i></i> PRONTO</span></div><div class="arena-stage"><div class="combatant"><span class="combat-avatar">MC</span><small>JOGADOR</small><b>Você</b><span>Seu baralho salvo</span></div><div class="versus"><i></i><b>VS</b><i></i><small>CAMPO DE BATALHA</small></div><div class="combatant"><span class="combat-avatar enemy">?</span><small>OPONENTE</small><b>Guardião da Arena</b><span>Oponente de demonstração</span></div></div><div class="arena-foot"><p>Teste cartas, habilidades e o ritmo dos turnos antes do PvP online.</p><button class="button button-secondary" id="open-rules">Ver regras</button></div></section>
+          <section class="panel featured-panel"><div class="section-kicker">EM DESTAQUE</div><h2>Soldado de Esparta</h2><button class="featured-card-button" data-card="soldado-esparta" aria-label="Ver detalhes do Soldado de Esparta"><img src="assets/soldado-esparta-sem-pontas-azuis.png" alt="Carta Soldado de Esparta"></button><div class="featured-caption"><span>COMPANHEIRO · GRÉCIA</span><b>✦ 3 PODER</b></div></section>
         </div>
-
-        <div class="lower-grid">
-          <section class="lower-panel collection-teaser">
-            <div class="lower-panel-title"><div><span class="panel-kicker">SUA COLEÇÃO</span><h2>Comece pelas lendas</h2></div><button class="arrow-link" data-view="collection" type="button">Ver coleção <span>→</span></button></div>
-            <div class="collection-summary">
-              <div class="mini-card mini-card-gold"><span>✦</span><small>01</small></div>
-              <div><strong>1 carta criada</strong><p>Personagens, deuses e criaturas vão ganhar forma aqui.</p></div>
-              <button class="round-arrow" data-view="collection" type="button" aria-label="Abrir coleção">→</button>
-            </div>
-          </section>
-          <section class="lower-panel deck-teaser">
-            <div class="lower-panel-title"><div><span class="panel-kicker">BARALHO ATIVO</span><h2>Baralho de demonstração</h2></div><span class="deck-status">RASCUNHO</span></div>
-            <div class="deck-summary"><div class="stack-icon"><span></span><span></span><span>✦</span></div><div><strong>Pronto para montar</strong><p>Organize as cartas que quer levar à arena.</p></div><button class="round-arrow" data-view="decks" type="button" aria-label="Abrir baralhos">→</button></div>
-          </section>
-        </div>
-        <footer class="page-footer"><span>MYTHIC CLASH</span><span>UM UNIVERSO DE LENDAS, EM CONSTRUÇÃO</span><span>VERSÃO DE ESTUDO <i>✦</i></span></footer>
+        <div class="home-lower"><section class="panel quick-panel"><small>SUA COLEÇÃO</small><h2>Oito cartas de demonstração</h2><p>Personagens, locais, runas, relíquias e eventos para testar o duelo.</p><button class="text-link" data-view="collection">Explorar coleção →</button></section><section class="panel quick-panel"><small>BARALHO ATIVO</small><h2>Baralho de demonstração</h2><p>Edite sua lista e salve as alterações neste navegador.</p><button class="text-link" data-view="decks">Montar baralho →</button></section></div>
       </section>
 
-      <section class="view" id="view-collection" aria-labelledby="collection-title" hidden>
-        <div class="page-heading compact-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> HERÓIS, DEUSES E CRIATURAS</p><h1 id="collection-title">Sua coleção<span class="heading-period">.</span></h1><p class="heading-copy">As lendas que você reunir poderão mudar o rumo de cada duelo.</p></div><button class="button button-primary" id="add-card" type="button"><span>＋</span> Nova carta</button></div>
-        <div class="collection-toolbar"><div class="filter-tabs"><button class="filter-tab active" data-filter="all">Todas <span>01</span></button><button class="filter-tab" data-filter="personagem">Personagens</button><button class="filter-tab" data-filter="companheiro">Companheiros</button><button class="filter-tab" data-filter="grecia">Grécia</button></div><label class="search-box"><span>⌕</span><input id="card-search" type="search" placeholder="Buscar carta" aria-label="Buscar carta"></label></div>
-        <div class="collection-grid" id="collection-grid">
-          <article class="collection-card" data-category="personagem companheiro grecia" data-name="soldado de esparta">
-            <button class="collection-card-art" type="button" data-card-detail><img src="assets/soldado-esparta.png" alt="Carta Soldado de Esparta"></button>
-            <div class="collection-card-info"><div><span class="card-kind">COMPANHEIRO · GRÉCIA</span><h2>Soldado de Esparta</h2></div><span class="power-chip">3 <small>PODER</small></span></div>
-            <p class="collection-card-rule">Formação Espartana <span>·</span> Efeitos acumulativos</p>
-          </article>
-          <button class="create-card-tile" id="add-card-tile" type="button"><span class="create-plus">＋</span><strong>Uma nova lenda</strong><small>Adicione outra carta à coleção</small></button>
-        </div>
-        <div class="empty-search" id="empty-search" hidden>Nenhuma carta encontrada com esse nome.</div>
-        <footer class="page-footer"><span>MYTHIC CLASH</span><span>COLEÇÃO EM CONSTRUÇÃO</span><span>01 CARTA <i>✦</i></span></footer>
-      </section>
-
-      <section class="view" id="view-decks" aria-labelledby="decks-title" hidden>
-        <div class="page-heading compact-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> PREPARE SUAS LENDAS</p><h1 id="decks-title">Meus baralhos<span class="heading-period">.</span></h1><p class="heading-copy">Monte combinações para levar à arena. As regras ainda estão sendo definidas.</p></div><button class="button button-primary" id="new-deck" type="button"><span>＋</span> Criar baralho</button></div>
-        <article class="deck-large-card"><div class="deck-large-art"><span class="deck-large-symbol">✦</span><span class="deck-large-rune">Λ</span></div><div class="deck-large-copy"><span class="panel-kicker">RASCUNHO · BARALHO 01</span><h2>Baralho de demonstração</h2><p>Seu primeiro baralho está pronto para receber personagens, relíquias, eventos e companheiros.</p><div class="deck-progress"><span><i></i></span><small>1 carta adicionada</small></div><button class="button button-secondary" data-view="collection" type="button">Adicionar cartas <span>→</span></button></div><span class="deck-large-count"><strong>01</strong><small>CARTA</small></span></article>
-        <div class="deck-note"><span>✧</span><p><strong>As regras estão em aberto.</strong> Por enquanto, este espaço serve para visualizar e organizar os baralhos. Vamos moldar o sistema de construção juntos.</p></div>
-        <footer class="page-footer"><span>MYTHIC CLASH</span><span>BARALHOS EM CONSTRUÇÃO</span><span>01 BARALHO <i>✦</i></span></footer>
-      </section>
-
-      <section class="view" id="view-lore" aria-labelledby="lore-title" hidden>
-        <div class="page-heading compact-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> ENTRE MUNDOS E ERAS</p><h1 id="lore-title">O universo<span class="heading-period">.</span></h1><p class="heading-copy">Mitologias, figuras históricas e mundos de ficção podem se encontrar aqui.</p></div></div>
-        <div class="lore-hero"><div class="lore-sigil">✦</div><span class="panel-kicker">A CONVERGÊNCIA</span><h2>Quando as lendas se encontram,<br>o impossível vira história.</h2><p>Mythic Clash reúne personagens de diferentes culturas e épocas em confrontos estratégicos. A história deste universo ainda está sendo escrita — por você também.</p><button class="button button-secondary" data-view="arena" type="button">Voltar à arena <span>→</span></button></div>
-        <div class="lore-pillars"><article><span>Ⅰ</span><h3>Mitologias</h3><p>Deuses, semideuses, monstros e heróis das tradições do mundo.</p></article><article><span>Ⅱ</span><h3>História</h3><p>Personagens históricos reimaginados para um universo fantástico.</p></article><article><span>Ⅲ</span><h3>Novos mundos</h3><p>Espaço para ficção e novas lendas, respeitando os direitos de uso.</p></article></div>
-        <section class="lore-stories" aria-labelledby="lore-stories-title">
-          <div class="lore-stories-heading"><span class="panel-kicker">CRÔNICAS DAS CARTAS</span><h2 id="lore-stories-title">A história por trás das lendas</h2><p>Conheça a origem e os feitos de cada carta da coleção.</p></div>
-          <article class="lore-story-card" data-story-card>
-            <div class="lore-story-art"><img src="assets/soldado-esparta.png" alt="Carta Soldado de Esparta"></div>
-            <div class="lore-story-content"><div class="lore-story-meta"><span>PERSONAGEM · GRÉCIA</span><span class="lore-story-power">✦ 3 PODER</span></div><h3>Soldado de Esparta</h3><p class="lore-story-intro">Um guerreiro que aprendeu que a força da falange nasce da confiança entre seus companheiros.</p>
-              <button class="lore-story-toggle" type="button" aria-expanded="false" aria-controls="story-spartan-soldier">Ler história <span>＋</span></button>
-              <div class="lore-story-full" id="story-spartan-soldier" hidden><p>Esta carta representa um personagem original inspirado nos guerreiros da antiga Esparta. Desde jovem, ele treinou para manter a posição ao lado dos outros: escudo firme, lança pronta e atenção ao companheiro.</p><p>Na arena, sua habilidade <strong>Formação Espartana</strong> transforma essa disciplina em poder. Cada Soldado de Esparta fortalece os demais e também recebe o mesmo impulso. Quanto maior a união, mais difícil romper a linha.</p><p class="lore-story-note">A história é uma releitura fantástica; o personagem não representa uma pessoa histórica específica.</p></div>
-            </div>
-          </article>
+      <section class="view" id="view-duel" hidden>
+        <div class="page-heading duel-heading"><div><p class="eyebrow">✦ &nbsp; PARTIDA LOCAL</p><h1>Duelo em andamento<span>.</span></h1><p>Simulação contra um oponente controlado pelo protótipo.</p></div><button class="button button-secondary" id="leave-duel">Sair do duelo</button></div>
+        <div class="match-status"><b id="turn-label">SEU TURNO · 1</b><span id="turn-phase">Jogue suas cartas ou encerre o turno</span></div>
+          <section class="battle-board panel" aria-label="Campo de batalha">
+          <div class="battle-side enemy-side"><div class="deck-pile enemy-deck" id="enemy-deck" aria-label="Baralho do oponente"><span class="deck-pile-count" id="enemy-deck-remaining">0</span><span class="deck-pile-star">✦</span><small>BARALHO</small></div><div class="battle-player"><button class="underworld-pile enemy-underworld" id="enemy-underworld" aria-label="Submundo do oponente: 0 cartas"><span class="underworld-stack" id="enemy-underworld-stack"></span><small>SUBMUNDO</small><b id="enemy-underworld-count">0</b></button></div><div class="battle-row-label">CAMPO DO OPONENTE</div><div class="enemy-hidden-hand" id="enemy-hidden-hand" aria-label="Mão do oponente"></div><div class="battle-layout enemy-layout"><div class="enemy-corner-stack"><div class="player-identity enemy-identity"><span class="battle-avatar enemy-avatar">?</span><div><small>OPONENTE</small><b>Guardião</b></div></div></div><div class="battle-field enemy-field" id="enemy-field"></div></div><div class="underworld-list enemy-underworld-list" id="enemy-underworld-cards"><span>Nenhuma carta no Submundo</span></div></div>
+          <div class="battle-divider" id="battle-divider"><span>✦</span></div>
+          <div class="shared-zones-wrap"><small>INFLUÊNCIA SOBRE A ARENA</small><div class="shared-zone-line"><div class="zone-status enemy-zone-status"><span class="trixx-meter"><span class="trixx-stars" id="enemy-trixx"></span><small>TRIXX</small></span><span class="round-score"><b id="enemy-score">0</b><small>PONTOS</small></span></div><div class="battle-zones shared-zones" id="shared-zones" aria-label="Espaços compartilhados para Local, Terreno e Clima"></div><div class="zone-status player-zone-status"><span class="trixx-meter"><span class="trixx-stars" id="player-trixx"></span><small>TRIXX</small></span><span class="round-score"><b id="player-score">0</b><small>PONTOS</small></span></div></div></div>
+          <div class="battle-side player-side"><div class="battle-player"><button class="underworld-pile header-underworld" id="underworld-pile" aria-label="Submundo: 0 cartas"><span class="underworld-stack" id="underworld-stack"></span><small>SUBMUNDO</small><b id="underworld-count">0</b></button></div><div class="battle-row-label">SEU CAMPO</div><div class="battle-layout player-layout"><div class="battle-field player-field" id="player-field"></div><div class="player-corner-stack"><div class="deck-pile" id="player-deck" aria-label="Baralho do jogador"><span class="deck-pile-count" id="deck-remaining">0</span><span class="deck-pile-star">✦</span><small>BARALHO</small></div><div class="player-identity"><span class="battle-avatar">MC</span><div><small>VOCÊ</small><b>Jogador</b></div></div></div></div><div class="underworld-list" id="underworld-cards"><span>Nenhuma carta destruída</span></div></div>
+          <button class="button battlefield-pass-button" id="end-turn">Passar a vez</button>
         </section>
-        <footer class="page-footer"><span>MYTHIC CLASH</span><span>O UNIVERSO EM CONSTRUÇÃO</span><span>VERSÃO DE ESTUDO <i>✦</i></span></footer>
+        
+        <section class="panel hand-panel"><div class="panel-heading"><div><small>SUA MÃO</small><h2>Toque para ampliar · arraste ao campo para jogar</h2></div><span id="hand-count">4 cartas</span></div><div class="battle-hand" id="player-hand"></div><p class="hand-instruction">Comece com 4 cartas e compre 1 no primeiro turno; depois, 1 a cada 2 turnos. As cartas restantes ficam na mão entre rodadas; no início de cada nova rodada, compre 2.</p></section>
+        <section class="panel battle-log"><small>REGISTRO DO DUELO</small><ol id="battle-log" aria-live="polite"></ol></section>
+      </section>
+
+      <section class="view" id="view-collection" hidden>
+        <div class="page-heading"><div><p class="eyebrow">✦ &nbsp; HERÓIS, DEUSES E CRIATURAS</p><h1>Sua coleção<span>.</span></h1><p>Abra qualquer carta para ver seu poder, habilidade e história.</p></div><button class="button button-primary" id="go-decks">Montar baralho →</button></div>
+        <div class="collection-toolbar"><div class="filter-tabs" id="filter-tabs"></div><label class="search-box">⌕ <input id="card-search" type="search" placeholder="Buscar carta" aria-label="Buscar carta"></label><select id="faction-filter" aria-label="Filtrar por facção"><option value="all">Todas as facções</option></select></div>
+        <div class="collection-grid" id="collection-grid"></div><div class="empty-state" id="empty-search" hidden>Nenhuma carta encontrada com esses filtros.</div>
+      </section>
+
+      <section class="view" id="view-decks" hidden>
+        <div class="page-heading"><div><p class="eyebrow">✦ &nbsp; PREPARE SUAS LENDAS</p><h1>Construtor de baralho<span>.</span></h1><p>Adicione ou remova cartas. O progresso fica salvo neste navegador.</p></div><button class="button button-secondary" id="reset-deck">Restaurar sugestão</button></div>
+        <div class="deck-summary panel"><div class="deck-symbol">✦</div><div><small>BARALHO DE DEMONSTRAÇÃO</small><h2 id="deck-total">0 / 20 cartas</h2><p id="deck-rule">Mínimo de 12 cartas para iniciar um duelo.</p></div><button class="button button-primary" id="save-deck">Salvar baralho</button></div>
+        <div class="deck-list panel" id="deck-card-list"></div><p class="deck-save-status" id="deck-save-status" aria-live="polite">Alterações salvas localmente.</p>
+      </section>
+
+      <section class="view" id="view-lore" hidden>
+        <div class="page-heading"><div><p class="eyebrow">✦ &nbsp; ENTRE MUNDOS E ERAS</p><h1>O universo<span>.</span></h1><p>Leia as histórias das cartas e consulte as regras desta arena.</p></div></div>
+        <section class="lore-hero panel"><span class="lore-sigil">✦</span><small>A CONVERGÊNCIA</small><h2>Quando as lendas se encontram,<br>o impossível vira história.</h2><p>Mitologias, figuras históricas e novos mundos podem se encontrar em confrontos estratégicos. As histórias abaixo são releituras fantásticas das cartas da coleção.</p></section>
+        <section class="lore-stories"><div class="section-title"><small>CRÔNICAS DAS CARTAS</small><h2>A história por trás das lendas</h2><p>Cada carta da coleção tem uma história, habilidade e origem.</p></div><div class="lore-story-list" id="lore-story-list"></div></section>
+        <section class="rules-overview"><div class="section-title"><small>REGRAS DA ARENA</small><h2>Como funciona um duelo</h2><p>Regras iniciais do protótipo, abertas a ajustes.</p></div><div class="rules-grid"><article><b>01</b><h3>Objetivo</h3><p>Vence quem somar mais pontos de poder das cartas ao fim de duas rodadas. Se houver empate, uma terceira rodada decide.</p></article><article><b>02</b><h3>Turno</h3><p>Comece com 4 cartas, compre uma no primeiro turno e depois a cada dois turnos. No começo das rodadas seguintes, mantenha sua mão e compre mais 2. Cada jogador pode jogar uma carta por turno; depois da resolução do efeito, a vez passa ao oponente. Se a habilidade exigir uma escolha, resolva-a antes da troca de turno.</p></article><article><b>03</b><h3>Campo</h3><p>O campo tem três linhas horizontais e aceita um número ilimitado de cartas em miniatura. Cartas no campo vão para o Submundo ao encerrar a rodada. Some o poder delas para marcar pontos na rodada.</p></article><article><b>04</b><h3>Rodadas e Trixx</h3><p>A rodada só termina quando ambos passarem ou ficarem sem cartas. Ao passar, você não pode jogar novamente até a próxima rodada; o oponente pode continuar. Vence a rodada quem tiver mais pontos. Cada jogador tem duas Trixx, estrelas convergentes.</p></article><article><b>05</b><h3>Territórios da arena</h3><p>Local, Terreno e Clima ocupam espaços compartilhados e afetam o campo dos dois jogadores. A mão e o tabuleiro têm textura de pedra rachada.</p></article><article><b>06</b><h3>PvP online</h3><p>Esta versão usa um oponente automático. Partidas online e contas ainda não estão conectadas.</p></article></div></section>
+      </section>
+
+      <section class="view" id="view-friends" hidden>
+        <div class="page-heading"><div><p class="eyebrow">✦ &nbsp; SUA COMPANHIA</p><h1>Amigos<span>.</span></h1><p>Adicione jogadores pelo código e conversem em um chat privado.</p></div></div>
+        <section class="friends-toolbar panel"><form id="friend-search-form"><label>Adicionar por código<input id="friend-search-code" maxlength="8" placeholder="Código do jogador" required></label><button class="button button-primary" type="submit">Buscar jogador</button></form><p id="friend-search-result" aria-live="polite"></p><span>Seu código: <b id="my-friend-code">—</b> <button class="text-link" id="copy-friend-code" type="button">Copiar</button></span></section>
+        <div class="friends-layout"><section class="panel friends-list-panel"><header><small>AMIGOS E SOLICITAÇÕES</small><button class="text-link" id="refresh-friends" type="button">Atualizar</button></header><div id="friends-list"><p class="empty-state">Entre para carregar seus amigos.</p></div></section><section class="panel friend-chat-panel"><header><div><small>CHAT PRIVADO</small><h2 id="chat-friend-name">Escolha um amigo</h2></div><span id="chat-connection-status"></span></header><div class="friend-messages" id="friend-messages"><p class="empty-state">Suas conversas aparecerão aqui.</p></div><form class="friend-message-form" id="friend-message-form"><input id="friend-message-input" maxlength="2000" placeholder="Escreva uma mensagem…" autocomplete="off" disabled><button class="button button-primary" type="submit" disabled>Enviar</button></form></section></div>
+      </section>
+
+      <section class="view" id="view-profile" hidden>
+        <div class="page-heading"><div><p class="eyebrow">✦ &nbsp; SUA LENDA</p><h1>Perfil do jogador<span>.</span></h1><p>Seu nome, classificação, resultados e código de amigo.</p></div></div>
+        <section class="player-profile-card panel"><div class="player-profile-avatar" id="profile-avatar">MC</div><div><small>JOGADOR</small><h2 id="profile-display-name">Visitante</h2><span id="profile-email">Entre para conectar sua conta.</span></div><div class="profile-stats"><span><b id="profile-rating">1000</b><small>CLASSIFICAÇÃO</small></span><span><b id="profile-wins">0</b><small>VITÓRIAS</small></span><span><b id="profile-losses">0</b><small>DERROTAS</small></span></div></section>
+        <form class="profile-edit-form panel" id="profile-edit-form"><label>Nome público<input id="profile-name-input" minlength="2" maxlength="24" required placeholder="Como você aparece para os outros"></label><button class="button button-primary" type="submit">Salvar perfil</button><p id="profile-save-status" aria-live="polite"></p></form>
+      </section>
+
+      <section class="view" id="view-settings" hidden>
+        <div class="page-heading"><div><p class="eyebrow">✦ &nbsp; PREFERÊNCIAS</p><h1>Configurações<span>.</span></h1><p>Ajuste áudio, notificações e sua sessão.</p></div></div>
+        <form class="settings-panel panel" id="settings-form"><label class="setting-row"><span><b>Música</b><small>Trilha dos menus e partidas</small></span><input type="checkbox" id="setting-music" checked></label><label class="setting-row"><span><b>Efeitos sonoros</b><small>Sons de cartas e animações</small></span><input type="checkbox" id="setting-effects" checked></label><label class="setting-row"><span><b>Notificações</b><small>Mensagens, pedidos e desafios</small></span><input type="checkbox" id="setting-notifications" checked></label><button class="button button-primary" type="submit">Salvar configurações</button><p id="settings-save-status" aria-live="polite"></p><button class="button button-secondary" type="button" id="sign-out">Sair da conta</button></form>
       </section>
     </main>
   </div>
 
-  <div class="modal-backdrop" id="modal-backdrop" hidden>
-    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <button class="modal-close" id="modal-close" type="button" aria-label="Fechar">×</button>
-      <div class="modal-sigil">✦</div>
-      <span class="panel-kicker" id="modal-kicker">SALA PRIVADA</span>
-      <h2 id="modal-title">Convide alguém para a arena</h2>
-      <p class="modal-copy" id="modal-copy">Crie um código de demonstração para compartilhar com seu oponente.</p>
-      <div class="invite-code-row" id="invite-code-row"><span id="invite-code">MYTH-0000</span><button id="copy-code" type="button">Copiar</button></div>
-      <label class="join-code-field" id="join-code-field" hidden>Código da partida<input id="join-code-input" type="text" maxlength="12" placeholder="Ex.: MYTH-4821"></label>
-      <button class="button button-primary modal-action" id="modal-action" type="button">Pronto</button>
-      <small class="modal-footnote">Protótipo visual · nenhuma partida online está conectada ainda</small>
-    </section>
+  <div class="drag-drop-indicator" id="drag-drop-indicator" aria-hidden="true" hidden>✧ &nbsp; SOLTE PARA JOGAR NO CAMPO</div>
+
+  <div class="loading-screen duel-loading-screen" id="duel-loading-screen" role="status" aria-live="polite" aria-hidden="true" hidden>
+    <span class="loading-emblem" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5 14.5 9.5 21.5 12 14.5 14.5 12 21.5 9.5 14.5 2.5 12 9.5 9.5Z"/></svg></span>
+    <span class="loading-title">MYTHIC <b>CLASH</b></span>
+    <span class="loading-caption">INVOCANDO AS LENDAS</span>
+    <span class="loading-track" aria-hidden="true"><i></i></span>
   </div>
-  <div class="toast" id="toast" role="status" aria-live="polite"></div>
-  <script src="app.js" defer></script>
+
+  <div class="card-detail-backdrop" id="card-detail-backdrop" hidden><section class="card-detail-modal" id="card-detail-modal" role="dialog" aria-modal="true" aria-labelledby="card-detail-title"><button class="modal-close" id="card-detail-close" aria-label="Fechar">×</button><button class="detail-swipe detail-swipe-prev" id="card-detail-prev" aria-label="Carta anterior" hidden>‹</button><div class="expanded-hand-fan" id="expanded-hand-fan" aria-hidden="true" hidden></div><div class="card-detail-art" id="card-detail-art"></div><div class="card-detail-copy"><small id="card-detail-kind"></small><h2 id="card-detail-title"></h2><p id="card-detail-faction"></p><div class="detail-stats"><span><b id="card-detail-power"></b><small>PODER</small></span><span class="detail-hand-count" id="card-detail-count" hidden></span></div><h3>Habilidade</h3><p id="card-detail-ability"></p><h3>História</h3><div id="card-detail-story"></div><p class="detail-play-hint" id="detail-play-hint" hidden></p><button class="button button-primary detail-play-button" id="card-detail-action" hidden>Jogar no campo</button></div><button class="detail-swipe detail-swipe-next" id="card-detail-next" aria-label="Próxima carta" hidden>›</button></section></div>
+  <div class="underworld-gallery" id="underworld-gallery" hidden><section class="underworld-gallery-panel" role="dialog" aria-modal="true" aria-labelledby="underworld-gallery-title"><header><div><small>SUBMUNDO</small><h2 id="underworld-gallery-title">Cartas destruídas</h2></div><button class="modal-close" id="underworld-gallery-close" aria-label="Fechar Submundo">×</button></header><div class="underworld-gallery-cards" id="underworld-gallery-cards"></div></section></div>
+  <div class="match-result-banner" id="match-result-banner" hidden aria-live="assertive" role="status">
+    <span class="result-ribbon" aria-hidden="true"><i></i><b></b></span>
+    <span class="result-explosion result-explosion-one" aria-hidden="true"><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i></span>
+    <span class="result-explosion result-explosion-two" aria-hidden="true"><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i><i>✦</i></span>
+    <img class="result-emblem result-victory-emblem" src="assets/victory-emblem.png" alt="">
+    <img class="result-emblem result-defeat-emblem" src="assets/defeat-emblem.png" alt="">
+    <span class="match-result-title" id="match-result-title"></span>
+  </div>
+  <div class="account-gate" id="account-gate" hidden><section class="account-gate-card panel"><a class="brand" href="#arena"><span class="brand-mark">✦</span><span class="brand-name">MYTHIC <b>CLASH</b><small>CARD GAME</small></span></a><p class="eyebrow">✦ &nbsp; ENTRE NA CONVERGÊNCIA</p><h1 id="auth-heading">Sua próxima lenda começa aqui.</h1><p id="auth-description">Entre ou crie uma conta para salvar seu perfil e conversar com jogadores.</p><form id="sign-in-form"><label>E-mail<input id="sign-in-email" type="email" autocomplete="email" required></label><label>Senha<input id="sign-in-password" type="password" autocomplete="current-password" minlength="8" required></label><button class="button button-primary" type="submit">Entrar</button><button class="text-link" type="button" data-auth-switch="signup">Criar conta</button></form><form id="sign-up-form" hidden><label>Nome público<input id="sign-up-name" type="text" autocomplete="nickname" minlength="2" maxlength="24" required></label><label>E-mail<input id="sign-up-email" type="email" autocomplete="email" required></label><label>Senha<input id="sign-up-password" type="password" autocomplete="new-password" minlength="8" required></label><button class="button button-primary" type="submit">Criar minha conta</button><button class="text-link" type="button" data-auth-switch="signin">Já tenho uma conta</button></form><p id="auth-message" aria-live="polite"></p><small class="auth-security-note">A senha é gerenciada pelo Supabase Authentication.</small></section></div>
+  <audio id="menu-music" src="assets/menu-theme.mp3" preload="auto" loop></audio>
+  <audio id="battle-music" src="assets/battle-theme.mp3" preload="auto" loop></audio>
+  <div class="toast" id="toast" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
+  <script src="supabase-config.js" defer></script>
+  <script src="app.js?v=92" defer></script>
+  <script src="online.js?v=1" defer></script>
 </body>
 </html>

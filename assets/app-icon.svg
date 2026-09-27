@@ -2,6 +2,6 @@
   <rect width="512" height="512" rx="112" fill="#101725"/>
   <circle cx="256" cy="256" r="183" fill="none" stroke="#8d6836" stroke-width="8"/>
   <circle cx="256" cy="256" r="165" fill="none" stroke="#d4ad64" stroke-opacity=".45" stroke-width="2"/>
-  <path d="m256 112 42 116 116 42-116 42-42 116-42-116-116-42 116-42z" fill="#f0d18a"/>
+  <path d="m256 112 42 116 116 42-116 42-42 116-42-116-116-42 116-42z" transform="translate(0 -14)" fill="#f0d18a"/>
   <path d="M256 153v206M153 256h206" stroke="#fff2cc" stroke-width="8" stroke-linecap="round"/>
 </svg>

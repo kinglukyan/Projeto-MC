@@ -1,0 +1,22 @@
+MYTHIC CLASH — PROTÓTIPO
+
+ABRIR NO COMPUTADOR
+Abra index.html no navegador.
+
+ABRIR NO CELULAR
+O layout se adapta a telas pequenas. Para abrir pelo celular usando uma URL, publique o conteúdo desta pasta como site estático (por exemplo, em Vercel). O acesso por HTTPS habilita a instalação como app e o cache offline. mobile.html encaminha para a mesma interface responsiva.
+
+RECURSOS LOCAIS
+- Trilha do menu em loop; troca para a trilha das partidas durante o duelo, com controle para ativar ou desativar.
+- Arena local contra um oponente automático.
+- Turnos com uma carta por jogador, mão, campo em três linhas, habilidades e registro de ações.
+- Coleção com busca, filtros por tipo e facção, detalhes e histórias.
+- Baralho editável de 12 a 20 cartas, até 3 cópias por carta, salvo no navegador.
+- Regras acessíveis pela seção Universo.
+
+CONEXÃO SUPABASE EM PREPARAÇÃO
+- Há telas de conta, perfil, amigos/chat, configurações, fila normal/ranqueada e desafio por código.
+- Para ativá-las, configure a Project URL e a chave pública em supabase-config.js e aplique supabase/migrations/202609270001_online_game.sql no SQL Editor do Supabase.
+- O banco reserva partidas e protege o estado do jogo contra alterações diretas do navegador. A sincronização das ações no tabuleiro online e validação de resultados ranqueados ainda precisa ser ligada antes de partidas PvP funcionarem de ponta a ponta.
+- Não coloque a chave service_role no site. Ela dá acesso administrativo e nunca deve ser publicada no GitHub.
+- O Supabase Auth precisa ser acessado por um endereço HTTPS/localhost, não abrindo o arquivo index.html diretamente como file://.
