@@ -20,9 +20,10 @@ CONTA E PARTIDAS ONLINE
 - Loja de ícones, cartas e texturas, resgate de código presente e até cinco decks sincronizados na conta.
 - Animação de cartas ao entrar no campo e destaque para os espaços especiais de Local, Terreno e Clima.
 - A arena online carrega salas aceitas/encontradas e envia jogadas e passagens de turno para validação no Supabase.
-- Para conectar sua instância, preencha Project URL e a chave pública (publishable/anon) em supabase-config.js e execute em ordem as migrações `202609270001_online_game.sql`, `202609270002_progression_store.sql`, `202609270003_admin_console.sql` e `202609270004_profile_icons_and_intro.sql` no SQL Editor do Supabase.
+- Para conectar sua instância, preencha Project URL e a chave pública (publishable/anon) em supabase-config.js e execute em ordem as migrações `202609270001_online_game.sql`, `202609270002_progression_store.sql`, `202609270003_admin_console.sql`, `202609270004_profile_icons_and_intro.sql` e `202609270005_card_customizer.sql` no SQL Editor do Supabase.
 - Cadastre o endereço HTTPS publicado em Authentication → URL Configuration e habilite Realtime para as tabelas indicadas em supabase/README.md.
 - O painel Administração aparece para a conta autenticada `santoslucasalmeida@gmail.com`. Ele permite atualizar o catálogo, criar/desativar códigos de presente, publicar comunicados, ajustar XP/Mythic Coins e editar histórias/trilhas tema. A autorização é validada pelo Supabase; a chave service_role não é usada no navegador.
+- O Estúdio de Cartas no painel Administração permite enviar uma ilustração, pré-visualizar a carta completa e salvar nome, título e texto da habilidade, poder e facção. O emblema e o círculo de poder usam as cores da facção: azul grego, lilás nórdico, amarelo egípcio, verde celta, preto monstro e vermelho Alyns.
 - O banco protege o estado e as ações do duelo contra alterações diretas do navegador. A migração ainda precisa ser aplicada e verificada na sua instância antes de abrir partidas reais.
 - Não coloque a chave service_role no site. Ela dá acesso administrativo e nunca deve ser publicada no GitHub.
 - Notificações atualmente usam a permissão local do navegador enquanto o jogo está aberto. Envio de push com o app fechado requer configurar chaves VAPID e um serviço de envio.
