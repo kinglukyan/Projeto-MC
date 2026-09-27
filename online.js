@@ -10,10 +10,14 @@
   const requireLogin = () => { if(session)return true; if(configured)$("#account-gate").hidden=false; else notify("Conecte o Supabase para usar os recursos online."); return false; };
   const displayError = error => error?.message || "Não foi possível concluir. Tente novamente.";
 
-  if(!configured || !window.supabase?.createClient){
+  if(!configured){
     $("#connection-status-text").textContent="Supabase sem configuração";
     $("#account-status-title").textContent="Recursos online";
-    $("#account-status-caption").textContent="Supabase aguardando conexão";
+    $("#account-status-caption").textContent="URL/chave pública não configurada";
+  } else if(!window.supabase?.createClient){
+    $("#connection-status-text").textContent="Biblioteca indisponível";
+    $("#account-status-title").textContent="Supabase aguardando conexão";
+    $("#account-status-caption").textContent="Verifique a conexão com a internet";
   } else {
     supabase=window.supabase.createClient(config.url,config.publishableKey);
     $("#connection-status-text").textContent="Conectando";
@@ -169,8 +173,8 @@
     const mode=event.target.closest("[data-online-mode]");if(mode)startQueue(mode.dataset.onlineMode);
   });
 
-  $("#sign-in-form").addEventListener("submit",async event=>{event.preventDefault();if(!supabase){showAuthMessage("Configure a URL e a chave pública do Supabase para ativar o login.");return;}showAuthMessage("Entrando…");const {error}=await supabase.auth.signInWithPassword({email:$("#sign-in-email").value.trim(),password:$("#sign-in-password").value});showAuthMessage(error?displayError(error):"");});
-  $("#sign-up-form").addEventListener("submit",async event=>{event.preventDefault();if(!supabase){showAuthMessage("Configure o Supabase para criar sua conta.");return;}showAuthMessage("Criando conta…");const {data,error}=await supabase.auth.signUp({email:$("#sign-up-email").value.trim(),password:$("#sign-up-password").value,options:{data:{display_name:$("#sign-up-name").value.trim()},emailRedirectTo:location.origin+location.pathname}});showAuthMessage(error?displayError(error):data.session?"Conta criada!":"Confira seu e-mail para confirmar a conta.");});
+  $("#sign-in-form").addEventListener("submit",async event=>{event.preventDefault();if(!supabase){showAuthMessage(configured?"A biblioteca do Supabase não carregou. Atualize a página e verifique a internet.":"Configure a URL e a chave pública do Supabase para ativar o login.");return;}showAuthMessage("Entrando…");const {error}=await supabase.auth.signInWithPassword({email:$("#sign-in-email").value.trim(),password:$("#sign-in-password").value});showAuthMessage(error?displayError(error):"");});
+  $("#sign-up-form").addEventListener("submit",async event=>{event.preventDefault();if(!supabase){showAuthMessage(configured?"A biblioteca do Supabase não carregou. Atualize a página e verifique a internet.":"Configure o Supabase para criar sua conta.");return;}showAuthMessage("Criando conta…");const {data,error}=await supabase.auth.signUp({email:$("#sign-up-email").value.trim(),password:$("#sign-up-password").value,options:{data:{display_name:$("#sign-up-name").value.trim()},emailRedirectTo:location.origin+location.pathname}});showAuthMessage(error?displayError(error):data.session?"Conta criada!":"Confira seu e-mail para confirmar a conta.");});
   $("#sign-out").addEventListener("click",async()=>{if(supabase)await supabase.auth.signOut();});
   $("#friend-search-form").addEventListener("submit",event=>{event.preventDefault();searchFriend($("#friend-search-code").value.trim());});
   $("#refresh-friends").addEventListener("click",loadFriends);
