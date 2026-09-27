@@ -188,6 +188,8 @@ create table if not exists public.redeem_codes (
   expires_at timestamptz,
   created_at timestamptz not null default now()
 );
+alter table public.redeem_codes enable row level security;
+revoke all on public.redeem_codes from anon,authenticated;
 create table if not exists public.gift_claims (
   player_id uuid not null references public.profiles(id) on delete cascade,
   code text not null references public.redeem_codes(code),
