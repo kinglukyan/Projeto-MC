@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" role="img" aria-labelledby="title">
+<title id="title">Insígnia Deus</title>
+<defs>
+ <linearGradient id="metal" x1="120" y1="60" x2="392" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#fff0a4"/><stop offset=".28" stop-color="#c08a32"/><stop offset=".53" stop-color="#FFF3C2"/><stop offset=".76" stop-color="#c08a32"/><stop offset="1" stop-color="#fff0a4"/></linearGradient>
+ <radialGradient id="plate" cx="0" cy="0" r="1" gradientTransform="matrix(0 206 -206 0 256 247)" gradientUnits="userSpaceOnUse"><stop stop-color="#ffb84f" stop-opacity=".34"/><stop offset=".6" stop-color="#3a201d"/><stop offset="1" stop-color="#080E18"/></radialGradient>
+ <filter id="shadow" x="35" y="28" width="442" height="466" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feGaussianBlur stdDeviation="10"/></filter>
+</defs>
+<path d="M256 42c25 28 65 39 112 48 6 50 30 83 73 112-18 39-26 80-22 127-45 12-80 38-111 78-36-12-68-12-104 0-31-40-66-66-111-78 4-47-4-88-22-127 43-29 67-62 73-112 47-9 87-20 112-48Z" fill="#c08a32" opacity=".36" filter="url(#shadow)"/>
+<path d="M256 33c30 34 75 45 123 54 7 55 33 91 80 122-20 43-28 88-23 139-49 14-86 41-120 85-39-14-81-14-120 0-34-44-71-71-120-85 5-51-3-96-23-139 47-31 73-67 80-122 48-9 93-20 123-54Z" fill="#0B121D" stroke="url(#metal)" stroke-width="11" stroke-linejoin="round"/>
+<path d="M256 54c27 27 65 36 103 44 7 45 29 75 66 101-16 35-23 72-19 114-40 12-71 35-100 70-34-11-66-11-100 0-29-35-60-58-100-70 4-42-3-79-19-114 37-26 59-56 66-101 38-8 76-17 103-44Z" fill="url(#plate)" stroke="#c08a32" stroke-opacity=".8" stroke-width="3" stroke-linejoin="round"/>
+<path d="M141 143c-31 18-50 45-58 79 25-12 45-14 66-10-18 13-29 30-35 51 24-10 47-10 69-3-13 17-19 35-18 56m206-173c31 18 50 45 58 79-25-12-45-14-66-10 18 13 29 30 35 51-24-10-47-10-69-3 13 17 19 35 18 56" stroke="url(#metal)" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M122 189c19 2 37 12 50 27m-62 28c20-2 40 1 58 11m-42 32c19-7 39-7 58-2m206-96c-19 2-37 12-50 27m62 28c-20-2-40 1-58 11m42 32c-19-7-39-7-58-2" stroke="#ffb84f" stroke-opacity=".8" stroke-width="4" stroke-linecap="round"/>
+<path d="M256 67 267 91 292 94 273 111 278 136 256 124 234 136 239 111 220 94 245 91 256 67Z" fill="url(#metal)"/>
+<circle cx="256" cy="260" r="107" fill="#251a20" stroke="url(#metal)" stroke-width="11"/><circle cx="256" cy="260" r="80" fill="#9A5B26" stroke="#FFE8A0" stroke-width="6"/><path d="M256 132v-48m0 352v-48M128 260H80m352 0h-48m-218-90-34-34m248 248-34-34m0-180 34-34M162 350l-34 34" stroke="url(#metal)" stroke-width="13" stroke-linecap="round"/><path d="m256 177 23 59 62 24-62 23-23 60-23-60-62-23 62-24 23-59Z" fill="url(#metal)" stroke="#FFF2B9" stroke-width="6" stroke-linejoin="round"/><circle cx="256" cy="283" r="21" fill="#F6C24C" stroke="#FFF6C7" stroke-width="5"/><path d="M156 130h5m193 0h5M135 371h5m232 0h5m-123-282h5m-5 349h5" stroke="#FFE9A3" stroke-width="8" stroke-linecap="round"/><path d="m256 48 10 24-10 19-10-19 10-24Z" fill="#FFF3C1"/>
+<path d="M176 400c25 15 52 23 80 27 28-4 55-12 80-27l-20 55-60-20-60 20-20-55Z" fill="#3a201d" stroke="url(#metal)" stroke-width="6" stroke-linejoin="round"/>
+<path d="m256 405 7 15 17 2-12 11 4 16-16-8-16 8 4-16-12-11 17-2 7-15Z" fill="url(#metal)"/>
+</svg>
