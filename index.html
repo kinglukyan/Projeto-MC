@@ -10,7 +10,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
   <title>Mythic Clash — Arena</title>
-  <link rel="stylesheet" href="styles.css?v=127">
+  <link rel="stylesheet" href="styles.css?v=129">
 </head>
 <body>
   <div class="loading-screen" id="loading-screen" role="status" aria-live="polite">
@@ -67,7 +67,7 @@
 
       <section class="view" id="view-decks" hidden>
         <div class="page-heading"><div><p class="eyebrow">✦ &nbsp; PREPARE SUAS LENDAS</p><h1>Construtor de baralho<span>.</span></h1><p>Adicione ou remova cartas. Até cinco decks podem ser mantidos na sua conta ou neste aparelho.</p></div><button class="button button-secondary" id="reset-deck">Restaurar sugestão</button></div>
-        <div class="deck-summary panel"><div class="deck-symbol"><img src="assets/card-back.svg" alt=""></div><div><small>BARALHO ATIVO</small><h2 id="deck-total">0 / 20 cartas</h2><p id="deck-rule">Mínimo de 12 cartas para iniciar um duelo.</p></div><label class="deck-slot-picker">Deck ativo<select id="deck-slot-select" aria-label="Escolher deck"></select></label><button class="button button-secondary" id="new-deck" type="button">Novo deck</button><button class="button button-primary" id="save-deck">Salvar deck</button></div>
+        <div class="deck-summary panel"><div class="deck-symbol"><img src="assets/card-back.svg" alt=""></div><div><small>BARALHO ATIVO</small><h2 id="deck-total">0 / 20 cartas</h2><p id="deck-rule">Mínimo de 12 cartas para iniciar um duelo.</p></div><label class="deck-name-picker">Nome do deck<input id="deck-name-input" maxlength="24" placeholder="Ex.: Guardiões da Grécia" aria-label="Nome do deck"></label><label class="deck-slot-picker">Deck ativo<select id="deck-slot-select" aria-label="Escolher deck"></select></label><button class="button button-secondary" id="new-deck" type="button">Novo deck</button><button class="button button-primary" id="save-deck">Salvar deck</button></div>
         <div class="deck-list panel" id="deck-card-list"></div><p class="deck-save-status" id="deck-save-status" aria-live="polite">Alterações salvas localmente.</p>
       </section>
 
@@ -81,7 +81,7 @@
       <section class="view" id="view-friends" hidden>
         <div class="page-heading"><div><p class="eyebrow">✦ &nbsp; SUA COMPANHIA</p><h1>Amigos<span>.</span></h1><p>Adicione jogadores pelo código e conversem em um chat privado.</p></div></div>
         <section class="friends-toolbar panel"><form id="friend-search-form"><label>Adicionar por código<input id="friend-search-code" maxlength="8" placeholder="Código do jogador" required></label><button class="button button-primary" type="submit">Buscar jogador</button></form><p id="friend-search-result" aria-live="polite"></p><span>Seu código: <b id="my-friend-code">—</b> <button class="text-link" id="copy-friend-code" type="button">Copiar</button></span></section>
-        <div class="friends-layout"><section class="panel friends-list-panel"><header><small>AMIGOS E SOLICITAÇÕES</small><button class="text-link" id="refresh-friends" type="button">Atualizar</button></header><div id="friends-list"><p class="empty-state">Entre para carregar seus amigos.</p></div></section><section class="panel friend-chat-panel"><header><div><small>CHAT PRIVADO</small><h2 id="chat-friend-name">Escolha um amigo</h2></div><span id="chat-connection-status"></span></header><div class="friend-messages" id="friend-messages"><p class="empty-state">Suas conversas aparecerão aqui.</p></div><form class="friend-message-form" id="friend-message-form"><input id="friend-message-input" maxlength="2000" placeholder="Escreva uma mensagem…" autocomplete="off" disabled><button class="button button-primary" type="submit" disabled>Enviar</button></form></section></div>
+        <section class="friend-challenge-inbox panel" id="friend-challenge-inbox" hidden><div><small>DESAFIO RECEBIDO</small><b id="friend-challenge-inbox-copy">Um amigo chamou você para uma partida.</b></div><button class="button button-primary" id="accept-friend-challenge" type="button">Aceitar desafio</button></section><div class="friends-layout"><section class="panel friends-list-panel"><header><small>AMIGOS E SOLICITAÇÕES</small><button class="text-link" id="refresh-friends" type="button">Atualizar</button></header><div id="friends-list"><p class="empty-state">Entre para carregar seus amigos.</p></div></section><section class="panel friend-chat-panel"><header><div><small>CHAT PRIVADO</small><h2 id="chat-friend-name">Escolha um amigo</h2></div><span id="chat-connection-status"></span></header><div class="friend-messages" id="friend-messages"><p class="empty-state">Suas conversas aparecerão aqui.</p></div><form class="friend-message-form" id="friend-message-form"><input id="friend-message-input" maxlength="2000" placeholder="Escreva uma mensagem…" autocomplete="off" disabled><button class="button button-primary" type="submit" disabled>Enviar</button></form></section></div>
       </section>
 
       <section class="view" id="view-profile" hidden>
@@ -141,7 +141,7 @@
   <div class="toast" id="toast" aria-live="polite"></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script src="supabase-config.js?v=2" defer></script>
-  <script src="app.js?v=103" defer></script>
-  <script src="online.js?v=13" defer></script>
+  <script src="app.js?v=105" defer></script>
+  <script src="online.js?v=15" defer></script>
 </body>
 </html>
