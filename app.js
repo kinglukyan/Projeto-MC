@@ -237,7 +237,7 @@
       const slots=units.map(unit=>{
         const card=cardById[unit.cardId],power=currentPower(side,unit);
         const image=card.art?`<img src="${card.art}" alt="Miniatura de ${escapeHTML(card.name)}">`:`<span class="mini-glyph" style="--card-glow:${card.glow}">${escapeHTML(card.symbol)}</span>`;
-        const hologram=card.id==="soldado-esparta"?"assets/holograms/spartan-hologram.png":card.id==="medusa"?"assets/holograms/medusa-hologram.png":null;
+        const hologram=({"soldado-esparta":"assets/holograms/spartan-hologram.png",medusa:"assets/holograms/medusa-hologram.png",poseidon:"assets/holograms/poseidon-hologram.png",zeus:"assets/holograms/zeus-hologram.png",hades:"assets/holograms/hades-hologram.png"})[card.id]||null;
         const holoAttribute=hologram?` data-hologram-src="${hologram}"`:"";
         return `<article class="battle-mini-card ${card.art?"has-card-art ":""}${hologram?"has-hologram":""}" data-field-index="${side.field.indexOf(unit)}" data-card-id="${card.id}" title="${escapeHTML(card.name)} · ${power} poder"${holoAttribute}>${image}<span class="mini-card-meta"><b>${escapeHTML(card.name)}</b><strong>${power}</strong></span></article>`;
       }).join("");
