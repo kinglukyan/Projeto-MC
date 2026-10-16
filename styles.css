@@ -628,11 +628,14 @@ body.card-detail-open{position:fixed!important;inset-inline:0;width:100%;touch-a
 .battle-intro-vs img{display:block;width:100%;height:100%;object-fit:contain}
 .spectator-vs{display:grid;place-items:center;width:56px;height:38px;overflow:hidden}
 .spectator-vs img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 1px 5px #dfac5366)}
-.custom-mode-logo-wrap{display:grid;place-items:center;width:112px;height:82px;margin:9px auto 4px;overflow:hidden;border:1px solid #d4ad6470;border-radius:15px;background:#0c131d;box-shadow:0 0 24px #d4ad6420}
-.custom-mode-logo-wrap img{width:100%;height:100%;object-fit:cover;transform:scale(2.15)}
+.arena-mode-card>.custom-mode-logo-wrap{display:grid;flex:0 0 auto;place-items:center;width:min(100%,165px);height:142px;margin:0 auto;overflow:hidden;border:0;border-radius:0;background:transparent;box-shadow:none}
+.arena-mode-card>.custom-mode-logo-wrap img{display:block;width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 5px 12px #0008);transform:none;transition:transform .3s}
+.arena-mode-card:hover>.custom-mode-logo-wrap img{transform:scale(1.06)}
 .custom-page-heading{display:flex;align-items:center;gap:16px}
 .custom-page-heading>img{width:104px;height:68px;object-fit:cover;border:1px solid #d4ad6445;border-radius:9px;background:#0c131d}
-@media(max-width:600px){.battle-intro-vs{width:82px;height:auto;aspect-ratio:3/2}.queue-vs{width:62px;height:43px}.custom-mode-logo-wrap{width:88px;height:66px}.custom-page-heading{align-items:flex-start;gap:10px}.custom-page-heading>img{width:72px;height:48px}}
+@media(max-width:760px){.arena-mode-card>.custom-mode-logo-wrap{height:94px}}
+@media(max-width:390px){.arena-mode-card>.custom-mode-logo-wrap{height:78px}}
+@media(max-width:600px){.battle-intro-vs{width:82px;height:auto;aspect-ratio:3/2}.queue-vs{width:62px;height:43px}.custom-page-heading{align-items:flex-start;gap:10px}.custom-page-heading>img{width:72px;height:48px}}
 
 .duo-invite-inbox{margin-top:15px;padding:14px;border:1px solid #d9b56666;background:linear-gradient(135deg,#262318,#121b29)}.duo-invite-inbox>small{color:#e4bd6d;font-size:9px;font-weight:800;letter-spacing:1px}.duo-invite-inbox>p{margin:7px 0 11px;color:#e7dfd1;font-size:12px}.duo-invite-inbox>div{display:flex;flex-wrap:wrap;gap:8px}.duo-invite-inbox[hidden]{display:none!important}
 
