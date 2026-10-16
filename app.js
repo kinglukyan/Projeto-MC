@@ -18,7 +18,7 @@
   window.MythicCardData=()=>cards.map(({id,name,abilityTitle,type,faction,power,ability,art,story})=>({id,name,abilityTitle,type,faction,power,ability,art,story}));
   const suggestedDeck = {"soldado-esparta":3,athena:2,"lobo-alfa":2,"guardiao-nordico":2,mjolnir:1,"runas-nordicas":1,grecia:1,eclipse:2,medusa:1,poseidon:1,zeus:1,hades:1};
   const filters = [["all","Todas"],["Personagem","Personagens"],["Companheiro","Companheiros"],["Relíquia","Relíquias"],["Melhoria","Melhorias"],["Local","Locais"],["Terreno","Terrenos"],["Clima","Climas"]];
-  const viewNames = {arena:"Arena",duel:"Duelo",collection:"Coleção",decks:"Baralhos",lore:"Universo",guilds:"Guilda",missions:"Missões","community-decks":"Decks da comunidade",custom:"Personalizada",friends:"Amigos",profile:"Perfil",store:"Loja Mythic",settings:"Configurações",admin:"Administração"};
+  const viewNames = {arena:"Arena",duel:"Duelo",collection:"Coleção",decks:"Baralhos",lore:"Universo",guilds:"Guilda",missions:"Missões","community-decks":"Decks da comunidade",custom:"Personalizada",profile:"Perfil",store:"Loja Mythic",settings:"Configurações",admin:"Administração"};
   let activeView = "arena", activeFilter = "all", toastTimer, duel = null, storageAvailable = true;
   let turnClockTicker=null,turnClockKey="",turnDeadline=0,turnTimeoutPending=false,lastTickSecond=30,turnAudioContext=null;
   let handFocusIndex = 0, detailHandIndex = null, underworldCardIds = [], underworldFocusIndex = 0, handGesture = null, handDragGhost = null, detailGestureStart = null, suppressHandClickUntil = 0;
