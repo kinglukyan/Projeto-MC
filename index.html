@@ -10,7 +10,7 @@
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml">
   <title>Mythic Clash — Arena</title>
-  <link rel="stylesheet" href="styles.css?v=143">
+  <link rel="stylesheet" href="styles.css?v=145">
 </head>
 <body>
   <div class="loading-screen" id="loading-screen" role="status" aria-live="polite">
@@ -98,7 +98,7 @@
           <div class="queue-duo-details" id="queue-duo-details" hidden><label for="queue-partner-code">Código de amigo do parceiro</label><div><input id="queue-partner-code" maxlength="8" placeholder="Ex.: FA101B01" autocomplete="off"><button class="button button-secondary" type="button" id="queue-partner-lookup">Conferir amigo</button></div><p id="queue-partner-status" aria-live="polite">A dupla compartilha o campo. Cada jogador mantém a própria mão e o próprio baralho.</p><article class="queue-teammate-seat"><span class="queue-seat-avatar">＋</span><span><small>PARCEIRO DE EQUIPE</small><b id="queue-partner-name">Aguardando convite</b></span></article></div>
           <div class="queue-team-preview"><article><small>SUA EQUIPE</small><b id="queue-self-name">Você</b><span id="queue-self-seat">Jogador 1</span></article><span class="queue-vs">VS</span><article><small>ADVERSÁRIOS</small><b id="queue-opponent-team">Aguardando fila</b><span id="queue-opponent-seat">1 × 1</span></article></div>
           <p class="queue-private-note">Na partida 2 × 2, os quatro jogadores compartilham o mesmo campo por equipe. Sua mão e seu baralho permanecem privados.</p>
-          <button class="button button-primary queue-join-button" id="queue-join" type="button">Entrar na fila solo</button><p id="queue-setup-status" aria-live="polite"></p><div class="online-queue-status" id="queue-status" hidden><span id="queue-status-text"></span><button class="button button-secondary" id="cancel-queue">Cancelar busca</button></div>
+          <button class="button button-primary queue-join-button" id="queue-join" type="button">Entrar na fila solo</button><p id="queue-setup-status" aria-live="polite"></p><section class="duo-invite-inbox panel" id="duo-invite-inbox" hidden><small>CONVITE DE DUPLA</small><p id="duo-invite-message">Um amigo convidou você para jogar em dupla.</p><div><button class="button button-primary" id="accept-duo-invite" type="button">Aceitar e entrar na fila</button><button class="button button-secondary" id="decline-duo-invite" type="button">Recusar</button></div></section><div class="online-queue-status" id="queue-status" hidden><span id="queue-status-text"></span><button class="button button-secondary" id="cancel-queue">Cancelar busca</button></div>
         </section>
       </section>
       <section class="view" id="view-profile" hidden>
@@ -166,8 +166,8 @@
   <div class="toast" id="toast" aria-live="polite"></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script src="supabase-config.js?v=2" defer></script>
-  <script src="app.js?v=118" defer></script>
-  <script src="online.js?v=32" defer></script>
+  <script src="app.js?v=121" defer></script>
+  <script src="online.js?v=37" defer></script>
 </body>
 </html>
 
