@@ -31,9 +31,9 @@
     </div>`;
     document.body.append(root);
     zoom=document.createElement('dialog');zoom.className='db-zoom';zoom.setAttribute('aria-label','Carta ampliada');zoom.innerHTML=`<button type="button" class="db-plain db-zoom-close" aria-label="Fechar carta ampliada">${icon('close')}</button><img alt="" decoding="async"><div><h2></h2><p class="db-zoom-meta"></p><h3></h3><p class="db-zoom-ability"></p></div>`;document.body.append(zoom);
-    zoom.querySelector('button').addEventListener('click',()=>zoom.close());zoom.addEventListener('click',event=>{if(event.target===zoom)zoom.close();});
-    exitDialog=document.createElement('dialog');exitDialog.className='db-exit';exitDialog.setAttribute('aria-labelledby','db-exit-title');exitDialog.innerHTML='<h2 id="db-exit-title">Sair do construtor?</h2><p>Há alterações que ainda não foram salvas no seu baralho.</p><div><button type="button" class="db-button" data-exit="continue">Continuar editando</button><button type="button" class="db-button db-secondary" data-exit="discard">Descartar alterações</button><button type="button" class="db-button db-primary" data-exit="save">Salvar e sair</button></div>';document.body.append(exitDialog);
-    exitDialog.addEventListener('click',event=>{const action=event.target.closest('[data-exit]')?.dataset.exit;if(!action)return;if(action==='continue')exitDialog.close();else if(action==='discard'){exitDialog.close();close(true);}else{exitDialog.close();save();}});
+    zoom.querySelector('button').addEventListener('click',()=>zoom.close());zoom.addEventListener('click',event=>{event.stopPropagation();if(event.target===zoom)zoom.close();});
+    exitDialog=document.createElement('dialog');exitDialog.className='db-exit';exitDialog.setAttribute('aria-labelledby','db-exit-title');exitDialog.innerHTML='<h2 id="db-exit-title">Deseja salvar o deck?</h2><p>Há alterações não salvas. Você pode salvar antes de sair.</p><div><button type="button" class="db-button" data-exit="continue">Continuar editando</button><button type="button" class="db-button db-secondary" data-exit="discard">Sair sem salvar</button><button type="button" class="db-button db-primary" data-exit="save">Salvar e sair</button></div>';document.body.append(exitDialog);
+    exitDialog.addEventListener('click',event=>{event.stopPropagation();const action=event.target.closest('[data-exit]')?.dataset.exit;if(!action)return;if(action==='continue')exitDialog.close();else if(action==='discard'){exitDialog.close();close(true);}else{exitDialog.close();save();}});
     root.addEventListener('cancel',event=>{event.preventDefault();requestClose();});
     root.addEventListener('click',onClick);
     root.querySelector('#db-search').addEventListener('input',event=>{query=norm(event.target.value);renderCollection();});
@@ -130,8 +130,10 @@
     checkpoint();if(next)state.counts[id]=next;else delete state.counts[id];selectedId=id;remember();render();
   }
   function undoChange(){if(!busy&&undo.length){const prior=undo.pop();state.name=prior.name;state.counts={...prior.counts};root.querySelector('#db-name').value=state.name;remember();render();}}
-  function enlarge(){const card=cardFor(selectedId);if(!card)return;zoom.querySelector('img').src=image(card);zoom.querySelector('img').alt=card.name;zoom.querySelector('h2').textContent=card.name;zoom.querySelector('.db-zoom-meta').textContent=`${card.subtype||card.type} · ${card.faction} · ${card.power||0} poder`;zoom.querySelector('h3').textContent=card.abilityTitle||'Habilidade';zoom.querySelector('.db-zoom-ability').textContent=card.ability||'';zoom.showModal();}
+  function enlarge(){if(!root?.open||!state||exitDialog?.open||zoom?.open)return;const card=cardFor(selectedId);if(!card)return;zoom.querySelector('img').src=image(card);zoom.querySelector('img').alt=card.name;zoom.querySelector('h2').textContent=card.name;zoom.querySelector('.db-zoom-meta').textContent=`${card.subtype||card.type} · ${card.faction} · ${card.power||0} poder`;zoom.querySelector('h3').textContent=card.abilityTitle||'Habilidade';zoom.querySelector('.db-zoom-ability').textContent=card.ability||'';zoom.showModal();}
   function onClick(event){
+    event.stopPropagation();
+    if(event.target.closest('[data-action="exit"]')){event.preventDefault();requestClose();return;}
     if(event.detail!==0&&performance.now()<suppressClickUntil){event.preventDefault();return;}
     const filter=event.target.closest('[data-faction]');if(filter){faction=filter.dataset.faction;root.querySelectorAll('[data-faction]').forEach(n=>n.setAttribute('aria-pressed',String(n===filter)));renderCollection();return;}
     const control=event.target.closest('[data-action]');if(!control)return;
@@ -151,7 +153,7 @@
       busy=false;close(false);window.MythicPresentation?.notify('Baralho salvo na sua conta.');
     }catch(error){busy=false;if(state){message(error.message||'Não foi possível salvar. Suas alterações continuam na mesa.',true);render();}}
   }
-  function requestClose(){if(busy){message('Aguarde a confirmação do salvamento.');return;}if(dirty()){exitDialog.querySelector('[data-exit="save"]').disabled=!validate()||sum(state.counts)<MIN||sum(state.counts)>MAX;exitDialog.showModal();}else close(false);}
+  function requestClose(){if(!root?.open||!state)return;clearDrag();if(busy){message('Aguarde a confirmação do salvamento.');return;}if(zoom?.open)zoom.close();if(dirty()){exitDialog.querySelector('[data-exit="save"]').disabled=!validate()||sum(state.counts)<MIN||sum(state.counts)>MAX;if(!exitDialog.open)exitDialog.showModal();}else close(false);}
   function close(discard=false){
     if(!root)return;if(discard&&state){try{sessionStorage.removeItem(draftKey());}catch{}}
     clearDrag();zoom?.close();exitDialog?.close();root.close();document.body.classList.remove('deck-builder-open');state=null;undo=[];busy=false;

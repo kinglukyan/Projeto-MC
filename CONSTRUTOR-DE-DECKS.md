@@ -28,6 +28,7 @@ Execute também `supabase/migrations/202610170017_player_icons_seven_decks.sql` 
 - **Limpar mesa** pode ser revertido com **Desfazer**.
 - **Salvar baralho** grava o slot e o baralho ativo juntos no servidor. Só fecha depois da confirmação.
 - Ao sair com alterações, escolha continuar, descartar ou salvar. O rascunho também é recuperável na mesma sessão do navegador e conta.
+- O X fecha o construtor mesmo com uma carta selecionada. Só há a pergunta **Deseja salvar o deck?** quando existem alterações não salvas. Os cliques nas cartas do construtor não acionam a ampliação geral do site; fechar a carta ampliada do próprio construtor mantém a mesa aberta.
 
 O SQL 015 atualiza os limites das partidas individuais, em dupla e personalizadas, preservando as funções de habilidades existentes. Baralhos antigos com menos de 14 cartas precisam ser completados antes de entrar em uma partida. Presentes e expedições preservam o novo mínimo.
 
