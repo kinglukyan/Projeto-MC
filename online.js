@@ -174,9 +174,26 @@
     window.dispatchEvent(new CustomEvent("mythic-concept-community",{detail:{decks:decks.map(row=>({...row,votes:voteCount[row.id]||0})),authors}}));
     window.dispatchEvent(new CustomEvent("mythic-concept-guild",{detail:{guild:guild?{...guild,id:guildId}:null,members:members.map(row=>({...row,profile:authors[row.player_id]||null,avatar:resolveAvatarAsset(authors[row.player_id]?.equipped_avatar)}))}}));
   }
+  function reportProfileLoadError(error){
+    for(const selector of ["#view-arena","#view-collection","#view-store"]){
+      const view=$(selector);if(!view)continue;
+      let message=view.querySelector("[data-profile-load-error]");
+      if(!error){message?.remove();continue;}
+      if(!message){
+        message=document.createElement("section");message.dataset.profileLoadError="true";message.className="panel";message.setAttribute("role","alert");message.style.cssText="padding:16px;margin:0 0 18px;border:1px solid #bb9ada;";
+        const text=document.createElement("p"),detail=document.createElement("small"),retry=document.createElement("button");
+        text.textContent="Não foi possível carregar seus itens. Seus itens continuam salvos na conta.";
+        detail.dataset.profileErrorDetail="true";detail.style.cssText="display:block;margin:8px 0;overflow-wrap:anywhere";
+        retry.type="button";retry.className="button button-secondary";retry.textContent="Tentar novamente";
+        retry.addEventListener("click",async()=>{retry.disabled=true;try{await loadProfile();}catch{}finally{retry.disabled=false;}});
+        message.append(text,detail,retry);view.prepend(message);
+      }
+      message.querySelector("[data-profile-error-detail]").textContent=displayError(error);
+    }
+  }
   function loadProfile(){
     const uid=session?.user?.id;
-    const next=profileRefresh.catch(()=>{}).then(()=>{if(uid===session?.user?.id)return fetchProfile();});
+    const next=profileRefresh.catch(()=>{}).then(()=>{if(uid===session?.user?.id)return fetchProfile();}).catch(error=>{if(uid===session?.user?.id)reportProfileLoadError(error);throw error;});
     profileRefresh=next;return next;
   }
   async function fetchProfile(){
@@ -188,20 +205,21 @@
     let {data,error}=await supabase.from("profiles").select("id,display_name,nickname,phone,age,friend_code,rating_points,wins,losses,settings,xp,mythic_coins,tutorial_completed,equipped_avatar,equipped_battlefield,equipped_hand").eq("id",session.user.id).maybeSingle();
     let expansionReady=!error;if(error){const legacy=await supabase.from("profiles").select("id,display_name,friend_code,rating_points,wins,losses,settings").eq("id",session.user.id).maybeSingle();data=legacy.data;error=legacy.error;if(error){notify(displayError(error));return;}}
     if(session?.user?.id!==uid||request!==profileRequest||!data)return;
-    accountReady=true;
     profile={xp:0,mythic_coins:0,tutorial_completed:false,equipped_avatar:"default",equipped_battlefield:"battle-forest",equipped_hand:"hand-heaven",...data,expansionReady};if(!profile)return;profile.nickname=profile.nickname||profile.display_name;
     const name=profile.nickname,initials=name.trim().split(/\s+/).slice(0,2).map(part=>part[0]).join("").toUpperCase();
     $("#sidebar-player-name").textContent=name;$("#sidebar-player-rank").textContent=rankForRating(profile.rating_points);$("#sidebar-rank-emblem").src=rankEmblem(profile.rating_points);$("#sidebar-player-record").textContent=`${profile.wins} vitórias · ${profile.losses} derrotas`;$("#sidebar-player-code").textContent=`Código: ${profile.friend_code}`;
     paintProfileAvatars();$("#profile-display-name").textContent=name;const battlefieldAsset=profile.equipped_battlefield==="battle-mud"?"assets/battlefield-mud.png":"assets/battlefield-forest.png",handAsset=profile.equipped_hand==="hand-forest"?"assets/battlefield-forest.png":"assets/hand-heaven.png";if(battlefieldAsset)document.documentElement.style.setProperty("--battlefield-texture",`url("${battlefieldAsset}")`);if(handAsset)document.documentElement.style.setProperty("--hand-texture",`url("${handAsset}")`);
     $("#profile-name-input").value=name;$("#profile-phone-input").value=profile.phone||"";$("#profile-age-input").value=profile.age||"";$("#profile-email").textContent=session.user.email||"E-mail não disponível";$("#profile-friend-code").textContent=profile.friend_code;
-    $("#profile-rating").textContent=profile.rating_points;$("#profile-rank").textContent=rankForRating(profile.rating_points);$("#profile-rank-emblem").src=rankEmblem(profile.rating_points);$("#profile-rank-emblem").alt=`Insígnia ${rankForRating(profile.rating_points)}`;$("#profile-wins").textContent=profile.wins;$("#profile-losses").textContent=profile.losses;$("#my-friend-code").textContent=profile.friend_code;paintProgression();
+    $("#profile-rating").textContent=profile.rating_points;$("#profile-rank").textContent=rankForRating(profile.rating_points);$("#profile-rank-emblem").src=rankEmblem(profile.rating_points);$("#profile-rank-emblem").alt=`Insígnia ${rankForRating(profile.rating_points)}`;if($("#profile-wins"))$("#profile-wins").textContent=profile.wins;if($("#profile-losses"))$("#profile-losses").textContent=profile.losses;$("#my-friend-code").textContent=profile.friend_code;paintProgression();
     const settings=profile.settings||{};let localVolume=null;try{localVolume=localStorage.getItem("mythic-clash-music-volume");}catch{}const savedVolume=settings.volume??(localVolume===null?42:Number(localVolume)),initialVolume=Number.isFinite(Number(savedVolume))?Math.max(0,Math.min(100,Number(savedVolume))):42;$("#setting-music").checked=settings.music!==false;$("#setting-effects").checked=settings.effects!==false;$("#setting-notifications").checked=settings.notifications!==false;$("#setting-volume").value=initialVolume;$("#setting-volume-value").value=`${initialVolume}%`;try{localStorage.setItem("mythic-clash-music-volume",String(initialVolume));}catch{}window.dispatchEvent(new CustomEvent("mythic-volume-loaded",{detail:{volume:initialVolume}}));
     try{localStorage.setItem(`mythic-tutorial:${uid}`,String(Boolean(profile.tutorial_completed||profile.settings?.tutorial_completed||Number(profile.xp||0)>=100)));}catch{}
-    window.dispatchEvent(new CustomEvent("mythic-profile-loaded"));emitConceptProfile();
+    emitConceptProfile();
     try{
       await Promise.all([loadStore(),loadCardCopies()]);
       if(session?.user?.id!==uid||request!==profileRequest)return;
       if(deckLoadedFor!==uid){const hasSaved=await loadSavedDecks();if(!hasSaved)await loadCloudDeck();if(session?.user?.id===uid)deckLoadedFor=uid;}
+      accountReady=true;reportProfileLoadError(null);
+      window.dispatchEvent(new CustomEvent("mythic-profile-loaded"));
       window.dispatchEvent(new CustomEvent("mythic-inventory-loaded"));
     }catch(error){notify("Não foi possível atualizar seus itens: "+displayError(error));throw error;}
     loadHistory();loadProfileAnalytics(uid,"profile");loadPlayerHonors();
