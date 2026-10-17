@@ -1,4 +1,4 @@
-// Original card art and hologram associations. Preview cards await gameplay rules.
+// Card art and hologram associations. Gameplay metadata is merged from abilities-data.js.
 window.MythicCardExpansion = {
   "version": "20261017",
   "cards": [
@@ -747,6 +747,31 @@ window.MythicCardExpansion = {
       "sourceCard": "Homem.png",
       "sourceHologram": "aldeao-humano-holograma-v1.png",
       "species": "Humano"
+    },
+    {
+      "id": "guardiao-nordico",
+      "name": "Guardião Nórdico",
+      "abilityTitle": "Vontade do Norte",
+      "type": "Companheiro",
+      "subtype": "Companheiro",
+      "faction": "Nórdicos",
+      "symbol": "ᚠ",
+      "power": 2,
+      "cost": 1,
+      "kind": "unit",
+      "glow": "rgba(134,91,178,.42)",
+      "badgeKey": "norse",
+      "art": "assets/cards-20261017/guardiao-nordico.png",
+      "ability": "As Runas Nórdicas aumentam seu poder enquanto estiver em campo.",
+      "previewOnly": false,
+      "specialOnly": false,
+      "abilityPending": false,
+      "tags": [],
+      "story": [
+        "Forjado pelas tempestades do norte, o guardião protege sua gente e mantém a posição mesmo quando o gelo racha sob seus pés.",
+        "Habilidade — Vontade do Norte: recebe o poder concedido pelas Runas Nórdicas quando equipado.",
+        "Companheiro original inspirado nas tradições nórdicas do universo Mythic Clash."
+      ]
     }
   ],
   "legacyHolograms": {

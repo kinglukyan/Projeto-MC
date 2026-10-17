@@ -80,8 +80,22 @@
       "tags": [],
       "kind": "unit",
       "cost": 1,
+      "abilityTitle": "Vontade do Norte",
+      "type": "Companheiro",
+      "subtype": "Companheiro",
+      "symbol": "ᚠ",
+      "glow": "rgba(134,91,178,.42)",
+      "badgeKey": "norse",
+      "art": "assets/cards-20261017/guardiao-nordico.png",
+      "ability": "As Runas Nórdicas aumentam seu poder enquanto estiver em campo.",
       "previewOnly": false,
-      "specialOnly": false
+      "specialOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Forjado pelas tempestades do norte, o guardião protege sua gente e mantém a posição mesmo quando o gelo racha sob seus pés.",
+        "Habilidade — Vontade do Norte: recebe o poder concedido pelas Runas Nórdicas quando equipado.",
+        "Companheiro original inspirado nas tradições nórdicas do universo Mythic Clash."
+      ]
     },
     {
       "id": "mjolnir",
