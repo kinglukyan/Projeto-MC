@@ -441,3 +441,6 @@ body.mythic-rework #underworld-pile{position:relative!important;inset:auto!impor
 body.mythic-rework.duel-fullscreen #card-detail-backdrop{background:transparent!important;backdrop-filter:blur(8px)!important;-webkit-backdrop-filter:blur(8px)!important}
 body.mythic-rework.duel-fullscreen #card-detail-modal{background:transparent!important;background-image:none!important;border:0!important;outline:0!important;box-shadow:none!important}
 body.mythic-rework.duel-fullscreen #card-detail-modal::before,body.mythic-rework.duel-fullscreen #card-detail-modal::after{display:none!important}
+
+/* Hologram overlays belong exclusively to the visible duel. */
+body:not(.duel-fullscreen) #battle-hologram-layer,#battle-hologram-layer[hidden]{display:none!important}
