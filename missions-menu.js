@@ -1,67 +1,128 @@
-(() => {
-  const toggle = document.getElementById('missions-menu-toggle');
-  const submenu = document.getElementById('missions-submenu');
-  const preview = document.getElementById('missions-preview');
-  const source = document.getElementById('community-missions');
-  const dialog = document.getElementById('missions-dialog');
-  if (!toggle || !submenu || !preview || !source || !dialog) return;
-
-  function refresh() {
-    document.dispatchEvent(new CustomEvent('mythic-missions-refresh'));
-  }
-  function renderPreview() {
-    const rows = [...source.querySelectorAll('.mission-step')];
-    const active = rows.filter(row => !row.classList.contains('complete'));
-    const selected = (active.length ? active : rows).slice(0, 3);
-    preview.replaceChildren();
-    if (!selected.length) {
-      const message = document.createElement('p');
-      message.className = 'missions-preview-empty';
-      message.textContent = source.textContent.trim() || 'Sem missões ativas.';
-      preview.append(message);
-      return;
+{
+  "cards": [
+    {
+      "id": "asgard",
+      "name": "Asgard",
+      "type": "Local",
+      "kind": "location",
+      "faction": "Nórdicos",
+      "symbol": "⌂",
+      "power": 0,
+      "cost": null,
+      "badgeKey": "norse",
+      "glow": "rgba(134,111,190,.42)",
+      "art": "assets/locations/asgard.png",
+      "abilityTitle": "Bônus de Local",
+      "ability": "Enquanto este Local estiver ativo, todos os nórdicos recebem +2 de poder, nos dois lados do campo.",
+      "previewOnly": false,
+      "story": [
+        "Asgard · Local.",
+        "Enquanto este Local estiver ativo, todos os nórdicos recebem +2 de poder, nos dois lados do campo.",
+        "O bônus se soma ao Terreno ativo e termina ao encerrar a rodada."
+      ]
+    },
+    {
+      "id": "egito",
+      "name": "Egito",
+      "type": "Local",
+      "kind": "location",
+      "faction": "Egípcios",
+      "symbol": "⌂",
+      "power": 0,
+      "cost": null,
+      "badgeKey": "egypt",
+      "glow": "rgba(134,111,190,.42)",
+      "art": "assets/locations/egito.png",
+      "abilityTitle": "Bônus de Local",
+      "ability": "Enquanto este Local estiver ativo, todos os egípcios recebem +2 de poder, nos dois lados do campo.",
+      "previewOnly": false,
+      "story": [
+        "Egito · Local.",
+        "Enquanto este Local estiver ativo, todos os egípcios recebem +2 de poder, nos dois lados do campo.",
+        "O bônus se soma ao Terreno ativo e termina ao encerrar a rodada."
+      ]
+    },
+    {
+      "id": "grecia",
+      "name": "Grécia",
+      "type": "Local",
+      "kind": "location",
+      "faction": "Grécia",
+      "symbol": "⌂",
+      "power": 0,
+      "cost": 2,
+      "badgeKey": "greece",
+      "glow": "rgba(134,111,190,.42)",
+      "art": "assets/locations/grecia.png",
+      "abilityTitle": "Bônus de Local",
+      "ability": "Enquanto este Local estiver ativo, todos os gregos recebem +2 de poder, nos dois lados do campo.",
+      "previewOnly": false,
+      "story": [
+        "Grécia · Local.",
+        "Enquanto este Local estiver ativo, todos os gregos recebem +2 de poder, nos dois lados do campo.",
+        "O bônus se soma ao Terreno ativo e termina ao encerrar a rodada."
+      ]
     }
-    for (const row of selected) {
-      const item = document.createElement('button');
-      item.type = 'button';
-      item.className = 'missions-preview-item';
-      const title = document.createElement('b');
-      title.textContent = row.querySelector('b')?.textContent || 'Missão';
-      const details = document.createElement('small');
-      details.textContent = row.querySelector('small')?.textContent || '';
-      const state = document.createElement('span');
-      const claim = row.querySelector('[data-claim-mission]');
-      state.textContent = row.classList.contains('complete') ? '✓ Concluída' : row.classList.contains('locked') ? '🔒 Bloqueada' : claim && !claim.disabled ? '✦ Recompensa disponível' : 'Em andamento';
-      item.append(title, details, state);
-      item.addEventListener('click', () => {
-        openAll();
-        row.scrollIntoView({block:'nearest', behavior:'auto'});
-      });
-      preview.append(item);
-    }
-  }
-  function openAll() {
-    if (window.MythicOnline?.requireLogin && !window.MythicOnline.requireLogin()) return;
-    if (!dialog.open) dialog.showModal();
-    refresh();
-  }
-  toggle.addEventListener('click', () => {
-    const open = submenu.hidden;
-    submenu.hidden = !open;
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.classList.toggle('active', open);
-    if (open) { renderPreview(); refresh(); }
-  });
-  document.getElementById('missions-more').addEventListener('click', openAll);
-  document.getElementById('missions-dialog-close').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', event => {
-    if (event.target !== dialog) return;
-    const box = dialog.getBoundingClientRect();
-    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
-  });
-  window.addEventListener('mythic-open-view', event => {
-    if (event.detail?.view === 'missions') openAll();
-  });
-  new MutationObserver(renderPreview).observe(source, {childList:true, subtree:true, characterData:true, attributes:true, attributeFilter:['disabled','class']});
-  renderPreview();
-})();
+  ],
+  "rules": {
+    "asgard": "Nórdicos",
+    "egito": "Egípcios",
+    "grecia": "Grécia"
+  },
+  "factions": {
+    "soldado-esparta": "Grécia",
+    "athena": "Grécia",
+    "lobo-alfa": "Monstros",
+    "guardiao-nordico": "Nórdicos",
+    "mjolnir": "Nórdicos",
+    "runas-nordicas": "Nórdicos",
+    "grecia": "Grécia",
+    "eclipse": "Universal",
+    "campo-troia": "Grécia",
+    "medusa": "Grécia",
+    "poseidon": "Grécia",
+    "zeus": "Grécia",
+    "hades": "Grécia",
+    "lobo-omega": "Monstros",
+    "lukyan": "Alyns",
+    "anubis": "Egípcios",
+    "odin": "Nórdicos",
+    "lukyan-rei-de-todos": "Alyns",
+    "minotauro": "Grécia",
+    "apolo": "Grécia",
+    "ra": "Egípcios",
+    "ragnar": "Nórdicos",
+    "afrodite": "Grécia",
+    "aquiles": "Grécia",
+    "seth": "Egípcios",
+    "osiris": "Egípcios",
+    "thor": "Nórdicos",
+    "artemis": "Grécia",
+    "sobek": "Egípcios",
+    "ares": "Grécia",
+    "beowulf": "Nórdicos",
+    "heimdall": "Nórdicos",
+    "dionisio": "Grécia",
+    "butter": "Alyns",
+    "hefesto": "Grécia",
+    "hercules": "Grécia",
+    "hermes": "Grécia",
+    "horus": "Egípcios",
+    "lobo-beta": "Monstros",
+    "isis": "Egípcios",
+    "mulher": "Monstros",
+    "homem": "Monstros",
+    "yggdrasil": "Nórdicos",
+    "alto-egito": "Egípcios",
+    "baixo-egito": "Egípcios",
+    "bifrost": "Nórdicos",
+    "esparta": "Grécia",
+    "labirinto-dedalos": "Grécia",
+    "nilfheim": "Nórdicos",
+    "leonidas": "Grécia",
+    "loki": "Nórdicos",
+    "gigante-de-gelo": "Nórdicos",
+    "gigantes-de-gelo": "Nórdicos"
+  },
+  "scope": "both-players"
+}

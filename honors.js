@@ -1,61 +1,27 @@
-(() => {
- const make=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text)n.textContent=text;return n;};
- const grid=document.querySelector('#view-profile .legend-grid');if(!grid)return;
- let current=null,busy=false,kind='title';
- const hero=document.querySelector('#view-profile .profile-identity');
- const title=make('p','equipped-honor-title');title.id='equipped-honor-title';
- const featured=make('div','featured-medals');hero.append(title,featured);
- const sidebarTitle=make('small','sidebar-honor-title');document.querySelector('.profile-summary').append(sidebarTitle);
- const panel=make('section','panel honor-panel');panel.setAttribute('aria-label','Títulos e medalhas');
- const heading=make('header');heading.append(make('h3','','TÍTULOS E MEDALHAS'),make('small','','Conquistas permanentes da sua jornada'));panel.append(heading);
- const tabs=make('nav','honor-tabs');tabs.setAttribute('aria-label','Tipos de conquista');
- const titles=make('button','','Títulos'),medals=make('button','','Medalhas');titles.type=medals.type='button';tabs.append(titles,medals);panel.append(tabs);
- const status=make('p','honor-status','Carregando conquistas…');status.setAttribute('role','status');
- const items=make('div','honor-grid');panel.append(status,items);grid.append(panel);
- const friendArea=make('div','friend-honors');document.querySelector('.friend-profile-hero').after(friendArea);
- const signOut=()=>{const b=make('button','button button-secondary sign-out-account','Sair da conta');b.type='button';b.dataset.signOut='true';return b;};
- document.querySelector('.sidebar-bottom').append(signOut());document.querySelector('#view-profile .legend-actions').append(signOut());
- function medalChip(row){const chip=make('span','featured-medal',row.icon);chip.title=row.name;chip.setAttribute('aria-label',row.name);return chip;}
- function paintFeatured(data,targetTitle,targetMedals){
-   const catalog=data?.catalog||[],equipped=catalog.find(c=>c.id===data.title_id&&c.unlocked);
-   targetTitle.textContent=equipped?.name||'';targetMedals.replaceChildren();
-   for(const id of data?.medals||[]){const row=catalog.find(c=>c.id===id&&c.unlocked);if(row)targetMedals.append(medalChip(row));}
- }
- async function equip(nextTitle,nextMedals){
-   if(busy)return;busy=true;render();status.textContent='Salvando…';
-   try{const result=await window.MythicOnline.equipHonors(nextTitle,nextMedals);if(result){current=result;status.textContent='Perfil atualizado.';}}
-   catch(error){status.textContent=error.message||'Não foi possível salvar.';}
-   finally{busy=false;render();}
- }
- function render(){
-   titles.setAttribute('aria-pressed',String(kind==='title'));medals.setAttribute('aria-pressed',String(kind==='medal'));items.replaceChildren();
-   if(!current)return;
-   paintFeatured(current,title,featured);sidebarTitle.textContent=title.textContent;
-   for(const row of current.catalog.filter(c=>c.kind===kind)){
-     const active=kind==='title'?current.title_id===row.id:current.medals.includes(row.id);
-     const card=make('article','honor-card'+(row.unlocked?' unlocked':' locked'));
-     card.append(make('span','honor-emblem',row.icon),make('b','',row.name),make('small','',row.description));
-     const progress=make('progress');progress.max=Math.max(1,row.target);progress.value=row.unlocked?progress.max:row.progress;progress.setAttribute('aria-label',row.name);card.append(progress);
-     card.append(make('span','honor-progress',row.unlocked?'✓ Desbloqueado':`${row.progress} / ${row.target}`));
-     const action=make('button','button '+(active?'button-primary':'button-secondary'),!row.unlocked?'Bloqueado':active?'Remover':kind==='title'?'Usar título':'Destacar medalha');action.type='button';action.disabled=!row.unlocked||busy;
-     action.setAttribute('aria-pressed',String(active));
-     action.addEventListener('click',()=>{
-       if(kind==='title')return equip(active?null:row.id,current.medals);
-       const selected=active?current.medals.filter(id=>id!==row.id):[...current.medals,row.id];
-       if(selected.length>3){status.textContent='Você pode destacar até três medalhas. Remova uma antes de escolher outra.';return;}
-       equip(current.title_id,selected);
-     });card.append(action);items.append(card);
-   }
- }
- titles.addEventListener('click',()=>{kind='title';render();});medals.addEventListener('click',()=>{kind='medal';render();});
- window.addEventListener('mythic-honors-loaded',event=>{
-   const {playerId,data,error}=event.detail;
-   if(playerId===window.MythicOnline?.userId()){
-     current=data||null;status.textContent=error?'Títulos e medalhas aguardam a atualização do banco de dados.':'Escolha um título e até três medalhas para exibir no perfil.';render();
-   }else if(document.getElementById('friend-profile-backdrop').dataset.playerId===playerId){
-     friendArea.replaceChildren();if(!data)return;const friendTitle=make('b');const friendMedals=make('div','featured-medals');friendArea.append(friendTitle,friendMedals);paintFeatured(data,friendTitle,friendMedals);
-   }
- });
- window.addEventListener('mythic-account-signed-out',()=>{current=null;items.replaceChildren();title.textContent=sidebarTitle.textContent='';featured.replaceChildren();friendArea.replaceChildren();status.textContent='Entre na conta para ver suas conquistas.';});
- render();window.MythicOnline?.loadHonors?.();
-})();
+# Eclipse: sorteio, regras e apresentação
+
+## Cartas
+
+Eclipse (arte cósmica com Sol e Lua) continua usando o identificador eclipse, disponível no deck. Eclipse Lunar (Lua vermelha) e Eclipse Solar (Sol encoberto) são resultados especiais, sem cópias no deck nem compras para a mão. O resultado ocupa o espaço compartilhado de Clima/Evento até o fim da rodada.
+
+Sorteio único com 50% para cada resultado. No Guardião, usa crypto.getRandomValues; online, random() no servidor, dentro da transação já protegida por turno e bloqueio da partida. O cliente não escolhe o resultado. Reabrir a partida conserva o resultado salvo e não sorteia novamente.
+
+## Efeitos nos dois lados
+
+- Lunar: lobisomens, vampiros e Ártemis têm o poder dobrado; Apolo e Rá ficam com metade.
+- Solar: Apolo e Rá têm o poder dobrado; Ártemis fica com metade; vampiros vão ao Submundo; Beta/Omega viram Homem e Alfa vira Mulher.
+- Metades arredondam para baixo, conforme escolha do usuário. Os multiplicadores são calculados depois dos demais bônus, sem modificar permanentemente os pontos.
+- O clima afeta cartas presentes e novas entradas. Local e Terreno continuam ativos.
+- Transformações preservam fileira, posição, bônus e equipamentos. Ao sair do campo, o lobisomem retorna à carta original no Submundo. A transformação não dispara novamente uma habilidade de entrada.
+- Humanos usam as regras de suas cartas: cada Homem dobra o poder da Mulher; os Homens dobram por cada outro Homem aliado. Esses efeitos são calculados pela identidade atual em campo.
+- Vampiros são identificados por IDs começando com vampir e pelo ID dracula. Não foram inventadas cartas de vampiros; novas identidades devem ser registradas com essa classificação.
+
+## Apresentação
+
+Animação de 3,2 segundos alterna as duas cartas antes da revelação, com órbitas e iluminação. Inclui pular animação, Escape, disposição para celular em pé/deitado e opção de movimento reduzido. O mapa Lunar usa Lua vermelha, névoa violeta e partículas; o Solar usa coroa dourada e brasas. A atualização do mapa lê o resultado já salvo, inclusive após reconexão.
+
+## Disponibilidade e instalação
+
+Os personagens que já estavam em prévia continuam em prévia: esta atualização não libera suas habilidades incompletas. As transformações solares podem usar as artes de Homem/Mulher no campo mesmo enquanto suas cartas independentes estão em prévia.
+
+Aplicar supabase/migrations/202610170008_eclipse_event.sql após o 007. SQL não aplicado remotamente. Não foram executados testes de navegador ou banco nesta alteração. Partidas já iniciadas antes da atualização com o Eclipse antigo conservam seu estado legado até terminar a rodada; iniciar nova partida usa as regras novas.

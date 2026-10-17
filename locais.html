@@ -1,1 +1,252 @@
-<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Locais — Mythic Clash</title><style>*{box-sizing:border-box}body{background:#11121d;color:#f3ebff;font:16px/1.6 system-ui;margin:0;padding:clamp(14px,4vw,40px)}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px}article{padding:14px;background:#1e1b2b;border:1px solid #a48bc566;border-radius:12px}img{width:100%;height:auto;display:block}h2{font-family:Georgia,serif}p{color:#d1c9df}a{color:#cfb2ff}</style><h1>Cartas de Local</h1><p>O Local ativo beneficia os dois jogadores e soma com o Terreno. Um Local por rodada. <a href="index.html">Abrir o jogo</a></p><main><article><img src="assets/locations/asgard.png" alt="Carta Asgard"><h2>Asgard</h2><p>Enquanto este Local estiver ativo, todos os nórdicos recebem +2 de poder, nos dois lados do campo.</p></article><article><img src="assets/locations/egito.png" alt="Carta Egito"><h2>Egito</h2><p>Enquanto este Local estiver ativo, todos os egípcios recebem +2 de poder, nos dois lados do campo.</p></article><article><img src="assets/locations/grecia.png" alt="Carta Grécia"><h2>Grécia</h2><p>Enquanto este Local estiver ativo, todos os gregos recebem +2 de poder, nos dois lados do campo.</p></article></main></html>
+{
+  "cards": [
+    {
+      "id": "mjolnir",
+      "name": "Mjölnir",
+      "type": "Equipamento",
+      "kind": "equipment",
+      "faction": "Nórdicos",
+      "badgeKey": "norse",
+      "power": 0,
+      "cost": null,
+      "symbol": "⚔",
+      "glow": "rgba(195,168,89,.42)",
+      "abilityTitle": "Equipar",
+      "ability": "Somente Thor pode equipar. Concede +4 de poder.",
+      "art": "assets/equipment/mjolnir.png",
+      "previewOnly": false,
+      "story": [
+        "Mjölnir · Equipamento.",
+        "Somente Thor pode equipar. Concede +4 de poder.",
+        "Escolha um personagem aliado compatível em campo."
+      ]
+    },
+    {
+      "id": "olho-que-tudo-ve",
+      "name": "Olho que Tudo Vê",
+      "type": "Equipamento",
+      "kind": "equipment",
+      "faction": "Egípcios",
+      "badgeKey": "egypt",
+      "power": 0,
+      "cost": null,
+      "symbol": "⚔",
+      "glow": "rgba(195,168,89,.42)",
+      "abilityTitle": "Equipar",
+      "ability": "Somente Hórus, Rá e Osíris podem equipar. Concede +4 de poder.",
+      "art": "assets/equipment/olho-que-tudo-ve.png",
+      "previewOnly": false,
+      "story": [
+        "Olho que Tudo Vê · Equipamento.",
+        "Somente Hórus, Rá e Osíris podem equipar. Concede +4 de poder.",
+        "Escolha um personagem aliado compatível em campo."
+      ]
+    },
+    {
+      "id": "raio-de-zeus",
+      "name": "Raio de Zeus",
+      "type": "Equipamento",
+      "kind": "equipment",
+      "faction": "Grécia",
+      "badgeKey": "greece",
+      "power": 0,
+      "cost": null,
+      "symbol": "⚔",
+      "glow": "rgba(195,168,89,.42)",
+      "abilityTitle": "Equipar",
+      "ability": "Somente Zeus pode equipar. Concede +4 de poder.",
+      "art": "assets/equipment/raio-de-zeus.png",
+      "previewOnly": false,
+      "story": [
+        "Raio de Zeus · Equipamento.",
+        "Somente Zeus pode equipar. Concede +4 de poder.",
+        "Escolha um personagem aliado compatível em campo."
+      ]
+    },
+    {
+      "id": "runas-nordicas",
+      "name": "Runa Uruz",
+      "type": "Equipamento",
+      "kind": "equipment",
+      "faction": "Nórdicos",
+      "badgeKey": "norse",
+      "power": 0,
+      "cost": null,
+      "symbol": "⚔",
+      "glow": "rgba(195,168,89,.42)",
+      "abilityTitle": "Equipar",
+      "ability": "Um personagem nórdico à sua escolha recebe +2 de poder.",
+      "art": "assets/equipment/runas-nordicas.png",
+      "previewOnly": false,
+      "story": [
+        "Runa Uruz · Equipamento.",
+        "Um personagem nórdico à sua escolha recebe +2 de poder.",
+        "Escolha um personagem aliado compatível em campo."
+      ]
+    },
+    {
+      "id": "excalibur",
+      "name": "Excalibur",
+      "type": "Equipamento",
+      "kind": "equipment",
+      "faction": "Universal",
+      "badgeKey": "celtic",
+      "power": 0,
+      "cost": null,
+      "symbol": "⚔",
+      "glow": "rgba(195,168,89,.42)",
+      "abilityTitle": "Equipar",
+      "ability": "Somente Rei Arthur e Lukyan base podem equipar. Rei Arthur recebe +4 de poder. Lukyan base se transforma em Lukyan — Rei de Todos, uma carta especial que não entra no baralho nem na mão.",
+      "art": "assets/equipment/excalibur.png",
+      "previewOnly": false,
+      "story": [
+        "Excalibur · Equipamento.",
+        "Somente Rei Arthur e Lukyan base podem equipar. Rei Arthur recebe +4 de poder. Lukyan base se transforma em Lukyan — Rei de Todos, uma carta especial que não entra no baralho nem na mão.",
+        "Escolha um personagem aliado compatível em campo."
+      ]
+    }
+  ],
+  "heroes": [
+    {
+      "id": "lukyan",
+      "name": "Lukyan — Rei da Festa",
+      "power": 3,
+      "faction": "Alyns",
+      "type": "Personagem",
+      "subtype": "Aventureiro",
+      "abilityTitle": "Rei da Festa",
+      "ability": "Ao entrar numa fileira com outros personagens, ganha +3 pontos de poder.",
+      "kind": "unit",
+      "symbol": "✦",
+      "glow": "rgba(184,50,64,.42)",
+      "badgeKey": "alyans",
+      "art": "assets/cards-20261017/lukyan.png",
+      "hologram": "assets/holograms/lukyan-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Lukyan · Aventureiro · Facção Alyns.",
+        "Habilidade — Rei da Festa: Ao entrar numa fileira com outros personagens, ganha +3 pontos de poder."
+      ],
+      "sourceCard": "codex-clipboard-c87018dd-96df-4fd4-a9dd-bf6ada86a050.png",
+      "sourceHologram": "35-cavaleiro-taverna.png",
+      "specialOnly": false
+    },
+    {
+      "id": "lukyan-rei-de-todos",
+      "name": "Lukyan — Rei de Todos",
+      "power": 6,
+      "faction": "Alyns",
+      "type": "Personagem",
+      "subtype": "Aventureiro",
+      "abilityTitle": "Rei de Todos",
+      "ability": "Agora com Excalibur, Lukyan tem seu poder dobrado por todos seus aliados em campo. Só aparece pela transformação de Lukyan com Excalibur; não pode entrar no baralho ou na mão.",
+      "kind": "unit",
+      "symbol": "✦",
+      "glow": "rgba(184,50,64,.42)",
+      "badgeKey": "alyans",
+      "art": "assets/cards-20261017/lukyan-rei-de-todos.png",
+      "hologram": "assets/holograms/lukyan-rei-de-todos-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Lukyan · Aventureiro · Facção Alyns.",
+        "Habilidade — Rei de Todos: Agora com Excalibur, Lukyan tem seu poder dobrado por todos seus aliados em campo.",
+        "Agora com Excalibur, Lukyan tem seu poder dobrado por todos seus aliados em campo. Só aparece pela transformação de Lukyan com Excalibur; não pode entrar no baralho ou na mão."
+      ],
+      "sourceCard": "codex-clipboard-d61f8f3c-3e85-4f78-84a3-c6585dd5bb90.png",
+      "sourceHologram": "34-cavaleiro-duas-espadas.png",
+      "specialOnly": true
+    }
+  ],
+  "rules": {
+    "mjolnir": {
+      "ids": [
+        "thor"
+      ],
+      "bonus": 4
+    },
+    "olho-que-tudo-ve": {
+      "ids": [
+        "horus",
+        "ra",
+        "osiris"
+      ],
+      "bonus": 4
+    },
+    "raio-de-zeus": {
+      "ids": [
+        "zeus"
+      ],
+      "bonus": 4
+    },
+    "runas-nordicas": {
+      "faction": "Nórdicos",
+      "bonus": 2
+    },
+    "excalibur": {
+      "ids": [
+        "rei-arthur",
+        "lukyan"
+      ],
+      "bonus": 4,
+      "transformId": "lukyan",
+      "transformTo": "lukyan-rei-de-todos"
+    }
+  },
+  "factions": {
+    "soldado-esparta": "Grécia",
+    "athena": "Grécia",
+    "lobo-alfa": "Monstros",
+    "guardiao-nordico": "Nórdicos",
+    "mjolnir": "Nórdicos",
+    "runas-nordicas": "Nórdicos",
+    "grecia": "Grécia",
+    "eclipse": "Universal",
+    "campo-troia": "Grécia",
+    "medusa": "Grécia",
+    "poseidon": "Grécia",
+    "zeus": "Grécia",
+    "hades": "Grécia",
+    "lobo-omega": "Monstros",
+    "lukyan": "Alyns",
+    "anubis": "Egípcios",
+    "odin": "Nórdicos",
+    "lukyan-rei-de-todos": "Alyns",
+    "minotauro": "Grécia",
+    "apolo": "Grécia",
+    "ra": "Egípcios",
+    "ragnar": "Nórdicos",
+    "afrodite": "Grécia",
+    "aquiles": "Grécia",
+    "seth": "Egípcios",
+    "osiris": "Egípcios",
+    "thor": "Nórdicos",
+    "artemis": "Grécia",
+    "sobek": "Egípcios",
+    "ares": "Grécia",
+    "beowulf": "Nórdicos",
+    "heimdall": "Nórdicos",
+    "dionisio": "Grécia",
+    "butter": "Alyns",
+    "hefesto": "Grécia",
+    "hercules": "Grécia",
+    "hermes": "Grécia",
+    "horus": "Egípcios",
+    "lobo-beta": "Monstros",
+    "isis": "Egípcios",
+    "mulher": "Monstros",
+    "homem": "Monstros",
+    "yggdrasil": "Nórdicos",
+    "alto-egito": "Egípcios",
+    "baixo-egito": "Egípcios",
+    "bifrost": "Nórdicos",
+    "esparta": "Grécia",
+    "labirinto-dedalos": "Grécia",
+    "nilfheim": "Nórdicos",
+    "leonidas": "Grécia",
+    "loki": "Nórdicos",
+    "gigante-de-gelo": "Nórdicos",
+    "gigantes-de-gelo": "Nórdicos"
+  }
+}
