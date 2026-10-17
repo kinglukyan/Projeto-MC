@@ -243,7 +243,7 @@
     const mini=(unit,index=0)=>{const card=cardById[unit.cardId],power=currentPower(side,unit);return `<article tabindex="0" class="battle-mini-card ${card.art?"has-card-art ":""}${card.hologram?"has-hologram":""}" style="--stack-index:${index}" data-unit-uid="${escapeHTML(unit.uid)}" data-field-index="${side.field.indexOf(unit)}" data-card-id="${card.id}" title="${escapeHTML(card.name)} · ${power} poder">${card.art?`<img src="${card.art}" alt="${escapeHTML(card.name)}">`:`<span class="mini-glyph">${escapeHTML(card.symbol)}</span>`}<span class="mini-card-meta"><b>${escapeHTML(card.name)}</b><strong>${power}</strong></span>${holo(card)}</article>`;};
     return [0,1,2].map(lane=>{const units=side.field.filter(u=>u.lane===lane),companions=units.filter(u=>{const c=cardById[u.cardId];return c.type==="Companheiro"||c.subtype==="Companheiro";}),others=units.filter(u=>!companions.includes(u));let pile="";if(companions.length>1){pile=`<div class="companion-stack" style="--formation-cols:${Math.min(6,companions.length)}">${companions.map(mini).join("")}<div class="companion-formation">${companions.map(u=>holo(cardById[u.cardId])).join("")}</div><button type="button" class="stack-expand" aria-label="Ver ${companions.length} companheiros da fileira" aria-expanded="false">×${companions.length}</button></div>`;}else pile=companions.map(mini).join("");return `<div class="battle-lane" data-lane-index="${lane}" aria-label="Linha ${lane+1}">${pile}${others.map(mini).join("")}</div>`;}).join("");
   }
-  document.addEventListener("click",event=>{const b=event.target.closest(".stack-expand");if(!b)return;event.stopPropagation();const open=b.parentElement.classList.toggle("expanded");b.setAttribute("aria-expanded",String(open));});
+  document.addEventListener("click",event=>{const b=event.target.closest(".stack-expand");if(!b)return;event.stopPropagation();const open=b.parentElement.classList.toggle("expanded");b.setAttribute("aria-expanded",String(open));queueHologramSync();});
   function renderEnemyHand(hand){return hand.map((_,index)=>'<span class="enemy-hand-back" style="--back-x:'+((index-(hand.length-1)/2)*27)+'px;--back-angle:'+((index-(hand.length-1)/2)*4)+'deg;--back-z:'+index+'" aria-hidden="true"></span>').join("");}
   function renderUnderworldPile(side,pileId,stackId,countId,label){
     const cards=side.underworld;
@@ -255,7 +255,21 @@
       return '<span class="underworld-card" title="'+escapeHTML(card.name)+'" style="left:calc(50% + '+left+'px);z-index:'+index+';transform:translateX(-50%) rotate('+angle+'deg)">'+face+'<b>'+escapeHTML(card.name)+'</b></span>';
     }).join("")||'<span class="underworld-empty-mark">✦</span>';
   }
-  function syncBattleHolograms(){document.getElementById("battle-hologram-layer")?.remove();}
+  function syncBattleHolograms(){
+    document.getElementById("battle-hologram-layer")?.remove();
+    if(activeView!=="duel")return;
+    const mobile=matchMedia("(max-width:760px)").matches,cell=mobile?22:28;
+    document.querySelectorAll("#view-duel .companion-stack").forEach(pile=>{
+      const cards=[...pile.querySelectorAll(":scope>.battle-mini-card")],first=cards[0],formation=pile.querySelector(".companion-formation");if(!first||!formation)return;
+      const members=formation.children.length,columns=Math.max(1,Math.min(6,members)),rows=Math.max(1,Math.ceil(members/columns));
+      pile.style.setProperty("--stack-card-width",first.offsetWidth+"px");pile.style.setProperty("--formation-width",Math.max(first.offsetWidth+(cards.length-1)*3,columns*cell)+"px");
+      pile.style.setProperty("--stack-lift",Math.min(12,(cards.length-1)*2)+"px");
+      if(!pile.classList.contains("expanded"))pile.style.height=first.offsetHeight+"px";else pile.style.height="auto";
+      const memberHeight=Math.min(mobile?34:44,56/rows),lift=Math.min(12,(cards.length-1)*2);
+      formation.style.setProperty("--formation-cols",columns);formation.style.setProperty("--member-height",memberHeight+"px");
+      pile.closest(".battle-lane")?.style.setProperty("--formation-headroom",(pile.classList.contains("expanded")?0:Math.max(0,rows*memberHeight+lift-first.offsetHeight/2+6))+"px");
+    });
+  }
   let hologramSyncFrame=0;function queueHologramSync(){if(hologramSyncFrame)return;hologramSyncFrame=requestAnimationFrame(()=>{hologramSyncFrame=0;syncBattleHolograms();});}
   window.addEventListener("resize",queueHologramSync);window.addEventListener("scroll",queueHologramSync,true);
   window.addEventListener("mythic-account-signed-out",()=>{

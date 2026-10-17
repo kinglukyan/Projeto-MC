@@ -56,3 +56,53 @@ body.mythic-rework :is(.honor-tabs button[aria-pressed="true"],.legend-tabs butt
 body.mythic-rework :is(.button-primary,.button-secondary,.detail-play-button,.card-detail-button,.ability-choice-done,.stack-expand):hover:not(:disabled){background:linear-gradient(115deg,#6a50a199,#29223ee8)!important;border-color:#ead7ff!important;color:#fff!important}
 body.mythic-rework :is(.button-primary,.button-secondary,.detail-play-button,.card-detail-button,.ability-choice-done,.stack-expand):focus-visible{outline:2px solid #edddff;outline-offset:3px;box-shadow:inset 0 0 0 2px #edddff,inset 3px 0 #d2b7ff,0 0 18px #8752df55!important}
 body.mythic-rework :is(.button-primary,.button-secondary,.detail-play-button,.card-detail-button,.ability-choice-done,.stack-expand):disabled{opacity:.45;cursor:not-allowed}
+
+/* Every hologram starts at its card's midpoint, inside a reserved row area. */
+body.mythic-rework.duel-fullscreen #view-duel .battle-field{
+ height:auto!important;min-height:0!important;max-height:none!important;
+ grid-template-rows:repeat(3,minmax(96px,auto))!important;
+ overflow:visible!important;position:relative!important;z-index:4;isolation:isolate
+}
+body.mythic-rework.duel-fullscreen #view-duel .battle-field .battle-lane{
+ min-height:96px!important;padding-top:max(34px,var(--formation-headroom,0px))!important;padding-bottom:10px!important;
+ box-sizing:border-box;align-items:flex-end!important;overflow:visible!important;
+ isolation:auto;z-index:auto
+}
+body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card{
+ overflow:visible!important;z-index:10;isolation:auto;flex-shrink:0
+}
+body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card>.battle-hologram{
+ left:50%!important;top:auto!important;bottom:50%!important;width:47px!important;height:56px!important;
+ z-index:30;transform:translateX(-50%)!important;translate:none!important;animation:none!important;
+ pointer-events:none;overflow:visible
+}
+body.mythic-rework.duel-fullscreen #view-duel .battle-hologram>img{
+ position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
+ min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;
+ object-fit:contain!important;object-position:center bottom!important;transform:none!important;
+ margin:0!important;padding:0!important;border:0!important;border-radius:0!important
+}
+body.mythic-rework.duel-fullscreen #view-duel .companion-stack{
+ width:var(--formation-width,60px);min-width:0;flex:0 0 auto;z-index:10;overflow:visible;isolation:isolate
+}
+body.mythic-rework.duel-fullscreen #view-duel .companion-stack:not(.expanded)>.battle-mini-card{
+ left:calc(50% - var(--stack-card-width,37px)/2 + var(--stack-index)*3px)!important;
+ top:calc(min(var(--stack-index)*2px,12px)*-1)!important
+}
+body.mythic-rework.duel-fullscreen #view-duel .companion-stack>.companion-formation{
+ bottom:calc(50% + var(--stack-lift,0px));left:50%;width:max-content;
+ grid-template-columns:repeat(var(--formation-cols),28px);gap:0;z-index:40
+}
+body.mythic-rework.duel-fullscreen #view-duel .companion-formation>.battle-hologram{
+ width:28px!important;height:var(--member-height,44px)!important;bottom:auto!important;
+ left:auto!important;top:auto!important;transform:none!important;align-self:end
+}
+body.mythic-rework.duel-fullscreen #view-duel .companion-stack.expanded{width:auto}
+body.mythic-rework.duel-fullscreen #view-duel .companion-stack.expanded>.battle-mini-card{left:auto!important;top:auto!important}
+@media(max-width:760px){
+ body.mythic-rework.duel-fullscreen #view-duel .battle-field{grid-template-rows:repeat(3,minmax(82px,auto))!important}
+ body.mythic-rework.duel-fullscreen #view-duel .battle-field .battle-lane{min-height:82px!important;padding-top:max(27px,var(--formation-headroom,0px))!important;padding-bottom:8px!important}
+ body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card>.battle-hologram{width:34px!important;height:46px!important}
+ body.mythic-rework.duel-fullscreen #view-duel .companion-stack>.companion-formation{grid-template-columns:repeat(var(--formation-cols),22px)}
+ body.mythic-rework.duel-fullscreen #view-duel .companion-formation>.battle-hologram{width:22px!important;height:var(--member-height,34px)!important}
+}
