@@ -328,6 +328,11 @@
       if(document.body.classList.contains("duel-fullscreen")){showToast("Atualização disponível. Recarregue ao terminar a partida.");return;}
       refreshing=true;location.reload();
     });
+    navigator.serviceWorker.addEventListener("message",event=>{
+      if(event.data?.type!=="MYTHIC_MEDIA_UPDATED"||refreshing)return;
+      if(document.body.classList.contains("duel-fullscreen")){showToast("Novas imagens disponíveis. Recarregue ao terminar a partida.");return;}
+      refreshing=true;location.reload();
+    });
     window.addEventListener("load",async()=>{try{
       const registration=await navigator.serviceWorker.register("./sw.js",{updateViaCache:"none"});
       if(registration.waiting)registration.waiting.postMessage({type:"MYTHIC_SKIP_WAITING"});
