@@ -1,4 +1,15 @@
 /* Fullscreen deck table. Uses the existing cards and cached site textures. */
+body.concept-ui #view-decks .concept-deck-editor[hidden]{display:none!important}
+body.concept-ui #view-decks #deck-builder-entry{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:62px;padding:16px 26px!important;border:1px solid #e4c7ff!important;border-left:5px solid #e1b7ff!important;background:linear-gradient(115deg,#7548a9,#47306a 62%,#2c203e)!important;box-shadow:inset 0 1px 0 #fff3,0 0 26px #bd7cff55,0 6px 18px #0005!important;font-size:15px!important;font-weight:800;letter-spacing:.04em;color:#fff7ff!important}
+body.concept-ui #view-decks #deck-builder-entry>span{font-size:27px;line-height:1;color:#f3d9ff;filter:drop-shadow(0 0 6px #e4a7ff)}
+body.concept-ui #view-decks #deck-builder-entry:hover{filter:brightness(1.12)}
+body.concept-ui #view-decks .concept-deck-empty{align-items:center;justify-content:center;text-align:center;border-style:dashed;background:linear-gradient(145deg,#33213cb8,#160f22d9)!important;color:#eedaf9;box-shadow:inset 0 0 40px #8e4cbb14}
+body.concept-ui #view-decks .concept-deck-plus{display:grid;place-items:center;width:76px;height:76px;margin-bottom:14px;border:1px solid #d7b1ee88;border-radius:50%;background:radial-gradient(circle,#9c67c63d,#34223f66);box-shadow:0 0 26px #ae6ce429;font:300 56px/1 Arial,sans-serif;color:#f2d9ff}
+body.concept-ui #view-decks .concept-deck-empty>small{color:#c8b2d8}
+body.concept-ui #view-decks .concept-deck-delete{border-color:#cf9aa780!important;color:#f0c2cb!important;background:linear-gradient(120deg,#482234b3,#211524)!important;box-shadow:none!important}
+.deck-delete-modal .deck-delete-error{color:#f6bdc8;min-height:1.3em}
+.deck-delete-modal .deck-delete-confirm{border-color:#d4a4b8;color:#ffe3ea;background:linear-gradient(120deg,#70364d,#3c2238)}
+@media(max-width:640px){body.concept-ui #view-decks #deck-builder-entry{width:100%;min-height:54px;padding:12px 16px!important;font-size:13px!important}.concept-deck-empty .concept-deck-plus{width:62px;height:62px;font-size:44px}}
 body.deck-builder-open{overflow:hidden!important;overscroll-behavior:none}
 #deck-builder.db-dialog{--db-ink:#f0e8f6;--db-muted:#bcb0c9;--db-line:#c2acdb55;position:fixed;inset:0;box-sizing:border-box;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;border-radius:0;color:var(--db-ink);background:#100d18;font-family:'Mythic UI','Noto Sans',Arial,sans-serif;overflow:hidden;}
 #deck-builder:not([open]){display:none!important}

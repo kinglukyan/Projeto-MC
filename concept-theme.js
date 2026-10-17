@@ -28,24 +28,48 @@
 
  // Deck gallery wraps, rather than replaces, the existing editor.
  setHeading('#view-decks','MEUS BARALHOS','Forje sua estratégia e escolha as lendas que irão para a Arena.');
- const deckView=$('#view-decks'),deckHeading=deckView.querySelector('.page-heading'),newDeck=button('+ Criar baralho',()=>{if($('#new-deck').disabled){window.MythicPresentation?.notify('Você já tem 5 baralhos. Edite um deles para continuar.');return;}$('#new-deck').click();if(window.MythicDeckBuilder)window.MythicDeckBuilder.open();else editor.open=true;},'button button-primary');deckHeading.append(newDeck);
+ const deckView=$('#view-decks'),deckHeading=deckView.querySelector('.page-heading');
+ window.MythicOpenSelectedDeckBuilder=()=>{const select=$('#deck-slot-select');select.value=String(model.previewSlot);select.dispatchEvent(new Event('change',{bubbles:true}));window.MythicDeckBuilder?.open();};
+ function createDeck(){
+  if(!window.MythicOnline?.isConnected?.()){window.MythicOnline?.requireLogin?.();return;}
+  if(!window.MythicOnline.profileReady?.()){window.MythicPresentation?.notify('Aguarde o carregamento da sua coleção.');return;}
+  const state=data(),emptyIndex=state.decks.findIndex(deck=>!Object.values(deck.cards||{}).some(n=>Number(n)>0));
+  if(emptyIndex>=0){const select=$('#deck-slot-select');select.value=String(emptyIndex);select.dispatchEvent(new Event('change',{bubbles:true}));}
+  else{if($('#new-deck').disabled){window.MythicPresentation?.notify('Você já tem 5 baralhos. Exclua um para liberar espaço.');return;}$('#new-deck').click();}
+  model.previewSlot=data().activeSlot;window.MythicDeckBuilder?.open();
+ }
+ const deleteDialog=make('dialog','db-exit deck-delete-modal');deleteDialog.setAttribute('aria-labelledby','deck-delete-title');
+ const deleteTitle=make('h2','','Excluir baralho?');deleteTitle.id='deck-delete-title';const deleteCopy=make('p'),deleteError=make('p','deck-delete-error');deleteError.setAttribute('role','status');const deleteActions=make('div');
+ let deleting=false,deleteTarget=null;
+ const deleteCancel=button('Cancelar',()=>deleteDialog.close(),'db-button db-secondary');
+ const deleteConfirm=button('Excluir baralho',async()=>{
+  if(deleting||deleteTarget===null)return;deleting=true;deleteCancel.disabled=true;deleteConfirm.disabled=true;deleteConfirm.textContent='Excluindo…';deleteError.textContent='';
+  try{await window.MythicDeckEditor.remove(deleteTarget);model.previewSlot=data().activeSlot;deleteDialog.close();drawDecks();window.MythicPresentation?.notify('Baralho excluído. Suas cartas continuam na coleção.');}
+  catch(error){deleteError.textContent=error.message||'Não foi possível excluir o baralho.';}
+  finally{deleting=false;deleteCancel.disabled=false;deleteConfirm.disabled=false;deleteConfirm.textContent='Excluir baralho';}
+ },'db-button deck-delete-confirm');
+ deleteActions.append(deleteCancel,deleteConfirm);deleteDialog.append(deleteTitle,deleteCopy,deleteError,deleteActions);document.body.append(deleteDialog);
+ deleteDialog.addEventListener('cancel',event=>{if(deleting)event.preventDefault();});
+ function requestDeleteDeck(index){const deck=data().decks[index];if(!deck)return;deleteTarget=index;deleteCopy.textContent=`Excluir “${deck.name}”? As cartas continuam na sua coleção. Só a montagem do baralho será apagada.`;deleteError.textContent='';deleteDialog.showModal();deleteCancel.focus();}
  const deckTools=make('div','concept-deck-tools'),deckSearch=make('input');deckSearch.type='search';deckSearch.placeholder='Buscar baralhos…';deckSearch.setAttribute('aria-label','Buscar baralhos');const deckSort=make('select');deckSort.setAttribute('aria-label','Ordenar baralhos');deckSort.append(new Option('Ordem dos decks','default'),new Option('Nome','name'),new Option('Mais cartas','count'));deckTools.append(deckSearch,deckSort);deckHeading.after(deckTools);
  const deckLayout=make('div','concept-deck-layout'),deckGallery=make('div','concept-deck-gallery'),deckDetail=panel('','concept-deck-detail');deckLayout.append(deckGallery,deckDetail);deckTools.after(deckLayout);
- const editor=make('details','concept-deck-editor');editor.append(make('summary','','Editar cartas e salvar baralho'));for(const n of [...deckView.querySelectorAll(':scope>.deck-summary,:scope>#deck-card-list,:scope>#deck-save-status')])editor.append(n);deckView.append(editor);
+ const editor=make('div','concept-deck-editor');editor.hidden=true;editor.setAttribute('aria-hidden','true');for(const n of [...deckView.querySelectorAll(':scope>.deck-summary,:scope>#deck-card-list,:scope>#deck-save-status')])editor.append(n);deckView.append(editor);
  async function copyCode(value){try{await navigator.clipboard.writeText(value);window.MythicPresentation?.notify('Código copiado.');}catch{window.MythicPresentation?.notify('Não foi possível copiar. Permita acesso à área de transferência.');}}
  function drawDecks(){
   const state=data();if(!state.decks.length)return;
   if(!state.decks[model.previewSlot])model.previewSlot=state.activeSlot;
   const query=deckSearch.value.trim().toLocaleLowerCase('pt-BR'),total=d=>Object.values(d.cards||{}).reduce((s,v)=>s+Number(v||0),0);
-  const rows=state.decks.map((d,i)=>({...d,index:i})).filter(d=>d.name.toLocaleLowerCase('pt-BR').includes(query));if(deckSort.value==='name')rows.sort((a,b)=>a.name.localeCompare(b.name));if(deckSort.value==='count')rows.sort((a,b)=>total(b)-total(a));
+  const rows=state.decks.map((d,i)=>({...d,index:i})).filter(d=>total(d)>0&&d.name.toLocaleLowerCase('pt-BR').includes(query));if(deckSort.value==='name')rows.sort((a,b)=>a.name.localeCompare(b.name));if(deckSort.value==='count')rows.sort((a,b)=>total(b)-total(a));
   deckGallery.replaceChildren();
   for(const deck of rows){const card=button('',()=>{model.previewSlot=deck.index;drawDecks();},'concept-deck-tile');card.setAttribute('aria-pressed',String(model.previewSlot===deck.index));const cover=state.cards.find(c=>deck.cards[c.id]>0&&c.art);if(cover&&/^(assets\/|https?:\/\/)/.test(cover.art))card.style.setProperty('--deck-art',`url(${JSON.stringify(cover.art)})`);if(deck.index===state.activeSlot)card.append(make('span','concept-deck-active','ATIVO'));card.append(fan(deck.cards),make('b','',deck.name),make('small','',`${total(deck)} cartas`));deckGallery.append(card);}
-  if(!rows.length)empty(deckGallery,'Nenhum baralho com esse nome.');
+  const emptyIndex=state.decks.findIndex(deck=>total(deck)===0);
+  if(emptyIndex>=0||state.decks.length<5){const slot=button('',createDeck,'concept-deck-tile concept-deck-empty');slot.setAttribute('aria-label','Criar baralho no construtor');const plus=make('span','concept-deck-plus','+');plus.setAttribute('aria-hidden','true');slot.append(plus,make('b','','Criar baralho'),make('small','','Abrir modo construtor'));deckGallery.append(slot);}
+  if(!rows.length&&query)empty(deckGallery,'Nenhum baralho com esse nome.');
   const selected=state.decks[model.previewSlot],entries=state.cards.filter(c=>selected.cards[c.id]>0),units=entries.filter(c=>c.kind==='unit').reduce((s,c)=>s+Number(selected.cards[c.id]),0),all=total(selected);
   deckDetail.replaceChildren(make('h2','',selected.name),make('p','concept-hero-subtitle','Seu próximo duelo começa com uma boa estratégia.'),fan(selected.cards));
   const metrics=make('div','concept-deck-metrics');for(const [n,label]of [[all,'cartas'],[units,'personagens'],[all-units,'especiais']]){const box=make('span');box.append(make('b','',String(n)),make('small','',label));metrics.append(box);}deckDetail.append(metrics);
   const stats=model.deckStats.find(d=>d.name===selected.name);if(stats)deckDetail.append(make('p','concept-deck-stat',`${stats.win_rate||0}% de vitórias · ${stats.games||0} partidas registradas`));
-  deckDetail.append(button(model.previewSlot===state.activeSlot?'Baralho ativo':'Usar este baralho',()=>{const select=$('#deck-slot-select');select.value=String(model.previewSlot);select.dispatchEvent(new Event('change',{bubbles:true}));drawDecks();},'button button-primary'),button('Editar baralho',()=>{const select=$('#deck-slot-select');select.value=String(model.previewSlot);select.dispatchEvent(new Event('change',{bubbles:true}));if(window.MythicDeckBuilder)window.MythicDeckBuilder.open();else{editor.open=true;editor.scrollIntoView({block:'start',behavior:'smooth'});}}),button('Copiar código',()=>copyCode(JSON.stringify({name:selected.name,cards:selected.cards}))));
+  deckDetail.append(button(model.previewSlot===state.activeSlot?'Baralho ativo':'Usar este baralho',()=>{const select=$('#deck-slot-select');select.value=String(model.previewSlot);select.dispatchEvent(new Event('change',{bubbles:true}));drawDecks();},'button button-primary'),button('Editar baralho',()=>{const select=$('#deck-slot-select');select.value=String(model.previewSlot);select.dispatchEvent(new Event('change',{bubbles:true}));window.MythicDeckBuilder?.open();}),button('Copiar código',()=>copyCode(JSON.stringify({name:selected.name,cards:selected.cards}))),button('Excluir baralho',()=>requestDeleteDeck(model.previewSlot),'button concept-deck-delete'));
   const mini=$('#concept-arena-decks');if(mini){mini.replaceChildren();state.decks.slice(0,3).forEach((deck,i)=>{const n=button('',()=>{const select=$('#arena-deck-select');select.value=String(i);select.dispatchEvent(new Event('change',{bubbles:true}));},'concept-mini-deck');n.setAttribute('aria-pressed',String(i===state.activeSlot));n.append(fan(deck.cards),make('b','',deck.name),make('small','',`${total(deck)} cartas`));mini.append(n);});}
   $$('.concept-queue-deck').forEach(root=>{root.replaceChildren(make('h3','',`Meu baralho · ${state.decks[state.activeSlot].name}`),fan(state.decks[state.activeSlot].cards),button('Trocar baralho',()=>window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'decks'}}))));});
  }

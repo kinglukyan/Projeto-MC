@@ -145,7 +145,7 @@
     document.body.classList.add('deck-builder-open');root.showModal();render();root.querySelector('.db-back').focus();if(recovered)message('Sua edição anterior foi recuperada.');
   }
   window.MythicDeckBuilder={open,close:()=>requestClose(),isOpen:()=>Boolean(root?.open)};
-  const deckView=$('#view-decks');if(deckView){const entry=document.createElement('button');entry.id='deck-builder-entry';entry.className='button button-primary';entry.type='button';entry.innerHTML='<span aria-hidden="true">✦</span> Modo construtor';entry.addEventListener('click',open);deckView.querySelector('.page-heading')?.append(entry);}
+  const deckView=$('#view-decks');if(deckView){const entry=document.createElement('button');entry.id='deck-builder-entry';entry.className='button button-primary';entry.type='button';entry.innerHTML='<span aria-hidden="true">✦</span> Modo Construtor';entry.addEventListener('click',()=>{if(window.MythicOpenSelectedDeckBuilder)window.MythicOpenSelectedDeckBuilder();else open();});deckView.querySelector('.page-heading')?.append(entry);}
   window.addEventListener('mythic-account-signed-out',()=>{if(root?.open)close(true);});
   window.addEventListener('mythic-profile-loaded',()=>{if(root?.open&&state?.userId!==window.MythicOnline?.userId?.())close(true);});
   window.addEventListener('mythic-inventory-loaded',()=>{if(root?.open){if(!validate())message('Sua coleção mudou. Revise as cópias destacadas antes de salvar.',true);render();}});

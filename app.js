@@ -58,10 +58,22 @@
   $("#tutorial-next").addEventListener("click",()=>{if(tutorialStep<tutorialSteps.length-1){tutorialStep++;renderTutorialStep();}else finishTutorial();});
   function saveDeck(showMessage=true){deckSlots[activeDeckSlot].cards={...deckCounts};persistDeckSlots();window.MythicOnline?.saveDeckCounts({...deckCounts});window.MythicOnline?.saveNamedDeck?.(activeDeckSlot,deckSlots[activeDeckSlot].name,{...deckCounts});renderDeck();renderDeckSlots();if(showMessage){$("#deck-save-status").textContent=storageAvailable?"Deck salvo neste aparelho.":"O navegador bloqueou o salvamento local; alterações valem nesta sessão.";showToast(storageAvailable?"Deck salvo.":"O navegador bloqueou o salvamento local.");}}
   window.MythicLocalDeck={get:()=>({...deckCounts}),set:counts=>{deckCounts=Object.fromEntries(cards.map(card=>[card.id,Math.max(0,Math.min(ownedCopies(card),Number(counts?.[card.id])||0))]));deckSlots[activeDeckSlot].cards={...deckCounts};persistDeckSlots();renderDeck();renderDeckSlots();}};
-  window.MythicLocalDeckSlots={set:rows=>{const merged=[...deckSlots];for(const row of rows||[]){const index=Math.max(0,Math.min(4,(Number(row.slot)||1)-1));merged[index]={name:String(row.name||`Deck ${index+1}`).slice(0,24),cards:Object.fromEntries(cards.map(card=>[card.id,Math.max(0,Math.min(ownedCopies(card),Number(row.cards?.[card.id])||0))]))};}deckSlots=merged.slice(0,5);activeDeckSlot=Math.min(activeDeckSlot,deckSlots.length-1);deckCounts={...deckSlots[activeDeckSlot].cards};persistDeckSlots();renderDeck();renderDeckSlots();}};
+  window.MythicLocalDeckSlots={set:rows=>{const merged=[];for(const row of rows||[]){const index=Math.max(0,Math.min(4,(Number(row.slot)||1)-1));merged[index]={name:String(row.name||`Deck ${index+1}`).slice(0,24),cards:Object.fromEntries(cards.map(card=>[card.id,Math.max(0,Math.min(ownedCopies(card),Number(row.cards?.[card.id])||0))]))};}deckSlots=Array.from({length:Math.min(merged.length,5)},(_,index)=>merged[index]||{name:`Deck ${index+1}`,cards:{}});if(!deckSlots.length)deckSlots=[{name:"Deck 1",cards:{}}];activeDeckSlot=Math.min(activeDeckSlot,deckSlots.length-1);deckCounts={...deckSlots[activeDeckSlot].cards};persistDeckSlots();renderDeck();renderDeckSlots();}};
   window.MythicResetAccountDeck=()=>{deckSlots=[{name:"Deck 1",cards:{}}];activeDeckSlot=0;deckCounts={};renderDeck();renderDeckSlots();};
   window.MythicDeckEditor={
     read:()=>({slot:activeDeckSlot,name:deckSlots[activeDeckSlot].name,counts:{...deckCounts},userId:window.MythicOnline?.userId?.()||null,cards:cards.map(card=>({...card,owned:ownedCopies(card)}))}),
+    remove:async slot=>{
+      const viewer=window.MythicOnline?.userId?.();
+      if(!viewer||!Number.isInteger(slot)||!deckSlots[slot])throw new Error("Abra sua conta e selecione um baralho válido.");
+      if(window.MythicDeckBuilder?.isOpen?.())throw new Error("Feche o construtor antes de excluir um baralho.");
+      const snapshot=deckSlots.map((deck,index)=>({name:deck.name,cards:{...(index===activeDeckSlot?deckCounts:deck.cards)}}));
+      const result=await window.MythicOnline.deleteBuilderDeck(slot,activeDeckSlot,snapshot);
+      if(window.MythicOnline?.userId?.()!==viewer)throw new Error("A conta mudou durante a exclusão.");
+      deckSlots=result.decks;activeDeckSlot=result.activeSlot;deckCounts={...deckSlots[activeDeckSlot].cards};
+      try{for(let i=0;i<5;i++)sessionStorage.removeItem(`mythic-builder-draft:${viewer}:${i}`);}catch{}
+      persistDeckSlots();renderDeck();renderDeckSlots();
+      window.dispatchEvent(new CustomEvent("mythic-deck-deleted",{detail:{slot}}));
+    },
     commit:async({slot,name,counts,userId})=>{
       const viewer=window.MythicOnline?.userId?.()||null;
       if(userId!==viewer||!deckSlots[slot])throw new Error("A conta ou o baralho mudou. Abra o construtor novamente.");

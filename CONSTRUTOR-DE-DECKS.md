@@ -10,10 +10,13 @@ O ZIP principal contém o site completo. O ZIP do construtor contém apenas os a
 
 ## Como usar
 
-Em **Baralhos**, clique em **Editar baralho** ou **Modo construtor**. **Criar baralho** também abre a mesa, respeitando os cinco slots existentes.
+Em **Baralhos**, clique em **Editar baralho** ou no botão destacado **Modo Construtor** para editar o baralho selecionado. O slot com **+** abre a mesa para criar outro baralho. Ele tem as mesmas dimensões dos demais e reaparece quando preenchido, até o limite de cinco baralhos. O editor antigo foi retirado da tela.
+
+Para habilitar **Excluir baralho**, execute também `supabase/migrations/202610170016_delete_builder_deck.sql`, após o SQL 015. A opção fica no painel do baralho selecionado, pede confirmação e preserva as cartas da coleção. Após excluir o último baralho, fica um slot vazio para montar outro. A exclusão é confirmada no servidor antes de atualizar a tela.
 
 - A mesa ocupa a tela inteira, cobrindo a barra lateral.
 - A coleção mostra somente cartas jogáveis que a conta possui. Formas especiais de transformação não entram no baralho.
+- A faixa inferior mostra apenas cartas com cópias livres. Quando todas as cópias estão na mesa, a carta desaparece da faixa; retirar uma cópia faz ela reaparecer.
 - Selecione uma carta para vê-la na prévia. Clique na prévia para ampliá-la; no celular, use **Ampliar selecionada**.
 - Arraste uma carta da coleção para a mesa ou use **+**. As quantidades respeitam as cópias disponíveis.
 - Para retirar, use **−** ou arraste da mesa para a coleção. No celular, há também uma alça para arrastar da coleção.
