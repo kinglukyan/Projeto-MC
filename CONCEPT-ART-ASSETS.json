@@ -1,34 +1,43 @@
-{
-  "purpose": "Recursos visuais criados para aproximar a interface das artes aprovadas. Sidebar e combate preservados.",
-  "directory": "assets/concept-ui",
-  "assets": [
-    {
-      "asset": "citadela-luminosa.png",
-      "prompt": "Production environment background asset for MYTHIC CLASH mythological fantasy card game UI, landscape 16:9. Magnificent ancient Greek and mythic stone citadel perched on layered cliffs, immense cascading waterfalls, distant golden temples and a castle, ivy and ruined fluted columns at the extreme left and right edges, tiny warm braziers, lush greenery. Cinematic realistic painterly AAA collectible card game environment. Late afternoon luminous pale gold and blue sky in upper right, cool navy blue water and dark architectural shadows in lower half. Main middle area broad and relatively quiet for UI overlay. Same look as sophisticated game profile with deep navy panels and antique gold details. Architecture and water breathtaking but restrained detail around center. No characters, no text, no logos, no frames, no UI, no cards, no buttons. Full bleed, high quality game environment matte painting."
-    },
-    {
-      "asset": "mode-guardian.png",
-      "prompt": "Single epic heraldic emblem asset for fantasy card game MYTHIC CLASH, transparent background, centered square composition. Majestic sculpted roaring LION HEAD in weathered polished antique gold, surrounded by a dense golden laurel wreath, small blue enamel shield backing, a tiny crown and two subtle stone-carved flourishes. Expensive AAA videogame mode medallion for Guardian of the Arena. Front view, symmetric, convincing thick embossed metal, dramatic natural warm highlights and deep shadows, realistic painterly 3D illustration. Large readable silhouette, exquisite detail at small size. Entire emblem visible with padding around it. NO text, letters, numbers, watermark, buttons, UI or rectangular border. Transparent alpha outside the emblem."
-    },
-    {
-      "asset": "mode-normal.png",
-      "prompt": "Single epic fantasy card game heraldic emblem asset on TRANSPARENT BACKGROUND, square centered composition: a proud classical Greek warrior HELMET seen head-on, flanked by a balanced golden laurel wreath, a small dark blue enamel shield behind, simple compact silhouette, no wings. Same unified AAA videogame set: weathered polished antique gold, thick embossed metal, dramatically lit realistic painterly 3D collectible-game illustration, dark blue enamel, warm highlights, rich detail and readable silhouette at small size. All parts fully visible with clear padding. NO text, letters, numerals, rectangular border, watermark or UI. Transparent alpha outside the emblem."
-    },
-    {
-      "asset": "mode-ranked.png",
-      "prompt": "Single epic fantasy card game heraldic emblem asset on TRANSPARENT BACKGROUND, square centered composition: a noble classical Greek warrior HELMET front view with large spreading GOLD EAGLE WINGS, a navy blue heraldic shield and a crown above, highly prestigious competitive rank insignia. Same unified AAA videogame set: weathered polished antique gold, thick embossed metal, dramatically lit realistic painterly 3D collectible-game illustration, dark blue enamel, warm highlights, rich detail and readable silhouette at small size. All parts fully visible with clear padding. NO text, letters, numerals, rectangular border, watermark or UI. Transparent alpha outside the emblem."
-    },
-    {
-      "asset": "mode-x1.png",
-      "prompt": "Single epic fantasy card game heraldic emblem asset on TRANSPARENT BACKGROUND, square centered composition: TWO CROSSED SWORDS with long bright steel blades, intricately golden hilts and navy leather grips, symmetrical diagonal X, subtle gold laurel behind the center. Same unified AAA videogame set: weathered polished antique gold, thick embossed metal, dramatically lit realistic painterly 3D collectible-game illustration, dark blue enamel, warm highlights, rich detail and readable silhouette at small size. All parts fully visible with clear padding. NO text, letters, numerals, rectangular border, watermark or UI. Transparent alpha outside the emblem."
-    },
-    {
-      "asset": "mode-custom.png",
-      "prompt": "Single epic fantasy card game heraldic emblem asset on TRANSPARENT BACKGROUND, square centered composition: an elaborate GOLD COMPASS ROSE integrated with a cogwheel and an open tiny book at bottom, centered navy-blue shield, intricate explorer heraldry. Same unified AAA videogame set: weathered polished antique gold, thick embossed metal, dramatically lit realistic painterly 3D collectible-game illustration, dark blue enamel, warm highlights, rich detail and readable silhouette at small size. All parts fully visible with clear padding. NO text, letters, numerals, rectangular border, watermark or UI. Transparent alpha outside the emblem."
-    }
-  ],
-  "vectorFrame": {
-    "asset": "panel-frame.svg",
-    "description": "Moldura vetorial dourada escalável, desenhada diretamente para a interface."
-  }
-}
+# Cartas e hologramas — edição 17/10/2026
+
+## Entregue no projeto principal
+
+- 31 PNGs originais das cartas, sem recorte ou alteração dos textos impressos.
+- 31 hologramas associados às cartas, incluindo Lukyan em duas versões, Alfa, Beta e Omega separados, Mulher e Homem.
+- Hologramas antigos de Medusa, Poseidon, Zeus e Hades substituídos pelos novos.
+- Athena e Lobisomem Alfa conservam os IDs anteriores e as posições nos baralhos.
+- Catálogo com 42 cartas: 13 anteriores e 29 novas. As 29 novas estão como prévias na coleção e no Universo; não entram nos decks nem recebem cópias fictícias.
+- Hologramas usados na projeção da batalha e nas ilustrações do Universo.
+- Galeria `cartas-hologramas.html` com as 31 associações lado a lado.
+- O holograma da feiticeira com serpentes está reservado, sem carta correspondente recebida.
+- Cache atualizado para esta edição.
+
+## Publicação
+
+1. Aplicar no Supabase a migração `supabase/migrations/202610170002_card_art_holograms.sql`, depois das migrações anteriores.
+2. Aplicar `supabase/migrations/202610170003_corrected_cards.sql`, que também atualiza os três registros caso a edição anterior já tenha sido aplicada.
+3. Aplicar `supabase/migrations/202610170004_human_cards.sql` para registrar Mulher e Homem caso o catálogo anterior já tenha sido aplicado.
+4. Enviar os arquivos do ZIP principal para a hospedagem.
+
+A migração é necessária para impedir que o catálogo antigo do banco restaure a arte anterior e para sincronizar Athena/Alfa no PvP. Foi preparada localmente; não foi aplicada no servidor remoto. Preserva histórias, músicas e HQs já cadastradas. Atualiza os campos de arte/nome/poder/habilidade desta edição.
+
+## Regras e pendências
+
+O pedido de artes/hologramas está integrado. Esta entrega não implementa os efeitos das 29 cartas novas; elas estão identificadas como “Em preparação”. Seus textos conhecidos estão cadastrados para a próxima etapa.
+
+Mulher tem 2 de poder e Ainda Sou Alfa. Homem tem 1 de poder e Juntos Somos Fortes. Ambos seguem a facção Monstros e a identificação Monstro · Humano das imagens fornecidas. As cartas originais do OneDrive foram somente lidas e copiadas para o projeto principal. Seus hologramas humanos existentes foram reutilizados. Os textos são os impressos; a abrangência da duplicação de forças ainda deve ser definida antes de implementar as habilidades.
+
+Ragnar, Beowulf e Ártemis receberam as cartas corrigidas fornecidas pelo usuário. Ragnar move uma carta aliada de baixo poder de outra fileira para a sua; Ártemis tem 5 de poder e Tiro Preciso, que elimina duas cartas Monstros de cada lado; Beowulf ganha +3 de poder na entrada se houver alguma carta da facção Monstros na mesa. Os três hologramas anteriores continuam associados aos mesmos personagens.
+
+Athena foi atualizada para poder 4 e +2 às outras cartas aliadas da mesma fileira. O Alfa foi atualizado para +2 por Beta aliado em campo, removendo seu antigo +1 na entrada. A migração acompanha essas duas alterações de regras existentes. Os custos das cartas novas não foram inventados; não aparecem nas imagens fornecidas.
+
+Antes da liberação das novas cartas é preciso definir os efeitos, implementar a mesma regra no Guardião e no servidor e liberar os IDs na validação dos baralhos. Também é necessário resolver a duração em “rodadas” de Hércules/Dionísio, pois o duelo atual tem duas rodadas e uma terceira somente no empate; a carta de Hércules menciona doze.
+
+## Arquivos de referência
+
+- `card-expansion.js`: dados visuais, estados de prévia e associações.
+- `card-hologram-map.json`: manifest completo com nomes dos arquivos originais.
+- `assets/cards-20261017/`: cartas completas originais.
+- `assets/holograms/`: hologramas transparentes.
+
+Não foram executados testes de navegador, partidas nem SQL remoto. Menu lateral e estrutura visual do combate preservados; regras de Athena/Alfa ajustadas conforme descrito acima.

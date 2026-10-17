@@ -1,4 +1,5 @@
-{
+// Original card art and hologram associations. Preview cards await gameplay rules.
+window.MythicCardExpansion = {
   "version": "20261017",
   "cards": [
     {
@@ -757,4 +758,4 @@
   "reservedHolograms": [
     "assets/holograms/feiticeira-serpentes-hologram.png"
   ]
-}
+};

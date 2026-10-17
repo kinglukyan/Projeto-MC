@@ -15,7 +15,7 @@
     {id:"hades",name:"Hades",abilityTitle:"Submundo Responda",type:"Personagem",faction:"Grécia",symbol:"♜",power:7,cost:5,kind:"unit",glow:"rgba(113,95,139,.42)",art:"assets/hades-full.png",ability:"Pode trazer uma carta de volta do Submundo.",story:["Hades reina sobre o mundo dos mortos e conhece cada alma que atravessa seus portões. À sua convocação, uma carta pode retornar à batalha.","Habilidade — Submundo Responda: ao entrar em campo, recupera uma carta do seu Submundo para a mão.","Releitura mitológica criada para o universo Mythic Clash."]}
   ];
   const expansion=window.MythicCardExpansion;
-  for(const incoming of [...(expansion?.cards||[]),...(window.MythicTerrainCards||[]),...(window.MythicLocationCards||[]),...(window.MythicEquipmentCards||[]),...(window.MythicEclipseCards||[])]){
+  for(const incoming of [...(expansion?.cards||[]),...(window.MythicTerrainCards||[]),...(window.MythicLocationCards||[]),...(window.MythicEquipmentCards||[]),...(window.MythicEclipseCards||[]),...(window.MythicLokiCards||[])]){
     const existing=cards.find(card=>card.id===incoming.id);
     if(existing)Object.assign(existing,incoming);
     else cards.push({...incoming,cost:null});

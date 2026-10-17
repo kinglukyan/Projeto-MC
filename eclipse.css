@@ -1,47 +1,88 @@
-.mythic-rework .battle-board[data-eclipse]{--eclipse-accent:#fa8a8a;transition:border-color .8s,box-shadow .8s;border-color:var(--eclipse-accent);box-shadow:inset 0 0 55px #200c2a88,0 0 34px #8e234433}
-.mythic-rework .battle-board[data-eclipse]::after{background-image:linear-gradient(180deg,#13071cd9,#170f25a3 45%,#080d23dc),url('assets/eclipse/eclipse-lunar.png')!important;background-position:center,center 35%;background-size:cover;transition:opacity 1s;opacity:1}
-.mythic-rework .battle-board[data-eclipse]::before{background:radial-gradient(ellipse at 50% 5%,#ef3b5933,transparent 65%),linear-gradient(110deg,#644fa01a,transparent 55%);border-color:#cb849d77;box-shadow:inset 0 0 32px #6e253255;pointer-events:none}
-.mythic-rework .battle-board[data-eclipse=solar]{--eclipse-accent:#ffc77c;box-shadow:inset 0 0 55px #6b310333,0 0 34px #ff993333}
-.mythic-rework .battle-board[data-eclipse=solar]::after{background-image:linear-gradient(180deg,#301c18d9,#4a281d77 42%,#151022e8),url('assets/eclipse/eclipse-solar.png')!important;background-position:center,center 35%}
-.mythic-rework .battle-board[data-eclipse=solar]::before{background:radial-gradient(ellipse at 50% 0%,#ffc57455,transparent 70%),linear-gradient(110deg,#c85c131a,transparent 55%);border-color:#ffc98088;box-shadow:inset 0 0 38px #d7882930}
-.mythic-rework .battle-board[data-eclipse] .battle-lane{border-color:#c1799166;background-color:#11102588}
-.mythic-rework .battle-board[data-eclipse=solar] .battle-lane{border-color:#d5a86966;background-color:#281c1680}
-.eclipse-map-badge{order:-1;align-self:center;position:relative;z-index:2;padding:6px 16px;border:1px solid var(--eclipse-accent);border-radius:50px;background:#100e21e8;color:var(--eclipse-accent);font:700 10px/1.4 system-ui;letter-spacing:2px;text-align:center;pointer-events:none}
-.eclipse-map-particles{position:absolute;inset:0;z-index:-1;overflow:hidden;border-radius:inherit;pointer-events:none}
-.eclipse-map-particles i{position:absolute;width:3px;height:3px;background:#ffb1cd;border-radius:50%;box-shadow:0 0 9px #e8649b;opacity:.2;animation:eclipse-mote calc(7s + var(--i)*.3s) ease-in-out infinite;animation-delay:calc(var(--i)*-.6s)}
-[data-eclipse=solar] .eclipse-map-particles i{background:#ffd790;box-shadow:0 0 9px #ff8e37}
-.eclipse-reveal{position:fixed;inset:0;z-index:100050;display:grid;place-items:center;overflow:hidden;background:#070715ee;color:#fff3df;font-family:system-ui,sans-serif;isolation:isolate;animation:eclipse-veil .4s ease-out}
-.eclipse-reveal-vignette{position:absolute;inset:-5%;z-index:-2;background:radial-gradient(ellipse at 24% 45%,#c55a1644,transparent 48%),radial-gradient(ellipse at 76% 45%,#7e1b5944,transparent 48%),url('assets/eclipse/eclipse.png') center/cover;opacity:.22;filter:blur(4px);transform:scale(1.04)}
-.eclipse-reveal::after{content:"";position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 140px 60px #070715;z-index:-1}
-.eclipse-reveal-copy{position:absolute;inset:clamp(20px,6vh,65px) 12px auto;text-align:center;z-index:4;text-shadow:0 3px 14px #000}
-.eclipse-reveal-copy p{margin:0 0 8px;font-size:10px;letter-spacing:5px;color:#d3b98c}
-.eclipse-reveal-copy h2{margin:0;font:clamp(25px,4vw,46px)/1.15 Georgia,serif;color:#fff3df}
-.eclipse-reveal-copy>span{display:block;margin-top:12px;font-size:10px;letter-spacing:2px;color:#d7c7d9}
-.eclipse-orbit{position:absolute;width:min(73vw,65vh,620px);aspect-ratio:1;display:grid;place-items:center;pointer-events:none}
-.eclipse-orbit i{position:absolute;inset:0;border:1px solid #c3a78144;border-radius:50%;animation:eclipse-spin 5s linear infinite}
-.eclipse-orbit i::before{content:"";position:absolute;left:50%;top:-5px;width:9px;height:9px;border-radius:50%;background:#ffbb72;box-shadow:0 0 30px 8px #df7226aa}
-.eclipse-orbit i:nth-child(2){inset:10%;border-color:#b582a788;animation-direction:reverse;animation-duration:3s}
-.eclipse-orbit i:nth-child(2)::before{background:#e984b6;box-shadow:0 0 30px 8px #af2c73aa}
-.eclipse-orb{width:39%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 70% 25%,#2a1a28,#030309 70%);box-shadow:0 0 3px 2px #ffe8c8,0 0 30px 12px #d36c3655,0 0 80px 30px #8c336366;animation:eclipse-pulse 1.2s ease-in-out infinite alternate}
-.eclipse-fates{position:relative;display:flex;align-items:center;justify-content:center;gap:clamp(25px,7vw,100px);height:100%;perspective:1300px;padding:120px 20px 105px;box-sizing:border-box;pointer-events:none}
-.eclipse-fate{width:min(23vw,27vh,235px);margin:0;position:relative;transform:rotateY(15deg) rotate(-8deg);animation:eclipse-fate-flash .54s ease-in-out infinite alternate;filter:drop-shadow(0 0 22px #d35f4655)}
-.eclipse-fate:nth-child(2){transform:rotateY(-15deg) rotate(8deg);animation-delay:-.54s;filter:drop-shadow(0 0 22px #d8b66155)}
-.eclipse-fate img{width:100%;display:block;border-radius:7%;box-shadow:0 24px 55px #0008}
-.eclipse-fate figcaption{text-align:center;margin-top:12px;font:clamp(12px,2vw,19px)/1.2 Georgia,serif;color:#ffe9c8;text-shadow:0 2px 7px #000}
-.eclipse-result{position:absolute;bottom:max(62px,8vh);left:50%;transform:translateX(-50%);width:min(84vw,670px);max-height:18vh;overflow:auto;text-align:center;font-size:clamp(12px,1.7vw,16px);line-height:1.5;opacity:0;color:#f4e4e1;text-shadow:0 2px 9px #000;transition:opacity .4s}
-.eclipse-skip{position:absolute;bottom:max(14px,env(safe-area-inset-bottom));right:18px;min-height:44px;padding:8px 18px;border:1px solid #c5b39466;background:#15111ee8;color:#f5e6ce;border-radius:30px;cursor:pointer;font:12px system-ui}
-.eclipse-skip:focus-visible{outline:3px solid #ffe6a3;outline-offset:3px}
-.eclipse-reveal.resolved .eclipse-fate{animation:none;transition:transform .75s cubic-bezier(.2,.8,.2,1),opacity .5s,filter .8s;position:absolute;left:50%;width:min(35vw,37vh,300px);transform:translateX(-50%) scale(.65);opacity:0}
-.eclipse-reveal.resolved[data-outcome=eclipse-lunar] .eclipse-fate[data-card=eclipse-lunar],.eclipse-reveal.resolved[data-outcome=eclipse-solar] .eclipse-fate[data-card=eclipse-solar]{opacity:1;transform:translateX(-50%) scale(1) rotateY(0);filter:drop-shadow(0 0 35px #f8ac6a55)}
-.eclipse-reveal.resolved .eclipse-result{opacity:1}
-.eclipse-reveal.resolved .eclipse-orbit{transform:scale(1.2);opacity:.5;transition:transform 1s,opacity 1s}
-.eclipse-reveal.resolved .eclipse-reveal-copy>span{opacity:.55}
-@keyframes eclipse-spin{to{transform:rotate(360deg)}}
-@keyframes eclipse-veil{from{opacity:0}to{opacity:1}}
-@keyframes eclipse-pulse{to{box-shadow:0 0 6px 2px #ffe8c8,0 0 70px 25px #d36c3677,0 0 140px 45px #8c336355}}
-@keyframes eclipse-fate-flash{from{opacity:.4;translate:0 7px}to{opacity:1;translate:0 -7px}}
-@keyframes eclipse-mote{0%,100%{translate:0 9px;opacity:.15}50%{translate:12px -15px;opacity:.65}}
-@media(max-width:600px){.eclipse-fate{width:min(31vw,23vh);}.eclipse-fates{gap:24px;padding-top:110px;padding-bottom:125px}.eclipse-reveal-copy{top:max(20px,env(safe-area-inset-top))}.eclipse-reveal-copy p{letter-spacing:3px}.eclipse-reveal.resolved .eclipse-fate{width:min(49vw,32vh)}.eclipse-result{bottom:max(70px,8vh);font-size:12px;line-height:1.4;max-height:19vh}.eclipse-map-particles i:nth-child(n+9){display:none}.eclipse-map-badge{font-size:8px;letter-spacing:1.4px;padding:5px 12px}}
-@media(max-height:520px){.eclipse-reveal-copy{top:10px}.eclipse-reveal-copy p{display:none}.eclipse-reveal-copy h2{font-size:22px}.eclipse-reveal-copy>span{margin-top:4px;font-size:8px}.eclipse-result{left:auto;right:16px;top:40%;bottom:auto;width:25vw;max-height:43vh;transform:none;font-size:11px}.eclipse-reveal.resolved .eclipse-fate{width:min(27vw,49vh)}.eclipse-fate{width:22vh}.eclipse-fates{padding:65px 10px 25px}.eclipse-orbit{width:66vh}}
-@media(prefers-reduced-motion:reduce){.eclipse-reveal,.eclipse-orbit i,.eclipse-orb,.eclipse-fate,.eclipse-map-particles i{animation:none!important}.eclipse-reveal.resolved .eclipse-fate,.eclipse-orbit,.eclipse-result{transition:none!important}}
-.eclipse-reveal.reduced *{animation:none!important;transition:none!important}
+{
+  "cards": [
+    {
+      "id": "eclipse",
+      "name": "Eclipse",
+      "type": "Clima",
+      "kind": "event",
+      "faction": "Universal",
+      "symbol": "◉",
+      "power": 0,
+      "cost": null,
+      "glow": "rgba(242,158,63,.5)",
+      "art": "assets/eclipse/eclipse.png",
+      "abilityTitle": "Destino Celestial",
+      "ability": "Ao jogar na área de Clima/Evento, sorteia Eclipse Lunar ou Solar, com 50% de chance para cada. O resultado afeta os dois lados até o fim da rodada.",
+      "previewOnly": false,
+      "specialOnly": false,
+      "story": [
+        "Eclipse · Clima/Evento.",
+        "Ao jogar na área de Clima/Evento, sorteia Eclipse Lunar ou Solar, com 50% de chance para cada. O resultado afeta os dois lados até o fim da rodada.",
+        "O efeito vale para as cartas já em campo e para as que entrarem depois, nos dois lados. Local e Terreno continuam ativos."
+      ]
+    },
+    {
+      "id": "eclipse-lunar",
+      "name": "Eclipse Lunar",
+      "type": "Clima",
+      "kind": "event",
+      "faction": "Universal",
+      "symbol": "◉",
+      "power": 0,
+      "cost": null,
+      "glow": "rgba(199,65,65,.5)",
+      "art": "assets/eclipse/eclipse-lunar.png",
+      "abilityTitle": "Destino Celestial",
+      "ability": "Dobra o poder dos lobisomens, vampiros e de Ártemis. Apolo e Rá perdem metade do poder, arredondada para baixo.",
+      "previewOnly": false,
+      "specialOnly": true,
+      "story": [
+        "Eclipse Lunar · Clima/Evento.",
+        "Dobra o poder dos lobisomens, vampiros e de Ártemis. Apolo e Rá perdem metade do poder, arredondada para baixo.",
+        "O efeito vale para as cartas já em campo e para as que entrarem depois, nos dois lados. Local e Terreno continuam ativos.",
+        "Esta é uma forma sorteada do Eclipse e não pode entrar no baralho ou na mão."
+      ]
+    },
+    {
+      "id": "eclipse-solar",
+      "name": "Eclipse Solar",
+      "type": "Clima",
+      "kind": "event",
+      "faction": "Universal",
+      "symbol": "◉",
+      "power": 0,
+      "cost": null,
+      "glow": "rgba(242,158,63,.5)",
+      "art": "assets/eclipse/eclipse-solar.png",
+      "abilityTitle": "Destino Celestial",
+      "ability": "Dobra o poder de Apolo e Rá. Vampiros vão ao Submundo; lobisomens Beta e Omega viram Homem, e Alfa vira Mulher. Ártemis perde metade do poder, arredondada para baixo.",
+      "previewOnly": false,
+      "specialOnly": true,
+      "story": [
+        "Eclipse Solar · Clima/Evento.",
+        "Dobra o poder de Apolo e Rá. Vampiros vão ao Submundo; lobisomens Beta e Omega viram Homem, e Alfa vira Mulher. Ártemis perde metade do poder, arredondada para baixo.",
+        "O efeito vale para as cartas já em campo e para as que entrarem depois, nos dois lados. Local e Terreno continuam ativos.",
+        "Esta é uma forma sorteada do Eclipse e não pode entrar no baralho ou na mão."
+      ]
+    }
+  ],
+  "solarForms": {
+    "lobo-beta": "homem",
+    "lobo-omega": "homem",
+    "lobo-alfa": "mulher"
+  },
+  "sunIds": [
+    "apolo",
+    "ra"
+  ],
+  "nightIds": [
+    "lobo-alfa",
+    "lobo-beta",
+    "lobo-omega"
+  ],
+  "rounding": "floor",
+  "chance": {
+    "lunar": 0.5,
+    "solar": 0.5
+  }
+}
