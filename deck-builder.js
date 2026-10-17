@@ -71,8 +71,8 @@
   function renderCollection(){
     if(!state||!root.open)return;
     const belt=root.querySelector('#db-collection-belt'),left=belt.scrollLeft;
-    const cards=catalog().filter(c=>owned(c)>0&&(faction==='all'||c.faction===faction)&&(kind==='all'||(kind==='unit'?c.kind==='unit':c.kind!=='unit'))&&(!query||norm(`${c.name} ${c.faction} ${c.ability} ${c.type}`).includes(query)));
-    belt.innerHTML=cards.length?cards.map(card=>thumb(card,'collection')).join(''):'<p class="db-empty">Nenhuma carta da sua coleção neste filtro.</p>';belt.scrollLeft=left;
+    const cards=catalog().filter(c=>owned(c)>(state.counts[c.id]||0)&&(faction==='all'||c.faction===faction)&&(kind==='all'||(kind==='unit'?c.kind==='unit':c.kind!=='unit'))&&(!query||norm(`${c.name} ${c.faction} ${c.ability} ${c.type}`).includes(query)));
+    belt.innerHTML=cards.length?cards.map(card=>thumb(card,'collection')).join(''):'<p class="db-empty">Nenhuma cópia disponível neste filtro. Retire uma carta da mesa para disponibilizá-la aqui.</p>';belt.scrollLeft=left;
   }
   function renderPreview(){
     const card=cardFor(selectedId),img=root.querySelector('#db-preview-image');
