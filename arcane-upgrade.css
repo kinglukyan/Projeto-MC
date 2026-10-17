@@ -64,7 +64,7 @@ body.mythic-rework.duel-fullscreen #view-duel .battle-field{
  overflow:visible!important;position:relative!important;z-index:4;isolation:isolate
 }
 body.mythic-rework.duel-fullscreen #view-duel .battle-field .battle-lane{
- min-height:96px!important;padding-top:max(34px,var(--formation-headroom,0px))!important;padding-bottom:10px!important;
+ min-height:96px!important;padding-top:max(46px,var(--formation-headroom,0px))!important;padding-bottom:10px!important;column-gap:14px!important;
  box-sizing:border-box;align-items:flex-end!important;overflow:visible!important;
  isolation:auto;z-index:auto
 }
@@ -72,7 +72,7 @@ body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card{
  overflow:visible!important;z-index:10;isolation:auto;flex-shrink:0
 }
 body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card>.battle-hologram{
- left:50%!important;top:auto!important;bottom:50%!important;width:47px!important;height:56px!important;
+ left:50%!important;top:auto!important;bottom:50%!important;width:57px!important;height:68px!important;
  z-index:30;transform:translateX(-50%)!important;translate:none!important;animation:none!important;
  pointer-events:none;overflow:visible
 }
@@ -80,7 +80,7 @@ body.mythic-rework.duel-fullscreen #view-duel .battle-hologram>img{
  position:absolute!important;inset:0!important;width:100%!important;height:100%!important;
  min-width:0!important;min-height:0!important;max-width:none!important;max-height:none!important;
  object-fit:contain!important;object-position:center bottom!important;transform:none!important;
- margin:0!important;padding:0!important;border:0!important;border-radius:0!important
+ margin:0!important;padding:0!important;border:0!important;border-radius:0!important;opacity:1!important
 }
 body.mythic-rework.duel-fullscreen #view-duel .companion-stack{
  width:var(--formation-width,60px);min-width:0;flex:0 0 auto;z-index:10;overflow:visible;isolation:isolate
@@ -91,18 +91,28 @@ body.mythic-rework.duel-fullscreen #view-duel .companion-stack:not(.expanded)>.b
 }
 body.mythic-rework.duel-fullscreen #view-duel .companion-stack>.companion-formation{
  bottom:calc(50% + var(--stack-lift,0px));left:50%;width:max-content;
- grid-template-columns:repeat(var(--formation-cols),28px);gap:0;z-index:40
+ grid-template-columns:repeat(var(--formation-cols),34px);gap:0;z-index:40
 }
 body.mythic-rework.duel-fullscreen #view-duel .companion-formation>.battle-hologram{
- width:28px!important;height:var(--member-height,44px)!important;bottom:auto!important;
+ width:34px!important;height:var(--member-height,54px)!important;bottom:auto!important;
  left:auto!important;top:auto!important;transform:none!important;align-self:end
 }
 body.mythic-rework.duel-fullscreen #view-duel .companion-stack.expanded{width:auto}
 body.mythic-rework.duel-fullscreen #view-duel .companion-stack.expanded>.battle-mini-card{left:auto!important;top:auto!important}
 @media(max-width:760px){
  body.mythic-rework.duel-fullscreen #view-duel .battle-field{grid-template-rows:repeat(3,minmax(82px,auto))!important}
- body.mythic-rework.duel-fullscreen #view-duel .battle-field .battle-lane{min-height:82px!important;padding-top:max(27px,var(--formation-headroom,0px))!important;padding-bottom:8px!important}
- body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card>.battle-hologram{width:34px!important;height:46px!important}
- body.mythic-rework.duel-fullscreen #view-duel .companion-stack>.companion-formation{grid-template-columns:repeat(var(--formation-cols),22px)}
- body.mythic-rework.duel-fullscreen #view-duel .companion-formation>.battle-hologram{width:22px!important;height:var(--member-height,34px)!important}
+ body.mythic-rework.duel-fullscreen #view-duel .battle-field .battle-lane{min-height:82px!important;padding-top:max(39px,var(--formation-headroom,0px))!important;padding-bottom:8px!important;column-gap:10px!important}
+ body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card>.battle-hologram{width:42px!important;height:58px!important}
+ body.mythic-rework.duel-fullscreen #view-duel .companion-stack>.companion-formation{grid-template-columns:repeat(var(--formation-cols),28px)}
+ body.mythic-rework.duel-fullscreen #view-duel .companion-formation>.battle-hologram{width:28px!important;height:var(--member-height,44px)!important}
 }
+body.mythic-rework.duel-fullscreen #view-duel .battle-hologram{opacity:1!important;mix-blend-mode:normal!important;filter:saturate(1.18) contrast(1.14) brightness(1.08) drop-shadow(0 0 4px #e2c5ff77)!important}
+body.mythic-rework.duel-fullscreen #view-duel .battle-hologram-scan{opacity:.12!important;animation:none!important}
+
+/* Owned shop products: legible on cards, sprite icons and small screens. */
+body.mythic-rework .store-item{position:relative;isolation:isolate;}
+body.mythic-rework .store-item-owned{border-color:#a995cf;box-shadow:inset 0 0 22px #9670bf16;}
+body.mythic-rework .store-owned-badge{position:absolute;z-index:2;top:10px;right:10px;display:inline-flex;align-items:center;gap:6px;padding:7px 11px;border:1px solid #cbb7eb;border-radius:20px;background:linear-gradient(135deg,#382348f5,#201b33f5);color:#faf2ff;font-size:11px;font-weight:700;line-height:1.2;box-shadow:0 3px 12px #09061070;}
+body.mythic-rework .store-owned-badge>span{display:grid;place-items:center;width:17px;height:17px;border-radius:50%;background:#ded2ef;color:#39244e;font-size:12px;}
+body.mythic-rework .store-item-owned button:disabled{opacity:.85;cursor:default;}
+@media(max-width:560px){body.mythic-rework .store-owned-badge{top:7px;right:7px;padding:5px 8px;font-size:10px;}}
