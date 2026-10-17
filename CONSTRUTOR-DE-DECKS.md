@@ -20,7 +20,8 @@ Execute também `supabase/migrations/202610170017_player_icons_seven_decks.sql` 
 - A coleção mostra somente cartas jogáveis que a conta possui. Formas especiais de transformação não entram no baralho.
 - A faixa inferior mostra apenas cartas com cópias livres. Quando todas as cópias estão na mesa, a carta desaparece da faixa; retirar uma cópia faz ela reaparecer.
 - Selecione uma carta para vê-la na prévia. Clique na prévia para ampliá-la; no celular, use **Ampliar selecionada**.
-- Arraste uma carta da coleção para a mesa ou use **+**. As quantidades respeitam as cópias disponíveis.
+- Arraste uma carta da coleção ou da prévia grande para a mesa, ou use **+**. No celular, segure sobre a carta por um instante para iniciar o arraste; deslizar sem segurar percorre a faixa. As quantidades respeitam as cópias disponíveis.
+- O botão **Adicionar à mesa** fica abaixo da imagem, com espaço reservado para não cobrir a habilidade impressa na carta.
 - Para retirar, use **−** ou arraste da mesa para a coleção. No celular, há também uma alça para arrastar da coleção.
 - Use busca, facção e tipo para encontrar cartas.
 - O baralho precisa ter **14 a 35 cartas**, contando todas as cópias.
