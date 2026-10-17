@@ -1,0 +1,12 @@
+.ability-choice-dialog{width:min(94vw,760px);max-height:88dvh;overflow:auto;box-sizing:border-box;border:1px solid #ba9cdd;border-radius:18px;padding:clamp(15px,3vw,26px);color:#f4edff;background:linear-gradient(145deg,#241c33,#111522);box-shadow:0 22px 70px #0009;font-family:system-ui,sans-serif}
+.ability-choice-dialog::backdrop{background:#060713ca;backdrop-filter:blur(4px)}
+.ability-choice-dialog h2{font:clamp(19px,3vw,28px)/1.25 Georgia,serif;color:#eddbb0;margin:0 0 12px}
+.ability-choice-dialog p{font-size:13px;color:#cfc5de;line-height:1.5}
+.ability-choices{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,150px),1fr));gap:12px}
+.ability-choices button{display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;min-height:56px;padding:12px;background:#2d2440;border:1px solid #a78bc566;color:#fff2da;border-radius:12px;cursor:pointer;font:13px/1.4 system-ui}
+.ability-choices button:hover{background:#433052;border-color:#e0bfef}.ability-choices button:focus-visible,.ability-choice-done:focus-visible{outline:3px solid #ead191;outline-offset:2px}
+.ability-choices button:disabled{opacity:.55;cursor:wait}.ability-choices img{width:100%;max-height:220px;object-fit:contain;border-radius:8px}.ability-choice-done{margin-top:16px;padding:12px 22px;min-height:44px;border:1px solid #c6a77a;border-radius:25px;background:#45334a;color:#fff2d9;cursor:pointer}
+.ability-peek{display:grid;justify-items:center;gap:8px;margin:14px auto 20px}.ability-peek img{max-height:220px;max-width:75%;border-radius:12px}.ability-peek strong{font-size:14px}
+@media(max-width:600px){.ability-choices{grid-template-columns:repeat(2,minmax(0,1fr))}.ability-choices img{max-height:180px}.ability-choice-dialog{max-height:84dvh}.ability-choices button{font-size:12px;padding:10px}}
+@media(max-height:500px){.ability-choices img,.ability-peek img{max-height:115px}.ability-choice-dialog{max-height:94dvh}}
+@media(prefers-reduced-motion:reduce){.ability-choice-dialog::backdrop{backdrop-filter:none}}

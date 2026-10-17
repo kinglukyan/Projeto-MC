@@ -1,43 +1,88 @@
-# Cartas e hologramas — edição 17/10/2026
-
-## Entregue no projeto principal
-
-- 31 PNGs originais das cartas, sem recorte ou alteração dos textos impressos.
-- 31 hologramas associados às cartas, incluindo Lukyan em duas versões, Alfa, Beta e Omega separados, Mulher e Homem.
-- Hologramas antigos de Medusa, Poseidon, Zeus e Hades substituídos pelos novos.
-- Athena e Lobisomem Alfa conservam os IDs anteriores e as posições nos baralhos.
-- Catálogo com 42 cartas: 13 anteriores e 29 novas. As 29 novas estão como prévias na coleção e no Universo; não entram nos decks nem recebem cópias fictícias.
-- Hologramas usados na projeção da batalha e nas ilustrações do Universo.
-- Galeria `cartas-hologramas.html` com as 31 associações lado a lado.
-- O holograma da feiticeira com serpentes está reservado, sem carta correspondente recebida.
-- Cache atualizado para esta edição.
-
-## Publicação
-
-1. Aplicar no Supabase a migração `supabase/migrations/202610170002_card_art_holograms.sql`, depois das migrações anteriores.
-2. Aplicar `supabase/migrations/202610170003_corrected_cards.sql`, que também atualiza os três registros caso a edição anterior já tenha sido aplicada.
-3. Aplicar `supabase/migrations/202610170004_human_cards.sql` para registrar Mulher e Homem caso o catálogo anterior já tenha sido aplicado.
-4. Enviar os arquivos do ZIP principal para a hospedagem.
-
-A migração é necessária para impedir que o catálogo antigo do banco restaure a arte anterior e para sincronizar Athena/Alfa no PvP. Foi preparada localmente; não foi aplicada no servidor remoto. Preserva histórias, músicas e HQs já cadastradas. Atualiza os campos de arte/nome/poder/habilidade desta edição.
-
-## Regras e pendências
-
-O pedido de artes/hologramas está integrado. Esta entrega não implementa os efeitos das 29 cartas novas; elas estão identificadas como “Em preparação”. Seus textos conhecidos estão cadastrados para a próxima etapa.
-
-Mulher tem 2 de poder e Ainda Sou Alfa. Homem tem 1 de poder e Juntos Somos Fortes. Ambos seguem a facção Monstros e a identificação Monstro · Humano das imagens fornecidas. As cartas originais do OneDrive foram somente lidas e copiadas para o projeto principal. Seus hologramas humanos existentes foram reutilizados. Os textos são os impressos; a abrangência da duplicação de forças ainda deve ser definida antes de implementar as habilidades.
-
-Ragnar, Beowulf e Ártemis receberam as cartas corrigidas fornecidas pelo usuário. Ragnar move uma carta aliada de baixo poder de outra fileira para a sua; Ártemis tem 5 de poder e Tiro Preciso, que elimina duas cartas Monstros de cada lado; Beowulf ganha +3 de poder na entrada se houver alguma carta da facção Monstros na mesa. Os três hologramas anteriores continuam associados aos mesmos personagens.
-
-Athena foi atualizada para poder 4 e +2 às outras cartas aliadas da mesma fileira. O Alfa foi atualizado para +2 por Beta aliado em campo, removendo seu antigo +1 na entrada. A migração acompanha essas duas alterações de regras existentes. Os custos das cartas novas não foram inventados; não aparecem nas imagens fornecidas.
-
-Antes da liberação das novas cartas é preciso definir os efeitos, implementar a mesma regra no Guardião e no servidor e liberar os IDs na validação dos baralhos. Também é necessário resolver a duração em “rodadas” de Hércules/Dionísio, pois o duelo atual tem duas rodadas e uma terceira somente no empate; a carta de Hércules menciona doze.
-
-## Arquivos de referência
-
-- `card-expansion.js`: dados visuais, estados de prévia e associações.
-- `card-hologram-map.json`: manifest completo com nomes dos arquivos originais.
-- `assets/cards-20261017/`: cartas completas originais.
-- `assets/holograms/`: hologramas transparentes.
-
-Não foram executados testes de navegador, partidas nem SQL remoto. Menu lateral e estrutura visual do combate preservados; regras de Athena/Alfa ajustadas conforme descrito acima.
+{
+  "cards": [
+    {
+      "id": "eclipse",
+      "name": "Eclipse",
+      "type": "Clima",
+      "kind": "event",
+      "faction": "Universal",
+      "symbol": "◉",
+      "power": 0,
+      "cost": null,
+      "glow": "rgba(242,158,63,.5)",
+      "art": "assets/eclipse/eclipse.png",
+      "abilityTitle": "Destino Celestial",
+      "ability": "Ao jogar na área de Clima/Evento, sorteia Eclipse Lunar ou Solar, com 50% de chance para cada. O resultado afeta os dois lados até o fim da rodada.",
+      "previewOnly": false,
+      "specialOnly": false,
+      "story": [
+        "Eclipse · Clima/Evento.",
+        "Ao jogar na área de Clima/Evento, sorteia Eclipse Lunar ou Solar, com 50% de chance para cada. O resultado afeta os dois lados até o fim da rodada.",
+        "O efeito vale para as cartas já em campo e para as que entrarem depois, nos dois lados. Local e Terreno continuam ativos."
+      ]
+    },
+    {
+      "id": "eclipse-lunar",
+      "name": "Eclipse Lunar",
+      "type": "Clima",
+      "kind": "event",
+      "faction": "Universal",
+      "symbol": "◉",
+      "power": 0,
+      "cost": null,
+      "glow": "rgba(199,65,65,.5)",
+      "art": "assets/eclipse/eclipse-lunar.png",
+      "abilityTitle": "Destino Celestial",
+      "ability": "Dobra o poder dos lobisomens, vampiros e de Ártemis. Apolo e Rá perdem metade do poder, arredondada para baixo.",
+      "previewOnly": false,
+      "specialOnly": true,
+      "story": [
+        "Eclipse Lunar · Clima/Evento.",
+        "Dobra o poder dos lobisomens, vampiros e de Ártemis. Apolo e Rá perdem metade do poder, arredondada para baixo.",
+        "O efeito vale para as cartas já em campo e para as que entrarem depois, nos dois lados. Local e Terreno continuam ativos.",
+        "Esta é uma forma sorteada do Eclipse e não pode entrar no baralho ou na mão."
+      ]
+    },
+    {
+      "id": "eclipse-solar",
+      "name": "Eclipse Solar",
+      "type": "Clima",
+      "kind": "event",
+      "faction": "Universal",
+      "symbol": "◉",
+      "power": 0,
+      "cost": null,
+      "glow": "rgba(242,158,63,.5)",
+      "art": "assets/eclipse/eclipse-solar.png",
+      "abilityTitle": "Destino Celestial",
+      "ability": "Dobra o poder de Apolo e Rá. Vampiros vão ao Submundo; lobisomens Beta e Omega viram Homem, e Alfa vira Mulher. Ártemis perde metade do poder, arredondada para baixo.",
+      "previewOnly": false,
+      "specialOnly": true,
+      "story": [
+        "Eclipse Solar · Clima/Evento.",
+        "Dobra o poder de Apolo e Rá. Vampiros vão ao Submundo; lobisomens Beta e Omega viram Homem, e Alfa vira Mulher. Ártemis perde metade do poder, arredondada para baixo.",
+        "O efeito vale para as cartas já em campo e para as que entrarem depois, nos dois lados. Local e Terreno continuam ativos.",
+        "Esta é uma forma sorteada do Eclipse e não pode entrar no baralho ou na mão."
+      ]
+    }
+  ],
+  "solarForms": {
+    "lobo-beta": "homem",
+    "lobo-omega": "homem",
+    "lobo-alfa": "mulher"
+  },
+  "sunIds": [
+    "apolo",
+    "ra"
+  ],
+  "nightIds": [
+    "lobo-alfa",
+    "lobo-beta",
+    "lobo-omega"
+  ],
+  "rounding": "floor",
+  "chance": {
+    "lunar": 0.5,
+    "solar": 0.5
+  }
+}

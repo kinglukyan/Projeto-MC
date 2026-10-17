@@ -1,18 +1,40 @@
-# Conexão online do Mythic Clash
+# Títulos, medalhas e sair da conta
 
-O projeto continua sendo uma página estática e usa Supabase para contas e recursos sociais. A migração `migrations/202609270001_online_game.sql` cria:
+## Ativação
 
-- Perfil público com código único para amigos, classificação e preferências.
-- Solicitações/amizades e chat privado em tempo real.
-- Convites por código e fila de partidas normal/ranqueada.
-- Partidas visíveis somente aos participantes. O navegador não recebe permissão para alterar diretamente o estado de uma partida.
+1. No SQL Editor do seu projeto Supabase, execute **supabase/migrations/202610170001_titles_medals.sql**, depois das migrações anteriores.
+2. Publique todo o conteúdo desta pasta, incluindo os novos arquivos honors.js e honors.css, index.html, online.js, app.js e sw.js.
+3. Feche e reabra o webapp. Abra Perfil → Títulos e medalhas.
 
-## Preparar o projeto
+O código da migração foi incluído, mas **não foi executado no servidor nesta entrega**. Sem ele, o perfil informa que as conquistas aguardam a atualização do banco; os botões de sair funcionam independentemente da migração. Não foi executada uma bateria de testes nesta etapa.
 
-1. No painel Supabase, abra **SQL Editor** e execute, em ordem, `migrations/202609270001_online_game.sql`, `migrations/202609270002_progression_store.sql`, `migrations/202609270003_admin_console.sql`, `migrations/202609270004_profile_icons_and_intro.sql`, `migrations/202609270005_card_customizer.sql`, `migrations/202609270006_tutorial_level_two.sql` e `migrations/202609270007_fix_admin_player_list.sql`. A migração 005 cria o armazenamento protegido das imagens e os campos usados pelo editor de cartas; a 006 garante nível 2 após o tutorial; a 007 corrige o retorno da lista administrativa de jogadores.
-2. Em **Project Settings → API**, copie o Project URL e a chave **publishable** (ou a antiga `anon`). São valores próprios para uso no cliente web; nunca coloque a `service_role` no site ou no GitHub.
-3. Coloque esses dois valores em `supabase-config.js` e publique os arquivos estáticos pelo GitHub.
-4. Em **Authentication → URL Configuration**, inclua o endereço publicado do site em Site URL e Redirect URLs.
-5. Ative **Realtime** para as tabelas `friend_messages`, `game_invites`, `game_matches` e `matchmaking_queue` (a migração tenta adicioná-las à publicação automaticamente).
+## Regras
 
-As políticas RLS protegem as tabelas. As funções de perfil, amizade, convite, fila e ações da partida exigem uma sessão autenticada. O navegador não altera diretamente o estado do tabuleiro ou a classificação; as jogadas e a atualização de resultados passam pelas funções do banco.
+- O catálogo contém **8 títulos e 10 medalhas**.
+- O banco calcula o progresso a partir do histórico completo de partidas e da conclusão do tutorial. Os filtros do perfil não alteram o progresso das conquistas.
+- Os desbloqueios são registrados ao consultar as conquistas e permanecem salvos, mesmo se os registros do histórico mudarem posteriormente.
+- Uma conta pode equipar um título e destacar até três medalhas distintas. Pode remover ou substituir as escolhas a qualquer momento.
+- Amigos aceitos podem consultar o título e as medalhas em destaque pelo perfil do amigo. E-mail, telefone e idade não fazem parte dessa consulta.
+- São recompensas cosméticas, sem alterar poder das cartas, XP ou MC.
+- Não existe gravação direta das conquistas pelo navegador: as funções do servidor validam os requisitos e a seleção.
+
+### Títulos
+
+| Título | Requisito |
+|---|---|
+| Viajante da Convergência | Conta criada |
+| Iniciado da Arena | Tutorial concluído |
+| Portador da Vitória | 1 vitória |
+| Veterano da Arena | 25 partidas |
+| Campeão Ranqueado | 10 vitórias ranqueadas |
+| Duelista Lendário | 10 vitórias X1 |
+| Conquistador de Mundos | 50 vitórias |
+| Lenda Imortal | 100 vitórias |
+
+### Medalhas
+
+Primeiros Passos (tutorial), Primeira Vitória (1 vitória), Glória de Bronze (10 vitórias), Glória de Prata (50), Glória de Ouro (100), Explorador da Arena (25 partidas), Cem Batalhas (100 partidas), Ascensão Competitiva (10 vitórias ranqueadas), Rival Respeitado (10 vitórias X1), Guardião Superado (10 vitórias contra o Guardião).
+
+## Sair da conta
+
+Há botões no menu lateral, nas ações do perfil e nas configurações. A saída encerra a sessão deste aparelho, retorna à entrada da conta, fecha janelas abertas e limpa a apresentação da partida e os hologramas. Não apaga cartas, decks, progresso ou conquistas do servidor. Não encerra sessões em outros aparelhos nem declara uma derrota automática; uma partida online continua seguindo suas regras de prazo e desconexão.

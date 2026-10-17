@@ -1,67 +1,45 @@
-(() => {
-  const toggle = document.getElementById('missions-menu-toggle');
-  const submenu = document.getElementById('missions-submenu');
-  const preview = document.getElementById('missions-preview');
-  const source = document.getElementById('community-missions');
-  const dialog = document.getElementById('missions-dialog');
-  if (!toggle || !submenu || !preview || !source || !dialog) return;
+# Barra lateral — Convergência Arcana
 
-  function refresh() {
-    document.dispatchEvent(new CustomEvent('mythic-missions-refresh'));
-  }
-  function renderPreview() {
-    const rows = [...source.querySelectorAll('.mission-step')];
-    const active = rows.filter(row => !row.classList.contains('complete'));
-    const selected = (active.length ? active : rows).slice(0, 3);
-    preview.replaceChildren();
-    if (!selected.length) {
-      const message = document.createElement('p');
-      message.className = 'missions-preview-empty';
-      message.textContent = source.textContent.trim() || 'Sem missões ativas.';
-      preview.append(message);
-      return;
-    }
-    for (const row of selected) {
-      const item = document.createElement('button');
-      item.type = 'button';
-      item.className = 'missions-preview-item';
-      const title = document.createElement('b');
-      title.textContent = row.querySelector('b')?.textContent || 'Missão';
-      const details = document.createElement('small');
-      details.textContent = row.querySelector('small')?.textContent || '';
-      const state = document.createElement('span');
-      const claim = row.querySelector('[data-claim-mission]');
-      state.textContent = row.classList.contains('complete') ? '✓ Concluída' : row.classList.contains('locked') ? '🔒 Bloqueada' : claim && !claim.disabled ? '✦ Recompensa disponível' : 'Em andamento';
-      item.append(title, details, state);
-      item.addEventListener('click', () => {
-        openAll();
-        row.scrollIntoView({block:'nearest', behavior:'auto'});
-      });
-      preview.append(item);
-    }
-  }
-  function openAll() {
-    if (window.MythicOnline?.requireLogin && !window.MythicOnline.requireLogin()) return;
-    if (!dialog.open) dialog.showModal();
-    refresh();
-  }
-  toggle.addEventListener('click', () => {
-    const open = submenu.hidden;
-    submenu.hidden = !open;
-    toggle.setAttribute('aria-expanded', String(open));
-    toggle.classList.toggle('active', open);
-    if (open) { renderPreview(); refresh(); }
-  });
-  document.getElementById('missions-more').addEventListener('click', openAll);
-  document.getElementById('missions-dialog-close').addEventListener('click', () => dialog.close());
-  dialog.addEventListener('click', event => {
-    if (event.target !== dialog) return;
-    const box = dialog.getBoundingClientRect();
-    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
-  });
-  window.addEventListener('mythic-open-view', event => {
-    if (event.detail?.view === 'missions') openAll();
-  });
-  new MutationObserver(renderPreview).observe(source, {childList:true, subtree:true, characterData:true, attributes:true, attributeFilter:['disabled','class']});
-  renderPreview();
-})();
+Implementação do conceito 3 escolhido pelo usuário.
+
+## Visual
+
+- Cristal escuro com textura original criada pela ferramenta integrada de geração de imagens.
+- Molduras prateadas, emblema da Convergência em vetor e destaque violeta na opção ativa.
+- Ícones em SVG para manter nitidez em diferentes tamanhos de tela.
+- Tipografia, perfil, nome, rank, contagem de cartas e resultados usando os dados reais existentes.
+- As imagens conceito tinham valores fictícios de demonstração. Eles não foram incluídos no jogo.
+
+## Desktop
+
+Barra fixa de 286 px, ou 266 px entre 961 e 1200 px de largura. Cabeçalho e perfil ancorados; navegação central com rolagem independente quando necessário. Menus de Baralho, Amigos e Missões mantêm os elementos e eventos existentes.
+
+## Celular e tablet
+
+- Até 960 px: botão Menu na barra superior e painel lateral retrátil.
+- Painel com altura dinâmica da tela, margens seguras e rolagem interna.
+- Controles principais de pelo menos 44 px, opções de navegação de 50 px.
+- Fundo da página bloqueado enquanto o painel está aberto.
+- Fechar pelo botão ×, toque fora ou Escape; o foco retorna ao botão Menu.
+- Tab permanece dentro do painel aberto. O conteúdo atrás fica inativo até o fechamento.
+- Ao escolher uma página ou ação, o painel fecha. Os botões de expansão dos submenus mantêm o painel aberto.
+- Navegação oculta durante o combate, seguindo a estrutura existente.
+- Adaptação a telas baixas em orientação horizontal e preferência por movimento reduzido.
+
+## Arquivos
+
+- `sidebar-arcane.css`: estilos isolados da barra e do botão de menu.
+- `sidebar-arcane.js`: ícones, painel móvel, foco e estados acessíveis.
+- `assets/sidebar-arcane/crystal-texture.png`: imagem decorativa sem textos.
+- `assets/sidebar-arcane/arcane-crest.svg`: emblema vetorial.
+- `assets/sidebar-arcane/texture-prompt.json`: prompt e método da imagem.
+- `index.html`: carrega os novos estilos e comportamento.
+- `sw.js`: versão de cache e arquivos novos para acesso offline.
+
+O HTML do menu preserva seus IDs e os elementos são reaproveitados. O código das regras, autenticação e rede não foi alterado nesta atualização. O combate mantém sua estrutura e estilos.
+
+## Entrega
+
+Atualização local incluída em `mythic-clash-rework-principal.zip`, pronta para substituir os arquivos da hospedagem. Esta alteração de menu não exige uma nova migração SQL. As migrações das cartas, de entregas anteriores, continuam no pacote com suas pendências documentadas.
+
+Revisão estática dos estilos, eventos e referências. Não foram executados testes de navegador nem de aparelhos nesta entrega.

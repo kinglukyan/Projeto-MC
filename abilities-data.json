@@ -1,0 +1,1638 @@
+{
+  "version": 1,
+  "cards": [
+    {
+      "id": "soldado-esparta",
+      "name": "Soldado de Esparta",
+      "power": 3,
+      "faction": "Grécia",
+      "tags": [
+        "espartano",
+        "soldado"
+      ],
+      "kind": "unit",
+      "cost": 1,
+      "previewOnly": false,
+      "specialOnly": false
+    },
+    {
+      "id": "athena",
+      "name": "Athena",
+      "power": 4,
+      "faction": "Grécia",
+      "tags": [],
+      "kind": "unit",
+      "cost": 3,
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Formação Falange",
+      "ability": "Todas as outras cartas na mesma fileira de Athena ganham +2 pontos de poder cada.",
+      "symbol": "Λ",
+      "glow": "rgba(36,91,137,.42)",
+      "badgeKey": "greece",
+      "art": "assets/cards-20261017/athena.png",
+      "hologram": "assets/holograms/athena-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Athena · Deus · Facção Grécia.",
+        "Habilidade — Formação Falange: Todas as outras cartas na mesma fileira de Athena ganham +2 pontos de poder cada."
+      ],
+      "sourceCard": "codex-clipboard-39966c68-f5d1-4092-9f4c-fc20f426a721.png",
+      "sourceHologram": "18-atena.png",
+      "specialOnly": false
+    },
+    {
+      "id": "lobo-alfa",
+      "name": "Lobisomem Alfa",
+      "power": 4,
+      "faction": "Monstros",
+      "tags": [
+        "monstro",
+        "monstro"
+      ],
+      "kind": "unit",
+      "cost": 2,
+      "type": "Personagem",
+      "subtype": "Monstro",
+      "abilityTitle": "Uivo de Alfa",
+      "ability": "A cada Lobisomem Beta em campo, ganha 2 pontos de poder.",
+      "symbol": "☾",
+      "glow": "rgba(154,93,76,.38)",
+      "badgeKey": "monster",
+      "art": "assets/cards-20261017/lobo-alfa.png",
+      "hologram": "assets/holograms/lobo-alfa-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Lobisomem Alfa · Monstro · Facção Monstros.",
+        "Habilidade — Uivo de Alfa: A cada Lobisomem Beta em campo, ganha 2 pontos de poder."
+      ],
+      "sourceCard": "codex-clipboard-194a9010-bfeb-456d-8882-126149acaa27.png",
+      "sourceHologram": "01-lobisomem-olhos-vermelhos-final.png",
+      "specialOnly": false
+    },
+    {
+      "id": "guardiao-nordico",
+      "name": "Guardião Nórdico",
+      "power": 2,
+      "faction": "Nórdicos",
+      "tags": [],
+      "kind": "unit",
+      "cost": 1,
+      "previewOnly": false,
+      "specialOnly": false
+    },
+    {
+      "id": "mjolnir",
+      "name": "Mjölnir",
+      "power": 0,
+      "faction": "Nórdicos",
+      "tags": [],
+      "kind": "equipment",
+      "cost": null,
+      "type": "Equipamento",
+      "badgeKey": "norse",
+      "symbol": "⚔",
+      "glow": "rgba(195,168,89,.42)",
+      "abilityTitle": "Equipar",
+      "ability": "Somente Thor pode equipar. Concede +4 de poder.",
+      "art": "assets/equipment/mjolnir.png",
+      "previewOnly": false,
+      "story": [
+        "Mjölnir · Equipamento.",
+        "Somente Thor pode equipar. Concede +4 de poder.",
+        "Escolha um personagem aliado compatível em campo."
+      ],
+      "specialOnly": false
+    },
+    {
+      "id": "runas-nordicas",
+      "name": "Runa Uruz",
+      "power": 0,
+      "faction": "Nórdicos",
+      "tags": [],
+      "kind": "equipment",
+      "cost": null,
+      "type": "Equipamento",
+      "badgeKey": "norse",
+      "symbol": "⚔",
+      "glow": "rgba(195,168,89,.42)",
+      "abilityTitle": "Equipar",
+      "ability": "Um personagem nórdico à sua escolha recebe +2 de poder.",
+      "art": "assets/equipment/runas-nordicas.png",
+      "previewOnly": false,
+      "story": [
+        "Runa Uruz · Equipamento.",
+        "Um personagem nórdico à sua escolha recebe +2 de poder.",
+        "Escolha um personagem aliado compatível em campo."
+      ],
+      "specialOnly": false
+    },
+    {
+      "id": "grecia",
+      "name": "Grécia",
+      "power": 0,
+      "faction": "Grécia",
+      "tags": [],
+      "kind": "location",
+      "cost": 2,
+      "type": "Local",
+      "symbol": "⌂",
+      "badgeKey": "greece",
+      "glow": "rgba(134,111,190,.42)",
+      "art": "assets/locations/grecia.png",
+      "abilityTitle": "Bônus de Local",
+      "ability": "Enquanto este Local estiver ativo, todos os gregos recebem +2 de poder, nos dois lados do campo.",
+      "previewOnly": false,
+      "story": [
+        "Grécia · Local.",
+        "Enquanto este Local estiver ativo, todos os gregos recebem +2 de poder, nos dois lados do campo.",
+        "O bônus se soma ao Terreno ativo e termina ao encerrar a rodada."
+      ],
+      "specialOnly": false
+    },
+    {
+      "id": "eclipse",
+      "name": "Eclipse",
+      "power": 0,
+      "faction": "Universal",
+      "tags": [],
+      "kind": "event",
+      "cost": null,
+      "type": "Clima",
+      "symbol": "◉",
+      "glow": "rgba(242,158,63,.5)",
+      "art": "assets/eclipse/eclipse.png",
+      "abilityTitle": "Destino Celestial",
+      "ability": "Ao jogar na área de Clima/Evento, sorteia Eclipse Lunar ou Solar, com 50% de chance para cada. O resultado afeta os dois lados até o fim da rodada.",
+      "previewOnly": false,
+      "specialOnly": false,
+      "story": [
+        "Eclipse · Clima/Evento.",
+        "Ao jogar na área de Clima/Evento, sorteia Eclipse Lunar ou Solar, com 50% de chance para cada. O resultado afeta os dois lados até o fim da rodada.",
+        "O efeito vale para as cartas já em campo e para as que entrarem depois, nos dois lados. Local e Terreno continuam ativos."
+      ]
+    },
+    {
+      "id": "campo-troia",
+      "name": "Troia",
+      "power": 0,
+      "faction": "Grécia",
+      "tags": [],
+      "kind": "terrain",
+      "cost": 2,
+      "type": "Terreno",
+      "symbol": "⌁",
+      "glow": "rgba(36,91,137,.42)",
+      "badgeKey": "greece",
+      "art": "assets/terrains/campo-troia.png",
+      "abilityTitle": "Bônus de Terreno",
+      "ability": "Fortalece Aquiles, Athena e Ares em +3 de poder.",
+      "previewOnly": false,
+      "story": [
+        "Troia · Terreno · Facção Grécia.",
+        "Fortalece Aquiles, Athena e Ares em +3 de poder.",
+        "O bônus vale para os dois jogadores enquanto este terreno ocupa o espaço compartilhado."
+      ],
+      "sourceCard": "codex-clipboard-2e46e5be-57eb-4ab4-a879-91cfb89897f8.png",
+      "specialOnly": false
+    },
+    {
+      "id": "medusa",
+      "name": "Medusa",
+      "power": 4,
+      "faction": "Grécia",
+      "tags": [
+        "monstro",
+        "monstro"
+      ],
+      "kind": "unit",
+      "cost": 3,
+      "previewOnly": false,
+      "specialOnly": false
+    },
+    {
+      "id": "poseidon",
+      "name": "Poseidon",
+      "power": 7,
+      "faction": "Grécia",
+      "tags": [],
+      "kind": "unit",
+      "cost": 5,
+      "previewOnly": false,
+      "specialOnly": false
+    },
+    {
+      "id": "zeus",
+      "name": "Zeus",
+      "power": 8,
+      "faction": "Grécia",
+      "tags": [],
+      "kind": "unit",
+      "cost": 6,
+      "previewOnly": false,
+      "specialOnly": false
+    },
+    {
+      "id": "hades",
+      "name": "Hades",
+      "power": 7,
+      "faction": "Grécia",
+      "tags": [],
+      "kind": "unit",
+      "cost": 5,
+      "previewOnly": false,
+      "specialOnly": false,
+      "ability": "Ao entrar em campo, escolha uma carta do seu próprio Submundo para voltar ao campo. A carta retorna na fileira de Hades e ativa sua habilidade de entrada.",
+      "abilityTitle": "Submundo Responda"
+    },
+    {
+      "id": "lobo-omega",
+      "name": "Lobisomem Omega",
+      "power": 1,
+      "faction": "Monstros",
+      "tags": [
+        "monstro",
+        "monstro"
+      ],
+      "type": "Personagem",
+      "subtype": "Monstro",
+      "abilityTitle": "Encurralado",
+      "ability": "Se o Lobisomem Omega for o único na sua fileira de batalha e o inimigo tiver mais poder que o Omega, seu poder aumenta em 8.",
+      "kind": "unit",
+      "symbol": "☾",
+      "glow": "rgba(154,93,76,.38)",
+      "badgeKey": "monster",
+      "art": "assets/cards-20261017/lobo-omega.png",
+      "hologram": "assets/holograms/lobo-omega-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Lobisomem Omega · Monstro · Facção Monstros.",
+        "Habilidade — Encurralado: Se o Lobisomem Omega for o único na sua fileira de batalha e o inimigo tiver mais poder que o Omega, seu poder aumenta em 8."
+      ],
+      "sourceCard": "codex-clipboard-77049700-5ced-4765-8ba9-12ca9a4e1d30.png",
+      "sourceHologram": "09-lobisomem-olhos-azuis.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "lukyan",
+      "name": "Lukyan — Rei da Festa",
+      "power": 3,
+      "faction": "Alyns",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Aventureiro",
+      "abilityTitle": "Rei da Festa",
+      "ability": "Ao entrar numa fileira com outros personagens, ganha +3 pontos de poder.",
+      "kind": "unit",
+      "symbol": "✦",
+      "glow": "rgba(184,50,64,.42)",
+      "badgeKey": "alyans",
+      "art": "assets/cards-20261017/lukyan.png",
+      "hologram": "assets/holograms/lukyan-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Lukyan · Aventureiro · Facção Alyns.",
+        "Habilidade — Rei da Festa: Ao entrar numa fileira com outros personagens, ganha +3 pontos de poder."
+      ],
+      "sourceCard": "codex-clipboard-c87018dd-96df-4fd4-a9dd-bf6ada86a050.png",
+      "sourceHologram": "35-cavaleiro-taverna.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "anubis",
+      "name": "Anúbis",
+      "power": 5,
+      "faction": "Egípcios",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Troca Veloz",
+      "ability": "Ao entrar em campo, escolhe uma carta inimiga com 3 ou menos pontos de poder e a envia para o Submundo. Recupera uma carta de mesmo poder do Submundo do invocador.",
+      "kind": "unit",
+      "symbol": "△",
+      "glow": "rgba(211,165,42,.42)",
+      "badgeKey": "egypt",
+      "art": "assets/cards-20261017/anubis.png",
+      "hologram": "assets/holograms/anubis-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Anúbis · Deus · Facção Egípcios.",
+        "Habilidade — Troca Veloz: Ao entrar em campo, escolhe uma carta inimiga com 3 ou menos pontos de poder e a envia para o Submundo. Recupera uma carta de mesmo poder do Submundo do invocador."
+      ],
+      "sourceCard": "codex-clipboard-12123f13-6683-4deb-b9f3-907f55e0d1cb.png",
+      "sourceHologram": "13-anubis.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "odin",
+      "name": "Odin",
+      "power": 8,
+      "faction": "Nórdicos",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Sabedoria de Yggdrasil",
+      "ability": "No início do próximo turno do dono, observe a carta do topo do seu baralho. Você pode descartá-la para ganhar +2 na soma da rodada ou mantê-la no topo.",
+      "kind": "unit",
+      "symbol": "ᚠ",
+      "glow": "rgba(134,91,178,.42)",
+      "badgeKey": "norse",
+      "art": "assets/cards-20261017/odin.png",
+      "hologram": "assets/holograms/odin-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Odin · Deus · Facção Nórdicos.",
+        "Habilidade — Sabedoria de Yggdrasil: No início da rodada, olha a carta do topo do seu deck e pode descartá-la para ganhar +2 pontos de poder na soma final."
+      ],
+      "sourceCard": "codex-clipboard-19a22fed-4915-4137-b7f0-48576f0c6385.png",
+      "sourceHologram": "37-odin.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "lukyan-rei-de-todos",
+      "name": "Lukyan — Rei de Todos",
+      "power": 6,
+      "faction": "Alyns",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Aventureiro",
+      "abilityTitle": "Rei de Todos",
+      "ability": "Agora com Excalibur, Lukyan tem seu poder dobrado por todos seus aliados em campo. Só aparece pela transformação de Lukyan com Excalibur; não pode entrar no baralho ou na mão.",
+      "kind": "unit",
+      "symbol": "✦",
+      "glow": "rgba(184,50,64,.42)",
+      "badgeKey": "alyans",
+      "art": "assets/cards-20261017/lukyan-rei-de-todos.png",
+      "hologram": "assets/holograms/lukyan-rei-de-todos-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Lukyan · Aventureiro · Facção Alyns.",
+        "Habilidade — Rei de Todos: Agora com Excalibur, Lukyan tem seu poder dobrado por todos seus aliados em campo.",
+        "Agora com Excalibur, Lukyan tem seu poder dobrado por todos seus aliados em campo. Só aparece pela transformação de Lukyan com Excalibur; não pode entrar no baralho ou na mão."
+      ],
+      "sourceCard": "codex-clipboard-d61f8f3c-3e85-4f78-84a3-c6585dd5bb90.png",
+      "sourceHologram": "34-cavaleiro-duas-espadas.png",
+      "specialOnly": true,
+      "cost": null
+    },
+    {
+      "id": "minotauro",
+      "name": "Minotauro",
+      "power": 3,
+      "faction": "Grécia",
+      "tags": [
+        "monstro",
+        "monstro"
+      ],
+      "type": "Personagem",
+      "subtype": "Monstro",
+      "abilityTitle": "Fúria do Labirinto",
+      "ability": "Ao entrar em campo, se estiver sozinho em sua fileira de batalha, ganha +3 pontos de poder.",
+      "kind": "unit",
+      "symbol": "Λ",
+      "glow": "rgba(36,91,137,.42)",
+      "badgeKey": "greece",
+      "art": "assets/cards-20261017/minotauro.png",
+      "hologram": "assets/holograms/minotauro-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Minotauro · Monstro · Facção Grécia.",
+        "Habilidade — Fúria do Labirinto: Ao entrar em campo, se estiver sozinho em sua fileira de batalha, ganha +3 pontos de poder."
+      ],
+      "sourceCard": "codex-clipboard-2282bc7d-fd6c-4614-aa90-6e3c9bfaa2d0.png",
+      "sourceHologram": "07-minotauro.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "apolo",
+      "name": "Apolo",
+      "power": 6,
+      "faction": "Grécia",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Benção do Sol",
+      "ability": "Ao ser colocado numa fileira, todos os personagens dessa fileira têm seu poder dobrado.",
+      "kind": "unit",
+      "symbol": "Λ",
+      "glow": "rgba(36,91,137,.42)",
+      "badgeKey": "greece",
+      "art": "assets/cards-20261017/apolo.png",
+      "hologram": "assets/holograms/apolo-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Apolo · Deus · Facção Grécia.",
+        "Habilidade — Benção do Sol: Ao ser colocado numa fileira, todos os personagens dessa fileira têm seu poder dobrado."
+      ],
+      "sourceCard": "codex-clipboard-9f044065-1291-495e-8bba-ff7ecee192ea.png",
+      "sourceHologram": "14-apolo.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "ra",
+      "name": "Rá",
+      "power": 8,
+      "faction": "Egípcios",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Luz da Criação",
+      "ability": "No final de cada rodada, adiciona +1 de poder a todas as cartas da sua facção Egito em campo.",
+      "kind": "unit",
+      "symbol": "△",
+      "glow": "rgba(211,165,42,.42)",
+      "badgeKey": "egypt",
+      "art": "assets/cards-20261017/ra.png",
+      "hologram": "assets/holograms/ra-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Rá · Deus · Facção Egípcios.",
+        "Habilidade — Luz da Criação: No final de cada rodada, adiciona +1 de poder a todas as cartas da sua facção Egito em campo."
+      ],
+      "sourceCard": "codex-clipboard-37b7f1d8-baa4-4831-a3dc-f0821f2c6e2c.png",
+      "sourceHologram": "43-ra.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "ragnar",
+      "name": "Ragnar",
+      "power": 3,
+      "faction": "Nórdicos",
+      "tags": [
+        "heroi"
+      ],
+      "type": "Personagem",
+      "subtype": "Herói",
+      "abilityTitle": "Invasores de Katgat",
+      "ability": "Ao entrar em campo, move uma carta aliada de baixo poder de outra fileira para a mesma fileira de Ragnar, unindo as forças.",
+      "kind": "unit",
+      "symbol": "ᚠ",
+      "glow": "rgba(134,91,178,.42)",
+      "badgeKey": "norse",
+      "art": "assets/cards-20261017/ragnar.png",
+      "hologram": "assets/holograms/ragnar-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Ragnar · Herói · Facção Nórdicos.",
+        "Habilidade — Invasores de Katgat: Ao entrar em campo, move uma carta aliada de baixo poder de outra fileira para a mesma fileira de Ragnar, unindo as forças."
+      ],
+      "sourceCard": "codex-clipboard-4ba6a777-9f50-4e1f-8196-7d5da20a6ce4.png",
+      "sourceHologram": "41-ragnar.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "afrodite",
+      "name": "Afrodite",
+      "power": 5,
+      "faction": "Grécia",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Meu Amado Traidor",
+      "ability": "Ao entrar em campo, o invocador pode escolher uma carta inimiga em campo para roubar, desde que ela tenha menos de 5 de poder.",
+      "kind": "unit",
+      "symbol": "Λ",
+      "glow": "rgba(36,91,137,.42)",
+      "badgeKey": "greece",
+      "art": "assets/cards-20261017/afrodite.png",
+      "hologram": "assets/holograms/afrodite-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Afrodite · Deus · Facção Grécia.",
+        "Habilidade — Meu Amado Traidor: Ao entrar em campo, o invocador pode escolher uma carta inimiga em campo para roubar, desde que ela tenha menos de 5 de poder."
+      ],
+      "sourceCard": "codex-clipboard-03bebff5-fbb1-46f3-8e38-9f99e7e91235.png",
+      "sourceHologram": "12-afrodite.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "aquiles",
+      "name": "Aquiles",
+      "power": 3,
+      "faction": "Grécia",
+      "tags": [
+        "heroi"
+      ],
+      "type": "Personagem",
+      "subtype": "Herói",
+      "abilityTitle": "A Fúria de Mirmidão",
+      "ability": "Ao entrar em campo, ganha +1 de poder para cada soldado grego ou herói aliado em sua fileira.",
+      "kind": "unit",
+      "symbol": "Λ",
+      "glow": "rgba(36,91,137,.42)",
+      "badgeKey": "greece",
+      "art": "assets/cards-20261017/aquiles.png",
+      "hologram": "assets/holograms/aquiles-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Aquiles · Herói · Facção Grécia.",
+        "Habilidade — A Fúria de Mirmidão: Ao entrar em campo, ganha +1 de poder para cada soldado grego ou herói aliado em sua fileira."
+      ],
+      "sourceCard": "codex-clipboard-4cfd0190-6d85-4df0-84ed-223f49fbc70d.png",
+      "sourceHologram": "15-aquiles.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "seth",
+      "name": "Seth",
+      "power": 4,
+      "faction": "Egípcios",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Trovoada do Caos",
+      "ability": "Ao entrar em campo, escolhe uma fileira e troca os valores de poder de todas as cartas nela, aliadas e inimigas, de forma aleatória entre elas.",
+      "kind": "unit",
+      "symbol": "△",
+      "glow": "rgba(211,165,42,.42)",
+      "badgeKey": "egypt",
+      "art": "assets/cards-20261017/seth.png",
+      "hologram": "assets/holograms/seth-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Seth · Deus · Facção Egípcios.",
+        "Habilidade — Trovoada do Caos: Ao entrar em campo, escolhe uma fileira e troca os valores de poder de todas as cartas nela, aliadas e inimigas, de forma aleatória entre elas."
+      ],
+      "sourceCard": "codex-clipboard-6a41914b-01c8-4dd7-a119-39b6e2750d5e.png",
+      "sourceHologram": "48-seth.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "osiris",
+      "name": "Osíris",
+      "power": 6,
+      "faction": "Egípcios",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Justiça Cíclica",
+      "ability": "Ao ser destruído e enviado para o cemitério, dobra o poder de outra carta aliada aleatória em campo.",
+      "kind": "unit",
+      "symbol": "△",
+      "glow": "rgba(211,165,42,.42)",
+      "badgeKey": "egypt",
+      "art": "assets/cards-20261017/osiris.png",
+      "hologram": "assets/holograms/osiris-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Osíris · Deus · Facção Egípcios.",
+        "Habilidade — Justiça Cíclica: Ao ser destruído e enviado para o cemitério, dobra o poder de outra carta aliada aleatória em campo."
+      ],
+      "sourceCard": "codex-clipboard-c147b6b0-f4bc-42b4-a2df-607a17e5fbe5.png",
+      "sourceHologram": "40-osiris.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "thor",
+      "name": "Thor",
+      "power": 6,
+      "faction": "Nórdicos",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Martelada de Mjölnir",
+      "ability": "Ao entrar em campo, escolhe a carta inimiga de maior poder e a envia para o Submundo.",
+      "kind": "unit",
+      "symbol": "ᚠ",
+      "glow": "rgba(134,91,178,.42)",
+      "badgeKey": "norse",
+      "art": "assets/cards-20261017/thor.png",
+      "hologram": "assets/holograms/thor-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Thor · Deus · Facção Nórdicos.",
+        "Habilidade — Martelada de Mjölnir: Ao entrar em campo, escolhe a carta inimiga de maior poder e a envia para o Submundo."
+      ],
+      "sourceCard": "codex-clipboard-d95a803a-3dfd-46aa-8a18-744c42dacdbe.png",
+      "sourceHologram": "46-thor.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "artemis",
+      "name": "Ártemis",
+      "power": 5,
+      "faction": "Grécia",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Tiro Preciso",
+      "ability": "Ao entrar em campo, elimina duas cartas Monstros de cada lado.",
+      "kind": "unit",
+      "symbol": "Λ",
+      "glow": "rgba(36,91,137,.42)",
+      "badgeKey": "greece",
+      "art": "assets/cards-20261017/artemis.png",
+      "hologram": "assets/holograms/artemis-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Ártemis · Deus · Facção Grécia.",
+        "Habilidade — Tiro Preciso: Ao entrar em campo, elimina duas cartas Monstros de cada lado."
+      ],
+      "sourceCard": "codex-clipboard-91833259-b6b1-4e10-8e61-bce2e7a7e1d3.png",
+      "sourceHologram": "16-artemis.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "sobek",
+      "name": "Sobek",
+      "power": 2,
+      "faction": "Egípcios",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Inundação Fertilizante",
+      "ability": "Ao entrar em campo, se houver outra carta aliada na mesma fileira, ganha +2 de poder adicional.",
+      "kind": "unit",
+      "symbol": "△",
+      "glow": "rgba(211,165,42,.42)",
+      "badgeKey": "egypt",
+      "art": "assets/cards-20261017/sobek.png",
+      "hologram": "assets/holograms/sobek-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Sobek · Deus · Facção Egípcios.",
+        "Habilidade — Inundação Fertilizante: Ao entrar em campo, se houver outra carta aliada na mesma fileira, ganha +2 de poder adicional."
+      ],
+      "sourceCard": "codex-clipboard-89abe5b9-ed7f-425b-91c9-65a39c7f24c1.png",
+      "sourceHologram": "45-sobek.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "ares",
+      "name": "Ares",
+      "power": 5,
+      "faction": "Grécia",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Deus da Guerra",
+      "ability": "Ao entrar na Guerra, todos os Soldados de Esparta e Leônidas ganham 2 pontos de poder e todos os gregos ganham 1.",
+      "kind": "unit",
+      "symbol": "Λ",
+      "glow": "rgba(36,91,137,.42)",
+      "badgeKey": "greece",
+      "art": "assets/cards-20261017/ares.png",
+      "hologram": "assets/holograms/ares-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Ares · Deus · Facção Grécia.",
+        "Habilidade — Deus da Guerra: Ao entrar na Guerra, todos os Soldados de Esparta e Leônidas ganham 2 pontos de poder e todos os gregos ganham 1."
+      ],
+      "sourceCard": "codex-clipboard-785beae9-b3b7-443b-817f-9276517c9dd9.png",
+      "sourceHologram": "02-guerreiro-espartano.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "beowulf",
+      "name": "Beowulf",
+      "power": 3,
+      "faction": "Nórdicos",
+      "tags": [
+        "heroi"
+      ],
+      "type": "Personagem",
+      "subtype": "Herói",
+      "abilityTitle": "Coragem de Geat",
+      "ability": "Ao entrar em campo, se houver alguma carta da facção Monstros na mesa, ganha +3 pontos de poder adicional.",
+      "kind": "unit",
+      "symbol": "ᚠ",
+      "glow": "rgba(134,91,178,.42)",
+      "badgeKey": "norse",
+      "art": "assets/cards-20261017/beowulf.png",
+      "hologram": "assets/holograms/beowulf-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Beowulf · Herói · Facção Nórdicos.",
+        "Habilidade — Coragem de Geat: Ao entrar em campo, se houver alguma carta da facção Monstros na mesa, ganha +3 pontos de poder adicional."
+      ],
+      "sourceCard": "codex-clipboard-f7761159-81e9-4f8d-817b-fa7befb29a06.png",
+      "sourceHologram": "19-heroi-espada-corrente.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "heimdall",
+      "name": "Heimdall",
+      "power": 3,
+      "faction": "Nórdicos",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Vigília de Bifröst",
+      "ability": "Enquanto estiver em campo, nenhuma carta inimiga pode alterar o valor de poder das suas cartas nesta fileira.",
+      "kind": "unit",
+      "symbol": "ᚠ",
+      "glow": "rgba(134,91,178,.42)",
+      "badgeKey": "norse",
+      "art": "assets/cards-20261017/heimdall.png",
+      "hologram": "assets/holograms/heimdall-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Heimdall · Deus · Facção Nórdicos.",
+        "Habilidade — Vigília de Bifröst: Enquanto estiver em campo, nenhuma carta inimiga pode alterar o valor de poder das suas cartas nesta fileira."
+      ],
+      "sourceCard": "codex-clipboard-e98b80de-372b-468c-9e24-d252445b73bc.png",
+      "sourceHologram": "25-heimdall.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "dionisio",
+      "name": "Dionísio",
+      "power": 4,
+      "faction": "Grécia",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Festival do Vinho",
+      "ability": "Todos os efeitos de cartas de ambos os lados ficam desativados por 3 rodadas.",
+      "kind": "unit",
+      "symbol": "Λ",
+      "glow": "rgba(36,91,137,.42)",
+      "badgeKey": "greece",
+      "art": "assets/cards-20261017/dionisio.png",
+      "hologram": "assets/holograms/dionisio-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Dionísio · Deus · Facção Grécia.",
+        "Habilidade — Festival do Vinho: Todos os efeitos de cartas de ambos os lados ficam desativados por 3 rodadas."
+      ],
+      "sourceCard": "codex-clipboard-5b014a65-6ebf-44cb-9928-fbfb39bc2fd2.png",
+      "sourceHologram": "22-dionisio.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "butter",
+      "name": "Butter",
+      "power": 4,
+      "faction": "Alyns",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Aventureiro",
+      "abilityTitle": "Cleptomaníaco",
+      "ability": "Ao entrar em campo, rouba uma carta aleatória da mão do oponente.",
+      "kind": "unit",
+      "symbol": "✦",
+      "glow": "rgba(184,50,64,.42)",
+      "badgeKey": "alyans",
+      "art": "assets/cards-20261017/butter.png",
+      "hologram": "assets/holograms/butter-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Butter · Aventureiro · Facção Alyns.",
+        "Habilidade — Cleptomaníaco: Ao entrar em campo, rouba uma carta aleatória da mão do oponente."
+      ],
+      "sourceCard": "codex-clipboard-d2b660e8-f8ca-4d4c-9762-cc136928ba91.png",
+      "sourceHologram": "04-ladino-cabelos-brancos.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "hefesto",
+      "name": "Hefestos",
+      "power": 4,
+      "faction": "Grécia",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Melhoria Artefatual",
+      "ability": "Ao entrar em campo, aumenta em +3 os pontos de poder de um personagem com carta de equipamento.",
+      "kind": "unit",
+      "symbol": "Λ",
+      "glow": "rgba(36,91,137,.42)",
+      "badgeKey": "greece",
+      "art": "assets/cards-20261017/hefesto.png",
+      "hologram": "assets/holograms/hefesto-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Hefestos · Deus · Facção Grécia.",
+        "Habilidade — Melhoria Artefatual: Ao entrar em campo, aumenta em +3 os pontos de poder de um personagem com carta de equipamento."
+      ],
+      "sourceCard": "codex-clipboard-109d6f04-aa41-4b6a-a7b2-b4c2bab98231.png",
+      "sourceHologram": "28-hefesto.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "hercules",
+      "name": "Hércules",
+      "power": 4,
+      "faction": "Grécia",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Semideus",
+      "abilityTitle": "Os Doze Trabalhos",
+      "ability": "A cada rodada ganha 1 de poder, podendo chegar a 16 pontos após 12 rodadas, concluindo seus doze trabalhos.",
+      "kind": "unit",
+      "symbol": "Λ",
+      "glow": "rgba(36,91,137,.42)",
+      "badgeKey": "greece",
+      "art": "assets/cards-20261017/hercules.png",
+      "hologram": "assets/holograms/hercules-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Hércules · Semideus · Facção Grécia.",
+        "Habilidade — Os Doze Trabalhos: A cada rodada ganha 1 de poder, podendo chegar a 16 pontos após 12 rodadas, concluindo seus doze trabalhos."
+      ],
+      "sourceCard": "codex-clipboard-d5b85922-7de4-4393-8066-9c7ac3534d5e.png",
+      "sourceHologram": "05-hercules.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "hermes",
+      "name": "Hermes",
+      "power": 3,
+      "faction": "Grécia",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Troca Veloz",
+      "ability": "Ao entrar em campo, você pode mover outra carta sua de uma fileira para outra, reorganizando sua pontuação.",
+      "kind": "unit",
+      "symbol": "Λ",
+      "glow": "rgba(36,91,137,.42)",
+      "badgeKey": "greece",
+      "art": "assets/cards-20261017/hermes.png",
+      "hologram": "assets/holograms/hermes-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Hermes · Deus · Facção Grécia.",
+        "Habilidade — Troca Veloz: Ao entrar em campo, você pode mover outra carta sua de uma fileira para outra, reorganizando sua pontuação."
+      ],
+      "sourceCard": "codex-clipboard-98506d89-5533-4106-84b2-37aadb5da1db.png",
+      "sourceHologram": "29-hermes.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "horus",
+      "name": "Hórus",
+      "power": 4,
+      "faction": "Egípcios",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Olho de Hórus",
+      "ability": "Ao entrar em campo, pode ver duas cartas do adversário.",
+      "kind": "unit",
+      "symbol": "△",
+      "glow": "rgba(211,165,42,.42)",
+      "badgeKey": "egypt",
+      "art": "assets/cards-20261017/horus.png",
+      "hologram": "assets/holograms/horus-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Hórus · Deus · Facção Egípcios.",
+        "Habilidade — Olho de Hórus: Ao entrar em campo, pode ver duas cartas do adversário."
+      ],
+      "sourceCard": "codex-clipboard-fbb89ce9-5355-49c5-babd-959355264349.png",
+      "sourceHologram": "30-horus.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "lobo-beta",
+      "name": "Lobisomem Beta",
+      "power": 2,
+      "faction": "Monstros",
+      "tags": [
+        "monstro",
+        "monstro"
+      ],
+      "type": "Personagem",
+      "subtype": "Monstro",
+      "abilityTitle": "Uivo do Betinha",
+      "ability": "Ao entrar em campo, chama os outros Betas que estiverem na mão do invocador para o campo.",
+      "kind": "unit",
+      "symbol": "☾",
+      "glow": "rgba(154,93,76,.38)",
+      "badgeKey": "monster",
+      "art": "assets/cards-20261017/lobo-beta.png",
+      "hologram": "assets/holograms/lobo-beta-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Lobisomem Beta · Monstro · Facção Monstros.",
+        "Habilidade — Uivo do Betinha: Ao entrar em campo, chama os outros Betas que estiverem na mão do invocador para o campo."
+      ],
+      "sourceCard": "codex-clipboard-fdd02517-8d9e-41e6-ae22-160ec9c5fe84.png",
+      "sourceHologram": "03-lobisomem-olhos-dourados.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "isis",
+      "name": "Ísis",
+      "power": 4,
+      "faction": "Egípcios",
+      "tags": [],
+      "type": "Personagem",
+      "subtype": "Deus",
+      "abilityTitle": "Ressurreição de Osíris",
+      "ability": "Ao entrar em campo, escolha uma carta com 2 ou menos de poder do seu próprio Submundo para retornar ao campo na fileira de Ísis.",
+      "kind": "unit",
+      "symbol": "△",
+      "glow": "rgba(211,165,42,.42)",
+      "badgeKey": "egypt",
+      "art": "assets/cards-20261017/isis.png",
+      "hologram": "assets/holograms/isis-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Ísis · Deus · Facção Egípcios.",
+        "Habilidade — Ressurreição de Osíris: Ao entrar em campo, retorna uma carta de custo 2 ou menos do seu cemitério para o campo, na fileira de Ísis."
+      ],
+      "sourceCard": "codex-clipboard-9b3e4443-f813-44f7-9bcc-039d1b5ebd48.png",
+      "sourceHologram": "32-isis.png",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "mulher",
+      "name": "Mulher",
+      "power": 2,
+      "faction": "Monstros",
+      "tags": [
+        "monstro",
+        "monstro"
+      ],
+      "type": "Personagem",
+      "subtype": "Monstro · Humano",
+      "abilityTitle": "Ainda Sou Alfa",
+      "ability": "Alfa sem poderes, usa sua labia para ganhar poder liderando homens humanos, cada homem dobra sua força.",
+      "kind": "unit",
+      "symbol": "☾",
+      "glow": "rgba(154,93,76,.38)",
+      "badgeKey": "monster",
+      "art": "assets/cards-20261017/mulher.png",
+      "hologram": "assets/holograms/mulher-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Mulher · Monstro · Humano · Facção Monstros.",
+        "Habilidade — Ainda Sou Alfa: Alfa sem poderes, usa sua labia para ganhar poder liderando homens humanos, cada homem dobra sua força."
+      ],
+      "sourceCard": "mulher.png",
+      "sourceHologram": "aventureira-humana-holograma-v1.png",
+      "species": "Humano",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "homem",
+      "name": "Homem",
+      "power": 1,
+      "faction": "Monstros",
+      "tags": [
+        "monstro",
+        "monstro"
+      ],
+      "type": "Personagem",
+      "subtype": "Monstro · Humano",
+      "abilityTitle": "Juntos Somos Fortes",
+      "ability": "Ao perder os poderes, humanos se unem para duplicar suas forças.",
+      "kind": "unit",
+      "symbol": "☾",
+      "glow": "rgba(154,93,76,.38)",
+      "badgeKey": "monster",
+      "art": "assets/cards-20261017/homem.png",
+      "hologram": "assets/holograms/homem-hologram.png",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Homem · Monstro · Humano · Facção Monstros.",
+        "Habilidade — Juntos Somos Fortes: Ao perder os poderes, humanos se unem para duplicar suas forças."
+      ],
+      "sourceCard": "Homem.png",
+      "sourceHologram": "aldeao-humano-holograma-v1.png",
+      "species": "Humano",
+      "specialOnly": false,
+      "cost": null
+    },
+    {
+      "id": "yggdrasil",
+      "name": "Yggdrasil",
+      "power": 0,
+      "faction": "Nórdicos",
+      "tags": [],
+      "type": "Terreno",
+      "symbol": "⌁",
+      "cost": null,
+      "kind": "terrain",
+      "glow": "rgba(134,91,178,.42)",
+      "badgeKey": "norse",
+      "art": "assets/terrains/yggdrasil.png",
+      "abilityTitle": "Bônus de Terreno",
+      "ability": "Fortalece Odin em +2 de poder.",
+      "previewOnly": false,
+      "story": [
+        "Yggdrasil · Terreno · Facção Nórdicos.",
+        "Fortalece Odin em +2 de poder.",
+        "O bônus vale para os dois jogadores enquanto este terreno ocupa o espaço compartilhado."
+      ],
+      "sourceCard": "codex-clipboard-147dfbf7-7293-4fc0-8b70-77a33b195fd4.png",
+      "specialOnly": false
+    },
+    {
+      "id": "alto-egito",
+      "name": "Alto Egito",
+      "power": 0,
+      "faction": "Egípcios",
+      "tags": [],
+      "type": "Terreno",
+      "symbol": "⌁",
+      "cost": null,
+      "kind": "terrain",
+      "glow": "rgba(211,165,42,.42)",
+      "badgeKey": "egypt",
+      "art": "assets/terrains/alto-egito.jpg",
+      "abilityTitle": "Bônus de Terreno",
+      "ability": "Fortalece todos os egípcios em +2 de poder.",
+      "previewOnly": false,
+      "story": [
+        "Alto Egito · Terreno · Facção Egípcios.",
+        "Fortalece todos os egípcios em +2 de poder.",
+        "O bônus vale para os dois jogadores enquanto este terreno ocupa o espaço compartilhado."
+      ],
+      "sourceCard": "codex-clipboard-682c5fec-6295-4ad8-80d9-2745ccf62e8d.jpg",
+      "specialOnly": false
+    },
+    {
+      "id": "baixo-egito",
+      "name": "Baixo Egito",
+      "power": 0,
+      "faction": "Egípcios",
+      "tags": [],
+      "type": "Terreno",
+      "symbol": "⌁",
+      "cost": null,
+      "kind": "terrain",
+      "glow": "rgba(211,165,42,.42)",
+      "badgeKey": "egypt",
+      "art": "assets/terrains/baixo-egito.png",
+      "abilityTitle": "Bônus de Terreno",
+      "ability": "Fortalece todos os egípcios em +2 de poder.",
+      "previewOnly": false,
+      "story": [
+        "Baixo Egito · Terreno · Facção Egípcios.",
+        "Fortalece todos os egípcios em +2 de poder.",
+        "O bônus vale para os dois jogadores enquanto este terreno ocupa o espaço compartilhado."
+      ],
+      "sourceCard": "codex-clipboard-45ad8471-4014-4577-b009-2383bb8098d8.png",
+      "specialOnly": false
+    },
+    {
+      "id": "bifrost",
+      "name": "Bifrost",
+      "power": 0,
+      "faction": "Nórdicos",
+      "tags": [],
+      "type": "Terreno",
+      "symbol": "⌁",
+      "cost": null,
+      "kind": "terrain",
+      "glow": "rgba(134,91,178,.42)",
+      "badgeKey": "norse",
+      "art": "assets/terrains/bifrost.png",
+      "abilityTitle": "Bônus de Terreno",
+      "ability": "Fortalece todos os nórdicos, exceto Loki, em +2 de poder.",
+      "previewOnly": false,
+      "story": [
+        "Bifrost · Terreno · Facção Nórdicos.",
+        "Fortalece todos os nórdicos, exceto Loki, em +2 de poder.",
+        "O bônus vale para os dois jogadores enquanto este terreno ocupa o espaço compartilhado."
+      ],
+      "sourceCard": "codex-clipboard-643abb3d-5fa1-4198-bc38-35d696586674.png",
+      "specialOnly": false
+    },
+    {
+      "id": "esparta",
+      "name": "Esparta",
+      "power": 0,
+      "faction": "Grécia",
+      "tags": [],
+      "type": "Terreno",
+      "symbol": "⌁",
+      "cost": null,
+      "kind": "terrain",
+      "glow": "rgba(36,91,137,.42)",
+      "badgeKey": "greece",
+      "art": "assets/terrains/esparta.png",
+      "abilityTitle": "Bônus de Terreno",
+      "ability": "Fortalece os espartanos em +2 de poder e Ares em +3 de poder.",
+      "previewOnly": false,
+      "story": [
+        "Esparta · Terreno · Facção Grécia.",
+        "Fortalece os espartanos em +2 de poder e Ares em +3 de poder.",
+        "O bônus vale para os dois jogadores enquanto este terreno ocupa o espaço compartilhado."
+      ],
+      "sourceCard": "codex-clipboard-44c87658-0390-4813-b67e-ca0b19864760.png",
+      "specialOnly": false
+    },
+    {
+      "id": "labirinto-dedalos",
+      "name": "Labirinto de Dédalos",
+      "power": 0,
+      "faction": "Grécia",
+      "tags": [],
+      "type": "Terreno",
+      "symbol": "⌁",
+      "cost": null,
+      "kind": "terrain",
+      "glow": "rgba(36,91,137,.42)",
+      "badgeKey": "greece",
+      "art": "assets/terrains/labirinto-dedalos.png",
+      "abilityTitle": "Bônus de Terreno",
+      "ability": "Fortalece o Minotauro e os monstros gregos em +2 de poder.",
+      "previewOnly": false,
+      "story": [
+        "Labirinto de Dédalos · Terreno · Facção Grécia.",
+        "Fortalece o Minotauro e os monstros gregos em +2 de poder.",
+        "O bônus vale para os dois jogadores enquanto este terreno ocupa o espaço compartilhado."
+      ],
+      "sourceCard": "codex-clipboard-0a0b4557-0561-400b-9d7f-d3022d4e15a7.png",
+      "specialOnly": false
+    },
+    {
+      "id": "nilfheim",
+      "name": "Nilfheim",
+      "power": 0,
+      "faction": "Nórdicos",
+      "tags": [],
+      "type": "Terreno",
+      "symbol": "⌁",
+      "cost": null,
+      "kind": "terrain",
+      "glow": "rgba(134,91,178,.42)",
+      "badgeKey": "norse",
+      "art": "assets/terrains/nilfheim.png",
+      "abilityTitle": "Bônus de Terreno",
+      "ability": "Fortalece Loki e os gigantes de gelo em +2 de poder.",
+      "previewOnly": false,
+      "story": [
+        "Nilfheim · Terreno · Facção Nórdicos.",
+        "Fortalece Loki e os gigantes de gelo em +2 de poder.",
+        "O bônus vale para os dois jogadores enquanto este terreno ocupa o espaço compartilhado."
+      ],
+      "sourceCard": "codex-clipboard-722d05ed-a942-4260-8793-ede44b99ff93.png",
+      "specialOnly": false
+    },
+    {
+      "id": "asgard",
+      "name": "Asgard",
+      "type": "Local",
+      "kind": "location",
+      "faction": "Nórdicos",
+      "symbol": "⌂",
+      "power": 0,
+      "cost": null,
+      "badgeKey": "norse",
+      "glow": "rgba(134,111,190,.42)",
+      "art": "assets/locations/asgard.png",
+      "abilityTitle": "Bônus de Local",
+      "ability": "Enquanto este Local estiver ativo, todos os nórdicos recebem +2 de poder, nos dois lados do campo.",
+      "previewOnly": false,
+      "story": [
+        "Asgard · Local.",
+        "Enquanto este Local estiver ativo, todos os nórdicos recebem +2 de poder, nos dois lados do campo.",
+        "O bônus se soma ao Terreno ativo e termina ao encerrar a rodada."
+      ],
+      "specialOnly": false,
+      "tags": []
+    },
+    {
+      "id": "egito",
+      "name": "Egito",
+      "type": "Local",
+      "kind": "location",
+      "faction": "Egípcios",
+      "symbol": "⌂",
+      "power": 0,
+      "cost": null,
+      "badgeKey": "egypt",
+      "glow": "rgba(134,111,190,.42)",
+      "art": "assets/locations/egito.png",
+      "abilityTitle": "Bônus de Local",
+      "ability": "Enquanto este Local estiver ativo, todos os egípcios recebem +2 de poder, nos dois lados do campo.",
+      "previewOnly": false,
+      "story": [
+        "Egito · Local.",
+        "Enquanto este Local estiver ativo, todos os egípcios recebem +2 de poder, nos dois lados do campo.",
+        "O bônus se soma ao Terreno ativo e termina ao encerrar a rodada."
+      ],
+      "specialOnly": false,
+      "tags": []
+    },
+    {
+      "id": "olho-que-tudo-ve",
+      "name": "Olho que Tudo Vê",
+      "type": "Equipamento",
+      "kind": "equipment",
+      "faction": "Egípcios",
+      "badgeKey": "egypt",
+      "power": 0,
+      "cost": null,
+      "symbol": "⚔",
+      "glow": "rgba(195,168,89,.42)",
+      "abilityTitle": "Equipar",
+      "ability": "Somente Hórus, Rá e Osíris podem equipar. Concede +4 de poder.",
+      "art": "assets/equipment/olho-que-tudo-ve.png",
+      "previewOnly": false,
+      "story": [
+        "Olho que Tudo Vê · Equipamento.",
+        "Somente Hórus, Rá e Osíris podem equipar. Concede +4 de poder.",
+        "Escolha um personagem aliado compatível em campo."
+      ],
+      "specialOnly": false,
+      "tags": []
+    },
+    {
+      "id": "raio-de-zeus",
+      "name": "Raio de Zeus",
+      "type": "Equipamento",
+      "kind": "equipment",
+      "faction": "Grécia",
+      "badgeKey": "greece",
+      "power": 0,
+      "cost": null,
+      "symbol": "⚔",
+      "glow": "rgba(195,168,89,.42)",
+      "abilityTitle": "Equipar",
+      "ability": "Somente Zeus pode equipar. Concede +4 de poder.",
+      "art": "assets/equipment/raio-de-zeus.png",
+      "previewOnly": false,
+      "story": [
+        "Raio de Zeus · Equipamento.",
+        "Somente Zeus pode equipar. Concede +4 de poder.",
+        "Escolha um personagem aliado compatível em campo."
+      ],
+      "specialOnly": false,
+      "tags": []
+    },
+    {
+      "id": "excalibur",
+      "name": "Excalibur",
+      "type": "Equipamento",
+      "kind": "equipment",
+      "faction": "Universal",
+      "badgeKey": "celtic",
+      "power": 0,
+      "cost": null,
+      "symbol": "⚔",
+      "glow": "rgba(195,168,89,.42)",
+      "abilityTitle": "Equipar",
+      "ability": "Somente Rei Arthur e Lukyan base podem equipar. Rei Arthur recebe +4 de poder. Lukyan base se transforma em Lukyan — Rei de Todos, uma carta especial que não entra no baralho nem na mão.",
+      "art": "assets/equipment/excalibur.png",
+      "previewOnly": false,
+      "story": [
+        "Excalibur · Equipamento.",
+        "Somente Rei Arthur e Lukyan base podem equipar. Rei Arthur recebe +4 de poder. Lukyan base se transforma em Lukyan — Rei de Todos, uma carta especial que não entra no baralho nem na mão.",
+        "Escolha um personagem aliado compatível em campo."
+      ],
+      "specialOnly": false,
+      "tags": []
+    },
+    {
+      "id": "eclipse-lunar",
+      "name": "Eclipse Lunar",
+      "type": "Clima",
+      "kind": "event",
+      "faction": "Universal",
+      "symbol": "◉",
+      "power": 0,
+      "cost": null,
+      "glow": "rgba(199,65,65,.5)",
+      "art": "assets/eclipse/eclipse-lunar.png",
+      "abilityTitle": "Destino Celestial",
+      "ability": "Dobra o poder dos lobisomens, vampiros e de Ártemis. Apolo e Rá perdem metade do poder, arredondada para baixo.",
+      "previewOnly": false,
+      "specialOnly": true,
+      "story": [
+        "Eclipse Lunar · Clima/Evento.",
+        "Dobra o poder dos lobisomens, vampiros e de Ártemis. Apolo e Rá perdem metade do poder, arredondada para baixo.",
+        "O efeito vale para as cartas já em campo e para as que entrarem depois, nos dois lados. Local e Terreno continuam ativos.",
+        "Esta é uma forma sorteada do Eclipse e não pode entrar no baralho ou na mão."
+      ],
+      "tags": []
+    },
+    {
+      "id": "eclipse-solar",
+      "name": "Eclipse Solar",
+      "type": "Clima",
+      "kind": "event",
+      "faction": "Universal",
+      "symbol": "◉",
+      "power": 0,
+      "cost": null,
+      "glow": "rgba(242,158,63,.5)",
+      "art": "assets/eclipse/eclipse-solar.png",
+      "abilityTitle": "Destino Celestial",
+      "ability": "Dobra o poder de Apolo e Rá. Vampiros vão ao Submundo; lobisomens Beta e Omega viram Homem, e Alfa vira Mulher. Ártemis perde metade do poder, arredondada para baixo.",
+      "previewOnly": false,
+      "specialOnly": true,
+      "story": [
+        "Eclipse Solar · Clima/Evento.",
+        "Dobra o poder de Apolo e Rá. Vampiros vão ao Submundo; lobisomens Beta e Omega viram Homem, e Alfa vira Mulher. Ártemis perde metade do poder, arredondada para baixo.",
+        "O efeito vale para as cartas já em campo e para as que entrarem depois, nos dois lados. Local e Terreno continuam ativos.",
+        "Esta é uma forma sorteada do Eclipse e não pode entrar no baralho ou na mão."
+      ],
+      "tags": []
+    },
+    {
+      "id": "loki",
+      "name": "Loki",
+      "power": 3,
+      "faction": "Nórdicos",
+      "type": "Personagem",
+      "subtype": "Deus",
+      "kind": "unit",
+      "symbol": "ᚠ",
+      "glow": "rgba(134,91,178,.42)",
+      "badgeKey": "norse",
+      "art": "assets/cards-20261017/loki.png",
+      "abilityTitle": "Ilusão Traiçoeira",
+      "ability": "Ao entrar em campo, Loki copia o valor de poder e a habilidade de uma carta inimiga já jogada na mesa até o fim da rodada.",
+      "previewOnly": false,
+      "abilityPending": false,
+      "story": [
+        "Loki · Deus · Facção Nórdicos.",
+        "Habilidade — Ilusão Traiçoeira: ao entrar em campo, copia o valor de poder e a habilidade de uma carta inimiga já na mesa até o fim da rodada."
+      ],
+      "sourceCard": "codex-clipboard-1ba6e065-64f9-4362-b9d1-2c67da30a35c.png",
+      "specialOnly": false,
+      "tags": [],
+      "cost": null
+    }
+  ],
+  "entries": {
+    "loki": [
+      "copy"
+    ],
+    "hades": [
+      "revive"
+    ],
+    "isis": [
+      "revive_cost"
+    ],
+    "anubis": [
+      "anubis"
+    ],
+    "afrodite": [
+      "steal"
+    ],
+    "hermes": [
+      "move"
+    ],
+    "ragnar": [
+      "rally"
+    ],
+    "seth": [
+      "shuffle_lane"
+    ],
+    "thor": [
+      "destroy_strongest"
+    ],
+    "zeus": [
+      "destroy_two"
+    ],
+    "artemis": [
+      "hunt_monsters"
+    ],
+    "medusa": [
+      "petrify"
+    ],
+    "poseidon": [
+      "tsunami"
+    ],
+    "odin": [
+      "schedule_foresight"
+    ],
+    "horus": [
+      "reveal"
+    ],
+    "butter": [
+      "steal_hand"
+    ],
+    "osiris": [],
+    "dionisio": [
+      "silence"
+    ],
+    "apolo": [
+      "double_lane"
+    ],
+    "ares": [
+      "war_buff"
+    ],
+    "hefesto": [
+      "improve"
+    ],
+    "lukyan": [
+      "crowd_bonus"
+    ],
+    "minotauro": [
+      "alone_bonus"
+    ],
+    "sobek": [
+      "ally_bonus"
+    ],
+    "aquiles": [
+      "greek_bonus"
+    ],
+    "beowulf": [
+      "monster_bonus"
+    ],
+    "lobo-beta": [
+      "summon_betas"
+    ]
+  },
+  "terrain": {
+    "yggdrasil": [
+      {
+        "ids": [
+          "odin"
+        ],
+        "bonus": 2
+      }
+    ],
+    "alto-egito": [
+      {
+        "faction": "Egípcios",
+        "bonus": 2
+      }
+    ],
+    "baixo-egito": [
+      {
+        "faction": "Egípcios",
+        "bonus": 2
+      }
+    ],
+    "bifrost": [
+      {
+        "faction": "Nórdicos",
+        "excludeIds": [
+          "loki"
+        ],
+        "bonus": 2
+      }
+    ],
+    "esparta": [
+      {
+        "ids": [
+          "ares"
+        ],
+        "bonus": 3
+      },
+      {
+        "tagsAny": [
+          "espartano"
+        ],
+        "bonus": 2
+      }
+    ],
+    "labirinto-dedalos": [
+      {
+        "ids": [
+          "minotauro"
+        ],
+        "bonus": 2
+      },
+      {
+        "faction": "Grécia",
+        "tagsAny": [
+          "monstro"
+        ],
+        "bonus": 2
+      }
+    ],
+    "campo-troia": [
+      {
+        "ids": [
+          "aquiles",
+          "athena",
+          "ares"
+        ],
+        "bonus": 3
+      }
+    ],
+    "nilfheim": [
+      {
+        "ids": [
+          "loki"
+        ],
+        "bonus": 2
+      },
+      {
+        "tagsAny": [
+          "gigante-de-gelo"
+        ],
+        "bonus": 2
+      }
+    ]
+  },
+  "equipment": {
+    "mjolnir": {
+      "ids": [
+        "thor"
+      ],
+      "bonus": 4
+    },
+    "olho-que-tudo-ve": {
+      "ids": [
+        "horus",
+        "ra",
+        "osiris"
+      ],
+      "bonus": 4
+    },
+    "raio-de-zeus": {
+      "ids": [
+        "zeus"
+      ],
+      "bonus": 4
+    },
+    "runas-nordicas": {
+      "faction": "Nórdicos",
+      "bonus": 2
+    },
+    "excalibur": {
+      "ids": [
+        "rei-arthur",
+        "lukyan"
+      ],
+      "bonus": 4,
+      "transformId": "lukyan",
+      "transformTo": "lukyan-rei-de-todos"
+    }
+  },
+  "locations": {
+    "asgard": "Nórdicos",
+    "egito": "Egípcios",
+    "grecia": "Grécia"
+  },
+  "special": [
+    "lukyan-rei-de-todos",
+    "eclipse-lunar",
+    "eclipse-solar"
+  ],
+  "titles": {
+    "revive": "Hades: escolha uma carta do seu Submundo",
+    "revive_cost": "Ísis: ressuscitar carta de até 2 de poder",
+    "anubis": "Anúbis: escolha um inimigo de até 3 de poder",
+    "anubis_revive": "Anúbis: recuperar carta de mesmo poder",
+    "steal": "Afrodite: escolha um inimigo com menos de 5 de poder",
+    "copy": "Loki: escolha qual inimigo copiar",
+    "move": "Hermes: escolha outro aliado",
+    "move_lane": "Hermes: escolha a nova fileira",
+    "rally": "Ragnar: reunir o aliado de menor poder",
+    "shuffle_lane": "Seth: escolha a fileira",
+    "improve": "Hefestos: escolha um aliado equipado",
+    "equip": "Escolha quem receberá o equipamento",
+    "foresight": "Odin: observar o topo do baralho",
+    "destroy_strongest": "Thor: escolha o inimigo de maior poder"
+  }
+}
