@@ -1,25 +1,61 @@
-#view-profile .equipped-honor-title{margin:12px 0 8px;color:#f2d486;font:700 15px 'Mythic Display',Georgia,serif}
-.featured-medals{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}
-.featured-medal{display:grid;place-items:center;width:32px;height:36px;border:1px solid #e6c076;border-radius:50% 50% 40% 40%;background:radial-gradient(circle,#41576e,#0e1c29);box-shadow:0 0 10px #ba95452a;color:#f1ce7e;font-size:21px}
-.sidebar-honor-title{display:block;color:#e7c67c!important;font-size:9px!important;margin-top:5px;overflow-wrap:anywhere}
-body.mythic-rework #view-profile .legend-grid>.honor-panel{grid-column:1/-1}
-#view-profile .honor-panel header{flex-wrap:wrap}
-#view-profile .honor-panel header>small{display:block;color:#9fb6c8;font-size:10px}
-.honor-tabs{display:flex;gap:8px;margin:4px 0 12px}
-.honor-tabs button{padding:10px 18px;border:1px solid #b18b4a66;border-radius:3px;background:#0c1925;color:#a7bed0;cursor:pointer}
-.honor-tabs button[aria-pressed="true"]{background:#3d3223;color:#f3db9e;border-color:#d4ad65}
-.honor-status{min-height:20px;color:#a9c1d3;font-size:11px;line-height:1.8}
-.honor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
-.honor-card{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:20px 14px;border:1px solid #81704f77;border-radius:5px;background:linear-gradient(145deg,#1a2b3a,#09121e)}
-.honor-card.unlocked{border-color:#cda96399}
-.honor-card.locked .honor-emblem{filter:grayscale(1);opacity:.5}
-.honor-emblem{display:grid;place-items:center;width:60px;height:68px;border:2px solid #cfab60;border-radius:50% 50% 36% 36%;background:radial-gradient(circle,#52687a,#142335);box-shadow:0 0 0 4px #a7863f20;color:#f4d895;font-size:34px}
-.honor-card>b{color:#eed8a3;font:700 13px 'Mythic Display',Georgia,serif}
-.honor-card>small{color:#a8bdca;font-size:10px;line-height:1.6;min-height:32px}
-.honor-card progress{width:100%;height:6px;accent-color:#e3bb65}
-.honor-progress{color:#a9c7d7;font-size:9px}
-.honor-card button{width:100%;margin-top:auto;font-size:10px}
-.sign-out-account{margin-top:12px;border-color:#b3705a88!important;color:#edb09c!important}
-.sidebar-bottom>.sign-out-account{width:100%;min-height:35px;font-size:10px}
-.friend-honors{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 0;color:#ecd391}
-@media(max-width:640px){.honor-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.honor-card{padding:16px 8px}.honor-card>b{font-size:11px}}
+(() => {
+ const make=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text)n.textContent=text;return n;};
+ const grid=document.querySelector('#view-profile .legend-grid');if(!grid)return;
+ let current=null,busy=false,kind='title';
+ const hero=document.querySelector('#view-profile .profile-identity');
+ const title=make('p','equipped-honor-title');title.id='equipped-honor-title';
+ const featured=make('div','featured-medals');hero.append(title,featured);
+ const sidebarTitle=make('small','sidebar-honor-title');document.querySelector('.profile-summary').append(sidebarTitle);
+ const panel=make('section','panel honor-panel');panel.setAttribute('aria-label','Títulos e medalhas');
+ const heading=make('header');heading.append(make('h3','','TÍTULOS E MEDALHAS'),make('small','','Conquistas permanentes da sua jornada'));panel.append(heading);
+ const tabs=make('nav','honor-tabs');tabs.setAttribute('aria-label','Tipos de conquista');
+ const titles=make('button','','Títulos'),medals=make('button','','Medalhas');titles.type=medals.type='button';tabs.append(titles,medals);panel.append(tabs);
+ const status=make('p','honor-status','Carregando conquistas…');status.setAttribute('role','status');
+ const items=make('div','honor-grid');panel.append(status,items);grid.append(panel);
+ const friendArea=make('div','friend-honors');document.querySelector('.friend-profile-hero').after(friendArea);
+ const signOut=()=>{const b=make('button','button button-secondary sign-out-account','Sair da conta');b.type='button';b.dataset.signOut='true';return b;};
+ document.querySelector('.sidebar-bottom').append(signOut());document.querySelector('#view-profile .legend-actions').append(signOut());
+ function medalChip(row){const chip=make('span','featured-medal',row.icon);chip.title=row.name;chip.setAttribute('aria-label',row.name);return chip;}
+ function paintFeatured(data,targetTitle,targetMedals){
+   const catalog=data?.catalog||[],equipped=catalog.find(c=>c.id===data.title_id&&c.unlocked);
+   targetTitle.textContent=equipped?.name||'';targetMedals.replaceChildren();
+   for(const id of data?.medals||[]){const row=catalog.find(c=>c.id===id&&c.unlocked);if(row)targetMedals.append(medalChip(row));}
+ }
+ async function equip(nextTitle,nextMedals){
+   if(busy)return;busy=true;render();status.textContent='Salvando…';
+   try{const result=await window.MythicOnline.equipHonors(nextTitle,nextMedals);if(result){current=result;status.textContent='Perfil atualizado.';}}
+   catch(error){status.textContent=error.message||'Não foi possível salvar.';}
+   finally{busy=false;render();}
+ }
+ function render(){
+   titles.setAttribute('aria-pressed',String(kind==='title'));medals.setAttribute('aria-pressed',String(kind==='medal'));items.replaceChildren();
+   if(!current)return;
+   paintFeatured(current,title,featured);sidebarTitle.textContent=title.textContent;
+   for(const row of current.catalog.filter(c=>c.kind===kind)){
+     const active=kind==='title'?current.title_id===row.id:current.medals.includes(row.id);
+     const card=make('article','honor-card'+(row.unlocked?' unlocked':' locked'));
+     card.append(make('span','honor-emblem',row.icon),make('b','',row.name),make('small','',row.description));
+     const progress=make('progress');progress.max=Math.max(1,row.target);progress.value=row.unlocked?progress.max:row.progress;progress.setAttribute('aria-label',row.name);card.append(progress);
+     card.append(make('span','honor-progress',row.unlocked?'✓ Desbloqueado':`${row.progress} / ${row.target}`));
+     const action=make('button','button '+(active?'button-primary':'button-secondary'),!row.unlocked?'Bloqueado':active?'Remover':kind==='title'?'Usar título':'Destacar medalha');action.type='button';action.disabled=!row.unlocked||busy;
+     action.setAttribute('aria-pressed',String(active));
+     action.addEventListener('click',()=>{
+       if(kind==='title')return equip(active?null:row.id,current.medals);
+       const selected=active?current.medals.filter(id=>id!==row.id):[...current.medals,row.id];
+       if(selected.length>3){status.textContent='Você pode destacar até três medalhas. Remova uma antes de escolher outra.';return;}
+       equip(current.title_id,selected);
+     });card.append(action);items.append(card);
+   }
+ }
+ titles.addEventListener('click',()=>{kind='title';render();});medals.addEventListener('click',()=>{kind='medal';render();});
+ window.addEventListener('mythic-honors-loaded',event=>{
+   const {playerId,data,error}=event.detail;
+   if(playerId===window.MythicOnline?.userId()){
+     current=data||null;status.textContent=error?'Títulos e medalhas aguardam a atualização do banco de dados.':'Escolha um título e até três medalhas para exibir no perfil.';render();
+   }else if(document.getElementById('friend-profile-backdrop').dataset.playerId===playerId){
+     friendArea.replaceChildren();if(!data)return;const friendTitle=make('b');const friendMedals=make('div','featured-medals');friendArea.append(friendTitle,friendMedals);paintFeatured(data,friendTitle,friendMedals);
+   }
+ });
+ window.addEventListener('mythic-account-signed-out',()=>{current=null;items.replaceChildren();title.textContent=sidebarTitle.textContent='';featured.replaceChildren();friendArea.replaceChildren();status.textContent='Entre na conta para ver suas conquistas.';});
+ render();window.MythicOnline?.loadHonors?.();
+})();

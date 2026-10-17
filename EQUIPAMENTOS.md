@@ -1,27 +1,17 @@
-# Eclipse: sorteio, regras e apresentação
+# Equipamentos
 
-## Cartas
+Artes originais incluídas sem alterações em assets/equipment. Mjölnir (mjolnir) e Runa Uruz (runas-nordicas) mantêm os identificadores antigos para preservar decks.
 
-Eclipse (arte cósmica com Sol e Lua) continua usando o identificador eclipse, disponível no deck. Eclipse Lunar (Lua vermelha) e Eclipse Solar (Sol encoberto) são resultados especiais, sem cópias no deck nem compras para a mão. O resultado ocupa o espaço compartilhado de Clima/Evento até o fim da rodada.
+- Mjölnir: somente Thor, +4.
+- Olho que Tudo Vê: Hórus, Rá ou Osíris, +4.
+- Raio de Zeus: somente Zeus, +4.
+- Runa Uruz: um aliado nórdico à escolha, +2 individual; substitui a antiga aura das Runas Nórdicas.
+- Excalibur: Rei Arthur recebe +4; Lukyan base vira Lukyan — Rei de Todos, sem um +4 extra na transformação.
 
-Sorteio único com 50% para cada resultado. No Guardião, usa crypto.getRandomValues; online, random() no servidor, dentro da transação já protegida por turno e bloqueio da partida. O cliente não escolhe o resultado. Reabrir a partida conserva o resultado salvo e não sorteia novamente.
+Seleção de alvo por toque ou clique, com cancelamento. Uma jogada por turno. Alvos incompatíveis são recusados também pelo servidor.
 
-## Efeitos nos dois lados
+Lukyan base foi liberado com sua habilidade impressa: +3 ao entrar numa fileira com outros aliados. A forma Rei de Todos usa o poder base 6 e dobra o poder por aliado em campo, conforme sua carta enviada. A transformação mantém fileira, posição e bônus já recebidos. A forma especial aparece na coleção, mas não pode ser adicionada ao deck nem jogada da mão. Ao sair do campo, retorna à identidade Lukyan base no Submundo; recuperações para a mão também usam a forma base.
 
-- Lunar: lobisomens, vampiros e Ártemis têm o poder dobrado; Apolo e Rá ficam com metade.
-- Solar: Apolo e Rá têm o poder dobrado; Ártemis fica com metade; vampiros vão ao Submundo; Beta/Omega viram Homem e Alfa vira Mulher.
-- Metades arredondam para baixo, conforme escolha do usuário. Os multiplicadores são calculados depois dos demais bônus, sem modificar permanentemente os pontos.
-- O clima afeta cartas presentes e novas entradas. Local e Terreno continuam ativos.
-- Transformações preservam fileira, posição, bônus e equipamentos. Ao sair do campo, o lobisomem retorna à carta original no Submundo. A transformação não dispara novamente uma habilidade de entrada.
-- Humanos usam as regras de suas cartas: cada Homem dobra o poder da Mulher; os Homens dobram por cada outro Homem aliado. Esses efeitos são calculados pela identidade atual em campo.
-- Vampiros são identificados por IDs começando com vampir e pelo ID dracula. Não foram inventadas cartas de vampiros; novas identidades devem ser registradas com essa classificação.
+Rei Arthur aguardando carta e atributos, conforme resposta do usuário. Thor, Hórus, Rá e Osíris seguem em prévia porque suas habilidades de personagem ainda não foram implementadas. Seus equipamentos têm as artes e restrições prontas, mas exigem esses personagens em campo.
 
-## Apresentação
-
-Animação de 3,2 segundos alterna as duas cartas antes da revelação, com órbitas e iluminação. Inclui pular animação, Escape, disposição para celular em pé/deitado e opção de movimento reduzido. O mapa Lunar usa Lua vermelha, névoa violeta e partículas; o Solar usa coroa dourada e brasas. A atualização do mapa lê o resultado já salvo, inclusive após reconexão.
-
-## Disponibilidade e instalação
-
-Os personagens que já estavam em prévia continuam em prévia: esta atualização não libera suas habilidades incompletas. As transformações solares podem usar as artes de Homem/Mulher no campo mesmo enquanto suas cartas independentes estão em prévia.
-
-Aplicar supabase/migrations/202610170008_eclipse_event.sql após o 007. SQL não aplicado remotamente. Não foram executados testes de navegador ou banco nesta alteração. Partidas já iniciadas antes da atualização com o Eclipse antigo conservam seu estado legado até terminar a rodada; iniciar nova partida usa as regras novas.
+Online: aplicar 202610170007_equipment_cards.sql após o 006. Migração não aplicada remotamente. Não foram executados testes.

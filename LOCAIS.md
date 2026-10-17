@@ -1,1 +1,11 @@
-<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Locais — Mythic Clash</title><style>*{box-sizing:border-box}body{background:#11121d;color:#f3ebff;font:16px/1.6 system-ui;margin:0;padding:clamp(14px,4vw,40px)}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:20px}article{padding:14px;background:#1e1b2b;border:1px solid #a48bc566;border-radius:12px}img{width:100%;height:auto;display:block}h2{font-family:Georgia,serif}p{color:#d1c9df}a{color:#cfb2ff}</style><h1>Cartas de Local</h1><p>O Local ativo beneficia os dois jogadores e soma com o Terreno. Um Local por rodada. <a href="index.html">Abrir o jogo</a></p><main><article><img src="assets/locations/asgard.png" alt="Carta Asgard"><h2>Asgard</h2><p>Enquanto este Local estiver ativo, todos os nórdicos recebem +2 de poder, nos dois lados do campo.</p></article><article><img src="assets/locations/egito.png" alt="Carta Egito"><h2>Egito</h2><p>Enquanto este Local estiver ativo, todos os egípcios recebem +2 de poder, nos dois lados do campo.</p></article><article><img src="assets/locations/grecia.png" alt="Carta Grécia"><h2>Grécia</h2><p>Enquanto este Local estiver ativo, todos os gregos recebem +2 de poder, nos dois lados do campo.</p></article></main></html>
+# Cartas de Local
+
+- Asgard: +2 a todos os nórdicos, inclusive Loki quando disponível.
+- Egito: +2 a todos os egípcios.
+- Grécia: +2 a todos os gregos. Mantido o identificador anterior grecia.
+
+Um Local compartilhado por rodada, beneficiando ambos os jogadores. O bônus soma com o Terreno e termina ao encerrar a rodada. As artes originais foram copiadas sem alterações. Galeria responsiva: locais.html.
+
+O catálogo tem 51 cartas: 22 jogáveis e 29 personagens em prévia. Os personagens em prévia continuam aguardando suas habilidades.
+
+Para partidas online, aplicar supabase/migrations/202610170006_location_cards.sql depois da migração 005. Inclui 1v1 e 2v2. Esta migração não foi aplicada remotamente. Nenhum teste foi executado nesta alteração.

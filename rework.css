@@ -1,2 +1,446 @@
-<!doctype html>
-<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#101725"><meta http-equiv="refresh" content="0;url=./index.html"><title>Mythic Clash — Mobile</title><script>location.replace("./index.html"+location.search+location.hash);</script></head><body><p>Abrindo Mythic Clash… <a href="./index.html">Toque aqui se a página não abrir.</a></p></body></html>
+/* MYTHIC CLASH · CITADELA
+   Presentation only. Loaded after the original stylesheet, on the main index.html entry.
+   Game rules, IDs, events, authentication and network code are unchanged. */
+@font-face{font-family:Mythic UI;src:url('assets/rework/NotoSans-Regular.ttf') format('truetype');font-weight:400;font-display:swap}
+@font-face{font-family:Mythic UI;src:url('assets/rework/NotoSans-Bold.ttf') format('truetype');font-weight:700 900;font-display:swap}
+@font-face{font-family:Mythic Display;src:url('assets/rework/NotoSerif-Bold.ttf') format('truetype');font-weight:700;font-display:swap}
+body.mythic-rework{
+ --navy:#080e13;--panel:#101a21;--panel2:#172630;--gold:#b88b43;--bright:#f6d88d;--cream:#f3ebd7;
+ --muted:#a9b7bc;--line:#bd955c55;--shadow:0 12px 32px #0007;--blue:#3ac7ff;--red:#ff6254;
+ --rw-frame:linear-gradient(135deg,#b4853f,#f4d498 22%,#765322 45%,#c79d57 80%,#785123);
+ margin:0;font-family:Mythic UI,Segoe UI,sans-serif;color:var(--cream);background:#080e13;
+}
+body.mythic-rework::before{content:'';position:fixed;inset:0;z-index:-2;background:linear-gradient(90deg,#070e13bb,#080f1680 50%,#050b11bb),url('assets/rework/citadela.webp') center/cover no-repeat;pointer-events:none}
+body.mythic-rework::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(180deg,transparent 25%,#060c12d9 95%)}
+.mythic-rework [hidden]{display:none!important}
+.mythic-rework :is(button,input,select,textarea){font-family:Mythic UI,Segoe UI,sans-serif}
+.mythic-rework :is(button,a,input,select,textarea):focus-visible{outline:2px solid #79deff;outline-offset:4px}
+.mythic-rework :is(h1,h2,h3,.brand-name){font-family:Mythic Display,Georgia,serif}
+.mythic-rework h1{font-weight:700;letter-spacing:-1.1px;text-shadow:0 3px 14px #0008}
+.mythic-rework h2{font-weight:700;line-height:1.35}
+.mythic-rework .eyebrow{color:#e9c575;font-size:10px;letter-spacing:2.5px}
+.mythic-rework .text-link{font-size:11px;color:#e8c77f;line-height:1.6}
+.mythic-rework .empty-state{color:#b2bec3;font-size:12px;line-height:1.6}
+
+/* App chrome: a stone rail, metal tabs and a compact HUD. */
+.mythic-rework .sidebar{width:244px;padding:30px 14px 17px;background:linear-gradient(90deg,#080e13f5,#101a22f7 90%,#080b10);border-right:2px solid #9f783a;box-shadow:7px 0 32px #0006;z-index:100}
+.mythic-rework .sidebar::before{content:'';position:absolute;inset:7px 6px;pointer-events:none;border:1px solid #c69b4430}
+.mythic-rework .brand{position:relative;gap:11px;padding:0 10px 30px}
+.mythic-rework .brand-mark{width:43px;height:49px;flex:0 0 43px;border:1px solid #dab675;border-radius:4px 4px 15px 15px;background:radial-gradient(ellipse at 50% 25%,#58708355,#0b1218 80%);box-shadow:inset 0 0 0 3px #8c632331,0 0 19px #b6862520;color:#f2ce7d}
+.mythic-rework .brand-mark svg{width:23px;height:23px}
+.mythic-rework .brand-name{font-size:16px;letter-spacing:.6px}
+.mythic-rework .brand-name b{color:#e9c57c}
+.mythic-rework .brand-name small{margin-top:7px;color:#97a7b3;font-size:8px;letter-spacing:4px}
+.mythic-rework .nav-label{margin-top:18px;margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid #c39c4328;font-size:9px;letter-spacing:2px;color:#889aa5}
+.mythic-rework .main-nav{gap:5px}
+.mythic-rework .nav-item{min-height:44px;height:auto;padding:12px 13px;font-size:12px;line-height:1.4;border-radius:3px;color:#b7c5cd;transition:background .18s,border-color .18s,color .18s}
+.mythic-rework .nav-item:hover{background:#24354188;border-color:#c49a435c;color:#fff0ce}
+.mythic-rework .nav-item.active{background:linear-gradient(90deg,#8c672836,#58432028,#17252b);border:1px solid #cfa65e8c;color:#ffe3a6;box-shadow:inset 3px 0 #edc983,inset 0 1px #efd7a322,0 5px 12px #0003}
+.mythic-rework .nav-item.active::after{width:7px;height:7px;right:12px;top:calc(50% - 3px);border-radius:0;transform:rotate(45deg);background:#e6c274;box-shadow:0 0 10px #c6a26388}
+.mythic-rework .nav-icon{color:#d6b576;filter:drop-shadow(0 1px 3px #000);font-size:19px}
+.mythic-rework :is(.friends-submenu,.deck-submenu){margin:4px 0 8px 14px;padding:5px 0 5px 7px;border-left:1px solid #bd955c65;background:#080f16cc}
+.mythic-rework .friends-submenu-actions button{min-height:36px;border-color:#c49b492e;color:#d4c8a4;background:#101b25}
+.mythic-rework .profile{padding:14px 6px 4px;border-color:#b58b415e;gap:11px}
+.mythic-rework .profile-avatar{width:43px;height:43px;flex-shrink:0;border:2px solid #c69d55;background:radial-gradient(circle at 35% 20%,#324b62,#101822 70%);box-shadow:0 0 0 3px #080d13,0 0 0 4px #96753766;font:700 13px Mythic Display,serif}
+.mythic-rework .profile b{font-size:12px}
+.mythic-rework .profile small{font-size:9px;color:#a1b2bd}
+.mythic-rework .main-content{margin-left:244px;padding:0 clamp(18px,3vw,48px) 45px;background:transparent}
+.mythic-rework .topbar{position:relative;min-height:70px;height:auto;gap:18px;padding:12px 0;border-bottom:1px solid #b88b4347}
+.mythic-rework .topbar::after{content:'';position:absolute;bottom:-3px;left:0;width:38px;height:4px;background:var(--gold);clip-path:polygon(0 0,100% 0,88% 100%,0 100%)}
+.mythic-rework .breadcrumb{flex:1;font-size:9px;letter-spacing:1.5px}
+.mythic-rework .rework-preview-badge{padding:5px 7px;border:1px solid #d5af5b77;font-size:8px;letter-spacing:1.2px;color:#e8c77f;border-radius:2px;background:#211e17}
+.mythic-rework .local-status{font-size:10px}
+.mythic-rework .icon-button{width:32px;height:32px;border-radius:4px;background:linear-gradient(#21323e,#111c25);border-color:#b58b4166;color:#efd399;box-shadow:inset 0 1px #ffffff14}
+.mythic-rework .view{max-width:1560px}
+.mythic-rework .page-heading{padding:35px 0 25px}
+.mythic-rework .page-heading h1{font-size:clamp(27px,3.5vw,44px);line-height:1.2}
+.mythic-rework .page-heading p:not(.eyebrow){font-size:12px;line-height:1.65;color:#b9c4c9}
+
+/* Reusable carved panels and actual, accessible controls. */
+.mythic-rework .panel{position:relative;border:1px solid #b18c4d80;border-radius:5px;background:linear-gradient(120deg,#192832ec,#0b141cf5);box-shadow:inset 0 1px #f5deb01a,inset 0 0 0 4px #060c131f,0 12px 28px #0005}
+.mythic-rework .panel::selection{background:#9f753a;color:white}
+.mythic-rework .panel-heading{padding:17px 19px;background:linear-gradient(90deg,#0a121ba6,#15233055);border-bottom:1px solid #b48b4142}
+.mythic-rework :is(.panel-heading small,.section-kicker,.quick-panel>small,.section-title>small,.community-card header small){color:#e0b96a;font-size:9px;letter-spacing:2px}
+.mythic-rework .button{min-height:42px;border-radius:3px;font-size:11px;letter-spacing:.3px;padding:11px 18px;transition:filter .15s,box-shadow .15s}
+.mythic-rework .button:hover{transform:none;filter:brightness(1.12)}
+.mythic-rework .button-primary{background:linear-gradient(#f1d18a,#c59849 53%,#a67933);border-color:#f6d899;color:#1f1b14;box-shadow:inset 0 1px #fff3cf,inset 0 -3px #77551d55,0 3px 0 #593c1b,0 4px 19px #b7792429;text-shadow:0 1px #ffe8af66}
+.mythic-rework .button-secondary{background:linear-gradient(#203442,#0f1c26);border-color:#a7844d99;color:#ead9b3;box-shadow:inset 0 1px #dce6f21a,0 3px 0 #040b10}
+.mythic-rework :is(button:disabled,.button:disabled){filter:saturate(.3);opacity:.55;cursor:not-allowed}
+.mythic-rework :is(input,textarea,select){border:1px solid #92744778;border-radius:3px;background:#08111bef;color:#e7e9e6;box-shadow:inset 0 2px 5px #0006;min-height:39px;font-size:12px;accent-color:#d9b667}
+.mythic-rework :is(input,textarea)::placeholder{color:#80929e}
+.mythic-rework label{font-size:11px;color:#c2d1d9;line-height:1.6}
+.mythic-rework select option{background:#12202b;color:#efe6d2}
+.mythic-rework :is(.modal-close,.friend-chat-window button){border-color:#b88b4359}
+.mythic-rework :is(.card-detail-backdrop,.friend-action-backdrop,.friend-profile-backdrop,.friend-menu-scrim){background:#03080ee8;backdrop-filter:blur(7px)}
+.mythic-rework :is(.card-detail-modal,.friend-action-dialog,.friend-profile-dialog,.friend-chat-window){border:1px solid #d8b364;background:linear-gradient(135deg,#1a2934,#0a141e);box-shadow:0 0 0 4px #090e14,0 0 0 5px #805d2f99,0 22px 65px #000c;border-radius:5px}
+.mythic-rework :is(.friend-action-backdrop,.friend-profile-backdrop,.card-detail-backdrop){z-index:10000}
+.mythic-rework .friend-chat-window{z-index:11000}
+.mythic-rework :is(.friend-action-content,.friend-profile-dialog,.friend-chat-window>header){background:#101c27}
+.mythic-rework .friend-messages{background:linear-gradient(#0d1721,#121f29)}
+
+/* Arena hub: a real hero image rather than dashboard rectangles. */
+.mythic-rework #view-arena>.page-heading{position:relative;isolation:isolate;min-height:244px;margin:25px 0 22px;padding:35px 36px;align-items:center;border:1px solid #bd935a82;border-radius:5px;background:linear-gradient(90deg,#09131cf5 8%,#09131c88 67%,#11243233),url('assets/rework/citadela.webp') center 44%/cover;box-shadow:inset 0 0 0 5px #0d18224a,0 16px 35px #0005;overflow:hidden}
+.mythic-rework #view-arena>.page-heading>div{position:relative;z-index:2;max-width:65%}
+.mythic-rework #view-arena>.page-heading::after{content:'';position:absolute;z-index:-1;inset:-25px -10px -135px 56%;background:url('assets/holograms/zeus-hologram.png') center top/contain no-repeat;filter:drop-shadow(0 0 22px #168aff44);opacity:.9;pointer-events:none}
+.mythic-rework #view-arena>.page-heading::before{content:'✦';position:absolute;bottom:17px;right:22px;color:#f2cf88;font-size:21px;text-shadow:0 0 20px #e1b86a}
+.mythic-rework .arena-mode-grid{grid-template-columns:repeat(5,minmax(0,1fr))!important;gap:11px}
+.mythic-rework .arena-mode-card{position:relative;isolation:isolate;display:flex;flex-direction:column;align-items:center;min-width:0;min-height:218px;height:auto!important;padding:20px 13px 0!important;border:1px solid #a27d4270!important;border-radius:4px!important;background:radial-gradient(ellipse at 50% 30%,#2a454b66,transparent 70%),linear-gradient(145deg,#1a2c36f2,#0b151ff5)!important;box-shadow:inset 0 0 0 4px #040b144a,0 8px 22px #0006;transition:border-color .2s,background .2s,box-shadow .2s}
+.mythic-rework .arena-mode-card::before{content:'';position:absolute;left:calc(50% - 15px);top:-1px;width:30px;height:4px;background:#c7a15b;clip-path:polygon(0 0,100% 0,85% 100%,15% 100%)}
+.mythic-rework .arena-mode-card:hover{border-color:#e3c382!important;transform:translateY(-2px);box-shadow:inset 0 0 0 4px #d3b1670c,0 0 22px #b88b4326}
+.mythic-rework .arena-mode-card.selected{border-color:#f0ce84!important;background:radial-gradient(ellipse at 50% 35%,#806d3844,transparent 70%),linear-gradient(145deg,#26363c,#111c25)!important;box-shadow:inset 0 0 0 3px #d9b26420,0 0 18px #b88b4330}
+.mythic-rework .arena-mode-card>img,.mythic-rework .custom-mode-logo-wrap{width:104px!important;height:70px!important;object-fit:contain;margin:0 0 14px!important;max-width:100%;filter:drop-shadow(0 4px 12px #0009)}
+.mythic-rework .custom-mode-logo-wrap{display:block}
+.mythic-rework .custom-mode-logo-wrap img{width:100%!important;height:100%!important;object-fit:contain}
+.mythic-rework .arena-mode-card>b{font:700 clamp(12px,1.05vw,16px)/1.4 Mythic Display,Georgia,serif;color:#eee1c3}
+.mythic-rework .arena-mode-card>small{max-width:25ch;margin:7px 0 17px;font-size:10px;line-height:1.6;color:#a5b5bf}
+.mythic-rework .arena-mode-card>i{width:calc(100% + 26px);margin-top:auto;padding:12px 4px;border-top:1px solid #b88b4347;background:#060e164d;font-size:8px;letter-spacing:1.5px;color:#ddbd79}
+.mythic-rework .arena-mode-card.mode-locked{opacity:.65}
+.mythic-rework .arena-start-row{margin:18px 0 27px;padding:16px 20px;border:1px solid #a27d4270;border-radius:3px;background:linear-gradient(90deg,#14232ed9,#0b1620f0);box-shadow:inset 3px 0 #e2bd76}
+.mythic-rework .arena-start-row p{color:#bfccd1;font-size:11px;line-height:1.6}
+.mythic-rework .arena-start-row .button{min-width:185px}
+.mythic-rework .arena-layout{grid-template-columns:minmax(0,1.8fr) minmax(240px,.75fr);gap:19px}
+.mythic-rework :is(.arena-recent-heading,.arena-active-deck>header){padding:20px;border-bottom:1px solid #c49b493d}
+.mythic-rework .arena-recent-heading h2{font-size:21px;margin-top:7px}
+.mythic-rework .arena-stat-grid{gap:0;margin:0;padding:22px 8px;border-bottom:1px solid #b88b433b;background:linear-gradient(90deg,#111f2c88,#14243155)}
+.mythic-rework .arena-stat-grid article{padding:6px 12px;border:0;border-right:1px solid #b88b433b;border-radius:0;background:none}
+.mythic-rework .arena-stat-grid article:last-child{border-right:0}
+.mythic-rework .arena-stat-grid b{font:700 31px Mythic Display,serif;color:#f0cf84}
+.mythic-rework .arena-stat-grid small{margin-top:8px;color:#9daeb9;font-size:8px;letter-spacing:1px}
+.mythic-rework .arena-recent-list{padding:10px 18px}
+.mythic-rework .featured-panel{padding:23px 20px 17px;background:radial-gradient(ellipse at 50% 52%,#0e9eb02b,transparent 65%),linear-gradient(150deg,#1b2e37,#0d1720)}
+.mythic-rework .featured-panel h2{align-self:center;margin:8px 0 18px;font-size:22px;text-align:center}
+.mythic-rework .featured-card-button{width:min(100%,190px);transform:rotate(3deg);filter:drop-shadow(0 12px 14px #0009)}
+.mythic-rework .featured-card-button:hover{transform:rotate(0) translateY(-3px)}
+.mythic-rework .featured-caption{margin-top:23px;padding-top:14px;border-color:#c49b494d}
+.mythic-rework .home-lower{gap:19px;margin-top:20px}
+.mythic-rework .quick-panel{padding:24px;background:linear-gradient(100deg,#12222ff0,#14262ace)}
+.mythic-rework .quick-panel h2{font-size:22px;margin-top:10px}
+.mythic-rework .quick-panel p{font-size:12px;line-height:1.8;margin:12px 0 20px}
+.mythic-rework .deck-preview-tools{padding:14px;gap:12px;background:#07131d4d}
+.mythic-rework .arena-deck-preview{padding:18px;gap:12px}
+
+/* Collection, deck building, lore, economy and progression use one visual system. */
+.mythic-rework :is(.collection-toolbar,.store-category-tabs,.deck-tools){padding:13px;border:1px solid #b88b4359;border-radius:4px;background:#111e2ce8}
+.mythic-rework :is(.filter-tab,.store-category-tab){padding:9px 13px;border-radius:2px;font-size:10px;letter-spacing:.4px;color:#b0c1cc}
+.mythic-rework :is(.filter-tab.active,.store-category-tab.active){border-color:#d6af66;background:linear-gradient(#92703b55,#352d1b44);color:#ffe3a3}
+.mythic-rework .search-box{background:#07111b;border-color:#9e7c4866}
+.mythic-rework .collection-grid{grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:20px}
+.mythic-rework .collection-card{padding:12px;border-color:#b88b4369;border-radius:4px;background:linear-gradient(135deg,#223643e6,#0c1722f5);transition:border-color .2s,transform .2s}
+.mythic-rework .collection-card:hover{transform:translateY(-5px);border-color:#e7c177;box-shadow:0 8px 24px #0009,0 0 16px #c59c4023}
+.mythic-rework .collection-art-button{height:auto;aspect-ratio:5/7;border:0;border-radius:4px;background:#08111a}
+.mythic-rework .collection-art-button img{object-fit:contain}
+.mythic-rework .collection-card-info{padding:14px 1px 4px}
+.mythic-rework .collection-card-info h2{font-size:15px;line-height:1.4}
+.mythic-rework .collection-card-rule{font-size:10px;line-height:1.65;color:#b8c5cc}
+.mythic-rework .card-detail-button{min-height:33px;font-size:10px;border-color:#b88b4366;background:#152633;color:#ead59c}
+.mythic-rework .power-chip{border:2px solid #d4ac59;background:radial-gradient(circle at 30% 25%,#287fa0,#0e344e 70%);color:#fff2cd;box-shadow:0 0 0 2px #07111c}
+.mythic-rework .deck-summary{padding:24px;gap:20px;border-left:3px solid #d7ae60}
+.mythic-rework .deck-summary h2{font-size:25px}
+.mythic-rework .deck-summary p{font-size:11px;line-height:1.65}
+.mythic-rework .deck-symbol{background:linear-gradient(#304958,#14212c);border:1px solid #c39a50;border-radius:3px;color:#f6d58f}
+.mythic-rework .deck-list{padding:17px;gap:10px}
+.mythic-rework .deck-row{padding:12px;border:1px solid #bd955c2e;border-radius:3px;background:linear-gradient(110deg,#1e313eaa,#0b172088)}
+.mythic-rework .deck-row:hover{border-color:#c69d5580}
+.mythic-rework .deck-row-copy b{font-size:14px;color:#e6d9b9}
+.mythic-rework .deck-row-copy small{font-size:10px}
+.mythic-rework .deck-count-control button{width:30px;height:30px;border-radius:3px;background:#0b1723}
+.mythic-rework .lore-hero{position:relative;isolation:isolate;overflow:hidden;min-height:320px;padding:42px;background:linear-gradient(90deg,#0c1722ed,#122634aa),url('assets/rework/citadela.webp') center 38%/cover}
+.mythic-rework .lore-hero h2{font-size:clamp(26px,3vw,40px);line-height:1.45;color:#f8e5bd}
+.mythic-rework .lore-hero p{max-width:62ch;color:#b8c8ce;font-size:12px;line-height:1.9}
+.mythic-rework :is(.lore-story-card,.rules-grid article,.store-item,.community-deck-card,.mission-card,.expedition-card){border:1px solid #bd955c66;border-radius:4px;background:linear-gradient(135deg,#1d303de8,#0d1923f5);box-shadow:inset 0 1px #ffffff0b,0 8px 20px #0004}
+.mythic-rework :is(.rules-grid article,.store-item){padding:23px}
+.mythic-rework .rules-grid article>b{color:#d7b368;font-family:Mythic Display,serif}
+.mythic-rework .rules-grid article p{color:#adbec9;font-size:11px;line-height:1.8}
+.mythic-rework .community-grid{gap:20px}
+.mythic-rework .community-card{padding:23px}
+.mythic-rework .community-card>header{margin-bottom:22px;padding-bottom:15px;border-bottom:1px solid #bd955c44}
+.mythic-rework .community-card h2{font-size:22px;margin-top:7px}
+.mythic-rework .community-card form{padding:17px;border:1px solid #bd955c33;border-radius:3px;background:#08131d66}
+.mythic-rework :is(.mission-step,.guild-row,.tournament-row,.community-deck-row){border-color:#bd955c44;background:#14263399}
+.mythic-rework .store-balance-card{padding:24px;border-color:#d8b061;background:radial-gradient(ellipse at 90% 50%,#a9772540,transparent 65%),#14232e}
+.mythic-rework .store-balance-card b{font-family:Mythic Display,serif;color:#f0cf83}
+.mythic-rework .store-grid{gap:20px}
+.mythic-rework .player-profile-card{padding:28px;background:radial-gradient(ellipse at 85% 30%,#267da82b,transparent 70%),linear-gradient(110deg,#203544,#0e1b26);border-left:3px solid #e5c278}
+.mythic-rework .player-profile-avatar{border:2px solid #e4c075;background:radial-gradient(circle at 50% 20%,#355267,#0c1925);box-shadow:0 0 0 5px #0a141d,0 0 0 6px #a9844c,0 0 35px #41a4ff25}
+.mythic-rework .profile-identity h2{font-size:29px;color:#f3dca6}
+.mythic-rework :is(.profile-stats,.profile-analytics-summary)>article{border:1px solid #ba944d55;border-radius:3px;background:linear-gradient(#1c303ed9,#0d1925e6);padding:20px}
+.mythic-rework :is(.profile-stats,.profile-analytics-summary) b{font-family:Mythic Display,serif;color:#e9c77e}
+.mythic-rework .profile-progress{padding:25px;background:linear-gradient(110deg,#182c39,#111f2a)}
+.mythic-rework .profile-analytics-card{padding:23px}
+.mythic-rework :is(.profile-edit-form,.settings-form,.admin-panel){border-color:#ba944d66}
+.mythic-rework :is(.queue-setup-panel,.custom-room-panel){padding:25px;background:linear-gradient(120deg,#1a303de8,#0c1823f7)}
+.mythic-rework .queue-format-options{gap:16px}
+.mythic-rework .queue-format-card{padding:23px;border:1px solid #b38c4a77;border-radius:3px;background:#0c1a26}
+.mythic-rework .queue-format-card.selected{border-color:#ebc67b;background:radial-gradient(ellipse at 50% 20%,#a37d2f23,#122633 70%);box-shadow:inset 0 0 0 3px #c49b4914}
+.mythic-rework .queue-format-card>span{font-family:Mythic Display,serif;color:#f4ce7f;font-size:31px}
+.mythic-rework :is(.custom-seat,.queue-team-preview>article,.queue-teammate-seat){padding:25px;border:1px solid #b48d4966;border-radius:3px;background:radial-gradient(circle at 50% 0,#1f80ab22,transparent 80%),#0b1925}
+.mythic-rework .custom-seat.filled{border-color:#68c7dd99;box-shadow:inset 0 2px #349fc1}
+.mythic-rework .queue-vs img{filter:drop-shadow(0 0 14px #e9a53144)}
+
+/* Authentication stays intact: only its composition and artwork change. */
+.mythic-rework .account-gate{background:linear-gradient(90deg,#050a11bb,#050e16a6),url('assets/rework/citadela.webp') center/cover fixed;grid-template-columns:minmax(300px,610px) minmax(300px,410px);gap:clamp(24px,6vw,95px);padding:60px;align-content:center}
+.mythic-rework .public-welcome{position:relative;isolation:isolate;min-height:560px;padding:45px 34px;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:hidden}
+.mythic-rework .public-welcome .brand{padding:0 0 55px}
+.mythic-rework .public-welcome .brand-name{font-size:22px}
+.mythic-rework .public-welcome .brand-mark{width:50px;height:58px;flex-basis:50px}
+.mythic-rework .public-welcome h2{position:relative;z-index:1;margin:16px 0 25px;font:700 clamp(32px,3.7vw,55px)/1.2 Mythic Display,Georgia,serif;letter-spacing:-1.7px;color:#f5e4bd;text-shadow:0 3px 25px #000}
+.mythic-rework .public-welcome>p:not(.eyebrow){position:relative;max-width:37ch;color:#bdccd6;font-size:14px;line-height:1.9}
+.mythic-rework .public-feature-list{margin-top:30px;gap:14px}
+.mythic-rework .public-feature-list span{padding:0;border:0;background:none;color:#d6c49a;font-size:11px;line-height:1.6}
+.mythic-rework .account-gate-card{padding:35px 30px;border:1px solid #c5a05d9c;border-radius:5px;background:linear-gradient(140deg,#1a2c3aef,#0b1622f7);box-shadow:inset 0 0 0 5px #10192199,0 0 0 5px #050c1266,0 25px 70px #0009}
+.mythic-rework .account-gate-card::before{content:'✦';display:block;margin:-47px auto 20px;width:29px;text-align:center;color:#efd08b;font-size:27px;background:#101d2a;text-shadow:0 0 15px #b1854444}
+.mythic-rework .account-gate-card h1{font:700 27px/1.35 Mythic Display,Georgia,serif;color:#f2dfb8}
+.mythic-rework .account-gate-card>p:not(.eyebrow){font-size:12px;line-height:1.75;color:#aebfce}
+.mythic-rework .account-gate-card form{margin-top:24px;gap:17px}
+.mythic-rework .account-gate-card input{min-height:45px;padding:12px}
+.mythic-rework .account-gate-card .button{min-height:46px}
+.mythic-rework .account-gate-card .text-link{padding:9px}
+.mythic-rework .auth-security-note{color:#778d9d;font-size:9px;margin-top:15px}
+.mythic-rework .loading-screen{background:radial-gradient(ellipse at center,#14324a99,#040b14f5),url('assets/rework/citadela.webp') center/cover}
+.mythic-rework .loading-emblem{border-color:#d5b169;box-shadow:0 0 35px #d3a55033,inset 0 0 15px #d9b87622}
+.mythic-rework .loading-title{font-family:Mythic Display,serif;letter-spacing:5px}
+
+/* Combat. Existing three lanes, unlimited cards and shared zones are preserved.
+   Decoration is non-interactive; it never covers pointer drop targets. */
+.mythic-rework.duel-fullscreen::before{background:linear-gradient(#08121b33,#07121a55),url('assets/rework/citadela.webp') center/cover}
+.mythic-rework.duel-fullscreen .main-content{padding:0 clamp(8px,2vw,34px) 18px!important}
+.mythic-rework #view-duel{max-width:1700px}
+.mythic-rework .duel-heading{padding:10px 0!important}
+.mythic-rework .duel-heading h1{font-size:25px}
+.mythic-rework .duel-heading .button{min-height:32px;padding:6px 12px;font-size:10px}
+.mythic-rework .match-status{position:relative;display:flex;flex-direction:row;align-items:center;gap:20px;min-height:60px;padding:14px 23px;margin:4px 0 14px;border:1px solid #d0aa60;border-radius:4px;background:linear-gradient(100deg,#172a3aeF,#0b1826f5 65%,#1c3042f0);box-shadow:inset 0 0 0 3px #c8a35912,0 5px 20px #0007}
+.mythic-rework .match-status::after{content:'';position:absolute;left:20px;right:20px;bottom:-3px;height:3px;background:linear-gradient(90deg,#2bbfff,#7edfff 49%,#f6cf80 50%,#fa6d4c 51%,#e52e31);pointer-events:none;box-shadow:0 0 9px #439bff55}
+.mythic-rework #turn-label{font:700 17px Mythic Display,Georgia,serif;letter-spacing:.5px;color:#f5d67d}
+.mythic-rework #turn-phase{flex:1;color:#c2d3df;font-size:11px}
+.mythic-rework .turn-clock{min-width:57px;border:1px solid #479dd399;background:#071728;box-shadow:inset 0 0 17px #1988c62b}
+.mythic-rework .turn-clock b{font-size:28px;text-shadow:0 0 10px currentColor}
+.mythic-rework .battle-board{position:relative;isolation:isolate;display:flex!important;flex-direction:column!important;gap:10px;padding:18px 94px 24px;overflow:visible!important;border:1px solid #c6a25d9c;border-radius:6px;background:linear-gradient(#10242c80,#0c1a2180);box-shadow:inset 0 0 0 5px #050e164a,0 18px 45px #0007;perspective:none!important;transform:none!important}
+.mythic-rework .battle-board::before{inset:5px;border:1px solid #c6a25d40;border-radius:3px;background:linear-gradient(180deg,#090d1444,transparent 45%,#07101933);z-index:-1}
+.mythic-rework .battle-board::after{background-image:linear-gradient(#06101a88,#06101988),url('assets/rework/citadela.webp')!important;background-position:center;background-size:cover;filter:none;opacity:1;z-index:-2;transform:none}
+.mythic-rework .battle-side.enemy-side,.mythic-rework .battle-side.player-side{position:relative!important;inset:auto!important;display:flex;flex-direction:column;width:100%;padding:0!important;min-height:0;transform:none!important}
+.mythic-rework .battle-side .battle-player{position:absolute;top:18px;z-index:3;inset-inline-end:-84px}
+.mythic-rework .battle-row-label{position:relative;inset:auto;margin:0 0 8px;padding:0;border:0;background:none;color:#d0e0e9;font-size:9px;letter-spacing:1.5px;text-align:left;transform:none!important}
+.mythic-rework .enemy-hidden-hand{position:relative!important;inset:auto!important;display:flex;justify-content:center;align-self:center;gap:3px;min-height:52px;height:60px;margin:0 0 9px;transform:none!important}
+.mythic-rework .enemy-hidden-hand>*{max-height:59px;filter:drop-shadow(0 3px 3px #0008)}
+.mythic-rework .battle-layout.enemy-layout,.mythic-rework .battle-layout.player-layout{position:relative!important;inset:auto!important;display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:0!important;width:100%;transform:none!important}
+.mythic-rework .enemy-corner-stack{position:absolute;left:-84px;top:0;max-width:78px;z-index:3}
+.mythic-rework .player-corner-stack{position:absolute;right:-84px;bottom:0;max-width:78px;z-index:3}
+.mythic-rework .player-identity{flex-direction:column;align-items:center;gap:9px;padding:5px 0;color:#e6d5ac;text-align:center}
+.mythic-rework .player-identity small{font-size:7px;letter-spacing:1px;color:#8bcff5}
+.mythic-rework .enemy-identity small{color:#f78a77}
+.mythic-rework .player-identity b{display:block;max-width:80px;overflow:hidden;text-overflow:ellipsis;font-size:10px}
+.mythic-rework .battle-avatar{width:46px;height:46px;border:2px solid #d5b369;background:radial-gradient(circle,#1b5b85,#102337);box-shadow:0 0 0 3px #091521,0 0 0 4px #4ca0c080;color:#b9eaff}
+.mythic-rework .enemy-avatar{background:radial-gradient(circle,#803c2d,#301d1b);box-shadow:0 0 0 3px #211010,0 0 0 4px #b7794a99;color:#ffbda9}
+.mythic-rework .battle-field.enemy-field,.mythic-rework .battle-field.player-field{position:relative!important;inset:auto!important;grid-column:1/-1!important;grid-row:auto!important;display:grid!important;grid-template-rows:repeat(3,minmax(60px,1fr))!important;width:100%!important;max-width:100%;min-height:218px!important;padding:0!important;gap:6px;border:0;background:none!important;transform:none!important;overflow:visible!important}
+.mythic-rework .battle-field::before{display:none}
+.mythic-rework .battle-field .battle-lane{position:relative;isolation:isolate;display:flex!important;align-items:center;justify-content:flex-start;gap:6px;min-height:64px!important;height:auto!important;padding:7px 9px 7px 102px!important;border:1px solid #44bfffaa;border-radius:3px;background:repeating-linear-gradient(90deg,transparent 0,transparent 112px,#2fb7f01a 113px,#2fb7f038 114px),linear-gradient(110deg,#0b2936d6,#102536c9),url('assets/battlefield-mud.png') center/cover;box-shadow:inset 0 0 14px #249cdd24,0 0 8px #0b88db3d;overflow:visible!important;transform:none!important}
+.mythic-rework .enemy-field .battle-lane{border-color:#ff6c44b3;background:repeating-linear-gradient(90deg,transparent 0,transparent 112px,#ec63301a 113px,#f0733038 114px),linear-gradient(110deg,#42251bdc,#251b18b3),url('assets/battlefield-mud.png') center/cover;box-shadow:inset 0 0 15px #db531d26,0 0 9px #f14d2038}
+.mythic-rework .battle-lane::before{position:absolute;left:0;top:0;bottom:0;display:flex;align-items:center;width:90px;padding:0 12px;border-right:1px solid #54b7e862;background:linear-gradient(90deg,#0b233b,#112e3e);color:#8dd7ff;font-size:8px;font-weight:700;letter-spacing:.5px;white-space:pre-line;pointer-events:none;content:'⚔  LINHA\a     SUPERIOR'}
+.mythic-rework .enemy-field .battle-lane::before{border-color:#f8764460;background:linear-gradient(90deg,#391714,#39231a);color:#ffb59e}
+.mythic-rework .battle-lane[data-lane-index='1']::before{content:'♜  LINHA\a     CENTRAL'}
+.mythic-rework .battle-lane[data-lane-index='2']::before{content:'⛨  LINHA\a     INFERIOR'}
+.mythic-rework .battle-lane.drop-ready{border-color:#fff0ba!important;box-shadow:inset 0 0 25px #fff0ba24,0 0 16px #f9d986aa!important}
+.mythic-rework .battle-divider{display:none}
+.mythic-rework .shared-zones-wrap{position:relative;padding:13px 0;margin:4px -8px;border:1px solid #d5b66b66;border-inline:0;background:linear-gradient(90deg,#080f19f0,#182634ef 50%,#080f19f0);box-shadow:0 3px 14px #0006}
+.mythic-rework .shared-zones-wrap>small{display:none}
+.mythic-rework .shared-zones-wrap::before,.mythic-rework .shared-zones-wrap::after{content:'✦';position:absolute;left:calc(50% - 10px);top:-14px;color:#f2ce7b;font-size:22px;text-shadow:0 2px 5px #000,0 0 10px #dbb25c55;pointer-events:none}
+.mythic-rework .shared-zones-wrap::after{top:auto;bottom:-14px}
+.mythic-rework .shared-zone-line{display:grid;grid-template-columns:1fr minmax(210px,1.3fr) 1fr;align-items:center;gap:12px}
+.mythic-rework .shared-zones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:7px}
+.mythic-rework .battle-zone{min-height:65px;border:1px solid #c19a54;border-radius:3px;background:linear-gradient(#172a3c,#08131e);box-shadow:inset 0 0 0 2px #c19a5414}
+.mythic-rework .battle-zone>b,.mythic-rework .battle-zone>small{color:#e5c576}
+.mythic-rework .zone-status{gap:15px;justify-content:center}
+.mythic-rework .zone-status .round-score{display:flex;align-items:center;flex-direction:column;gap:0}
+.mythic-rework .round-score>b{font-size:32px;line-height:1.2;text-shadow:0 0 13px currentColor}
+.mythic-rework .enemy-round-score>b{color:#ff6a5b}
+.mythic-rework .player-round-score>b{color:#72d7ff}
+.mythic-rework #enemy-score-nick{color:#ff8c7f;font-size:11px}
+.mythic-rework #player-score-nick{color:#f4d779;font-size:11px}
+.mythic-rework .trixx-stars{font-size:23px;filter:drop-shadow(0 0 5px currentColor)}
+.mythic-rework .enemy-zone-status .trixx-stars{color:#ff6257}
+.mythic-rework .player-zone-status .trixx-stars{color:#4bc5ff}
+.mythic-rework .deck-pile{width:66px;min-width:0;height:87px;border:2px solid #c9a157;border-radius:4px;background:linear-gradient(#0d263d99,#09131e66),url('assets/card-back.svg') center/cover;box-shadow:2px 2px 0 #0a1119,3px 3px 0 #b58c4d,5px 5px 0 #0c1822;transform:rotate(5deg)}
+.mythic-rework .enemy-deck{position:absolute;left:-82px;top:0;transform:rotate(-5deg);background-color:#51201c}
+.mythic-rework .deck-pile-count{border:1px solid #d9bc81;background:#07121d;color:#f3e9ca;box-shadow:0 2px 5px #0008}
+.mythic-rework .deck-pile small{font-size:7px}
+.mythic-rework .underworld-pile{width:70px;min-height:56px;border:1px solid #9d80b7;border-radius:4px;background:linear-gradient(135deg,#38264d,#111a29);box-shadow:inset 0 1px #d4b5ff22,0 4px 9px #0006;color:#dcbdff}
+.mythic-rework .underworld-list{max-height:56px;font-size:8px;opacity:.75}
+.mythic-rework .battlefield-pass-button{position:relative!important;inset:auto!important;align-self:flex-end;min-height:40px;margin:0 -77px -11px 0;background:linear-gradient(#d94832,#8b1c21)!important;border:1px solid #ff9980!important;border-radius:3px;color:#fff0dc;box-shadow:inset 0 1px #ffb49f66,0 0 12px #e8462933;transform:none!important;z-index:4;font-size:11px;text-transform:uppercase;letter-spacing:.7px}
+.mythic-rework .hand-panel{margin-top:16px;border:1px solid #cda85b99;border-radius:4px;background:linear-gradient(90deg,#0b1824ee,#142f3bc7,#09121dee);overflow:visible}
+.mythic-rework .hand-panel::before{background-image:linear-gradient(90deg,#081321da,#122b3cbf),url('assets/rework/citadela.webp')!important;filter:none}
+.mythic-rework .hand-panel .panel-heading{padding:12px 19px;align-items:center}
+.mythic-rework .hand-panel .panel-heading small{font:700 15px Mythic Display,serif;letter-spacing:.5px;color:#efd07d}
+.mythic-rework .hand-panel .panel-heading h2{font:400 11px Mythic UI,sans-serif;color:#a5becc;max-width:none}
+.mythic-rework .battle-hand{display:flex;align-items:flex-end;justify-content:center;gap:11px;padding:17px 20px 12px;min-height:190px;max-width:100%;overflow-x:auto;overflow-y:visible;scrollbar-width:thin;scrollbar-color:#b49351 #0b1824}
+.mythic-rework .hand-card{border-color:#cca656;border-radius:4px;background:linear-gradient(#254354,#0b1722);box-shadow:0 5px 13px #000a,0 0 0 1px #0b1722;transition:transform .15s,box-shadow .15s}
+.mythic-rework .hand-card:hover{transform:translateY(-6px);box-shadow:0 5px 15px #000b,0 0 15px #5cc9ff77}
+.mythic-rework .hand-instruction{color:#99b1be;font-size:9px;line-height:1.6;padding:2px 20px 14px}
+.mythic-rework .battle-log{margin-top:15px;padding:18px;color:#b8cad6}
+.mythic-rework .battle-log ol{font-size:10px;line-height:1.7}
+
+/* Adaptive layouts retain every action; no game controls are hidden here. */
+@media(min-width:1600px){.mythic-rework .arena-mode-card{min-height:240px}.mythic-rework #view-arena>.page-heading{min-height:280px}}
+@media(max-width:1200px){
+ .mythic-rework .sidebar{width:215px}.mythic-rework .main-content{margin-left:215px;padding-inline:20px}
+ .mythic-rework .arena-mode-card{min-height:205px;padding-inline:8px!important}.mythic-rework .arena-mode-card>b{font-size:12px}.mythic-rework .arena-mode-card>small{font-size:9px}
+ .mythic-rework .arena-mode-card>i{width:calc(100% + 16px);font-size:7px;letter-spacing:.7px}
+ .mythic-rework .arena-layout{grid-template-columns:minmax(0,1.5fr) minmax(220px,.7fr)}
+ .mythic-rework .zone-status{gap:8px}.mythic-rework .trixx-stars{font-size:19px}
+}
+@media(max-width:960px){
+ .mythic-rework .sidebar{position:relative;inset:auto;width:100%;padding:14px 18px 10px;border:0;border-bottom:1px solid #b38c4a88;display:flex;flex-direction:row;flex-wrap:wrap;align-items:center;gap:5px 18px}
+ .mythic-rework .sidebar::before{display:none}.mythic-rework .brand{padding:0 5px 8px}.mythic-rework .brand-mark{width:31px;height:36px;flex-basis:31px}.mythic-rework .brand-name{font-size:13px}
+ .mythic-rework .nav-group{flex:1 0 100%;margin:0;min-width:0}.mythic-rework .nav-label{display:none}.mythic-rework .main-nav{display:flex;flex-wrap:wrap;gap:5px}
+ .mythic-rework .nav-item{width:auto;min-height:39px;padding:9px 12px;font-size:11px}.mythic-rework .nav-item.active::after{display:none}
+ .mythic-rework .friends-nav-entry,.mythic-rework .deck-nav-entry{position:relative}.mythic-rework :is(.friends-submenu,.deck-submenu){position:absolute;z-index:200;left:0;top:100%;width:230px;margin:5px 0;padding:10px;border:1px solid #b48d49;background:#0c1925;box-shadow:0 12px 25px #000c}
+ .mythic-rework .sidebar-bottom{position:absolute;right:17px;top:13px;margin:0}.mythic-rework .sidebar-bottom .profile{padding:0;border:0}.mythic-rework .sidebar-bottom .profile-summary{display:none}.mythic-rework .profile-avatar{width:34px;height:34px}
+ .mythic-rework .nav-group-universe{flex:1 0 100%}.mythic-rework .nav-group-universe .nav-item{font-size:10px;min-height:33px;padding-block:6px;color:#a1b6c6}
+ .mythic-rework .main-content{margin:0;padding-inline:20px}.mythic-rework .topbar{min-height:54px;padding:9px 0}.mythic-rework .breadcrumb{font-size:8px}.mythic-rework .topbar-right{gap:7px}
+ .mythic-rework .arena-mode-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}.mythic-rework .arena-mode-card{min-height:200px}
+ .mythic-rework .home-lower{grid-template-columns:1fr}.mythic-rework .account-gate{padding:35px;gap:25px;grid-template-columns:minmax(260px,1.15fr) minmax(270px,1fr)}
+ .mythic-rework .public-welcome{padding:25px 0;min-height:490px}.mythic-rework .public-welcome h2{font-size:39px}.mythic-rework .account-gate-card{padding:30px 22px}
+ .mythic-rework .battle-board{padding:15px 72px 23px}.mythic-rework .enemy-corner-stack{left:-63px}.mythic-rework .player-corner-stack{right:-63px}.mythic-rework .enemy-deck{left:-62px;width:53px;height:72px}.mythic-rework .battle-side .battle-player{inset-inline-end:-61px}
+ .mythic-rework .battlefield-pass-button{margin-right:-54px;font-size:9px}.mythic-rework .underworld-pile{width:54px}.mythic-rework .deck-pile{width:54px;height:72px}
+ .mythic-rework .battle-field .battle-lane{padding-left:81px!important}.mythic-rework .battle-lane::before{width:74px;padding-inline:7px;font-size:7px}
+ .mythic-rework .shared-zone-line{grid-template-columns:1fr minmax(185px,1.3fr) 1fr;gap:7px}.mythic-rework .zone-status{flex-direction:column;gap:3px}.mythic-rework .round-score>b{font-size:26px}.mythic-rework .trixx-stars{font-size:16px}
+}
+@media(max-width:640px){
+ .mythic-rework .sidebar{padding:12px 10px 8px;gap:4px}.mythic-rework .main-nav{gap:2px}.mythic-rework .nav-item{padding:9px 7px;gap:5px;font-size:10px;min-height:42px}.mythic-rework .nav-icon{width:17px;font-size:15px}
+ .mythic-rework .nav-group-universe .nav-item{font-size:9px;min-height:34px;padding-inline:8px}.mythic-rework .nav-item[data-view='community-decks']{font-size:9px}
+ .mythic-rework .main-content{padding:0 12px 25px}.mythic-rework .topbar{gap:7px}.mythic-rework .rework-preview-badge{font-size:7px;letter-spacing:.4px;padding:4px}.mythic-rework .local-status{font-size:8px}.mythic-rework .topbar-right{gap:5px}.mythic-rework .icon-button{width:28px;height:28px}
+ .mythic-rework .breadcrumb{font-size:7px;letter-spacing:.4px}.mythic-rework .breadcrumb i{padding-inline:4px}.mythic-rework .page-heading{padding:25px 0 20px;align-items:flex-start}.mythic-rework .page-heading h1{font-size:29px}.mythic-rework .page-heading p:not(.eyebrow){font-size:11px}
+ .mythic-rework #view-arena>.page-heading{min-height:210px;margin:16px 0;padding:24px 19px}.mythic-rework #view-arena>.page-heading>div{max-width:72%}.mythic-rework #view-arena>.page-heading h1{font-size:30px}.mythic-rework #view-arena>.page-heading::after{inset:5px -65px -50px 48%;opacity:.65}.mythic-rework .eyebrow{font-size:8px;letter-spacing:1.2px}
+ .mythic-rework .arena-mode-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:9px}.mythic-rework .arena-mode-card{min-height:190px;padding-top:16px!important}.mythic-rework .arena-mode-card>b{font-size:13px}.mythic-rework .arena-mode-card>small{font-size:10px}.mythic-rework .arena-mode-card:last-child{grid-column:1/-1;min-height:160px}.mythic-rework .arena-mode-card:last-child>small{max-width:none}
+ .mythic-rework .arena-mode-card>img,.mythic-rework .custom-mode-logo-wrap{width:100px!important;height:56px!important;margin-bottom:11px!important}
+ .mythic-rework .arena-start-row{padding:16px;margin:15px 0 20px;flex-direction:column;align-items:stretch;gap:12px}.mythic-rework .arena-start-row .button{width:100%}.mythic-rework .arena-layout{grid-template-columns:1fr;gap:16px}
+ .mythic-rework .arena-stat-grid b{font-size:25px}.mythic-rework .arena-stat-grid small{font-size:6px;letter-spacing:.3px}.mythic-rework .arena-stat-grid article{padding-inline:5px}.mythic-rework .arena-recent-heading{padding:17px}.mythic-rework .arena-recent-heading h2{font-size:19px}
+ .mythic-rework .featured-panel{padding:20px}.mythic-rework .featured-card-button{width:175px}.mythic-rework .collection-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.mythic-rework .collection-card{padding:8px}.mythic-rework .collection-card-info h2{font-size:12px}.mythic-rework .collection-card-rule{font-size:9px}.mythic-rework .power-chip{flex-basis:30px;height:30px;font-size:15px}
+ .mythic-rework :is(.collection-toolbar,.deck-tools){padding:10px;gap:10px}.mythic-rework .filter-tab{font-size:9px;padding:8px}.mythic-rework .deck-summary{padding:17px;gap:12px}.mythic-rework .deck-summary h2{font-size:19px}.mythic-rework .deck-list{grid-template-columns:1fr;padding:10px}.mythic-rework .deck-row{padding:9px}.mythic-rework .deck-row-copy b{font-size:12px}
+ .mythic-rework :is(.community-card,.profile-analytics-card,.queue-setup-panel,.custom-room-panel){padding:17px}.mythic-rework .community-card h2{font-size:20px}.mythic-rework .community-grid{grid-template-columns:1fr}.mythic-rework .community-card form{padding:12px}.mythic-rework .lore-hero{padding:25px;min-height:300px}.mythic-rework .lore-hero h2{font-size:27px}
+ .mythic-rework .player-profile-card{padding:22px}.mythic-rework :is(.profile-stats,.profile-analytics-summary)>article{padding:13px}.mythic-rework .queue-format-card{padding:17px}.mythic-rework :is(.custom-seat,.queue-team-preview>article){padding:16px}
+ .mythic-rework .account-gate{grid-template-columns:1fr;padding:20px 17px;gap:20px;background-attachment:scroll;align-content:start}.mythic-rework .public-welcome{min-height:0;padding:15px 10px 8px}.mythic-rework .public-welcome .brand{padding-bottom:24px}.mythic-rework .public-welcome .brand-name{font-size:18px}.mythic-rework .public-welcome .brand-mark{width:39px;height:45px;flex-basis:39px}.mythic-rework .public-welcome h2{font-size:37px;letter-spacing:-1px;margin:12px 0 16px}.mythic-rework .public-welcome>p:not(.eyebrow){font-size:12px}.mythic-rework .public-feature-list{margin-top:19px;gap:8px}.mythic-rework .public-feature-list span{font-size:10px}.mythic-rework .account-gate-card{padding:27px 22px;margin-top:10px}.mythic-rework .account-gate-card h1{font-size:24px}.mythic-rework .account-gate-card::before{margin-top:-39px}
+ .mythic-rework .button{min-height:44px}.mythic-rework :is(input,select,textarea){min-height:44px}
+ .mythic-rework .match-status{gap:10px;flex-wrap:wrap;padding:11px 13px}.mythic-rework #turn-label{font-size:13px}.mythic-rework #turn-phase{font-size:9px;flex-basis:65%;order:3}.mythic-rework .turn-clock{margin-left:auto;min-width:43px}.mythic-rework .turn-clock b{font-size:24px}
+ .mythic-rework .battle-board{padding:12px 8px 15px;gap:10px}.mythic-rework .battle-side .battle-player{inset-inline-end:0;top:0}.mythic-rework .battle-layout.enemy-layout,.mythic-rework .battle-layout.player-layout{margin-top:6px}.mythic-rework .enemy-corner-stack{position:relative;left:auto;top:auto;max-width:none;grid-row:1;display:flex;margin:0 0 12px;min-height:46px}.mythic-rework .player-corner-stack{position:relative;right:auto;bottom:auto;max-width:none;grid-row:2;display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:12px}
+ .mythic-rework .player-identity{flex-direction:row;gap:9px;text-align:left;padding:0}.mythic-rework .battle-avatar{width:35px;height:35px}.mythic-rework .player-identity b{font-size:10px;max-width:95px}.mythic-rework .enemy-deck{left:0;top:0;width:36px;height:47px}.mythic-rework .enemy-corner-stack .player-identity{margin-left:48px}.mythic-rework .enemy-hidden-hand{height:45px;min-height:45px;margin-top:10px;margin-bottom:3px}.mythic-rework .enemy-hidden-hand>*{max-height:43px}.mythic-rework .deck-pile{width:36px;height:47px}.mythic-rework .deck-pile small{display:none}.mythic-rework .deck-pile-count{font-size:10px}.mythic-rework .underworld-pile{width:51px;min-height:41px}.mythic-rework .underworld-pile small{font-size:6px}
+ .mythic-rework .battle-field.enemy-field,.mythic-rework .battle-field.player-field{min-height:174px!important;grid-template-rows:repeat(3,minmax(51px,1fr))!important;gap:5px}
+ .mythic-rework .battle-field .battle-lane{min-height:51px!important;gap:3px;padding:5px 5px 5px 43px!important}.mythic-rework .battle-lane::before{width:37px;padding-inline:4px;font-size:6px;content:'⚔\a SUP.';text-align:center;justify-content:center}.mythic-rework .battle-lane[data-lane-index='1']::before{content:'♜\a CENTRO'}.mythic-rework .battle-lane[data-lane-index='2']::before{content:'⛨\a INF.'}
+ .mythic-rework .shared-zones-wrap{margin:1px -3px;padding:10px 3px}.mythic-rework .shared-zone-line{grid-template-columns:52px minmax(0,1fr) 52px;gap:5px}.mythic-rework .shared-zones{gap:4px}.mythic-rework .battle-zone{min-height:57px;padding:4px}.mythic-rework .battle-zone small{font-size:6px}.mythic-rework .zone-status{gap:3px}.mythic-rework #enemy-score-nick,.mythic-rework #player-score-nick{max-width:51px;font-size:8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.mythic-rework .round-score>b{font-size:22px}.mythic-rework .round-score>small:last-child,.mythic-rework .trixx-meter>small{font-size:6px}.mythic-rework .trixx-stars{font-size:13px}
+ .mythic-rework .battlefield-pass-button{align-self:center;min-height:42px;width:100%;margin:3px 0 0;font-size:11px}.mythic-rework .hand-panel{margin-top:12px}.mythic-rework .hand-panel .panel-heading{padding:12px}.mythic-rework .hand-panel .panel-heading small{font-size:13px}.mythic-rework .hand-panel .panel-heading h2{font-size:9px;max-width:27ch}.mythic-rework .battle-hand{justify-content:flex-start;padding:14px 12px 10px;gap:9px;min-height:155px}.mythic-rework .hand-instruction{font-size:8px;padding:0 12px 12px}
+}
+/* Reset the original board's perspective offsets before applying the new HUD. */
+.mythic-rework .battle-board{height:auto!important;min-height:0!important}
+.mythic-rework .shared-zones-wrap{inset:auto!important;left:auto!important;top:auto!important;transform:none!important;align-self:stretch!important;width:auto!important;max-width:none!important;height:auto!important;min-height:0!important;flex:none!important}
+.mythic-rework .shared-zones-wrap{display:block!important}
+.mythic-rework .shared-zone-line{width:100%!important;max-width:none!important;grid-template-rows:minmax(0,auto)!important}
+.mythic-rework .shared-zones{grid-template-rows:minmax(0,auto)!important;grid-auto-rows:auto!important;grid-auto-flow:row!important}
+.mythic-rework .shared-zones>.battle-zone{grid-row:1!important;grid-column:auto!important}
+.mythic-rework .shared-zone-line{height:auto!important;min-height:0!important;transform:none!important}
+.mythic-rework .shared-zone-line>.zone-status{position:static!important;inset:auto!important;transform:none!important;width:auto!important;min-width:0!important;height:auto!important;min-height:0!important;grid-row:1!important}
+.mythic-rework .shared-zone-line>.enemy-zone-status{grid-column:1!important;order:0!important}
+.mythic-rework .shared-zone-line>.shared-zones{position:static!important;inset:auto!important;transform:none!important;grid-column:2!important;grid-row:1!important;order:1!important;width:100%!important;min-width:0!important;height:auto!important;min-height:0!important}
+.mythic-rework .shared-zone-line>.player-zone-status{grid-column:3!important;order:2!important}
+.mythic-rework .shared-zones>.battle-zone{width:100%!important;height:66px!important;min-height:0!important;max-height:none!important;padding:5px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:3px;transform:none!important}
+.mythic-rework .battle-zone .zone-glyph{font-size:18px;line-height:1}
+.mythic-rework .battle-zone>b{font-size:9px}
+.mythic-rework .battle-field.enemy-field,.mythic-rework .battle-field.player-field{height:218px!important;min-height:0!important;max-height:none!important}
+.mythic-rework .battle-lane{border-width:1.5px!important}
+.mythic-rework .battle-side>.battle-player{height:auto!important;min-height:0!important;width:auto!important;max-width:80px;bottom:auto!important}
+.mythic-rework .battle-side>.battle-player .underworld-pile{position:relative!important;inset:auto!important;transform:none!important;width:70px!important;height:56px!important;min-height:0!important}
+.mythic-rework .enemy-side>.enemy-deck{position:absolute!important;inset:0 auto auto -82px!important;width:66px!important;height:87px!important;min-height:0!important;transform:rotate(-5deg)!important;align-items:center;justify-content:center}
+.mythic-rework .player-corner-stack>.deck-pile{position:relative!important;inset:auto!important;width:66px!important;height:87px!important;min-height:0!important;transform:rotate(5deg)!important;order:0!important}
+.mythic-rework .deck-pile-star{font-size:27px!important}
+.mythic-rework .enemy-identity{position:relative!important;inset:auto!important;transform:none!important}
+.mythic-rework .player-corner-stack{flex-direction:column!important;align-items:center!important;gap:12px!important;width:78px!important;height:auto!important}
+.mythic-rework .player-corner-stack>.player-identity{order:1!important;position:relative!important;inset:auto!important;transform:none!important}
+@media(min-width:641px){.mythic-rework .player-side>.battle-player{right:auto!important;left:-83px!important;top:3px!important}}
+@media(max-width:960px) and (min-width:641px){.mythic-rework .player-side>.battle-player{left:-62px!important}}
+@media(max-width:640px){.mythic-rework .player-corner-stack{width:100%!important;flex-direction:row!important;justify-content:space-between!important}.mythic-rework .player-side>.battle-player{right:0!important;left:auto!important;top:0!important}}
+.mythic-rework .arena-mode-card img{mix-blend-mode:screen;filter:brightness(1.35) contrast(1.08) drop-shadow(0 2px 6px #0007)}
+.mythic-rework #view-arena>.page-heading::after{z-index:0}
+.mythic-rework #view-arena>.page-heading::before{z-index:1}
+.mythic-rework .arena-mode-card>img,.mythic-rework .custom-mode-logo-wrap img{object-fit:cover;object-position:center;mask-image:radial-gradient(ellipse at center,#000 37%,transparent 77%)}
+.mythic-rework .arena-mode-card>img,.mythic-rework .custom-mode-logo-wrap{height:80px!important}
+.mythic-rework .sidebar{scrollbar-width:thin;scrollbar-color:#9f783a #0a121a}
+@media(max-width:960px){.mythic-rework .enemy-side>.enemy-deck{left:-62px!important;width:53px!important;height:72px!important}.mythic-rework .player-corner-stack>.deck-pile{width:54px!important;height:72px!important}.mythic-rework .battle-side>.battle-player .underworld-pile{width:54px!important}}
+@media(max-width:640px){.mythic-rework .battle-field.enemy-field,.mythic-rework .battle-field.player-field{height:174px!important}.mythic-rework .enemy-side>.enemy-deck{left:0!important;width:36px!important;height:47px!important}.mythic-rework .player-corner-stack>.deck-pile{width:36px!important;height:47px!important}.mythic-rework .battle-side>.battle-player .underworld-pile{width:51px!important;height:41px!important}.mythic-rework .shared-zones>.battle-zone{height:57px!important}}
+@media(max-width:960px){
+ .mythic-rework .sidebar{height:auto!important;max-height:none!important;overflow:visible!important;flex-direction:column!important;align-items:stretch!important}
+ .mythic-rework .sidebar>.brand{display:flex!important;width:max-content;max-width:calc(100% - 65px);margin:0;padding-bottom:13px}
+ .mythic-rework .sidebar>.nav-group{display:block!important;width:100%!important;flex:none!important;min-width:0!important;margin:0}
+ .mythic-rework .sidebar .main-nav{display:flex!important;flex-wrap:wrap!important;width:100%!important;max-width:100%!important;height:auto!important;overflow:visible!important;justify-content:flex-start}
+ .mythic-rework .sidebar .nav-item:not([hidden]){display:flex!important;flex-direction:row!important;flex:0 1 auto!important;width:auto!important;min-width:0!important;max-width:100%;height:auto!important}
+ .mythic-rework .sidebar .nav-group-universe{margin-top:5px;padding-top:5px;border-top:1px solid #b48d4933}
+ .mythic-rework .sidebar .nav-item>span:not(.nav-icon){display:inline!important}
+ .mythic-rework .sidebar-bottom{display:block!important}
+}
+body.mythic-rework .sidebar .nav-item[hidden]{display:none!important}
+@media(max-width:640px){
+ .mythic-rework .sidebar>.nav-group>.main-nav{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;gap:4px!important}
+ .mythic-rework .sidebar .deck-nav-entry,.mythic-rework .sidebar .friends-nav-entry{width:100%!important;min-width:0!important}
+ .mythic-rework .sidebar .nav-item:not([hidden]){width:100%!important;justify-content:center!important;gap:5px;min-height:40px!important;padding:7px 4px!important;white-space:normal!important;font-size:9px!important}
+ .mythic-rework .sidebar .nav-item>span:not(.nav-icon){white-space:normal!important;font-size:9px!important;overflow:visible!important;text-align:left;min-width:0!important;overflow-wrap:break-word}
+ .mythic-rework .sidebar .nav-item[data-view='community-decks']>span:last-child{width:65px!important;max-width:65px!important;flex:0 1 65px!important;line-height:1.3!important}
+ .mythic-rework .sidebar .nav-group-universe .nav-item{min-height:34px!important}
+}
+@media(min-width:961px){
+ .mythic-rework.duel-fullscreen .battle-field.enemy-field,.mythic-rework.duel-fullscreen .battle-field.player-field{height:clamp(150px,21vh,210px)!important;grid-template-rows:repeat(3,minmax(0,1fr))!important}
+ .mythic-rework.duel-fullscreen .battle-field .battle-lane{min-height:0!important;padding-top:4px!important;padding-bottom:4px!important}
+ .mythic-rework.duel-fullscreen .battle-mini-card{height:52px!important;min-height:0!important;width:37px!important;min-width:30px!important}
+ .mythic-rework.duel-fullscreen .battle-hand{min-height:142px;padding-block:12px 8px}
+ .mythic-rework.duel-fullscreen .hand-card.has-full-art{width:88px!important;min-width:88px!important;height:124px!important;min-height:124px!important}
+ .mythic-rework.duel-fullscreen .hand-panel .panel-heading{padding-block:9px}
+ .mythic-rework.duel-fullscreen .enemy-hidden-hand{height:45px;min-height:45px;margin-bottom:5px}
+ .mythic-rework.duel-fullscreen .enemy-hidden-hand>*{max-height:45px}
+}
+
+@media(prefers-reduced-motion:reduce){.mythic-rework *,.mythic-rework *::before,.mythic-rework *::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+
+/* Dedicated compact opponent HUD. No legacy corner-stack/player positioning. */
+body.mythic-rework .battle-layout.enemy-layout{display:block!important;height:auto!important;min-height:0!important;max-height:none!important;margin:0!important;padding:0!important}
+body.mythic-rework .opponent-hud{position:relative;display:grid;grid-template-columns:56px minmax(0,1fr) 66px;grid-template-rows:76px;align-items:center;column-gap:16px;box-sizing:border-box;width:100%;height:88px;min-height:0;margin:0 0 10px;padding:6px 8px;isolation:isolate}
+body.mythic-rework .opponent-hud #enemy-deck{position:relative!important;inset:auto!important;grid-column:1;grid-row:1;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;box-sizing:border-box;width:52px!important;height:72px!important;min-height:0!important;margin:0!important;transform:none!important;z-index:1!important}
+body.mythic-rework .opponent-hud-identity{position:static;grid-column:2;grid-row:1;display:flex;flex-direction:row;align-items:center;gap:12px;min-width:0;height:auto;margin:0;padding:0;text-align:left}
+body.mythic-rework .opponent-hud-identity>div{min-width:0}
+body.mythic-rework .opponent-hud-identity small{display:block;color:#f78a77;font-size:8px;letter-spacing:1px}
+body.mythic-rework .opponent-hud-identity b{display:block;max-width:100%;color:#f3dfbc;font-size:12px;white-space:normal;overflow-wrap:anywhere}
+body.mythic-rework .opponent-hud-identity .battle-avatar{display:grid;place-items:center;box-sizing:border-box;flex:0 0 40px;width:40px;height:40px;margin:0}
+body.mythic-rework .opponent-hud-discard{position:static;grid-column:3;grid-row:1;display:block;width:66px;height:56px;margin:0;padding:0}
+body.mythic-rework .opponent-hud #enemy-underworld{position:relative!important;inset:auto!important;box-sizing:border-box;display:flex!important;flex:0 0 auto!important;width:66px!important;height:56px!important;min-height:0!important;margin:0!important;transform:none!important;z-index:1!important;pointer-events:auto}
+body.mythic-rework .opponent-hud .deck-pile-count{left:auto!important;right:-5px!important;top:-5px!important;transform:none!important}
+body.mythic-rework .enemy-side>.battle-row-label{margin:0 0 8px!important;inset:auto!important}
+body.mythic-rework .enemy-side .enemy-hidden-hand:empty{display:none!important;height:0!important;min-height:0!important;margin:0!important}
+body.mythic-rework .enemy-layout>.enemy-field{grid-row:auto!important;margin:0!important}
+@media(max-width:640px){
+ body.mythic-rework .opponent-hud{grid-template-columns:42px minmax(0,1fr) 51px;grid-template-rows:60px;column-gap:10px;height:70px;padding:5px 6px;margin-bottom:8px}
+ body.mythic-rework .opponent-hud #enemy-deck{width:38px!important;height:54px!important}
+ body.mythic-rework .opponent-hud-identity{gap:8px}
+ body.mythic-rework .opponent-hud-identity .battle-avatar{flex-basis:30px;width:30px;height:30px}
+ body.mythic-rework .opponent-hud-identity b{font-size:10px}
+ body.mythic-rework .opponent-hud-discard{width:51px;height:45px}
+ body.mythic-rework .opponent-hud #enemy-underworld{width:51px!important;height:45px!important}
+}
+
+/* Small vertical adjustment and player discard contained inside the side gutter. */
+body.mythic-rework .opponent-hud{margin-top:-14px}
+body.mythic-rework .player-side>.battle-player{position:absolute!important;inset:36px auto auto -82px!important;display:block!important;width:66px!important;max-width:66px!important;height:56px!important;min-height:0!important;margin:0!important;padding:0!important;transform:none!important}
+body.mythic-rework #underworld-pile{position:relative!important;inset:auto!important;box-sizing:border-box;display:flex!important;flex:0 0 auto!important;width:66px!important;max-width:100%!important;height:56px!important;min-height:0!important;margin:0!important;transform:none!important;pointer-events:auto}
+@media(min-width:641px) and (max-width:960px){
+ body.mythic-rework .player-side>.battle-player{left:-62px!important;width:54px!important;max-width:54px!important}
+ body.mythic-rework #underworld-pile{width:54px!important}
+}
+@media(max-width:640px){
+ body.mythic-rework .opponent-hud{margin-top:-8px}
+ body.mythic-rework .player-side>.battle-row-label{box-sizing:border-box;min-height:58px;margin:0 0 6px!important;padding:20px 62px 0 0!important}
+ body.mythic-rework .player-side>.battle-player{inset:4px 0 auto auto!important;width:51px!important;max-width:51px!important;height:45px!important}
+ body.mythic-rework #underworld-pile{width:51px!important;height:45px!important}
+}
+
+/* Combat card inspection: transparent overlay, with only the arena blurred. */
+body.mythic-rework.duel-fullscreen #card-detail-backdrop{background:transparent!important;backdrop-filter:blur(8px)!important;-webkit-backdrop-filter:blur(8px)!important}
+body.mythic-rework.duel-fullscreen #card-detail-modal{background:transparent!important;background-image:none!important;border:0!important;outline:0!important;box-shadow:none!important}
+body.mythic-rework.duel-fullscreen #card-detail-modal::before,body.mythic-rework.duel-fullscreen #card-detail-modal::after{display:none!important}
+
+/* Hologram overlays belong exclusively to the visible duel. */
+body:not(.duel-fullscreen) #battle-hologram-layer,#battle-hologram-layer[hidden]{display:none!important}
