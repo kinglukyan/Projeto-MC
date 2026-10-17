@@ -95,7 +95,8 @@
         "Forjado pelas tempestades do norte, o guardião protege sua gente e mantém a posição mesmo quando o gelo racha sob seus pés.",
         "Habilidade — Vontade do Norte: recebe o poder concedido pelas Runas Nórdicas quando equipado.",
         "Companheiro original inspirado nas tradições nórdicas do universo Mythic Clash."
-      ]
+      ],
+      "hologram": "assets/holograms/guardiao-nordico-hologram.png"
     },
     {
       "id": "mjolnir",
@@ -796,7 +797,7 @@
       "type": "Personagem",
       "subtype": "Deus",
       "abilityTitle": "Festival do Vinho",
-      "ability": "Todos os efeitos de cartas de ambos os lados ficam desativados por 3 rodadas.",
+      "ability": "Todos os efeitos de cartas de ambos os lados ficam desativados até o fim da rodada atual.",
       "kind": "unit",
       "symbol": "Λ",
       "glow": "rgba(36,91,137,.42)",
@@ -877,7 +878,7 @@
       "type": "Personagem",
       "subtype": "Semideus",
       "abilityTitle": "Os Doze Trabalhos",
-      "ability": "A cada rodada ganha 1 de poder, podendo chegar a 16 pontos após 12 rodadas, concluindo seus doze trabalhos.",
+      "ability": "No fim da rodada, ganha +1 de poder. Todo progresso é zerado na troca de rodada.",
       "kind": "unit",
       "symbol": "Λ",
       "glow": "rgba(36,91,137,.42)",
@@ -1418,6 +1419,7 @@
         "Habilidade — Ilusão Traiçoeira: ao entrar em campo, copia o valor de poder e a habilidade de uma carta inimiga já na mesa até o fim da rodada."
       ],
       "sourceCard": "codex-clipboard-1ba6e065-64f9-4362-b9d1-2c67da30a35c.png",
+      "hologram": "assets/holograms/loki-hologram.png",
       "specialOnly": false,
       "tags": [],
       "cost": null

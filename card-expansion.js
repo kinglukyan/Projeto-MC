@@ -1,5 +1,5 @@
-// Card art and hologram associations. Gameplay metadata is merged from abilities-data.js.
-window.MythicCardExpansion = {
+// Card art and hologram associations.
+window.MythicCardExpansion={
   "version": "20261017",
   "cards": [
     {
@@ -771,7 +771,8 @@ window.MythicCardExpansion = {
         "Forjado pelas tempestades do norte, o guardião protege sua gente e mantém a posição mesmo quando o gelo racha sob seus pés.",
         "Habilidade — Vontade do Norte: recebe o poder concedido pelas Runas Nórdicas quando equipado.",
         "Companheiro original inspirado nas tradições nórdicas do universo Mythic Clash."
-      ]
+      ],
+      "hologram": "assets/holograms/guardiao-nordico-hologram.png"
     }
   ],
   "legacyHolograms": {

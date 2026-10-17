@@ -9,7 +9,7 @@ O motor de habilidades está integrado ao Guardião local e às ações online d
 - Afrodite: escolhe entre os inimigos elegíveis com menos de 5 de poder.
 - Loki: escolhe um inimigo em campo e copia seu poder e sua habilidade até o fim da rodada.
 - Odin: consulta o topo antes da compra normal, no início do próximo turno do dono. O jogador escolhe manter ou descartar; depois continua seu turno. A consulta ocorre uma vez por entrada de Odin no campo.
-- Hércules: ganha +1 por rodada, limitado a +12 adicionais. Seu progresso acompanha a carta no Submundo.
+- Hércules: ganha +1 ao final da rodada. O progresso é zerado na troca de rodada, conforme a regra atualizada.
 - Metades de poder são arredondadas para baixo.
 
 Também foram implementados os efeitos de Anúbis, Apolo, Ares, Ártemis, Aquiles, Beowulf, Butter, Dionísio, Hefestos, Heimdall, Hermes, Hórus, Minotauro, Osíris, Rá, Ragnar, Seth, Sobek, Thor e os lobisomens, além das interações com equipamentos, terrenos, locais e Eclipse.
@@ -27,3 +27,7 @@ A migração atualiza o catálogo e os dois formatos online dentro de uma transa
 ## Estado da entrega
 
 Arquivos e migração preparados localmente. A migração não foi aplicada ao banco remoto. Não foram executados testes de jogo, navegador ou banco nesta atualização.
+
+## Regra de limpeza atualizada
+
+A migração 012 zera todos os efeitos ao trocar a rodada, incluindo o silêncio de Dionísio e o progresso de Hércules.

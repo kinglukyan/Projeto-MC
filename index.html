@@ -19,6 +19,8 @@
   <link rel="stylesheet" href="sidebar-arcane.css?v=1">
   <link rel="stylesheet" href="eclipse.css?v=1">
   <link rel="stylesheet" href="abilities.css?v=1">
+  <link rel="stylesheet" href="arcane-palette.css?v=1">
+  <link rel="stylesheet" href="arcane-upgrade.css?v=1">
 </head>
 <body class="mythic-rework">
   <div class="loading-screen" id="loading-screen" role="status" aria-live="polite">
@@ -80,7 +82,7 @@
       </section>
 
       <section class="view" id="view-lore" hidden>
-        <div class="page-heading"><div><p class="eyebrow">✦ &nbsp; ENTRE MUNDOS E ERAS</p><h1>O universo<span>.</span></h1><p>Leia as histórias das cartas e consulte as regras desta arena.</p></div></div>
+        <div class="page-heading"><div><p class="eyebrow">✦ &nbsp; ENTRE MUNDOS E ERAS</p><h1>O universo<span>.</span></h1><p>Conheça as histórias dos personagens e a origem da Convergência.</p></div></div>
         <section class="lore-hero panel"><span class="lore-sigil">✦</span><small>A CONVERGÊNCIA</small><h2>Quando as lendas se encontram,<br>o impossível vira história.</h2><p>Mitologias, figuras históricas e novos mundos podem se encontrar em confrontos estratégicos. As histórias abaixo são releituras fantásticas das cartas da coleção.</p></section>
         <section class="lore-stories"><div class="section-title"><small>CRÔNICAS DAS CARTAS</small><h2>A história por trás das lendas</h2><p>Cada carta da coleção tem uma história, habilidade e origem.</p></div><div class="lore-story-list" id="lore-story-list"></div></section>
         <section class="rules-overview"><div class="section-title"><small>REGRAS DA ARENA</small><h2>Como funciona um duelo</h2><p>Regras iniciais do protótipo, abertas a ajustes.</p></div><div class="rules-grid"><article><b>01</b><h3>Objetivo</h3><p>Vence quem somar mais pontos de poder das cartas ao fim de duas rodadas. Se houver empate, uma terceira rodada decide.</p></article><article><b>02</b><h3>Turno</h3><p>Comece com 4 cartas, compre uma no primeiro turno e depois a cada dois turnos. No começo das rodadas seguintes, mantenha sua mão e compre mais 2. Cada jogador pode jogar uma carta por turno; depois da resolução do efeito, a vez passa ao oponente. Se a habilidade exigir uma escolha, resolva-a antes da troca de turno.</p></article><article><b>03</b><h3>Campo</h3><p>O campo tem três linhas horizontais e aceita um número ilimitado de cartas em miniatura. Cartas no campo vão para o Submundo ao encerrar a rodada. Some o poder delas para marcar pontos na rodada.</p></article><article><b>04</b><h3>Rodadas e Trixx</h3><p>A rodada só termina quando ambos passarem ou ficarem sem cartas. Ao passar, você não pode jogar novamente até a próxima rodada; o oponente pode continuar. Vence a rodada quem tiver mais pontos. Cada jogador tem duas Trixx, estrelas convergentes.</p></article><article><b>05</b><h3>Territórios da arena</h3><p>Local, Terreno e Clima ocupam espaços compartilhados e afetam o campo dos dois jogadores. A mão e o tabuleiro têm textura de pedra rachada.</p></article><article><b>06</b><h3>PvP online</h3><p>O Guardião da Arena, partidas normais, ranqueadas e desafios por código ficam disponíveis na Arena. Entre na sua conta para jogar online.</p></article></div></section>
@@ -177,21 +179,24 @@
 </dialog>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
   <script src="supabase-config.js?v=2" defer></script>
-  <script src="card-expansion.js?v=4" defer></script>
+  <script src="card-expansion.js?v=5" defer></script>
   <script src="terrain-cards.js?v=1" defer></script>
   <script src="location-cards.js?v=1" defer></script>
   <script src="equipment-cards.js?v=2" defer></script>
   <script src="eclipse.js?v=1" defer></script>
-  <script src="loki-card.js?v=1" defer></script>
-  <script src="abilities-data.js?v=3" defer></script>
-  <script src="abilities-engine.js?v=2" defer></script>
+  <script src="loki-card.js?v=2" defer></script>
+  <script src="abilities-data.js?v=4" defer></script>
+  <script src="abilities-engine.js?v=3" defer></script>
   <script src="abilities-ui.js?v=1" defer></script>
-  <script src="app.js?v=138" defer></script>
-  <script src="online.js?v=47" defer></script>
+  <script src="avatars-chibi.js?v=1" defer></script>
+  <script src="combat-fx.js?v=1" defer></script>
+  <script src="arcane-upgrade.js?v=1" defer></script>
+  <script src="app.js?v=140" defer></script>
+  <script src="online.js?v=48" defer></script>
   <script src="missions-menu.js?v=1" defer></script>
   <script src="profile-redesign.js?v=1" defer></script>
   <script src="honors.js?v=1" defer></script>
-  <script src="concept-theme.js?v=3" defer></script>
+  <script src="concept-theme.js?v=5" defer></script>
   <script src="sidebar-arcane.js?v=1" defer></script>
 </body>
 </html>

@@ -1,0 +1,443 @@
+/* Sidebar palette applied to existing blue interface colors. */
+:root{--navy:#1e1725;--panel:#261e2e;--panel2:#31263b}
+body{background:radial-gradient(ellipse at 70% -18%,rgba(97,84,111,.25),transparent 44%),var(--navy)}
+.sidebar{background:linear-gradient(180deg,#211929,#1a1320)}
+.nav-label{color:#8e8399}
+.prototype-card small,.profile small{color:#9b92a4}
+.breadcrumb{color:#9b92a4}
+.breadcrumb i{color:#695f74}
+.button-primary{color:#251e2c}
+.panel{background:linear-gradient(145deg,rgba(45,36,55,.94),rgba(30,23,37,.96))}
+.arena-stage{background:radial-gradient(ellipse,rgba(109,82,43,.17),transparent 53%),linear-gradient(180deg,#2d2338,#231b2a)}
+.combat-avatar{background:radial-gradient(circle at 35% 28%,#6d6378,#3b3045 67%,#251e2c);box-shadow:0 7px 22px #17111c}
+.combat-avatar.enemy{background:#282030}
+.combatant small{color:#9b91a4}
+.combatant>span:last-child{color:#988fa1}
+.versus>b{background:#282030}
+.versus>small{color:#998fa2}
+.arena-foot p{color:#a59cae}
+.featured-panel{background:radial-gradient(ellipse at 50% 44%,rgba(204,159,78,.12),transparent 58%),linear-gradient(145deg,#2e2438,#1e1725)}
+.quick-panel p{color:#a49aad}
+.collection-toolbar{background:rgba(37,29,45,.66)}
+.search-box input::placeholder{color:#8e8398}
+select{background:#261e2e}
+.collection-card{background:linear-gradient(145deg,#30263a,#221a2a)}
+.collection-art-button{background:radial-gradient(circle at 50% 35%,var(--card-glow),#1e1725 74%)}
+.deck-summary p{color:#a59cae}
+.deck-row-copy small{color:#a59cae}
+.lore-hero{background:radial-gradient(circle at 80% 50%,rgba(180,128,54,.15),transparent 30%),linear-gradient(118deg,#342940,#1f1826 74%)}
+.section-title p{color:#a59cae}
+.lore-story-card{background:linear-gradient(135deg,#31263b,#211928)}
+.lore-story-art{background:#1e1725}
+.story-disclaimer{color:#9990a2!important}
+.rules-grid article{background:rgba(37,29,45,.66)}
+.rules-grid p{color:#a59cae}
+.card-detail-backdrop{background:rgba(11,8,14,.79)}
+.card-detail-modal{background:linear-gradient(145deg,#332a3c,#201927)}
+.card-detail-art{background:radial-gradient(circle,var(--card-glow),#201927 75%)}
+.toast{background:#2d2336}
+.battle-avatar{background:#332a3c}
+.life-counter small{color:#9990a2}
+.battle-row-label span{color:#9f96a8}
+.battle-field{background:rgba(16,11,21,.22)}
+.battle-empty{color:#7f758a}
+.battle-unit{background:linear-gradient(150deg,#41354d,#221b2a)}
+.resource{background:rgba(37,29,45,.66)}
+.panel-heading>span{color:#a59cae}
+.hand-card{background:radial-gradient(circle at 50% 12%,var(--card-glow),#2a2133 66%)}
+@media(max-width:760px){.sidebar{background:rgba(26,20,32,.97)}}
+.loading-screen{background:radial-gradient(ellipse at 50% 42%,rgba(94,83,105,.25),transparent 44%),#1e1725}
+.hand-instruction{color:#9c93a5}
+.detail-swipe{background:rgba(26,20,32,.9)}
+.full-card-preview{background:radial-gradient(circle at 50% 35%,var(--card-glow),#201927 63%);box-shadow:inset 0 0 0 4px #291f33,inset 0 0 0 5px rgba(212,173,100,.35)}
+.drag-drop-indicator{background:rgba(28,21,34,.97)}
+.hand-glyph img{background:rgba(19,15,23,.75)}
+.hand-card.has-full-art .hand-full-art{background:#1e1725}
+.duel-card-expanded .full-card-preview{box-shadow:inset 0 0 0 6px #291f33,inset 0 0 0 7px rgba(212,173,100,.5),0 26px 70px rgba(0,0,0,.64),0 0 34px var(--card-glow)}
+.duel-card-expanded .modal-close{background:rgba(26,20,32,.92)}
+.fan-card{background:linear-gradient(145deg,#2b2235,#1a1420)}
+.fan-card>img{background:#1e1725}
+.fan-card .full-card-preview{box-shadow:inset 0 0 0 4px #291f33}
+.trixx-star{color:#776e80}
+.trixx-meter>small,.round-score>small{color:#9990a2}
+.battle-board{background:linear-gradient(180deg,rgba(31,24,37,.97),rgba(23,18,29,.98))}
+.battle-field{background-image:radial-gradient(ellipse at 50% 45%,rgba(178,120,51,.13),transparent 55%),linear-gradient(119deg,transparent 0 31%,rgba(10,9,12,.72) 31.3%,rgba(213,166,93,.19) 31.7%,transparent 32.2%),linear-gradient(73deg,transparent 0 61%,rgba(10,9,12,.68) 61.3%,rgba(213,166,93,.16) 61.8%,transparent 62.1%),linear-gradient(166deg,transparent 0 42%,rgba(10,9,12,.7) 42.3%,rgba(213,166,93,.13) 42.7%,transparent 43.1%),linear-gradient(180deg,#3a3935,#202326 43%,#34312c)}
+.battle-field:before{background:linear-gradient(34deg,transparent 0 18%,rgba(15,13,16,.72) 18.2%,rgba(211,170,104,.14) 18.7%,transparent 19.2% 79%,rgba(12,10,13,.58) 79.2%,rgba(213,170,101,.13) 79.7%,transparent 80.1%)}
+.battle-lane{background:rgba(21,19,23,.29)}
+.battle-unit{background:linear-gradient(145deg,rgba(64,60,68,.96),rgba(30,26,33,.97))}
+.battle-zone{background:linear-gradient(145deg,rgba(41,38,45,.94),rgba(22,18,25,.98))}
+.deck-pile{background:radial-gradient(circle at 50% 44%,rgba(224,185,109,.23),transparent 58%),linear-gradient(145deg,#2d2237,#17111d);box-shadow:2px 2px 0 #6e532e,4px 4px 0 #281e32,5px 5px 0 #75572d,7px 8px 11px rgba(0,0,0,.5)}
+.deck-pile-count{background:#2a2133}
+.battle-divider:before{border-bottom:1px solid rgba(15,13,17,.8)}
+.battle-divider span{background:#1f1825}
+.battle-board{background:radial-gradient(ellipse at 50% 50%,rgba(67,79,77,.27),transparent 70%),linear-gradient(155deg,#1d1723,#120e16 68%,#1b1d1b);box-shadow:inset 0 0 0 5px #0f0d12,inset 0 0 0 7px rgba(207,177,118,.42),0 20px 48px rgba(0,0,0,.42)}
+.battle-board:before{background:radial-gradient(circle at center,rgba(166,128,68,.15),transparent 64%),linear-gradient(112deg,transparent 0 19%,rgba(12,10,14,.8) 19.2%,rgba(212,175,112,.19) 19.5%,transparent 20% 82%,rgba(12,10,14,.8) 82.2%,rgba(212,175,112,.14) 82.5%,transparent 83%),linear-gradient(168deg,transparent 0 35%,rgba(12,10,14,.56) 35.2%,rgba(208,169,104,.15) 35.6%,transparent 36%),linear-gradient(180deg,#2d3030,#1a171d 47%,#242523)}
+.battle-field{background:linear-gradient(145deg,rgba(45,50,51,.94),rgba(24,22,27,.96))}
+.battle-field:before{background:linear-gradient(27deg,transparent 0 24%,rgba(10,8,11,.65) 24.2%,rgba(208,171,110,.18) 24.6%,transparent 25% 76%,rgba(9,7,10,.6) 76.2%,rgba(203,170,113,.16) 76.6%,transparent 77%),linear-gradient(154deg,transparent 0 57%,rgba(10,8,11,.55) 57.2%,rgba(208,171,110,.15) 57.6%,transparent 58%)}
+.battle-lane{background:rgba(13,10,15,.37)}
+.battle-mini-card{background:linear-gradient(145deg,#3c3246,#1d1723);box-shadow:0 2px 6px #0c0a0e}
+.mini-card-meta{background:linear-gradient(0deg,rgba(16,13,19,.96),rgba(16,13,19,.83))}
+.mini-destroy{background:#1d1723cc}
+.shared-zones-wrap{background:linear-gradient(90deg,transparent,rgba(21,17,25,.93) 13% 87%,transparent)}
+.battle-zone{background:linear-gradient(145deg,rgba(50,52,49,.96),rgba(24,21,26,.98))}
+.deck-pile{box-shadow:3px 4px 0 #0e0b11,5px 6px 0 #634a2b,7px 10px 15px #0009}
+.underworld-pile{background:linear-gradient(145deg,#342c3d,#1c181f)}
+.underworld-pile>b{background:#2d2632}
+.hand-panel{background:radial-gradient(ellipse at 50% 15%,rgba(131,107,69,.18),transparent 65%),linear-gradient(145deg,#252727,#18141b 50%,#292823)}
+.hand-panel:before{background:linear-gradient(25deg,transparent 0 18%,rgba(8,7,10,.67) 18.3%,rgba(201,166,107,.13) 18.8%,transparent 19.3% 74%,rgba(9,7,10,.6) 74.3%,rgba(201,166,107,.13) 74.8%,transparent 75.2%),linear-gradient(154deg,transparent 0 52%,rgba(8,7,10,.55) 52.3%,rgba(201,166,107,.12) 52.7%,transparent 53.2%)}
+.battle-zones.shared-zones .battle-zone{background:rgba(21,18,24,.72)}
+.card-detail-backdrop{background:rgba(8,5,10,.88)}
+.field-card-expanded .modal-close{background:#1f1825}
+.battle-field{background-image:linear-gradient(180deg,rgba(17,15,19,.28),rgba(11,10,13,.54)),url("assets/battlefield-mud.png")}
+.battle-field:before{background:linear-gradient(26deg,transparent 0 23%,rgba(10,9,11,.23) 23.3%,rgba(207,172,111,.13) 23.6%,transparent 24.2% 75%,rgba(10,9,11,.22) 75.3%,rgba(203,169,110,.12) 75.7%,transparent 76.2%)}
+.underworld-pile{background:linear-gradient(145deg,#292331,#19151c)}
+.underworld-pile>small{text-shadow:0 1px 3px #0a080b}
+.underworld-card{box-shadow:0 2px 5px #0a080b}
+.underworld-card>b{background:#161319dd}
+.underworld-glyph{background:radial-gradient(circle at center,#68616d,#2f2c32)}
+.battle-board{background-image:linear-gradient(180deg,rgba(14,12,17,.42),rgba(14,12,17,.31)),url("assets/battlefield-forest.png")}
+.battle-board:before{background:linear-gradient(112deg,rgba(9,7,11,.27),rgba(13,11,15,.08) 45%,rgba(9,7,11,.3)),linear-gradient(180deg,rgba(13,10,15,.18),rgba(13,10,15,.34))}
+.battle-field{background-color:rgba(18,17,20,.34);background-image:linear-gradient(180deg,rgba(17,15,19,.08),rgba(11,10,13,.2))}
+.battle-field:before{background:linear-gradient(26deg,transparent 0 23%,rgba(10,9,11,.14) 23.3%,rgba(207,172,111,.1) 23.6%,transparent 24.2% 75%,rgba(10,9,11,.13) 75.3%,rgba(203,169,110,.09) 75.7%,transparent 76.2%)}
+.enemy-field,.player-field{background-image:linear-gradient(180deg,rgba(17,15,19,.05),rgba(11,10,13,.16))}
+.hand-panel:before{background-image:linear-gradient(145deg,rgba(23,18,29,.36),rgba(20,16,24,.48)),url("assets/hand-heaven.png")}
+.hand-panel{background:#2a2132}
+.battle-board{background-color:#1b191d}
+.battle-board:after{background:linear-gradient(rgba(14,12,17,.42),rgba(14,12,17,.31)),url("assets/battlefield-forest.png") center 53%/cover no-repeat}
+.battle-board:before{background:linear-gradient(112deg,rgba(9,7,11,.24),rgba(13,11,15,.05) 45%,rgba(9,7,11,.26)),linear-gradient(180deg,rgba(13,10,15,.15),rgba(13,10,15,.3))}
+.deck-pile{box-shadow:3px 4px 0 #0e0b11,5px 6px 0 #634a2b,7px 10px 15px #0009}
+.header-underworld>small{background:rgba(21,18,23,.9)}
+.player-side .player-corner-stack>.deck-pile{box-shadow:3px 4px 0 #0e0b11,5px 6px 0 #634a2b,7px 10px 15px #0009}
+.player-identity{background:rgba(24,19,30,.86)}
+.enemy-side .enemy-corner-stack>.deck-pile{box-shadow:3px 4px 0 #0e0b11,5px 6px 0 #634a2b,7px 10px 15px #0009}
+.zone-card-mini-art{background:radial-gradient(circle at 50% 40%,var(--card-glow),#342c3c 75%)}
+.underworld-gallery{background:rgba(9,7,12,.88)}
+.underworld-gallery-panel{background:linear-gradient(145deg,#2a2133,#16111b)}
+.underworld-gallery-card-art{background:radial-gradient(circle at 50% 25%,var(--card-glow),#201927 68%)}
+.card-draw-flight{background:#1e1725 url("assets/card-back.svg") center/100% 100% no-repeat}
+.match-result-title{text-shadow:0 4px 0 rgba(11,8,14,.85)}
+.match-result-banner.victory .match-result-title{filter:drop-shadow(0 5px 2px #18111f) drop-shadow(0 0 30px rgba(197,138,255,.95))}
+.victory-burst{background:radial-gradient(circle,#fff8d7 0 3%,#ffe089 5%,rgba(255,187,63,.86) 10%,rgba(239,55,68,.62) 19%,rgba(197,138,255,.24) 32%,transparent 68%)}
+.deck-card-thumb{background:radial-gradient(ellipse at 50% 30%,var(--card-glow),#1e1725 74%)}
+.deck-card-thumb>img{background:#1e1725}
+.match-result-banner{background:radial-gradient(ellipse at center,rgba(10,7,13,.24),rgba(10,7,13,.62) 72%)}
+.match-result-banner.draw .match-result-title{text-shadow:0 0 20px #e8edf7,0 0 48px #b5a1c9}
+.deck-owned-count{background:linear-gradient(145deg,#2f243a,#130e18)}
+.arena-mode-card{background:linear-gradient(145deg,rgba(48,37,58,.94),rgba(29,22,35,.96))}
+.arena-mode-card:hover{box-shadow:0 12px 30px #0e0a1280}
+.online-queue-status{background:#261e2e}
+.challenge-columns input,.friends-toolbar input,.profile-edit-form input,.friend-message-form input{background:#1c1523}
+.friends-toolbar>p{color:#b5abc0}
+.friends-toolbar>span{color:#b5abc0}
+.friend-list-card>span small{color:#a299ab}
+.friend-avatar{background:#30253a}
+.friend-message{background:#31263b}
+.friend-message.own{background:#3c3247}
+.friend-message small{color:#a59cae}
+.player-profile-avatar{background:radial-gradient(circle,#544661,#221a29)}
+.profile-stats small{color:#a79db1}
+.setting-row small{color:#a59cae}
+.account-gate{background:rgba(11,8,14,.91)}
+.account-gate-card input{background:#1b1421}
+.auth-security-note{color:#8d8398}
+.match-result-banner.victory .result-sweep{background:linear-gradient(90deg,transparent,#dce9f8 25%,#c992ff 50%,#e9f4ff 75%,transparent);box-shadow:0 0 22px #c790ff,0 0 70px rgba(197,139,255,.7)}
+.match-result-banner.victory .match-result-title{background:linear-gradient(180deg,#fff 4%,#b8c5d3 52%,#cd9bff 100%);filter:drop-shadow(0 6px 3px #18111f) drop-shadow(0 0 25px rgba(197,138,255,.85))}
+.match-result-banner.defeat .match-result-title{filter:drop-shadow(0 5px 2px #060607) drop-shadow(0 0 22px rgba(211,24,41,.8))}
+.match-result-banner.draw .match-result-title{text-shadow:0 0 25px #998ea4}
+@media(max-width:760px){.shared-zones-wrap{background:rgba(18,14,22,.72)}}
+.lore-detail-backdrop{background:rgba(10,7,13,.88)}
+.lore-detail-card{background:radial-gradient(ellipse at 50% 45%,rgba(212,173,100,.14),transparent 58%),#1c1522}
+.admin-card input:not([type=checkbox]),.admin-card select,.admin-card textarea{background:#1e1725}
+.admin-table td small{color:#a39aad}
+.game-announcement{background:linear-gradient(100deg,rgba(112,76,28,.19),rgba(36,28,43,.95))}
+.profile-link{background:linear-gradient(135deg,rgba(212,173,100,.09),rgba(38,30,46,.7))}
+.profile-link:hover{background:linear-gradient(135deg,rgba(212,173,100,.15),rgba(38,30,46,.9))}
+.profile-email-label{color:#9a8fa5}
+.arena-mode-card{background:linear-gradient(155deg,#31273b,#1c1523)}
+.arena-mode-card.selected{box-shadow:0 0 0 1px #d7b46955,0 12px 30px #0e0a1280}
+.arena-mode-card.mode-locked:after{background:#110d15aa}
+.arena-start-row{background:#211928}
+.online-queue-status{background:#261e2e}
+.deck-slot-picker select{background:#1d1624}
+.profile-edit-form input{background:#1d1624}
+.store-item-art{background:radial-gradient(ellipse,#4d405b,#201927)}
+.redeem-panel input{background:#1d1624}
+.tutorial-overlay{background:#0a070dcc}
+.tutorial-progress i{background:#4d4356}
+.battle-board:after{background-image:linear-gradient(rgba(14,12,17,.42),rgba(14,12,17,.31)),var(--battlefield-texture,url("assets/battlefield-forest.png"))!important}
+.hand-panel:before{background-image:linear-gradient(145deg,rgba(23,18,29,.36),rgba(20,16,24,.48)),var(--hand-texture,url("assets/hand-heaven.png"))!important}
+.battle-intro{background:radial-gradient(ellipse at 50% 48%,rgba(48,43,53,.44),rgba(10,7,13,.94) 68%)}
+.summoner-card{background:linear-gradient(145deg,rgba(34,27,41,.97),rgba(17,13,21,.93))}
+.summoner-icon{background:radial-gradient(circle,#43374e,#201927 72%)}
+.store-icon-grid .store-item-art{background:radial-gradient(ellipse,#4f455a,#201927)}
+.battle-zone.zone-drop-ready{background:linear-gradient(145deg,rgba(103,87,47,.97),rgba(28,25,31,.99))}
+.card-customizer-preview{background:#16101c}
+.admin-card-customizer #admin-card-form input:not([type=file]),.admin-card-customizer #admin-card-form select,.admin-card-customizer #admin-card-form textarea{background:#1e1725}
+.admin-card-customizer #admin-card-form input[type=file]{background:#1e1725}
+.admin-card-customizer #admin-card-form label>small{color:#9d93a8}
+.store-category-tabs button{background:#221a29}
+.avatar-picker-backdrop{background:#0a070dd9}
+.avatar-picker .modal-close{background:#201927}
+.avatar-picker-option{background:#201927}
+.avatar-picker-option>span{background:#32283c}
+.deck-name-picker input{background:#1d1624}
+.friend-challenge-inbox{background:linear-gradient(110deg,#382c19,#2d2338)}
+.arena-stat-grid article{background:rgba(18,13,23,.28)}
+.arena-deck-card{background:rgba(15,11,19,.3)}
+.public-welcome{background:radial-gradient(ellipse at 30% 20%,#40344b,#201927 72%)}
+.turn-clock{border:1px solid #c790ff77;color:#d1a6ff;background:linear-gradient(90deg,#9b6dca44 var(--turn-progress),#1d1624 var(--turn-progress));box-shadow:0 0 15px #a172d344}
+.turn-clock.urgent{background:linear-gradient(90deg,#c63b424d var(--turn-progress),#1d1624 var(--turn-progress))}
+.deck-preview-tools select,.history-filters select{background:#1d1624}
+.friend-activity-item small{color:#9c92a5}
+.ability-arrival-effect.medusa-arrival{color:#ecdcff;text-shadow:0 0 9px #c390ff,0 0 20px #c18cfa,0 2px 4px #000}
+.community-card input,.community-card select,.community-card textarea,.friend-gift-panel input,.friend-gift-panel select{background:#1e1725}
+.tie-break-panel{background:#201927eF}
+.tie-break-card{background:linear-gradient(145deg,#30263b,#1d1723)}
+.spectator-live-board{background:linear-gradient(150deg,#2d2237,#17121d)}
+.spectator-score>small{color:#a79db1}
+.spectator-fields>section{background:#150f1bcc}
+.custom-mode-mark{background:radial-gradient(circle,#d4ad6422,#211928)}
+.custom-room-setup input,.custom-room-setup select{background:#201828}
+.custom-room-setup #sandbox-join-form{background:#1b1421}
+.custom-seat{background:#1d1624}
+.custom-seat.filled{background:linear-gradient(135deg,#2c261a,#211928)}
+.spectator-seat{background:#1e1922}
+@media(min-width:761px){.sidebar-bottom{background:linear-gradient(180deg,transparent,#1a1320 16%)}}
+.friends-submenu{background:#201827}
+.friends-list-pager{color:#9b92a4}
+.friends-list-pager button{background:#31263b}
+.friend-action-backdrop,.friend-profile-backdrop{background:#0a070dcc}
+.friend-action-content input{background:#1c1523}
+.friend-chat-window>header{background:#31263b}
+@media(max-width:760px){.friends-submenu{background:#211929}}
+.profile-analytics-heading>span{color:#998fa3}
+.profile-analytics-summary>article{background:linear-gradient(145deg,#31263b,#211a28)}
+.profile-analytics-summary small{color:#a197aa}
+.profile-analytics-empty{color:#9e94a8}
+.profile-usage-art{background:#1e1725}
+.profile-deck-usage small{color:#a197aa}
+.profile-mode-row{background:#1d1623}
+.profile-mode-row span,.profile-mode-row small{color:#a298ab}
+.friend-profile-avatar{background:#30253a}
+.friend-profile-analytics .profile-analytics-card{background:#1e1725}
+.friend-recent-match small{color:#a197aa}
+.queue-format-card{background:linear-gradient(145deg,#2e2437,#1e1724)}
+.queue-duo-details{background:#1b1421}
+.queue-duo-details input{background:#201828}
+.queue-teammate-seat{background:#2b2235}
+.queue-team-preview{background:#211928}
+.custom-page-heading>img{background:#17121d}
+@media(max-width:760px){.deck-submenu{background:#211929}}
+.duo-invite-inbox{background:linear-gradient(135deg,#262318,#221a29)}
+.friend-menu-scrim{background:#0e0a12c9}
+.friend-card-actions.friend-actions-floating:not([hidden]){background:#261e2e}
+.invite-flow-backdrop{background:#0e0a12d9}
+.invite-flow-dialog>select{background:#1c1523}
+body.mythic-rework{
+ --navy:#0f0c13;--panel:#1b1621;--panel2:#282030;--blue:#c08aff;background:#0f0c13}
+body.mythic-rework::before{background:linear-gradient(90deg,#0f0b13bb,#110d1680 50%,#0d0911bb),url('assets/rework/citadela.webp') center/cover no-repeat}
+body.mythic-rework::after{background:linear-gradient(180deg,transparent 25%,#0e0a12d9 95%)}
+.mythic-rework :is(button,a,input,select,textarea):focus-visible{outline:2px solid #d0a8ff}
+.mythic-rework .sidebar{background:linear-gradient(90deg,#0f0c13f5,#1c1622f7 90%,#0d0b10)}
+.mythic-rework .brand-mark{background:radial-gradient(ellipse at 50% 25%,#75678355,#141018 80%)}
+.mythic-rework .nav-label{color:#9b92a5}
+.mythic-rework .nav-item:hover{background:#372e4188}
+.mythic-rework .nav-item.active{background:linear-gradient(90deg,#8c672836,#58432028,#241e2b)}
+.mythic-rework :is(.friends-submenu,.deck-submenu){background:#110d16cc}
+.mythic-rework .friends-submenu-actions button{background:#1e1725}
+.mythic-rework .profile-avatar{background:radial-gradient(circle at 35% 20%,#524362,#1c1622 70%);box-shadow:0 0 0 3px #0f0c13,0 0 0 4px #96753766}
+.mythic-rework .icon-button{background:linear-gradient(#342b3e,#1e1825)}
+.mythic-rework .panel{background:linear-gradient(120deg,#2a2232ec,#16111cf5);box-shadow:inset 0 1px #f5deb01a,inset 0 0 0 4px #0f0b131f,0 12px 28px #0005}
+.mythic-rework .panel-heading{background:linear-gradient(90deg,#15101ba6,#271e3055)}
+.mythic-rework .button-secondary{background:linear-gradient(#362c42,#1e1726);box-shadow:inset 0 1px #dce6f21a,0 3px 0 #0c0910}
+.mythic-rework :is(input,textarea,select){background:#150f1bef}
+.mythic-rework :is(input,textarea)::placeholder{color:#948b9e}
+.mythic-rework select option{background:#231b2b}
+.mythic-rework :is(.card-detail-backdrop,.friend-action-backdrop,.friend-profile-backdrop,.friend-menu-scrim){background:#0b080ee8}
+.mythic-rework :is(.card-detail-modal,.friend-action-dialog,.friend-profile-dialog,.friend-chat-window){background:linear-gradient(135deg,#2b2334,#17111e);box-shadow:0 0 0 4px #100d14,0 0 0 5px #805d2f99,0 22px 65px #000c}
+.mythic-rework :is(.friend-action-content,.friend-profile-dialog,.friend-chat-window>header){background:#1f1827}
+.mythic-rework .friend-messages{background:linear-gradient(#1a1421,#211a29)}
+.mythic-rework #view-arena>.page-heading{background:linear-gradient(90deg,#16101cf5 8%,#16101c88 67%,#271d3233),url('assets/rework/citadela.webp') center 44%/cover;box-shadow:inset 0 0 0 5px #1b14224a,0 16px 35px #0005}
+.mythic-rework #view-arena>.page-heading::after{filter:drop-shadow(0 0 22px #c38aff44)}
+.mythic-rework .arena-mode-card{background:radial-gradient(ellipse at 50% 30%,#3f364b66,transparent 70%),linear-gradient(145deg,#2c2436f2,#18121ff5)!important;box-shadow:inset 0 0 0 4px #0f0b144a,0 8px 22px #0006}
+.mythic-rework .arena-mode-card.selected{background:radial-gradient(ellipse at 50% 35%,#806d3844,transparent 70%),linear-gradient(145deg,#342e3c,#1e1825)!important}
+.mythic-rework .arena-mode-card>i{background:#110c164d}
+.mythic-rework .arena-start-row{background:linear-gradient(90deg,#251d2ed9,#191220f0)}
+.mythic-rework .arena-stat-grid{background:linear-gradient(90deg,#231a2c88,#271e3155)}
+.mythic-rework .featured-panel{background:radial-gradient(ellipse at 50% 52%,#835fb02b,transparent 65%),linear-gradient(150deg,#2d2537,#1a1420)}
+.mythic-rework .quick-panel{background:linear-gradient(100deg,#251c2ff0,#221c2ace)}
+.mythic-rework .deck-preview-tools{background:#16101d4d}
+.mythic-rework :is(.collection-toolbar,.store-category-tabs,.deck-tools){background:#231a2ce8}
+.mythic-rework .search-box{background:#150f1b}
+.mythic-rework .collection-card{background:linear-gradient(135deg,#382e43e6,#1b1422f5)}
+.mythic-rework .collection-art-button{background:#140e1a}
+.mythic-rework .card-detail-button{background:#292033}
+.mythic-rework .power-chip{background:radial-gradient(circle at 30% 25%,#7856a0,#3b2a4e 70%);box-shadow:0 0 0 2px #150f1c}
+.mythic-rework .deck-symbol{background:linear-gradient(#4a3e58,#241c2c)}
+.mythic-rework .deck-row{background:linear-gradient(110deg,#33293eaa,#19122088)}
+.mythic-rework .deck-count-control button{background:#1b1323}
+.mythic-rework .lore-hero{background:linear-gradient(90deg,#1b1422ed,#281e34aa),url('assets/rework/citadela.webp') center 38%/cover}
+.mythic-rework :is(.lore-story-card,.rules-grid article,.store-item,.community-deck-card,.mission-card,.expedition-card){background:linear-gradient(135deg,#32283de8,#1c1523f5)}
+.mythic-rework .community-card form{background:#16101d66}
+.mythic-rework :is(.mission-step,.guild-row,.tournament-row,.community-deck-row){background:#291f3399}
+.mythic-rework .store-balance-card{background:radial-gradient(ellipse at 90% 50%,#a9772540,transparent 65%),#251d2e}
+.mythic-rework .player-profile-card{background:radial-gradient(ellipse at 85% 30%,#7f5ba82b,transparent 70%),linear-gradient(110deg,#382d44,#1e1626)}
+.mythic-rework .player-profile-avatar{background:radial-gradient(circle at 50% 20%,#564667,#1d1525);box-shadow:0 0 0 5px #17111d,0 0 0 6px #a9844c,0 0 35px #c38aff25}
+.mythic-rework :is(.profile-stats,.profile-analytics-summary)>article{background:linear-gradient(#32283ed9,#1d1525e6)}
+.mythic-rework .profile-progress{background:linear-gradient(110deg,#2e2439,#221a2a)}
+.mythic-rework :is(.queue-setup-panel,.custom-room-panel){background:linear-gradient(120deg,#31263de8,#1b1423f7)}
+.mythic-rework .queue-format-card{background:#1d1526}
+.mythic-rework .queue-format-card.selected{background:radial-gradient(ellipse at 50% 20%,#a37d2f23,#281e33 70%)}
+.mythic-rework :is(.custom-seat,.queue-team-preview>article,.queue-teammate-seat){background:radial-gradient(circle at 50% 0,#815cab22,transparent 80%),#1c1425}
+.mythic-rework .custom-seat.filled{border-color:#b391dd99;box-shadow:inset 0 2px #9168c1}
+.mythic-rework .account-gate{background:linear-gradient(90deg,#0d0911bb,#110c16a6),url('assets/rework/citadela.webp') center/cover fixed}
+.mythic-rework .account-gate-card{background:linear-gradient(140deg,#2f253aef,#1a1322f7);box-shadow:inset 0 0 0 5px #1b162199,0 0 0 5px #0e0a1266,0 25px 70px #0009}
+.mythic-rework .account-gate-card::before{background:#21192a}
+.mythic-rework .auth-security-note{color:#90849d}
+.mythic-rework .loading-screen{background:radial-gradient(ellipse at center,#38284a99,#0f0b14f5),url('assets/rework/citadela.webp') center/cover}
+.mythic-rework.duel-fullscreen::before{background:linear-gradient(#150f1b33,#140e1a55),url('assets/rework/citadela.webp') center/cover}
+.mythic-rework .match-status{background:linear-gradient(100deg,#2e233aeF,#1d1526f5 65%,#352942f0)}
+.mythic-rework .match-status::after{background:linear-gradient(90deg,#c08aff,#d2abff 49%,#f6cf80 50%,#fa6d4c 51%,#e52e31);box-shadow:0 0 9px #c48aff55}
+.mythic-rework .turn-clock{border:1px solid #a378d399;background:#1f1628;box-shadow:inset 0 0 17px #966bc62b}
+.mythic-rework .battle-board{background:linear-gradient(#221a2c80,#1a132180);box-shadow:inset 0 0 0 5px #110c164a,0 18px 45px #0007}
+.mythic-rework .battle-board::before{background:linear-gradient(180deg,#100d1444,transparent 45%,#130e1933)}
+.mythic-rework .battle-board::after{background-image:linear-gradient(#140e1a88,#130e1988),url('assets/rework/citadela.webp')!important}
+.mythic-rework .player-identity small{color:#d1b0f5}
+.mythic-rework .battle-avatar{background:radial-gradient(circle,#654885,#2a1e37);box-shadow:0 0 0 3px #191221,0 0 0 4px #9875c080;color:#e7d2ff}
+.mythic-rework .battle-field .battle-lane{border:1px solid #c18affaa;background:repeating-linear-gradient(90deg,transparent 0,transparent 112px,#b582f01a 113px,#b582f038 114px),linear-gradient(110deg,#291d36d6,#291d36c9),url('assets/battlefield-mud.png') center/cover;box-shadow:inset 0 0 14px #a777dd24,0 0 8px #a676db3d}
+.mythic-rework .battle-lane::before{border-right:1px solid #b588e862;background:linear-gradient(90deg,#2d203b,#2f213e);color:#d8b5ff}
+.mythic-rework .shared-zones-wrap{background:linear-gradient(90deg,#130e19f0,#2b2234ef 50%,#130e19f0)}
+.mythic-rework .battle-zone{background:linear-gradient(#30243c,#17101e)}
+.mythic-rework .player-round-score>b{color:#cea3ff}
+.mythic-rework .player-zone-status .trixx-stars{color:#c18aff}
+.mythic-rework .deck-pile{background:linear-gradient(#2f213d99,#17101e66),url('assets/card-back.svg') center/cover;box-shadow:2px 2px 0 #140f19,3px 3px 0 #b58c4d,5px 5px 0 #1b1422}
+.mythic-rework .deck-pile-count{background:#16101d}
+.mythic-rework .underworld-pile{background:linear-gradient(135deg,#38264d,#211929)}
+.mythic-rework .hand-panel{background:linear-gradient(90deg,#1c1424ee,#2d223bc7,#16101dee)}
+.mythic-rework .hand-panel::before{background-image:linear-gradient(90deg,#191221da,#2e213cbf),url('assets/rework/citadela.webp')!important}
+.mythic-rework .hand-panel .panel-heading h2{color:#bfb3cc}
+.mythic-rework .battle-hand{scrollbar-color:#b49351 #1c1424}
+.mythic-rework .hand-card{background:linear-gradient(#443554,#1a1322);box-shadow:0 5px 13px #000a,0 0 0 1px #1a1322}
+.mythic-rework .hand-card:hover{box-shadow:0 5px 15px #000b,0 0 15px #c795ff77}
+.mythic-rework .hand-instruction{color:#b1a6be}
+@media(max-width:960px){.mythic-rework :is(.friends-submenu,.deck-submenu){background:#1d1525}
+.mythic-rework .nav-group-universe .nav-item{color:#baaec6}}
+.mythic-rework .sidebar{scrollbar-color:#9f783a #15101a}
+body.concept-ui:not(.duel-fullscreen) .main-content::before{background:linear-gradient(180deg,#1a122238,#150f1b6b 55%,#130e19bb),url('assets/concept-ui/citadela-luminosa.png') center top/cover no-repeat}
+body.concept-ui .view:not(#view-duel) .panel,body.concept-ui .epic-panel,body.concept-ui .missions-dialog{background:linear-gradient(120deg,#261c30ed,#17101eef)}
+body.concept-ui .view:not(#view-duel) :is(.panel-heading,.community-card>header,.admin-card>header){background:linear-gradient(90deg,#372a4555,#1c142533)}
+body.concept-ui .view:not(#view-duel) .button-secondary{background:linear-gradient(#3f314e,#21172b);border-color:#a89bb699;box-shadow:inset 0 1px #e6d0ff22}
+body.concept-ui .view:not(#view-duel) :is(input,select,textarea){border-color:#a297ae88;background:#1a1222e8}
+body.concept-ui .view:not(#view-duel) :is(.button,input,select,textarea):focus-visible{outline:2px solid #d5b1ff}
+.concept-account-avatar{background:#2e213c;box-shadow:0 0 0 3px #1d1526,0 0 0 4px #b9975088}
+.concept-account-name progress{accent-color:#c99aff}
+.concept-coin{box-shadow:0 0 0 2px #1e1627}
+body.concept-ui #view-arena .arena-mode-card{background:linear-gradient(180deg,#2a1e3733 0%,#1f1628c9 55%,#150f1cfa 80%),url('assets/concept-ui/citadela-luminosa.png') center/auto 100%}
+body.concept-ui #view-arena .arena-mode-card.selected{border-color:#d2acff;box-shadow:0 0 0 1px #c08aff,0 0 18px #c08aff77,inset 0 0 15px #c08aff22}
+.concept-mini-deck{background:#1e1527}
+.concept-mini-deck[aria-pressed="true"]{border-color:#cfa7ff;box-shadow:0 0 12px #c08aff55}
+.concept-mini-deck small{color:#c8bdd4}
+.concept-deck-tile{background:linear-gradient(#261b3244,#17101ef5 63%),var(--deck-art,url('assets/concept-ui/citadela-luminosa.png')) center 25%/cover}
+.concept-deck-tile[aria-pressed="true"]{box-shadow:inset 0 0 0 2px #c99bff,0 0 16px #c28eff55}
+.concept-deck-tile>small{color:#c3b7cf}
+.concept-deck-active{color:#dec3ff;border:1px solid #ba85f7;background:#2d203b}
+.concept-deck-metrics small{color:#c6bad3}
+.concept-deck-stat{color:#ccbfda}
+.concept-deck-editor>summary{background:#291d36}
+body.concept-ui #view-lore .lore-story-card{background:#22182c}
+body.concept-ui #view-lore .lore-story-copy{background:linear-gradient(transparent,#181120ef 55%)}
+.concept-lore-empty{color:#c6b9d3}
+.concept-lore-filters button{background:#251a30}
+.concept-lore-filters button[aria-pressed="true"]{color:#e4ceff;border-color:#c593ff}
+.concept-guild-banner{background:linear-gradient(90deg,#1f1629e8,#1f162988),url('assets/concept-ui/citadela-luminosa.png') center/cover}
+.concept-guild-banner p{color:#d2c6df}
+.concept-guild-member small{color:#c3b5d2}
+.concept-guild-wars-art{background:linear-gradient(#21172b33,#21172b88),url('assets/concept-ui/citadela-luminosa.png') center/cover}
+body.concept-ui .missions-dialog{background:linear-gradient(#1c1425f2,#1a1222f5)}
+.concept-mission-path{background:linear-gradient(#31223f55,#150f1bc9),url('assets/concept-ui/citadela-luminosa.png') center/cover}
+.concept-mission-node{color:#ad9fbc}
+.concept-mission-node::before{background:#c5b8d555}
+.concept-mission-node>span{background:#251a31}
+.concept-mission-node.current>span{border-color:#d1aaff;box-shadow:0 0 18px #c38fff88}
+body.concept-ui .missions-dialog .mission-step{background:linear-gradient(90deg,#4434565c,#1d1526)}
+.concept-mission-meter{accent-color:#ca9bff}
+.concept-community-deck{background:#1c1425}
+.concept-community-banner{background:linear-gradient(transparent,#1b1323),var(--deck-art,url('assets/concept-ui/citadela-luminosa.png')) center 25%/cover}
+.concept-community-deck p{color:#c4b7d2}
+.concept-community-footer>span{color:#bcadcc}
+.concept-publish-form{background:#21172be8}
+.concept-shop-hero{background:linear-gradient(90deg,#1c1425f5,#281c3455),url('assets/concept-ui/citadela-luminosa.png') center/cover}
+.concept-shop-preview img{background:#2d2239}
+body.concept-ui #view-store .store-item-art{background:radial-gradient(#735e8855,transparent 70%)}
+body.concept-ui #view-queue .queue-setup-panel{background:linear-gradient(#1e1527cc,#1e1527f2),url('assets/concept-ui/citadela-luminosa.png') center/cover}
+body.concept-ui #view-queue .queue-team-preview>article{background:linear-gradient(#362746bc,#191221f5)}
+.concept-queue-avatar{background:radial-gradient(#5c4a6e,#1f1629)}
+.concept-opponent-sigil{filter:drop-shadow(0 0 10px #c18aff44)}
+body.concept-ui #view-custom .custom-room-setup{background:#1b1324d9}
+body.concept-ui #view-custom .custom-seat{background:linear-gradient(#44345555,#1d1526)}
+body.concept-ui #view-custom .custom-seat[data-player-slot="2"],body.concept-ui #view-custom .custom-seat[data-player-slot="4"]{background:linear-gradient(#65353044,#1d1526)}
+.concept-settings-group{background:linear-gradient(#2c1f3ac9,#1b1323e8)}
+.concept-settings-group input[type="checkbox"]{accent-color:#ca9bff}
+.concept-admin-tabs button{background:#21172bdc}
+body.concept-ui :is(.friend-action-dialog,.friend-profile-dialog,.invite-flow-dialog,.friend-chat-window){background:linear-gradient(130deg,#31243f,#18111f)}
+body.concept-ui .friend-chat-window header{background:#2d203b}
+body.concept-ui #view-lore .lore-story-card{background:linear-gradient(90deg,#22182de0,#30213e33),url('assets/concept-ui/citadela-luminosa.png') center/cover;box-shadow:inset 0 0 0 4px #160f1c88}
+body.concept-ui #view-lore .lore-story-card:hover,body.concept-ui #view-lore .lore-story-card:focus-within,body.concept-ui #view-lore .lore-story-card.selected{border-color:#d7b5ff;box-shadow:inset 0 0 0 2px #d9b8ff44,0 0 18px #af7de844}
+body.concept-ui #view-lore .lore-story-copy{background:linear-gradient(0deg,#150f1cf5 5%,#150f1c88 45%,transparent)}
+.concept-convergence-entry{background:radial-gradient(ellipse at 20% 50%,#8a63b755,transparent 65%),linear-gradient(135deg,#332443,#18111f)}
+.concept-convergence-entry>img{filter:drop-shadow(0 0 13px #c08aff55)}
+.concept-convergence-entry small{color:#d6c6e7}
+.concept-convergence-entry:hover,.concept-convergence-entry:focus-visible{border-color:#d9b8ff;box-shadow:0 0 18px #c18aff44}
+.concept-story-banner{background:linear-gradient(90deg,#16101deb,#2f213d22),url('assets/concept-ui/citadela-luminosa.png') center/cover}
+.concept-story-banner::after{box-shadow:inset 0 0 50px #0f0b1477}
+.concept-story-banner-copy{background:linear-gradient(0deg,#16101dfc 0%,#16101de6 20%,#16101d22 75%,transparent)}
+.concept-story-banner.convergence .concept-story-character{filter:drop-shadow(0 0 25px #c18aff77)}
+.concept-convergence-star{filter:drop-shadow(0 0 22px #c08aff55)}
+.concept-convergence-subtitle{color:#d5c7e5}
+#view-profile .legend-tabs button{background:#150f1bb8;color:#beb3ca}
+#view-profile .legend-tabs button.selected{background:linear-gradient(#2d2337aa,#150f1be6)}
+body.mythic-rework #view-profile .legend-hero{background:linear-gradient(90deg,#150f1be8 5%,#150f1b80 65%,#150f1b30),url('assets/rework/citadela.webp') center 27%/cover}
+body.mythic-rework #view-profile #profile-avatar{background:radial-gradient(circle at 35% 25%,#554467,#1b1323 75%);box-shadow:0 0 0 5px #191221,0 0 0 7px #a77a36,0 9px 28px #0009}
+#view-profile #profile-change-avatar{background:#19122199}
+body.mythic-rework #view-profile #profile-rank-emblem{filter:drop-shadow(0 0 18px #c794ff50)}
+#view-profile #profile-rating{color:#bea8d7}
+#view-profile .profile-progress>div{color:#bcb1c8}
+#view-profile .profile-progress progress{border:1px solid #8e76a999;background:#140e1a}
+#view-profile .profile-progress progress::-webkit-progress-bar{background:#140e1a}
+#view-profile .profile-progress progress::-webkit-progress-value{background:linear-gradient(#d7b6ff,#a878df);box-shadow:0 0 12px #c08aff}
+#view-profile .profile-progress progress::-moz-progress-bar{background:linear-gradient(#d7b6ff,#a878df)}
+#view-profile .profile-analytics-summary article{background:linear-gradient(130deg,#372d42d9,#150f1bed);box-shadow:inset 0 1px #ddc8f51a}
+#view-profile .profile-analytics-summary b{color:#dec1ff}
+#view-profile .legend-filterbar>span{color:#b5aac1}
+#view-profile .history-filters label{color:#baadc8}
+#view-profile .legend-grid>.panel{background:linear-gradient(120deg,#251b30d9,#150f1bec)}
+#view-profile .legend-chart header>span{color:#bbabcc}
+body.mythic-rework #view-profile .profile-usage-art{background:#2d223a}
+#view-profile .profile-usage-meter{background:#16101d}
+#view-profile .profile-deck-usage{background:linear-gradient(90deg,#45345833,transparent)}
+#view-profile .profile-deck-usage small{color:#beadd1}
+#view-profile #history-summary{color:#beb3ca}
+#view-profile .history-row small{color:#bbadca}
+#view-profile .legend-medal{background:radial-gradient(circle,#5f536a,#231a2c)}
+#view-profile .earned .legend-medal{background:radial-gradient(circle,#5e506d,#281f31)}
+#view-profile .legend-milestone-list small{color:#c7bcd3}
+#view-profile .legend-empty,#view-profile .profile-analytics-empty{color:#bbaeca}
+.legend-edit-dialog{background:#21192a}
+.legend-edit-dialog::backdrop{background:#0a070ddc}
+.legend-dialog-close{background:#1a1222}
+.legend-private-info{color:#bfb4cb}
+.featured-medal{background:radial-gradient(circle,#5f516e,#201729)}
+#view-profile .honor-panel header>small{color:#baadc8}
+.honor-tabs button{background:#1d1525;color:#c2b5d0}
+.honor-status{color:#c5b8d3}
+.honor-card{background:linear-gradient(145deg,#2f253a,#17101e)}
+.honor-emblem{background:radial-gradient(circle,#6d607a,#2a2035)}
+.honor-card>small{color:#beb4ca}
+.honor-progress{color:#c7b9d7}
+.missions-submenu{background:#110d16e8}
+.missions-preview-item{background:#251d2e}
+.missions-preview-item:hover,.missions-preview-item:focus-visible{background:#332b3d}
+.missions-more{background:#322a3b}
+.missions-dialog{background:linear-gradient(130deg,#2c2435,#17101e)}
+.missions-dialog::backdrop{background:#09060ce8}
+.missions-dialog-close{background:#191220}

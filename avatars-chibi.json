@@ -1,0 +1,303 @@
+{
+  "version": 1,
+  "columns": 3,
+  "rows": 2,
+  "avatars": [
+    {
+      "id": "chibi-soldado-esparta",
+      "characterId": "soldado-esparta",
+      "name": "Soldado de Esparta",
+      "asset": "assets/avatars-chibi/portraits-01.png#chibi-0-0",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "chibi-athena",
+      "characterId": "athena",
+      "name": "Athena",
+      "asset": "assets/avatars-chibi/portraits-01.png#chibi-1-0",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "chibi-lobo-alfa",
+      "characterId": "lobo-alfa",
+      "name": "Lobisomem Alfa",
+      "asset": "assets/avatars-chibi/portraits-01.png#chibi-2-0",
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "chibi-guardiao-nordico",
+      "characterId": "guardiao-nordico",
+      "name": "Guardião Nórdico",
+      "asset": "assets/avatars-chibi/portraits-01.png#chibi-0-1",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "chibi-medusa",
+      "characterId": "medusa",
+      "name": "Medusa",
+      "asset": "assets/avatars-chibi/portraits-01.png#chibi-1-1",
+      "col": 1,
+      "row": 1
+    },
+    {
+      "id": "chibi-poseidon",
+      "characterId": "poseidon",
+      "name": "Poseidon",
+      "asset": "assets/avatars-chibi/portraits-02.png#chibi-0-0",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "chibi-zeus",
+      "characterId": "zeus",
+      "name": "Zeus",
+      "asset": "assets/avatars-chibi/portraits-02.png#chibi-1-0",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "chibi-hades",
+      "characterId": "hades",
+      "name": "Hades",
+      "asset": "assets/avatars-chibi/portraits-02.png#chibi-2-0",
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "chibi-lobo-omega",
+      "characterId": "lobo-omega",
+      "name": "Lobisomem Omega",
+      "asset": "assets/avatars-chibi/portraits-02.png#chibi-0-1",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "chibi-lukyan",
+      "characterId": "lukyan",
+      "name": "Lukyan — Rei da Festa",
+      "asset": "assets/avatars-chibi/portraits-02.png#chibi-1-1",
+      "col": 1,
+      "row": 1
+    },
+    {
+      "id": "chibi-anubis",
+      "characterId": "anubis",
+      "name": "Anúbis",
+      "asset": "assets/avatars-chibi/portraits-03.png#chibi-0-0",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "chibi-odin",
+      "characterId": "odin",
+      "name": "Odin",
+      "asset": "assets/avatars-chibi/portraits-03.png#chibi-1-0",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "chibi-minotauro",
+      "characterId": "minotauro",
+      "name": "Minotauro",
+      "asset": "assets/avatars-chibi/portraits-03.png#chibi-2-0",
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "chibi-apolo",
+      "characterId": "apolo",
+      "name": "Apolo",
+      "asset": "assets/avatars-chibi/portraits-03.png#chibi-0-1",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "chibi-ra",
+      "characterId": "ra",
+      "name": "Rá",
+      "asset": "assets/avatars-chibi/portraits-03.png#chibi-1-1",
+      "col": 1,
+      "row": 1
+    },
+    {
+      "id": "chibi-ragnar",
+      "characterId": "ragnar",
+      "name": "Ragnar",
+      "asset": "assets/avatars-chibi/portraits-04.png#chibi-0-0",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "chibi-afrodite",
+      "characterId": "afrodite",
+      "name": "Afrodite",
+      "asset": "assets/avatars-chibi/portraits-04.png#chibi-1-0",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "chibi-aquiles",
+      "characterId": "aquiles",
+      "name": "Aquiles",
+      "asset": "assets/avatars-chibi/portraits-04.png#chibi-2-0",
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "chibi-seth",
+      "characterId": "seth",
+      "name": "Seth",
+      "asset": "assets/avatars-chibi/portraits-04.png#chibi-0-1",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "chibi-osiris",
+      "characterId": "osiris",
+      "name": "Osíris",
+      "asset": "assets/avatars-chibi/portraits-04.png#chibi-1-1",
+      "col": 1,
+      "row": 1
+    },
+    {
+      "id": "chibi-thor",
+      "characterId": "thor",
+      "name": "Thor",
+      "asset": "assets/avatars-chibi/portraits-05.png#chibi-0-0",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "chibi-artemis",
+      "characterId": "artemis",
+      "name": "Ártemis",
+      "asset": "assets/avatars-chibi/portraits-05.png#chibi-1-0",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "chibi-sobek",
+      "characterId": "sobek",
+      "name": "Sobek",
+      "asset": "assets/avatars-chibi/portraits-05.png#chibi-2-0",
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "chibi-ares",
+      "characterId": "ares",
+      "name": "Ares",
+      "asset": "assets/avatars-chibi/portraits-05.png#chibi-0-1",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "chibi-beowulf",
+      "characterId": "beowulf",
+      "name": "Beowulf",
+      "asset": "assets/avatars-chibi/portraits-05.png#chibi-1-1",
+      "col": 1,
+      "row": 1
+    },
+    {
+      "id": "chibi-heimdall",
+      "characterId": "heimdall",
+      "name": "Heimdall",
+      "asset": "assets/avatars-chibi/portraits-06.png#chibi-0-0",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "chibi-dionisio",
+      "characterId": "dionisio",
+      "name": "Dionísio",
+      "asset": "assets/avatars-chibi/portraits-06.png#chibi-1-0",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "chibi-butter",
+      "characterId": "butter",
+      "name": "Butter",
+      "asset": "assets/avatars-chibi/portraits-06.png#chibi-2-0",
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "chibi-hefesto",
+      "characterId": "hefesto",
+      "name": "Hefestos",
+      "asset": "assets/avatars-chibi/portraits-06.png#chibi-0-1",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "chibi-hercules",
+      "characterId": "hercules",
+      "name": "Hércules",
+      "asset": "assets/avatars-chibi/portraits-06.png#chibi-1-1",
+      "col": 1,
+      "row": 1
+    },
+    {
+      "id": "chibi-hermes",
+      "characterId": "hermes",
+      "name": "Hermes",
+      "asset": "assets/avatars-chibi/portraits-07.png#chibi-0-0",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "chibi-horus",
+      "characterId": "horus",
+      "name": "Hórus",
+      "asset": "assets/avatars-chibi/portraits-07.png#chibi-1-0",
+      "col": 1,
+      "row": 0
+    },
+    {
+      "id": "chibi-lobo-beta",
+      "characterId": "lobo-beta",
+      "name": "Lobisomem Beta",
+      "asset": "assets/avatars-chibi/portraits-07.png#chibi-2-0",
+      "col": 2,
+      "row": 0
+    },
+    {
+      "id": "chibi-isis",
+      "characterId": "isis",
+      "name": "Ísis",
+      "asset": "assets/avatars-chibi/portraits-07.png#chibi-0-1",
+      "col": 0,
+      "row": 1
+    },
+    {
+      "id": "chibi-mulher",
+      "characterId": "mulher",
+      "name": "Mulher",
+      "asset": "assets/avatars-chibi/portraits-07.png#chibi-1-1",
+      "col": 1,
+      "row": 1
+    },
+    {
+      "id": "chibi-homem",
+      "characterId": "homem",
+      "name": "Homem",
+      "asset": "assets/avatars-chibi/portraits-08.png#chibi-0-0",
+      "col": 0,
+      "row": 0
+    },
+    {
+      "id": "chibi-loki",
+      "characterId": "loki",
+      "name": "Loki",
+      "asset": "assets/avatars-chibi/portraits-08.png#chibi-1-0",
+      "col": 1,
+      "row": 0
+    }
+  ]
+}

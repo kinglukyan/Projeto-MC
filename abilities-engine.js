@@ -31,7 +31,8 @@ function power(x,t,u,depth=0){const s=x.s,a=s[t],c=C[u.cardId]||{power:0},id=abi
 }
 function note(x,text){x.s.log=[text,...(x.s.log||[])].slice(0,30);}
 function event(x,op,t,owner,u,extra={}){x.s.effectQueue.push({op,team:t,owner,uid:u?.uid,lane:u?.lane||0,...extra});}
-function graveUnit(x,t,u,killed=true){const a=x.s[t],p=power(x,t,u),wasLive=live(x.s);a.field=a.field.filter(v=>v.uid!==u.uid);a.grave.push({uid:uid(),cardId:origin(u),owner:u.playedBy,progress:u.progress||0,deathPower:p});for(const id of u.equipment||[])a.grave.push({uid:uid(),cardId:id,owner:u.playedBy,progress:0});syncGrave(a);if(killed&&wasLive&&ability(u)==='osiris')event(x,'osiris',t,u.playedBy,null);}
+function visual(x,kind,team,targets=[]){x.s.visualEvents=[...(x.s.visualEvents||[]),{id:uid(),kind,team,targets,round:x.s.round}].slice(-80);}
+function graveUnit(x,t,u,killed=true){if(killed)visual(x,'destroy',t,[u.uid]);const a=x.s[t],p=power(x,t,u),wasLive=live(x.s);a.field=a.field.filter(v=>v.uid!==u.uid);a.grave.push({uid:uid(),cardId:origin(u),owner:u.playedBy,progress:u.progress||0,deathPower:p});for(const id of u.equipment||[])a.grave.push({uid:uid(),cardId:id,owner:u.playedBy,progress:0});syncGrave(a);if(killed&&wasLive&&ability(u)==='osiris')event(x,'osiris',t,u.playedBy,null);}
 function killMany(x,t,units){for(const u of [...units])if(x.s[t].field.some(v=>v.uid===u.uid))graveUnit(x,t,u);}
 function reconcile(x){if(!live(x.s))return;for(const t of teams){for(const u of [...x.s[t].field]){if(u.cardId==='lukyan'&&u.equipment.includes('excalibur')){u.sourceCardId='lukyan';u.cardId='lukyan-rei-de-todos';}
  if(x.s.sharedZones.climate!=='eclipse-solar')continue;if(vampire(u.cardId)){graveUnit(x,t,u);continue;}if(protectedRow(x,t,u.lane,x.s.zoneOwners.climate||t))continue;const form={'lobo-alfa':'mulher','lobo-beta':'homem','lobo-omega':'homem'}[u.cardId];if(form){u.eclipseOriginalCardId=u.cardId;u.cardId=form;delete u.copiedAbilityId;delete u.copiedPower;}}
@@ -68,13 +69,13 @@ function resolve(x,e){const s=x.s,t=e.team,a=s[t],en=other(t),b=s[en],u=a.field.
  switch(e.op){
  case 'copy':{const target=b.field.find(v=>v.uid===selected);if(!target)return;u.copiedPower=power(x,en,target);u.copiedAbilityId=ability(target);u.copiedFrom=target.cardId;if(u.copiedAbilityId!=='loki')for(const op of D.entries[u.copiedAbilityId]||[])event(x,op,t,e.owner,u);note(x,'Loki copiou '+C[target.cardId].name+'.');break;}
  case 'revive':case 'revive_cost':case 'anubis_revive':{if(selected==='skip')break;const g=a.grave.find(v=>v.uid===selected);if(!g||!eligibleGrave(x,e,g))throw Error('Essa carta não pode ser ressuscitada.');a.grave=a.grave.filter(v=>v.uid!==g.uid);syncGrave(a);spawn(x,g.cardId,t,e.owner,e.lane,g.progress||0);note(x,C[g.cardId].name+' voltou do próprio Submundo para o campo.');break;}
- case 'steal':{if(selected==='skip')break;const target=b.field.find(v=>v.uid===selected);if(!target||power(x,en,target)>=5)throw Error('Alvo fora da regra de Afrodite.');b.field=b.field.filter(v=>v.uid!==selected);target.playedBy=e.owner;target.uid=uid();a.field.push(target);note(x,'Afrodite roubou '+C[target.cardId].name+'.');break;}
+ case 'steal':{if(selected==='skip')break;visual(x,'hearts',en,[selected]);const target=b.field.find(v=>v.uid===selected);if(!target||power(x,en,target)>=5)throw Error('Alvo fora da regra de Afrodite.');b.field=b.field.filter(v=>v.uid!==selected);target.playedBy=e.owner;target.uid=uid();a.field.push(target);note(x,'Afrodite roubou '+C[target.cardId].name+'.');break;}
  case 'anubis':{const target=b.field.find(v=>v.uid===selected);if(!target)return;const wanted=power(x,en,target);graveUnit(x,en,target);event(x,'anubis_revive',t,e.owner,u,{wantedPower:wanted});break;}
  case 'destroy_strongest':killMany(x,en,b.field.filter(v=>v.uid===selected));break;
- case 'destroy_two':killMany(x,en,[...b.field].sort((v,w)=>power(x,en,w)-power(x,en,v)).slice(0,2));break;
- case 'hunt_monsters':for(const team of teams)killMany(x,team,[...s[team].field].filter(v=>(C[v.cardId]?.tags||[]).includes('monstro')).sort((v,w)=>power(x,team,w)-power(x,team,v)).slice(0,2));break;
- case 'petrify':{const actors=Object.entries(x.r).filter(([,v])=>v.team===en);const target=actors.find(([,v])=>!v.passed)||actors[0];if(target)target[1].skipNextTurn=true;break;}
- case 'tsunami':for(const v of b.field.filter(v=>v.lane===0))change(x,en,v,t,-2);break;
+ case 'destroy_two':{const victims=[...b.field].sort((v,w)=>power(x,en,w)-power(x,en,v)).slice(0,2);visual(x,'lightning',en,victims.map(v=>v.uid));killMany(x,en,victims);break;}
+ case 'hunt_monsters':for(const team of teams){const victims=[...s[team].field].filter(v=>(C[v.cardId]?.tags||[]).includes('monstro')).sort((v,w)=>power(x,team,w)-power(x,team,v)).slice(0,2);visual(x,'arrows',team,victims.map(v=>v.uid));killMany(x,team,victims);}break;
+ case 'petrify':{visual(x,'petrify',en,b.field.map(v=>v.uid));const actors=Object.entries(x.r).filter(([,v])=>v.team===en);const target=actors.find(([,v])=>!v.passed)||actors[0];if(target)target[1].skipNextTurn=true;break;}
+ case 'tsunami':visual(x,'water',en,b.field.filter(v=>v.lane===0).map(v=>v.uid));for(const v of b.field.filter(v=>v.lane===0))change(x,en,v,t,-2);break;
  case 'move':{if(selected==='skip')break;const target=a.field.find(v=>v.uid===selected);if(target)event(x,'move_lane',t,e.owner,null,{targetUid:target.uid,fromLane:target.lane});break;}
  case 'move_lane':{const target=a.field.find(v=>v.uid===e.targetUid);if(target)target.lane=Number(selected);break;}
  case 'rally':{const target=a.field.find(v=>v.uid===selected);if(target)target.lane=e.lane;break;}
@@ -107,7 +108,7 @@ function action(x,owner,a,auto=false){init(x);const res=x.r[owner],t=res?.team;i
 }
 function turnStart(x,owner,auto=false){init(x);const t=x.r[owner]?.team;if(!t||x.r[owner].skipNextTurn)return x;for(const u of x.s[t].field){if(u.playedBy===owner&&u.odinReady){delete u.odinReady;event(x,'foresight',t,owner,u);}}x.s.abilityPhase='turn_start';drain(x,auto);if(!x.s.pendingEffect)delete x.s.abilityPhase;return x;}
 function roundEnd(x){init(x);if(x.s.endEffectsRound===x.s.round)return;x.s.endEffectsRound=x.s.round;if(live(x.s))for(const t of teams){const a=x.s[t];for(const u of [...a.field]){if(ability(u)==='ra')for(const v of a.field)if(C[v.cardId]?.faction==='Egípcios')change(x,t,v,t,1);if(ability(u)==='hercules')u.progress=Math.min(12,(u.progress||0)+1);}}}
-function clearRound(x){init(x);for(const t of teams){for(const u of [...x.s[t].field])graveUnit(x,t,u,false);x.s[t].roundScoreBonus=0;}x.s.effectQueue=[];delete x.s.pendingEffect;}
+function clearRound(x){init(x);for(const t of teams){for(const u of [...x.s[t].field])graveUnit(x,t,u,false);x.s[t].roundScoreBonus=0;}x.s.effectQueue=[];delete x.s.pendingEffect;delete x.s.abilityPhase;x.s.silenceUntilRound=0;x.s.zoneOwners={};delete x.s.eclipseReveal;for(const t of teams){for(const g of x.s[t].grave)g.progress=0;x.s[t].greekAura=0;x.s[t].norseAura=0;}for(const res of Object.values(x.r)){res.skipNextTurn=false;delete res.privateEffects;}}
 function score(x,t){return Math.max(0,x.s[t].field.reduce((n,u)=>n+power(x,t,u),0)+(live(x.s)?Number(x.s[t].roundScoreBonus)||0:0));}
 window.MythicAbilities={C,D,init,power,score,action,drain,turnStart,roundEnd,clearRound,live,canEquip,origin,copy};
 })();
