@@ -35,7 +35,7 @@
   if(!window.MythicOnline.profileReady?.()){window.MythicPresentation?.notify('Aguarde o carregamento da sua coleção.');return;}
   const state=data(),emptyIndex=state.decks.findIndex(deck=>!Object.values(deck.cards||{}).some(n=>Number(n)>0));
   if(emptyIndex>=0){const select=$('#deck-slot-select');select.value=String(emptyIndex);select.dispatchEvent(new Event('change',{bubbles:true}));}
-  else{if($('#new-deck').disabled){window.MythicPresentation?.notify('Você já tem 5 baralhos. Exclua um para liberar espaço.');return;}$('#new-deck').click();}
+  else{if($('#new-deck').disabled){window.MythicPresentation?.notify('Você já tem 7 baralhos. Exclua um para liberar espaço.');return;}$('#new-deck').click();}
   model.previewSlot=data().activeSlot;window.MythicDeckBuilder?.open();
  }
  const deleteDialog=make('dialog','db-exit deck-delete-modal');deleteDialog.setAttribute('aria-labelledby','deck-delete-title');
@@ -63,7 +63,7 @@
   deckGallery.replaceChildren();
   for(const deck of rows){const card=button('',()=>{model.previewSlot=deck.index;drawDecks();},'concept-deck-tile');card.setAttribute('aria-pressed',String(model.previewSlot===deck.index));const cover=state.cards.find(c=>deck.cards[c.id]>0&&c.art);if(cover&&/^(assets\/|https?:\/\/)/.test(cover.art))card.style.setProperty('--deck-art',`url(${JSON.stringify(cover.art)})`);if(deck.index===state.activeSlot)card.append(make('span','concept-deck-active','ATIVO'));card.append(fan(deck.cards),make('b','',deck.name),make('small','',`${total(deck)} cartas`));deckGallery.append(card);}
   const emptyIndex=state.decks.findIndex(deck=>total(deck)===0);
-  if(emptyIndex>=0||state.decks.length<5){const slot=button('',createDeck,'concept-deck-tile concept-deck-empty');slot.setAttribute('aria-label','Criar baralho no construtor');const plus=make('span','concept-deck-plus','+');plus.setAttribute('aria-hidden','true');slot.append(plus,make('b','','Criar baralho'),make('small','','Abrir modo construtor'));deckGallery.append(slot);}
+  if(emptyIndex>=0||state.decks.length<(window.MythicDeckLimits?.slots||7)){const slot=button('',createDeck,'concept-deck-tile concept-deck-empty');slot.setAttribute('aria-label','Criar baralho no construtor');const plus=make('span','concept-deck-plus','+');plus.setAttribute('aria-hidden','true');slot.append(plus,make('b','','Criar baralho'),make('small','','Abrir modo construtor'));deckGallery.append(slot);}
   if(!rows.length&&query)empty(deckGallery,'Nenhum baralho com esse nome.');
   const selected=state.decks[model.previewSlot],entries=state.cards.filter(c=>selected.cards[c.id]>0),units=entries.filter(c=>c.kind==='unit').reduce((s,c)=>s+Number(selected.cards[c.id]),0),all=total(selected);
   deckDetail.replaceChildren(make('h2','',selected.name),make('p','concept-hero-subtitle','Seu próximo duelo começa com uma boa estratégia.'),fan(selected.cards));

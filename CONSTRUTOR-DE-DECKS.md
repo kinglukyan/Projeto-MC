@@ -10,9 +10,11 @@ O ZIP principal contém o site completo. O ZIP do construtor contém apenas os a
 
 ## Como usar
 
-Em **Baralhos**, clique em **Editar baralho** ou no botão destacado **Modo Construtor** para editar o baralho selecionado. O slot com **+** abre a mesa para criar outro baralho. Ele tem as mesmas dimensões dos demais e reaparece quando preenchido, até o limite de cinco baralhos. O editor antigo foi retirado da tela.
+Em **Baralhos**, clique em **Editar baralho** ou no botão destacado **Modo Construtor** para editar o baralho selecionado. O slot com **+** abre a mesa para criar outro baralho. Ele tem as mesmas dimensões dos demais e reaparece quando preenchido, até o limite de sete baralhos. O editor antigo foi retirado da tela.
 
 Para habilitar **Excluir baralho**, execute também `supabase/migrations/202610170016_delete_builder_deck.sql`, após o SQL 015. A opção fica no painel do baralho selecionado, pede confirmação e preserva as cartas da coleção. Após excluir o último baralho, fica um slot vazio para montar outro. A exclusão é confirmada no servidor antes de atualizar a tela.
+
+Execute também `supabase/migrations/202610170017_player_icons_seven_decks.sql` após o 016 para liberar os sete slots no banco, mostrar ícones dos amigos e identificar os participantes no campo de batalha. Os sete slots ficam disponíveis nesta versão; a compra de slots será incluída futuramente. Esta atualização corrige as bordas dos ícones Chibi sem baixar novas imagens e mantém a filtragem de mãos privadas das partidas.
 
 - A mesa ocupa a tela inteira, cobrindo a barra lateral.
 - A coleção mostra somente cartas jogáveis que a conta possui. Formas especiais de transformação não entram no baralho.
