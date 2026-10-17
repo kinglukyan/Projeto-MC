@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 480" fill="none">
+ <defs>
+  <linearGradient id="gold" x1="100" y1="50" x2="380" y2="430" gradientUnits="userSpaceOnUse"><stop stop-color="#90601e"/><stop offset=".25" stop-color="#fff0b5"/><stop offset=".5" stop-color="#c39744"/><stop offset=".72" stop-color="#fbe4a0"/><stop offset="1" stop-color="#8c5e1e"/></linearGradient>
+  <radialGradient id="halo"><stop stop-color="#8ceaff" stop-opacity=".55"/><stop offset=".45" stop-color="#178bd2" stop-opacity=".18"/><stop offset="1" stop-color="#178bd2" stop-opacity="0"/></radialGradient>
+  <radialGradient id="gem" cx=".35" cy=".25"><stop stop-color="#b5faff"/><stop offset=".35" stop-color="#22b3f2"/><stop offset="1" stop-color="#082644"/></radialGradient>
+ </defs>
+ <circle cx="240" cy="240" r="230" fill="url(#halo)"/>
+ <g stroke="url(#gold)">
+  <circle cx="240" cy="240" r="139" stroke-width="3"/><circle cx="240" cy="240" r="128" stroke-width="1"/><circle cx="240" cy="240" r="151" stroke-width="1" stroke-dasharray="2 10"/>
+  <path d="m240 40 34 141 107-82-82 107 141 34-141 34 82 107-107-82-34 141-34-141-107 82 82-107L40 240l141-34L99 99l107 82z" fill="#102d46" stroke-width="4"/>
+  <path d="m240 64 24 139 98-85-85 98 139 24-139 24 85 98-98-85-24 139-24-139-98 85 85-98-139-24 139-24-85-98 98 85z" fill="url(#gold)" stroke-width="1"/>
+  <path d="m240 92 0 148 31-31zm148 148H240l31 31zM240 388V240l-31 31zM92 240h148l-31-31z" fill="#fff0b5" fill-opacity=".8" stroke="none"/>
+  <path d="m240 174 66 66-66 66-66-66z" fill="#081a2d" stroke-width="4"/>
+  <path d="m240 187 53 53-53 53-53-53z" fill="url(#gem)" stroke-width="2"/>
+  <path d="m240 201 9 30 30 9-30 9-9 30-9-30-30-9 30-9z" fill="#fdf6ce" stroke="none"/>
+  <path d="m90 145 8 22m284 146 8 22M145 390l22-8M313 98l22-8" stroke-width="2"/>
+ </g>
+ <g fill="#ffedb6"><circle cx="240" cy="25" r="3"/><circle cx="455" cy="240" r="3"/><circle cx="240" cy="455" r="3"/><circle cx="25" cy="240" r="3"/></g>
+</svg>
