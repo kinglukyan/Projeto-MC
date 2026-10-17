@@ -95,8 +95,8 @@ begin
    -- Match the already-corrected Athena/Alpha rules in both server action engines.
    definition:=replace(definition,'case when card_id=''lobo-alfa'' then 1 else 0 end','0');
    definition:=regexp_replace(definition,
-    E'if card_id=''athena'' and jsonb_array_length\((deck_array|deck_arr)\)>0 then[^;]*;\s*select[^;]*;\s*end if;',
-    '-- Athena grants its lane aura in _online_unit_power.','g');
+    $pattern$if\s+card_id\s*=\s*'athena'\s+and\s+jsonb_array_length\((deck_array|deck_arr)\)\s*>\s*0\s+then[^;]*;\s*select[^;]*;\s*end\s+if;$pattern$,
+    '/* Athena grants its lane aura in _online_unit_power. */','g');
    if position('if card_id=''athena'' and jsonb_array_length' in definition)>0 then raise exception 'Unrecognized Athena entry rule in %; no changes applied.',routine.proname;end if;
    if position('card_id not in' in definition)>0 and position('public._is_terrain_card(card_id)' in definition)=0 then raise exception 'Unrecognized terrain action branch in %; no changes applied.',routine.proname;end if;
   end if;
