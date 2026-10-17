@@ -1,0 +1,5 @@
+{
+  "method": "built-in image_gen",
+  "file": "crystal-texture.png",
+  "prompt": "Use case: stylized-concept. Asset type: decorative background texture for the left sidebar of a premium mythological fantasy card game. Generate ONE seamless-feeling portrait 2:3 decorative material image matching the ARCANE CONVERGENCE sidebar concept: deep midnight indigo smoked obsidian crystal, subtle layered translucent glass mineral depth, soft sparse violet-blue nebula wisps close to the sides, delicate extremely thin silver constellation hairlines and a few tiny pearl star points near the top and edges. Central 75% must remain almost black indigo and visually quiet for readable UI labels to be overlaid in code. Elegant magical mythological aesthetic, realistic painterly cinematic material finish, restrained glow, no science-fiction circuits, no cyberpunk. NO text, letters, labels, numbers, logo, title, glyphs, card art, buttons, menu entries, avatar, UI mockup or border frame. This is ONLY a raw dark arcane crystalline MATERIAL TEXTURE for a real usable sidebar; keep subtle enough for white navigation text overlaid on top. Fully opaque, not transparent."
+}

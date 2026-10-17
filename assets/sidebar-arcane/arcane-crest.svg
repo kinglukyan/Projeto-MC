@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="260" height="82" viewBox="0 0 260 82" fill="none">
+ <defs>
+  <linearGradient id="silver" x1="15" y1="8" x2="237" y2="76" gradientUnits="userSpaceOnUse"><stop stop-color="#7c83a4"/><stop offset=".25" stop-color="#eee9ff"/><stop offset=".52" stop-color="#8585ad"/><stop offset=".75" stop-color="#e2d9fa"/><stop offset="1" stop-color="#646785"/></linearGradient>
+  <radialGradient id="aura"><stop stop-color="#bb8aff" stop-opacity=".55"/><stop offset="1" stop-color="#8961ff" stop-opacity="0"/></radialGradient>
+  <linearGradient id="crystal" x1="113" y1="20" x2="150" y2="64" gradientUnits="userSpaceOnUse"><stop stop-color="#ece7ff"/><stop offset=".5" stop-color="#c9a4ff"/><stop offset="1" stop-color="#8062e6"/></linearGradient>
+ </defs>
+ <ellipse cx="130" cy="41" rx="48" ry="39" fill="url(#aura)"/>
+ <g stroke="url(#silver)" stroke-width="1.2" stroke-linejoin="round">
+  <path d="M8 51h65l18-16h17m44 0h17l18 16h65M8 56h69l16-15h13m48 0h13l16 15h69"/>
+  <path d="m130 3 11 13 17 7 5 18-5 18-17 7-11 13-11-13-17-7-5-18 5-18 17-7Z"/>
+  <path d="m130 11 10 13 13 5 4 12-4 12-13 5-10 13-10-13-13-5-4-12 4-12 13-5Z"/>
+  <path d="m22 51 7-10 17 10m168 0 17-10 7 10M77 51l7 11 8-21m76 0 8 21 7-11" opacity=".7"/>
+ </g>
+ <path d="m130 19 5 17 17 5-17 5-5 17-5-17-17-5 17-5Z" fill="url(#crystal)" stroke="#e9deff" stroke-width=".7"/>
+ <path d="M130 23v36m-18-18h36" stroke="#fff" stroke-width=".7"/>
+ <g fill="#d8ccff"><circle cx="57" cy="51" r="1.5"/><circle cx="203" cy="51" r="1.5"/><path d="m16 47 4 4-4 4-4-4Zm228 0 4 4-4 4-4-4Z"/></g>
+</svg>

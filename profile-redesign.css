@@ -1,99 +1,67 @@
-/* Profile presentation inspired by the approved concept, with live account data. */
-body.mythic-rework #view-profile{max-width:1640px;padding-top:14px}
-#view-profile .legend-tabs{display:flex;gap:0;margin-bottom:0;border-bottom:1px solid #b78a4866}
-#view-profile .legend-tabs button{min-width:120px;padding:14px 22px;border:0;border-bottom:2px solid transparent;background:#07111bb8;color:#a7bdca;font:700 16px 'Mythic Display',Georgia,serif;cursor:pointer}
-#view-profile .legend-tabs button.selected{color:#f5ddb1;border-color:#efc76e;background:linear-gradient(#182a37aa,#07111be6)}
-body.mythic-rework #view-profile .legend-hero{display:grid;grid-template-columns:170px minmax(180px,1.2fr) 155px minmax(220px,1fr);align-items:center;gap:24px;min-height:285px;padding:28px 20px;margin:0;border:0;border-bottom:1px solid #c59b4d88;background:linear-gradient(90deg,#07121be8 5%,#07121b80 65%,#07121b30),url('assets/rework/citadela.webp') center 27%/cover;box-shadow:none;isolation:isolate}
-#view-profile .legend-hero .profile-avatar-column{display:flex;flex-direction:column;align-items:center;gap:15px}
-body.mythic-rework #view-profile #profile-avatar{box-sizing:border-box;display:grid;place-items:center;width:166px;height:166px;border:3px solid #e7c580;border-radius:50%;background:radial-gradient(circle at 35% 25%,#314c67,#0b1523 75%);box-shadow:0 0 0 5px #0a1421,0 0 0 7px #a77a36,0 9px 28px #0009;color:#f3dba0;font:700 45px 'Mythic Display',Georgia,serif;overflow:hidden}
-#view-profile #profile-avatar img{width:100%;height:100%;object-fit:cover;padding:8px}
-#view-profile #profile-change-avatar{min-height:25px;padding:4px 10px;border-color:#b9934b66;background:#09152199;font-size:9px}
-#view-profile .profile-identity{min-width:0}
-#view-profile .profile-identity>small{display:block;font-size:8px;color:#d1b979;letter-spacing:2px}
-body.mythic-rework #view-profile #profile-display-name{margin:8px 0;font:700 clamp(25px,3.6vw,48px)/1.1 'Mythic Display',Georgia,serif;letter-spacing:1px;text-transform:uppercase;color:#f0dbab;overflow-wrap:anywhere;text-shadow:0 3px 14px #000}
-#view-profile .legend-tagline{max-width:280px;font-size:12px;line-height:1.8;color:#b7c6cc}
-#view-profile .profile-code-line{display:flex;flex-wrap:wrap;align-items:center;gap:7px;margin-top:15px;font-size:8px;line-height:1.7;color:#a9b9c6}
-#view-profile .legend-rank .profile-rank-stat{display:flex;align-items:center;flex-direction:column;gap:8px;text-align:center}
-body.mythic-rework #view-profile #profile-rank-emblem{width:145px;height:145px;object-fit:contain;filter:drop-shadow(0 0 18px #5abaff50)}
-#view-profile .legend-rank .profile-rank-stat>span{display:flex;flex-direction:column-reverse;gap:6px}
-#view-profile #profile-rank{color:#eddaa5;font:700 15px 'Mythic Display',Georgia,serif;text-transform:uppercase}
-#view-profile #profile-rating{font-size:11px;color:#8ebbd7}
-#view-profile .legend-level-line{display:flex;justify-content:space-between;gap:20px;align-items:center}
-#view-profile .legend-level-line>span{display:flex;flex-direction:row-reverse;gap:6px;align-items:center}
-#view-profile .legend-level-line b{font:700 21px 'Mythic Display',Georgia,serif;color:#f0dbab}
-#view-profile .legend-level-line small{font-size:9px;color:#ddc790;letter-spacing:1px}
-body.mythic-rework #view-profile .profile-progress{display:flex;flex-direction:column-reverse;gap:8px;padding:0;margin:15px 0 23px;border:0;background:none;box-shadow:none}
-#view-profile .profile-progress>div{display:flex;justify-content:space-between;font-size:9px;color:#a4b7c8}
-#view-profile .profile-progress progress{appearance:none;width:100%;height:12px;border:1px solid #5b8ca999;border-radius:10px;overflow:hidden;background:#06101a}
-#view-profile .profile-progress progress::-webkit-progress-bar{background:#06101a}
-#view-profile .profile-progress progress::-webkit-progress-value{background:linear-gradient(#8feaff,#1ca6df);box-shadow:0 0 12px #39caff}
-#view-profile .profile-progress progress::-moz-progress-bar{background:linear-gradient(#8feaff,#1ca6df)}
-#view-profile .legend-actions{display:flex;flex-wrap:wrap;gap:10px}
-#view-profile .legend-actions button{flex:1;white-space:normal;font-size:10px;padding:10px;min-height:40px}
-#view-profile .legend-overview{display:flex;flex-wrap:wrap;gap:16px;align-items:center;padding:18px 0 12px}
-body.mythic-rework #view-profile .profile-analytics-summary{flex:1 1 520px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin:0}
-#view-profile .profile-analytics-summary article{display:flex;flex-direction:column-reverse;align-items:flex-start;justify-content:center;min-height:72px;gap:5px;padding:12px 17px;border:1px solid #9d845e99;border-radius:4px;background:linear-gradient(130deg,#213442d9,#07111bed);box-shadow:inset 0 1px #b0def51a}
-#view-profile .profile-analytics-summary b{font:700 26px 'Mythic Display',Georgia,serif;color:#9fdfff}
-#view-profile .profile-analytics-summary small{font-size:8px;letter-spacing:1px;color:#bdccd3}
-#view-profile .profile-analytics-summary article:nth-child(3) b{color:#9ad782}
-#view-profile .legend-filterbar{display:flex;flex:1 1 340px;flex-direction:column;gap:6px}
-#view-profile .legend-filterbar>span{font-size:8px;letter-spacing:1px;color:#9eb2c1;text-transform:uppercase}
-#view-profile .history-filters{margin:0;display:flex;gap:10px;padding:0}
-#view-profile .history-filters label{flex:1;font-size:8px;color:#9fb6c8}
-#view-profile .history-filters select{min-height:35px;margin-top:4px;font-size:10px}
-#view-profile .legend-grid{display:grid;grid-template-columns:1.05fr 1fr .95fr;gap:15px;padding-bottom:28px}
-#view-profile .legend-grid>.panel{min-width:0;padding:18px;border-color:#ab874d88;border-radius:4px;background:linear-gradient(120deg,#102330d9,#06111bec);box-shadow:inset 0 1px #f5deb011}
-#view-profile .legend-grid h3,#view-profile .legend-grid h2{margin:0;font:700 15px 'Mythic Display',Georgia,serif;color:#ede2cb}
-#view-profile .legend-grid header{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 0 16px;border:0;background:none}
-#view-profile .legend-grid header>small{display:none}
-#view-profile .legend-chart{grid-column:1/3}
-#view-profile .legend-chart header>span{font-size:9px;color:#9ab9cc}
-#view-profile .legend-chart-plot{display:grid;align-items:center;min-height:210px}
-#view-profile .legend-chart svg{display:block;width:100%;max-height:250px;font-family:'Mythic UI',sans-serif}
-#view-profile .legend-card-panel{grid-column:3}
-#view-profile #profile-top-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;max-height:260px;overflow:auto}
-body.mythic-rework #view-profile .profile-usage-row{display:flex;position:relative;flex-direction:column;align-items:stretch;gap:8px;padding:0 0 8px;border:0;background:none;min-width:0}
-body.mythic-rework #view-profile .profile-usage-art{width:100%;height:auto;aspect-ratio:5/7;display:grid;place-items:center;border:1px solid #c8a25d77;border-radius:4px;overflow:hidden;background:#152c3a}
-#view-profile .profile-usage-art img{width:100%;height:100%;object-fit:contain}
-#view-profile .profile-usage-copy{min-width:0;width:100%}
-#view-profile .profile-usage-copy b{display:block;text-align:center;min-height:26px;font-size:9px;line-height:1.4;overflow-wrap:anywhere}
-#view-profile .profile-usage-meter{display:block;height:5px;margin-top:6px;border:1px solid #b88b4355;border-radius:4px;background:#06121d;overflow:hidden}
-#view-profile .profile-usage-meter i{display:block;height:100%;background:linear-gradient(90deg,#e5b45d,#fff1b3)}
-#view-profile .profile-usage-row>small{text-align:center;font-size:9px;color:#d5bd83}
-#view-profile .legend-deck-panel{grid-column:1}
-#view-profile .profile-deck-usage{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px 8px;border-bottom:1px solid #a789553d;background:linear-gradient(90deg,#21405833,transparent)}
-#view-profile .profile-deck-usage b{font:700 13px 'Mythic Display',Georgia,serif;color:#e8d6ae}
-#view-profile .profile-deck-usage small{display:block;font-size:9px;color:#99bbd1;margin-top:7px}
-#view-profile .profile-deck-usage strong{color:#e3c770;font-size:16px}
-#view-profile .legend-history{grid-column:2;max-height:340px;overflow:auto}
-#view-profile .legend-history header small{display:none}
-#view-profile #history-summary{font-size:8px;color:#a6bcca}
-#view-profile .history-row{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:8px;padding:10px 0;border-bottom:1px solid #a7895533;font-size:10px}
-#view-profile .history-row>span:first-child{flex:1;min-width:100px}
-#view-profile .history-row b{font-size:9px;text-transform:uppercase}
-#view-profile .history-row.victory b{color:#8ed3aa}#view-profile .history-row.defeat b{color:#f1958a}
-#view-profile .history-row small{display:block;font-size:8px;color:#9eb8ca;line-height:1.6}
-#view-profile .history-row>small{display:none}
-#view-profile .legend-milestones{grid-column:3}
-#view-profile .legend-milestone-list{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin-top:18px}
-#view-profile .legend-milestone-list article{display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;opacity:.6}
-#view-profile .legend-milestone-list .earned{opacity:1}
-#view-profile .legend-medal{display:grid;place-items:center;width:48px;height:54px;border:2px solid #b9924d;border-radius:50% 50% 40% 40%;background:radial-gradient(circle,#47556a,#101d2c);box-shadow:0 0 0 3px #ae8c4230;color:#e3c175;font-size:27px}
-#view-profile .earned .legend-medal{background:radial-gradient(circle,#415c6d,#162331);box-shadow:0 0 14px #b8924955}
-#view-profile .legend-milestone-list b{font-size:8px;line-height:1.6;min-height:27px}
-#view-profile .legend-milestone-list small{font-size:8px;color:#b0c6d3}
-#view-profile .legend-milestone-list progress{width:100%;height:5px;accent-color:#dfb95e}
-#view-profile .legend-modes{grid-column:1/-1}
-#view-profile #profile-mode-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-#view-profile .profile-mode-row{display:flex;flex-wrap:wrap;gap:8px;font-size:10px;border:0;padding:8px}
-#view-profile .profile-mode-row b{width:100%;color:#e8d6ae}
-#view-profile .legend-empty,#view-profile .profile-analytics-empty{font-size:11px;line-height:1.8;color:#9fb8ca;padding:20px 0}
-#view-profile .profile-replays{margin:20px 0;padding:24px}
-.legend-edit-dialog{position:fixed;inset:0;width:min(600px,calc(100vw - 28px));max-height:85dvh;margin:auto;padding:24px;border:1px solid #d0ad61;border-radius:6px;color:#efe2c9;background:#101e2a;overflow:auto;box-sizing:border-box}
-.legend-edit-dialog::backdrop{background:#03090ddc;backdrop-filter:blur(6px)}
-.legend-dialog-close{float:right;width:32px;height:32px;border:1px solid #99783d;background:#091522;color:#e9cc91;font-size:24px;cursor:pointer}
-.legend-edit-dialog .profile-edit-form{display:flex;flex-direction:column;gap:16px;margin:0;border:0;background:none;box-shadow:none;padding:14px 0}
-.legend-private-info{display:flex;flex-direction:column;gap:5px;font-size:11px;color:#a8becb}
-@media(max-width:1280px){body.mythic-rework #view-profile .legend-hero{grid-template-columns:130px minmax(140px,1fr) 120px;gap:22px}#view-profile .legend-progression{grid-column:2/4}body.mythic-rework #view-profile #profile-avatar{width:124px;height:124px}body.mythic-rework #view-profile #profile-rank-emblem{width:114px;height:114px}#view-profile .legend-grid{grid-template-columns:1fr 1fr}#view-profile .legend-chart{grid-column:1}#view-profile .legend-card-panel{grid-column:2}#view-profile .legend-deck-panel{grid-column:1}#view-profile .legend-history{grid-column:2}#view-profile .legend-milestones{grid-column:1}#view-profile .legend-modes{grid-column:2}#view-profile #profile-mode-stats{grid-template-columns:1fr 1fr}}
-@media(min-width:961px){body.mythic-rework:has(#view-profile:not([hidden])) .main-content{padding-inline:24px}}
-@media(max-width:640px){body.mythic-rework #view-profile .legend-hero{grid-template-columns:84px minmax(0,1fr) 80px;gap:15px 12px;padding:24px 10px}body.mythic-rework #view-profile #profile-avatar{width:78px;height:78px;font-size:24px}body.mythic-rework #view-profile #profile-rank-emblem{width:78px;height:78px}#view-profile #profile-rank{font-size:9px}#view-profile #profile-rating{font-size:9px}body.mythic-rework #view-profile #profile-display-name{font-size:23px}#view-profile .legend-tagline{font-size:9px;line-height:1.6}#view-profile .legend-progression{grid-column:1/-1}#view-profile .profile-code-line{font-size:7px}#view-profile .legend-grid{grid-template-columns:minmax(0,1fr)}#view-profile .legend-grid>.panel{grid-column:1;padding:16px}body.mythic-rework #view-profile .profile-analytics-summary{grid-template-columns:repeat(2,minmax(0,1fr))}#view-profile .legend-tabs button{min-width:100px;font-size:14px}#view-profile .legend-milestone-list{gap:14px}#view-profile .legend-chart header{flex-wrap:wrap}#view-profile .legend-filterbar{flex-basis:100%}}
+(() => {
+  const toggle = document.getElementById('missions-menu-toggle');
+  const submenu = document.getElementById('missions-submenu');
+  const preview = document.getElementById('missions-preview');
+  const source = document.getElementById('community-missions');
+  const dialog = document.getElementById('missions-dialog');
+  if (!toggle || !submenu || !preview || !source || !dialog) return;
+
+  function refresh() {
+    document.dispatchEvent(new CustomEvent('mythic-missions-refresh'));
+  }
+  function renderPreview() {
+    const rows = [...source.querySelectorAll('.mission-step')];
+    const active = rows.filter(row => !row.classList.contains('complete'));
+    const selected = (active.length ? active : rows).slice(0, 3);
+    preview.replaceChildren();
+    if (!selected.length) {
+      const message = document.createElement('p');
+      message.className = 'missions-preview-empty';
+      message.textContent = source.textContent.trim() || 'Sem missões ativas.';
+      preview.append(message);
+      return;
+    }
+    for (const row of selected) {
+      const item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'missions-preview-item';
+      const title = document.createElement('b');
+      title.textContent = row.querySelector('b')?.textContent || 'Missão';
+      const details = document.createElement('small');
+      details.textContent = row.querySelector('small')?.textContent || '';
+      const state = document.createElement('span');
+      const claim = row.querySelector('[data-claim-mission]');
+      state.textContent = row.classList.contains('complete') ? '✓ Concluída' : row.classList.contains('locked') ? '🔒 Bloqueada' : claim && !claim.disabled ? '✦ Recompensa disponível' : 'Em andamento';
+      item.append(title, details, state);
+      item.addEventListener('click', () => {
+        openAll();
+        row.scrollIntoView({block:'nearest', behavior:'auto'});
+      });
+      preview.append(item);
+    }
+  }
+  function openAll() {
+    if (window.MythicOnline?.requireLogin && !window.MythicOnline.requireLogin()) return;
+    if (!dialog.open) dialog.showModal();
+    refresh();
+  }
+  toggle.addEventListener('click', () => {
+    const open = submenu.hidden;
+    submenu.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.classList.toggle('active', open);
+    if (open) { renderPreview(); refresh(); }
+  });
+  document.getElementById('missions-more').addEventListener('click', openAll);
+  document.getElementById('missions-dialog-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const box = dialog.getBoundingClientRect();
+    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+  });
+  window.addEventListener('mythic-open-view', event => {
+    if (event.detail?.view === 'missions') openAll();
+  });
+  new MutationObserver(renderPreview).observe(source, {childList:true, subtree:true, characterData:true, attributes:true, attributeFilter:['disabled','class']});
+  renderPreview();
+})();

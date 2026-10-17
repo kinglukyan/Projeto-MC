@@ -1,37 +1,25 @@
-MYTHIC CLASH — PROTÓTIPO
-
-ABRIR NO COMPUTADOR
-Abra index.html no navegador.
-
-ABRIR NO CELULAR
-O layout se adapta a telas pequenas. Para abrir pelo celular usando uma URL, publique o conteúdo desta pasta como site estático (por exemplo, em Vercel). O acesso por HTTPS habilita a instalação como app e o cache offline. mobile.html encaminha para a mesma interface responsiva.
-
-RECURSOS LOCAIS
-- Trilha do menu em loop; troca para a trilha das partidas durante o duelo, com controle para ativar ou desativar.
-- Arena local contra um oponente automático.
-- Turnos com uma carta por jogador, mão, campo em três linhas, habilidades e registro de ações.
-- Coleção com busca, filtros por tipo e facção, detalhes e histórias.
-- Baralho editável de 12 a 20 cartas, cinco decks selecionáveis e cartas compradas na Loja Mythic.
-- Regras acessíveis pela seção Universo.
-
-CONTA E PARTIDAS ONLINE
-- Cadastro com Nick, telefone e idade; perfil com nível, experiência, Mythic Coins, histórico, desempenho, cartas e decks mais usados; o resumo é visível a amigos aceitos. Telefone e idade ficam no perfil privado do próprio usuário.
-- Quatro modos de arena com as artes enviadas: Guardião, Normal, Ranqueada e X1. Novos membros começam pelo tutorial do Guardião.
-- Loja de ícones, cartas e texturas, resgate de código presente e até cinco decks sincronizados na conta.
-- Animação de cartas ao entrar no campo e destaque para os espaços especiais de Local, Terreno e Clima.
-- A arena online carrega salas aceitas/encontradas e envia jogadas e passagens de turno para validação no Supabase. As filas Normal e Ranqueada aceitam 1×1 solo ou 2×2 por convite de amigo; cada equipe compartilha o campo e cada jogador recebe apenas a própria mão/baralho.
-- O hub social inclui missões em capítulos, expedições que reservam e devolvem cartas, presentes de cartas/MC, missões e guerras de guilda, torneios com chave mata-mata ou suíça, salas sandbox 1x1, espectadores com atraso e replays compartilháveis.
-- Empates online podem ser decididos por puxadas de personagens; o servidor compara poderes, aplica XP/MC e atualiza vitórias, derrotas e rating ranqueado. Os resultados agregados de partidas e uso de cartas ficam disponíveis nas views públicas `public_match_meta` e `public_card_meta` pela API REST do Supabase.
-- Para conectar sua instância, preencha Project URL e a chave pública (publishable/anon) em supabase-config.js e execute, em ordem, todas as migrações em `supabase/migrations`: de `202609270001_online_game.sql` até `202609270008_medusa_rank_history.sql`, depois `202610130001_live_features.sql`, `202610160001_game_systems.sql`, `202610160002_admin_tournament_creation.sql`, `202610160003_player_profiles.sql` e `202610160004_duo_matchmaking.sql`, no SQL Editor do Supabase.
-- Cadastre o endereço HTTPS publicado em Authentication → URL Configuration e habilite Realtime para as tabelas indicadas em supabase/README.md.
-- O painel Administração aparece para a conta autenticada `santoslucasalmeida@gmail.com`. Ele permite atualizar o catálogo, criar/desativar códigos de presente, publicar comunicados, ajustar XP/Mythic Coins e editar histórias/trilhas tema. A autorização é validada pelo Supabase; a chave service_role não é usada no navegador.
-- O Estúdio de Cartas no painel Administração permite enviar uma ilustração, pré-visualizar a carta completa e salvar nome, título e texto da habilidade, poder e facção. O emblema e o círculo de poder usam as cores da facção: azul grego, lilás nórdico, amarelo egípcio, verde celta, preto monstro e vermelho Alyns.
-- O banco protege o estado e as ações do duelo contra alterações diretas do navegador. A migração ainda precisa ser aplicada e verificada na sua instância antes de abrir partidas reais.
-- A passagem automática de turno vencido é configurada com `pg_cron` quando essa extensão está disponível no Supabase; sem o agendador, a interface ainda mostra o relógio, mas o banco não força a ação no prazo.
-- O torneio suíço usa pareamento simples pela pontuação e pode repetir adversários; ainda não há ban/pick, premiação automática nem abertura diária agendada. A sandbox suporta partidas de dois jogadores e não permite todos os formatos customizados.
-- O meta público agrega partidas e uso de cartas online registradas após a última migração. As métricas pessoais de cartas e decks começam a ser registradas após aplicar `202610160003_player_profiles.sql`; partidas locais antigas não têm dados suficientes para reconstruir essas estatísticas.
-- A transmissão de espectador e o replay mostram snapshots do estado e do registro de ações, sem reconstruir animações originais. A compatibilidade e o desempenho em tablets Android ainda precisam de validação em dispositivo real.
-- Não coloque a chave service_role no site. Ela dá acesso administrativo e nunca deve ser publicada no GitHub.
-- Notificações atualmente usam a permissão local do navegador enquanto o jogo está aberto. Envio de push com o app fechado requer configurar chaves VAPID e um serviço de envio.
-- A biometria/passkey exibe suporte do dispositivo, mas só pode ser ativada de verdade após implementar a validação de credenciais no servidor.
-- O Supabase Auth precisa ser acessado por um endereço HTTPS/localhost, não abrindo o arquivo index.html diretamente como file://.
+#view-profile .equipped-honor-title{margin:12px 0 8px;color:#f2d486;font:700 15px 'Mythic Display',Georgia,serif}
+.featured-medals{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}
+.featured-medal{display:grid;place-items:center;width:32px;height:36px;border:1px solid #e6c076;border-radius:50% 50% 40% 40%;background:radial-gradient(circle,#41576e,#0e1c29);box-shadow:0 0 10px #ba95452a;color:#f1ce7e;font-size:21px}
+.sidebar-honor-title{display:block;color:#e7c67c!important;font-size:9px!important;margin-top:5px;overflow-wrap:anywhere}
+body.mythic-rework #view-profile .legend-grid>.honor-panel{grid-column:1/-1}
+#view-profile .honor-panel header{flex-wrap:wrap}
+#view-profile .honor-panel header>small{display:block;color:#9fb6c8;font-size:10px}
+.honor-tabs{display:flex;gap:8px;margin:4px 0 12px}
+.honor-tabs button{padding:10px 18px;border:1px solid #b18b4a66;border-radius:3px;background:#0c1925;color:#a7bed0;cursor:pointer}
+.honor-tabs button[aria-pressed="true"]{background:#3d3223;color:#f3db9e;border-color:#d4ad65}
+.honor-status{min-height:20px;color:#a9c1d3;font-size:11px;line-height:1.8}
+.honor-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px}
+.honor-card{display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center;padding:20px 14px;border:1px solid #81704f77;border-radius:5px;background:linear-gradient(145deg,#1a2b3a,#09121e)}
+.honor-card.unlocked{border-color:#cda96399}
+.honor-card.locked .honor-emblem{filter:grayscale(1);opacity:.5}
+.honor-emblem{display:grid;place-items:center;width:60px;height:68px;border:2px solid #cfab60;border-radius:50% 50% 36% 36%;background:radial-gradient(circle,#52687a,#142335);box-shadow:0 0 0 4px #a7863f20;color:#f4d895;font-size:34px}
+.honor-card>b{color:#eed8a3;font:700 13px 'Mythic Display',Georgia,serif}
+.honor-card>small{color:#a8bdca;font-size:10px;line-height:1.6;min-height:32px}
+.honor-card progress{width:100%;height:6px;accent-color:#e3bb65}
+.honor-progress{color:#a9c7d7;font-size:9px}
+.honor-card button{width:100%;margin-top:auto;font-size:10px}
+.sign-out-account{margin-top:12px;border-color:#b3705a88!important;color:#edb09c!important}
+.sidebar-bottom>.sign-out-account{width:100%;min-height:35px;font-size:10px}
+.friend-honors{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:10px 0;color:#ecd391}
+@media(max-width:640px){.honor-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}.honor-card{padding:16px 8px}.honor-card>b{font-size:11px}}
