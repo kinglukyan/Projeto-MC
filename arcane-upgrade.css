@@ -141,3 +141,14 @@ body.mythic-rework.concept-ui #view-store .store-item[data-shop-kind="avatar"] .
 body.mythic-rework.concept-ui #view-store .store-item[data-shop-kind="avatar"] .store-item-art>.chibi-frame{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:1/1;}
 body.mythic-rework.concept-ui #view-store .store-item[data-shop-kind="avatar"] .store-item-art>img{position:absolute;inset:0;object-fit:contain!important;}
 @media(max-width:640px){body.mythic-rework.concept-ui #view-store .store-item[data-shop-kind="avatar"] .store-item-art{width:min(100%,140px)!important;}}
+
+/* Compact deck editor: one portrait and its count, without wide empty panels. */
+body.mythic-rework.concept-ui #view-decks #deck-card-list{display:grid!important;grid-template-columns:repeat(auto-fill,minmax(124px,160px))!important;justify-content:start;align-items:start;gap:16px 12px!important;padding:14px!important;}
+body.mythic-rework.concept-ui #view-decks #deck-card-list .deck-row{display:flex;flex-direction:column;align-items:stretch;gap:7px;min-width:0;width:100%;padding:0!important;border:0!important;background:none!important;box-shadow:none;}
+body.mythic-rework.concept-ui #view-decks #deck-card-list .deck-card-thumb{display:block;position:relative;width:100%;height:auto!important;min-height:0!important;max-height:none!important;aspect-ratio:5/7;flex:0 0 auto;padding:0!important;border:0!important;background:transparent!important;box-shadow:none;}
+body.mythic-rework.concept-ui #view-decks #deck-card-list .deck-card-thumb>img{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:transparent;}
+body.mythic-rework.concept-ui #view-decks #deck-card-list .deck-row-copy{display:none;}
+body.mythic-rework.concept-ui #view-decks #deck-card-list .deck-count-control{min-height:36px;justify-content:center;gap:8px;}
+body.mythic-rework.concept-ui #view-decks #deck-card-list .deck-count-control button{width:34px;min-width:34px;height:34px;min-height:34px;padding:0;}
+body.mythic-rework.concept-ui #view-decks #deck-card-list .deck-owned-count{top:5px;right:5px;min-width:25px;height:25px;padding:0 4px;font-size:9px;}
+@media(max-width:640px){body.mythic-rework.concept-ui #view-decks #deck-card-list{grid-template-columns:repeat(auto-fill,minmax(105px,1fr))!important;gap:14px 9px!important;padding:10px!important;}body.mythic-rework.concept-ui #view-decks #deck-card-list .deck-count-control button{height:40px;min-height:40px;width:36px;min-width:36px;}}

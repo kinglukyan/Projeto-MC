@@ -9,3 +9,5 @@
   Cache-Control: no-cache, max-age=0, must-revalidate
 /*.css
   Cache-Control: no-cache, max-age=0, must-revalidate
+/asset-manifest.json
+  Cache-Control: no-cache, max-age=0, must-revalidate

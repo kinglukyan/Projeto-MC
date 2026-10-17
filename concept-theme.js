@@ -2,7 +2,7 @@
  'use strict';
  const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
  const make=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
- const picture=(src,cls='',alt='')=>{const n=make('img',cls);n.src=src||'assets/card-back.svg';n.alt=alt;n.loading='lazy';return n;};
+ const picture=(src,cls='',alt='')=>{const n=make('img',cls);n.src=src||'assets/card-back.svg';n.alt=alt;n.loading='lazy';n.decoding='async';return n;};
  const button=(text,action,cls='button button-secondary')=>{const n=make('button',cls,text);n.type='button';if(action)n.addEventListener('click',action);return n;};
  const panel=(title,cls='')=>{const n=make('section','epic-panel '+cls);if(title)n.append(make('h2','',title));return n;};
  const empty=(root,text)=>root.append(make('p','empty-state',text));
