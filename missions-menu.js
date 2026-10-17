@@ -1,37 +1,67 @@
-MYTHIC CLASH — PROTÓTIPO
+(() => {
+  const toggle = document.getElementById('missions-menu-toggle');
+  const submenu = document.getElementById('missions-submenu');
+  const preview = document.getElementById('missions-preview');
+  const source = document.getElementById('community-missions');
+  const dialog = document.getElementById('missions-dialog');
+  if (!toggle || !submenu || !preview || !source || !dialog) return;
 
-ABRIR NO COMPUTADOR
-Abra index.html no navegador.
-
-ABRIR NO CELULAR
-O layout se adapta a telas pequenas. Para abrir pelo celular usando uma URL, publique o conteúdo desta pasta como site estático (por exemplo, em Vercel). O acesso por HTTPS habilita a instalação como app e o cache offline. mobile.html encaminha para a mesma interface responsiva.
-
-RECURSOS LOCAIS
-- Trilha do menu em loop; troca para a trilha das partidas durante o duelo, com controle para ativar ou desativar.
-- Arena local contra um oponente automático.
-- Turnos com uma carta por jogador, mão, campo em três linhas, habilidades e registro de ações.
-- Coleção com busca, filtros por tipo e facção, detalhes e histórias.
-- Baralho editável de 12 a 20 cartas, cinco decks selecionáveis e cartas compradas na Loja Mythic.
-- Regras acessíveis pela seção Universo.
-
-CONTA E PARTIDAS ONLINE
-- Cadastro com Nick, telefone e idade; perfil com nível, experiência, Mythic Coins, histórico, desempenho, cartas e decks mais usados; o resumo é visível a amigos aceitos. Telefone e idade ficam no perfil privado do próprio usuário.
-- Quatro modos de arena com as artes enviadas: Guardião, Normal, Ranqueada e X1. Novos membros começam pelo tutorial do Guardião.
-- Loja de ícones, cartas e texturas, resgate de código presente e até cinco decks sincronizados na conta.
-- Animação de cartas ao entrar no campo e destaque para os espaços especiais de Local, Terreno e Clima.
-- A arena online carrega salas aceitas/encontradas e envia jogadas e passagens de turno para validação no Supabase. As filas Normal e Ranqueada aceitam 1×1 solo ou 2×2 por convite de amigo; cada equipe compartilha o campo e cada jogador recebe apenas a própria mão/baralho.
-- O hub social inclui missões em capítulos, expedições que reservam e devolvem cartas, presentes de cartas/MC, missões e guerras de guilda, torneios com chave mata-mata ou suíça, salas sandbox 1x1, espectadores com atraso e replays compartilháveis.
-- Empates online podem ser decididos por puxadas de personagens; o servidor compara poderes, aplica XP/MC e atualiza vitórias, derrotas e rating ranqueado. Os resultados agregados de partidas e uso de cartas ficam disponíveis nas views públicas `public_match_meta` e `public_card_meta` pela API REST do Supabase.
-- Para conectar sua instância, preencha Project URL e a chave pública (publishable/anon) em supabase-config.js e execute, em ordem, todas as migrações em `supabase/migrations`: de `202609270001_online_game.sql` até `202609270008_medusa_rank_history.sql`, depois `202610130001_live_features.sql`, `202610160001_game_systems.sql`, `202610160002_admin_tournament_creation.sql`, `202610160003_player_profiles.sql` e `202610160004_duo_matchmaking.sql`, no SQL Editor do Supabase.
-- Cadastre o endereço HTTPS publicado em Authentication → URL Configuration e habilite Realtime para as tabelas indicadas em supabase/README.md.
-- O painel Administração aparece para a conta autenticada `santoslucasalmeida@gmail.com`. Ele permite atualizar o catálogo, criar/desativar códigos de presente, publicar comunicados, ajustar XP/Mythic Coins e editar histórias/trilhas tema. A autorização é validada pelo Supabase; a chave service_role não é usada no navegador.
-- O Estúdio de Cartas no painel Administração permite enviar uma ilustração, pré-visualizar a carta completa e salvar nome, título e texto da habilidade, poder e facção. O emblema e o círculo de poder usam as cores da facção: azul grego, lilás nórdico, amarelo egípcio, verde celta, preto monstro e vermelho Alyns.
-- O banco protege o estado e as ações do duelo contra alterações diretas do navegador. A migração ainda precisa ser aplicada e verificada na sua instância antes de abrir partidas reais.
-- A passagem automática de turno vencido é configurada com `pg_cron` quando essa extensão está disponível no Supabase; sem o agendador, a interface ainda mostra o relógio, mas o banco não força a ação no prazo.
-- O torneio suíço usa pareamento simples pela pontuação e pode repetir adversários; ainda não há ban/pick, premiação automática nem abertura diária agendada. A sandbox suporta partidas de dois jogadores e não permite todos os formatos customizados.
-- O meta público agrega partidas e uso de cartas online registradas após a última migração. As métricas pessoais de cartas e decks começam a ser registradas após aplicar `202610160003_player_profiles.sql`; partidas locais antigas não têm dados suficientes para reconstruir essas estatísticas.
-- A transmissão de espectador e o replay mostram snapshots do estado e do registro de ações, sem reconstruir animações originais. A compatibilidade e o desempenho em tablets Android ainda precisam de validação em dispositivo real.
-- Não coloque a chave service_role no site. Ela dá acesso administrativo e nunca deve ser publicada no GitHub.
-- Notificações atualmente usam a permissão local do navegador enquanto o jogo está aberto. Envio de push com o app fechado requer configurar chaves VAPID e um serviço de envio.
-- A biometria/passkey exibe suporte do dispositivo, mas só pode ser ativada de verdade após implementar a validação de credenciais no servidor.
-- O Supabase Auth precisa ser acessado por um endereço HTTPS/localhost, não abrindo o arquivo index.html diretamente como file://.
+  function refresh() {
+    document.dispatchEvent(new CustomEvent('mythic-missions-refresh'));
+  }
+  function renderPreview() {
+    const rows = [...source.querySelectorAll('.mission-step')];
+    const active = rows.filter(row => !row.classList.contains('complete'));
+    const selected = (active.length ? active : rows).slice(0, 3);
+    preview.replaceChildren();
+    if (!selected.length) {
+      const message = document.createElement('p');
+      message.className = 'missions-preview-empty';
+      message.textContent = source.textContent.trim() || 'Sem missões ativas.';
+      preview.append(message);
+      return;
+    }
+    for (const row of selected) {
+      const item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'missions-preview-item';
+      const title = document.createElement('b');
+      title.textContent = row.querySelector('b')?.textContent || 'Missão';
+      const details = document.createElement('small');
+      details.textContent = row.querySelector('small')?.textContent || '';
+      const state = document.createElement('span');
+      const claim = row.querySelector('[data-claim-mission]');
+      state.textContent = row.classList.contains('complete') ? '✓ Concluída' : row.classList.contains('locked') ? '🔒 Bloqueada' : claim && !claim.disabled ? '✦ Recompensa disponível' : 'Em andamento';
+      item.append(title, details, state);
+      item.addEventListener('click', () => {
+        openAll();
+        row.scrollIntoView({block:'nearest', behavior:'auto'});
+      });
+      preview.append(item);
+    }
+  }
+  function openAll() {
+    if (window.MythicOnline?.requireLogin && !window.MythicOnline.requireLogin()) return;
+    if (!dialog.open) dialog.showModal();
+    refresh();
+  }
+  toggle.addEventListener('click', () => {
+    const open = submenu.hidden;
+    submenu.hidden = !open;
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.classList.toggle('active', open);
+    if (open) { renderPreview(); refresh(); }
+  });
+  document.getElementById('missions-more').addEventListener('click', openAll);
+  document.getElementById('missions-dialog-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const box = dialog.getBoundingClientRect();
+    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) dialog.close();
+  });
+  window.addEventListener('mythic-open-view', event => {
+    if (event.detail?.view === 'missions') openAll();
+  });
+  new MutationObserver(renderPreview).observe(source, {childList:true, subtree:true, characterData:true, attributes:true, attributeFilter:['disabled','class']});
+  renderPreview();
+})();
