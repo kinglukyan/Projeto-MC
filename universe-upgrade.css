@@ -45,3 +45,22 @@ body.mythic-rework.duel-fullscreen #view-duel .unit-morphing .battle-hologram{op
 body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card.lunar-empowered>.battle-hologram{transform:translateX(-50%) scale(1.15)!important;transform-origin:center bottom;filter:drop-shadow(0 0 7px #ef568b)!important}
 body.mythic-rework.duel-fullscreen #view-duel .companion-stack.lunar-formation>.companion-formation{transform:translateX(-50%) scale(1.15);transform-origin:center bottom}
 @media(prefers-reduced-motion:reduce){.wolf-morph .morph-before{display:none}.wolf-morph .morph-after,.wolf-morph b{animation:none}.wolf-morph b{opacity:1}}
+/* Hover preview fills the reader, including the area formerly left empty below it. */
+body.concept-ui #view-lore .concept-lore-reader[data-mode="preview"]{
+ --universe-preview-height:600px;display:flex;flex-direction:column;min-height:var(--universe-preview-height);
+}
+body.concept-ui #view-lore .concept-lore-reader[data-mode="preview"]>h2:empty{display:none}
+body.concept-ui #view-lore .concept-lore-reader[data-mode="preview"] .concept-story-banner{
+ flex:1;min-height:var(--universe-preview-height);
+}
+body.concept-ui #view-lore .concept-lore-reader[data-mode="preview"] .concept-story-banner-copy{
+ flex:1;min-height:var(--universe-preview-height);padding-bottom:38px!important;
+}
+/* Each atlas cell is 2:1. Cover the panel without stretching the character. */
+body.concept-ui #view-lore .concept-lore-reader[data-mode="preview"] .universe-banner-art{
+ inset:auto 0 auto auto;top:50%;width:max(100%,calc(var(--universe-preview-height) * 2));
+ height:auto;aspect-ratio:2/1;transform:translateY(-50%);
+}
+@media(max-width:900px){
+ body.concept-ui #view-lore .concept-lore-reader[data-mode="preview"]{--universe-preview-height:440px}
+}
