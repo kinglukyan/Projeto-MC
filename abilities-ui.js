@@ -6,12 +6,12 @@ function button(option,cards,callback){const b=document.createElement('button');
 window.MythicAbilitiesUI={
  sync(duel,cards,choose){
   if(window.MythicCombatFX?.isBusy()||window.MythicEclipseUI?.isRevealing()){if(openId)close();return;}
-  const p=duel?.pendingEffect,me=duel?.online?window.MythicOnline?.userId?.():'player';
+  const p=duel?.pendingEffect,me=duel?.practice?p?.actor:duel?.online?window.MythicOnline?.userId?.():'player';
   if(!p||p.actor!==me){if(openId)close();return;}
   if(openId===p.id){for(const b of document.querySelectorAll('#ability-choice-dialog button'))b.disabled=false;return;}close();openId=p.id;
   const [d,list]=modal(p.title||'Escolha o alvo');d.addEventListener('cancel',event=>event.preventDefault());
   const info=document.createElement('p');info.textContent='Resolva esta habilidade para concluir a jogada.';d.insertBefore(info,list);
-  if(p.event.op==='foresight'){const top=cards[duel.player.deck[0]];if(top){const peek=document.createElement('div');peek.className='ability-peek';const image=document.createElement('img');image.src=top.art||'assets/card-back.svg';image.alt='Topo do seu baralho: '+top.name;peek.append(image);const name=document.createElement('strong');name.textContent=top.name;peek.append(name);d.insertBefore(peek,list);}}
+  if(p.event.op==='foresight'){const top=cards[duel.practice&&p.actor==='enemy'?duel.enemy.deck[0]:duel.player.deck[0]];if(top){const peek=document.createElement('div');peek.className='ability-peek';const image=document.createElement('img');image.src=top.art||'assets/card-back.svg';image.alt='Topo do seu baralho: '+top.name;peek.append(image);const name=document.createElement('strong');name.textContent=top.name;peek.append(name);d.insertBefore(peek,list);}}
   for(const option of p.options){list.append(button(option,cards,value=>{for(const b of list.querySelectorAll('button'))b.disabled=true;choose({type:'resolve_effect',choice_id:p.id,choice_value:value});}));}
   document.body.append(d);d.showModal();
  },

@@ -29,6 +29,7 @@
  // Deck gallery wraps, rather than replaces, the existing editor.
  setHeading('#view-decks','MEUS BARALHOS','Forje sua estratégia e escolha as lendas que irão para a Arena.');
  const deckView=$('#view-decks'),deckHeading=deckView.querySelector('.page-heading');
+ window.MythicSelectedPracticeDeck=()=>({...data().decks[model.previewSlot]?.cards});
  window.MythicOpenSelectedDeckBuilder=()=>{const select=$('#deck-slot-select');select.value=String(model.previewSlot);select.dispatchEvent(new Event('change',{bubbles:true}));window.MythicDeckBuilder?.open();};
  function createDeck(){
   if(!window.MythicOnline?.isConnected?.()){window.MythicOnline?.requireLogin?.();return;}
