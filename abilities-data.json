@@ -88,13 +88,13 @@
       "glow": "rgba(134,91,178,.42)",
       "badgeKey": "norse",
       "art": "assets/cards-20261017/guardiao-nordico.png",
-      "ability": "Se houver outro Guardião Nórdico aliado na mesma fileira, o poder deste Guardião dobra.",
+      "ability": "Cada outro Guardião Nórdico aliado na mesma fileira dobra seu poder. O efeito é recíproco e acumulativo.",
       "previewOnly": false,
       "specialOnly": false,
       "abilityPending": false,
       "story": [
         "Forjado pelas tempestades do norte, o guardião protege sua gente e mantém a posição mesmo quando o gelo racha sob seus pés.",
-        "Habilidade — Vontade do Norte: dobra o próprio poder enquanto houver outro Guardião Nórdico aliado na mesma fileira.",
+        "Habilidade — Vontade do Norte: Cada outro Guardião Nórdico aliado na mesma fileira dobra seu poder. O efeito é recíproco e acumulativo.",
         "Companheiro original inspirado nas tradições nórdicas do universo Mythic Clash."
       ],
       "hologram": "assets/holograms/guardiao-nordico-hologram.png"
@@ -112,7 +112,7 @@
       "symbol": "⚔",
       "glow": "rgba(195,168,89,.42)",
       "abilityTitle": "Equipar",
-      "ability": "Somente Thor pode equipar. Concede +4 de poder.",
+      "ability": "Somente Thor pode equipar. Concede +4 de poder. Apenas um por portador; ressuscitar Thor não devolve o equipamento.",
       "art": "assets/equipment/mjolnir.png",
       "previewOnly": false,
       "story": [
@@ -135,7 +135,7 @@
       "symbol": "⚔",
       "glow": "rgba(195,168,89,.42)",
       "abilityTitle": "Equipar",
-      "ability": "Um personagem nórdico à sua escolha recebe +2 de poder.",
+      "ability": "Um aliado nórdico recebe +2 de poder. Apenas uma Runa Uruz por portador; a ressurreição não a reanexa.",
       "art": "assets/equipment/runas-nordicas.png",
       "previewOnly": false,
       "story": [
@@ -164,7 +164,7 @@
       "story": [
         "Grécia · Local.",
         "Enquanto este Local estiver ativo, todos os gregos recebem +2 de poder, nos dois lados do campo.",
-        "O bônus se soma ao Terreno ativo e termina ao encerrar a rodada."
+        "O bônus se soma ao Terreno ativo e termina ao encerrar o Round."
       ],
       "specialOnly": false
     },
@@ -181,12 +181,12 @@
       "glow": "rgba(242,158,63,.5)",
       "art": "assets/eclipse/eclipse.png",
       "abilityTitle": "Destino Celestial",
-      "ability": "Ao jogar na área de Clima/Evento, sorteia Eclipse Lunar ou Solar, com 50% de chance para cada. O resultado afeta os dois lados até o fim da rodada.",
+      "ability": "Ao jogar na área de Clima/Evento, sorteia Eclipse Lunar ou Solar, com 50% de chance para cada. O resultado afeta os dois lados até o fim do Round.",
       "previewOnly": false,
       "specialOnly": false,
       "story": [
         "Eclipse · Clima/Evento.",
-        "Ao jogar na área de Clima/Evento, sorteia Eclipse Lunar ou Solar, com 50% de chance para cada. O resultado afeta os dois lados até o fim da rodada.",
+        "Ao jogar na área de Clima/Evento, sorteia Eclipse Lunar ou Solar, com 50% de chance para cada. O resultado afeta os dois lados até o fim do Round.",
         "O efeito vale para as cartas já em campo e para as que entrarem depois, nos dois lados. Local e Terreno continuam ativos."
       ]
     },
@@ -226,7 +226,8 @@
       "kind": "unit",
       "cost": 3,
       "previewOnly": false,
-      "specialOnly": false
+      "specialOnly": false,
+      "ability": "Ao entrar, os jogadores inimigos perdem seu próximo turno. Em duplas, afeta ambos os adversários, mesmo com Heimdall."
     },
     {
       "id": "poseidon",
@@ -237,7 +238,8 @@
       "kind": "unit",
       "cost": 5,
       "previewOnly": false,
-      "specialOnly": false
+      "specialOnly": false,
+      "ability": "Ao entrar, o tsunami reduz em 2 o poder das unidades inimigas presentes na fileira superior. Novas entradas não são afetadas."
     },
     {
       "id": "zeus",
@@ -248,7 +250,8 @@
       "kind": "unit",
       "cost": 6,
       "previewOnly": false,
-      "specialOnly": false
+      "specialOnly": false,
+      "ability": "Ao entrar, destrói até duas unidades inimigas aleatórias que possam ser afetadas."
     },
     {
       "id": "hades",
@@ -260,7 +263,7 @@
       "cost": 5,
       "previewOnly": false,
       "specialOnly": false,
-      "ability": "Ao entrar em campo, escolha uma carta do seu próprio Submundo para voltar ao campo. A carta retorna na fileira de Hades e ativa sua habilidade de entrada.",
+      "ability": "Ao entrar, escolha uma unidade do seu próprio Submundo para retornar na fileira de Hades, ativando sua habilidade de entrada.",
       "abilityTitle": "Submundo Responda"
     },
     {
@@ -302,7 +305,7 @@
       "type": "Personagem",
       "subtype": "Aventureiro",
       "abilityTitle": "Rei da Festa",
-      "ability": "Ao entrar numa fileira com outros personagens, ganha +3 pontos de poder.",
+      "ability": "Enquanto houver outro aliado na mesma fileira, recebe +3 de poder. O bônus é recalculado ao mudar de fileira.",
       "kind": "unit",
       "symbol": "✦",
       "glow": "rgba(184,50,64,.42)",
@@ -313,7 +316,7 @@
       "abilityPending": false,
       "story": [
         "Lukyan · Aventureiro · Facção Alyns.",
-        "Habilidade — Rei da Festa: Ao entrar numa fileira com outros personagens, ganha +3 pontos de poder."
+        "Habilidade — Rei da Festa: Enquanto houver outro aliado na mesma fileira, recebe +3 de poder. O bônus é recalculado ao mudar de fileira."
       ],
       "sourceCard": "codex-clipboard-c87018dd-96df-4fd4-a9dd-bf6ada86a050.png",
       "sourceHologram": "35-cavaleiro-taverna.png",
@@ -329,7 +332,7 @@
       "type": "Personagem",
       "subtype": "Deus",
       "abilityTitle": "Troca Veloz",
-      "ability": "Ao entrar em campo, escolhe uma carta inimiga com 3 ou menos pontos de poder e a envia para o Submundo. Recupera uma carta de mesmo poder do Submundo do invocador.",
+      "ability": "Ao entrar, envia uma unidade inimiga ao Submundo e pode recuperar uma unidade do próprio Submundo com o mesmo poder atual que a vítima tinha antes de sair.",
       "kind": "unit",
       "symbol": "△",
       "glow": "rgba(211,165,42,.42)",
@@ -340,7 +343,7 @@
       "abilityPending": false,
       "story": [
         "Anúbis · Deus · Facção Egípcios.",
-        "Habilidade — Troca Veloz: Ao entrar em campo, escolhe uma carta inimiga com 3 ou menos pontos de poder e a envia para o Submundo. Recupera uma carta de mesmo poder do Submundo do invocador."
+        "Habilidade — Troca Veloz: Ao entrar, envia uma unidade inimiga ao Submundo e pode recuperar uma unidade do próprio Submundo com o mesmo poder atual que a vítima tinha antes de sair."
       ],
       "sourceCard": "codex-clipboard-12123f13-6683-4deb-b9f3-907f55e0d1cb.png",
       "sourceHologram": "13-anubis.png",
@@ -383,7 +386,7 @@
       "type": "Personagem",
       "subtype": "Aventureiro",
       "abilityTitle": "Rei de Todos",
-      "ability": "Com Excalibur, seu poder dobra por cada outro aliado na mesma fileira. Esta forma só aparece pela transformação de Lukyan.",
+      "ability": "Com Excalibur, seu poder dobra por cada outro aliado em todo o seu campo, sem limite de multiplicação.",
       "kind": "unit",
       "symbol": "✦",
       "glow": "rgba(184,50,64,.42)",
@@ -394,7 +397,7 @@
       "abilityPending": false,
       "story": [
         "Lukyan · Aventureiro · Facção Alyns.",
-        "Habilidade — Rei de Todos: Agora com Excalibur, Lukyan tem seu poder dobrado por todos seus aliados em campo.",
+        "Habilidade — Rei de Todos: Com Excalibur, seu poder dobra por cada outro aliado em todo o seu campo, sem limite de multiplicação.",
         "Agora com Excalibur, Lukyan tem seu poder dobrado por todos seus aliados em campo. Só aparece pela transformação de Lukyan com Excalibur; não pode entrar no baralho ou na mão."
       ],
       "sourceCard": "codex-clipboard-d61f8f3c-3e85-4f78-84a3-c6585dd5bb90.png",
@@ -468,7 +471,7 @@
       "type": "Personagem",
       "subtype": "Deus",
       "abilityTitle": "Luz da Criação",
-      "ability": "No fim da rodada, concede +1 de poder a cada egípcio aliado na mesma fileira.",
+      "ability": "No fim de cada turno do dono, concede +1 de poder a cada egípcio aliado na mesma fileira. Os bônus são limpos no fim do Round.",
       "kind": "unit",
       "symbol": "△",
       "glow": "rgba(211,165,42,.42)",
@@ -479,7 +482,7 @@
       "abilityPending": false,
       "story": [
         "Rá · Deus · Facção Egípcios.",
-        "Habilidade — Luz da Criação: No final de cada rodada, adiciona +1 de poder a todas as cartas da sua facção Egito em campo."
+        "Habilidade — Luz da Criação: No fim de cada turno do dono, concede +1 de poder a cada egípcio aliado na mesma fileira. Os bônus são limpos no fim do Round."
       ],
       "sourceCard": "codex-clipboard-37b7f1d8-baa4-4831-a3dc-f0821f2c6e2c.png",
       "sourceHologram": "43-ra.png",
@@ -771,7 +774,7 @@
       "type": "Personagem",
       "subtype": "Deus",
       "abilityTitle": "Vigília de Bifröst",
-      "ability": "Enquanto estiver em campo, nenhuma carta inimiga pode alterar o valor de poder das suas cartas nesta fileira.",
+      "ability": "Enquanto ativo, protege a própria fileira de efeitos inimigos, incluindo destruição, roubo, movimento, transformação e alterações de poder. Medusa afeta o jogador e não é bloqueada.",
       "kind": "unit",
       "symbol": "ᚠ",
       "glow": "rgba(134,91,178,.42)",
@@ -782,7 +785,7 @@
       "abilityPending": false,
       "story": [
         "Heimdall · Deus · Facção Nórdicos.",
-        "Habilidade — Vigília de Bifröst: Enquanto estiver em campo, nenhuma carta inimiga pode alterar o valor de poder das suas cartas nesta fileira."
+        "Habilidade — Vigília de Bifröst: Enquanto ativo, protege a própria fileira de efeitos inimigos, incluindo destruição, roubo, movimento, transformação e alterações de poder. Medusa afeta o jogador e não é bloqueada."
       ],
       "sourceCard": "codex-clipboard-e98b80de-372b-468c-9e24-d252445b73bc.png",
       "sourceHologram": "25-heimdall.png",
@@ -798,7 +801,7 @@
       "type": "Personagem",
       "subtype": "Deus",
       "abilityTitle": "Festival do Vinho",
-      "ability": "Todos os efeitos de cartas de ambos os lados ficam desativados até o fim da rodada atual.",
+      "ability": "Ao entrar, silencia efeitos pelas próximas 3 jogadas da partida, contando aliados e adversários. Fileiras inimigas protegidas por Heimdall resistem ao silêncio.",
       "kind": "unit",
       "symbol": "Λ",
       "glow": "rgba(36,91,137,.42)",
@@ -809,7 +812,7 @@
       "abilityPending": false,
       "story": [
         "Dionísio · Deus · Facção Grécia.",
-        "Habilidade — Festival do Vinho: Todos os efeitos de cartas de ambos os lados ficam desativados por 3 rodadas."
+        "Habilidade — Festival do Vinho: Ao entrar, silencia efeitos pelas próximas 3 jogadas da partida, contando aliados e adversários. Fileiras inimigas protegidas por Heimdall resistem ao silêncio."
       ],
       "sourceCard": "codex-clipboard-5b014a65-6ebf-44cb-9928-fbfb39bc2fd2.png",
       "sourceHologram": "22-dionisio.png",
@@ -825,7 +828,7 @@
       "type": "Personagem",
       "subtype": "Aventureiro",
       "abilityTitle": "Cleptomaníaco",
-      "ability": "Ao entrar em campo, rouba uma carta aleatória da mão do oponente.",
+      "ability": "Ao entrar, rouba uma carta aleatória da mão inimiga. Sem cartas na mão, rouba do baralho; se também estiver vazio, do Submundo inimigo.",
       "kind": "unit",
       "symbol": "✦",
       "glow": "rgba(184,50,64,.42)",
@@ -836,7 +839,7 @@
       "abilityPending": false,
       "story": [
         "Butter · Aventureiro · Facção Alyns.",
-        "Habilidade — Cleptomaníaco: Ao entrar em campo, rouba uma carta aleatória da mão do oponente."
+        "Habilidade — Cleptomaníaco: Ao entrar, rouba uma carta aleatória da mão inimiga. Sem cartas na mão, rouba do baralho; se também estiver vazio, do Submundo inimigo."
       ],
       "sourceCard": "codex-clipboard-d2b660e8-f8ca-4d4c-9762-cc136928ba91.png",
       "sourceHologram": "04-ladino-cabelos-brancos.png",
@@ -879,7 +882,7 @@
       "type": "Personagem",
       "subtype": "Semideus",
       "abilityTitle": "Os Doze Trabalhos",
-      "ability": "No fim da rodada, ganha +1 de poder. Todo progresso é zerado na troca de rodada.",
+      "ability": "No fim de cada turno do dono, ganha +1 de poder, até 12 de progresso. Todo progresso é zerado ao trocar de Round.",
       "kind": "unit",
       "symbol": "Λ",
       "glow": "rgba(36,91,137,.42)",
@@ -890,7 +893,7 @@
       "abilityPending": false,
       "story": [
         "Hércules · Semideus · Facção Grécia.",
-        "Habilidade — Os Doze Trabalhos: A cada rodada ganha 1 de poder, podendo chegar a 16 pontos após 12 rodadas, concluindo seus doze trabalhos."
+        "Habilidade — Os Doze Trabalhos: No fim de cada turno do dono, ganha +1 de poder, até 12 de progresso. Todo progresso é zerado ao trocar de Round."
       ],
       "sourceCard": "codex-clipboard-d5b85922-7de4-4393-8066-9c7ac3534d5e.png",
       "sourceHologram": "05-hercules.png",
@@ -933,7 +936,7 @@
       "type": "Personagem",
       "subtype": "Deus",
       "abilityTitle": "Olho de Hórus",
-      "ability": "Ao entrar em campo, pode ver duas cartas do adversário.",
+      "ability": "Ao entrar, somente o dono vê até duas cartas aleatórias da mão adversária, inclusive em duplas.",
       "kind": "unit",
       "symbol": "△",
       "glow": "rgba(211,165,42,.42)",
@@ -944,7 +947,7 @@
       "abilityPending": false,
       "story": [
         "Hórus · Deus · Facção Egípcios.",
-        "Habilidade — Olho de Hórus: Ao entrar em campo, pode ver duas cartas do adversário."
+        "Habilidade — Olho de Hórus: Ao entrar, somente o dono vê até duas cartas aleatórias da mão adversária, inclusive em duplas."
       ],
       "sourceCard": "codex-clipboard-fbb89ce9-5355-49c5-babd-959355264349.png",
       "sourceHologram": "30-horus.png",
@@ -1256,7 +1259,7 @@
       "story": [
         "Asgard · Local.",
         "Enquanto este Local estiver ativo, todos os nórdicos recebem +2 de poder, nos dois lados do campo.",
-        "O bônus se soma ao Terreno ativo e termina ao encerrar a rodada."
+        "O bônus se soma ao Terreno ativo e termina ao encerrar o Round."
       ],
       "specialOnly": false,
       "tags": []
@@ -1279,7 +1282,7 @@
       "story": [
         "Egito · Local.",
         "Enquanto este Local estiver ativo, todos os egípcios recebem +2 de poder, nos dois lados do campo.",
-        "O bônus se soma ao Terreno ativo e termina ao encerrar a rodada."
+        "O bônus se soma ao Terreno ativo e termina ao encerrar o Round."
       ],
       "specialOnly": false,
       "tags": []
@@ -1296,7 +1299,7 @@
       "symbol": "⚔",
       "glow": "rgba(195,168,89,.42)",
       "abilityTitle": "Equipar",
-      "ability": "Somente Hórus, Rá e Osíris podem equipar. Concede +4 de poder.",
+      "ability": "Hórus, Rá e Osíris recebem +4 de poder. Loki copiando uma dessas identidades também pode equipar. Apenas um por portador.",
       "art": "assets/equipment/olho-que-tudo-ve.png",
       "previewOnly": false,
       "story": [
@@ -1319,7 +1322,7 @@
       "symbol": "⚔",
       "glow": "rgba(195,168,89,.42)",
       "abilityTitle": "Equipar",
-      "ability": "Somente Zeus pode equipar. Concede +4 de poder.",
+      "ability": "Somente Zeus pode equipar. Concede +4 de poder. Apenas um Raio por portador.",
       "art": "assets/equipment/raio-de-zeus.png",
       "previewOnly": false,
       "story": [
@@ -1342,7 +1345,7 @@
       "symbol": "⚔",
       "glow": "rgba(195,168,89,.42)",
       "abilityTitle": "Equipar",
-      "ability": "Somente Rei Arthur e Lukyan base podem equipar. Rei Arthur recebe +4 de poder. Lukyan base se transforma em Lukyan — Rei de Todos, uma carta especial que não entra no baralho nem na mão.",
+      "ability": "Apenas uma Excalibur por portador. Rei Arthur recebe +4. Lukyan se transforma em Rei de Todos e mantém seus buffs, sem +4 extra.",
       "art": "assets/equipment/excalibur.png",
       "previewOnly": false,
       "story": [
@@ -1412,12 +1415,12 @@
       "badgeKey": "norse",
       "art": "assets/cards-20261017/loki.png",
       "abilityTitle": "Ilusão Traiçoeira",
-      "ability": "Ao entrar em campo, Loki copia o valor de poder e a habilidade de uma carta inimiga já jogada na mesa até o fim da rodada.",
+      "ability": "Ao entrar, copia a habilidade, a identidade e o poder completo de um inimigo, incluindo bônus e equipamentos. A cópia termina ao sair do campo ou encerrar o Round.",
       "previewOnly": false,
       "abilityPending": false,
       "story": [
         "Loki · Deus · Facção Nórdicos.",
-        "Habilidade — Ilusão Traiçoeira: ao entrar em campo, copia o valor de poder e a habilidade de uma carta inimiga já na mesa até o fim da rodada."
+        "Habilidade — Ilusão Traiçoeira: Ao entrar, copia a habilidade, a identidade e o poder completo de um inimigo, incluindo bônus e equipamentos. A cópia termina ao sair do campo ou encerrar o Round."
       ],
       "sourceCard": "codex-clipboard-1ba6e065-64f9-4362-b9d1-2c67da30a35c.png",
       "hologram": "assets/holograms/loki-hologram.png",
@@ -1637,9 +1640,9 @@
     "eclipse-solar"
   ],
   "titles": {
-    "revive": "Hades: escolha uma carta do seu Submundo",
+    "revive": "Hades: escolha uma unidade do seu Submundo",
     "revive_cost": "Ísis: ressuscitar carta de até 2 de poder",
-    "anubis": "Anúbis: escolha um inimigo de até 3 de poder",
+    "anubis": "Anúbis: escolha uma unidade inimiga",
     "anubis_revive": "Anúbis: recuperar carta de mesmo poder",
     "steal": "Afrodite: escolha um inimigo com menos de 5 de poder",
     "copy": "Loki: escolha qual inimigo copiar",

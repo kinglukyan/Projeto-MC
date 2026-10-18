@@ -4,7 +4,7 @@ const data={"cards": [{"id": "mjolnir", "name": "Mjölnir", "type": "Equipamento
 window.MythicEquipmentCards=[...data.cards,...data.heroes];
 window.MythicEquipmentRules={
  isEquipment(card){return Boolean(data.rules[card?.id]);},
- canTarget(card,unit,lookup){const rule=data.rules[card?.id];if(!rule||!unit)return false;return rule.ids?rule.ids.includes(unit.cardId):(data.factions[unit.cardId]||lookup[unit.cardId]?.faction)===rule.faction;},
+ canTarget(card,unit,lookup){if(window.MythicAbilities)return window.MythicAbilities.canEquip(card?.id,unit);const rule=data.rules[card?.id];if(!rule||!unit)return false;return rule.ids?rule.ids.includes(unit.cardId):(data.factions[unit.cardId]||lookup[unit.cardId]?.faction)===rule.faction;},
  apply(card,unit){const rule=data.rules[card.id];unit.equipment=[...(unit.equipment||[]),card.id];if(rule.transformId===unit.cardId){unit.sourceCardId=unit.cardId;unit.cardId=rule.transformTo;}else unit.bonus=(unit.bonus||0)+rule.bonus;},
  baseId(unit){return unit.eclipseOriginalCardId||(unit.cardId==='lukyan-rei-de-todos'?'lukyan':unit.cardId);},
  chooseTarget(card,field,lookup,onChoose){
