@@ -1,0 +1,47 @@
+/* Layout fixes isolated from the historical styles. */
+body.mythic-rework .topbar .breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:12px;line-height:1.6;min-width:0;padding:6px 0}
+body.mythic-rework .topbar .breadcrumb i{margin:0}
+body.mythic-rework .profile-progress{padding:18px 22px!important;display:flex!important;flex-direction:column!important;gap:12px!important;min-height:86px;overflow:hidden}
+body.mythic-rework .profile-progress>div{display:flex!important;justify-content:space-between;gap:16px;position:static!important;margin:0!important;line-height:1.6}
+body.mythic-rework .profile-progress progress{display:block!important;width:100%!important;height:12px!important;position:static!important;margin:0!important;order:2;flex:none}
+body.mythic-rework .collection-toolbar .search-box{display:flex!important;align-items:center!important;gap:9px!important;padding:0 14px!important;min-height:44px;min-width:0;width:min(100%,310px);box-sizing:border-box;line-height:1;overflow:hidden;border:1px solid #aa94bd88;border-radius:24px;background:#130e1d}
+body.mythic-rework .collection-toolbar .search-box::before,body.mythic-rework .collection-toolbar .search-box::after{display:none!important}
+body.mythic-rework .collection-toolbar .search-box input{display:block!important;position:static!important;flex:1 1 0;width:0!important;min-width:0!important;max-width:100%;height:42px!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;box-shadow:none!important;background:transparent!important;color:#eee2fa;line-height:normal;outline-offset:-3px}
+body.mythic-rework .collection-toolbar{gap:14px!important;padding:18px!important;align-items:center!important}
+body.mythic-rework .filter-tabs{gap:8px;flex-wrap:wrap;line-height:1.5}
+body.mythic-rework .page-heading p,body.mythic-rework .community-row small,body.mythic-rework .friend-card-identity small{line-height:1.6;overflow-wrap:anywhere}
+.friend-presence{display:flex;align-items:center;gap:5px;margin-top:4px;font:11px/1.5 system-ui;color:#a69caf}
+.friend-presence i{width:7px;height:7px;flex:none;border-radius:50%;background:#82798d}
+.friend-presence[data-status=online]{color:#91e1b3}.friend-presence[data-status=online] i{background:#64d397;box-shadow:0 0 6px #64d39788}
+.friend-presence[data-status=away]{color:#e5c481}.friend-presence[data-status=away] i{background:#e3b35e}
+body.concept-ui #view-lore .concept-lore-layout{grid-template-columns:minmax(210px,300px) minmax(0,1fr);align-items:start;gap:24px}
+body.concept-ui #view-lore .concept-lore-reader{min-width:0;overflow:hidden;position:sticky;top:20px;padding:0!important}
+body.concept-ui #view-lore .concept-story-banner{display:flex!important;flex-direction:column;align-items:stretch;min-height:320px;position:relative;overflow:hidden;padding:0!important;margin:0!important}
+body.concept-ui #view-lore .concept-story-banner-copy{position:relative!important;inset:auto!important;min-height:320px;display:flex;flex-direction:column;justify-content:flex-end;align-items:flex-start;padding:130px 28px 28px!important;z-index:2;background:linear-gradient(0deg,#120c1cf2,transparent)!important;gap:10px}
+body.concept-ui #view-lore .concept-story-banner-copy h2{margin:0;line-height:1.15;overflow-wrap:anywhere;font-size:clamp(28px,3.6vw,48px)}
+body.concept-ui #view-lore .concept-story-banner-copy p{margin:0;line-height:1.7;max-width:60ch}
+body.concept-ui #view-lore .concept-story-banner .hero-story-caption{display:none}
+.universe-story-text{position:relative;z-index:3;padding:24px 28px 32px;background:linear-gradient(#170f24f5,#120d1cfb);color:#e8deef;border-top:1px solid #ac8bcb44;line-height:1.85;font:16px/1.85 Georgia,serif;overflow-wrap:anywhere}
+.universe-story-text p{margin:0 0 20px!important;max-width:72ch}.universe-story-text p:last-child{margin-bottom:0!important}
+.universe-story-text .story-origin{display:block;font:11px/1.6 system-ui;letter-spacing:1px;color:#c8b29c;margin-bottom:18px}
+.universe-story-text a{color:#d6b9ff;text-decoration:underline;text-underline-offset:3px}
+.universe-banner-art{position:absolute;inset:0 0 auto;width:100%;aspect-ratio:2/1;background-repeat:no-repeat;z-index:0;pointer-events:none}
+body.concept-ui #view-lore .concept-story-banner[data-custom-banner]::before,body.concept-ui #view-lore .concept-story-banner[data-custom-banner] .concept-story-character{display:none!important}
+body.concept-ui #view-lore .concept-story-banner[data-custom-banner]{background:#191021!important}
+body.concept-ui #view-lore #lore-detail-backdrop{display:none!important}
+@media(max-width:900px){body.concept-ui #view-lore .concept-lore-layout{grid-template-columns:minmax(0,1fr)}body.concept-ui #view-lore .concept-lore-reader{position:static;order:-1}body.concept-ui #view-lore .lore-stories{max-height:none}.universe-story-text{padding:22px 20px;font-size:15px}body.concept-ui #view-lore .concept-story-banner-copy{padding:140px 20px 24px!important}}
+@media(max-width:500px){body.mythic-rework .profile-progress>div{flex-wrap:wrap;gap:4px}body.mythic-rework .collection-toolbar .search-box{width:100%}body.mythic-rework .topbar .breadcrumb{font-size:9px;gap:8px}}
+.painted-vfx{position:absolute;display:block;background-repeat:no-repeat;background-size:200% 200%;pointer-events:none;transform-origin:center;z-index:8;filter:drop-shadow(0 0 8px #ffffff33)}
+.painted-vfx-water{transform-origin:center bottom}.painted-vfx-lightning{transform-origin:center 90%}
+.wolf-morph{position:absolute;z-index:7;pointer-events:none}
+.wolf-morph img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 0 10px #d4a1ff88)}
+.wolf-morph .morph-before{animation:morph-before 1.8s both}.wolf-morph .morph-after{animation:morph-after 1.8s both}
+.wolf-morph.morph-waiting .morph-before{animation:none;opacity:1}.wolf-morph.morph-waiting .morph-after,.wolf-morph.morph-waiting b{animation:none;opacity:0}
+body.mythic-rework.duel-fullscreen #view-duel .unit-morphing .battle-hologram{opacity:0!important}
+.wolf-morph b{position:absolute;top:100%;left:50%;width:max-content;max-width:70vw;transform:translateX(-50%);font:700 10px/1.5 system-ui;letter-spacing:.1em;text-align:center;color:#fff0cf;text-shadow:0 2px 8px #000;animation:morph-title 1.8s both}
+@keyframes morph-before{0%,25%{opacity:1;transform:scale(1)}65%,100%{opacity:0;transform:scale(.8);filter:brightness(3) blur(5px)}}
+@keyframes morph-after{0%,30%{opacity:0;transform:scale(.65);filter:brightness(3) blur(6px)}65%,100%{opacity:1;transform:scale(1);filter:brightness(1)}}
+@keyframes morph-title{0%,35%{opacity:0}55%,85%{opacity:1}100%{opacity:0}}
+body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card.lunar-empowered>.battle-hologram{transform:translateX(-50%) scale(1.25)!important;transform-origin:center bottom;filter:drop-shadow(0 0 7px #ef568b)!important}
+body.mythic-rework.duel-fullscreen #view-duel .companion-stack.lunar-formation>.companion-formation{transform:translateX(-50%) scale(1.25);transform-origin:center bottom}
+@media(prefers-reduced-motion:reduce){.wolf-morph .morph-before{display:none}.wolf-morph .morph-after,.wolf-morph b{animation:none}.wolf-morph b{opacity:1}}

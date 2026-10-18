@@ -8,7 +8,7 @@ window.MythicEclipseRules={
  isVampire,isNight,
  roll(){const value=new Uint32Array(1);crypto.getRandomValues(value);return value[0]%2===0?'eclipse-lunar':'eclipse-solar';},
  applySide(side,climate){
-  if(climate!=='eclipse-solar')return;
+  if(climate!=='eclipse-solar'){for(const unit of side.field||[])if(unit.eclipseOriginalCardId){unit.cardId=unit.eclipseOriginalCardId;delete unit.eclipseOriginalCardId;}return;}
   const kept=[];side.underworld=side.underworld||[];
   for(const unit of side.field){
    if(isVampire(unit.cardId)){side.underworld.push(unit.eclipseOriginalCardId||unit.cardId);continue;}
@@ -28,7 +28,7 @@ window.MythicEclipseRules={
   }return Math.max(0,power);
  }
 };
-let activeReveal=null,cleanupTimer=null,resolveTimer=null;let climateKey=null;const climateEvents=new Map();
+let activeReveal=null,cleanupTimer=null,resolveTimer=null;
 const seen=new Set();
 function seenBefore(id){if(seen.has(id))return true;seen.add(id);try{const key='mythic-eclipse-reveal:'+id;if(sessionStorage.getItem(key))return true;sessionStorage.setItem(key,'1');}catch{}return false;}
 function closeReveal(){clearTimeout(cleanupTimer);clearTimeout(resolveTimer);const wasOpen=Boolean(activeReveal);activeReveal?.remove();activeReveal=null;if(wasOpen)window.MythicGame?.refreshBattle?.();}
@@ -62,9 +62,8 @@ window.MythicEclipseUI={
   if(!document.hidden&&['eclipse-lunar','eclipse-solar'].includes(climate)){
    // Older matches may not contain eclipseReveal. Derive a stable event, never reroll.
    const event=duel?.eclipseReveal?.outcome===climate?duel.eclipseReveal:{id:key,outcome:climate};
-   if(climateKey!==key&&!climateEvents.has(key)){climateEvents.set(key,event.id);reveal(event);}
+   reveal(event);
   }
-  climateKey=key;
  }
 };
 })();

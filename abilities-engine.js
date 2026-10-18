@@ -33,21 +33,21 @@ function power(x,t,u,depth=0){const s=x.s,a=s[t],c=C[u.cardId]||{power:0},id=abi
 }
 function note(x,text){x.s.log=[text,...(x.s.log||[])].slice(0,30);}
 function event(x,op,t,owner,u,extra={}){x.s.effectQueue.push({op,team:t,owner,uid:u?.uid,lane:u?.lane||0,...extra});}
-function visual(x,kind,team,targets=[]){x.s.visualEvents=[...(x.s.visualEvents||[]),{id:uid(),kind,team,targets,round:x.s.round}].slice(-80);}
+function visual(x,kind,team,targets=[],extra={}){x.s.visualEvents=[...(x.s.visualEvents||[]),{id:uid(),kind,team,targets,round:x.s.round,...extra}].slice(-80);}
 function graveUnit(x,t,u,killed=true){if(killed)visual(x,'destroy',t,[u.uid]);const a=x.s[t],p=power(x,t,u),wasLive=live(x.s);a.field=a.field.filter(v=>v.uid!==u.uid);a.grave.push({uid:uid(),cardId:origin(u),owner:u.playedBy,progress:u.progress||0,deathPower:p});for(const id of u.equipment||[])a.grave.push({uid:uid(),cardId:id,owner:u.playedBy,progress:0});syncGrave(a);if(killed&&wasLive&&ability(u)==='osiris')event(x,'osiris',t,u.playedBy,null);}
 function killMany(x,t,units){for(const u of [...units])if(x.s[t].field.some(v=>v.uid===u.uid))graveUnit(x,t,u);}
 function reconcile(x){if(!live(x.s))return;for(const t of teams){for(const u of [...x.s[t].field]){if(u.cardId==='lukyan'&&u.equipment.includes('excalibur')){u.sourceCardId='lukyan';u.cardId='lukyan-rei-de-todos';}
- if(x.s.sharedZones.climate!=='eclipse-solar')continue;if(vampire(u.cardId)){graveUnit(x,t,u);continue;}if(protectedRow(x,t,u.lane,x.s.zoneOwners.climate||t))continue;const form={'lobo-alfa':'mulher','lobo-beta':'homem','lobo-omega':'homem'}[u.cardId];if(form){u.eclipseOriginalCardId=u.cardId;u.cardId=form;delete u.copiedAbilityId;delete u.copiedPower;}}
+ if(x.s.sharedZones.climate!=='eclipse-solar'){if(u.eclipseOriginalCardId){u.cardId=u.eclipseOriginalCardId;delete u.eclipseOriginalCardId;}continue;}if(vampire(u.cardId)){graveUnit(x,t,u);continue;}if(protectedRow(x,t,u.lane,x.s.zoneOwners.climate||t))continue;const form={'lobo-alfa':'mulher','lobo-beta':'homem','lobo-omega':'homem'}[u.cardId];if(form){u.eclipseOriginalCardId=u.cardId;u.cardId=form;delete u.copiedAbilityId;delete u.copiedPower;}}
 }}
 function spawn(x,id,t,owner,lane,progress=0){const c=C[id];if(!c||c.specialOnly)throw Error('Esta carta especial não pode ser jogada diretamente.');
- if(c.kind==='unit'){const u={uid:uid(),cardId:id,playedBy:owner,lane,slot:x.s[t].field.length,bonus:0,multiplier:1,equipment:[],progress};x.s[t].field.push(u);reconcile(x);if(live(x.s)&&x.s[t].field.includes(u))for(const op of D.entries[ability(u)]||[])event(x,op,t,owner,u);return u;}
- if(c.kind==='equipment'){if(live(x.s))event(x,'equip',t,owner,null,{cardId:id,lane});return;}
- const zone=c.kind==='location'?'local':c.kind==='terrain'?'terrain':'climate';if(x.s.sharedZones[zone])throw Error('O espaço de '+zone+' já está ocupado.');x.s.zoneOwners[zone]=t;
- if(id==='eclipse'){const result=random(2)?'eclipse-solar':'eclipse-lunar';x.s.sharedZones.climate=result;x.s.eclipseReveal={id:uid(),outcome:result,round:x.s.round};}else x.s.sharedZones[zone]=id;reconcile(x);
+ if(c.kind==='unit'){const u={uid:uid(),cardId:id,playedBy:owner,lane,slot:x.s[t].field.length,bonus:0,multiplier:1,equipment:[],progress};x.s[t].field.push(u);visual(x,'enter',t,[u.uid],{sourceCardId:id});reconcile(x);if(live(x.s)&&x.s[t].field.includes(u))for(const op of D.entries[ability(u)]||[])event(x,op,t,owner,u);return u;}
+ if(c.kind==='equipment'){visual(x,'enter',t,[],{sourceCardId:id});if(live(x.s))event(x,'equip',t,owner,null,{cardId:id,lane});return;}
+ const zone=c.kind==='location'?'local':c.kind==='terrain'?'terrain':'climate';if(!window.MythicZoneRules.canReplace(c,C[x.s.sharedZones[zone]]))throw Error('Somente Clima/Evento pode substituir o Clima/Evento ativo.');x.s.zoneOwners[zone]=t;
+ visual(x,'enter',t,[],{sourceCardId:id});if(id==='eclipse'){const result=random(2)?'eclipse-solar':'eclipse-lunar';x.s.sharedZones.climate=result;x.s.eclipseReveal={id:uid(),outcome:result,round:x.s.round};}else x.s.sharedZones[zone]=id;reconcile(x);
 }
 const option=(value,label,cardId)=>({value:String(value),label,cardId});
 function unitOptions(x,t,filter=()=>true){return x.s[t].field.filter(filter).map(u=>option(u.uid,(C[u.cardId]?.name||u.cardId)+' · '+power(x,t,u)+' poder · Fileira '+(u.lane+1),u.cardId));}
-function eligibleGrave(x,e,g){const c=C[g.cardId];if(!c||c.specialOnly||g.owner!==e.owner)return false;if(e.op==='revive_cost'&&(c.power||0)>2)return false;if(e.op==='anubis_revive'&&(c.power||0)!==e.wantedPower)return false;if(c.kind==='unit')return true;if(c.kind==='equipment')return x.s[e.team].field.some(u=>canEquip(g.cardId,u));return !x.s.sharedZones[c.kind==='location'?'local':c.kind==='terrain'?'terrain':'climate'];}
+function eligibleGrave(x,e,g){const c=C[g.cardId];if(!c||c.specialOnly||g.owner!==e.owner)return false;if(e.op==='revive_cost'&&(c.power||0)>2)return false;if(e.op==='anubis_revive'&&(c.power||0)!==e.wantedPower)return false;if(c.kind==='unit')return true;if(c.kind==='equipment')return x.s[e.team].field.some(u=>canEquip(g.cardId,u));return window.MythicZoneRules.canReplace(c,C[x.s.sharedZones[c.kind==='location'?'local':c.kind==='terrain'?'terrain':'climate']]);}
 function canEquip(id,u){const r=D.equipment[id];return Boolean(r&&(r.ids?r.ids.includes(u.cardId):C[u.cardId]?.faction===r.faction));}
 function options(x,e){const a=x.s[e.team],enemy=other(e.team);switch(e.op){
  case 'revive':case 'revive_cost':case 'anubis_revive':return [...a.grave.filter(g=>eligibleGrave(x,e,g)).map(g=>option(g.uid,C[g.cardId].name,g.cardId)),option('skip','Não ressuscitar')];

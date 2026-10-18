@@ -2,7 +2,7 @@
  'use strict';
  const $=s=>document.querySelector(s),reduce=()=>matchMedia('(prefers-reduced-motion:reduce)').matches;
  let rects=new Map(),portraits=new Map(),seen=new Set(),matchKey=null,last=null,transitionUntil=0,playUntil=0,root=null,generation=0;
- const timers=new Set(),center=r=>({x:r.left+r.width/2,y:r.top+r.height/2});
+ const activeMorphs=new Map(),timers=new Set(),center=r=>({x:r.left+r.width/2,y:r.top+r.height/2});
  const wait=(fn,ms)=>{const token=generation,id=setTimeout(()=>{timers.delete(id);if(token===generation)fn();},Math.max(0,ms));timers.add(id);return id;};
  function layer(){if(!root){root=document.createElement('div');root.id='combat-effects';root.setAttribute('aria-hidden','true');document.body.append(root);}return root;}
  function effect(cls,point,text='',duration=900){const e=document.createElement('span');e.className='combat-fx '+cls;e.textContent=text;e.style.left=point.x+'px';e.style.top=point.y+'px';layer().append(e);wait(()=>e.remove(),duration);return e;}
@@ -23,10 +23,10 @@
  }
  function ghost(id,batch){const r=batch.rects.get(id),src=batch.portraits.get(id);if(!r||!src)return null;const g=effect('fx-victim fx-victim-waiting',center(r),'',30000),img=document.createElement('img');img.src=src;img.alt='';g.style.width=r.width+'px';g.style.height=r.height+'px';g.append(img);return g;}
  function showEvent(e,d,batch,ghosts){const rs=(e.targets||[]).map(id=>batch.rects.get(id)).filter(Boolean),area=$('#'+sideKey(d,e.team)+'-field')?.getBoundingClientRect(),p=area?center(area):{x:innerWidth/2,y:innerHeight/2};
-  if(e.kind==='lightning')rs.forEach((r,i)=>wait(()=>{const q=center(r),bolt=effect('fx-lightning',q,'',950);bolt.style.height=Math.max(130,q.y)+'px';effect('fx-impact',q,'',700);},i*160));
+  if(e.kind==='lightning')rs.forEach((r,i)=>wait(()=>{const q=center(r),size=Math.max(160,Math.min(420,q.y+80));window.MythicPaintedFX?.sheet(layer(),'lightning',{left:q.x-size/2,top:q.y-size*.9,width:size,height:size},1100);effect('fx-impact',q,'',700);},i*160));
   if(e.kind==='arrows')rs.forEach((r,i)=>wait(()=>{const q=center(r),arrow=effect('fx-arrow',q,'',850);if(!reduce())arrow.animate([{transform:'translate(-180px,-230px) rotate(-38deg)',opacity:0},{transform:'translate(0,0) rotate(-38deg)',opacity:1,offset:.55},{transform:'translate(0,0) rotate(-38deg)',opacity:0}],{duration:700,fill:'forwards'});effect('fx-impact',q,'',800);},i*110));
-  if(e.kind==='hearts')for(let i=0;i<(reduce()?1:9);i++){const q=rs[0]?center(rs[0]):p,h=effect('fx-heart',{x:q.x+(i%3-1)*24,y:q.y},'♥',1450);h.style.animationDelay=i*50+'ms';}
-  if(e.kind==='water'&&area){const w=effect('fx-wave',{x:area.left,y:area.top},'',1500);w.style.width=area.width+'px';w.style.height=area.height+'px';}
+  if(e.kind==='hearts'){const q=rs[0]?center(rs[0]):p;window.MythicPaintedFX?.sheet(layer(),'hearts',{left:q.x-95,top:q.y-125,width:190,height:190},1500);}
+  if(e.kind==='water'&&area){const h=Math.max(140,area.height);window.MythicPaintedFX?.sheet(layer(),'water',{left:area.left,top:area.top-h*.15,width:area.width,height:h*1.2},1600);}
   if(e.kind==='petrify'&&area){const field=$('#'+sideKey(d,e.team)+'-field');field?.classList.add('medusa-casting');wait(()=>field?.classList.remove('medusa-casting'),1800);effect('fx-stone-flash',p,'',1100);}
   if(e.kind==='destroy')for(const [i,id] of (e.targets||[]).entries()){const g=ghosts.get(id),r=batch.rects.get(id);if(g){g.classList.remove('fx-victim-waiting');wait(()=>g.remove(),900);}if(r)wait(()=>burst(r,d,e.team),350+i*70);}
  }
@@ -34,22 +34,27 @@
   const e=document.createElement('div');e.className='round-transition';e.setAttribute('role','status');const title=document.createElement('h2');title.textContent=winner?name+' ganhou essa rodada':'A rodada terminou empatada';const small=document.createElement('p');small.textContent='Rodada '+previous.round;e.append(small,title);document.body.append(e);transitionUntil=Date.now()+2000;wait(()=>{title.textContent='Vamos pra próxima';small.textContent='Prepare suas cartas';},1100);wait(()=>{e.remove();transitionUntil=0;window.MythicGame?.refreshBattle?.();},2000);
  }
  function finishUI(){if(Date.now()<playUntil){wait(finishUI,playUntil-Date.now()+20);return;}window.MythicGame?.refreshBattle?.();}
- function reset(){generation++;for(const id of timers)clearTimeout(id);timers.clear();root?.replaceChildren();document.querySelectorAll('.round-transition').forEach(e=>e.remove());document.querySelectorAll('.medusa-casting').forEach(e=>e.classList.remove('medusa-casting'));last=null;matchKey=null;transitionUntil=playUntil=0;seen.clear();}
+ function reset(){generation++;for(const id of timers)clearTimeout(id);timers.clear();root?.replaceChildren();document.querySelectorAll('.round-transition').forEach(e=>e.remove());document.querySelectorAll('.medusa-casting').forEach(e=>e.classList.remove('medusa-casting'));last=null;matchKey=null;transitionUntil=playUntil=0;seen.clear();activeMorphs.clear();document.querySelectorAll(".unit-morphing").forEach(n=>n.classList.remove("unit-morphing"));}
  window.MythicCombatFX={
   before(){capture();},
   sync(d){const key=d.onlineMatchId||d.localMatchId||'guardian',cards=window.MythicCardData?.()||[],units=fieldUnits(d),pending=pendingSource(d,units,cards);
    if(key!==matchKey){reset();matchKey=key;seen=new Set((d.visualEvents||[]).map(e=>e.id));}
    const events=(d.visualEvents||[]).filter(e=>!seen.has(e.id));events.forEach(e=>seen.add(e.id));if(seen.size>300)seen=new Set((d.visualEvents||[]).map(e=>e.id));
    // Freeze positions now: another render must not move the targets of this cast.
-   const batch={rects:new Map(rects),portraits:new Map(portraits)},cues=[];
-   const add=id=>{const card=cards.find(c=>c.id===id);if(card?.abilityTitle&&!cues.some(c=>c.id===id))cues.push(card);};
+   const batch={rects:new Map(rects),portraits:new Map(portraits)},cues=[],morphs=[];
+   const add=(id,castKey=null)=>{const card=cards.find(c=>c.id===id);if(card?.abilityTitle&&!cues.some(c=>castKey?c.castKey===castKey:c.id===id))cues.push({...card,castKey});};
+   for(const e of events){const name={water:'water',lightning:'lightning',hearts:'hearts'}[e.kind];if(name)window.MythicPaintedFX?.preload(name);}const entries=events.filter(e=>e.kind==='enter');for(const e of entries)add(e.sourceCardId||units.find(u=>(e.targets||[]).includes(u.uid))?.cardId,e.id);
    if(last){const resolved=last.pendingId&&last.pendingId!==d.pendingEffect?.id;if(resolved)add(last.pendingCard);for(const e of events)if(!resolved||!last.pendingCard)add(e.sourceCardId||sources[e.kind]);
-    if(last.round===d.round&&!resolved)for(const u of units){if(last.units.some(old=>old.uid===u.uid)||u.cardId===pending)continue;if(Number(d.round)>Number(d.silenceUntilRound||0))add(u.cardId);}
-    for(const u of units){const old=last.units.find(v=>v.uid===u.uid);if(old&&u.copiedAbilityId!==old.copiedAbilityId&&u.copiedAbilityId)add('loki');if(old&&u.cardId!==old.cardId)add(u.cardId);}
+    if(last.round===d.round&&!resolved)for(const u of units){if(last.units.some(old=>old.uid===u.uid)||entries.some(e=>(e.targets||[]).includes(u.uid)))continue;if(Number(d.round)>Number(d.silenceUntilRound||0))add(u.cardId);}
+    for(const u of units){const entered=entries.find(e=>(e.targets||[]).includes(u.uid)),old=last.units.find(v=>v.uid===u.uid)||(entered&&entered.sourceCardId!==u.cardId?{cardId:entered.sourceCardId}:null);if(old&&u.copiedAbilityId!==old.copiedAbilityId&&u.copiedAbilityId)add('loki');if(old&&u.cardId!==old.cardId){add(u.cardId,'transform:'+u.cardId);const card=cards.find(c=>c.id===u.cardId),before=cards.find(c=>c.id===old.cardId),node=document.querySelector('[data-unit-uid="'+CSS.escape(u.uid)+'"]');if(node&&card&&(/^lobo-/.test(old.cardId)||/^lobo-/.test(u.cardId))){const r=node.getBoundingClientRect(),h=Math.max(160,r.height*2.4),box={left:r.left+r.width/2-h*.4,top:r.top+r.height*.5-h,width:h*.8,height:h};morphs.push({before,card,box,uid:u.uid,lunar:/^lobo-/.test(u.cardId)});}}}
     for(const e of events)if(e.kind==='destroy'&&(e.targets||[]).some(id=>last.units.find(u=>u.uid===id)?.cardId==='osiris'))add('osiris');
    }
    const ghosts=new Map();for(const e of events)if(e.kind==='destroy')for(const id of e.targets||[])if(!ghosts.has(id))ghosts.set(id,ghost(id,batch));
-   if(events.length||cues.length){const start=Math.max(0,playUntil-Date.now(),window.MythicEclipseUI?.isRevealing()?3200:0),intro=reduce()?450:1250;cues.forEach((card,i)=>wait(()=>portrait(card),start+i*intro));const impact=start+cues.length*intro;for(const e of events)wait(()=>showEvent(e,d,batch,ghosts),impact);playUntil=Date.now()+impact+(events.length?1800:200);wait(finishUI,playUntil-Date.now()+20);}
+   if(events.length||cues.length||morphs.length){const start=Math.max(0,playUntil-Date.now(),window.MythicEclipseUI?.isRevealing()?3200:0),intro=reduce()?450:1250;cues.forEach((card,i)=>wait(()=>portrait(card),start+i*intro));const castEnd=start+cues.length*intro;
+    for(const m of morphs){const ends=Date.now()+castEnd+1850;activeMorphs.set(m.uid,ends);window.MythicPaintedFX?.transform(layer(),m.before,m.card,m.box,m.lunar,castEnd,d.sharedZones?.climate==='eclipse-lunar');wait(()=>{if(activeMorphs.get(m.uid)!==ends)return;activeMorphs.delete(m.uid);document.querySelector('[data-unit-uid="'+CSS.escape(m.uid)+'"]')?.classList.remove('unit-morphing');},castEnd+1850);}
+    const impact=castEnd+(morphs.length?1850:0);for(const e of events)wait(()=>showEvent(e,d,batch,ghosts),impact);playUntil=Date.now()+impact+(events.some(e=>e.kind!=='enter')?1800:200);wait(finishUI,playUntil-Date.now()+20);}
+   document.querySelectorAll('[data-unit-uid]').forEach(node=>{node.classList.toggle('unit-morphing',(activeMorphs.get(node.dataset.unitUid)||0)>Date.now());const u=units.find(v=>v.uid===node.dataset.unitUid),night=u&&/^lobo-/.test(u.cardId);node.classList.toggle('lunar-empowered',Boolean(night&&d.sharedZones?.climate==='eclipse-lunar'&&Number(d.round)>Number(d.silenceUntilRound||0)));});
+   document.querySelectorAll('.companion-stack').forEach(pile=>pile.classList.toggle('lunar-formation',Boolean(pile.querySelector('.lunar-empowered'))));
    const petrified=d.rulesState?.petrifiedTeams||{},mine=d.myTeam||'player_one',other=mine==='player_one'?'player_two':'player_one';$('#player-field')?.classList.toggle('medusa-petrified',Boolean(d.player.skipNextTurn||petrified[mine]));$('#enemy-field')?.classList.toggle('medusa-petrified',Boolean(d.enemy.skipNextTurn||petrified[other]));
    if(last){for(const side of ['player','enemy'])if(d[side].trixx<last[side+'Stars']){const meter=$('#'+side+'-trixx'),star=meter?.children[d[side].trixx];if(star)burst(star.getBoundingClientRect(),d,teamFor(d,side),true);}if(d.round>last.round)roundBanner(d,last);}
    last={round:d.round,playerStars:d.player.trixx,enemyStars:d.enemy.trixx,units,pendingId:d.pendingEffect?.id,pendingCard:pending};
