@@ -20,7 +20,7 @@ function power(x,t,u,depth=0){const s=x.s,a=s[t],c=C[u.cardId]||{power:0},id=abi
  p+=2*a.field.filter(v=>v!==u&&ability(v)==='athena'&&v.lane===u.lane).length;
  if(id==='lobo-omega'&&depth===0&&a.field.filter(v=>v.lane===u.lane).length===1){const enemy=x.s[other(t)].field.filter(v=>v.lane===u.lane).reduce((n,v)=>n+power(x,other(t),v,1),0);if(enemy>p)p+=8;}
  if(id==='mulher')p*=2**a.field.filter(v=>v.cardId==='homem').length;
- if(id==='homem')p*=2**a.field.filter(v=>v!==u&&v.cardId==='homem').length;
+ if(id==='homem')p*=2**a.field.filter(v=>v.uid!==u.uid&&v.cardId==='homem').length;
  p*=Number(u.multiplier)||1;
  if(!protectedRow(x,t,u.lane,s.zoneOwners.local||t)&&D.locations[s.sharedZones.local]===c.faction)p+=2;
  if(!protectedRow(x,t,u.lane,s.zoneOwners.terrain||t))p+=terrainBonus(s.sharedZones.terrain,c);
@@ -36,9 +36,15 @@ function event(x,op,t,owner,u,extra={}){x.s.effectQueue.push({op,team:t,owner,ui
 function visual(x,kind,team,targets=[],extra={}){x.s.visualEvents=[...(x.s.visualEvents||[]),{id:uid(),kind,team,targets,round:x.s.round,...extra}].slice(-80);}
 function graveUnit(x,t,u,killed=true){if(killed)visual(x,'destroy',t,[u.uid]);const a=x.s[t],p=power(x,t,u),wasLive=live(x.s);a.field=a.field.filter(v=>v.uid!==u.uid);a.grave.push({uid:uid(),cardId:origin(u),owner:u.playedBy,progress:u.progress||0,deathPower:p});for(const id of u.equipment||[])a.grave.push({uid:uid(),cardId:id,owner:u.playedBy,progress:0});syncGrave(a);if(killed&&wasLive&&ability(u)==='osiris')event(x,'osiris',t,u.playedBy,null);}
 function killMany(x,t,units){for(const u of [...units])if(x.s[t].field.some(v=>v.uid===u.uid))graveUnit(x,t,u);}
-function reconcile(x){if(!live(x.s))return;for(const t of teams){for(const u of [...x.s[t].field]){if(u.cardId==='lukyan'&&u.equipment.includes('excalibur')){u.sourceCardId='lukyan';u.cardId='lukyan-rei-de-todos';}
- if(x.s.sharedZones.climate!=='eclipse-solar'){if(u.eclipseOriginalCardId){u.cardId=u.eclipseOriginalCardId;delete u.eclipseOriginalCardId;}continue;}if(vampire(u.cardId)){graveUnit(x,t,u);continue;}if(protectedRow(x,t,u.lane,x.s.zoneOwners.climate||t))continue;const form={'lobo-alfa':'mulher','lobo-beta':'homem','lobo-omega':'homem'}[u.cardId];if(form){u.eclipseOriginalCardId=u.cardId;u.cardId=form;delete u.copiedAbilityId;delete u.copiedPower;}}
-}}
+function reconcile(x){const enabled=live(x.s),climate=x.s.sharedZones.climate;for(const t of teams)for(const u of [...x.s[t].field]){
+ if(enabled&&u.cardId==='lukyan'&&u.equipment.includes('excalibur')){u.sourceCardId='lukyan';u.cardId='lukyan-rei-de-todos';}
+ const original=C[u.eclipseOriginalCardId]?u.eclipseOriginalCardId:u.cardId,active=enabled&&!protectedRow(x,t,u.lane,x.s.zoneOwners.climate||t);
+ if(active&&climate==='eclipse-solar'&&vampire(original)){graveUnit(x,t,u);continue;}
+ const form=window.MythicEclipseForms.formFor(original,active?climate:null,C[original]);
+ if(form!==u.cardId){u.cardId=form;delete u.copiedAbilityId;delete u.copiedPower;}
+ if(form!==original)u.eclipseOriginalCardId=original;else delete u.eclipseOriginalCardId;
+ }}
+
 function spawn(x,id,t,owner,lane,progress=0){const c=C[id];if(!c||c.specialOnly)throw Error('Esta carta especial não pode ser jogada diretamente.');
  if(c.kind==='unit'){const u={uid:uid(),cardId:id,playedBy:owner,lane,slot:x.s[t].field.length,bonus:0,multiplier:1,equipment:[],progress};x.s[t].field.push(u);visual(x,'enter',t,[u.uid],{sourceCardId:id});reconcile(x);if(live(x.s)&&x.s[t].field.includes(u))for(const op of D.entries[ability(u)]||[])event(x,op,t,owner,u);return u;}
  if(c.kind==='equipment'){visual(x,'enter',t,[],{sourceCardId:id});if(live(x.s))event(x,'equip',t,owner,null,{cardId:id,lane});return;}
@@ -103,14 +109,14 @@ function resolve(x,e){const s=x.s,t=e.team,a=s[t],en=other(t),b=s[en],u=a.field.
 }
 function drain(x,auto=false){let n=0;while(x.s.effectQueue.length&&!x.s.pendingEffect){if(++n>256)throw Error('A sequência de habilidades excedeu o limite.');const e=x.s.effectQueue.shift();if(!live(x.s))continue;const list=options(x,e);if(list&&e.selection===undefined){if(!list.length)continue;if(auto)e.selection=list[0].value;else{x.s.pendingEffect={id:uid(),actor:e.owner,event:e,options:list,title:titles[e.op]||'Escolha o alvo'};break;}}resolve(x,e);}return x;}
 const titles={revive:'Hades: escolha uma carta do seu Submundo',revive_cost:'Ísis: ressuscitar carta de até 2 de poder',anubis:'Anúbis: escolha um inimigo de até 3 de poder',anubis_revive:'Anúbis: recuperar carta de mesmo poder',steal:'Afrodite: escolha um inimigo com menos de 5 de poder',copy:'Loki: escolha qual inimigo copiar',move:'Hermes: escolha outro aliado',move_lane:'Hermes: escolha a nova fileira',rally:'Ragnar: reunir o aliado de menor poder',shuffle_lane:'Seth: escolha a fileira',improve:'Hefestos: escolha um aliado equipado',equip:'Escolha quem receberá o equipamento',foresight:'Odin: observar o topo do baralho',destroy_strongest:'Thor: escolha o inimigo de maior poder'};
-function action(x,owner,a,auto=false){init(x);const res=x.r[owner],t=res?.team;if(!res||!teams.includes(t))throw Error('Invocador inválido.');if(a.type==='resolve_effect'){const pending=x.s.pendingEffect;if(!pending||pending.actor!==owner||pending.id!==a.choice_id)throw Error('Esta escolha não está mais disponível.');if(!pending.options.some(v=>v.value===String(a.choice_value)))throw Error('Escolha inválida.');delete x.s.pendingEffect;x.s.effectQueue.unshift({...pending.event,selection:String(a.choice_value)});return drain(x,auto);}
+function action(x,owner,a,auto=false){init(x);reconcile(x);const res=x.r[owner],t=res?.team;if(!res||!teams.includes(t))throw Error('Invocador inválido.');if(a.type==='resolve_effect'){const pending=x.s.pendingEffect;if(!pending||pending.actor!==owner||pending.id!==a.choice_id)throw Error('Esta escolha não está mais disponível.');if(!pending.options.some(v=>v.value===String(a.choice_value)))throw Error('Escolha inválida.');delete x.s.pendingEffect;x.s.effectQueue.unshift({...pending.event,selection:String(a.choice_value)});return drain(x,auto);}
  if(x.s.pendingEffect)throw Error('Resolva a habilidade pendente antes de jogar.');if(res.playedThisTurn||res.passed||res.skipNextTurn)throw Error('Não é possível jogar neste turno.');const c=C[a.card_id],i=res.hand.indexOf(a.card_id);if(!c||c.specialOnly||i<0)throw Error('Carta indisponível.');const lane=Number.isInteger(a.lane)?Math.max(0,Math.min(2,a.lane)):0;
  if(c.kind==='equipment'&&!x.s[t].field.some(u=>canEquip(c.id,u)))throw Error('Não há um aliado compatível para este equipamento.');
  res.hand.splice(i,1);spawn(x,c.id,t,owner,lane);res.playedThisTurn=true;note(x,c.name+' entrou em jogo.');return drain(x,auto);
 }
-function turnStart(x,owner,auto=false){init(x);const t=x.r[owner]?.team;if(!t||x.r[owner].skipNextTurn)return x;for(const u of x.s[t].field){if(u.playedBy===owner&&u.odinReady){delete u.odinReady;event(x,'foresight',t,owner,u);}}x.s.abilityPhase='turn_start';drain(x,auto);if(!x.s.pendingEffect)delete x.s.abilityPhase;return x;}
+function turnStart(x,owner,auto=false){init(x);reconcile(x);const t=x.r[owner]?.team;if(!t||x.r[owner].skipNextTurn)return x;for(const u of x.s[t].field){if(u.playedBy===owner&&u.odinReady){delete u.odinReady;event(x,'foresight',t,owner,u);}}x.s.abilityPhase='turn_start';drain(x,auto);if(!x.s.pendingEffect)delete x.s.abilityPhase;return x;}
 function roundEnd(x){init(x);if(x.s.endEffectsRound===x.s.round)return;x.s.endEffectsRound=x.s.round;if(live(x.s))for(const t of teams){const a=x.s[t];for(const u of [...a.field]){if(ability(u)==='ra')for(const v of a.field)if(C[v.cardId]?.faction==='Egípcios')change(x,t,v,t,1);if(ability(u)==='hercules')u.progress=Math.min(12,(u.progress||0)+1);}}}
 function clearRound(x){init(x);for(const t of teams){for(const u of [...x.s[t].field])graveUnit(x,t,u,false);x.s[t].roundScoreBonus=0;}x.s.sharedZones={local:null,terrain:null,climate:null};x.s.effectQueue=[];delete x.s.pendingEffect;delete x.s.abilityPhase;x.s.silenceUntilRound=0;x.s.zoneOwners={};delete x.s.eclipseReveal;for(const t of teams){for(const g of x.s[t].grave)g.progress=0;x.s[t].greekAura=0;x.s[t].norseAura=0;}for(const res of Object.values(x.r)){res.skipNextTurn=false;delete res.privateEffects;}}
 function score(x,t){return Math.max(0,x.s[t].field.reduce((n,u)=>n+power(x,t,u),0)+(live(x.s)?Number(x.s[t].roundScoreBonus)||0:0));}
-window.MythicAbilities={C,D,init,power,score,action,drain,turnStart,roundEnd,clearRound,live,canEquip,origin,copy,destroyUnit(x,t,id){const unit=x.s[t]?.field.find(u=>u.uid===id);if(unit)graveUnit(x,t,unit);return drain(x);}};
+window.MythicAbilities={C,D,init,reconcile,power,score,action,drain,turnStart,roundEnd,clearRound,live,canEquip,origin,copy,destroyUnit(x,t,id){const unit=x.s[t]?.field.find(u=>u.uid===id);if(unit)graveUnit(x,t,unit);return drain(x);}};
 })();

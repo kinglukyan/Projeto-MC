@@ -33,7 +33,7 @@
       "glow": "rgba(199,65,65,.5)",
       "art": "assets/eclipse/eclipse-lunar.png",
       "abilityTitle": "Destino Celestial",
-      "ability": "Dobra o poder dos lobisomens, vampiros e de Ártemis. Apolo e Rá perdem metade do poder, arredondada para baixo.",
+      "ability": "Mulher e Homem da facção Monstros assumem as formas Alfa e Beta. Lobisomens transformados pelo Solar recuperam sua forma original. Dobra o poder dos lobisomens, vampiros e de Ártemis; Apolo e Rá perdem metade, arredondada para baixo.",
       "previewOnly": false,
       "specialOnly": true,
       "story": [
@@ -84,5 +84,9 @@
   "chance": {
     "lunar": 0.5,
     "solar": 0.5
+  },
+  "lunarForms": {
+    "mulher": "lobo-alfa",
+    "homem": "lobo-beta"
   }
 }
