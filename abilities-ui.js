@@ -5,6 +5,7 @@ function modal(title){const d=document.createElement('dialog');d.id='ability-cho
 function button(option,cards,callback){const b=document.createElement('button');b.type='button';const c=cards[option.cardId];if(c?.art){const img=document.createElement('img');img.src=c.art;img.alt='';b.append(img);}const text=document.createElement('span');text.textContent=option.label;b.append(text);b.onclick=()=>callback(option.value);return b;}
 window.MythicAbilitiesUI={
  sync(duel,cards,choose){
+  if(window.MythicCombatFX?.isBusy()||window.MythicEclipseUI?.isRevealing()){if(openId)close();return;}
   const p=duel?.pendingEffect,me=duel?.online?window.MythicOnline?.userId?.():'player';
   if(!p||p.actor!==me){if(openId)close();return;}
   if(openId===p.id){for(const b of document.querySelectorAll('#ability-choice-dialog button'))b.disabled=false;return;}close();openId=p.id;
@@ -14,7 +15,7 @@ window.MythicAbilitiesUI={
   for(const option of p.options){list.append(button(option,cards,value=>{for(const b of list.querySelectorAll('button'))b.disabled=true;choose({type:'resolve_effect',choice_id:p.id,choice_value:value});}));}
   document.body.append(d);d.showModal();
  },
- reveal(duel,cards){const r=duel?.player?.privateEffects;if(!r?.id||r.id===revealId||!r.cards?.length||duel.pendingEffect)return;try{if(sessionStorage.getItem('mythic-reveal:'+r.id))return;sessionStorage.setItem('mythic-reveal:'+r.id,'1');}catch{}revealId=r.id;close();const [d,list]=modal('Olho de Hórus — cartas reveladas');for(const id of r.cards)list.append(button({cardId:id,label:cards[id]?.name||id},cards,()=>{}));const done=document.createElement('button');done.type='button';done.className='ability-choice-done';done.textContent='Continuar';done.onclick=()=>d.close();d.append(done);d.addEventListener('close',()=>d.remove());document.body.append(d);d.showModal();},
+ reveal(duel,cards){if(window.MythicCombatFX?.isBusy()||window.MythicEclipseUI?.isRevealing())return;const r=duel?.player?.privateEffects;if(!r?.id||r.id===revealId||!r.cards?.length||duel.pendingEffect)return;try{if(sessionStorage.getItem('mythic-reveal:'+r.id))return;sessionStorage.setItem('mythic-reveal:'+r.id,'1');}catch{}revealId=r.id;close();const [d,list]=modal('Olho de Hórus — cartas reveladas');for(const id of r.cards)list.append(button({cardId:id,label:cards[id]?.name||id},cards,()=>{}));const done=document.createElement('button');done.type='button';done.className='ability-choice-done';done.textContent='Continuar';done.onclick=()=>d.close();d.append(done);d.addEventListener('close',()=>d.remove());document.body.append(d);d.showModal();},
  close
 };
 })();

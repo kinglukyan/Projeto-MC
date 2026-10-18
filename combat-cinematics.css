@@ -1,0 +1,29 @@
+/* Interactive neighbours and horizontal swipe in the duel gallery. */
+#card-detail-modal.duel-card-expanded{touch-action:pan-y;user-select:none;-webkit-user-select:none}
+#card-detail-modal.duel-card-expanded .expanded-hand-fan{pointer-events:none}
+#card-detail-modal.duel-card-expanded .fan-card{pointer-events:auto;cursor:pointer;padding:0;color:inherit;font:inherit;touch-action:pan-y}
+#card-detail-modal.duel-card-expanded .fan-card img,#card-detail-modal.duel-card-expanded .card-detail-art img{-webkit-user-drag:none;user-select:none}
+#card-detail-modal.duel-card-expanded .fan-card:focus-visible{outline:3px solid #dfc4ff;outline-offset:5px}
+body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card>.battle-hologram{width:71.25px!important;height:85px!important}
+body.mythic-rework.duel-fullscreen #view-duel .companion-stack>.companion-formation{grid-template-columns:repeat(var(--formation-cols),42.5px)}
+body.mythic-rework.duel-fullscreen #view-duel .companion-formation>.battle-hologram{width:42.5px!important;height:var(--member-height,67.5px)!important}
+body.mythic-rework.duel-fullscreen #view-duel .battle-field .battle-lane{padding-top:max(59px,var(--formation-headroom,0px))!important}
+body #combat-effects{z-index:100040}
+body .fx-victim.fx-victim-waiting{animation:none;opacity:1;filter:none;z-index:1}
+body .fx-victim{z-index:1}
+.ability-cinematic{--cast:#c2a1ff;position:absolute;inset:0;display:grid;place-items:center;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at center,#130d27b8,transparent 75%);animation:cast-veil 1.2s both;z-index:10;pointer-events:none}
+.ability-cinematic[data-theme=lightning]{--cast:#c9c0ff}.ability-cinematic[data-theme=stone]{--cast:#97e6bb}.ability-cinematic[data-theme=love]{--cast:#ff93d4}.ability-cinematic[data-theme=ocean]{--cast:#64e3ff}.ability-cinematic[data-theme=moon]{--cast:#cbdcff}.ability-cinematic[data-theme=underworld]{--cast:#b28eff}.ability-cinematic[data-theme=life]{--cast:#8ff2d0}.ability-cinematic[data-theme=sun]{--cast:#ffd378}.ability-cinematic[data-theme=wine]{--cast:#df86ff}.ability-cinematic[data-theme=sand]{--cast:#e6c48e}
+.ability-cinematic-aura{position:absolute;width:min(70vw,65vh);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--cast) 38%,transparent),transparent 68%);border:1px solid color-mix(in srgb,var(--cast) 35%,transparent);box-shadow:0 0 65px color-mix(in srgb,var(--cast) 25%,transparent);animation:cast-ring 1.2s both}
+.ability-cinematic-hero{position:absolute;left:50%;bottom:15%;width:min(75vw,620px);height:min(75dvh,740px);object-fit:contain;object-position:center bottom;filter:drop-shadow(0 0 22px var(--cast)) drop-shadow(0 15px 28px #000);animation:cast-hero 1.2s cubic-bezier(.17,.75,.2,1) both}
+.ability-cinematic-copy{position:absolute;bottom:12%;left:6%;right:6%;text-align:center;filter:drop-shadow(0 3px 8px #000);animation:cast-title 1.2s both}
+.ability-cinematic-copy small{font:700 clamp(11px,2vw,16px)/1.6 system-ui;letter-spacing:.3em;text-transform:uppercase;color:var(--cast)}
+.ability-cinematic-copy h2{margin:8px 0;color:#fff1df;font:700 clamp(25px,5vw,60px)/1.15 Georgia,serif;text-shadow:0 0 28px var(--cast),0 3px 10px #000}
+.ability-cinematic-spark{position:absolute;left:calc(10% + var(--i)*7%);top:80%;width:4px;height:12px;background:var(--cast);box-shadow:0 0 15px var(--cast);animation:cast-spark 1s calc(var(--i)*.025s) both}
+.ability-cinematic[data-theme=love] .ability-cinematic-spark{width:12px;height:12px;clip-path:polygon(50% 100%,0 35%,0 10%,25% 0,50% 20%,75% 0,100% 10%,100% 35%)}
+@keyframes cast-hero{0%{opacity:0;transform:translateX(-50%) translateY(80px) scale(.72)}20%,72%{opacity:1;transform:translateX(-50%) translateY(0) scale(1)}100%{opacity:0;transform:translateX(-50%) translateY(-15px) scale(1.06)}}
+@keyframes cast-title{0%,12%{opacity:0;transform:translateY(24px)}30%,80%{opacity:1;transform:none}100%{opacity:0;transform:translateY(-12px)}}
+@keyframes cast-ring{0%{opacity:0;transform:scale(.3) rotate(-30deg)}35%,65%{opacity:1}100%{opacity:0;transform:scale(1.35) rotate(35deg)}}
+@keyframes cast-veil{0%,100%{opacity:0}15%,85%{opacity:1}}
+@keyframes cast-spark{from{opacity:0;transform:translateY(0) rotate(20deg)}30%{opacity:1}to{opacity:0;transform:translateY(-55vh) rotate(150deg)}}
+@media(max-width:760px){body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card>.battle-hologram{width:52.5px!important;height:72.5px!important}body.mythic-rework.duel-fullscreen #view-duel .companion-stack>.companion-formation{grid-template-columns:repeat(var(--formation-cols),35px)}body.mythic-rework.duel-fullscreen #view-duel .companion-formation>.battle-hologram{width:35px!important;height:var(--member-height,55px)!important}body.mythic-rework.duel-fullscreen #view-duel .battle-field .battle-lane{padding-top:max(54px,var(--formation-headroom,0px))!important}.ability-cinematic-hero{height:66dvh;bottom:19%}.ability-cinematic-copy{bottom:15%}}
+@media(prefers-reduced-motion:reduce){.ability-cinematic,.ability-cinematic *{animation:none!important}.ability-cinematic-hero{transform:translateX(-50%)}.ability-cinematic-spark{display:none}}

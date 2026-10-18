@@ -28,13 +28,13 @@ window.MythicEclipseRules={
   }return Math.max(0,power);
  }
 };
-let activeReveal=null,cleanupTimer=null,resolveTimer=null;
+let activeReveal=null,cleanupTimer=null,resolveTimer=null;let climateKey=null;const climateEvents=new Map();
 const seen=new Set();
 function seenBefore(id){if(seen.has(id))return true;seen.add(id);try{const key='mythic-eclipse-reveal:'+id;if(sessionStorage.getItem(key))return true;sessionStorage.setItem(key,'1');}catch{}return false;}
-function closeReveal(){clearTimeout(cleanupTimer);clearTimeout(resolveTimer);activeReveal?.remove();activeReveal=null;}
+function closeReveal(){clearTimeout(cleanupTimer);clearTimeout(resolveTimer);const wasOpen=Boolean(activeReveal);activeReveal?.remove();activeReveal=null;if(wasOpen)window.MythicGame?.refreshBattle?.();}
 function reveal(event){
  if(!event?.id||!['eclipse-lunar','eclipse-solar'].includes(event.outcome)||seenBefore(event.id))return;
- closeReveal();const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches||document.querySelector('#setting-effects')?.checked===false;
+ if(activeReveal){clearTimeout(cleanupTimer);clearTimeout(resolveTimer);activeReveal.remove();activeReveal=null;}const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
  const panel=document.createElement('section');panel.className='eclipse-reveal';panel.dataset.outcome=event.outcome;panel.setAttribute('role','status');panel.setAttribute('aria-live','polite');panel.setAttribute('aria-label','Sorteio do Eclipse');
  panel.innerHTML='<div class="eclipse-reveal-vignette"></div><div class="eclipse-reveal-copy"><p>O DESTINO DA ARENA</p><h2>Sol ou Lua?</h2><span>50% LUNAR · 50% SOLAR</span></div><div class="eclipse-orbit"><i></i><i></i><div class="eclipse-orb"></div></div><div class="eclipse-fates"></div><div class="eclipse-result" aria-live="polite"></div><button type="button" class="eclipse-skip">Pular animação</button>';
  const fates=panel.querySelector('.eclipse-fates');
@@ -58,7 +58,13 @@ window.MythicEclipseUI={
    badge.textContent=climate==='eclipse-lunar'?'☾ ECLIPSE LUNAR':'☀ ECLIPSE SOLAR';
    if(!board.querySelector('.eclipse-map-particles')){const particles=document.createElement('div');particles.className='eclipse-map-particles';particles.setAttribute('aria-hidden','true');for(let i=0;i<16;i++){const mote=document.createElement('i');mote.style.cssText='--i:'+i+';left:'+((i*37)%100)+'%;top:'+((i*19)%100)+'%';particles.append(mote);}board.append(particles);}
   }else{delete board.dataset.eclipse;board.querySelector('.eclipse-map-badge')?.remove();board.querySelector('.eclipse-map-particles')?.remove();}
-  reveal(duel?.eclipseReveal);
+  const match=duel?.onlineMatchId||duel?.localMatchId||'guardian',key=match+':'+duel?.round+':'+climate;
+  if(!document.hidden&&['eclipse-lunar','eclipse-solar'].includes(climate)){
+   // Older matches may not contain eclipseReveal. Derive a stable event, never reroll.
+   const event=duel?.eclipseReveal?.outcome===climate?duel.eclipseReveal:{id:key,outcome:climate};
+   if(climateKey!==key&&!climateEvents.has(key)){climateEvents.set(key,event.id);reveal(event);}
+  }
+  climateKey=key;
  }
 };
 })();
