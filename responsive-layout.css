@@ -1,0 +1,171 @@
+/* Final responsive layer: page layouts and the navigation drawer share one width budget. */
+@media(max-width:1100px){
+ body.mythic-rework #view-duel .battle-hand{justify-content:flex-start;max-width:100%;overflow-x:auto;overscroll-behavior-x:contain}
+ body.concept-ui .view:not(#view-duel)>.page-heading{flex-wrap:wrap;align-items:flex-start;gap:14px}
+ body.concept-ui .view:not(#view-duel)>.page-heading>div:first-child{flex:1 0 100%;width:100%;min-width:0}
+ body.concept-ui .view:not(#view-duel)>.page-heading :is(h1,p){max-width:100%;word-break:normal;overflow-wrap:break-word}
+ body.concept-ui #view-decks .page-heading>.button{flex:1 1 180px;margin:0;white-space:normal}
+ body.concept-ui #view-decks .concept-deck-layout{grid-template-columns:minmax(0,1fr)}
+ body.concept-ui #view-decks .concept-deck-detail{position:static}
+ body.concept-ui #view-profile .legend-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.concept-ui #view-profile .legend-grid>.panel{min-width:0;grid-column:auto}
+}
+@media(max-width:960px){
+ body.mythic-rework.arcane-sidebar .sidebar{grid-template-columns:minmax(0,1fr);justify-content:stretch;align-items:stretch;height:calc(100vh - 16px)!important;height:calc(100dvh - 16px)!important;overflow:hidden!important}
+ /* Override older !important rules that turned the drawer into a horizontal nav. */
+ body.mythic-rework.arcane-sidebar .sidebar .main-nav{display:grid!important;grid-template-columns:minmax(0,1fr)!important;gap:7px!important;justify-content:stretch!important}
+ body.mythic-rework.arcane-sidebar .sidebar :is(.deck-nav-entry,.friends-nav-entry,.missions-nav-entry){width:100%!important;min-width:0!important;grid-column:1/-1}
+ body.mythic-rework.arcane-sidebar .sidebar .nav-item:not([hidden]){display:flex!important;flex-direction:row!important;justify-content:flex-start!important;flex:none!important;width:100%!important;max-width:100%!important;min-height:48px!important;height:auto!important;padding:11px 28px 11px 13px!important;gap:12px!important;font-size:14px!important;text-align:left!important}
+ body.mythic-rework.arcane-sidebar .sidebar .nav-item>span:not(.nav-icon){font-size:14px!important;line-height:1.45!important;white-space:normal!important;overflow-wrap:normal!important;word-break:normal!important}
+ body.mythic-rework.arcane-sidebar .sidebar .nav-item[data-view='community-decks']>span:last-child{width:auto!important;max-width:none!important;flex:1 1 auto!important}
+ body.mythic-rework.arcane-sidebar .sidebar .nav-icon{flex:0 0 26px!important;width:26px!important}
+ body.mythic-rework.arcane-sidebar .sidebar :is(.deck-nav-chevron,.friends-nav-chevron,.missions-nav-chevron){position:static!important;inset:auto!important;margin-left:auto!important;flex:0 0 auto!important}
+ body.mythic-rework.arcane-sidebar .sidebar .deck-submenu .nav-item:not([hidden]){padding:10px!important;font-size:13px!important;min-height:44px!important}
+ body.mythic-rework.arcane-sidebar .sidebar .arcane-nav-scroll{overflow-y:auto;min-height:0;-webkit-overflow-scrolling:touch}
+ body.mythic-rework.arcane-sidebar .sidebar>.brand{width:100%!important;max-width:100%!important;padding-right:0}
+ body.mythic-rework.arcane-sidebar .sidebar .brand-name{font-size:clamp(18px,5.8vw,25px)}
+ body.mythic-rework.arcane-sidebar:not(.duel-fullscreen) .main-content{padding-inline:16px;max-width:100%}
+ body.concept-ui .view:not(#view-duel){width:100%;min-width:0}
+ body.concept-ui .view:not(#view-duel) :is(.panel,.epic-panel,form,fieldset){min-width:0;max-width:100%}
+ body.concept-ui .view:not(#view-duel) :is(input,select,textarea){min-width:0;max-width:100%;font-size:16px}
+ body.concept-ui .view:not(#view-duel) .button{min-height:44px;white-space:normal;line-height:1.45;font-size:13px;padding:11px 16px;text-align:center}
+ body.concept-ui .view:not(#view-duel)>.page-heading{padding:24px 0;min-height:0}
+ body.concept-ui .view:not(#view-duel)>.page-heading h1{font-size:clamp(27px,4vw,38px);line-height:1.2;margin:0}
+ body.concept-ui .view:not(#view-duel)>.page-heading p:not(.eyebrow){font-size:14px;line-height:1.65;max-width:65ch}
+ body.concept-ui .view:not(#view-duel) .eyebrow{font-size:10px;line-height:1.7;letter-spacing:.12em}
+ body.concept-ui #view-decks .concept-deck-tools{gap:12px}
+ body.concept-ui #view-decks .concept-deck-tools input{min-width:0;flex:1 1 220px;min-height:44px}
+ body.concept-ui #view-decks .concept-deck-tools select{flex:1 1 150px;min-height:44px}
+ body.concept-ui #view-decks .concept-deck-gallery{grid-template-columns:repeat(3,minmax(0,1fr))}
+ body.concept-ui #view-collection .collection-toolbar{display:flex;flex-wrap:wrap;gap:14px;padding:16px}
+ body.concept-ui #view-collection .collection-toolbar .search-box{flex:1 1 220px;width:auto;min-width:0;min-height:44px}
+ body.concept-ui #view-collection .collection-tabs{display:flex;flex-wrap:wrap;gap:6px;width:100%}
+ body.concept-ui #view-collection .collection-tabs button{min-height:44px;font-size:12px;padding:9px 12px}
+ body.concept-ui #view-collection .collection-toolbar>label{max-width:100%;min-width:0}
+ body.concept-ui #view-store .store-category-tabs{display:flex;flex-wrap:wrap;gap:8px}
+ body.concept-ui #view-store .store-category-tabs button{min-height:44px;white-space:normal;font-size:13px;padding:10px 14px}
+ body.concept-ui #view-store .store-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ body.concept-ui #view-custom .custom-room-panel{grid-template-columns:minmax(0,1fr)}
+ body.concept-ui #view-custom .custom-room-setup{grid-column:1;min-width:0}
+ body.concept-ui #view-queue .queue-setup-panel{min-width:0}
+ body.concept-ui #view-settings #settings-form{grid-template-columns:minmax(0,1fr);gap:18px}
+ body.concept-ui #view-settings .concept-settings-footer{grid-column:1}
+ body.concept-ui #view-admin .admin-grid{grid-template-columns:minmax(0,1fr)}
+ body.concept-ui #view-admin :is(.concept-admin-tabs,.admin-operation-tabs){display:flex;flex-wrap:wrap;gap:8px}
+ body.concept-ui #view-admin :is(.concept-admin-tabs,.admin-operation-tabs) button{min-height:44px;white-space:normal;font-size:13px;padding:10px 14px}
+ body.concept-ui #view-admin .admin-table-wrap{max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+ body.concept-ui #view-admin :is(.admin-form-row,.admin-metric-totals){grid-template-columns:repeat(2,minmax(0,1fr))}
+ .mythic-public-home :is(input,select,textarea),.account-gate :is(input,select,textarea),.welcome-dialog :is(input,select,textarea){font-size:16px}
+ .mythic-public-home .public-nav{flex-wrap:wrap;gap:16px}
+ .mythic-public-home .public-nav nav{order:3;width:100%;justify-content:center;flex-wrap:wrap;gap:24px}
+ .mythic-public-home .public-nav nav a{padding:8px 0;font-size:14px}
+}
+@media(max-width:640px){
+ body.mythic-rework.arcane-sidebar:not(.duel-fullscreen) .main-content{padding-inline:12px}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar{padding:12px 14px!important;gap:10px!important;min-height:0!important}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .topbar-right{gap:8px!important;justify-content:space-between;flex:1 0 100%;width:100%;margin:0}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .local-status{flex:0 0 auto!important;font-size:10px;max-width:none}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .icon-button{width:44px;min-width:44px;height:44px;padding:8px!important}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .public-home-link{width:auto;min-width:54px}
+ body.concept-ui .concept-account-bar{gap:10px;min-width:0;padding-block:16px}
+ body.concept-ui .concept-account-name{min-width:0;flex:1}
+ body.concept-ui .concept-account-name b{overflow-wrap:break-word}
+ body.concept-ui .concept-account-name progress{max-width:100%}
+ body.concept-ui .concept-account-coins{font-size:16px;gap:6px;flex-shrink:0}
+ body.concept-ui #view-decks .page-heading{display:grid;grid-template-columns:minmax(0,1fr);gap:12px}
+ body.concept-ui #view-decks .page-heading>div:first-child{grid-column:1;width:100%}
+ body.concept-ui #view-decks .page-heading>.button{width:100%;margin:0!important;min-width:0}
+ body.concept-ui #view-decks #deck-builder-entry{order:1;min-height:54px}
+ body.concept-ui #view-decks :is(#reset-deck,#practice-start){order:2}
+ body.concept-ui #view-decks .concept-deck-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ body.concept-ui #view-decks .concept-deck-tile{min-height:230px;padding:16px 10px}
+ body.concept-ui #view-decks .concept-deck-detail{padding:20px}
+ body.concept-ui #view-decks .concept-deck-tools{display:grid;grid-template-columns:minmax(0,1fr)}
+ body.concept-ui #view-decks .concept-deck-tools :is(input,select){width:100%}
+ body.concept-ui #view-arena :is(.arena-layout,.home-lower){grid-template-columns:minmax(0,1fr)}
+ body.concept-ui #view-arena .home-lower>.panel{min-width:0}
+ body.concept-ui #view-arena .arena-mode-card{min-width:0}
+ body.concept-ui #view-collection .concept-collection-layout{display:flex;flex-direction:column-reverse;gap:18px}
+ body.concept-ui #view-collection .concept-collection-preview{width:100%;position:static}
+ body.concept-ui #view-collection .concept-collection-preview>img{max-height:230px}
+ body.concept-ui #view-collection .collection-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+ body.concept-ui #view-collection .collection-toolbar .search-box{flex-basis:100%}
+ body.concept-ui #view-collection .collection-toolbar>label{width:100%}
+ body.concept-ui #view-collection .collection-toolbar select{width:100%;min-height:44px}
+ body.concept-ui #view-store .concept-shop-showcase{grid-template-columns:minmax(0,1fr)}
+ body.concept-ui #view-store .concept-shop-hero{padding:20px;gap:16px;min-width:0}
+ body.concept-ui #view-store .concept-shop-hero>div{min-width:0}
+ body.concept-ui #view-store .concept-shop-hero h2{font-size:24px;overflow-wrap:break-word}
+ body.concept-ui #view-store .store-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:12px}
+ body.concept-ui #view-store .store-item{padding:18px 10px}
+ body.concept-ui #view-store .store-item h3{font-size:16px;line-height:1.4}
+ body.concept-ui #view-store .store-item .button{padding:10px 8px;font-size:12px}
+ body.concept-ui #view-store #redeem-code-form{display:flex;flex-direction:column;gap:12px;width:100%}
+ body.concept-ui #view-profile .legend-grid{grid-template-columns:minmax(0,1fr)}
+ body.concept-ui #view-profile .legend-grid>.panel{grid-column:1;min-width:0;padding:18px}
+ body.concept-ui #view-profile .legend-hero{grid-template-columns:76px minmax(0,1fr) 68px;gap:14px 10px;padding:22px 12px}
+ body.concept-ui #view-profile #profile-avatar{width:72px;height:72px}
+ body.concept-ui #view-profile #profile-rank-emblem{width:64px;height:64px}
+ body.concept-ui #view-profile #profile-display-name{font-size:24px;overflow-wrap:break-word}
+ body.concept-ui #view-profile .legend-progression{grid-column:1/-1}
+ body.concept-ui #view-profile .legend-actions{display:flex;flex-wrap:wrap;gap:10px}
+ body.concept-ui #view-profile .legend-actions>.button{flex:1 1 140px;margin:0}
+ body.concept-ui #view-guilds .concept-guild-columns{grid-template-columns:minmax(0,1fr)}
+ body.concept-ui #view-guilds .concept-guild-columns>section{grid-column:1}
+ body.concept-ui #view-community-decks :is(.community-deck-tools,.community-publish-form){display:flex;flex-wrap:wrap;gap:12px}
+ body.concept-ui #view-community-decks :is(input,select){width:100%;min-height:44px}
+ body.concept-ui #view-community-decks #community-deck-list{grid-template-columns:minmax(0,1fr)}
+ body.concept-ui #view-custom .custom-room-seats{gap:12px;grid-template-columns:repeat(2,minmax(0,1fr))}
+ body.concept-ui #view-custom .custom-room-seats .spectator-seat{grid-column:1/-1}
+ body.concept-ui #view-custom .custom-room-actions{display:flex;flex-wrap:wrap;gap:12px}
+ body.concept-ui #view-custom .custom-room-actions .button{flex:1 1 160px}
+ body.concept-ui #view-queue .queue-team-preview{grid-template-columns:minmax(0,1fr) 32px minmax(0,1fr);gap:8px}
+ body.concept-ui #view-queue .queue-team-preview>article{min-width:0;padding:14px 8px}
+ body.concept-ui #view-queue .queue-team-preview>article b{overflow-wrap:break-word;font-size:15px}
+ body.concept-ui #view-settings #settings-form{padding:0;border:0;background:none}
+ body.concept-ui #view-settings .concept-settings-group{padding:20px}
+ body.concept-ui #view-settings .concept-settings-footer{display:flex;flex-wrap:wrap;gap:12px}
+ body.concept-ui #view-settings .concept-settings-footer>.button{flex:1 1 160px}
+ body.concept-ui #view-admin .admin-form-row{grid-template-columns:minmax(0,1fr)}
+ body.concept-ui #view-admin .admin-card{padding:20px}
+ body.concept-ui #view-admin .admin-metric-row{grid-template-columns:minmax(90px,1fr) minmax(50px,1fr) auto;font-size:12px;gap:8px}
+ .guardian-hero{flex-direction:column;align-items:flex-start}
+ .guardian-hero img{width:90px;align-self:center}
+ .guardian-hero h2{font-size:26px}
+ .public-nav .public-account-actions{margin-left:0}
+ .public-world-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .public-hero-actions,.public-final-actions{flex-wrap:wrap}
+ .welcome-dialog .welcome-mythologies{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .welcome-dialog .welcome-mythology{min-width:0;min-height:240px!important;padding:20px 12px!important}
+ .welcome-dialog .welcome-mythology>strong{font-size:18px!important}
+ .welcome-dialog .welcome-myth-description{font-size:12px}
+ .db-name input{font-size:16px}
+ .db-card-controls button{min-width:36px;min-height:36px}
+ .practice-dialog :is(input,select){font-size:16px}
+ body.concept-ui :is(.friend-action-dialog,.friend-profile-dialog,.invite-flow-dialog,.missions-dialog,.legend-edit-dialog){max-width:calc(100vw - 24px);max-height:calc(100dvh - 24px);overflow-y:auto;box-sizing:border-box}
+ body.concept-ui :is(.friend-action-dialog,.friend-profile-dialog,.invite-flow-dialog,.missions-dialog,.legend-edit-dialog,#friend-chat-window) :is(input,select,textarea){min-width:0;max-width:100%;font-size:16px}
+ body.concept-ui :is(.friend-action-dialog,.friend-profile-dialog,.invite-flow-dialog,.missions-dialog,.legend-edit-dialog) .button{min-height:44px;white-space:normal;font-size:13px}
+ .account-gate-card :is(.button,.text-link){min-height:44px;font-size:14px}
+}
+@media(max-height:500px) and (max-width:960px){
+ #deck-builder .db-shell{grid-template-rows:52px minmax(160px,1fr) 170px 54px;overflow-y:auto}
+ .welcome-dialog .welcome-shell{padding-block:16px}
+ .welcome-fan-inspector{overflow-y:auto}
+}
+/* On short phones, give both card areas real space and scroll the workspace. */
+@media(max-height:650px) and (max-width:700px){
+ #deck-builder .db-shell{display:flex;flex-direction:column;overflow-y:auto}
+ #deck-builder .db-header{position:sticky;top:0;z-index:20;flex:0 0 56px;background:#171020}
+ #deck-builder .db-workspace{flex:0 0 340px;min-height:340px}
+ #deck-builder .db-collection{flex:0 0 260px;min-height:260px}
+ #deck-builder .db-footer{position:sticky;bottom:0;z-index:20;flex:0 0 62px;background:#171020}
+}
+@media(max-width:360px){
+ body.mythic-rework.arcane-sidebar .main-content>.topbar{padding:12px 10px!important}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .topbar-right{gap:5px!important}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .local-status{font-size:9px;gap:4px}
+ body.concept-ui #view-profile .legend-hero{grid-template-columns:72px minmax(0,1fr)}
+ body.concept-ui #view-profile .legend-rank{grid-column:1/-1;justify-self:center}
+ body.concept-ui #view-decks .concept-deck-gallery{grid-template-columns:minmax(0,1fr)}
+ body.concept-ui #view-decks .concept-deck-tile{max-width:300px;width:100%;justify-self:center}
+}
