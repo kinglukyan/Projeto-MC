@@ -1,3 +1,4 @@
+// Boas-vindas com escolha de mitologia e pacote inicial.
 // Regras aprovadas 025: scripts atualizados sem invalidar o cache de imagens.
 // Keep existing caches: this repair must not download everyone's images again.
 const CACHE="mythic-clash-fast-shell-v1";
