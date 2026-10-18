@@ -2,10 +2,11 @@
 const CACHE="mythic-clash-fast-shell-v1";
 const MEDIA="mythic-clash-fast-media-v1";
 const MANIFEST=new URL("asset-manifest.json",self.registration.scope).href;
+function validRevisions(value){if(!value||typeof value!=="object"||Array.isArray(value))return {};return Object.fromEntries(Object.entries(value).filter(([path,hash])=>path.startsWith("assets/")&&!path.split("/").includes("..")&&typeof hash==="string"&&/^[a-f0-9]{20,64}$/.test(hash)).slice(0,10000));}
 let revisions={},localManifest=null,manifestUpdate=null;
 function readManifest(){
  if(localManifest)return localManifest;
- localManifest=(async()=>{try{const response=await (await caches.open(CACHE)).match(MANIFEST);if(response){const data=await response.json();revisions=data.assets||{};}}catch{}return revisions;})();
+ localManifest=(async()=>{try{const response=await (await caches.open(CACHE)).match(MANIFEST);if(response){const data=await response.json();revisions=validRevisions(data.assets);}}catch{}return revisions;})();
  return localManifest;
 }
 function updateManifest(){
@@ -15,13 +16,17 @@ function updateManifest(){
   try{
    const response=await fetch(MANIFEST,{cache:"no-cache"});if(!response.ok)return;
    const data=await response.clone().json();if(!data.assets||typeof data.assets!=="object")return;
-   await (await caches.open(CACHE)).put(MANIFEST,response);revisions=data.assets;
-   const changed=Object.keys(previous).length>0&&Object.keys(data.assets).some(path=>previous[path]&&previous[path]!==data.assets[path]);
+   const next=validRevisions(data.assets);if(!Object.keys(next).length)return;
+   await (await caches.open(CACHE)).put(MANIFEST,response);revisions=next;
+   const changed=Object.keys(previous).length>0&&Object.keys(next).some(path=>previous[path]&&previous[path]!==next[path]);
    if(changed){const clients=await self.clients.matchAll({type:"window"});for(const client of clients)client.postMessage({type:"MYTHIC_MEDIA_UPDATED"});}
   }catch{}
  })().finally(()=>{manifestUpdate=null;});return manifestUpdate;
 }
 async function save(cache,key,response){try{await cache.put(key,response);}catch{}}
+async function saveMedia(cache,key,response){
+ try{await cache.put(key,response);const current=new URL(key);if(!current.searchParams.has("__mythic_rev"))return;for(const old of await cache.keys(key,{ignoreSearch:true})){const u=new URL(old.url);if(u.searchParams.has("__mythic_rev")&&u.href!==current.href)await cache.delete(old);}}catch{}
+}
 async function networkFirst(request,event){
  const cache=await caches.open(CACHE);
  try{
@@ -58,13 +63,13 @@ self.addEventListener("fetch",event=>{
  if(!media){event.respondWith(networkFirst(request,event));return;}
  event.respondWith((async()=>{
   // Read local metadata only. No image waits for a manifest network request.
-  await readManifest();const relative=decodeURIComponent(url.pathname.slice(new URL(self.registration.scope).pathname.length)),revision=revisions[relative];
+  await readManifest();let relative=url.pathname.slice(new URL(self.registration.scope).pathname.length);try{relative=decodeURIComponent(relative);}catch{}const revision=revisions[relative];
   const key=new URL(request.url);if(revision)key.searchParams.set("__mythic_rev",revision);
   const cache=await caches.open(MEDIA),saved=await cache.match(key.href);
   if(saved)return saved;
   // Reuse original URL entries from the earlier cache as a quick migration.
   const old=revision?null:await (await caches.open(CACHE)).match(request);
   if(old){event.waitUntil(save(cache,key.href,old.clone()));return old;}
-  try{const response=await fetch(request,{cache:revision?"no-cache":"default"});if(response.ok)event.waitUntil(save(cache,key.href,response.clone()));return response;}catch{return Response.error();}
+  try{const response=await fetch(request,{cache:revision?"no-cache":"default"});if(response.ok)event.waitUntil(saveMedia(cache,key.href,response.clone()));return response;}catch{return Response.error();}
  })());
 });
