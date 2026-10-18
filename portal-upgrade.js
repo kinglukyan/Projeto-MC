@@ -28,7 +28,7 @@
   home.hidden=inGame;document.body.classList.toggle('public-home-open',!inGame);
  }
  function showHome(){for(const id of ['#menu-music','#battle-music','#lore-theme-audio'])$(id)?.pause();inGame=false;gate.hidden=true;document.body.classList.remove('public-auth-open','duel-fullscreen');syncHome();window.scrollTo({top:0});}
- function enterGame(){if(!connected)return;inGame=true;gate.hidden=true;document.body.classList.remove('public-auth-open');syncHome();}
+ function enterGame(){if(!connected)return;const account=window.MythicOnline.account?.();if(account)window.MythicWelcome?.begin(account);inGame=true;gate.hidden=true;document.body.classList.remove('public-auth-open');syncHome();}
  async function play(){if(!connected){auth('signup');return;}if(!await checkAccess())return;enterGame();window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'arena'}}));const account=window.MythicOnline.account?.();if(account)window.MythicWelcome?.begin(account);}
  async function checkAccess(){
   if(!window.MythicOnline?.isConnected())return false;const run=++accessRun;

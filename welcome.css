@@ -6,3 +6,5 @@
 @media(prefers-reduced-motion:reduce){.welcome-sealed-pack{animation:none}.welcome-dialog *{scroll-behavior:auto!important;transition:none!important}}
 
 .welcome-earned-avatar{width:46px;height:46px;border:1px solid #ac8b4e;border-radius:50%;grid-row:span 2;background-size:300% 200%;background-repeat:no-repeat;background-color:#171020}.welcome-earned-icon>.welcome-earned-avatar{display:block}@media(max-width:700px){.welcome-earned-avatar{width:36px;height:36px}}
+/* Keep the Arena out of view while the welcome state or first gift is open. */
+body.welcome-open .app-shell{visibility:hidden!important}

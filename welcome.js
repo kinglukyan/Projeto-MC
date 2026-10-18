@@ -121,9 +121,9 @@
   catch(error){if(current(token)){message.textContent=error.message||'Não foi possível abrir o construtor. Tente novamente.';actions.querySelector('button').disabled=false;}}finally{if(current(token))busy=false;}
  }
  async function begin(account){
-  if(!account?.id)return;if(user?.id===account.id)return;reset();user={id:account.id,name:account.user_metadata?.nickname||account.user_metadata?.display_name||''};const token=generation;if(Date.now()-Date.parse(account.created_at||'')<86400000)screen('loading','Sua jornada está começando.','Preparando suas boas-vindas…',0);
-  try{const data=await window.MythicOnline.getWelcomeState();if(!current(token))return;receipt=data;if(data.stage==='completed'){phase='completed';return;}if(data.stage==='granted'){chosen=data.mythology;packScreen();}else intro();}
-  catch(error){if(!current(token))return;const recent=Date.now()-Date.parse(account.created_at||'')<86400000;if(!recent)return;screen('error','Sua jornada está quase pronta.','Não conseguimos carregar suas boas-vindas agora. Seu presente permanece protegido na conta.',0);message.textContent=error.message;actions.append(button('Tentar novamente',()=>{const retry={...account};user=null;begin(retry);}));}
+  if(!account?.id)return;if(user?.id===account.id)return;reset();user={id:account.id,name:account.user_metadata?.nickname||account.user_metadata?.display_name||''};const token=generation;screen('loading','Preparando sua entrada.','Consultando sua jornada…',0);
+  try{const data=await window.MythicOnline.getWelcomeState();if(!current(token))return;receipt=data;if(data.stage==='completed'){phase='completed';close();return;}if(data.stage==='granted'){chosen=data.mythology;packScreen();}else intro();}
+  catch(error){if(!current(token))return;screen('error','Sua jornada está quase pronta.','Não conseguimos carregar suas boas-vindas agora. Seu presente permanece protegido na conta.',0);message.textContent=error.message;actions.append(button('Tentar novamente',()=>{const retry={...account};user=null;begin(retry);}));}
  }
  window.addEventListener('resize',()=>{if(phase==='revealed')for(const [i,node] of Array.from(stage.querySelectorAll('.welcome-reward-card')).entries())setPosition(node,i);});
  window.addEventListener('mythic-account-signed-out',reset);
