@@ -27,7 +27,9 @@ function power(x,t,u,depth=0){const s=x.s,a=s[t],c=C[u.cardId]||{power:0},id=abi
  if(c.faction==='Grécia')p+=Number(a.greekAura)||0;if(c.faction==='Nórdicos')p+=Number(a.norseAura)||0;
  if(id==='lukyan-rei-de-todos')p*=2**Math.max(0,a.field.length-1);
  if(!protectedRow(x,t,u.lane,s.zoneOwners.climate||t)){const climate=s.sharedZones.climate;if(climate==='eclipse-lunar'){if(['lobo-alfa','lobo-beta','lobo-omega','artemis'].includes(u.cardId)||vampire(u.cardId))p*=2;if(['apolo','ra'].includes(u.cardId))p=Math.floor(p/2);}if(climate==='eclipse-solar'){if(['apolo','ra'].includes(u.cardId))p*=2;if(u.cardId==='artemis')p=Math.floor(p/2);}}
- return Math.max(0,Math.floor(p+(Number(u.powerShift)||0)));
+ p=Math.max(0,Math.floor(p+(Number(u.powerShift)||0)));
+ if(id==='guardiao-nordico'&&a.field.some(v=>v!==u&&v.uid!==u.uid&&v.cardId==='guardiao-nordico'&&v.lane===u.lane))p*=2;
+ return p;
 }
 function note(x,text){x.s.log=[text,...(x.s.log||[])].slice(0,30);}
 function event(x,op,t,owner,u,extra={}){x.s.effectQueue.push({op,team:t,owner,uid:u?.uid,lane:u?.lane||0,...extra});}
