@@ -28,3 +28,40 @@
 .mythic-public-home::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(125deg,#35184c55,#281a4455 55%,#24113366)}
 .public-nav{background:#1d132755}.public-worlds,.public-how{background:#21132935}.public-footer{background:#1b12254d}
 @media(max-width:700px){.welcome-mythology .welcome-faction-emblem{padding:12px}.welcome-mythology::before{filter:blur(1.6px)}.mythic-public-home::before{background-position:42% center}}
+/* Comfortable header spacing, including the narrow sidebar layout. */
+body.mythic-rework.arcane-sidebar .main-content>.topbar{
+ min-height:96px!important;height:auto!important;padding:22px 30px!important;
+ gap:20px!important;box-sizing:border-box;flex-wrap:wrap;
+}
+body.mythic-rework.arcane-sidebar .main-content>.topbar .breadcrumb{min-width:0;line-height:1.8}
+body.mythic-rework.arcane-sidebar .main-content>.topbar .topbar-right{gap:12px;margin-left:auto;max-width:100%;flex-wrap:wrap}
+body.mythic-rework.arcane-sidebar .main-content>.topbar .icon-button{min-width:36px;min-height:36px;flex-shrink:0}
+body.mythic-rework.arcane-sidebar .main-content>.topbar .public-home-link{width:auto;padding:8px 14px;white-space:nowrap}
+/* An even pale rim on every edge, with no heavy left stripe. */
+body.mythic-rework :is(.button-primary,.button-secondary,.detail-play-button,.card-detail-button,.ability-choice-done,.stack-expand,.db-button),
+body.mythic-rework :is(.honor-tabs button[aria-pressed="true"],.legend-tabs button.selected,.concept-admin-tabs button[aria-selected="true"]),
+body.concept-ui #view-decks #deck-builder-entry{
+ border:2px solid #d5b7ffbf!important;border-image:none!important;border-radius:5px!important;clip-path:none!important;
+ box-shadow:inset 0 0 0 1px #edddff26,inset 0 0 18px #8752df25,0 3px 12px #0003!important;
+}
+.mythic-public-home main>.public-universe{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;border-top:1px solid #ab915c33}
+.public-universe h2{font:700 clamp(30px,3vw,44px)/1.25 Georgia,serif;color:#eed59b;margin:14px 0 26px}
+.public-universe p:not(.eyebrow){color:#c9bfd3;font-size:15px;line-height:1.85;margin:0 0 20px}
+.public-universe figure{margin:0;min-width:0}
+.public-universe img{display:block;width:100%;height:420px;object-fit:cover;border:1px solid #c9ac725e;border-radius:12px}
+.public-universe figcaption{font-size:12px;line-height:1.7;color:#bbaaC8;text-align:center;margin-top:16px}
+body.concept-ui #view-admin .admin-operations{grid-column:1/-1;width:100%;min-width:0}
+body.concept-ui #view-admin .admin-operations[hidden],.admin-operations [data-admin-section][hidden]{display:none!important}
+.admin-role-create,.admin-code-activation form{display:flex;align-items:end;gap:16px;flex-wrap:wrap;margin:24px 0}
+.admin-role-create label,.admin-code-activation label{display:grid;gap:12px;flex:1;min-width:min(100%,240px)}
+.admin-role-result label{display:grid;gap:12px;margin-top:20px}
+.admin-role-result input{font-family:monospace;font-size:14px;letter-spacing:.05em;width:100%}
+.admin-role-result p,.admin-code-activation p{line-height:1.8;overflow-wrap:anywhere}
+.admin-code-activation{margin-top:24px}
+@media(max-width:700px){
+ body.mythic-rework.arcane-sidebar .main-content>.topbar{min-height:96px!important;padding:18px!important;gap:14px!important}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .topbar-right{gap:9px;max-width:100%;justify-content:flex-end;flex:1 0 100%}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .local-status{flex:0 0 auto;margin:0;white-space:nowrap}
+ .mythic-public-home main>.public-universe{grid-template-columns:1fr;gap:24px}
+ .public-universe img{height:260px}.public-nav nav{flex-wrap:wrap;gap:12px}
+}
