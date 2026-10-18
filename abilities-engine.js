@@ -15,17 +15,17 @@ function terrainBonus(id,c){for(const r of D.terrain[id]||[]){if(r.ids&&!r.ids.i
 function power(x,t,u,depth=0){const s=x.s,a=s[t],c=C[u.cardId]||{power:0},id=ability(u);let p=Number(c.power)||0;if(!live(s))return p;
  p=Number.isFinite(u.copiedPower)?u.copiedPower:p;p+=Number(u.bonus)||0;if(id==='hercules')p+=Math.min(12,Number(u.progress)||0);
  for(const equipment of u.equipment||[]){const r=D.equipment[equipment];if(r&&(r.ids?r.ids.includes(u.cardId):r.faction===c.faction))p+=r.bonus;}
- if(id==='soldado-esparta'){const count=a.field.filter(v=>v.cardId==='soldado-esparta'&&v!==u).length;p*=2**count;}
- if(id==='lobo-alfa')p+=2*a.field.filter(v=>v.cardId==='lobo-beta').length;
+ if(id==='soldado-esparta'){const count=a.field.filter(v=>v.cardId==='soldado-esparta'&&v.uid!==u.uid&&v.lane===u.lane).length;p*=2**count;}
+ if(id==='lobo-alfa')p+=2*a.field.filter(v=>v.cardId==='lobo-beta'&&v.lane===u.lane).length;
  p+=2*a.field.filter(v=>v!==u&&ability(v)==='athena'&&v.lane===u.lane).length;
  if(id==='lobo-omega'&&depth===0&&a.field.filter(v=>v.lane===u.lane).length===1){const enemy=x.s[other(t)].field.filter(v=>v.lane===u.lane).reduce((n,v)=>n+power(x,other(t),v,1),0);if(enemy>p)p+=8;}
- if(id==='mulher')p*=2**a.field.filter(v=>v.cardId==='homem').length;
- if(id==='homem')p*=2**a.field.filter(v=>v.uid!==u.uid&&v.cardId==='homem').length;
- p*=Number(u.multiplier)||1;
+ if(id==='mulher')p*=2**a.field.filter(v=>v.cardId==='homem'&&v.lane===u.lane).length;
+ if(id==='homem')p*=2**a.field.filter(v=>v.uid!==u.uid&&v.cardId==='homem'&&v.lane===u.lane).length;
+ p*=(Number(u.multiplier)||1)*2**a.field.filter(v=>ability(v)==='apolo'&&v.lane===u.lane).length;
  if(!protectedRow(x,t,u.lane,s.zoneOwners.local||t)&&D.locations[s.sharedZones.local]===c.faction)p+=2;
  if(!protectedRow(x,t,u.lane,s.zoneOwners.terrain||t))p+=terrainBonus(s.sharedZones.terrain,c);
  if(c.faction==='Grécia')p+=Number(a.greekAura)||0;if(c.faction==='Nórdicos')p+=Number(a.norseAura)||0;
- if(id==='lukyan-rei-de-todos')p*=2**Math.max(0,a.field.length-1);
+ if(id==='lukyan-rei-de-todos')p*=2**Math.max(0,a.field.filter(v=>v.lane===u.lane).length-1);
  if(!protectedRow(x,t,u.lane,s.zoneOwners.climate||t)){const climate=s.sharedZones.climate;if(climate==='eclipse-lunar'){if(['lobo-alfa','lobo-beta','lobo-omega','artemis'].includes(u.cardId)||vampire(u.cardId))p*=2;if(['apolo','ra'].includes(u.cardId))p=Math.floor(p/2);}if(climate==='eclipse-solar'){if(['apolo','ra'].includes(u.cardId))p*=2;if(u.cardId==='artemis')p=Math.floor(p/2);}}
  p=Math.max(0,Math.floor(p+(Number(u.powerShift)||0)));
  if(id==='guardiao-nordico'&&a.field.some(v=>v!==u&&v.uid!==u.uid&&v.cardId==='guardiao-nordico'&&v.lane===u.lane))p*=2;
@@ -95,8 +95,8 @@ function resolve(x,e){const s=x.s,t=e.team,a=s[t],en=other(t),b=s[en],u=a.field.
  case 'reveal':{const hands=Object.entries(x.r).filter(([,v])=>v.team===en).flatMap(([owner,v])=>v.hand.map(id=>({owner,cardId:id})));res.privateEffects={id:uid(),kind:'reveal',cards:shuffled(hands).slice(0,2).map(v=>v.cardId)};break;}
  case 'steal_hand':{const hands=Object.entries(x.r).filter(([,v])=>v.team===en).flatMap(([owner,v])=>v.hand.map((id,i)=>({owner,id,i})));if(hands.length){const target=hands[random(hands.length)];x.r[target.owner].hand.splice(target.i,1);res.hand.push(target.id);}break;}
  case 'silence':s.silenceUntilRound=Number(s.round)+2;for(const team of teams){for(const v of s[team].field){if(v.eclipseOriginalCardId){v.cardId=v.eclipseOriginalCardId;delete v.eclipseOriginalCardId;}}}for(const v of Object.values(x.r))v.skipNextTurn=false;s.effectQueue=[];note(x,'Dionísio desativou os efeitos até o fim da rodada '+s.silenceUntilRound+'.');break;
- case 'double_lane':for(const v of a.field.filter(v=>v.lane===e.lane))change(x,t,v,t,0,2);break;
- case 'war_buff':for(const v of a.field){const c=C[v.cardId];if((c.tags||[]).includes('espartano')||v.cardId==='leonidas')change(x,t,v,t,2);else if(c.faction==='Grécia')change(x,t,v,t,1);}break;
+ case 'double_lane':break; // Apolo is a continuous aura, evaluated by power().
+ case 'war_buff':for(const v of a.field.filter(v=>v.lane===e.lane)){const c=C[v.cardId];if((c.tags||[]).includes('espartano')||v.cardId==='leonidas')change(x,t,v,t,2);else if(c.faction==='Grécia')change(x,t,v,t,1);}break;
  case 'crowd_bonus':if(a.field.some(v=>v!==u&&v.lane===u.lane))change(x,t,u,t,3);break;
  case 'alone_bonus':if(a.field.filter(v=>v.lane===u.lane).length===1)change(x,t,u,t,3);break;
  case 'ally_bonus':if(a.field.some(v=>v!==u&&v.lane===u.lane))change(x,t,u,t,2);break;
@@ -115,7 +115,7 @@ function action(x,owner,a,auto=false){init(x);reconcile(x);const res=x.r[owner],
  res.hand.splice(i,1);spawn(x,c.id,t,owner,lane);res.playedThisTurn=true;note(x,c.name+' entrou em jogo.');return drain(x,auto);
 }
 function turnStart(x,owner,auto=false){init(x);reconcile(x);const t=x.r[owner]?.team;if(!t||x.r[owner].skipNextTurn)return x;for(const u of x.s[t].field){if(u.playedBy===owner&&u.odinReady){delete u.odinReady;event(x,'foresight',t,owner,u);}}x.s.abilityPhase='turn_start';drain(x,auto);if(!x.s.pendingEffect)delete x.s.abilityPhase;return x;}
-function roundEnd(x){init(x);if(x.s.endEffectsRound===x.s.round)return;x.s.endEffectsRound=x.s.round;if(live(x.s))for(const t of teams){const a=x.s[t];for(const u of [...a.field]){if(ability(u)==='ra')for(const v of a.field)if(C[v.cardId]?.faction==='Egípcios')change(x,t,v,t,1);if(ability(u)==='hercules')u.progress=Math.min(12,(u.progress||0)+1);}}}
+function roundEnd(x){init(x);if(x.s.endEffectsRound===x.s.round)return;x.s.endEffectsRound=x.s.round;if(live(x.s))for(const t of teams){const a=x.s[t];for(const u of [...a.field]){if(ability(u)==='ra')for(const v of a.field)if(v.lane===u.lane&&C[v.cardId]?.faction==='Egípcios')change(x,t,v,t,1);if(ability(u)==='hercules')u.progress=Math.min(12,(u.progress||0)+1);}}}
 function clearRound(x){init(x);for(const t of teams){for(const u of [...x.s[t].field])graveUnit(x,t,u,false);x.s[t].roundScoreBonus=0;}x.s.sharedZones={local:null,terrain:null,climate:null};x.s.effectQueue=[];delete x.s.pendingEffect;delete x.s.abilityPhase;x.s.silenceUntilRound=0;x.s.zoneOwners={};delete x.s.eclipseReveal;for(const t of teams){for(const g of x.s[t].grave)g.progress=0;x.s[t].greekAura=0;x.s[t].norseAura=0;}for(const res of Object.values(x.r)){res.skipNextTurn=false;delete res.privateEffects;}}
 function score(x,t){return Math.max(0,x.s[t].field.reduce((n,u)=>n+power(x,t,u),0)+(live(x.s)?Number(x.s[t].roundScoreBonus)||0:0));}
 window.MythicAbilities={C,D,init,reconcile,power,score,action,drain,turnStart,roundEnd,clearRound,live,canEquip,origin,copy,destroyUnit(x,t,id){const unit=x.s[t]?.field.find(u=>u.uid===id);if(unit)graveUnit(x,t,unit);return drain(x);}};

@@ -17,8 +17,8 @@ window.MythicEclipseRules={
   }side.field=kept;
  },
  power(side,unit,power,climate){
-  if(unit.cardId==='mulher')power*=2**side.field.filter(other=>other.cardId==='homem').length;
-  if(unit.cardId==='homem')power*=2**Math.max(0,side.field.filter(other=>other.cardId==='homem').length-1);
+  if(unit.cardId==='mulher')power*=2**side.field.filter(other=>other.cardId==='homem'&&other.lane===unit.lane).length;
+  if(unit.cardId==='homem')power*=2**Math.max(0,side.field.filter(other=>other.cardId==='homem'&&other.lane===unit.lane).length-1);
   if(climate==='eclipse-lunar'){
    if(isNight(unit.cardId)||unit.cardId==='artemis')power*=2;
    if(data.sunIds.includes(unit.cardId))power=Math.floor(power/2);

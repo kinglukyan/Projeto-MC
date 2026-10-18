@@ -42,6 +42,6 @@ body.mythic-rework.duel-fullscreen #view-duel .unit-morphing .battle-hologram{op
 @keyframes morph-before{0%,25%{opacity:1;transform:scale(1)}65%,100%{opacity:0;transform:scale(.8);filter:brightness(3) blur(5px)}}
 @keyframes morph-after{0%,30%{opacity:0;transform:scale(.65);filter:brightness(3) blur(6px)}65%,100%{opacity:1;transform:scale(1);filter:brightness(1)}}
 @keyframes morph-title{0%,35%{opacity:0}55%,85%{opacity:1}100%{opacity:0}}
-body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card.lunar-empowered>.battle-hologram{transform:translateX(-50%) scale(1.25)!important;transform-origin:center bottom;filter:drop-shadow(0 0 7px #ef568b)!important}
-body.mythic-rework.duel-fullscreen #view-duel .companion-stack.lunar-formation>.companion-formation{transform:translateX(-50%) scale(1.25);transform-origin:center bottom}
+body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card.lunar-empowered>.battle-hologram{transform:translateX(-50%) scale(1.15)!important;transform-origin:center bottom;filter:drop-shadow(0 0 7px #ef568b)!important}
+body.mythic-rework.duel-fullscreen #view-duel .companion-stack.lunar-formation>.companion-formation{transform:translateX(-50%) scale(1.15);transform-origin:center bottom}
 @media(prefers-reduced-motion:reduce){.wolf-morph .morph-before{display:none}.wolf-morph .morph-after,.wolf-morph b{animation:none}.wolf-morph b{opacity:1}}

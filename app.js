@@ -2,7 +2,7 @@
   const safeUrl=window.MythicSecurity.assetUrl;
   const DECK_MIN=14,DECK_MAX=35,DECK_SLOTS=7;window.MythicDeckLimits=Object.freeze({min:DECK_MIN,max:DECK_MAX,slots:DECK_SLOTS});
   const cards = [
-    {id:"soldado-esparta",name:"Soldado de Esparta",abilityTitle:"Formação Espartana",type:"Companheiro",faction:"Grécia",symbol:"Λ",power:3,cost:1,kind:"unit",glow:"rgba(210,159,76,.38)",art:"assets/soldado-esparta-sem-pontas-azuis.png",ability:"Cada outro Soldado de Esparta aliado dobra o poder desta carta. O efeito é recíproco e acumulativo.",story:["Esta carta representa um personagem original inspirado nos guerreiros da antiga Esparta. Desde jovem, ele treinou para manter a posição ao lado dos outros: escudo firme, lança pronta e atenção ao companheiro.","Na arena, a Formação Espartana transforma essa disciplina em poder. Cada soldado fortalece os demais e também recebe o mesmo impulso: um soldado tem 3 de poder; dois têm 6 cada; três têm 12 cada.","Releitura fantástica; o personagem não representa uma pessoa histórica específica."]},
+    {id:"soldado-esparta",name:"Soldado de Esparta",abilityTitle:"Formação Espartana",type:"Companheiro",faction:"Grécia",symbol:"Λ",power:3,cost:1,kind:"unit",glow:"rgba(210,159,76,.38)",art:"assets/soldado-esparta-sem-pontas-azuis.png",ability:"Cada outro Soldado de Esparta aliado na mesma fileira dobra o poder desta carta. O efeito é recíproco e acumulativo.",story:["Esta carta representa um personagem original inspirado nos guerreiros da antiga Esparta. Desde jovem, ele treinou para manter a posição ao lado dos outros: escudo firme, lança pronta e atenção ao companheiro.","Na arena, a Formação Espartana transforma essa disciplina em poder. Cada soldado fortalece os demais e também recebe o mesmo impulso: um soldado tem 3 de poder; dois têm 6 cada; três têm 12 cada.","Releitura fantástica; o personagem não representa uma pessoa histórica específica."]},
     {id:"athena",name:"Atena, Guardiã",abilityTitle:"Conselho de Atena",type:"Personagem",faction:"Grécia",symbol:"♙",power:5,cost:3,kind:"unit",glow:"rgba(190,194,207,.34)",ability:"Ao entrar em campo, compre uma carta.",story:["A deusa da sabedoria observa o campo antes de agir. Sua presença inspira estratégia e clareza mesmo no momento mais caótico.","Habilidade — Conselho de Atena: ao entrar em campo, compra uma carta.","Reinterpretação mitológica criada para o universo Mythic Clash."]},
     {id:"lobo-alfa",name:"Lobisomem Alfa",abilityTitle:"Uivo de Caçada",type:"Personagem",faction:"Monstros",symbol:"☾",power:4,cost:2,kind:"unit",glow:"rgba(154,93,76,.38)",ability:"Ao entrar em campo, recebe +1 de poder nesta rodada.",story:["O Alfa lidera a matilha pelo faro e pela coragem. Seu uivo atravessa a noite e anuncia que a caçada começou.","Habilidade — Uivo de Caçada: ao entrar em campo, recebe +1 de poder nesta rodada.","Criatura fantástica original do universo Mythic Clash."]},
     {id:"guardiao-nordico",name:"Guardião Nórdico",abilityTitle:"Vontade do Norte",type:"Companheiro",faction:"Nórdicos",symbol:"ᚠ",power:2,cost:1,kind:"unit",glow:"rgba(106,155,175,.35)",ability:"Se houver outro Guardião Nórdico aliado na mesma fileira, o poder deste Guardião dobra.",story:["Forjado pelas tempestades do norte, o guardião protege sua gente e mantém a posição mesmo quando o gelo racha sob seus pés.","Habilidade — Vontade do Norte: dobra o próprio poder enquanto houver outro Guardião Nórdico aliado na mesma fileira.","Personagem original inspirado em tradições nórdicas."]},
@@ -304,14 +304,14 @@
   function syncBattleHolograms(){
     document.getElementById("battle-hologram-layer")?.remove();
     if(activeView!=="duel")return;
-    const mobile=matchMedia("(max-width:760px)").matches,cell=mobile?35:42.5;
+    const mobile=matchMedia("(max-width:760px)").matches,cell=mobile?43.75:53.125;
     document.querySelectorAll("#view-duel .companion-stack").forEach(pile=>{
       const cards=[...pile.querySelectorAll(":scope>.battle-mini-card")],first=cards[0],formation=pile.querySelector(".companion-formation");if(!first||!formation)return;
       const members=formation.children.length,columns=Math.max(1,Math.min(6,members)),rows=Math.max(1,Math.ceil(members/columns));
       pile.style.setProperty("--stack-card-width",first.offsetWidth+"px");pile.style.setProperty("--formation-width",Math.max(first.offsetWidth+(cards.length-1)*3,columns*cell)+"px");
       pile.style.setProperty("--stack-lift",Math.min(12,(cards.length-1)*2)+"px");
       if(!pile.classList.contains("expanded"))pile.style.height=first.offsetHeight+"px";else pile.style.height="auto";
-      const memberHeight=Math.min(mobile?55:67.5,85/rows),lift=Math.min(12,(cards.length-1)*2);
+      const memberHeight=Math.min(mobile?68.75:84.375,106.25/rows),lift=Math.min(12,(cards.length-1)*2);
       formation.style.setProperty("--formation-cols",columns);formation.style.setProperty("--member-height",memberHeight+"px");
       pile.closest(".battle-lane")?.style.setProperty("--formation-headroom",(pile.classList.contains("expanded")?0:Math.max(0,rows*memberHeight+lift-first.offsetHeight/2+6))+"px");
     });
