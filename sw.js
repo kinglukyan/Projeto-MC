@@ -1,3 +1,4 @@
+// Realm scenes and enlarged fan: content-based code revisions, media cache preserved.
 // Portal, Alyn e administração — revisão 027/028.
 // Boas-vindas com escolha de mitologia e pacote inicial.
 // Regras aprovadas 025: scripts atualizados sem invalidar o cache de imagens.

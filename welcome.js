@@ -2,14 +2,14 @@
  'use strict';
  const PACK='assets/onboarding/starter-pack.png',BACK='assets/card-back.svg';
  const paths=[
-  {id:'Grécia',name:'Mitologia Grega',image:'assets/card-badges/greece.svg',text:'O Olimpo, seus heróis e formações lendárias.',tone:'greek'},
-  {id:'Nórdicos',name:'Mitologia Nórdica',image:'assets/card-badges/norse-viking.png',text:'Runas, guerreiros e o poder dos Nove Reinos.',tone:'norse'},
-  {id:'Egípcios',name:'Mitologia Egípcia',image:'assets/card-badges/egypt.svg',text:'Os deuses antigos e os mistérios do Nilo.',tone:'egypt'},
-  {id:'Alyns',name:'Reino de Alyn',image:'assets/card-badges/alyans.png',text:'Lukyan, Butter e o início de uma lenda original.',tone:'alyn'}
+  {id:'Grécia',name:'Mitologia Grega',image:'assets/card-badges/greece.svg',scene:'assets/onboarding/greek-realm.webp',text:'O Olimpo, seus heróis e formações lendárias.',tone:'greek'},
+  {id:'Nórdicos',name:'Mitologia Nórdica',image:'assets/card-badges/norse-viking.png',scene:'assets/onboarding/norse-realm.webp',text:'Runas, guerreiros e o poder dos Nove Reinos.',tone:'norse'},
+  {id:'Egípcios',name:'Mitologia Egípcia',image:'assets/card-badges/egypt.svg',scene:'assets/onboarding/egyptian-realm.webp',text:'Os deuses antigos e os mistérios do Nilo.',tone:'egypt'},
+  {id:'Alyns',name:'Reino de Alyn',image:'assets/card-badges/alyans.png',scene:'assets/onboarding/public-citadel.webp',text:'Lukyan, Butter e o início de uma lenda original.',tone:'alyn'}
  ];
  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
  const button=(text,fn,cls='welcome-button')=>{const n=el('button',cls,text);n.type='button';n.addEventListener('click',fn);return n;};
- const picture=(src,alt='',cls='')=>{const n=el('img',cls);n.src=window.MythicSecurity.assetUrl(src);n.alt=alt;n.draggable=false;n.decoding='async';return n;};
+ const picture=(src,alt='',cls='')=>{const n=el('img',cls);n.src=window.MythicSecurity.assetUrl(src);n.alt=alt;n.draggable=false;n.decoding=cls==='welcome-faction-emblem'?'sync':'async';return n;};
  const reduced=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
  let root=null,stage=null,heading=null,subheading=null,actions=null,message=null,rail=null,user=null,receipt=null,chosen=null,phase='idle',generation=0,busy=false,animations=new Set(),previousFocus=null,inspector=null,packReady=Promise.resolve();
  const catalog=()=>window.MythicCardData?.()||window.MythicAbilitiesData?.cards||[];
@@ -37,12 +37,12 @@
   screen('welcome','Bem-vindo à Convergência'+(user.name?', '+user.name:'')+'.','Sua lenda começa com um presente. Escolha uma mitologia, descubra suas cartas e prepare seu primeiro baralho.',0);
   const visual=el('div','welcome-intro-visual');visual.append(el('div','welcome-orbit'),picture(PACK,'Seu primeiro pacotinho de Mythic Clash','welcome-intro-pack'));
   const facts=el('div','welcome-gifts');for(const [value,label] of [['14','cartas para começar'],['2','ícones de perfil'],['1','nova jornada']]){const item=el('div');item.append(el('strong','',value),el('span','',label));facts.append(item);}stage.append(visual,facts);
-  actions.append(button('Começar minha jornada →',chooseScreen));packReady=preload(PACK);for(const path of paths)preload(path.image);
+  actions.append(button('Começar minha jornada →',chooseScreen));packReady=preload(PACK);for(const path of paths){preload(path.image);preload(path.scene);}
  }
  function chooseScreen(){
   screen('choice','Qual mitologia desperta sua curiosidade?','A sua escolha favorece as cartas do pacote. Um ícone será dessa mitologia e o outro será de uma mitologia diferente — ambos sorteados.',1);
   const grid=el('div','welcome-mythologies'),proceed=button('Receber meu pacote →',claim);proceed.disabled=!chosen;
-  for(const path of paths){const option=button('',()=>{chosen=path.id;for(const n of grid.children){const selected=n.dataset.mythology===chosen;n.setAttribute('aria-pressed',String(selected));}proceed.disabled=false;},'welcome-mythology '+path.tone);option.dataset.mythology=path.id;option.setAttribute('aria-pressed',String(chosen===path.id));
+  for(const path of paths){const option=button('',()=>{chosen=path.id;for(const n of grid.children){const selected=n.dataset.mythology===chosen;n.setAttribute('aria-pressed',String(selected));}proceed.disabled=false;},'welcome-mythology '+path.tone);option.dataset.mythology=path.id;option.style.setProperty('--faction-scene','url("'+window.MythicSecurity.assetUrl(path.scene)+'")');option.setAttribute('aria-pressed',String(chosen===path.id));
    option.append(picture(path.image,'Símbolo de '+path.name,'welcome-faction-emblem'),el('strong','',path.name),el('span','welcome-myth-description',path.text),el('small','welcome-myth-selected','✦ Escolhida'));grid.append(option);
   }
   stage.append(grid);actions.append(button('Voltar',intro,'welcome-secondary'),proceed);

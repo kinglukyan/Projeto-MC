@@ -14,3 +14,17 @@
 .public-auth-open .mythic-public-home{display:none!important}.mythic-rework.public-auth-open .account-gate{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;gap:0;padding:clamp(18px,4vw,55px);overflow:auto;background:radial-gradient(ellipse at top,#40304f99,transparent 70%),#101321;box-sizing:border-box}.public-auth-open .account-gate>.public-welcome{display:none}.public-auth-open .account-gate-card{max-width:460px;flex-shrink:0;margin:auto 0}.arena-mode-card{touch-action:manipulation}
 
 .welcome-large-fan{overflow:hidden;width:100%;contain:paint}.welcome-inspector-copy{width:100%;min-width:0;overflow-wrap:anywhere}.welcome-inspector-controls{width:100%}
+
+/* Supplied realm scenes stay clipped inside their own frames. */
+.welcome-mythology,.public-world-grid article{position:relative;isolation:isolate;overflow:hidden;background:#21162e!important}
+.welcome-mythology::before,.public-world-grid article::before{content:'';position:absolute;inset:-7px;z-index:-2;background-image:var(--faction-scene);background-size:cover;background-position:center 48%;filter:blur(2px);transform:scale(1.035);opacity:.9;pointer-events:none}
+.welcome-mythology::after,.public-world-grid article::after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,#19132938 0%,#2015309c 46%,#191125ed 100%);pointer-events:none}
+.welcome-mythology .welcome-faction-emblem{background:#1b142f7d;border-radius:50%;padding:18px;box-sizing:border-box;border:1px solid #edcc7b4d;box-shadow:0 3px 24px #0005;object-position:center!important;filter:drop-shadow(0 2px 5px #0008)!important}
+.welcome-mythology strong{color:#fff0c7;text-shadow:0 2px 7px #000}.welcome-myth-description{color:#e7dfea;text-shadow:0 1px 4px #000}
+.public-world-grid article img{background:#1b142f77;border:1px solid #edcc7b3d;border-radius:50%;padding:12px;box-sizing:border-box}.public-world-grid article h3,.public-world-grid article p{text-shadow:0 2px 5px #000}
+/* The actual background image has exactly 50% opacity, below a purple wash. */
+.mythic-public-home{isolation:isolate;background:#171022}
+.mythic-public-home::before{content:'';position:fixed;inset:0;z-index:-2;pointer-events:none;background:url('assets/onboarding/public-citadel.webp') center/cover no-repeat;opacity:.5}
+.mythic-public-home::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(125deg,#35184c55,#281a4455 55%,#24113366)}
+.public-nav{background:#1d132755}.public-worlds,.public-how{background:#21132935}.public-footer{background:#1b12254d}
+@media(max-width:700px){.welcome-mythology .welcome-faction-emblem{padding:12px}.welcome-mythology::before{filter:blur(1.6px)}.mythic-public-home::before{background-position:42% center}}
