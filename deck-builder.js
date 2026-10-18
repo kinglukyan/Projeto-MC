@@ -86,7 +86,7 @@
   function markDrop(target){root.querySelectorAll('[data-db-drop]').forEach(node=>node.classList.toggle('db-drop-ready',node===target));}
   function clearDrag(){clearTimeout(holdTimer);const pointer=drag?.pointer??pendingDrag?.pointer;pendingDrag=null;if(pointer!==undefined&&root?.hasPointerCapture(pointer))root.releasePointerCapture(pointer);drag=null;ghost?.remove();ghost=null;root?.classList.remove('db-dragging');if(root)markDrop(null);}
   function dropOn(target){if(!drag||!target||busy)return;if(target.dataset.dbDrop==='table'&&drag.source==='collection')change(drag.id,1);else if(target.dataset.dbDrop==='collection'&&drag.source==='table')change(drag.id,-1);}
-  function thumb(card,source){return `<article class="db-card ${selectedId===card.id?'db-selected':''} ${source==='collection'&&owned(card)<=(state.counts[card.id]||0)?'db-used':''}" data-card="${escape(card.id)}" data-source="${source}"><button type="button" class="db-card-art" data-action="select" draggable="false" aria-label="Selecionar ${escape(card.name)}"><img src="${escape(image(card))}" alt="${escape(card.name)}" loading="lazy" decoding="async" draggable="false"><span class="db-card-quantity">${source==='table'?state.counts[card.id]+'×':Math.max(0,owned(card)-(state.counts[card.id]||0))+' livres'}</span></button><div class="db-card-controls">${source==='table'?`<button type="button" data-action="remove" aria-label="Retirar ${escape(card.name)}" ${busy?'disabled':''}>−</button><span>${state.counts[card.id]}</span>`:`<button type="button" data-drag-handle aria-label="Arrastar ${escape(card.name)}">${icon('grip')}</button>`}<button type="button" data-action="add" aria-label="Adicionar ${escape(card.name)}" ${busy||sum(state.counts)>=MAX||(state.counts[card.id]||0)>=owned(card)?'disabled':''}>+</button></div></article>`;}
+  function thumb(card,source){return `<article class="db-card ${selectedId===card.id?'db-selected':''} ${source==='collection'&&owned(card)<=(state.counts[card.id]||0)?'db-used':''}" data-card="${escape(card.id)}" data-source="${source}"><button type="button" class="db-card-art" data-action="select" draggable="false" aria-label="Selecionar ${escape(card.name)}"><img src="${escape(image(card))}" alt="${escape(card.name)}" loading="lazy" decoding="async" draggable="false"><span class="db-card-quantity">${source==='table'?(window.MythicAvailability?.isDisabled(card.id)?'Pausada · ':'')+state.counts[card.id]+'×':Math.max(0,owned(card)-(state.counts[card.id]||0))+' livres'}</span></button><div class="db-card-controls">${source==='table'?`<button type="button" data-action="remove" aria-label="Retirar ${escape(card.name)}" ${busy?'disabled':''}>−</button><span>${state.counts[card.id]}</span>`:`<button type="button" data-drag-handle aria-label="Arrastar ${escape(card.name)}">${icon('grip')}</button>`}<button type="button" data-action="add" aria-label="Adicionar ${escape(card.name)}" ${busy||window.MythicAvailability?.isDisabled(card.id)||sum(state.counts)>=MAX||(state.counts[card.id]||0)>=owned(card)?'disabled':''}>+</button></div></article>`;}
   function renderTable(){
     const cards=catalog(),map=new Map(cards.map(c=>[c.id,c]));
     root.querySelector('#db-table-grid').innerHTML=Object.keys(state.counts).filter(id=>state.counts[id]>0&&map.has(id)).map(id=>thumb(map.get(id),'table')).join('')+(sum(state.counts)<MAX?'<div class="db-empty-slot" aria-hidden="true"><span>+</span><small>Solte uma carta aqui</small></div>':'');
@@ -94,7 +94,7 @@
   function renderCollection(){
     if(!state||!root.open)return;
     const belt=root.querySelector('#db-collection-belt'),left=belt.scrollLeft;
-    const cards=catalog().filter(c=>owned(c)>(state.counts[c.id]||0)&&(faction==='all'||c.faction===faction)&&(kind==='all'||(kind==='unit'?c.kind==='unit':c.kind!=='unit'))&&(!query||norm(`${c.name} ${c.faction} ${c.ability} ${c.type}`).includes(query)));
+    const cards=catalog().filter(c=>!window.MythicAvailability?.isDisabled(c.id)&&owned(c)>(state.counts[c.id]||0)&&(faction==='all'||c.faction===faction)&&(kind==='all'||(kind==='unit'?c.kind==='unit':c.kind!=='unit'))&&(!query||norm(`${c.name} ${c.faction} ${c.ability} ${c.type}`).includes(query)));
     belt.innerHTML=cards.length?cards.map(card=>thumb(card,'collection')).join(''):'<p class="db-empty">Nenhuma cópia disponível neste filtro. Retire uma carta da mesa para disponibilizá-la aqui.</p>';belt.scrollLeft=left;
   }
   function renderPreview(){
@@ -102,7 +102,7 @@
     art.dataset.card=card?.id||'';art.dataset.source='collection';
     if(card){if(img.getAttribute('src')!==image(card))img.src=image(card);img.alt=card.name;root.querySelector('#db-preview-name').textContent=card.name;root.querySelector('#db-preview-meta').textContent=`${card.subtype||card.type} · ${card.faction} · ${card.power||0} poder`;root.querySelector('#db-preview-ability').textContent=card.ability||'';}
     else{img.removeAttribute('src');img.alt='';root.querySelector('#db-preview-name').textContent='Selecione uma carta';root.querySelector('#db-preview-meta').textContent='';root.querySelector('#db-preview-ability').textContent='Sua coleção aparece abaixo.';}
-    const add=root.querySelector('[data-action="add-selected"]');add.disabled=busy||!card||sum(state.counts)>=MAX||(state.counts[card?.id]||0)>=owned(card);
+    const add=root.querySelector('[data-action="add-selected"]');add.disabled=busy||!card||window.MythicAvailability?.isDisabled(card?.id)||sum(state.counts)>=MAX||(state.counts[card?.id]||0)>=owned(card);
     root.querySelector('.db-mobile-preview').disabled=!card;
   }
   function validate(){return Object.entries(state.counts).every(([id,n])=>Number.isInteger(n)&&n>=0&&n<=owned(cardFor(id)));}
@@ -124,6 +124,7 @@
     if(id&&action){const candidate=[...root.querySelectorAll('[data-card]')].find(n=>n.dataset.card===id&&n.dataset.source===source);candidate?.querySelector(`[data-action="${action}"]`)?.focus({preventScroll:true});}
   }
   function change(id,delta){
+    if(delta>0&&window.MythicAvailability?.isDisabled(id)){message("Esta carta está temporariamente pausada.");return;}
     if(busy||!state)return;const card=cardFor(id),old=state.counts[id]||0,next=old+delta;
     if(delta>0&&sum(state.counts)>=MAX){message('O baralho aceita no máximo 35 cartas.');return;}
     if(!card||next<0||next>owned(card)){message('Você já usou todas as cópias disponíveis dessa carta.');return;}
@@ -144,6 +145,7 @@
     else if(action==='zoom')enlarge();else if(action==='undo')undoChange();else if(action==='clear'){checkpoint();state.counts={};remember();render();message('Mesa limpa. Use Desfazer para recuperar as cartas.');}else if(action==='save')save();
   }
   async function save(){
+    if(state&&window.MythicAvailability?.checkDeck(state.counts)===false)return;
     if(busy||!state)return;
     if(!validate()||sum(state.counts)<MIN||sum(state.counts)>MAX){message('Revise o baralho: são necessárias de 14 a 35 cartas válidas.',true);return;}
     busy=true;clearDrag();render();message('Salvando o baralho na sua conta…',true);

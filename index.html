@@ -19,7 +19,7 @@
   <link rel="stylesheet" href="sidebar-arcane.css?v=1">
   <link rel="stylesheet" href="eclipse.css?v=1">
   <link rel="stylesheet" href="abilities.css?v=1">
-  <link rel="stylesheet" href="welcome.css?v=1">
+  <link rel="stylesheet" href="welcome.css?v=2">
   <link rel="stylesheet" href="arcane-palette.css?v=1">
   <link rel="stylesheet" href="arcane-upgrade.css?v=10">
   <link rel="stylesheet" href="deck-builder.css?v=3">
@@ -29,8 +29,9 @@
   <link rel="stylesheet" href="practice-mode.css?v=1">
   <link rel="stylesheet" href="landscape-zones.css?v=2">
   <link rel="stylesheet" href="row-holograms.css?v=1">
+  <link rel="stylesheet" href="portal-upgrade.css?v=1">
 </head>
-<body class="mythic-rework">
+<body class="mythic-rework public-home-open">
   <div class="loading-screen" id="loading-screen" role="status" aria-live="polite">
     <span class="loading-emblem" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5 14.5 9.5 21.5 12 14.5 14.5 12 21.5 9.5 14.5 2.5 12 9.5 9.5Z"/></svg></span>
     <span class="loading-title">MYTHIC <b>CLASH</b></span>
@@ -173,7 +174,7 @@
     <span class="match-result-title" id="match-result-title"></span>
     <section class="tie-break-panel" id="tie-break-panel" hidden aria-live="polite"><small>DESEMPATE · MENOR PODER VENCE</small><p id="tie-break-status">Puxe uma carta de personagem.</p><div id="tie-break-card-options"></div><button class="button button-primary" id="tie-break-continue" type="button" hidden>Voltar à arena</button></section>
   </div>
-  <div class="account-gate" id="account-gate"><section class="public-welcome panel"><a class="brand" href="#"><span class="brand-mark">✦</span><span class="brand-name">MYTHIC <b>CLASH</b><small>CARD GAME</small></span></a><p class="eyebrow">UM UNIVERSO DE MITOS E ESTRATÉGIA</p><h2>Monte seu deck.<br>Escreva sua lenda.</h2><p>Reúna heróis de diferentes mitologias, escolha sua estratégia e dispute a arena.</p><div class="public-feature-list"><span>⚔ Batalhas táticas por turnos</span><span>✦ Colecione personagens e relíquias</span><span>♜ Enfrente o Guardião e suba de rank</span></div></section><section class="account-gate-card panel"><p class="eyebrow">✦ &nbsp; ENTRE NA CONVERGÊNCIA</p><h1 id="auth-heading">Sua próxima lenda começa aqui.</h1><p id="auth-description">Entre ou crie uma conta para acessar o jogo.</p><form id="sign-in-form"><label>E-mail<input id="sign-in-email" type="email" autocomplete="email" required></label><label>Senha<input id="sign-in-password" type="password" autocomplete="current-password" minlength="8" required></label><button class="button button-primary" type="submit">Entrar</button><button class="text-link" type="button" data-auth-switch="signup">Criar conta</button></form><form id="sign-up-form" hidden><label>Nick<input id="sign-up-name" type="text" autocomplete="nickname" minlength="2" maxlength="24" required></label><label>E-mail<input id="sign-up-email" type="email" autocomplete="email" required></label><label>Telefone<input id="sign-up-phone" type="tel" autocomplete="tel" minlength="8" maxlength="24" placeholder="+55 11 99999-9999" required></label><label>Idade<input id="sign-up-age" type="number" min="13" max="120" inputmode="numeric" autocomplete="bday-year" required></label><label>Senha<input id="sign-up-password" type="password" autocomplete="new-password" minlength="8" required></label><small class="auth-private-note">Telefone e idade ficam privados e ajudam a proteger sua conta.</small><button class="button button-primary" type="submit">Criar minha conta</button><button class="text-link" type="button" data-auth-switch="signin">Já tenho uma conta</button></form><p id="auth-message" aria-live="polite"></p><small class="auth-security-note">A senha é gerenciada pelo Supabase Authentication.</small></section></div>
+  <div class="account-gate" id="account-gate"><section class="public-welcome panel"><a class="brand" href="#"><span class="brand-mark">✦</span><span class="brand-name">MYTHIC <b>CLASH</b><small>CARD GAME</small></span></a><p class="eyebrow">UM UNIVERSO DE MITOS E ESTRATÉGIA</p><h2>Monte seu deck.<br>Escreva sua lenda.</h2><p>Reúna heróis de diferentes mitologias, escolha sua estratégia e dispute a arena.</p><div class="public-feature-list"><span>⚔ Batalhas táticas por turnos</span><span>✦ Colecione personagens e relíquias</span><span>♜ Enfrente o Guardião e suba de rank</span></div></section><section class="account-gate-card panel"><p class="eyebrow">✦ &nbsp; ENTRE NA CONVERGÊNCIA</p><h1 id="auth-heading">Sua próxima lenda começa aqui.</h1><p id="auth-description">Entre ou crie uma conta para acessar o jogo.</p><form id="sign-in-form"><label>E-mail<input id="sign-in-email" type="email" autocomplete="email" required></label><label>Senha<input id="sign-in-password" type="password" autocomplete="current-password" minlength="8" required></label><button class="button button-primary" type="submit">Entrar</button><button class="text-link" type="button" data-auth-switch="signup">Criar conta</button></form><form id="sign-up-form" hidden><label>Nick<input id="sign-up-name" type="text" autocomplete="nickname" minlength="2" maxlength="24" required></label><label>E-mail<input id="sign-up-email" type="email" autocomplete="email" required></label><label>Telefone<input id="sign-up-phone" type="tel" autocomplete="tel" minlength="8" maxlength="24" placeholder="+55 11 99999-9999" required></label><label>Idade<input id="sign-up-age" type="number" min="13" max="120" inputmode="numeric" autocomplete="bday-year" required></label><label>Senha<input id="sign-up-password" type="password" autocomplete="new-password" minlength="8" required></label><small class="auth-private-note">Telefone fica privado. A idade também é usada em estatísticas por faixa etária para melhorar o jogo.</small><button class="button button-primary" type="submit">Criar minha conta</button><button class="text-link" type="button" data-auth-switch="signin">Já tenho uma conta</button></form><p id="auth-message" aria-live="polite"></p><small class="auth-security-note">A senha é gerenciada pelo Supabase Authentication.</small></section></div>
   <audio id="menu-music" src="assets/menu-theme.mp3" preload="none" loop></audio>
   <audio id="battle-music" src="assets/battle-theme.mp3" preload="none" loop></audio>
   <div class="toast" id="toast" aria-live="polite"></div>
@@ -196,7 +197,7 @@
   <script src="loki-card.js?v=2" defer></script>
   <script src="abilities-data.js?v=8" defer></script>
   <script src="world-rules.js?v=2" defer></script>
-  <script src="abilities-engine.js?v=9" defer></script>
+  <script src="abilities-engine.js?v=10" defer></script>
   <script src="abilities-ui.js?v=3" defer></script>
   <script src="avatars-chibi.js?v=1" defer></script>
   <script src="vfx-runtime.js?v=2" defer></script>
@@ -204,15 +205,16 @@
   <script src="arcane-upgrade.js?v=2" defer></script>
   <script src="world-lore.js?v=1" defer></script>
   <script src="universe-banners.js?v=1" defer></script>
-  <script src="app.js?v=161" defer></script>
-  <script src="welcome.js?v=1" defer></script>
-  <script src="online.js?v=60" defer></script>
+  <script src="app.js?v=162" defer></script>
+  <script src="welcome.js?v=2" defer></script>
+  <script src="online.js?v=61" defer></script>
+  <script src="portal-upgrade.js?v=1" defer></script>
   <script src="missions-menu.js?v=1" defer></script>
   <script src="profile-redesign.js?v=1" defer></script>
   <script src="honors.js?v=1" defer></script>
-  <script src="concept-theme.js?v=14" defer></script>
+  <script src="concept-theme.js?v=15" defer></script>
   <script src="practice-mode.js?v=2" defer></script>
-  <script src="deck-builder.js?v=5" defer></script>
+  <script src="deck-builder.js?v=6" defer></script>
   <script src="sidebar-arcane.js?v=1" defer></script>
 </body>
 </html>

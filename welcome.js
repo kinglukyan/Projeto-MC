@@ -2,9 +2,10 @@
  'use strict';
  const PACK='assets/onboarding/starter-pack.png',BACK='assets/card-back.svg';
  const paths=[
-  {id:'Grécia',name:'Mitologia Grega',hero:'Zeus',image:'assets/holograms/zeus-hologram.png',symbol:'Λ',text:'Deuses do Olimpo, heróis e formações lendárias.',tone:'greek'},
-  {id:'Nórdicos',name:'Mitologia Nórdica',hero:'Odin',image:'assets/holograms/odin-hologram.png',symbol:'ᚠ',text:'Runas, guerreiros e o poder dos Nove Reinos.',tone:'norse'},
-  {id:'Egípcios',name:'Mitologia Egípcia',hero:'Anúbis',image:'assets/holograms/anubis-hologram.png',symbol:'△',text:'Deuses antigos, ressurreições e os mistérios do Nilo.',tone:'egypt'}
+  {id:'Grécia',name:'Mitologia Grega',image:'assets/card-badges/greece.svg',text:'O Olimpo, seus heróis e formações lendárias.',tone:'greek'},
+  {id:'Nórdicos',name:'Mitologia Nórdica',image:'assets/card-badges/norse-viking.png',text:'Runas, guerreiros e o poder dos Nove Reinos.',tone:'norse'},
+  {id:'Egípcios',name:'Mitologia Egípcia',image:'assets/card-badges/egypt.svg',text:'Os deuses antigos e os mistérios do Nilo.',tone:'egypt'},
+  {id:'Alyns',name:'Reino de Alyn',image:'assets/card-badges/alyans.png',text:'Lukyan, Butter e o início de uma lenda original.',tone:'alyn'}
  ];
  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
  const button=(text,fn,cls='welcome-button')=>{const n=el('button',cls,text);n.type='button';n.addEventListener('click',fn);return n;};
@@ -36,13 +37,13 @@
   screen('welcome','Bem-vindo à Convergência'+(user.name?', '+user.name:'')+'.','Sua lenda começa com um presente. Escolha uma mitologia, descubra suas cartas e prepare seu primeiro baralho.',0);
   const visual=el('div','welcome-intro-visual');visual.append(el('div','welcome-orbit'),picture(PACK,'Seu primeiro pacotinho de Mythic Clash','welcome-intro-pack'));
   const facts=el('div','welcome-gifts');for(const [value,label] of [['14','cartas para começar'],['2','ícones de perfil'],['1','nova jornada']]){const item=el('div');item.append(el('strong','',value),el('span','',label));facts.append(item);}stage.append(visual,facts);
-  actions.append(button('Começar minha jornada →',chooseScreen));packReady=preload(PACK);
+  actions.append(button('Começar minha jornada →',chooseScreen));packReady=preload(PACK);for(const path of paths)preload(path.image);
  }
  function chooseScreen(){
   screen('choice','Qual mitologia desperta sua curiosidade?','A sua escolha favorece as cartas do pacote. Um ícone será dessa mitologia e o outro será de uma mitologia diferente — ambos sorteados.',1);
   const grid=el('div','welcome-mythologies'),proceed=button('Receber meu pacote →',claim);proceed.disabled=!chosen;
   for(const path of paths){const option=button('',()=>{chosen=path.id;for(const n of grid.children){const selected=n.dataset.mythology===chosen;n.setAttribute('aria-pressed',String(selected));}proceed.disabled=false;},'welcome-mythology '+path.tone);option.dataset.mythology=path.id;option.setAttribute('aria-pressed',String(chosen===path.id));
-   option.append(el('span','welcome-myth-symbol',path.symbol),picture(path.image,path.hero),el('strong','',path.name),el('span','welcome-myth-description',path.text),el('small','welcome-myth-selected','✦ Escolhida'));grid.append(option);
+   option.append(picture(path.image,'Símbolo de '+path.name,'welcome-faction-emblem'),el('strong','',path.name),el('span','welcome-myth-description',path.text),el('small','welcome-myth-selected','✦ Escolhida'));grid.append(option);
   }
   stage.append(grid);actions.append(button('Voltar',intro,'welcome-secondary'),proceed);
  }
@@ -90,9 +91,29 @@
   for(const [i,node] of Array.from(stage.querySelectorAll('.welcome-reward-card')).entries()){setPosition(node,i);node.classList.add('is-revealed');node.disabled=false;node.style.opacity='1';}
   stage.querySelector('.welcome-earned-icons')?.remove();const icons=el('div','welcome-earned-icons');for(const [i,id] of (receipt.icon_ids||[]).entries()){const item=el('div','welcome-earned-icon'),a=iconData(id);if(a.avatar){const frame=el('span','welcome-earned-avatar');frame.setAttribute('role','img');frame.setAttribute('aria-label',a.name);frame.style.backgroundImage='url("'+window.MythicSecurity.assetUrl(a.avatar.asset.split('#')[0])+'")';frame.style.backgroundPosition=(a.avatar.col*50)+'% '+(a.avatar.row*100)+'%';item.append(frame);}else if(a.asset)item.append(picture(a.asset,a.name));item.append(el('span','',a.name),el('small','',i===0?'Da sua mitologia':'De outra mitologia'));icons.append(item);}stage.append(icons);actions.replaceChildren(button('Montar deck →',finish));message.textContent='14 cartas e 2 ícones adicionados à sua conta.';actions.scrollIntoView({block:'nearest',behavior:reduced()?'auto':'smooth'});
  }
+ let inspectIndex=0,swipe=null;
  function inspect(card){
-  if(phase!=='revealed')return;if(!inspector){inspector=el('dialog','welcome-inspector');inspector.setAttribute('aria-label','Carta recebida');document.body.append(inspector);inspector.addEventListener('click',e=>{if(e.target===inspector)inspector.close();});}
-  inspector.replaceChildren(picture(card.art||BACK,card.name),el('h2','',card.name),el('p','',card.ability||''),button('Voltar às minhas cartas',()=>inspector.close()));inspector.showModal();
+  if(phase!=='revealed')return;
+  if(!inspector){
+   inspector=el('dialog','welcome-inspector welcome-fan-inspector');inspector.setAttribute('aria-label','Cartas recebidas ampliadas');document.body.append(inspector);
+   inspector.addEventListener('click',e=>{if(e.target===inspector)inspector.close();});
+   inspector.addEventListener('keydown',e=>{if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();moveInspect(e.key==='ArrowRight'?1:-1);}});
+  }
+  inspectIndex=Math.max(0,cards().findIndex(c=>c.id===card.id));renderInspect();if(!inspector.open)inspector.showModal();
+ }
+ function moveInspect(delta){inspectIndex=Math.max(0,Math.min(cards().length-1,inspectIndex+delta));renderInspect();}
+ function renderInspect(){
+  const all=cards(),selected=all[inspectIndex],fan=el('div','welcome-large-fan');fan.setAttribute('aria-label','Arraste para os lados ou escolha uma carta vizinha');
+  for(let i=Math.max(0,inspectIndex-2);i<=Math.min(all.length-1,inspectIndex+2);i++){
+   const c=all[i],d=i-inspectIndex,n=button('',()=>{if(inspector._dragged)return;inspectIndex=i;renderInspect();},'welcome-large-card');n.style.setProperty('--offset',d);n.dataset.selected=String(!d);n.setAttribute('aria-label',c.name);n.setAttribute('aria-pressed',String(!d));n.append(picture(c.art||BACK,c.name));fan.append(n);
+  }
+  fan.addEventListener('pointerdown',e=>{if(e.button!==0)return;inspector._dragged=false;swipe={x:e.clientX,y:e.clientY,id:e.pointerId};const capture=e.target.closest('button')||fan;capture.setPointerCapture(e.pointerId);});
+  fan.addEventListener('pointermove',e=>{if(swipe&&Math.abs(e.clientX-swipe.x)>12)inspector._dragged=true;});
+  fan.addEventListener('pointerup',e=>{if(!swipe||swipe.id!==e.pointerId)return;const dx=e.clientX-swipe.x,dy=e.clientY-swipe.y;swipe=null;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)){inspector._dragged=true;moveInspect(dx<0?1:-1);setTimeout(()=>{inspector._dragged=false;},0);}});
+  fan.addEventListener('pointercancel',()=>{swipe=null;});
+  const controls=el('div','welcome-inspector-controls'),prev=button('← Anterior',()=>moveInspect(-1)),next=button('Próxima →',()=>moveInspect(1));prev.disabled=inspectIndex===0;next.disabled=inspectIndex===all.length-1;controls.append(prev,el('span','',`${inspectIndex+1} / ${all.length}`),next);
+  const copy=el('div','welcome-inspector-copy');copy.setAttribute('aria-live','polite');copy.append(el('h2','',selected.name),el('h3','',selected.abilityTitle||'Habilidade'),el('p','',selected.ability||''));
+  inspector.replaceChildren(button('Fechar ×',()=>inspector.close(),'welcome-inspector-close'),fan,controls,copy);inspector.scrollLeft=0;if(inspector.open)fan.querySelector("[data-selected=true]")?.focus({preventScroll:true});
  }
  async function finish(){
   if(busy)return;busy=true;const token=generation;actions.querySelector('button').disabled=true;message.textContent='Preparando seu construtor…';

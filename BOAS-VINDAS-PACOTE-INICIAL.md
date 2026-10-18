@@ -3,13 +3,15 @@
 ## Experiência
 
 1. Após autenticar uma conta nova, abrir uma apresentação de boas-vindas sem a barra lateral.
-2. Escolher entre Mitologia Grega, Nórdica e Egípcia.
+2. Escolher entre Mitologia Grega, Nórdica, Egípcia e Reino de Alyn (SQL 027).
 3. Receber um pacotinho com 14 cartas e 2 ícones, registrados uma única vez pelo servidor.
 4. Abrir a embalagem: o lacre se desprende, o corpo do pacote desce e as cartas saem mostrando o verso. Todas viram e se abrem em leque.
 5. Tocar numa carta para ampliar a arte e ler sua habilidade atual. No celular, os 14 itens formam dois leques de sete.
 6. Usar **Montar deck** para abrir o construtor com o primeiro baralho de 14 cartas. O tutorial do Guardião continua sendo apresentado na primeira batalha.
 
 Há opção de pular a animação e suporte a movimento reduzido. O som de revelação respeita a opção de efeitos do jogador. Os demais controles ficam bloqueados pelo diálogo durante as boas-vindas, e a conta pode ser encerrada pelo botão de saída.
+
+Para as mudanças de Alyn, ampliação e administração, consulte `ATUALIZACAO-PORTAL-ADMINISTRACAO.md`. As regras abaixo descrevem a entrega original do SQL 026.
 
 ## Presente inicial
 
