@@ -169,3 +169,60 @@
  body.concept-ui #view-decks .concept-deck-gallery{grid-template-columns:minmax(0,1fr)}
  body.concept-ui #view-decks .concept-deck-tile{max-width:300px;width:100%;justify-self:center}
 }
+
+/* Compact mobile toolbar: one row, with 44px touch targets. */
+@media(max-width:960px){
+ body.mythic-rework.arcane-sidebar:not(.duel-fullscreen) .main-content>.topbar{
+  display:grid!important;grid-template-columns:44px minmax(0,1fr) auto;
+  align-items:center;column-gap:6px!important;row-gap:0!important;
+  min-height:60px!important;height:auto!important;padding:8px 10px!important;
+  margin-bottom:12px;border:1px solid #aa94ca35;border-radius:10px;
+  background:linear-gradient(110deg,#241a38eb,#141020ed)!important;
+  box-shadow:0 5px 18px #06030b24;box-sizing:border-box;
+ }
+ body.mythic-rework.arcane-sidebar .main-content>.topbar::after{display:none}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .arcane-menu-button{
+  display:grid!important;place-items:center;width:44px;min-width:44px;height:44px;
+  padding:0!important;margin:0;border:1px solid #bc9fdf40;border-radius:8px;
+  background:#ffffff06;box-shadow:none;color:#eadcf9;
+ }
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .arcane-menu-button svg{width:22px;height:22px;margin:0}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .arcane-menu-button span{display:none}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .breadcrumb{
+  min-width:0;max-width:100%;margin:0;font-size:0!important;letter-spacing:0;
+  overflow:hidden;white-space:nowrap;text-overflow:ellipsis;
+ }
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .breadcrumb i{display:none}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .breadcrumb b{
+  display:block;overflow:hidden;text-overflow:ellipsis;font-size:12px!important;
+  font-weight:600;line-height:1.3;color:#eee4f7;
+ }
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .topbar-right{
+  display:flex;flex-flow:row nowrap!important;align-items:center;justify-content:flex-end;
+  gap:1px!important;flex:none!important;width:auto!important;max-width:none!important;margin:0;
+ }
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .icon-button{
+  display:grid;place-items:center;width:44px!important;min-width:44px!important;height:44px!important;
+  padding:0!important;margin:0;border-color:transparent!important;border-radius:8px;
+  font-size:21px;background:transparent!important;box-shadow:none;line-height:1;
+ }
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .icon-button:hover,
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .icon-button:focus-visible{background:#bc93ed18!important;border-color:#bc9fdf70!important}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .public-home-link{font-size:0!important}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .public-home-link::before{content:'⌂';font-size:24px;line-height:1}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .local-status{
+  display:flex;justify-content:center;flex:0 0 12px!important;width:12px;max-width:12px;
+  min-width:12px;margin:0 3px 0 0;padding:0;gap:0;position:relative;
+ }
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .local-status b{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+  clip-path:inset(50%);white-space:nowrap;border:0;
+ }
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .local-status i{width:6px;height:6px;flex:0 0 6px}
+}
+@media(max-width:360px){
+ body.mythic-rework.arcane-sidebar:not(.duel-fullscreen) .main-content>.topbar{grid-template-columns:44px minmax(0,1fr)}
+ body.mythic-rework.arcane-sidebar .main-content>.topbar .breadcrumb{
+  position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);
+ }
+}
