@@ -8,8 +8,8 @@
     "sha256": "3691e263b84403eb2c1a5c8e1fae527121a4c5d2da08297a108b4eb48ed1b3f2"
   },
   "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
-    "bytes": 2470,
-    "sha256": "c534122cef4eda6dda8bb188b8e876a1bc0914f56d5e394a47ebebbb5233a8b8"
+    "bytes": 2510,
+    "sha256": "2282dbd4cac466530964b5ec17eb1db4b60a2480a95e2ff7a44dc54f86ffb646"
   },
   "_manutencao/preparar-publicacao.cjs": {
     "bytes": 1545,
@@ -84,8 +84,8 @@
     "sha256": "23b660d177a19999bb4ddd9fc2a9d626aa5e70aa9842bd9a589f17adaa72a48b"
   },
   "arcane-upgrade.js": {
-    "bytes": 6901,
-    "sha256": "f5bf25edef5ee5da2b2f665fdb1aabf4ac1256e0d7c13dabf31faec24acce687"
+    "bytes": 6614,
+    "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
   },
   "asset-manifest.json": {
     "bytes": 11506,
@@ -980,8 +980,8 @@
     "sha256": "6cc51a82aec8c2ae014df08f3dbe4bb372d2cedfae333ef365bc956172a9b754"
   },
   "COMECE-AQUI.txt": {
-    "bytes": 3727,
-    "sha256": "bc3fc777df260a7ced842e318e6d689465631c7c4182bb09a9fc5226e1bc2d1f"
+    "bytes": 4044,
+    "sha256": "1a3058e3e0771941dadbe584465768eedffeb4f88a26f6ab8d0e516ceada089b"
   },
   "CONCEPT-ART-ASSETS.json": {
     "bytes": 5044,
@@ -996,8 +996,8 @@
     "sha256": "ef0b230fee2e30173be44a0815da58075255328cd9055ad443cff8b0d741ae6c"
   },
   "concept-theme.js": {
-    "bytes": 39985,
-    "sha256": "22bd7d2e4b3c3c30e67a09c12e29a9bccdd9b06730b77f3b33dbe6cc55c10a0e"
+    "bytes": 39507,
+    "sha256": "b290c153542020e03f4c18aea9ed3e28be6c2da3a91d72e2d18d3f15fa72f658"
   },
   "CONSTRUTOR-DE-DECKS.md": {
     "bytes": 4200,
@@ -1008,8 +1008,8 @@
     "sha256": "732d5551364ae8ca421d1dc1fc04a0c6917fe080b019ccc0be101c8e7aebf6d3"
   },
   "convergence-lobby.js": {
-    "bytes": 10766,
-    "sha256": "c77fc9c27ed1cfa2aa60049939038dec7cd64b889bc3e97d91391e4a5db61181"
+    "bytes": 11162,
+    "sha256": "dc971f3150871193b85fb80e7033f1c44a3d28e8723e1c948144caac480fbdb0"
   },
   "CORRECAO-AFRODITE-FILEIRAS.md": {
     "bytes": 1148,
@@ -1042,6 +1042,14 @@
   "CORRECAO-VITORIA-ESTRELAS.md": {
     "bytes": 3187,
     "sha256": "dfe7004477a24d33b04c6bb415ec607c96437d19ff26e2e621aead62fbf7aaf3"
+  },
+  "custom-lobby.css": {
+    "bytes": 4008,
+    "sha256": "405e1838d2c98db12b3899941c6d0ecb11070a77da396d647727439877f1bc76"
+  },
+  "custom-lobby.js": {
+    "bytes": 10255,
+    "sha256": "4a370c07dfdd1bb55e0baed1eefbf5127f430b8e20eb7788a55ab741d6f8580e"
   },
   "deck-builder.css": {
     "bytes": 19603,
@@ -1140,8 +1148,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 69067,
-    "sha256": "cce62be38178d57a183a311d0f05817a31b87dddbfe3a9cf99daa22fd328c3e8"
+    "bytes": 71413,
+    "sha256": "ff731a27a0d42b082709c0e936a37b6847dcd5472ba9d02c0471ef22543e2b44"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -1216,8 +1224,8 @@
     "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
   },
   "online.js": {
-    "bytes": 144163,
-    "sha256": "c9353c53b2e46b1049eb951e17c02fe6274a1c837f6456635dcd8e7494c73785"
+    "bytes": 140241,
+    "sha256": "91427e1c7243639057ee949866343f82b0df0b5c724516b0b1f6b1a19e97baad"
   },
   "portal-upgrade.css": {
     "bytes": 19957,
@@ -1286,6 +1294,10 @@
   "SALA-BARALHO-LATERAL.md": {
     "bytes": 974,
     "sha256": "6dd7c37bbe27355203b52df45ebed7aef6f90d8238cf2e56e9e8cdbf1a7fa123"
+  },
+  "SALA-PERSONALIZADA.md": {
+    "bytes": 2234,
+    "sha256": "9023f764edb2210e725d43e3ba2ddb7b27f38ad110c31eedaa982d22430038a2"
   },
   "security-center.css": {
     "bytes": 2669,
@@ -1522,6 +1534,10 @@
   "supabase/migrations/202610190037_security_and_fair_play.sql": {
     "bytes": 21584,
     "sha256": "45a567e331dc3b011527c17080cc94d85abe6d4916dd096ddf8b05c923b588f7"
+  },
+  "supabase/migrations/202610190038_custom_room_lobby.sql": {
+    "bytes": 15859,
+    "sha256": "547eb96ff010689085c20d12f6f27adca79dcbde01ed0da21e50a16651fa45ac"
   },
   "supabase/README.md": {
     "bytes": 2053,

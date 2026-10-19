@@ -183,7 +183,7 @@
  const queueDeck=make('section','epic-panel concept-queue-deck queue-room-deck'),queueSetup=$('#view-queue .queue-setup-panel'),queueRoom=make('div','queue-room-layout');queueSetup.before(queueRoom);queueRoom.append(queueSetup,queueDeck);
  $('#view-custom .custom-page-heading>img').src='assets/concept-ui/mode-custom.png';
  const customDeck=make('section','epic-panel concept-queue-deck');$('#view-custom .custom-room-panel').after(customDeck);
- function decorateSeats(){$$('#view-custom .custom-seat').forEach(seat=>{if(seat.querySelector('.concept-seat-sigil'))return;const img=picture('assets/concept-ui/'+(seat.classList.contains('spectator-seat')?'mode-custom.png':'mode-normal.png'),'concept-seat-sigil');img.style.cssText='width:70px;height:70px;object-fit:contain';seat.prepend(img);});}new MutationObserver(decorateSeats).observe($('#view-custom .custom-room-seats'),{childList:true,subtree:true});decorateSeats();
+
 
  // Settings: group current working controls, not mock controls from the concept.
  setHeading('#view-settings','PREFERÊNCIAS DO JOGADOR','Ajuste sua experiência na Arena.');

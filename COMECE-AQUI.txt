@@ -1,7 +1,13 @@
 MYTHIC CLASH — PACOTE COMPLETO
 Consolidado em 19/10/2026 a partir da versão local mais recente.
 
-ATUALIZAÇÃO ATUAL: SEGURANÇA E AUDITORIA
+ATUALIZAÇÃO ATUAL: SALA PERSONALIZADA
+Leia SALA-PERSONALIZADA.md. Configuração separada do lobby, entrada por
+código com escolha entre jogar/observar, convites por vaga e 1x1/2x2 automático.
+Aplicar a migração 038 depois da 037 e publicar o cliente atualizado.
+O SQL 038 ainda não foi executado no servidor nesta entrega.
+
+SEGURANÇA E AUDITORIA
 Leia SEGURANCA-E-JOGO-JUSTO.md. Há configuração Vercel e migração 037,
 que deve ser validada em homologação e publicada junto com o cliente.
 As proteções ainda não foram ativadas no servidor online nesta entrega.
@@ -17,7 +23,7 @@ Consulte LOBBY-CONVERGENCIA.md e CORRECAO-CONVITES-SESSOES.md.
 
 ESTA É A PASTA PRINCIPAL PARA GUARDAR
 Este pacote reúne o código editável atualizado, artes, sons, configuração
-pública, documentação e 51 scripts SQL.
+pública, documentação e 52 scripts SQL.
 Não é preciso juntar os ZIPs anteriores do Mythic Clash.
 
 PARA PEDIR UMA ATUALIZAÇÃO

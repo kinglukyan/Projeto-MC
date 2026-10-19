@@ -3,7 +3,7 @@
  const $=s=>document.querySelector(s),api=()=>window.MythicOnline;
  const dialog=$('#lobby-friends-dialog'),popup=$('#lobby-invitation');
  if(!dialog||!popup)return;
- let state=api()?.getLobbyState?.()||{},queue=api()?.getQueueState?.()||{active:false},friends=[],sending=false,inviteId=null,returnFocus=null,position=null,drag=null;
+ let state=api()?.getLobbyState?.()||{},queue=api()?.getQueueState?.()||{active:false},friends=[],sending=false,inviteId=null,returnFocus=null,position=null,drag=null,pickerContext="queue",pickerSlot=null;
  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
  // Usar os mesmos nomes e emblemas de elo do restante do jogo.
  const rankNames=['Aprendiz de Herói','Escudeiro','Herói','Lenda','Semideus','Deus','Convergente'];
@@ -30,9 +30,9 @@
     $('#lobby-invitation-title').textContent=host?.name||'Seu amigo';$('#lobby-inviter-rank').textContent=rankName(host?.rating);
     $('#lobby-invitation-copy').textContent=(p.mode==='ranked'?'Ranqueada':'Normal')+' · convidou você para a sala. A busca começa quando o anfitrião convergir.';
     if(inviteId!==p.id){inviteId=p.id;$('#lobby-invitation-status').textContent='';position=null;}
-    popup.hidden=false;$('#accept-duo-invite').disabled=$('#decline-duo-invite').disabled=Boolean(state.busy);
+    popup.hidden=false;if(popup.showPopover&&!popup.matches(':popover-open'))popup.showPopover();$('#accept-duo-invite').disabled=$('#decline-duo-invite').disabled=Boolean(state.busy);
     requestAnimationFrame(place);
-  }else{popup.hidden=true;inviteId=null;drag=null;}
+  }else{if(popup.matches(':popover-open'))popup.hidePopover();popup.hidden=true;inviteId=null;drag=null;}
   tick();
  }
  function tick(){const n=queue.startedAt?Math.max(0,Math.floor((Date.now()-queue.startedAt)/1000)):0;$('#converge-clock').textContent=String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');}
@@ -57,15 +57,16 @@
     const elo=el('span','lobby-friend-elo',rankName(friend.rating_points)),progress=window.MythicRank?.from?.(friend.rating_points);if(progress?.emblem){const badge=el('img');badge.src=progress.emblem;badge.alt='';elo.prepend(badge);}copy.append(el('b','',friend.display_name),elo,status);
     const invite=el('button','button button-secondary','Convidar');invite.type='button';invite.disabled=sending;invite.setAttribute('aria-label','Convidar '+friend.display_name);invite.addEventListener('click',async()=>{
       if(sending)return;sending=true;$('#lobby-friends-status').textContent='Enviando convite…';drawFriends();
-      try{const result=await api().startDuoQueue(window.queueGameMode||'normal',friend.friend_code);if(!result)throw Error('Conexão indisponível.');if(result?.error)showInviteError(result);else dialog.close();}
+      try{const result=pickerContext==='custom'?await window.MythicCustomLobby.invite(friend.friend_id,pickerSlot):await api().startDuoQueue(window.queueGameMode||'normal',friend.friend_code);if(!result)throw Error('Conexão indisponível.');if(result?.error)showInviteError(result);else dialog.close();}
       catch{ $('#lobby-friends-status').textContent='Não foi possível enviar. Tente novamente.'; }
       finally{sending=false;drawFriends();}
     });row.append(icon,copy,invite);list.append(row);
   }
   if(!sorted.length)list.append(el('p','empty-state',text?'Nenhum amigo com esse nick.':'Sua lista de amigos ainda está vazia.'));
  }
- async function openFriends(){
-  if(!api()?.requireLogin?.())return;if(queue.active||state.party||state.busy)return;
+ async function openFriends(event){
+  pickerContext=event?.detail?.context==='custom'?'custom':'queue';pickerSlot=event?.detail?.slot||null;
+  if(!api()?.requireLogin?.())return;if(pickerContext==='queue'&&(queue.active||state.party||state.busy))return;
   returnFocus=document.activeElement;$('#lobby-friends-search').value='';$('#lobby-friends-status').textContent='Carregando amigos…';
   friends=api().lobbyFriends();drawFriends();if(!dialog.open)dialog.showModal();
   try{friends=await api().loadLobbyFriends();$('#lobby-friends-status').textContent='Online primeiro. Você também pode convidar amigos offline.';drawFriends();}

@@ -19,7 +19,7 @@
  function schedule(){if(!frame)frame=requestAnimationFrame(polish);}
  new MutationObserver(schedule).observe(document.body,{childList:true,subtree:true,attributes:true,attributeFilter:['src']});
  document.addEventListener('DOMContentLoaded',()=>{
-  const seats=$('.custom-room-seats');if(seats&&!seats.querySelector('.queue-vs')){const vs=document.createElement('span');vs.className='queue-vs';vs.append(img('assets/vs-emblem.png','VS'));seats.querySelector('[data-player-slot="2"]')?.before(vs);seats.classList.add('matchup-seats');}
+
   const challenge=$('#challenge-panel>header');if(challenge){const row=document.createElement('div');row.className='challenge-matchup';const me=document.createElement('b');me.textContent=window.MythicOnline?.playerName?.()||'Você';const vs=document.createElement('span');vs.className='queue-vs';vs.append(img('assets/vs-emblem.png','VS'));const opponent=document.createElement('b');opponent.textContent='Seu desafiante';row.append(me,vs,opponent);challenge.after(row);window.addEventListener('mythic-concept-profile',e=>{me.textContent=e.detail?.name||'Você';});}
   const p=$('.store-balance-card>p');if(p)p.textContent='Ganhe Mythic Coins jogando e use na loja para personalizar sua jornada.';polish();
  });
