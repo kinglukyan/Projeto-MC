@@ -180,7 +180,6 @@
  new MutationObserver(()=>selectShop($('#store-grid .store-item'))).observe($('#store-grid'),{childList:true});$('#store-grid').addEventListener('click',event=>{if(event.target.closest('[data-store-action]'))return;const item=event.target.closest('.store-item');if(!item)return;selectShop(item);if(item.dataset.shopKind==='card')inspectShopCard();});
 
  // Queue / custom rooms: retain seats, privacy rules and all live controls.
- const queuePreview=$('#view-queue .queue-team-preview'),selfAvatar=make('span','concept-queue-avatar self','MC');queuePreview.querySelector('article').insertBefore(selfAvatar,queuePreview.querySelector('article>b'));queuePreview.querySelector('article:last-child').insertBefore(picture('assets/concept-ui/mode-x1.png','concept-opponent-sigil'),queuePreview.querySelector('article:last-child>b'));
  const queueDeck=make('section','epic-panel concept-queue-deck queue-room-deck'),queueSetup=$('#view-queue .queue-setup-panel'),queueRoom=make('div','queue-room-layout');queueSetup.before(queueRoom);queueRoom.append(queueSetup,queueDeck);
  $('#view-custom .custom-page-heading>img').src='assets/concept-ui/mode-custom.png';
  const customDeck=make('section','epic-panel concept-queue-deck');$('#view-custom .custom-room-panel').after(customDeck);

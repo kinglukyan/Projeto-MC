@@ -1,0 +1,56 @@
+MYTHIC CLASH — PACOTE COMPLETO
+Consolidado em 19/10/2026 a partir da versão local mais recente.
+
+ATUALIZAÇÃO ATUAL: LOBBY DE CONVERGÊNCIA
+A sala e os convites requerem a migração 035 no Supabase. Aplicar depois da
+034; publicar o site não executa o SQL. Consulte LOBBY-CONVERGENCIA.md.
+
+ESTA É A PASTA PRINCIPAL PARA GUARDAR
+Este pacote reúne o código editável atualizado, artes, sons, configuração
+pública, documentação e 49 scripts SQL.
+Não é preciso juntar os ZIPs anteriores do Mythic Clash.
+
+PARA PEDIR UMA ATUALIZAÇÃO
+Envie o ZIP Mythic-Clash-Completo.zip ou esta pasta inteira.
+Mantenha as mudanças futuras nesta mesma pasta e atualize o mesmo ZIP.
+O código do site está em HTML, CSS e JavaScript editáveis; não existe etapa
+de compilação nem dependência de pastas de desenvolvimento antigas.
+
+PUBLICAR O SITE
+Use esta pasta como raiz do projeto estático na hospedagem (por exemplo Vercel).
+O arquivo index.html precisa ficar na raiz publicada, ao lado de assets e dos
+arquivos JS/CSS. Não há comando de build obrigatório nem pasta dist.
+O acesso às contas e partidas requer HTTPS ou localhost; abrir index.html
+com dois cliques não substitui a hospedagem para os recursos online.
+As URLs do Supabase Auth devem corresponder ao endereço publicado.
+
+BANCO E SERVIÇOS ONLINE
+supabase-config.js conserva a URL e a chave pública do projeto existente.
+Os scripts do servidor estão em supabase/migrations; a ordem completa está em
+_manutencao/ORDEM-DAS-MIGRACOES.txt.
+No banco atual, aplicar somente scripts que ainda estejam pendentes após
+conferir o histórico. Não execute toda a lista novamente por precaução.
+Este pacote não foi publicado e não aplicou alterações ao banco online.
+
+O QUE NÃO É UM BACKUP DESTE ZIP
+Contas, senhas, jogadores, partidas e conteúdo enviado ao Storage permanecem
+no Supabase. O ZIP inclui os scripts de estrutura e regras, mas não uma cópia
+dos registros do banco, arquivos remotos nem credenciais administrativas.
+Para preservar esses dados, faça também o backup do banco e do Storage pelo
+projeto Supabase. O cliente usa a biblioteca Supabase carregada de CDN.
+
+ORGANIZAÇÃO
+- index.html: entrada do jogo; mobile.html: entrada responsiva.
+- *.js / *.css / *.json: código, estilo e dados locais.
+- assets/: imagens, símbolos, cartas, efeitos, fontes e áudio locais.
+- supabase/: regras e scripts SQL do servidor.
+- _manutencao/: lista completa de migrações e gerador do mesmo ZIP.
+- Demais documentos: histórico das funcionalidades e decisões.
+As instruções deste arquivo prevalecem sobre tutoriais antigos do pacote
+quando se referem à entrega e à lista de scripts atualmente incluídos.
+
+ANTES DE APAGAR PASTAS ANTIGAS
+Esta pasta substitui os pacotes anteriores DO SITE Mythic Clash desta entrega.
+Ela não contém o aplicativo TCG Card Studio, sua biblioteca de cartas pessoais
+nem artes soltas que nunca foram adicionadas ao site. Guarde esses itens à parte.
+Nenhuma pasta antiga foi apagada nesta consolidação.

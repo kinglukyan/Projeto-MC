@@ -1,0 +1,1518 @@
+{
+  "_headers": {
+    "bytes": 686,
+    "sha256": "9d9f369f4fe339413cc6d91e0720af93b318872dbbf1694f033dafd59c0b092b"
+  },
+  "_manutencao/atualizar-mesmo-zip.py": {
+    "bytes": 869,
+    "sha256": "3691e263b84403eb2c1a5c8e1fae527121a4c5d2da08297a108b4eb48ed1b3f2"
+  },
+  "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
+    "bytes": 2379,
+    "sha256": "4b666a2014bc501dec08ac279b1c0d27adfe475ceae6c1f47d8ca3ef663598b4"
+  },
+  "abilities-data.js": {
+    "bytes": 46690,
+    "sha256": "82df79f0ecdd82a745b046bbcc4686f0690bc086ec9a94f00a50d927d5dd3cbe"
+  },
+  "abilities-data.json": {
+    "bytes": 58565,
+    "sha256": "37e05e40b39639cfb765091660ffcdcfa0db5b8f86ea156b42667782dd6ccee0"
+  },
+  "abilities-engine.js": {
+    "bytes": 22516,
+    "sha256": "0a680041d1772af7b78410b6403f2d117706d6527892a948344ac4cf7d4f9451"
+  },
+  "abilities-ui.js": {
+    "bytes": 3082,
+    "sha256": "cc927c73170d344c55fe5822b14c71c3f8897b022409e84afbe50d31f03fbd46"
+  },
+  "abilities.css": {
+    "bytes": 2033,
+    "sha256": "202f6231b4ab10c9fcfd8ddba7e10a72fae2aeb2d0f1dee937dc269ee9ac13bb"
+  },
+  "ADAPTACAO-CELULARES-TABLETS.md": {
+    "bytes": 2955,
+    "sha256": "70aa329c6c0c44e1b210ba0b975b00fbd38bb463e16b0b7b6e04d340e879e90e"
+  },
+  "app.js": {
+    "bytes": 117766,
+    "sha256": "cbff924af3c7ab09afe2933a9ff7e675e0265b782328b279e607aa83b6623e0c"
+  },
+  "arcane-palette.css": {
+    "bytes": 37719,
+    "sha256": "c54619413c1e993f2d5cf0a5c9f30fe56b0665cd7688ae7004631a3344ca8186"
+  },
+  "arcane-upgrade.css": {
+    "bytes": 26455,
+    "sha256": "23b660d177a19999bb4ddd9fc2a9d626aa5e70aa9842bd9a589f17adaa72a48b"
+  },
+  "arcane-upgrade.js": {
+    "bytes": 6901,
+    "sha256": "f5bf25edef5ee5da2b2f665fdb1aabf4ac1256e0d7c13dabf31faec24acce687"
+  },
+  "asset-manifest.json": {
+    "bytes": 11330,
+    "sha256": "c538b7ccf1c3a1f29af230729ae8b8c1758f311ba33bfea44dfc38580e1e20cb"
+  },
+  "assets/app-icon.svg": {
+    "bytes": 531,
+    "sha256": "63b27314038fed475847b62c3d9472a7e4b3b1d0cdc2cc6319c16d3e0275f5a2"
+  },
+  "assets/ares-helm.svg": {
+    "bytes": 621,
+    "sha256": "b027e61e6b46728cfff3731907f5a120b7e2751ec8b084b87f1209ee90b02acf"
+  },
+  "assets/avatars-chibi/portraits-01.png": {
+    "bytes": 2472764,
+    "sha256": "19b8f1d1cb6d17b3646b7647f1cde41c19b2494ee96ccd5a7ac50f06c258eef4"
+  },
+  "assets/avatars-chibi/portraits-02.png": {
+    "bytes": 2408285,
+    "sha256": "f943d5c40de6b1a1425ccddb6c88cc0639d076677b83e9785a851f3462fc2ecd"
+  },
+  "assets/avatars-chibi/portraits-03.png": {
+    "bytes": 2495679,
+    "sha256": "5fb5bc995bcd03ff01c2440c6f0fb27ad39fde75bbb83b554635c56640c54053"
+  },
+  "assets/avatars-chibi/portraits-04.png": {
+    "bytes": 2664836,
+    "sha256": "3208ba37283278d0ac3151a0a02c0ab288cb013035ae4af8c22e8de1f7cac760"
+  },
+  "assets/avatars-chibi/portraits-05.png": {
+    "bytes": 2637443,
+    "sha256": "b846463da351993947e497972b4f4a351a919a6451860250d0ba746feb376dcb"
+  },
+  "assets/avatars-chibi/portraits-06.png": {
+    "bytes": 2503530,
+    "sha256": "c5b8087f4734072263f734e419577cf7c92d490c692f8421044a016822d49c40"
+  },
+  "assets/avatars-chibi/portraits-07.png": {
+    "bytes": 2480502,
+    "sha256": "fed447947409c5c5d5efd0402a2f877d5c79d9210b607359644673b90ea1e33e"
+  },
+  "assets/avatars-chibi/portraits-08.png": {
+    "bytes": 1614654,
+    "sha256": "e9c074b74e98c14e66cc7f6d0ad1ed0ec35bb9993b9ff836c04fd4d40e339715"
+  },
+  "assets/avatars-chibi/PROMPTS.json": {
+    "bytes": 13818,
+    "sha256": "8a9a96af6d4fe0b6ab65c8c4905d273ae195021e16db796eb5f6072efe088882"
+  },
+  "assets/backgrounds/citadela-paisagem.png": {
+    "bytes": 3040106,
+    "sha256": "50e1045a1dc6e6fa2f991786438812ae97eee6c57771b5ddfb81f54bd50e8381"
+  },
+  "assets/battle-theme.mp3": {
+    "bytes": 3150784,
+    "sha256": "64b17512cccb946725479ac8e6bc9ba5ccff349709ab5342591f38649896f6bc"
+  },
+  "assets/battlefield-forest.png": {
+    "bytes": 1814300,
+    "sha256": "a7f446d693a79a7e85029e01301c39d1d805389343506d15eb4d6351f5124ef6"
+  },
+  "assets/battlefield-mud.png": {
+    "bytes": 1572502,
+    "sha256": "8d6e0b5d7acdef6f0ac3670c2a6e5989710c1c38632c78c8193316dd350af788"
+  },
+  "assets/card-back.svg": {
+    "bytes": 3414,
+    "sha256": "392359b2fd8655546943cbc6c1cb488b70b45f1d2e59949fba6c5a583906e4eb"
+  },
+  "assets/card-badges/alyans.png": {
+    "bytes": 111234,
+    "sha256": "e5916fadd7e0fd22e4ed2e0eaa165748548d14b0825b0fb78d7e5254d9d6f173"
+  },
+  "assets/card-badges/alyans.svg": {
+    "bytes": 266,
+    "sha256": "3e20d25d1546fa32063d91fcbf1a532dd33bcc6121f131fde0e4918054c1885c"
+  },
+  "assets/card-badges/celtic.svg": {
+    "bytes": 272,
+    "sha256": "465be959921df7c00717532f8dd4fe9f96669cfc514644dcc72e4629de991785"
+  },
+  "assets/card-badges/egypt.svg": {
+    "bytes": 198,
+    "sha256": "be7aad6ed3f57033c8b8ea4a2ac731a3c3cc9d73d0476557f6f102ee6d445f0d"
+  },
+  "assets/card-badges/greece.svg": {
+    "bytes": 287,
+    "sha256": "efecf5659936cdbc3bdc8a30b9f1e840f5d08ad3dc96360e299575e62912b3eb"
+  },
+  "assets/card-badges/monster.png": {
+    "bytes": 53628,
+    "sha256": "3a422880a6a5dd12241a9ce47dcd8dde6e461fb3eb9e93906076323f02dbfd41"
+  },
+  "assets/card-badges/monster.svg": {
+    "bytes": 218,
+    "sha256": "4705eefa735b97d0e209b8f817b4039e8c9cc797c7472dee0ae43a888d474d06"
+  },
+  "assets/card-badges/norse-viking.png": {
+    "bytes": 24586,
+    "sha256": "c935729ec3ec1d877e07c6f6e601011f2d90bec0ebc1e9e67dcff8da3b91d676"
+  },
+  "assets/card-badges/norse.svg": {
+    "bytes": 295,
+    "sha256": "8cd73f1585a543e78480e66ae105dffcfd16896cb552afcf2d7099ec3700ea7d"
+  },
+  "assets/cards-20261017/afrodite.png": {
+    "bytes": 2444986,
+    "sha256": "0c1bcf5a5aa72b36f41c2daa5fec89bd4901c32b98149fb3da1a0b1831dcb418"
+  },
+  "assets/cards-20261017/anubis.png": {
+    "bytes": 2224010,
+    "sha256": "6ed205d41b7900203dfcfd8f3a9a6b3bc6ed7dc1213ebee40ab0df519ecece58"
+  },
+  "assets/cards-20261017/apolo.png": {
+    "bytes": 2429369,
+    "sha256": "117e239c44b1bff1cb40d1526d2e91f53ba58acaa6d98bb3587b1386e5af9d70"
+  },
+  "assets/cards-20261017/aquiles.png": {
+    "bytes": 2418751,
+    "sha256": "63625b19f7b1a4c09449b628ef75a718ad894ff67bdecfc8b24a8cfb86b2a923"
+  },
+  "assets/cards-20261017/ares.png": {
+    "bytes": 1648687,
+    "sha256": "59ee143eae327c7d382494518eaaa7235934bf691cc01d02e73e8e36c554d9b7"
+  },
+  "assets/cards-20261017/artemis.png": {
+    "bytes": 2448702,
+    "sha256": "f0bb42bb96fb68c95f15368111689ca1acef6f826f7438d9069856f79701292e"
+  },
+  "assets/cards-20261017/athena.png": {
+    "bytes": 2415015,
+    "sha256": "ee8e5372b7a5863cdbc026463daaef55fb47e01f80e144c0a21c0c3713a6355a"
+  },
+  "assets/cards-20261017/beowulf.png": {
+    "bytes": 2488990,
+    "sha256": "9988ec0a1d4b64eec5c5fdd6079bb98c7a734accd61913ec1057d344a6d22d3b"
+  },
+  "assets/cards-20261017/butter.png": {
+    "bytes": 1770005,
+    "sha256": "f9238075ef348b85480867d254cf5f4ed45ed3e517c69f8d83927adf2202bf00"
+  },
+  "assets/cards-20261017/dionisio.png": {
+    "bytes": 2516066,
+    "sha256": "96c308bf301bd3c8cf89c5f36619c54742faed61ebb9b6d884aa5f597e32f118"
+  },
+  "assets/cards-20261017/guardiao-nordico.png": {
+    "bytes": 2181928,
+    "sha256": "57879f5ca8bb80b6913c8060de8517ec46b46f299f11e5c87d7f702e3f18159d"
+  },
+  "assets/cards-20261017/hefesto.png": {
+    "bytes": 2403419,
+    "sha256": "3b7514ac75020d82cecdc954099fca4131eb1430368e6e07bd0aea30c3f5969b"
+  },
+  "assets/cards-20261017/heimdall.png": {
+    "bytes": 2377826,
+    "sha256": "c20b489e3940c3b388c9c4522ecf91f910a34a6dac66b50123b7e5abb4734b6c"
+  },
+  "assets/cards-20261017/hercules.png": {
+    "bytes": 1550922,
+    "sha256": "26fb222941766c1a823d0a7d437c1a53f684ef5ec50bf7a6cfb1f9768941b1c2"
+  },
+  "assets/cards-20261017/hermes.png": {
+    "bytes": 2346494,
+    "sha256": "92a182d9b8021d95eb9e27ac2fe39ded2c7c221297e0451044df72e6c62996fb"
+  },
+  "assets/cards-20261017/homem.png": {
+    "bytes": 2391795,
+    "sha256": "b13da54b68c5d71ffb615fa698610c3674b54069a87c52648ef08f7430e5657c"
+  },
+  "assets/cards-20261017/horus.png": {
+    "bytes": 2412747,
+    "sha256": "d1bda7a44789f401d569e860d2b03d65b9b35a535ced59d0c026dced410a762f"
+  },
+  "assets/cards-20261017/isis.png": {
+    "bytes": 2445026,
+    "sha256": "c01739e8fb8a8a1302b2144a2f443e01e1a7cc296d2d3ee9a50386281254d27c"
+  },
+  "assets/cards-20261017/lobo-alfa.png": {
+    "bytes": 1951222,
+    "sha256": "e5b750658d4459c0f05672b3a643ad0592d31d2cb40e9296488d06a7945258a5"
+  },
+  "assets/cards-20261017/lobo-beta.png": {
+    "bytes": 1841959,
+    "sha256": "5fa3a267b8c6592193ddb6b40f48016a5d957fd0c5ecc409d2bce08202e9232e"
+  },
+  "assets/cards-20261017/lobo-omega.png": {
+    "bytes": 1756845,
+    "sha256": "ede041f35e9ab6a0d11cca47134183790b3c992b4535fdfdf45416ba8807f4c8"
+  },
+  "assets/cards-20261017/loki.png": {
+    "bytes": 2275839,
+    "sha256": "cc2f2cede29c5607b9efb475aa43db42b4216597effbd22f6ba4558b090d6326"
+  },
+  "assets/cards-20261017/lukyan-rei-de-todos.png": {
+    "bytes": 2036309,
+    "sha256": "d9a82bdcc2e60370ef0f919022092b3a5d48a2c33a3c2848dd5d60f2351e6234"
+  },
+  "assets/cards-20261017/lukyan.png": {
+    "bytes": 1993131,
+    "sha256": "1ee737e5a1ed6794a6cc5f30bd269807a319b00494c20a8adb945a451c9a42c8"
+  },
+  "assets/cards-20261017/minotauro.png": {
+    "bytes": 1754417,
+    "sha256": "9b1ff93254014552823c6d84a26d65b70dca8be59fa26f7bf61a30bf59f18a02"
+  },
+  "assets/cards-20261017/mulher.png": {
+    "bytes": 2402069,
+    "sha256": "ff3deb5a8e21260e5be5bbebfa5a8646c31f9f00e1f6fe5e1be4ad36116dad05"
+  },
+  "assets/cards-20261017/odin.png": {
+    "bytes": 2465336,
+    "sha256": "f00be8918d289fbdedf58c0f279a5a824631b68b8f1c13cabd59c1df9f2c15dc"
+  },
+  "assets/cards-20261017/osiris.png": {
+    "bytes": 2408018,
+    "sha256": "de07dc2be00b3db41dabb81a339482a1b05fe7960cba750ff9e427e6b6cb49d3"
+  },
+  "assets/cards-20261017/ra.png": {
+    "bytes": 2491186,
+    "sha256": "3d95464dccf4b160f3045a14134a516a2069cb9131a5f07fb7f9f70833e066b6"
+  },
+  "assets/cards-20261017/ragnar.png": {
+    "bytes": 2471921,
+    "sha256": "e20889badc994574890eda29a06aaadd6b581833b48eaca9b85b544daebfff41"
+  },
+  "assets/cards-20261017/seth.png": {
+    "bytes": 2348429,
+    "sha256": "c22476ccf477755724022c5ac6b28c276d2207927b0d04de4659572471ea3fd7"
+  },
+  "assets/cards-20261017/sobek.png": {
+    "bytes": 2582493,
+    "sha256": "3839adb6dacfb3184038a743145909551bb6c7f590b5f962c4a1fb6a0f67da2d"
+  },
+  "assets/cards-20261017/thor.png": {
+    "bytes": 2451577,
+    "sha256": "6bd10a622938d2a3fb24cc34ff2b84a799080b04609c35cefdb90a735f06d67b"
+  },
+  "assets/concept-ui/citadela-luminosa.png": {
+    "bytes": 2944419,
+    "sha256": "e48db827a072d6add2df8c80206133cf235142bf36217bcffc310383b60ceca6"
+  },
+  "assets/concept-ui/convergence-star.svg": {
+    "bytes": 1977,
+    "sha256": "bfc485fbcf457f5867c47df960048dbcc00959ccc5f0aa201b90a4f598b899b7"
+  },
+  "assets/concept-ui/mode-custom.png": {
+    "bytes": 2400902,
+    "sha256": "9dcf80506d94340744df2ff4404f904124bb0afe7deee8311e5df89318dbda78"
+  },
+  "assets/concept-ui/mode-guardian.png": {
+    "bytes": 2857697,
+    "sha256": "d8c0f3537321ae8ccc30043ef01b3e5e89409cdf281c10d4bfec172293e26da5"
+  },
+  "assets/concept-ui/mode-normal.png": {
+    "bytes": 2760997,
+    "sha256": "09935e96c125ae041547a6e739ee828c2bdbca9128c48c23ff3866f1d00e61b2"
+  },
+  "assets/concept-ui/mode-ranked.png": {
+    "bytes": 2512585,
+    "sha256": "971aa37a45565e398326f7aa517ffdb3d0bb2f31a1a730957252166f44edf442"
+  },
+  "assets/concept-ui/mode-x1.png": {
+    "bytes": 2061674,
+    "sha256": "592fb54587729736566cb3e34155379370c9215cfd0e4767a8d4fd556cbc6d11"
+  },
+  "assets/concept-ui/panel-frame.svg": {
+    "bytes": 784,
+    "sha256": "1ff85ad34f527bdb320f571362735bb9c522ec2932fae23388c909ff3944b7ec"
+  },
+  "assets/currency/clash-bit.svg": {
+    "bytes": 678,
+    "sha256": "098690564c07758d5c3e89ca2965fe6e8bf183e7ec6df269c5d28df59c388a86"
+  },
+  "assets/currency/mythic-coins.svg": {
+    "bytes": 1077,
+    "sha256": "e1527eda9deb91c416acb9b85a1bb21a7edbb56a91b18a9361ea1c08f9d63954"
+  },
+  "assets/defeat-emblem.png": {
+    "bytes": 1482081,
+    "sha256": "006356ac3df8b2e8438fd5cfda4886ea470716b02300cd535b5f8bff4d569d69"
+  },
+  "assets/eclipse/eclipse-lunar.png": {
+    "bytes": 3833123,
+    "sha256": "53744fdfa42e1b1e92ea5f0297583f4b5eec2bd74bffb082add63c036f094c38"
+  },
+  "assets/eclipse/eclipse-solar.png": {
+    "bytes": 3559679,
+    "sha256": "21d3e585e114e76be772a466844dd14289c990666dced520f87fe65d336f392b"
+  },
+  "assets/eclipse/eclipse.png": {
+    "bytes": 3941644,
+    "sha256": "cee7ad82d27166941c2d483097ea0814925dc4effb6bb36dad63fa60e1f7668d"
+  },
+  "assets/equipment/excalibur.png": {
+    "bytes": 3587760,
+    "sha256": "10e6897c6e32efb8e71fe332073d877e17d5a5762b04e2d9a005f496119d55c2"
+  },
+  "assets/equipment/mjolnir.png": {
+    "bytes": 4205552,
+    "sha256": "5212d8046d36f4c34f917d27c9a914cb11448587097a8a86555973283f1b6a1f"
+  },
+  "assets/equipment/olho-que-tudo-ve.png": {
+    "bytes": 3921677,
+    "sha256": "162babd548c4a112159a00ab5ca6f32f44cbfd23ea5d05342bfd6d9dbc2f5abc"
+  },
+  "assets/equipment/raio-de-zeus.png": {
+    "bytes": 3711843,
+    "sha256": "9cd435e3bb9a49b06c6ddc441094551fec9e506cd8effe0944244fdff7bd5271"
+  },
+  "assets/equipment/runas-nordicas.png": {
+    "bytes": 3851416,
+    "sha256": "1a05be645d9078d09753577a4c1499df69c86de9fd2d9e3fae7b27d41ebb5899"
+  },
+  "assets/friends-icon.svg": {
+    "bytes": 491,
+    "sha256": "7fc73ea364411ddf4440f8b4283adf535730b32a4622847199ba0302c3256549"
+  },
+  "assets/hades-full.png": {
+    "bytes": 1787977,
+    "sha256": "1b6c6bd0e4b61d24d0843268177d42fc3904bb3f0b530b33848823b0fdb6082e"
+  },
+  "assets/hand-heaven.png": {
+    "bytes": 856958,
+    "sha256": "498523c5d1cc5ab2829f046e594c2b85d6df7141d64fe9ca72e5cb2686c0a888"
+  },
+  "assets/holograms/afrodite-hologram.png": {
+    "bytes": 2950439,
+    "sha256": "b40e81ac553d3e956e9d57e067cb639d52d488973f98c5fecbef4cc71207f7d6"
+  },
+  "assets/holograms/anubis-hologram.png": {
+    "bytes": 2635697,
+    "sha256": "06f41a27a0e25486865b4fee320bd39f7a7518cd4ad454f713422ce6800d5511"
+  },
+  "assets/holograms/apolo-hologram.png": {
+    "bytes": 2694779,
+    "sha256": "15a0dc8aac1b54f19a29e3728c355792b5c20b5966eaa0b15028054990046a89"
+  },
+  "assets/holograms/aquiles-hologram.png": {
+    "bytes": 2794813,
+    "sha256": "4e0b6a9806926a1ba2a76ad5ad5acdf29d06de2c83c1e70979baf5b90dcf786f"
+  },
+  "assets/holograms/ares-hologram.png": {
+    "bytes": 2423218,
+    "sha256": "368b15594b123af2cde5091e9255116f2771be6124da51b31f8181b5398182a3"
+  },
+  "assets/holograms/artemis-hologram.png": {
+    "bytes": 2769078,
+    "sha256": "1dae085ba83ad25b8dbc768a9d87cba10570f6851e96a72abdae5bd71335e7b0"
+  },
+  "assets/holograms/athena-hologram.png": {
+    "bytes": 2990641,
+    "sha256": "c0b55ba81e15dbd82419e831d2ecddd925f45109a0f3a24bec04399d0be2c5a1"
+  },
+  "assets/holograms/beowulf-hologram.png": {
+    "bytes": 2796844,
+    "sha256": "981b17704dfaee34f667036ab047c747607452c103f69ca064937289d915cb5c"
+  },
+  "assets/holograms/butter-hologram.png": {
+    "bytes": 2159319,
+    "sha256": "55c5e04d4e5c2cf45e86bc645bd4c3cab7a0cb6be9f20423e21b5197170c7d25"
+  },
+  "assets/holograms/CINEMATIC-PROMPTS.json": {
+    "bytes": 1834,
+    "sha256": "94df4489a20bd774c110eecbd82beff798d9089806f4a7ec371f3f71bbc2ae81"
+  },
+  "assets/holograms/dionisio-hologram.png": {
+    "bytes": 2827074,
+    "sha256": "d8ee181d799f16f1a6ed4f86084734d8128a2bdc35044a015958db5476160af5"
+  },
+  "assets/holograms/feiticeira-serpentes-hologram.png": {
+    "bytes": 3122822,
+    "sha256": "e7e6748ee467a23e9af8e93cbde6cb40ce2990bdc3a8d675c4f2022e768263cb"
+  },
+  "assets/holograms/guardiao-nordico-hologram.png": {
+    "bytes": 3173276,
+    "sha256": "35cd2c08b3b4830fed04747d406f4d062733fd509103cafb1f13bf68ac135feb"
+  },
+  "assets/holograms/hades-hologram.png": {
+    "bytes": 2792858,
+    "sha256": "a562f39f3504c51a173262d67e63a7e4896277dd7451ea124a1ad0d8362b71a6"
+  },
+  "assets/holograms/hefesto-hologram.png": {
+    "bytes": 2590147,
+    "sha256": "19883fd2ed16616661c90a873229030194fcee705003d7ce529aab871c70cd78"
+  },
+  "assets/holograms/heimdall-hologram.png": {
+    "bytes": 2860590,
+    "sha256": "7235d93a3a72ddbbd5d0178fa244a28cd1fef196d35ced06f5fd94713f748397"
+  },
+  "assets/holograms/hercules-hologram.png": {
+    "bytes": 2414228,
+    "sha256": "256a836efc82c61fb0760ddb4e18765b17f629838f0a2f0986df7f6d2c52ddbc"
+  },
+  "assets/holograms/hermes-hologram.png": {
+    "bytes": 2724672,
+    "sha256": "6868cdd7e61e42b61fe99bc12c9f3c2bb07f0a21246b249bab69cb2b971dba1f"
+  },
+  "assets/holograms/homem-hologram.png": {
+    "bytes": 2112711,
+    "sha256": "ff957a26e63d2edb83483f12246e2150272b5ba03dd77ddc686cf3cacbffcc68"
+  },
+  "assets/holograms/horus-hologram.png": {
+    "bytes": 2955341,
+    "sha256": "cb2f449358883df3867f5b39a3c6a042db9328787452b7b09c53d9d7dc5c1d80"
+  },
+  "assets/holograms/isis-hologram.png": {
+    "bytes": 2914996,
+    "sha256": "610193b66af827095e7e32fb92d3f2a0e0464a2778ea79c8640db6e99872501a"
+  },
+  "assets/holograms/lobo-alfa-hologram.png": {
+    "bytes": 2497676,
+    "sha256": "901d06214e3be32e21256c37d6f33e20c5f6ac2740aa4fc9c54a0efe13168618"
+  },
+  "assets/holograms/lobo-beta-hologram.png": {
+    "bytes": 2474158,
+    "sha256": "abb0b12b7fd580bcf5c2a557311aeb023b8721e72e27df75d0cae90e7a5f2e36"
+  },
+  "assets/holograms/lobo-omega-hologram.png": {
+    "bytes": 2514124,
+    "sha256": "4ee118414d86eba6cf44f677f9aaf539ed7aa6a96340751d61fc383008b2d80d"
+  },
+  "assets/holograms/loki-hologram.png": {
+    "bytes": 2961981,
+    "sha256": "2aec5de8e7fd4e6aec62a1d7bfd2ffee0a2edfa9a800da1de9ec2ccd7d9cea1a"
+  },
+  "assets/holograms/lukyan-hologram.png": {
+    "bytes": 2214866,
+    "sha256": "fd857f2180cc2d2ba3441c4aa71981aa2895d8fa97119e3319497276be408be9"
+  },
+  "assets/holograms/lukyan-rei-de-todos-hologram.png": {
+    "bytes": 2132998,
+    "sha256": "c3acb17ebde91e5cd5b3a5e87faa34cbfef642e643f0ee889c2c9461ded6607b"
+  },
+  "assets/holograms/medusa-hologram.png": {
+    "bytes": 2341235,
+    "sha256": "adf915f01d38eaff53a975094085a86bfdac176d9c553ddce1c9b2e460aa95d4"
+  },
+  "assets/holograms/minotauro-hologram.png": {
+    "bytes": 2170636,
+    "sha256": "a8996c4bf50760479a3afe5e35094f801f8b477174c77db346b8381396afadd4"
+  },
+  "assets/holograms/mulher-hologram.png": {
+    "bytes": 2346515,
+    "sha256": "807a772a5d845cf790a6e54eea85baca6da4fbee4a0a29fa8e98b17ec95653a6"
+  },
+  "assets/holograms/odin-hologram.png": {
+    "bytes": 2974119,
+    "sha256": "39a49f986be060e2e72222de8cb8fde3a17146d6046d40357d74c3114eeb196e"
+  },
+  "assets/holograms/osiris-hologram.png": {
+    "bytes": 2571606,
+    "sha256": "168be08729f714a264660c7e063bacd43fd2b0185ffbb3dfd8f045ca4737af71"
+  },
+  "assets/holograms/poseidon-hologram.png": {
+    "bytes": 2625169,
+    "sha256": "cf2a744682dc46d83468dccaab493c88315d02025ecc322c98a2638ed73b7330"
+  },
+  "assets/holograms/ra-hologram.png": {
+    "bytes": 2941357,
+    "sha256": "f0cb8f4e15e151c1ab69dede5c19d3097b8fe3c3c7848d73d62332a380e9a84c"
+  },
+  "assets/holograms/ragnar-hologram.png": {
+    "bytes": 2755778,
+    "sha256": "1309086c244941cf927d9384136ce3e0707d6a370b5bfe48117cf1ab475ef916"
+  },
+  "assets/holograms/seth-hologram.png": {
+    "bytes": 2680506,
+    "sha256": "25624ed75e150b7b527f3197eab88c1c1f57b0027fc4d32631416503abefb100"
+  },
+  "assets/holograms/sobek-hologram.png": {
+    "bytes": 2934218,
+    "sha256": "8c9ca14fe844fe7f83b113e1e79399a6ff4185619ca8d7d880ac16a35cf56cc4"
+  },
+  "assets/holograms/spartan-hologram.png": {
+    "bytes": 2057674,
+    "sha256": "3bd06b6950aeecc44d37212b689076221d1d3dcc539e7d1092d6312c0ac6c621"
+  },
+  "assets/holograms/thor-hologram.png": {
+    "bytes": 2974562,
+    "sha256": "ec3e39d852765ae8d07da4bf291d66164f196098df5669e432a7119c3733c679"
+  },
+  "assets/holograms/zeus-hologram.png": {
+    "bytes": 2309210,
+    "sha256": "f656cd7f134ba04e770bfd8b8034b5d64f183d8b8e459c3158009c2a74504dd6"
+  },
+  "assets/identity-v2/aprendiz-de-heroi.webp": {
+    "bytes": 94836,
+    "sha256": "2ef4c31b54d097ce17b12bbc3f95289dce5f813accbb25b55886da66de5fd5f3"
+  },
+  "assets/identity-v2/coin.webp": {
+    "bytes": 82464,
+    "sha256": "0fb38e59727331fa0d6e366d666b01d2f1da9a1681506eebe16cf8b4f18a0d47"
+  },
+  "assets/identity-v2/convergente.webp": {
+    "bytes": 151988,
+    "sha256": "f2f91d96f75534049ab2d4ffa711140969e9b27bb84214698c11b5da66340170"
+  },
+  "assets/identity-v2/deus.webp": {
+    "bytes": 108780,
+    "sha256": "1f44de7caf948ff16dcb93042f63b8656a83dcc1d462ceb6b3b423f7df891ea1"
+  },
+  "assets/identity-v2/eclipse-vortex.webp": {
+    "bytes": 530090,
+    "sha256": "f9b3d56f0fdebf53b204a122f6b6821d20041ea2dccecfb6503d4294e16f5838"
+  },
+  "assets/identity-v2/escudeiro.webp": {
+    "bytes": 93578,
+    "sha256": "1e8de636d727be2e745f6482ff6dcadd4b06adfd9e2a6aab13a78e072106435b"
+  },
+  "assets/identity-v2/generation-prompts.json": {
+    "bytes": 8093,
+    "sha256": "ef801267ecb75be04f73271798af7f65e1be5b2fedd17d0a97fef5e9bc6f3453"
+  },
+  "assets/identity-v2/heroi.webp": {
+    "bytes": 95554,
+    "sha256": "3219312d39d932a6128d5223baa104477e7ff73ffba557005694230e8c0475e2"
+  },
+  "assets/identity-v2/lenda.webp": {
+    "bytes": 115800,
+    "sha256": "aa1b6b52c4fa6080571eab378075dbe806ce3e5370a835834b16468bfaa9f507"
+  },
+  "assets/identity-v2/medal-atlas.webp": {
+    "bytes": 426592,
+    "sha256": "85555bcddbbd9699d349a306e7a892f8ff31997a9eb49333f2bccdf8839df33a"
+  },
+  "assets/identity-v2/semideus.webp": {
+    "bytes": 119772,
+    "sha256": "6d9240b0e32f9d433c306dea28f314d785eef3e7b97fd064d606af5001f2928a"
+  },
+  "assets/identity-v2/title-atlas.webp": {
+    "bytes": 684326,
+    "sha256": "a44b716fe8fcfbea5bbe8d91c0db1f1a64ee409c27c386de466cd7f9470346bd"
+  },
+  "assets/locations/asgard.png": {
+    "bytes": 4307873,
+    "sha256": "78ddfcf41fac241b5e839b944ea863925ee86603957fd3f9339d769d93702d40"
+  },
+  "assets/locations/egito.png": {
+    "bytes": 4230740,
+    "sha256": "df4b6ca09a31f956cf159f1c269ae0efea83b38dbc139a54d25c85946f4d56b8"
+  },
+  "assets/locations/grecia.png": {
+    "bytes": 4125136,
+    "sha256": "9e79ebb668890a35e73ef22dd4044206b555f3a80b7f1f19868feeff1d580668"
+  },
+  "assets/medusa-full.png": {
+    "bytes": 1723111,
+    "sha256": "16934264e4aa1a94288b2589c959e6125808234f32b2efde2280a3958f387d96"
+  },
+  "assets/medusa-illustration.png": {
+    "bytes": 1492671,
+    "sha256": "2042bd3eb76ec8f0deb340e1a9022778c659fc064b7454dbfc7499d0a2d55a06"
+  },
+  "assets/menu-theme.mp3": {
+    "bytes": 2400129,
+    "sha256": "41f88c97e3babad16ab0dc7ffa3803059e734e0a2445216fc259f57321145b66"
+  },
+  "assets/mode-custom.png": {
+    "bytes": 241294,
+    "sha256": "482aab37983dbc14673d15ce8899f6ed0572c354807a77ee5963207e3b4f7f4e"
+  },
+  "assets/mode-guardian.png": {
+    "bytes": 337672,
+    "sha256": "61ed6d1013e159c63d21fdeec112acff25a0c82e0cb08599069ea4d4ddc62607"
+  },
+  "assets/mode-normal.png": {
+    "bytes": 336251,
+    "sha256": "b25046d295e78bf2e546329ab6f981e272d3ed12618997deb648e0a395082772"
+  },
+  "assets/mode-ranked.png": {
+    "bytes": 294807,
+    "sha256": "a491c0996cdfcb0063c7b95f11e3b66e5ceaf453e67ea969cce86ce9a8207c6d"
+  },
+  "assets/mode-x1.png": {
+    "bytes": 362596,
+    "sha256": "b36841ffa54ad9b4f01c23f931141f62379ef300fa83226a24f09e611ed12618"
+  },
+  "assets/onboarding/egyptian-realm.webp": {
+    "bytes": 203548,
+    "sha256": "fa8ad5b96985f2186cd8ad0ca1bf091498757e5ffbcb1c80b26bc8adc5dd7648"
+  },
+  "assets/onboarding/greek-realm.webp": {
+    "bytes": 192816,
+    "sha256": "38f8f85e6ebbf70ccbbcf4228a0c5da4667ee4241298458b88883f0eb461f7cb"
+  },
+  "assets/onboarding/norse-realm.webp": {
+    "bytes": 219998,
+    "sha256": "39e04192c9141c39fb1e776a4738324b1b74b69f7ab9e4a3312f7cccda8c6454"
+  },
+  "assets/onboarding/public-citadel.webp": {
+    "bytes": 384916,
+    "sha256": "04d739bf349ddb0faa111850893e9605dece1eed2b18f7945e19646186263df7"
+  },
+  "assets/onboarding/starter-pack.png": {
+    "bytes": 2517668,
+    "sha256": "055471f7ed4c1d95016468ca05ab5b4d643fc5b3ca8edaf7a10a4c17e9d5f327"
+  },
+  "assets/portal/lukyan.webp": {
+    "bytes": 52158,
+    "sha256": "1f88e36d389945cbdd4eda91798aff68059636e57478647eba1938fd4ce121d2"
+  },
+  "assets/portal/poseidon.webp": {
+    "bytes": 54674,
+    "sha256": "b32594386ecc2634aa33d7e076220b1f7fd214aba9b955f8141a76d1672c565a"
+  },
+  "assets/portal/zeus.webp": {
+    "bytes": 49882,
+    "sha256": "565d6216f04e2dabe53cfb964c3521910e310adee66db49ee8bf0c84be78b667"
+  },
+  "assets/poseidon-full.png": {
+    "bytes": 2024964,
+    "sha256": "25616da396696f7f214579dd068280a69e38d660d72cf2aebd6171a9ca7dfdb7"
+  },
+  "assets/ranks/aprendiz-de-heroi.svg": {
+    "bytes": 3328,
+    "sha256": "8f248caac127f51d8a017fb3930d53ceddcdfc859e06bb9d39f28a4fdd5a352a"
+  },
+  "assets/ranks/convergente.svg": {
+    "bytes": 3485,
+    "sha256": "ff30aaf6cb1de9e8c48cd3c470148ba3761ee0641c7d8552277afb557d059638"
+  },
+  "assets/ranks/deus.svg": {
+    "bytes": 3366,
+    "sha256": "40fb8b4d3906a40b148bd46dfa4f2f3c948cea901ed2b65678e6618ab3bf7f41"
+  },
+  "assets/ranks/escudeiro.svg": {
+    "bytes": 3407,
+    "sha256": "32e641992a0601452c2be67cba2f2271d52d1bb37bdbad1f45a6117a4a25531f"
+  },
+  "assets/ranks/heroi.svg": {
+    "bytes": 3335,
+    "sha256": "7657ea37b25a7c3b27dc0fd0f0b74d71eae2ecd4bccd8f5c685c97f3e3b4a623"
+  },
+  "assets/ranks/lenda.svg": {
+    "bytes": 3415,
+    "sha256": "a30d00aafa741fa762fd2e57c214aeec0eb2b4b1ab07c63827e8efb43f5f8e9d"
+  },
+  "assets/ranks/semideus.svg": {
+    "bytes": 3299,
+    "sha256": "fcf71682783e0649d852bf99a62be134de0f1645b922b7cf5bffd49685cd97bd"
+  },
+  "assets/rework/citadela.webp": {
+    "bytes": 355082,
+    "sha256": "a0ca86458216aac6c714a83c2ffccf48262f8409c448c7b72bd83cd7857b2026"
+  },
+  "assets/rework/NotoSans-Bold.ttf": {
+    "bytes": 575740,
+    "sha256": "c976e4b1b99edc88775377fcc21692ca4bfa46b6d6ca6522bfda505b28ff9d6a"
+  },
+  "assets/rework/NotoSans-Regular.ttf": {
+    "bytes": 569208,
+    "sha256": "b85c38ecea8a7cfb39c24e395a4007474fa5a4fc864f6ee33309eb4948d232d5"
+  },
+  "assets/rework/NotoSerif-Bold.ttf": {
+    "bytes": 638164,
+    "sha256": "3b2086a869bcded2aeb4416fc281ceec9d6ce3c06756cda19f8f763636204e7d"
+  },
+  "assets/rework/OFL.txt": {
+    "bytes": 4377,
+    "sha256": "0dab92d0544f7b233403f14b84a663bdbfa746982eda629e7f4f9ffe1b036feb"
+  },
+  "assets/sidebar-arcane/arcane-crest.svg": {
+    "bytes": 1589,
+    "sha256": "46368b9933af281e9042c5896f06bb4cd4ea453de777ef51e8f807568560e879"
+  },
+  "assets/sidebar-arcane/crystal-texture.png": {
+    "bytes": 2121668,
+    "sha256": "1a3ff844b193227f813b963b2a2bcd7e005724e8b48e22a8dba68dc551a4992e"
+  },
+  "assets/sidebar-arcane/texture-prompt.json": {
+    "bytes": 1163,
+    "sha256": "86d74ee1769041fabbfae56ea59d3f3e7c03ac0fdf74d8ef245a917d0b248e47"
+  },
+  "assets/soldado-esparta-sem-pontas-azuis.png": {
+    "bytes": 643152,
+    "sha256": "be844d9bab4182b0db9f247f8a4c6ba8d157fc4bc7fca7ecf1952e73ac3c86b3"
+  },
+  "assets/soldado-esparta.png": {
+    "bytes": 643193,
+    "sha256": "486c15f3fed2fc50906d74266160ae8f64a1f02272a0cf8c6cf5a323d1fe51b9"
+  },
+  "assets/spartan-chibi.svg": {
+    "bytes": 3428,
+    "sha256": "85f25cb023eaf6bad2a37caa57dc6f347e3d603be97c0df9a9b816603df91fca"
+  },
+  "assets/terrains/alto-egito.jpg": {
+    "bytes": 12622415,
+    "sha256": "bc7c2933fee084c978115b5d320e4f9cb852f00b62fb4e4c3b8a58da055c4647"
+  },
+  "assets/terrains/baixo-egito.png": {
+    "bytes": 4420482,
+    "sha256": "dfd9b506f03dbf9f6df5cfc269fd2876bb225166f1043c6402b7fa6031f3df8a"
+  },
+  "assets/terrains/bifrost.png": {
+    "bytes": 4079643,
+    "sha256": "98c779ce0f3447f45705745345ba6e2c91cd0f4d09ba8aaa0d519623b3592ac1"
+  },
+  "assets/terrains/campo-troia.png": {
+    "bytes": 4612531,
+    "sha256": "dda8610d95a9662f0f05cee84466229620b3ec81cec2d86a06d7713b44d78a71"
+  },
+  "assets/terrains/esparta.png": {
+    "bytes": 4472529,
+    "sha256": "5fb9c90360af97e4e456cfba1bc1d8450482443a917c59964e23ce5cba339310"
+  },
+  "assets/terrains/labirinto-dedalos.png": {
+    "bytes": 4078895,
+    "sha256": "0a094bfe2ec2deeffbe81cc5b33b226724ed6d4144f8076ef43fa5442ee728b2"
+  },
+  "assets/terrains/nilfheim.png": {
+    "bytes": 3733569,
+    "sha256": "7112ca82b58b70191ebbde1d6b46dc550f63c6fdeaa8bb27c4085a84d2d5f063"
+  },
+  "assets/terrains/yggdrasil.png": {
+    "bytes": 4393027,
+    "sha256": "4a992826c52857eaa6697d60a339b727f3329cc80289d577ce8577904c99fb33"
+  },
+  "assets/universe/banner-01.png": {
+    "bytes": 3599254,
+    "sha256": "23b9a2d9bb6d8dbea5c6a590d4e4d5826aecd89ca05d6e405e71fe806f00a1ee"
+  },
+  "assets/universe/banner-02.png": {
+    "bytes": 3461055,
+    "sha256": "96bf0e0bae23f6f3195eeb1d559aefb062f11082c32cd959100c9049ad3f5914"
+  },
+  "assets/universe/banner-03.png": {
+    "bytes": 3576562,
+    "sha256": "d2fb90ae3af92c6c2e868dc80c0c7375255a6428bab6272dc03eb1aaed42bc72"
+  },
+  "assets/universe/banner-04.png": {
+    "bytes": 3757056,
+    "sha256": "d6401810ad1e06f9f59ebddb517d55e65e4e71645aec4ad4c6c4c17cfdbe7298"
+  },
+  "assets/universe/banner-05.png": {
+    "bytes": 3693230,
+    "sha256": "57ff4eba9245b9e178bcdd462aff22eaa8d71ece1209df550fef7e63357f9ffd"
+  },
+  "assets/universe/banner-06.png": {
+    "bytes": 3284609,
+    "sha256": "6bf7d18436c0cd4cf49533910e6f03cd4a477c25e560d0e4d343445d1af018ee"
+  },
+  "assets/universe/banner-07.png": {
+    "bytes": 3270719,
+    "sha256": "a882ff4482008508cf95aaf8039f416b2cebfec1e9343eb330d00f4a76ffec62"
+  },
+  "assets/universe/banner-08.png": {
+    "bytes": 3270679,
+    "sha256": "82aec3bdded38748ca6229e88a90b51f34cc395121a5c084d47154da30eb54ef"
+  },
+  "assets/universe/banner-09.png": {
+    "bytes": 3076752,
+    "sha256": "f3a4a1c87ddc17492a63b4426f3f35fb2aea1c47145bc3fe5cbbd5cd3f8c77a3"
+  },
+  "assets/universe/banner-10.png": {
+    "bytes": 2768749,
+    "sha256": "f963138574b6ffbecaa121ab4716005deda268f34c38df3a0902ec350cb2986f"
+  },
+  "assets/vfx/hearts.png": {
+    "bytes": 2178412,
+    "sha256": "29d77bd34a3b1e161e6c6020d5b8de6c41bd840737c09b78d0b56fec9180237c"
+  },
+  "assets/vfx/lightning.png": {
+    "bytes": 2061213,
+    "sha256": "9c48e9092429de6acace919e166c4a52bb5270da33d701b8c202ea5918a9a3a6"
+  },
+  "assets/vfx/lunar-morph.png": {
+    "bytes": 2271772,
+    "sha256": "f5230c5c0f9d3f98cd2290563a66d7d20c1d756eee635da3b32656f6d6b0b751"
+  },
+  "assets/vfx/solar-morph.png": {
+    "bytes": 2704493,
+    "sha256": "9a7bd4058fcd1b8e8b3101602f524667b03ed80dd5622f542431d72cd77fcbcd"
+  },
+  "assets/vfx/tsunami.png": {
+    "bytes": 2003620,
+    "sha256": "8ecb95d87853dc1f5c47b6fe9692e9178c498fab0edda709d0b25eca0e055f8b"
+  },
+  "assets/victory-emblem.png": {
+    "bytes": 1469229,
+    "sha256": "89c770fe9da717d693a9f266ffee0d69462baa0bc7a7e7c297ef0df06d0a5940"
+  },
+  "assets/vs-emblem.png": {
+    "bytes": 2691464,
+    "sha256": "bc8e8991eb6f1b8becaf87210c03748aa6da885ff07f90938d89e91165e02815"
+  },
+  "assets/zeus-full.png": {
+    "bytes": 1846044,
+    "sha256": "763e2eb7a200170b1dd811406f36612f43e651f8dc2cffd2e5b3e7242b5e493c"
+  },
+  "ATUALIZACAO-ANIMACOES-COMBATE.md": {
+    "bytes": 1989,
+    "sha256": "a64a948971f13c7301ddc2006038d55c98c168de485c8d1730629ee7096fd8e6"
+  },
+  "ATUALIZACAO-CABECALHO-UNIVERSO-ADMIN.md": {
+    "bytes": 2383,
+    "sha256": "842bb389420dafdad4393e12c1e8970d5a1e0a4a77414c27af33ba341f472729"
+  },
+  "ATUALIZACAO-CENARIOS-BOAS-VINDAS.md": {
+    "bytes": 2152,
+    "sha256": "f341be7428bccf6b10695ed02acdb71e3b7015186f4f6c8103ea63c2590dac8d"
+  },
+  "ATUALIZACAO-CINEMATICA.md": {
+    "bytes": 3193,
+    "sha256": "770e7f19037a60baaa5418693c615d5cdf9e339baa94856ab6e9eb205e111aca"
+  },
+  "ATUALIZACAO-COLECAO-ICONES.md": {
+    "bytes": 1219,
+    "sha256": "59aad6e080f25b489c851afaf7e700b47c66410c2df56a3b3a39930496b13ba2"
+  },
+  "ATUALIZACAO-DESEMPENHO-DECKS.md": {
+    "bytes": 1417,
+    "sha256": "ee338fc58fd49d43de71a98a74295fd8023cbed9bdbfd686283e10267048b6b7"
+  },
+  "ATUALIZACAO-ICONES-DESEMPATE.md": {
+    "bytes": 2834,
+    "sha256": "dd859806192ad14604a420eb42edba2127f4bced7e3454220b7a9258dee3a610"
+  },
+  "ATUALIZACAO-INVENTARIO-LOJA.md": {
+    "bytes": 1890,
+    "sha256": "bb9e2aa162ddd24df815cfda805e7532014f3e87af1ce6c10259f18164868d85"
+  },
+  "ATUALIZACAO-LOJA-CACHE.md": {
+    "bytes": 1283,
+    "sha256": "9a908e4624a973f55b251e83bb6f67448b67d5fc3b29c227ab6d1fb2376ef391"
+  },
+  "ATUALIZACAO-PORTAL-ADMINISTRACAO.md": {
+    "bytes": 6136,
+    "sha256": "23563b29af4b5efc780d7568fc6722e742ab6a3ecec51521654fabc98ab902ad"
+  },
+  "ATUALIZACAO-REGRAS-APROVADAS.md": {
+    "bytes": 3843,
+    "sha256": "2386411b1bdf6e6713c4bda9df10872022f01c9e1f4208fc99b47984bfc52d29"
+  },
+  "ATUALIZACAO-UNIVERSO-EFEITOS.md": {
+    "bytes": 5267,
+    "sha256": "b58a9e22755642305b01cfe072909bad00ceac141f1140e28d41bb93e3172bd1"
+  },
+  "AUDITORIA-SEGURANCA-DESEMPENHO.md": {
+    "bytes": 14009,
+    "sha256": "52f2e5032c7e070a8fa4a7669cee3902451a95b2b8ec4ba7f466d64dd6f1a3a2"
+  },
+  "avatars-chibi.js": {
+    "bytes": 5635,
+    "sha256": "f806ffcc09b419aa8e8a8579c1040a6241ee958a746cd8bd1b5d3193f116e27c"
+  },
+  "avatars-chibi.json": {
+    "bytes": 7624,
+    "sha256": "5ad70013da2ec128252dca1eee9fb06cf86012b138beb6fce3f7ded5ad1ca246"
+  },
+  "BOAS-VINDAS-PACOTE-INICIAL.md": {
+    "bytes": 5521,
+    "sha256": "42889314f95d8e30758fa263e6f81c8f1df1eeeac5c888eee6b732a31ee0bd79"
+  },
+  "BONUS-FILEIRAS-HOLOGRAMAS.md": {
+    "bytes": 1510,
+    "sha256": "e71d8b5790992cca9859df3705aa97040b1dfad79d83fd6869e353157958069e"
+  },
+  "card-expansion.js": {
+    "bytes": 31570,
+    "sha256": "1fee405718daa7e9f61f0835de0af3f454a4d05751a3d474217860b3c47bb14a"
+  },
+  "card-hologram-map.json": {
+    "bytes": 31500,
+    "sha256": "3d51c448eb1fb0ac0a27cfbc9c3e37fbcce66411b2dbe48e7e35122188a88333"
+  },
+  "cartas-hologramas.html": {
+    "bytes": 10152,
+    "sha256": "62a0f0812530b87459db17f36eb1178d71289b61908281a464c4dbc47c46aea2"
+  },
+  "CARTAS-HOLOGRAMAS.md": {
+    "bytes": 4051,
+    "sha256": "b90decac1956f349e63a93e008e1391c0a6d6d9b9f2cc28cfc1760b82f653eb4"
+  },
+  "combat-cinematics.css": {
+    "bytes": 5174,
+    "sha256": "b72577431fe8cd835467bfa8253c573095db007682d54c564da9482ca26190ea"
+  },
+  "combat-fx.js": {
+    "bytes": 14196,
+    "sha256": "6cc51a82aec8c2ae014df08f3dbe4bb372d2cedfae333ef365bc956172a9b754"
+  },
+  "COMECE-AQUI.txt": {
+    "bytes": 3078,
+    "sha256": "0b3d6bde0f8d3abc24e57d8af3778eed689eccdd5b640852125d26265ccbb3c2"
+  },
+  "CONCEPT-ART-ASSETS.json": {
+    "bytes": 5044,
+    "sha256": "58b8140303749fc3c315445955582d6280368996566121d9a4281acb59c23da7"
+  },
+  "CONCEPT-REWORK.md": {
+    "bytes": 3581,
+    "sha256": "f6f966208f9de17b761f50cfac46145afae6a0ea894d1da3c7afca77aff9f95b"
+  },
+  "concept-theme.css": {
+    "bytes": 43530,
+    "sha256": "ef0b230fee2e30173be44a0815da58075255328cd9055ad443cff8b0d741ae6c"
+  },
+  "concept-theme.js": {
+    "bytes": 39985,
+    "sha256": "22bd7d2e4b3c3c30e67a09c12e29a9bccdd9b06730b77f3b33dbe6cc55c10a0e"
+  },
+  "CONSTRUTOR-DE-DECKS.md": {
+    "bytes": 4200,
+    "sha256": "95b220bf3993451cd458d35176fd7c38790e2d1745e1932feb829ec8eb3cd5da"
+  },
+  "convergence-lobby.css": {
+    "bytes": 7000,
+    "sha256": "beaa447d9fa4621375e99be0443a78ec9331edf05e77bf682fc87a83f8910349"
+  },
+  "convergence-lobby.js": {
+    "bytes": 10199,
+    "sha256": "1a91262480dff261542063f489dc55f8a7fbb63ddbe72906e61378dac166e3f0"
+  },
+  "CORRECAO-AFRODITE-FILEIRAS.md": {
+    "bytes": 1148,
+    "sha256": "9cb3957344e59da2dadb6b79b7ba5f81e771aa61dfb03db4dccb7b77c589f248"
+  },
+  "CORRECAO-CARREGAMENTO-INVENTARIO.md": {
+    "bytes": 1117,
+    "sha256": "741a1f26c1a784378d38ad34b2074715c75282de38229417cc86daa09c5f56af"
+  },
+  "CORRECAO-DESEMPATE-BARRA.md": {
+    "bytes": 1307,
+    "sha256": "e90be4248eeb4c57cb9ff26158b3c98397124773f35845b8fa1477509bb82fdd"
+  },
+  "CORRECAO-ECLIPSE-FORMAS.md": {
+    "bytes": 2229,
+    "sha256": "d121c32c22ea242ef30c2b73d4e89d0e3d96e69f4fc51c252d26194839a4ddd0"
+  },
+  "CORRECAO-FILA-SEGUNDO-JOGADOR.md": {
+    "bytes": 1436,
+    "sha256": "2e10d472118b26c74d67a86cbbc9fc82e667e2e86fa9373270b6add207c9a3e9"
+  },
+  "CORRECAO-REGRESSAO-CARREGAMENTO.md": {
+    "bytes": 1198,
+    "sha256": "1224a6f12a05b817c494b2b36a228bf9f8409d08802dd79068f15f2b4a0cca71"
+  },
+  "CORRECAO-VITORIA-ESTRELAS.md": {
+    "bytes": 3187,
+    "sha256": "dfe7004477a24d33b04c6bb415ec607c96437d19ff26e2e621aead62fbf7aaf3"
+  },
+  "deck-builder.css": {
+    "bytes": 19603,
+    "sha256": "718235a7683d375b2bd9a427b0b350de10b4c4615f6c0067433e8ffef2eda4e8"
+  },
+  "deck-builder.js": {
+    "bytes": 24473,
+    "sha256": "49e0c1a6a00ca14abd2eca5e6ee178e245adb11907c01c21d86b4429e91ccac0"
+  },
+  "eclipse-cards.json": {
+    "bytes": 3502,
+    "sha256": "4b01f1da9a56366321eaf4adbcce980917ac37a2af80678d2dcaed4c8488174d"
+  },
+  "ECLIPSE-SEM-SPOILER.md": {
+    "bytes": 1220,
+    "sha256": "89a361fc23504a0f784b58f1df6d1a61de62d4427f48944c231cd3fae3081671"
+  },
+  "eclipse.css": {
+    "bytes": 8038,
+    "sha256": "b2adf8b049ce797ca6c51993c6b9216f47d0a58d2b0cc45540b90400d85fb852"
+  },
+  "eclipse.js": {
+    "bytes": 10161,
+    "sha256": "8cba23fb1bbf9cda28a468ada9521a3f2a78ec3a8bab1b3557f182d4abbb786e"
+  },
+  "ECLIPSE.md": {
+    "bytes": 2813,
+    "sha256": "a742a1944df285cd110ed9ca387455f3730deeee89a6ac162bd8f9b680566d79"
+  },
+  "EQUIPAMENTOS.md": {
+    "bytes": 1578,
+    "sha256": "ee320395e7626199267a5f0fc3c4a99670f5166891f35dcf3a88f464d3102a4d"
+  },
+  "equipment-cards.js": {
+    "bytes": 9407,
+    "sha256": "c7acb829f3ed6f85d73c48e9ede5cc8b27503007f31d9753e9fad5202721a793"
+  },
+  "equipment-cards.json": {
+    "bytes": 8130,
+    "sha256": "087e4509f10a7471d4f17d63e70e8e67bfc83f75868d86e60dea8a39949745c8"
+  },
+  "floating-queue.css": {
+    "bytes": 2118,
+    "sha256": "be8b08a716adb7122fdbfa6c0a9bb7f9427f4b69cc283e6d7b41f6668f892fcd"
+  },
+  "floating-queue.js": {
+    "bytes": 5764,
+    "sha256": "edaa5071b2ae326e3cb76014fc66d5fa129896f55403618e650e1fda9b6d0e84"
+  },
+  "GUARDIAO-NORDICO-ATUALIZACAO.md": {
+    "bytes": 4366,
+    "sha256": "2a76e8fae9788d05b78e606f2d8a3afc1652266570b9fcfdb61dff4894073427"
+  },
+  "guardiao-nordico-card.json": {
+    "bytes": 1012,
+    "sha256": "ca9f7619a7029ed3377940bab89759b16a1cf6ef21b599a665486428baa37870"
+  },
+  "GUARDIAO-NORDICO.md": {
+    "bytes": 2264,
+    "sha256": "67e12531c8787898058a22637c0605d68ef9b08d8b8a7e31615e711436bcd780"
+  },
+  "HABILIDADES.md": {
+    "bytes": 2440,
+    "sha256": "a96db27e38cbc8e0a92e8eacfc6116443a336c0564304a911323e937fd96c6ef"
+  },
+  "honors.css": {
+    "bytes": 2515,
+    "sha256": "239eb3ec9b53367a1c52a1b9b80777662f7e68d04490a4c6ed5a002162e95f11"
+  },
+  "honors.js": {
+    "bytes": 5389,
+    "sha256": "4b6ed33fa0d941b320af3317ec1c6a0b0fe2e4abd52b817551985d9dd8539775"
+  },
+  "icones-chibi.html": {
+    "bytes": 8322,
+    "sha256": "2b09b22b7828e418a1b14c3512e216ab3186caf4906afd19ea362a8a0dc0e969"
+  },
+  "identity-art.css": {
+    "bytes": 2959,
+    "sha256": "6c7d27943f500e426c232dc44d49ebb3cfb5bd2115bf70dfe2f8020864414b6f"
+  },
+  "identity-art.js": {
+    "bytes": 2385,
+    "sha256": "c3d83dca7d4a1c98b195ad4bd12cc3cd1727d224e5481572e57ec8dacbc56434"
+  },
+  "identity-upgrade.css": {
+    "bytes": 2553,
+    "sha256": "3435fb16cbb7a6ddb14ae6d372d988806b152e4d7c90003971112c5d8084221e"
+  },
+  "image-generation-prompts.json": {
+    "bytes": 22209,
+    "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
+  },
+  "index.html": {
+    "bytes": 68771,
+    "sha256": "62baa2ea4d2df7cc4bc1ba8a5c365784ad9c76fc285e551b3fa968750b1fb9bc"
+  },
+  "JANELA-FLUTUANTE-FILA.md": {
+    "bytes": 1623,
+    "sha256": "0d908dc96b0210426e4579fe80d1e08651edf0ff340284703044bef53a9c0402"
+  },
+  "landscape-zones.css": {
+    "bytes": 2731,
+    "sha256": "d578e7d934133feeb87ff37531ac04dd7192ceeed97e9336ef6ed22e228d5aa9"
+  },
+  "LEIA-ME.txt": {
+    "bytes": 5471,
+    "sha256": "4220d98b64650e9732c0d78ddeb002f25a925301a4448039a1eae95111b01669"
+  },
+  "LOBBY-CONVERGENCIA.md": {
+    "bytes": 2113,
+    "sha256": "fe9b0233ff95b03d5d6ee5ebd0342948bb1158749e03fdc0465dfca2b47a3796"
+  },
+  "locais.html": {
+    "bytes": 1345,
+    "sha256": "1d3a2241f9a2c0379d616c2d08c9b89b866598ddbc85c66124f5c43f3f912bde"
+  },
+  "LOCAIS.md": {
+    "bytes": 777,
+    "sha256": "645b41e694c0f38616016823f81ee6c26997377e5f33baf38532b54576da4491"
+  },
+  "location-cards.js": {
+    "bytes": 3443,
+    "sha256": "8b7e9863e2702f2084adec691c51808e4bb1ef0f4cdb1641a3a9647848e15ce7"
+  },
+  "location-cards.json": {
+    "bytes": 3961,
+    "sha256": "15c0ce3f6efe19100161f912dfacc49302a912de991e0bfd33e76e109c408d7f"
+  },
+  "loki-card.js": {
+    "bytes": 812,
+    "sha256": "6d80292943c52fd2ba4a1a1a554e5663b18be3883f4a1f35e2e90f4a25d95f33"
+  },
+  "loki-card.json": {
+    "bytes": 856,
+    "sha256": "be1539585e330873ad967b7e3cdc36f11ac7c20a4720d974c1a4a841596b328e"
+  },
+  "LOKI.md": {
+    "bytes": 953,
+    "sha256": "4e9d434487ff40fc453b9bc50f2d3f75fe84700bc06405d2c05fc176a5d4840b"
+  },
+  "manifest.webmanifest": {
+    "bytes": 450,
+    "sha256": "4cc467e3ab34e4cc8f312d5ac5bb4caf87f6d1e5ce250ea7a1e5f7a93f10e620"
+  },
+  "missions-menu.css": {
+    "bytes": 2774,
+    "sha256": "47087d4182860644506fd1cd09ac90279e34d9af06fc36ff9e2f16f4a8e5b2e1"
+  },
+  "missions-menu.js": {
+    "bytes": 3176,
+    "sha256": "ee4f2d09de4468a42a77d74aecc8d9710a7cd30e1d70a435bc1ea40a8e5300da"
+  },
+  "mobile.html": {
+    "bytes": 1094,
+    "sha256": "c696977596ae3219b0915ec257efe2812dddbcbf0bd6fd220f6652c601e09663"
+  },
+  "MODO-TESTE.md": {
+    "bytes": 2660,
+    "sha256": "d198454d41527e2f4c4bba0feae6b87dd8b5c7085a02361cac8455f19c0021b3"
+  },
+  "ONBOARDING-IMAGE-PROMPT.txt": {
+    "bytes": 1620,
+    "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
+  },
+  "online.js": {
+    "bytes": 142289,
+    "sha256": "eb2ce32685f4d2344e9c3b8edb3f4ed3174804103b501affe23363630d977bb1"
+  },
+  "portal-upgrade.css": {
+    "bytes": 19957,
+    "sha256": "99bbd3a63dd1d4dd36803da9533c0ccbe5c3a21413d2c44a39b31f7625eedb7a"
+  },
+  "portal-upgrade.js": {
+    "bytes": 28914,
+    "sha256": "636382156acf94da428a3d51c35e215bca54bd59022ba3cb523041c85ec4a2db"
+  },
+  "practice-mode.css": {
+    "bytes": 2070,
+    "sha256": "46c47210a6e190847e73c03be23733a1e88b032d69cdf80ac1038017db794d2b"
+  },
+  "practice-mode.js": {
+    "bytes": 4345,
+    "sha256": "8c93c278f646f9695462974919acc34c3dbfcaa52382d8a196b79730e0015960"
+  },
+  "profile-redesign.css": {
+    "bytes": 12991,
+    "sha256": "c7d65b425c069cbfe9fa3320efc0c82d92497c96d35dcc3569efe55a560ff6db"
+  },
+  "profile-redesign.js": {
+    "bytes": 7767,
+    "sha256": "64083f51b3a99bfe99b4babb87ac31dc24d664ea1e9b72072a9eaa6432eb1843"
+  },
+  "queue-room-layout.css": {
+    "bytes": 2185,
+    "sha256": "2198086cb43fdc86be9f20698f63bf026030d825615121b0eeb3d5ed4066e086"
+  },
+  "RANK-ESTRELAS-STRIX.md": {
+    "bytes": 2856,
+    "sha256": "5897f273fc08a7e157920200f891853c99f2fd11d9f679e4f0cc9642036b3302"
+  },
+  "rank-progression.css": {
+    "bytes": 3721,
+    "sha256": "0b3c2ceb0e117bbc68968ff013a8bb39865f4c201ee34ebcd55d0b23fa928458"
+  },
+  "rank-progression.js": {
+    "bytes": 5928,
+    "sha256": "5dba1c847732cb1b9805d9cda10cb983431b4c6a5976f0d04e164bcd91dcff95"
+  },
+  "REGRAS-CARTAS-DECISOES.md": {
+    "bytes": 20997,
+    "sha256": "3d478dcd0bab988f4565934e05badd74eda430c241bf5b35f14cf2563dd65282"
+  },
+  "responsive-layout.css": {
+    "bytes": 19257,
+    "sha256": "8b8a215449509e25d082d14a1b42b858e6ef31f1d493feb109bcbce920967dbc"
+  },
+  "rework.css": {
+    "bytes": 59751,
+    "sha256": "aa58c23de920df858b360c8894ca7c3a3b7460036976119df0ce831fe8d12ac4"
+  },
+  "row-holograms.css": {
+    "bytes": 1822,
+    "sha256": "55ec9e0dc975616c2290706b7dbf7d1c139aa8bbc6a0ddaa9420307066dec90e"
+  },
+  "SALA-BARALHO-LATERAL.md": {
+    "bytes": 974,
+    "sha256": "6dd7c37bbe27355203b52df45ebed7aef6f90d8238cf2e56e9e8cdbf1a7fa123"
+  },
+  "security.js": {
+    "bytes": 956,
+    "sha256": "a698f42d22d6e30051036e06ef1bcdcfead86b4ca5d9ee919c956ee1e732e929"
+  },
+  "SIDEBAR-ARCANA.md": {
+    "bytes": 2707,
+    "sha256": "859d0a78cedb907f04fc513e29ab374f91a8b85a58121017badaf22107948b83"
+  },
+  "sidebar-arcane.css": {
+    "bytes": 16060,
+    "sha256": "dbcbbe844a5c60d73232bb3fdd251270cc56635095d33da6b661d31fccce6e02"
+  },
+  "sidebar-arcane.js": {
+    "bytes": 8124,
+    "sha256": "c04a4667a32412d6dad0abf9c1add530f916043f6d1b13002ee2af5eb0b46701"
+  },
+  "styles.css": {
+    "bytes": 204347,
+    "sha256": "39610fda20ef27c1a280f0bca05b0e8f0419164538ee60c10b68cf1744c7b6d7"
+  },
+  "supabase/migrations/202609270001_online_game.sql": {
+    "bytes": 37255,
+    "sha256": "b61ee8f4e790e5344ea031de424badbe4463bf29e8e4c7a6e4b17c803ad77495"
+  },
+  "supabase/migrations/202609270002_progression_store.sql": {
+    "bytes": 37463,
+    "sha256": "3c708e6133cf5fbded9087314d22c0dc221d8702e381c97b95278f49caa53093"
+  },
+  "supabase/migrations/202609270003_admin_console.sql": {
+    "bytes": 5367,
+    "sha256": "19867205a617041ba0fc5523620e069bfaecac83bc4aa007c153b8a9eb6f376f"
+  },
+  "supabase/migrations/202609270004_profile_icons_and_intro.sql": {
+    "bytes": 1214,
+    "sha256": "8324e8e67e5bc9cf709b020720b9f3fee8e8b4c7f29837af85ce02fa83b1b976"
+  },
+  "supabase/migrations/202609270005_card_customizer.sql": {
+    "bytes": 2223,
+    "sha256": "b215e5d28e8aa07e7ccb846e9035769ab581c5cc5b28cad745f758b3e2d26b2e"
+  },
+  "supabase/migrations/202609270006_tutorial_level_two.sql": {
+    "bytes": 1338,
+    "sha256": "709e457e713941e73ad616e269f62ca2f5f208edacef547815a617a0f8b7277e"
+  },
+  "supabase/migrations/202609270007_fix_admin_player_list.sql": {
+    "bytes": 865,
+    "sha256": "58880df36d820b02ce3f121385e4ee160aa0c1bcb9dae075ef77c52286fa43a1"
+  },
+  "supabase/migrations/202609270008_medusa_rank_history.sql": {
+    "bytes": 19094,
+    "sha256": "c5a002c00a06d0816b65e4b0ae99dfeaafa709af3f37124ac0471ada131f2458"
+  },
+  "supabase/migrations/202610130001_live_features.sql": {
+    "bytes": 28184,
+    "sha256": "cdff46e45b5a0327da267beb4013fd7477b8e61947f7531a101b91a6f38cd984"
+  },
+  "supabase/migrations/202610160001_game_systems.sql": {
+    "bytes": 41022,
+    "sha256": "2149a2f4cd8e80e50025b2fed364fac5eb3a3fe70c1f5bd05bb59b052b074f4c"
+  },
+  "supabase/migrations/202610160002_admin_tournament_creation.sql": {
+    "bytes": 8550,
+    "sha256": "4a530a89bd9ef6b623c975dd384e630062214c7a7e0afabcd350b4198b7cb24e"
+  },
+  "supabase/migrations/202610160002_greek_gods_cards.sql": {
+    "bytes": 3994,
+    "sha256": "f224a4fee74a7e539f1de03ae6f1cbcf2c430fdf9f6dc4172fdda686284ed732"
+  },
+  "supabase/migrations/202610160003_player_profiles.sql": {
+    "bytes": 9608,
+    "sha256": "529d6360e27719c1a3053b2dec5fe6bd10d9171e5f2d73de0316526f596a2fe2"
+  },
+  "supabase/migrations/202610160004_duo_matchmaking.sql": {
+    "bytes": 42144,
+    "sha256": "b9d90bc8504a46b66d111960a41fee6467c7e670d83a267fc8a862474cc1b0e5"
+  },
+  "supabase/migrations/202610170001_titles_medals.sql": {
+    "bytes": 6836,
+    "sha256": "e9ce21bf34e5a6857bcc82c9005076a4b892ef51feb3b64d20d5ce8be7ce8e7b"
+  },
+  "supabase/migrations/202610170002_card_art_holograms.sql": {
+    "bytes": 9721,
+    "sha256": "51ab29bfbd4226c2e55a4d57451c21256add26f4458e065a07d42d80c3701655"
+  },
+  "supabase/migrations/202610170003_corrected_cards.sql": {
+    "bytes": 951,
+    "sha256": "f9ec0971fa74d947b06d967576d1fe012bf89913ddf1becf3af0623ca2238b3d"
+  },
+  "supabase/migrations/202610170004_human_cards.sql": {
+    "bytes": 1434,
+    "sha256": "19eef0adca145fda9a70091a8274fa5954679bb95826340e58a0771a0292b450"
+  },
+  "supabase/migrations/202610170005_terrain_cards.sql": {
+    "bytes": 13474,
+    "sha256": "c7559e9d07c501048062190366fb7ccb4284b481e4d8b95a0e881ed57692fde7"
+  },
+  "supabase/migrations/202610170006_location_cards.sql": {
+    "bytes": 6078,
+    "sha256": "34d5beb0994e8ec4c7d54be5483da27c02fbea4dc81338f0fdf556cdc863806e"
+  },
+  "supabase/migrations/202610170007_equipment_cards.sql": {
+    "bytes": 12058,
+    "sha256": "9a590778e40284a4260f655195c83e697ac8f48a44b9e0a1c4ea70b74578b8e7"
+  },
+  "supabase/migrations/202610170008_eclipse_event.sql": {
+    "bytes": 9306,
+    "sha256": "15c97c8d5dc683f90f4edd08d86d6d325f58945183e64b18758d74b4bb5189ae"
+  },
+  "supabase/migrations/202610170009_loki_card.sql": {
+    "bytes": 5851,
+    "sha256": "652ad7382e1b4e125c3b37f90c86588cb95d1bd26d7704aa16fd542c97169c54"
+  },
+  "supabase/migrations/202610170010_all_character_abilities.sql": {
+    "bytes": 144524,
+    "sha256": "92a4c40c1f6167e4601e5e5eccfdfcf389023b2749b27324b6d9e32b478e58f9"
+  },
+  "supabase/migrations/202610170011_norse_guardian_card.sql": {
+    "bytes": 640,
+    "sha256": "9d473f056348ac04a850e623dd85e66a1341414e1917a928011d9462e987d072"
+  },
+  "supabase/migrations/202610170012_cinematic_arcane_update.sql": {
+    "bytes": 135495,
+    "sha256": "6913c6fc80aeef21a9b18576f490ac0b33510108891688ddbacfdca17cc867c0"
+  },
+  "supabase/migrations/202610170013_inventory_shop_onboarding.sql": {
+    "bytes": 32358,
+    "sha256": "f50f1b6efc39c7652437d977db691edc0e16f9d0e5cc5063ea205fbc77f76320"
+  },
+  "supabase/migrations/202610170014_owned_collection_icons.sql": {
+    "bytes": 10018,
+    "sha256": "7836454932a74122a75939a273fca6879c5244df1cb8e319758c7abfa1acbf81"
+  },
+  "supabase/migrations/202610170015_deck_builder_14_35.sql": {
+    "bytes": 5728,
+    "sha256": "731451d4c2e9ff3194e0486d9a48b0a51c74106ef1d860c4e730275baeb4dfc3"
+  },
+  "supabase/migrations/202610170016_delete_builder_deck.sql": {
+    "bytes": 2880,
+    "sha256": "3f30c3ebce7ca0b7673582659a229758739feeeaba5be81fc33903969ef1142f"
+  },
+  "supabase/migrations/202610170017_player_icons_seven_decks.sql": {
+    "bytes": 2876,
+    "sha256": "c5e8c115249e85d5b5ea0e77f4c097c4fbca772068981f935e3c00c8d114ef64"
+  },
+  "supabase/migrations/202610170018_audit_hardening.sql": {
+    "bytes": 43274,
+    "sha256": "78e106537a426e92ddbd53a91f4e51520f2041dae651d67b617ad9a7bcbc8bcc"
+  },
+  "supabase/migrations/202610170019_norse_guardian_synergy.sql": {
+    "bytes": 2213,
+    "sha256": "0439e006104de4cc0fbf57182b28c68d6a6429d408edf812755b05c29866bb80"
+  },
+  "supabase/migrations/202610170020_replace_zones.sql": {
+    "bytes": 4999,
+    "sha256": "59ed71b20caf2d311e85dbb3293ca06ca390a65d6dfa3ea19e1223c5effdb672"
+  },
+  "supabase/migrations/202610170021_friend_presence.sql": {
+    "bytes": 2524,
+    "sha256": "f9f49954e8a76594d4d6ebb1388e5ec72727aa80476119c2cae5ecc69aa01a91"
+  },
+  "supabase/migrations/202610180022_round_zone_cleanup.sql": {
+    "bytes": 1017,
+    "sha256": "2db0b6881186710b6757532949a7c7c8b5bc432d77cb70ad1e6e74962b283130"
+  },
+  "supabase/migrations/202610180023_eclipse_monster_forms.sql": {
+    "bytes": 4420,
+    "sha256": "c84fd07470f43ea56640960be060f6fd64583f6242bef42a48ef66f0a3b596c9"
+  },
+  "supabase/migrations/202610180024_lane_buffs_apollo_aura.sql": {
+    "bytes": 9540,
+    "sha256": "928495d597fe634dac5acb5b3d08907e5cdaeae0d94e87a812c3cfb4aec2ff28"
+  },
+  "supabase/migrations/202610180025_approved_card_rules.sql": {
+    "bytes": 131088,
+    "sha256": "a942a2a188bee42682c8a4236b460505739bb55d5184101ddc95e929570be9a6"
+  },
+  "supabase/migrations/202610180026_welcome_starter_pack.sql": {
+    "bytes": 11580,
+    "sha256": "54bf8b06ce20982e87cfb985b74b41f9036a4f93dc3ac83f696adab6edb1d75c"
+  },
+  "supabase/migrations/202610180027_alyn_starter_pack.sql": {
+    "bytes": 6292,
+    "sha256": "2259ebdc20b1fa96ffae9916831656e51775550bb77c46f420741fbd2dd9421e"
+  },
+  "supabase/migrations/202610180028_admin_portal_controls.sql": {
+    "bytes": 22142,
+    "sha256": "c55ef7400464e051c61d67b2ba3295dbcfe1d80dbec9826a48963a129b92b3bc"
+  },
+  "supabase/migrations/202610180029_admin_role_codes.sql": {
+    "bytes": 7938,
+    "sha256": "dd7e01ede5c038824f97c33e659ff0940a7f04643dfafa4a3c761fd5ab9f7aa0"
+  },
+  "supabase/migrations/202610180030_random_eclipse_tiebreak.sql": {
+    "bytes": 12353,
+    "sha256": "ecccecfe0e274e2d1bbe26165a6a255db65f1a3dbec49caebc9bdef7a90fc6a0"
+  },
+  "supabase/migrations/202610180031_match_deck_catalog_fix.sql": {
+    "bytes": 5160,
+    "sha256": "32f98115f7e3914c326c6cda37973a0eca43032a79088c8d2a641dffecaf54e2"
+  },
+  "supabase/migrations/202610180032_round_stars_and_result.sql": {
+    "bytes": 10397,
+    "sha256": "5e65ce5ac83b367e25f4fe289d6032bb7539754cdf76a931094b5d3f27bf2914"
+  },
+  "supabase/migrations/202610180033_tiebreak_deck_counters.sql": {
+    "bytes": 2508,
+    "sha256": "2d1421aa2b0e8c0dc51bacf5f8a296b28df17ed0bb75b80319fbd7e1b6e72549"
+  },
+  "supabase/migrations/202610190034_rank_strix_stars.sql": {
+    "bytes": 3315,
+    "sha256": "6ac095bc8b3fe4712a86e2dd025294e98e7868f5a8113904e1cf3d2884f96a22"
+  },
+  "supabase/migrations/202610190035_convergence_lobby.sql": {
+    "bytes": 8961,
+    "sha256": "794c69335198124adedab3f7ed6a342fac8fb27f952ab98ad68f7c51366456f2"
+  },
+  "supabase/README.md": {
+    "bytes": 2053,
+    "sha256": "317190d2e911059045588edd73f6f78cecbcbf1f4df1c13dfff9aa4f8594c24e"
+  },
+  "supabase-config.js": {
+    "bytes": 448,
+    "sha256": "9b6a1a6c0d7deb0d97e5daa0ef0d1d3262096d20a9b5f4ece74afa9169fa7b02"
+  },
+  "sw.js": {
+    "bytes": 5649,
+    "sha256": "7a18c795839632e1e20ab1a1f66e19774b313b6df2ed0ba56fea7aee1c385c38"
+  },
+  "terrain-cards.js": {
+    "bytes": 15141,
+    "sha256": "9f22c8b211ef872239e3c280c75ddcc3eacca635aff9a9d09618f8b65dfc861b"
+  },
+  "terrain-cards.json": {
+    "bytes": 14569,
+    "sha256": "758e57ae61f9cf311e447193ce50b7cf84b3c1d998c94540d43ac581cca8966b"
+  },
+  "terrenos.html": {
+    "bytes": 2013,
+    "sha256": "3332487b9c5655707d76fa1c86dabbbafc2b6b8c38ace46721b4c85a6af13dea"
+  },
+  "TERRENOS.md": {
+    "bytes": 3309,
+    "sha256": "6433dc5cd2641c0f115ef26deea5112efc771338a59a672d24a83df69a0f1a8a"
+  },
+  "tiebreak-cinematic.css": {
+    "bytes": 7599,
+    "sha256": "68b25b0b5e6d7b287e25c2f59ae658a5f9bfd40c2182b0702fb4847e68bd6881"
+  },
+  "tiebreak-cinematic.js": {
+    "bytes": 9417,
+    "sha256": "2de07ef40c3eb88f0c66810fce96ff786262982211a4246da341559be00b1c10"
+  },
+  "TITULOS-E-MEDALHAS.md": {
+    "bytes": 2728,
+    "sha256": "453bd29ed95e5df9a04453d734a43625103e6c38d04ab09dc83735340115c647"
+  },
+  "universe-banners.js": {
+    "bytes": 3010,
+    "sha256": "3ab03201b14616835ddcfe14335fc19e6275dc728ba872f8dfad4e28281aab98"
+  },
+  "universe-banners.json": {
+    "bytes": 3565,
+    "sha256": "798759de9dbca64f62f5ecb6f031819889e424951e98b090c75eca4bd6fac88c"
+  },
+  "universe-upgrade.css": {
+    "bytes": 8424,
+    "sha256": "4146b330d41a9e510ee82b3ae98932e8ae7228af2185d8cabe6c4f95407fd700"
+  },
+  "VERSO-OFICIAL-E-MOEDA.md": {
+    "bytes": 933,
+    "sha256": "11d41ead9c76134d807049e9b4174a388ff3dcf3786c55964fe047577828aeaf"
+  },
+  "vfx-runtime.js": {
+    "bytes": 2427,
+    "sha256": "a657815d63805cf8abf77e5bbec0d11bb7c148e36b199d0eec3c67945f0e7ac9"
+  },
+  "welcome.css": {
+    "bytes": 12222,
+    "sha256": "f8f48f32638609d12c2af3fda614e437026aede9effc39d9e1cb71564845d72f"
+  },
+  "welcome.js": {
+    "bytes": 19738,
+    "sha256": "b2487e529062299469150596b3876cf3558102272d61884cc61b3a36fbaa66ad"
+  },
+  "world-lore.js": {
+    "bytes": 22706,
+    "sha256": "84f19aa54bab3f95d3e19caa68470a3c29f308ab9c5b9d5dbb3a5a7432e4dcfe"
+  },
+  "world-lore.json": {
+    "bytes": 25854,
+    "sha256": "9f07b4c2fe0cc1672d94f41d5c5ef72394ab870a29d9598c09fbe5f12e21a178"
+  },
+  "world-rules.js": {
+    "bytes": 984,
+    "sha256": "c5f44355ae95dff2c4feaf29677db0aacebb3484f9e12fee520df445bcf49433"
+  }
+}

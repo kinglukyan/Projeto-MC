@@ -29,11 +29,9 @@
  }
  back.addEventListener('click',()=>{
   const current=window.MythicOnline?.getQueueState?.();if(!current?.active)return;
-  window.queueGameMode=current.mode;
+  window.MythicOnline?.openQueueLobby?.(current.mode);
   window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'queue'}}));
-  document.querySelector('[data-queue-format="'+(current.format==='duo'?'duo':'solo')+'"]')?.click();
-  const title=document.querySelector('#queue-heading');if(title)title.textContent=current.mode==='ranked'?'Fila ranqueada':'Jogo normal';
-  const join=document.querySelector('#queue-join');if(join){join.disabled=true;join.textContent=current.phase==='inviting'?'Aguardando parceiro…':'Busca em andamento…';}
+
   document.querySelector('#view-queue')?.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
  });
  cancel.addEventListener('click',async()=>{if(leaving||state.phase==='joining')return;leaving=true;cancel.disabled=true;cancel.textContent='Saindo…';try{await window.MythicOnline?.cancelQueue?.();}finally{leaving=false;render(window.MythicOnline?.getQueueState?.());}});
