@@ -1153,7 +1153,7 @@
   },
   "index.html": {
     "bytes": 71660,
-    "sha256": "8d458131208f3e87cc39ee52a0e7ab25e905c0a6f93e8d88701f40ef1666868c"
+    "sha256": "f406365da6d6f37dfaebf010072336dafbc3d89ebaf02a23f9468a4d150a06f9"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -1268,12 +1268,12 @@
     "sha256": "64083f51b3a99bfe99b4babb87ac31dc24d664ea1e9b72072a9eaa6432eb1843"
   },
   "public-hall.css": {
-    "bytes": 15569,
-    "sha256": "a16f813d5033257779e8ff1daf948d37d05311b4a0f50a0950dc278ed4896558"
+    "bytes": 15646,
+    "sha256": "f453aba1e1a88acdad10abd98b4695121d2cbac92e9ee3d734483c68693c02c1"
   },
   "public-hall.js": {
-    "bytes": 17493,
-    "sha256": "7ab03810cd6387996925627e24fc8b05987f338e2d050b39513122e1c371c0e5"
+    "bytes": 17648,
+    "sha256": "18734d716fb77627577fb6d6d3047407ac6e1a853e4970cc8810adf81a94b6b1"
   },
   "queue-room-layout.css": {
     "bytes": 3034,
