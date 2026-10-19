@@ -1,14 +1,18 @@
-/* 25% larger than the previous standard hologram dimensions. */
+/* O tamanho de cada unidade é o mesmo dentro e fora de um pelotão. */
+body.mythic-rework.duel-fullscreen #view-duel{--battle-hologram-width:89.0625px;--battle-hologram-height:106.25px}
 body.mythic-rework.duel-fullscreen #view-duel .battle-field{height:auto!important;grid-template-rows:repeat(3,minmax(0,auto))!important}
-body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card>.battle-hologram{width:89.0625px!important;height:106.25px!important}
-body.mythic-rework.duel-fullscreen #view-duel .companion-stack>.companion-formation{grid-template-columns:repeat(var(--formation-cols),53.125px)}
-body.mythic-rework.duel-fullscreen #view-duel .companion-formation>.battle-hologram{width:53.125px!important;height:var(--member-height,84.375px)!important}
+body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card>.battle-hologram{width:var(--battle-hologram-width)!important;height:var(--battle-hologram-height)!important}
+body.mythic-rework.duel-fullscreen #view-duel .companion-stack>.companion-formation{grid-template-columns:repeat(var(--formation-cols),var(--formation-step,38px));grid-auto-rows:var(--formation-row-step,44px);padding-top:calc(var(--battle-hologram-height) - var(--formation-row-step,44px));width:calc(var(--battle-hologram-width) + (var(--formation-cols) - 1)*var(--formation-step,38px));gap:0;box-sizing:content-box;justify-content:start}
+body.mythic-rework.duel-fullscreen #view-duel .companion-formation>.battle-hologram{width:var(--battle-hologram-width)!important;height:var(--battle-hologram-height)!important}
+body.mythic-rework.duel-fullscreen #view-duel .companion-stack:not(.expanded)>.battle-mini-card{left:calc(50% - var(--stack-card-width,37px)/2 + var(--stack-index)*2px)!important;top:calc(min(var(--stack-index)*1.5px,9px)*-1)!important}
+body.mythic-rework.duel-fullscreen #view-duel .companion-stack.expanded{gap:0;margin-right:6px}
+body.mythic-rework.duel-fullscreen #view-duel .companion-stack.expanded>.battle-mini-card+.battle-mini-card{margin-left:calc(var(--stack-card-width,37px)*-.18)!important}
+body.mythic-rework.duel-fullscreen #view-duel .companion-stack>.stack-expand{left:50%;transform:translateX(-50%)}
+body.mythic-rework.duel-fullscreen #view-duel .battle-field .battle-lane:has(.companion-stack){padding-bottom:34px!important}
 body.mythic-rework.duel-fullscreen #view-duel .battle-field .battle-lane{min-height:142px!important;padding-top:max(81px,var(--formation-headroom,0px))!important}
 body.mythic-rework.duel-fullscreen #view-duel .battle-field .battle-lane:has(.lunar-empowered){min-height:158px!important;padding-top:max(97px,calc(var(--formation-headroom,0px)*1.15))!important}
 @media(max-width:760px){
- body.mythic-rework.duel-fullscreen #view-duel .battle-mini-card>.battle-hologram{width:65.625px!important;height:90.625px!important}
- body.mythic-rework.duel-fullscreen #view-duel .companion-stack>.companion-formation{grid-template-columns:repeat(var(--formation-cols),43.75px)}
- body.mythic-rework.duel-fullscreen #view-duel .companion-formation>.battle-hologram{width:43.75px!important;height:var(--member-height,68.75px)!important}
+ body.mythic-rework.duel-fullscreen #view-duel{--battle-hologram-width:65.625px;--battle-hologram-height:90.625px}
  body.mythic-rework.duel-fullscreen #view-duel .battle-field .battle-lane{min-height:130px!important;padding-top:max(72px,var(--formation-headroom,0px))!important}
  body.mythic-rework.duel-fullscreen #view-duel .battle-field .battle-lane:has(.lunar-empowered){min-height:144px!important;padding-top:max(86px,calc(var(--formation-headroom,0px)*1.15))!important}
 }

@@ -76,8 +76,8 @@
     "sha256": "4ac19c29405481b9da492304052472cdf8bb699e2e7218a9dad6d2384e4af25a"
   },
   "app.js": {
-    "bytes": 121858,
-    "sha256": "7abcf524f4018113d08111a10422e7cf32fac879fff24439149fb86d6078b079"
+    "bytes": 122590,
+    "sha256": "7bd56a6091c3bb42997407d5e554033d266af7728c037c79f26d1e65534ed283"
   },
   "arcane-palette.css": {
     "bytes": 37719,
@@ -984,8 +984,8 @@
     "sha256": "6cc51a82aec8c2ae014df08f3dbe4bb372d2cedfae333ef365bc956172a9b754"
   },
   "COMECE-AQUI.txt": {
-    "bytes": 4687,
-    "sha256": "c0f3039faa851b735a12f6d8dc796787cd968b3a6e73e4f810f761f1a65adf8d"
+    "bytes": 4985,
+    "sha256": "7a7214c6e43fb07eb917e09ea5f44137932dc7dfe508ac00616b650767ab21c8"
   },
   "CONCEPT-ART-ASSETS.json": {
     "bytes": 5044,
@@ -1153,7 +1153,7 @@
   },
   "index.html": {
     "bytes": 71660,
-    "sha256": "28f4f190b583df41d7ddfe9215fe28ff682011cef5c18790f508725aa1d09c57"
+    "sha256": "5b1e2e8f3449b477ec5e63f7952496cdb4ba37faf39923942b8732c5ac539510"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -1239,6 +1239,10 @@
     "bytes": 140476,
     "sha256": "3b3967193544b60d7d372a7773b86b0825b5833f1777db83652b367e0ca99b95"
   },
+  "PELOTOES-DE-COMPANHEIROS.md": {
+    "bytes": 884,
+    "sha256": "9c30498429cee6e0de81602342fa8372d355d6957953430516fba5f0e995f9b9"
+  },
   "portal-upgrade.css": {
     "bytes": 19957,
     "sha256": "99bbd3a63dd1d4dd36803da9533c0ccbe5c3a21413d2c44a39b31f7625eedb7a"
@@ -1304,8 +1308,8 @@
     "sha256": "aa58c23de920df858b360c8894ca7c3a3b7460036976119df0ce831fe8d12ac4"
   },
   "row-holograms.css": {
-    "bytes": 1822,
-    "sha256": "55ec9e0dc975616c2290706b7dbf7d1c139aa8bbc6a0ddaa9420307066dec90e"
+    "bytes": 2722,
+    "sha256": "4e1c979d2e9e23a2a1e739ef8a1938f711c759af123e1bfa21b5f79a2c3e7826"
   },
   "SALA-BARALHO-LATERAL.md": {
     "bytes": 974,

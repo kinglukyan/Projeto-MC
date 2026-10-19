@@ -343,16 +343,19 @@
     document.getElementById("battle-hologram-layer")?.remove();
     if(activeView!=="duel")return;
     document.querySelectorAll('#shared-zones .zone-card-mini').forEach(card=>{card.style.setProperty('--zone-card-width',card.clientWidth+'px');card.style.setProperty('--zone-card-height',card.clientHeight+'px');});
-    const mobile=matchMedia("(max-width:760px)").matches,cell=mobile?43.75:53.125;
+    const battleStyle=getComputedStyle($('#view-duel')),memberWidth=parseFloat(battleStyle.getPropertyValue('--battle-hologram-width'))||89.0625,memberHeight=parseFloat(battleStyle.getPropertyValue('--battle-hologram-height'))||106.25;
+    const step=memberWidth*.43,rowStep=memberHeight*.42;
+    document.querySelectorAll('#view-duel .battle-lane').forEach(lane=>lane.style.setProperty('--formation-headroom','0px'));
     document.querySelectorAll("#view-duel .companion-stack").forEach(pile=>{
-      const cards=[...pile.querySelectorAll(":scope>.battle-mini-card")],first=cards[0],formation=pile.querySelector(".companion-formation");if(!first||!formation)return;
-      const members=formation.children.length,columns=Math.max(1,Math.min(6,members)),rows=Math.max(1,Math.ceil(members/columns));
-      pile.style.setProperty("--stack-card-width",first.offsetWidth+"px");pile.style.setProperty("--formation-width",Math.max(first.offsetWidth+(cards.length-1)*3,columns*cell)+"px");
-      pile.style.setProperty("--stack-lift",Math.min(12,(cards.length-1)*2)+"px");
-      if(!pile.classList.contains("expanded"))pile.style.height=first.offsetHeight+"px";else pile.style.height="auto";
-      const memberHeight=Math.min(mobile?68.75:84.375,106.25/rows),lift=Math.min(12,(cards.length-1)*2);
-      formation.style.setProperty("--formation-cols",columns);formation.style.setProperty("--member-height",memberHeight+"px");
-      pile.closest(".battle-lane")?.style.setProperty("--formation-headroom",(pile.classList.contains("expanded")?0:Math.max(0,rows*memberHeight+lift-first.offsetHeight/2+6))+"px");
+      const cards=[...pile.querySelectorAll(":scope>.battle-mini-card")],first=cards[0],formation=pile.querySelector(".companion-formation"),lane=pile.closest('.battle-lane');if(!first||!formation||!lane)return;
+      const laneStyle=getComputedStyle(lane),available=Math.max(memberWidth,lane.clientWidth-parseFloat(laneStyle.paddingLeft)-parseFloat(laneStyle.paddingRight));
+      const members=formation.children.length,fit=Math.max(1,Math.floor((available-memberWidth)/step)+1),columns=Math.max(1,Math.min(6,members,fit)),rows=Math.max(1,Math.ceil(members/columns));
+      const width=members?memberWidth+(columns-1)*step:0,height=members?memberHeight+(rows-1)*rowStep:0,lift=Math.min(9,(cards.length-1)*1.5);
+      pile.style.setProperty('--stack-card-width',first.offsetWidth+'px');pile.style.setProperty('--formation-width',Math.max(first.offsetWidth+(cards.length-1)*2,width)+'px');pile.style.setProperty('--stack-lift',lift+'px');
+      if(!pile.classList.contains('expanded'))pile.style.height=first.offsetHeight+'px';else pile.style.height='auto';
+      formation.style.setProperty('--formation-cols',columns);formation.style.setProperty('--formation-step',step+'px');formation.style.setProperty('--formation-row-step',rowStep+'px');
+      const headroom=pile.classList.contains('expanded')?0:Math.max(0,height+lift-first.offsetHeight/2+6);
+      lane.style.setProperty('--formation-headroom',Math.max(parseFloat(lane.style.getPropertyValue('--formation-headroom'))||0,headroom)+'px');
     });
   }
   let hologramSyncFrame=0;function queueHologramSync(){if(hologramSyncFrame)return;hologramSyncFrame=requestAnimationFrame(()=>{hologramSyncFrame=0;syncBattleHolograms();});}
