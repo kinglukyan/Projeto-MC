@@ -23,3 +23,5 @@
 @media(prefers-reduced-motion:reduce){.converge-action>#cancel-queue{transition:none}}
 
 .lobby-friend-elo{display:flex;align-items:center;gap:6px}.lobby-friend-elo img{width:24px;height:24px;object-fit:contain}
+
+#lobby-friends-status .lobby-recovery{display:block;margin-top:10px;min-height:42px;font-size:12px}

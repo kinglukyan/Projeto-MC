@@ -2,12 +2,13 @@ MYTHIC CLASH — PACOTE COMPLETO
 Consolidado em 19/10/2026 a partir da versão local mais recente.
 
 ATUALIZAÇÃO ATUAL: LOBBY DE CONVERGÊNCIA
-A sala e os convites requerem a migração 035 no Supabase. Aplicar depois da
-034; publicar o site não executa o SQL. Consulte LOBBY-CONVERGENCIA.md.
+A sala requer a migração 035, e a recuperação de convites requer a 036.
+Aplicar em ordem depois da 034; publicar o site não executa o SQL.
+Consulte LOBBY-CONVERGENCIA.md e CORRECAO-CONVITES-SESSOES.md.
 
 ESTA É A PASTA PRINCIPAL PARA GUARDAR
 Este pacote reúne o código editável atualizado, artes, sons, configuração
-pública, documentação e 49 scripts SQL.
+pública, documentação e 50 scripts SQL.
 Não é preciso juntar os ZIPs anteriores do Mythic Clash.
 
 PARA PEDIR UMA ATUALIZAÇÃO

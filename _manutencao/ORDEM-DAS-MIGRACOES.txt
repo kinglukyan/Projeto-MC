@@ -55,3 +55,4 @@ Não reaplicar todos os scripts no banco de produção.
 47. 202610180033_tiebreak_deck_counters.sql
 48. 202610190034_rank_strix_stars.sql
 49. 202610190035_convergence_lobby.sql
+50. 202610190036_invite_session_recovery.sql

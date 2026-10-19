@@ -8,6 +8,7 @@
   let supabase = null, session = null, profile = null, activeFriend = null, activeMatchId = null, pendingFriendInviteCode = null, actionPending = false, adminAuthorized = false, adminPlayers = [], adminCatalog = [], adminGifts = [], adminLore = [], adminCardSourceUrl = null, adminCardPreviewUrl = null, adminCardPreviewToken = 0, tutorialSyncPending = false;
   let customRoomTicker=null,customRoomId=null,customRoomInviteCode=null,customSpectatorMatchId=null,duoQueueChannel=null,duoQueueTicker=null,pendingDuoPartyId=null,activeDuoPartyId=null,pendingDuoMode=null;
   let messageChannel = null, inviteChannel = null, queueChannel = null, gameChannel = null, queueTimeout = null, queueSeconds = 0, queueTicker = null, spectatorTicker=null,spectatorMatchId=null,tieBreakTicker=null,replayCurrent=null,replayTicker=null,storeItems = [], ownedItems = new Set(), activeStoreCategory = "icons";
+  let matchSessionTimer=null;
   let lobbyParty=null,lobbyTicker=null,lobbyEpoch=0,lobbyBusy=false;
   let floatingQueueState={active:false},queueRequest=0,queueCancelling=false;
   function setQueueState(update){
@@ -26,6 +27,7 @@
   const requireLogin = () => { if(session)return true; showLogin(); if(!configured)showAuthMessage("A autenticação ainda não foi configurada neste ambiente."); return false; };
   const displayError = error => {
     const message=String(error?.message||"");
+    if(/refresh_invite_sessions|touch_match_session/.test(message)&&/function|schema|cache/i.test(message))return "Os convites precisam da atualização 036 no servidor.";
     if(/get_duo_lobby|start_duo_lobby_queue|leave_duo_lobby/.test(message)&&/function|schema|cache/i.test(message))return "A sala precisa da atualização 035 no servidor.";
     if(/banned|temporarily suspended/i.test(message))return "Esta conta está temporariamente suspensa.";
     if(/email rate limit exceeded|over_email_send_rate_limit|over_email_rate_limit/i.test(message))return "O Supabase limitou temporariamente o envio de e-mails de cadastro. Aguarde ou configure um SMTP próprio no painel do Supabase.";
@@ -60,6 +62,7 @@
 
   function cleanupChannels(){
     queueRequest++;queueCancelling=false;setQueueState(null);clearInterval(lobbyTicker);lobbyTicker=null;lobbyEpoch++;lobbyParty=null;lobbyBusy=false;emitLobby();
+    clearInterval(matchSessionTimer);matchSessionTimer=null;
     stopPresence();
     for(const ticker of [queueTicker,queueTimeout,customRoomTicker,spectatorTicker,tieBreakTicker,replayTicker,matchFallbackTicker])clearInterval(ticker);
     queueTicker=queueTimeout=customRoomTicker=spectatorTicker=tieBreakTicker=replayTicker=matchFallbackTicker=null;
@@ -452,6 +455,11 @@
   }
 
   function startDuoQueuePolling(){if(duoQueueTicker)return;pollDuoQueue();duoQueueTicker=setInterval(pollDuoQueue,5000);}
+  function touchMatchSession(){
+    if(!session||!supabase||(!activeMatchId&&!(floatingQueueState.active&&floatingQueueState.format==='solo'&&floatingQueueState.phase==='queued')))return;
+    supabase.rpc('touch_match_session',{p_match_id:activeMatchId,p_queue:Boolean(floatingQueueState.active&&floatingQueueState.format==='solo'&&floatingQueueState.phase==='queued')}).then(()=>{}).catch(()=>{});
+  }
+  function keepMatchSession(){if(!matchSessionTimer)matchSessionTimer=setInterval(touchMatchSession,20000);touchMatchSession();}
   function emitLobby(){window.dispatchEvent(new CustomEvent('mythic-lobby-state',{detail:{party:lobbyParty,busy:lobbyBusy,userId:session?.user?.id||null}}));}
   function lobbyFriends(){return cachedFriends.filter(f=>f.request_status==='accepted').map(f=>({...f,presence:Date.now()-presenceStamp>90000?'offline':presenceStates.get(f.friend_id)||'offline'}));}
   async function refreshLobby(){
@@ -497,8 +505,8 @@
     setQueueState(null);queueRequest++;clearInterval(queueTicker);queueTicker=null;clearInterval(duoQueueTicker);duoQueueTicker=null;lobbyParty=null;emitLobby();activeMatchId=matchId;$("#queue-status").hidden=true;
     const {data,error}=await supabase.rpc("get_online_match",{p_match_id:matchId});
     if(session?.user?.id!==uid||activeMatchId!==matchId)return;
-    if(error){notify("Não foi possível abrir a partida: "+displayError(error));return;}
-    const match=data?.match;if(!match){notify("Partida não encontrada para esta conta.");return;}
+    if(error){notify("Não foi possível abrir a partida: "+displayError(error));activeMatchId=null;return;}
+    const match=data?.match;if(!match){notify("Partida não encontrada para esta conta.");activeMatchId=null;return;}keepMatchSession();
     if(gameChannel)supabase.removeChannel(gameChannel);
     gameChannel=supabase.channel(`game-${matchId}`).on("postgres_changes",{event:"UPDATE",schema:"public",table:"match_update_signals",filter:`match_id=eq.${matchId}`},()=>refreshOnlineMatch(matchId).catch(()=>{})).subscribe();
     matchFallbackTicker=setInterval(()=>{if(!document.hidden&&activeMatchId===matchId)refreshOnlineMatch(matchId).catch(()=>{});},8000);
@@ -550,7 +558,7 @@
         notify("Partida encontrada. Abrindo a arena…");loadOnlineMatch(entry.match_id);return;
       }
       if(entry?.queue_status!=='waiting')throw Error('Não foi possível confirmar a entrada na fila.');
-      setQueueState({format:'solo',mode,phase:'queued'});
+      setQueueState({format:'solo',mode,phase:'queued'});keepMatchSession();
       clearInterval(queueTicker);
       const tick=()=>{const seconds=Math.max(0,Math.floor((Date.now()-floatingQueueState.startedAt)/1000));$("#queue-status-text").textContent=(mode==='ranked'?"Procurando adversário da sua faixa":"Procurando jogador")+` · ${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`;};
       tick();queueTicker=setInterval(tick,1000);
@@ -571,13 +579,19 @@
       if(uid!==session?.user?.id)return{error:'A conta foi alterada.'};
       if(capability.error)throw capability.error;
       if(capability.data){await refreshLobby();return{error:'Você já tem uma sala ou convite em andamento.'};}
+      const refreshed=await supabase.rpc('refresh_invite_sessions',{p_friend_code:partnerCode});
+      if(uid!==session?.user?.id)return{error:'A conta foi alterada.'};
+      if(refreshed.error)throw refreshed.error;
       const {data,error}=await supabase.rpc('create_duo_queue',{p_mode:mode,p_partner_code:partnerCode});
       if(uid!==session?.user?.id)return{error:'A conta foi alterada.'};
       if(error)throw error;
       const row=Array.isArray(data)?data[0]:data;
       if(!row?.party_id)throw Error('Não foi possível confirmar o convite.');
       await refreshLobby();return{partyId:row.party_id,partnerName:row.partner_name};
-    }catch(error){return{error:displayError(error)};}
+    }catch(error){
+      let recovery=null;try{const d=JSON.parse(error?.details||'null');if(d?.kind==='self_queue')recovery={kind:'self_queue'};else if(d?.kind==='self_match'&&/^[0-9a-f-]{36}$/i.test(d.match_id||''))recovery={kind:'self_match',matchId:d.match_id};}catch{}
+      return{error:displayError(error),recovery};
+    }
     finally{if(uid===session?.user?.id){lobbyBusy=false;emitLobby();}}
   }
   async function respondDuoInvite(accept){

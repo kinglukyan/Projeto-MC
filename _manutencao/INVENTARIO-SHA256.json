@@ -8,8 +8,8 @@
     "sha256": "3691e263b84403eb2c1a5c8e1fae527121a4c5d2da08297a108b4eb48ed1b3f2"
   },
   "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
-    "bytes": 2379,
-    "sha256": "4b666a2014bc501dec08ac279b1c0d27adfe475ceae6c1f47d8ca3ef663598b4"
+    "bytes": 2425,
+    "sha256": "aa847421bfa4e7bec9b66abe6f5d8e946870aed4436c1ba6ab567e94a7f1b94f"
   },
   "abilities-data.js": {
     "bytes": 46690,
@@ -932,8 +932,8 @@
     "sha256": "6cc51a82aec8c2ae014df08f3dbe4bb372d2cedfae333ef365bc956172a9b754"
   },
   "COMECE-AQUI.txt": {
-    "bytes": 3078,
-    "sha256": "0b3d6bde0f8d3abc24e57d8af3778eed689eccdd5b640852125d26265ccbb3c2"
+    "bytes": 3135,
+    "sha256": "fe2bd1c9c7a5b22ca8656bc63a60ba2b478f523527eb417dcbb313754ffafb46"
   },
   "CONCEPT-ART-ASSETS.json": {
     "bytes": 5044,
@@ -956,12 +956,12 @@
     "sha256": "95b220bf3993451cd458d35176fd7c38790e2d1745e1932feb829ec8eb3cd5da"
   },
   "convergence-lobby.css": {
-    "bytes": 7000,
-    "sha256": "beaa447d9fa4621375e99be0443a78ec9331edf05e77bf682fc87a83f8910349"
+    "bytes": 7103,
+    "sha256": "732d5551364ae8ca421d1dc1fc04a0c6917fe080b019ccc0be101c8e7aebf6d3"
   },
   "convergence-lobby.js": {
-    "bytes": 10199,
-    "sha256": "1a91262480dff261542063f489dc55f8a7fbb63ddbe72906e61378dac166e3f0"
+    "bytes": 10766,
+    "sha256": "c77fc9c27ed1cfa2aa60049939038dec7cd64b889bc3e97d91391e4a5db61181"
   },
   "CORRECAO-AFRODITE-FILEIRAS.md": {
     "bytes": 1148,
@@ -970,6 +970,10 @@
   "CORRECAO-CARREGAMENTO-INVENTARIO.md": {
     "bytes": 1117,
     "sha256": "741a1f26c1a784378d38ad34b2074715c75282de38229417cc86daa09c5f56af"
+  },
+  "CORRECAO-CONVITES-SESSOES.md": {
+    "bytes": 1952,
+    "sha256": "657ab8d064974b2f0758422b13034ada7eac40673f48ed8cf6c83d3d77c381a9"
   },
   "CORRECAO-DESEMPATE-BARRA.md": {
     "bytes": 1307,
@@ -1085,7 +1089,7 @@
   },
   "index.html": {
     "bytes": 68771,
-    "sha256": "62baa2ea4d2df7cc4bc1ba8a5c365784ad9c76fc285e551b3fa968750b1fb9bc"
+    "sha256": "98cb4c79ac6b85aad243b45dedf9300b913ff1ff314e4b756769f42a3ede7cd1"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -1156,8 +1160,8 @@
     "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
   },
   "online.js": {
-    "bytes": 142289,
-    "sha256": "eb2ce32685f4d2344e9c3b8edb3f4ed3174804103b501affe23363630d977bb1"
+    "bytes": 143667,
+    "sha256": "b2da51aff8e24e58474cb205e456a4de55476bb219e22cf331c1552c7c6e9f3b"
   },
   "portal-upgrade.css": {
     "bytes": 19957,
@@ -1434,6 +1438,10 @@
   "supabase/migrations/202610190035_convergence_lobby.sql": {
     "bytes": 8961,
     "sha256": "794c69335198124adedab3f7ed6a342fac8fb27f952ab98ad68f7c51366456f2"
+  },
+  "supabase/migrations/202610190036_invite_session_recovery.sql": {
+    "bytes": 7813,
+    "sha256": "f6d8a6571425c57ebd093150b08b83758846abe22179b1d0b2f05b9e5a505d33"
   },
   "supabase/README.md": {
     "bytes": 2053,

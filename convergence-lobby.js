@@ -24,7 +24,7 @@
   const button=$('#queue-join');button.disabled=Boolean(queue.active||state.busy||incoming||(inRoom&&(!isHost||p.status!=='ready')));
   $('#converge-label').textContent=queue.active?(queue.phase==='queued'?'Em convergência':'Conectando…'):state.busy?'Aguarde…':inRoom&&!isHost?'Aguardando anfitrião':'Convergir';
   const queued=queue.active&&queue.phase==='queued';$('#converge-action').classList.toggle('is-queued',Boolean(queued));$('#converge-clock').hidden=!queued;$('#cancel-queue').hidden=!queued;
-  $('#lobby-friends-status').textContent=sending?'Enviando convite…':$('#lobby-friends-status').textContent;
+
   if(incoming){
     const host=member(p.host_id);avatar($('#lobby-inviter-avatar'),host?.icon,host?.name);
     $('#lobby-invitation-title').textContent=host?.name||'Seu amigo';$('#lobby-inviter-rank').textContent=rankName(host?.rating);
@@ -36,6 +36,18 @@
   tick();
  }
  function tick(){const n=queue.startedAt?Math.max(0,Math.floor((Date.now()-queue.startedAt)/1000)):0;$('#converge-clock').textContent=String(Math.floor(n/60)).padStart(2,'0')+':'+String(n%60).padStart(2,'0');}
+ function showInviteError(result){
+  const status=$('#lobby-friends-status');status.replaceChildren(el('span','',result.error));
+  if(!result.recovery)return;
+  const action=el('button','button button-secondary lobby-recovery',result.recovery.kind==='self_queue'?'Sair da fila':'Retomar partida');action.type='button';
+  action.addEventListener('click',async()=>{
+   action.disabled=true;
+   if(result.recovery.kind==='self_queue'){
+    const left=await api().cancelQueue();
+    if(left){status.textContent='Você saiu da fila. Agora pode convidar seu amigo.';}else action.disabled=false;
+   }else{dialog.close();await api().openMatch(result.recovery.matchId);}
+  });status.append(action);
+ }
  function drawFriends(){
   const text=$('#lobby-friends-search').value.trim().toLocaleLowerCase('pt-BR'),weight={online:0,away:1,offline:2},list=$('#lobby-friends-list');list.replaceChildren();
   const sorted=friends.filter(f=>f.display_name.toLocaleLowerCase('pt-BR').includes(text)).sort((a,b)=>(weight[a.presence]??2)-(weight[b.presence]??2)||a.display_name.localeCompare(b.display_name,'pt-BR'));
@@ -45,7 +57,7 @@
     const elo=el('span','lobby-friend-elo',rankName(friend.rating_points)),progress=window.MythicRank?.from?.(friend.rating_points);if(progress?.emblem){const badge=el('img');badge.src=progress.emblem;badge.alt='';elo.prepend(badge);}copy.append(el('b','',friend.display_name),elo,status);
     const invite=el('button','button button-secondary','Convidar');invite.type='button';invite.disabled=sending;invite.setAttribute('aria-label','Convidar '+friend.display_name);invite.addEventListener('click',async()=>{
       if(sending)return;sending=true;$('#lobby-friends-status').textContent='Enviando convite…';drawFriends();
-      try{const result=await api().startDuoQueue(window.queueGameMode||'normal',friend.friend_code);if(!result)throw Error('Conexão indisponível.');if(result?.error)$('#lobby-friends-status').textContent=result.error;else dialog.close();}
+      try{const result=await api().startDuoQueue(window.queueGameMode||'normal',friend.friend_code);if(!result)throw Error('Conexão indisponível.');if(result?.error)showInviteError(result);else dialog.close();}
       catch{ $('#lobby-friends-status').textContent='Não foi possível enviar. Tente novamente.'; }
       finally{sending=false;drawFriends();}
     });row.append(icon,copy,invite);list.append(row);
