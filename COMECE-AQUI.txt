@@ -1,26 +1,37 @@
 MYTHIC CLASH — PACOTE COMPLETO
 Consolidado em 19/10/2026 a partir da versão local mais recente.
 
-ATUALIZAÇÃO ATUAL: LOBBY DE CONVERGÊNCIA
+ATUALIZAÇÃO ATUAL: SEGURANÇA E AUDITORIA
+Leia SEGURANCA-E-JOGO-JUSTO.md. Há configuração Vercel e migração 037,
+que deve ser validada em homologação e publicada junto com o cliente.
+As proteções ainda não foram ativadas no servidor online nesta entrega.
+
+HALL DE ENTRADA
+Nova apresentação com prévia de duelo, facções interativas, pacote inicial,
+histórias e notícias. Consulte HALL-DE-ENTRADA.md. Basta publicar os arquivos.
+
+ATUALIZAÇÕES DO LOBBY
 A sala requer a migração 035, e a recuperação de convites requer a 036.
 Aplicar em ordem depois da 034; publicar o site não executa o SQL.
 Consulte LOBBY-CONVERGENCIA.md e CORRECAO-CONVITES-SESSOES.md.
 
 ESTA É A PASTA PRINCIPAL PARA GUARDAR
 Este pacote reúne o código editável atualizado, artes, sons, configuração
-pública, documentação e 50 scripts SQL.
+pública, documentação e 51 scripts SQL.
 Não é preciso juntar os ZIPs anteriores do Mythic Clash.
 
 PARA PEDIR UMA ATUALIZAÇÃO
 Envie o ZIP Mythic-Clash-Completo.zip ou esta pasta inteira.
 Mantenha as mudanças futuras nesta mesma pasta e atualize o mesmo ZIP.
-O código do site está em HTML, CSS e JavaScript editáveis; não existe etapa
-de compilação nem dependência de pastas de desenvolvimento antigas.
+O código do site está em HTML, CSS e JavaScript editáveis. A configuração da
+Vercel executa o build incluído, sem dependências, e publica site-publico.
 
 PUBLICAR O SITE
 Use esta pasta como raiz do projeto estático na hospedagem (por exemplo Vercel).
 O arquivo index.html precisa ficar na raiz publicada, ao lado de assets e dos
-arquivos JS/CSS. Não há comando de build obrigatório nem pasta dist.
+arquivos JS/CSS. A Vercel lê vercel.json e prepara a pasta site-publico automaticamente; não
+é necessário criar essa pasta nem mover arquivos manualmente. SQL e
+ferramentas internas não entram na pasta publicada.
 O acesso às contas e partidas requer HTTPS ou localhost; abrir index.html
 com dois cliques não substitui a hospedagem para os recursos online.
 As URLs do Supabase Auth devem corresponder ao endereço publicado.

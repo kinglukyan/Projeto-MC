@@ -1,15 +1,51 @@
 {
   "_headers": {
-    "bytes": 686,
-    "sha256": "9d9f369f4fe339413cc6d91e0720af93b318872dbbf1694f033dafd59c0b092b"
+    "bytes": 1248,
+    "sha256": "cf5be689fcd0a2af14a515e61b2a619a32309b348920a4ca5cf70af7d3f0e022"
   },
   "_manutencao/atualizar-mesmo-zip.py": {
     "bytes": 869,
     "sha256": "3691e263b84403eb2c1a5c8e1fae527121a4c5d2da08297a108b4eb48ed1b3f2"
   },
   "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
-    "bytes": 2425,
-    "sha256": "aa847421bfa4e7bec9b66abe6f5d8e946870aed4436c1ba6ab567e94a7f1b94f"
+    "bytes": 2470,
+    "sha256": "c534122cef4eda6dda8bb188b8e876a1bc0914f56d5e394a47ebebbb5233a8b8"
+  },
+  "_manutencao/preparar-publicacao.cjs": {
+    "bytes": 1545,
+    "sha256": "ea0db36a89bfd496c37ca36b0d591cc97f42053239d61c71fbe55a76e0937cb7"
+  },
+  "_manutencao/seguranca/escopo.json": {
+    "bytes": 615,
+    "sha256": "617acae2a8d773cf7ec99fc4e518d304048ec0af214e31d07ae2db9c5486007b"
+  },
+  "_manutencao/seguranca/resultado-csp-local.json": {
+    "bytes": 247,
+    "sha256": "5b4148a89bce9f06fe8abc5696f813834a5bd345144a453c5e5ab1d52a17f6ec"
+  },
+  "_manutencao/seguranca/resultado-estatico.json": {
+    "bytes": 1033,
+    "sha256": "5384018e888cd77f64fe83e91ff1d2f4c4636b8a383626da4d1fbb68fda864ae"
+  },
+  "_manutencao/seguranca/verificar-banco.sql": {
+    "bytes": 1891,
+    "sha256": "942f7b0dcf341b9f6443f5a1dfe2cc540cd52b729ab711e5622ac7f5d7ce0e15"
+  },
+  "_manutencao/seguranca/verificar-estatico.cjs": {
+    "bytes": 3166,
+    "sha256": "1e08c3364b11f15c4d440dbca864df61889ecb247abb8ee2cf54012fad6cff46"
+  },
+  "_manutencao/video-preview/LEIA-ME.txt": {
+    "bytes": 385,
+    "sha256": "694d35bce1462c233476125bf38ccd24c46cf718332e226a33ecfd0e75992e6a"
+  },
+  "_manutencao/video-preview/render-preview-mp4.cjs": {
+    "bytes": 5923,
+    "sha256": "ced999b80abc2b1633ee83f002c20edec697f295cf9908a83b869f4991b50053"
+  },
+  "_manutencao/video-preview/render-preview.cjs": {
+    "bytes": 5944,
+    "sha256": "2e5cccce3781f22c44ede8a662c6db83c00a3f6c98aa0936807ec64b72bc7d5f"
   },
   "abilities-data.js": {
     "bytes": 46690,
@@ -52,8 +88,8 @@
     "sha256": "f5bf25edef5ee5da2b2f665fdb1aabf4ac1256e0d7c13dabf31faec24acce687"
   },
   "asset-manifest.json": {
-    "bytes": 11330,
-    "sha256": "c538b7ccf1c3a1f29af230729ae8b8c1758f311ba33bfea44dfc38580e1e20cb"
+    "bytes": 11506,
+    "sha256": "a3dd1e8304969d3a7fd1fff269179753cc36ee14a8078a94a65f67ef48a55564"
   },
   "assets/app-icon.svg": {
     "bytes": 531,
@@ -647,6 +683,18 @@
     "bytes": 2517668,
     "sha256": "055471f7ed4c1d95016468ca05ab5b4d643fc5b3ca8edaf7a10a4c17e9d5f327"
   },
+  "assets/portal/duel-preview-poster.jpg": {
+    "bytes": 81671,
+    "sha256": "ad4a250c06aae7d7cdafcb239a11709310f9e0a145eb3b33c89db366968d5762"
+  },
+  "assets/portal/duel-preview.mp4": {
+    "bytes": 831488,
+    "sha256": "998b708c5c24d9d8f053e9472f7cf724ac0f97780c1c1dc3bfe4f39d166efb45"
+  },
+  "assets/portal/duel-preview.webm": {
+    "bytes": 1602596,
+    "sha256": "93c6d543ff297f6a1fc4db329a0f62bb7ffbd099d1ef44558c9ac6ecba55c2a2"
+  },
   "assets/portal/lukyan.webp": {
     "bytes": 52158,
     "sha256": "1f88e36d389945cbdd4eda91798aff68059636e57478647eba1938fd4ce121d2"
@@ -932,8 +980,8 @@
     "sha256": "6cc51a82aec8c2ae014df08f3dbe4bb372d2cedfae333ef365bc956172a9b754"
   },
   "COMECE-AQUI.txt": {
-    "bytes": 3135,
-    "sha256": "fe2bd1c9c7a5b22ca8656bc63a60ba2b478f523527eb417dcbb313754ffafb46"
+    "bytes": 3727,
+    "sha256": "bc3fc777df260a7ced842e318e6d689465631c7c4182bb09a9fc5226e1bc2d1f"
   },
   "CONCEPT-ART-ASSETS.json": {
     "bytes": 5044,
@@ -1059,6 +1107,10 @@
     "bytes": 2440,
     "sha256": "a96db27e38cbc8e0a92e8eacfc6116443a336c0564304a911323e937fd96c6ef"
   },
+  "HALL-DE-ENTRADA.md": {
+    "bytes": 2651,
+    "sha256": "cac6b168f24c986b471116f7394c75dfbfe2797f3fc30a68fbce3eb07f3b1bd7"
+  },
   "honors.css": {
     "bytes": 2515,
     "sha256": "239eb3ec9b53367a1c52a1b9b80777662f7e68d04490a4c6ed5a002162e95f11"
@@ -1088,8 +1140,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 68771,
-    "sha256": "98cb4c79ac6b85aad243b45dedf9300b913ff1ff314e4b756769f42a3ede7cd1"
+    "bytes": 69067,
+    "sha256": "cce62be38178d57a183a311d0f05817a31b87dddbfe3a9cf99daa22fd328c3e8"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -1147,9 +1199,13 @@
     "bytes": 3176,
     "sha256": "ee4f2d09de4468a42a77d74aecc8d9710a7cd30e1d70a435bc1ea40a8e5300da"
   },
+  "mobile-redirect.js": {
+    "bytes": 65,
+    "sha256": "b46dadfc001e4bfb897cb526f16428a5fdf47c827d9cb5181e2c970bb9ea3158"
+  },
   "mobile.html": {
-    "bytes": 1094,
-    "sha256": "c696977596ae3219b0915ec257efe2812dddbcbf0bd6fd220f6652c601e09663"
+    "bytes": 1085,
+    "sha256": "5a8068e12584160b710bffa0cfca6dcc4ce0da6ef397bee132c5dad4ed9a0aa4"
   },
   "MODO-TESTE.md": {
     "bytes": 2660,
@@ -1160,16 +1216,16 @@
     "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
   },
   "online.js": {
-    "bytes": 143667,
-    "sha256": "b2da51aff8e24e58474cb205e456a4de55476bb219e22cf331c1552c7c6e9f3b"
+    "bytes": 144163,
+    "sha256": "c9353c53b2e46b1049eb951e17c02fe6274a1c837f6456635dcd8e7494c73785"
   },
   "portal-upgrade.css": {
     "bytes": 19957,
     "sha256": "99bbd3a63dd1d4dd36803da9533c0ccbe5c3a21413d2c44a39b31f7625eedb7a"
   },
   "portal-upgrade.js": {
-    "bytes": 28914,
-    "sha256": "636382156acf94da428a3d51c35e215bca54bd59022ba3cb523041c85ec4a2db"
+    "bytes": 28984,
+    "sha256": "d265770129d00e33f536ed80e80d3b02d8673d9cefd1f599ed3e4df912ae2398"
   },
   "practice-mode.css": {
     "bytes": 2070,
@@ -1186,6 +1242,14 @@
   "profile-redesign.js": {
     "bytes": 7767,
     "sha256": "64083f51b3a99bfe99b4babb87ac31dc24d664ea1e9b72072a9eaa6432eb1843"
+  },
+  "public-hall.css": {
+    "bytes": 11169,
+    "sha256": "a4d5ab59102d1c96d6e66d74477b50053505c86a9e7eb4c5d18706ddc09c7007"
+  },
+  "public-hall.js": {
+    "bytes": 15318,
+    "sha256": "011119272054977946bcae12a518510363a56bd095f35e7002abefe625baa4ab"
   },
   "queue-room-layout.css": {
     "bytes": 2185,
@@ -1223,9 +1287,21 @@
     "bytes": 974,
     "sha256": "6dd7c37bbe27355203b52df45ebed7aef6f90d8238cf2e56e9e8cdbf1a7fa123"
   },
+  "security-center.css": {
+    "bytes": 2669,
+    "sha256": "c7c0d4769dbd6bcd8b45bf7c28ce4fdf64293b5b6b4c1c54f1bb88edccc6d6bb"
+  },
+  "security-center.js": {
+    "bytes": 8845,
+    "sha256": "d59f7dcbb7022a7981673f062c3c94ffde2f54beda9351a63dc8f2c293f00e20"
+  },
   "security.js": {
     "bytes": 956,
     "sha256": "a698f42d22d6e30051036e06ef1bcdcfead86b4ca5d9ee919c956ee1e732e929"
+  },
+  "SEGURANCA-E-JOGO-JUSTO.md": {
+    "bytes": 9365,
+    "sha256": "bb835b4ae8b4c2d4b2783f0d771cac5b532531352347dedfc814c5aa42bedc5c"
   },
   "SIDEBAR-ARCANA.md": {
     "bytes": 2707,
@@ -1443,6 +1519,10 @@
     "bytes": 7813,
     "sha256": "f6d8a6571425c57ebd093150b08b83758846abe22179b1d0b2f05b9e5a505d33"
   },
+  "supabase/migrations/202610190037_security_and_fair_play.sql": {
+    "bytes": 21584,
+    "sha256": "45a567e331dc3b011527c17080cc94d85abe6d4916dd096ddf8b05c923b588f7"
+  },
   "supabase/README.md": {
     "bytes": 2053,
     "sha256": "317190d2e911059045588edd73f6f78cecbcbf1f4df1c13dfff9aa4f8594c24e"
@@ -1494,6 +1574,10 @@
   "universe-upgrade.css": {
     "bytes": 8424,
     "sha256": "4146b330d41a9e510ee82b3ae98932e8ae7228af2185d8cabe6c4f95407fd700"
+  },
+  "vercel.json": {
+    "bytes": 2828,
+    "sha256": "d7f5f2ed3fa1af413fceb07158e319d1183354ce6084e28861ec8c9debcacf36"
   },
   "VERSO-OFICIAL-E-MOEDA.md": {
     "bytes": 933,

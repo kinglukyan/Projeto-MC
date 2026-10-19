@@ -56,3 +56,4 @@ Não reaplicar todos os scripts no banco de produção.
 48. 202610190034_rank_strix_stars.sql
 49. 202610190035_convergence_lobby.sql
 50. 202610190036_invite_session_recovery.sql
+51. 202610190037_security_and_fair_play.sql

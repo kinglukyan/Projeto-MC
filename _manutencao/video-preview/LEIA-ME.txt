@@ -1,0 +1,5 @@
+Os vídeos já estão prontos em assets/portal. Estes geradores são opcionais
+para futuras edições da composição ilustrativa. Usam Node.js, o pacote
+playwright e um navegador Chromium instalado (padrão: Brave no Windows).
+MYTHIC_BROWSER_EXE permite indicar outro executável. Não são necessários
+para publicar ou executar o site. O gerador usa apenas os arquivos locais.

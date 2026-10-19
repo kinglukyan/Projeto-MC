@@ -1,0 +1,76 @@
+(() => {
+ 'use strict';
+ const home=document.querySelector('#mythic-public-home');if(!home)return;
+ const $=s=>home.querySelector(s),el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
+ const asset=src=>typeof src==='string'&&/^assets\/[a-z0-9_./-]+$/i.test(src)&&!src.split('/').includes('..')?src:window.MythicSecurity.assetUrl(src);
+ const image=(src,alt='',cls='')=>{const n=el('img',cls);n.src=asset(src);n.alt=alt;n.loading='lazy';n.decoding='async';return n;};
+ const button=(text,fn,cls='button button-secondary')=>{const n=el('button',cls,text);n.type='button';n.addEventListener('click',fn);return n;};
+ const data=()=>window.MythicCardData?.()||window.MythicAbilitiesData?.cards||[],card=id=>data().find(c=>c.id===id);
+ const start=()=>window.MythicOnline?.isConnected?.()?window.MythicPortal.play():window.MythicPortal.openAuth('signup');
+ const reduced=matchMedia('(prefers-reduced-motion: reduce)'),saveData=Boolean(navigator.connection?.saveData);
+ let motion=!reduced.matches&&!saveData,universeVisible=false,featureIndex=0,featurePause=false,faction='Grécia',audioOn=false;
+ const brand=$('.public-brand');brand.replaceChildren(image('assets/sidebar-arcane/arcane-crest.svg','','hall-nav-mark'),el('span','','MYTHIC CLASH'));
+ const controls=el('div','hall-controls'),sound=button('Ativar áudio',toggleAudio,'hall-control'),movement=button(motion?'Pausar movimentos':'Ativar movimentos',()=>setMotion(!motion),'hall-control');
+ sound.setAttribute('aria-pressed','false');movement.setAttribute('aria-pressed',String(!motion));controls.append(sound,movement);$('.public-nav').after(controls);
+ const soundtrack=new Audio('assets/menu-theme.mp3');soundtrack.loop=true;soundtrack.volume=.22;soundtrack.preload='none';
+ async function toggleAudio(){
+  if(audioOn){soundtrack.pause();audioOn=false;}else{try{await soundtrack.play();audioOn=true;}catch{sound.textContent='Áudio indisponível';return;}}
+  sound.textContent=audioOn?'Silenciar áudio':'Ativar áudio';sound.setAttribute('aria-pressed',String(audioOn));
+ }
+ function setMotion(on){motion=on;rotate.disabled=!motion;rotate.textContent=!motion?'Alternância pausada':featurePause?'Retomar alternância':'Pausar alternância';home.classList.toggle('hall-still',!motion);movement.textContent=motion?'Pausar movimentos':'Ativar movimentos';movement.setAttribute('aria-pressed',String(!motion));if(!motion)video.pause();}
+ // Prévia leve carregada apenas por escolha do visitante.
+ const preview=el('section','hall-preview');preview.id='public-duel';preview.innerHTML='<div class="hall-section-copy"><p class="eyebrow">VEJA A ARENA EM MOVIMENTO</p><h2>Suas cartas ganham vida.</h2><p>Hologramas sobre a mesa. Poderes que mudam o duelo. Combos que você escolhe.</p></div><figure class="hall-video-frame"><video playsinline controls muted loop preload="none" poster="assets/portal/duel-preview-poster.jpg" aria-label="Prévia ilustrativa: mesa, hologramas e habilidades"><source src="assets/portal/duel-preview.mp4" type="video/mp4"><source src="assets/portal/duel-preview.webm" type="video/webm"></video><figcaption>Prévia ilustrativa com as artes do jogo · 12 segundos · sem áudio.</figcaption></figure>';
+ $('.public-hero').after(preview);const video=preview.querySelector('video');video.muted=true;
+ video.addEventListener('error',()=>{preview.querySelector('figcaption').textContent='Não foi possível carregar a prévia. Você pode continuar explorando o jogo.';});
+ const nav=$('.public-nav nav');nav.replaceChildren();for(const [text,id]of [['Duelo','public-duel'],['Facções','public-worlds'],['Como jogar','public-how'],['Universo','public-universe']]){const a=el('a','',text);a.href='#'+id;nav.append(a);}
+ // Símbolos sobre os cenários, com seleção por toque, clique e teclado.
+ const worlds=$('#public-worlds');worlds.querySelector('.eyebrow').textContent='EXPLORE AS FACÇÕES';worlds.querySelector('h2').textContent='Mundos diferentes. Combos seus.';
+ const grid=$('.public-world-grid');grid.replaceChildren();grid.setAttribute('aria-label','Escolha uma facção para conhecer');
+ const factions=[
+  {id:'Grécia',name:'Grécia',symbol:'greece.svg',scene:'onboarding/greek-realm.webp',line:'Formações, auras e impacto.',text:'Fortaleça suas fileiras com Athena e Apolo ou abra espaço com os efeitos de Zeus. Posicionamento e combinações fazem a diferença.',ids:['athena','zeus','apolo']},
+  {id:'Nórdicos',name:'Nórdicos',symbol:'norse-viking.png',scene:'onboarding/norse-realm.webp',line:'Runas e guerreiros lendários.',text:'Combine companheiros na mesma fileira, equipe seus guerreiros e explore os poderes de Odin e Thor.',ids:['odin','thor','guardiao-nordico']},
+  {id:'Egípcios',name:'Egípcios',symbol:'egypt.svg',scene:'onboarding/egyptian-realm.webp',line:'O submundo também é estratégia.',text:'Ressurreição, trocas e crescimento de poder. Anúbis, Ísis e Rá criam novas possibilidades para cartas que já passaram pela mesa.',ids:['anubis','isis','ra']},
+  {id:'Alyns',name:'Reino de Alyn',symbol:'alyans.png',scene:'onboarding/public-citadel.webp',line:'Heróis de um universo original.',text:'Lukyan cresce com a formação ao seu redor. Butter rouba recursos e abre caminhos inesperados para sua próxima jogada.',ids:['lukyan','butter']},
+  {id:'Monstros',name:'Monstros',symbol:'monster.png',scene:'battlefield-forest.png',line:'Alcateias sob o Eclipse.',text:'Una sua alcateia e explore as transformações do Eclipse. O momento de jogar e a fileira escolhida mudam a força dos seus monstros.',ids:['lobo-alfa','lobo-beta','lobo-omega']}
+ ];
+ const details=el('div','hall-faction-detail');details.id='hall-faction-detail';details.setAttribute('aria-live','polite');grid.after(details);
+ for(const f of factions){
+  const item=el('article'),pick=button('',()=>selectFaction(f.id),'hall-faction-pick');item.style.setProperty('--faction-scene','url("assets/'+f.scene+'")');pick.dataset.faction=f.id;pick.setAttribute('aria-controls',details.id);pick.setAttribute('aria-pressed','false');pick.append(image('assets/card-badges/'+f.symbol,'Símbolo de '+f.name),el('h3','',f.name),el('p','',f.line));item.append(pick);grid.append(item);
+ }
+ function selectFaction(id){faction=id;const f=factions.find(x=>x.id===id);for(const b of grid.querySelectorAll('button'))b.setAttribute('aria-pressed',String(b.dataset.faction===id));details.replaceChildren();const copy=el('div','hall-faction-copy');copy.append(el('small','','ESTILO DE JOGO'),el('h3','',f.name),el('p','',f.text));const heroes=el('div','hall-faction-heroes');for(const id of f.ids){const c=card(id);if(!c)continue;const p=button('',()=>showStory(c.id),'hall-mini-hero');p.append(image(c.art,c.name),el('span','',c.name));heroes.append(p);}details.append(copy,heroes);}
+ selectFaction(faction);
+ const worldNote=worlds.querySelector(':scope>p:last-child');if(worldNote)worldNote.textContent='Misture facções no seu baralho. A preferência do pacote inicial será escolhida após o cadastro.';
+ // Três passos com pequenas cenas usando cartas e símbolos reais.
+ const how=$('#public-how');how.querySelector('h2').textContent='Três passos até a sua lenda.';const steps=how.querySelector(':scope>div');steps.replaceChildren();
+ const stepData=[['Monte seu baralho','Escolha de 14 a 35 cartas e prepare sua estratégia.','deck'],['Combine habilidades','Posicione suas cartas e descubra o poder dos combos.','combo'],['Conquiste dois Rounds','Some mais poder na mesa. Cada Round tem sua própria pontuação.','round']];
+ stepData.forEach(([title,text,kind],i)=>{const article=el('article'),scene=el('div','hall-step-scene hall-step-'+kind);scene.setAttribute('aria-hidden','true');if(kind==='deck'){for(const id of ['athena','zeus','poseidon'])if(card(id))scene.append(image(card(id).art));}else if(kind==='combo'){for(const id of ['athena','soldado-esparta'])if(card(id))scene.append(image(card(id).hologram||card(id).art));scene.append(el('b','','+2'));}else{scene.append(image('assets/concept-ui/convergence-star.svg'),image('assets/concept-ui/convergence-star.svg'));}article.append(el('b','',String(i+1).padStart(2,'0')),scene,el('h3','',title),el('p','',text));steps.append(article);});
+ // Pacote: o visitante descobre a recompensa antes de criar a conta.
+ const pack=el('section','hall-pack');pack.id='public-starter';const art=el('div','hall-pack-art');art.append(image('assets/onboarding/starter-pack.png','Pacote inicial Mythic Clash','hall-pack-image'));
+ for(const id of ['zeus','odin','anubis'])if(card(id))art.append(image(card(id).art,card(id).name,'hall-pack-card'));
+ const packCopy=el('div');packCopy.innerHTML='<p class="eyebrow">SUA PRIMEIRA CONVERGÊNCIA</p><h2>Uma escolha.<br>O começo da sua coleção.</h2><p>Escolha a mitologia que mais interessa a você. Ela influencia as cartas do pacote inicial.</p><ul><li>14 cartas para começar seu baralho.</li><li>2 ícones aleatórios: um da mitologia escolhida e outro de uma mitologia diferente.</li><li>Abra o pacotinho, revele suas cartas e monte seu deck.</li></ul><small>Cartas ilustrativas. O conteúdo depende da sua escolha e do sorteio.</small>';packCopy.append(button('Começar minha coleção',start,'button button-primary'));pack.append(art,packCopy);how.after(pack);
+ // Universo: resumo rotativo; história completa somente ao clicar.
+ const universe=$('#public-universe');universe.className='public-universe hall-universe';universe.replaceChildren();
+ const intro=el('div','hall-universe-intro');intro.append(el('p','eyebrow','UMA JANELA PARA O UNIVERSO'),el('h2','','Toda carta tem uma história.'));universe.append(intro);
+ const feature=el('article','hall-feature'),featureArt=el('div','hall-feature-art'),featureCopy=el('div','hall-feature-copy'),featureFaction=el('small'),featureName=el('h3'),featureSummary=el('p'),story=button('Conhecer sua história',()=>showStory(featureIds[featureIndex]),'button button-primary');featureArt.setAttribute('aria-hidden','true');featureCopy.append(featureFaction,featureName,featureSummary,story);feature.append(featureArt,featureCopy);universe.append(feature);
+ const carousel=el('div','hall-feature-controls'),featureIds=['lukyan','athena','odin','anubis','butter','lobo-alfa'].filter(id=>card(id));
+ carousel.append(button('← Anterior',()=>nextFeature(-1),'hall-control'),button('Próximo →',()=>nextFeature(1),'hall-control'));const rotate=button('Pausar alternância',()=>{featurePause=!featurePause;rotate.textContent=featurePause?'Retomar alternância':'Pausar alternância';rotate.setAttribute('aria-pressed',String(featurePause));},'hall-control');rotate.setAttribute('aria-pressed','false');carousel.append(rotate);universe.append(carousel);
+ function banner(node,id){const b=window.MythicUniverseBanners?.[id];if(b){node.style.backgroundImage='url("'+b.atlas+'")';node.style.backgroundSize='200% 200%';node.style.backgroundPosition=(b.x*100)+'% '+(b.y*100)+'%';}else{node.style.backgroundImage='url("'+asset(card(id)?.hologram||card(id)?.art)+'")';node.style.backgroundSize='contain';node.style.backgroundPosition='center';}}
+ function storyParagraphs(c){const lore=window.MythicWorldLore?.[c.id]?.story;return lore?.length?lore:(c.story||[]).filter(p=>!/^Habilidade[ —:]|· Facção/.test(p));}
+ function paintFeature(){const c=card(featureIds[featureIndex]);if(!c)return;banner(featureArt,c.id);featureFaction.textContent=c.faction;featureName.textContent=c.name;const first=storyParagraphs(c)[0]||c.ability||'';featureSummary.textContent=first.length>220?first.slice(0,217).replace(/\s+\S*$/,'')+'…':first;}
+ function nextFeature(delta){if(!featureIds.length)return;featureIndex=(featureIndex+delta+featureIds.length)%featureIds.length;paintFeature();}paintFeature();
+ const storyDialog=el('dialog','hall-story-dialog'),storyClose=button('Fechar história',()=>storyDialog.close(),'button button-secondary'),storyBody=el('div');storyDialog.setAttribute('aria-labelledby','hall-story-title');storyDialog.append(storyClose,storyBody);document.body.append(storyDialog);
+ function showStory(id){const c=card(id);if(!c)return;storyBody.replaceChildren();const art=el('div','hall-story-art');banner(art,id);const name=el('h2','',c.name);name.id='hall-story-title';storyBody.append(art,el('small','',c.faction),name);const paragraphs=storyParagraphs(c);for(const p of paragraphs.length?paragraphs:['Esta lenda ainda está sendo escrita.'])storyBody.append(el('p','',p));storyDialog.showModal();}
+ const observer=new IntersectionObserver(entries=>{for(const e of entries)if(e.target===universe)universeVisible=e.isIntersecting;else if(e.target===preview&&!e.isIntersecting)video.pause();},{threshold:.15});observer.observe(universe);observer.observe(preview);
+ setInterval(()=>{if(motion&&!featurePause&&universeVisible&&!document.hidden&&!home.hidden&&!universe.matches(':hover')&&!universe.contains(document.activeElement)&&!storyDialog.open)nextFeature(1);},9000);
+ // Informações compactas e anúncios reais, sem inventar eventos em andamento.
+ const news=el('section','hall-news');news.id='public-news';news.innerHTML='<p class="eyebrow">O QUE ACONTECE NA ARENA</p><h2>Novidades e eventos.</h2><div class="hall-news-grid"><article><small>EXPERIÊNCIA</small><h3>Convirjam juntos</h3><p>Convide seus amigos para a sala e encontre partidas solo ou em dupla.</p></article><article><small>COLEÇÃO</small><h3>Conheça suas cartas</h3><p>Explore os personagens das facções e encontre o próximo combo do seu baralho.</p><a href="#public-worlds">Explorar facções ↑</a></article><article class="hall-live-news"><small>COMUNICADOS</small><h3>Direto da Arena</h3><p>Carregando comunicados…</p></article></div>';
+ universe.after(news);
+ function drawNews(detail){const box=news.querySelector('.hall-live-news');box.querySelector('h3').textContent=detail?.announcement?.title||'Direto da Arena';box.querySelector('p').textContent=detail?.announcement?.body||(detail?.unavailable?'Comunicados indisponíveis no momento.':'Nenhum evento anunciado no momento.');}
+ window.addEventListener('mythic-public-announcement',e=>drawNews(e.detail));
+ function loadNews(){window.MythicOnline?.loadPublicNews?.().catch(()=>drawNews({unavailable:true}));}document.addEventListener('DOMContentLoaded',loadNews);window.addEventListener('mythic-session-changed',loadNews);setTimeout(()=>{if(news.querySelector('.hall-live-news p').textContent==='Carregando comunicados…')drawNews({unavailable:true});},10000);
+ function syncVisibility(){if(home.hidden||document.body.classList.contains('public-auth-open')){soundtrack.pause();video.pause();if(storyDialog.open)storyDialog.close();}else if(audioOn&&!document.hidden)soundtrack.play().catch(()=>{});}
+ const visibilityObserver=new MutationObserver(syncVisibility);visibilityObserver.observe(home,{attributes:true,attributeFilter:['hidden']});visibilityObserver.observe(document.body,{attributes:true,attributeFilter:['class']});
+
+ document.addEventListener('visibilitychange',()=>{if(document.hidden){soundtrack.pause();video.pause();}else if(audioOn&&!home.hidden)soundtrack.play().catch(()=>{});});
+ reduced.addEventListener('change',e=>{if(e.matches)setMotion(false);});setMotion(motion);
+})();

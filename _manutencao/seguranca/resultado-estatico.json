@@ -1,0 +1,38 @@
+{
+  "scope": "Verificação estática local. Não executa a migração nem autentica contra o servidor.",
+  "date": "2026-10-19T16:48:42.087Z",
+  "checks": [
+    {
+      "name": "JavaScripts têm sintaxe válida",
+      "ok": true,
+      "detail": "38 arquivos"
+    },
+    {
+      "name": "CSP configurada na Vercel sem unsafe-eval/unsafe-inline para scripts",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "Páginas HTML sem scripts inline e atributos de eventos",
+      "ok": true,
+      "detail": null
+    },
+    {
+      "name": "Nenhum JWT de service_role nos arquivos do cliente",
+      "ok": true,
+      "detail": "1 chave(s) pública(s) anon esperada(s); valores não registrados"
+    },
+    {
+      "name": "Fonte de publicação exclui documentação e SQL",
+      "ok": true,
+      "detail": "288 arquivos de runtime selecionados"
+    },
+    {
+      "name": "Contrato de requisição e tratamento de rejeição no cliente",
+      "ok": true,
+      "detail": null
+    }
+  ],
+  "passed": 6,
+  "total": 6
+}
