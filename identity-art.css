@@ -3,6 +3,10 @@ body .featured-medal.painted-honor{width:38px;height:38px;flex:0 0 38px;padding:
 .painted-title-label:before{content:'';display:inline-block;width:28px;height:28px;vertical-align:middle;margin-right:7px;background:url('assets/identity-v2/title-atlas.webp') var(--honor-x,0) var(--honor-y,0)/400% 200% no-repeat}
 body.concept-ui .concept-coin{width:36px;height:36px;flex:0 0 36px;border:0;border-radius:0;background:url('assets/identity-v2/coin.webp') center/contain no-repeat;box-shadow:none;color:transparent;font-size:0}
 .store-balance-card>img,.profile-stat img[src*="identity-v2/coin"],img[src*="currency/mythic-coins"]{object-fit:contain}
+.store-balance-card .store-balance-icon{box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:42px;height:42px;min-width:42px;max-width:42px;flex:0 0 42px;overflow:hidden}
+.store-balance-card .store-balance-icon>img{display:block;position:static;width:32px;height:32px;min-width:0;max-width:100%;max-height:100%;margin:0;padding:0;object-fit:contain;flex:0 0 32px}
+/* Keep the official back unchanged on both teams, including draw animations. */
+body.mythic-rework :is(.deck-pile,.enemy-deck,.enemy-hand-back),body .card-draw-flight{background-image:url('assets/card-back.svg')!important;background-position:center;background-size:100% 100%;background-repeat:no-repeat}
 body.concept-ui #view-queue .queue-team-preview{grid-template-columns:minmax(0,1fr) 100px minmax(0,1fr);align-items:stretch}
 body.concept-ui #view-queue .queue-team-preview>article{align-items:center;justify-content:center;text-align:center;min-width:0}
 body.concept-ui #view-queue .queue-vs{display:grid;place-items:center;justify-self:center;align-self:center;width:100%;height:90px;overflow:visible;margin:0;padding:0}
