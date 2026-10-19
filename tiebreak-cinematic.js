@@ -15,7 +15,7 @@
   skip=button('Reduzir animações',()=>{fast=true;dialog.classList.add('tb-reduced');flush();});skip.className='tb-skip';
   shell.append(skip,top,history,stage,actions);dialog.append(shell);document.body.append(dialog);dialog.addEventListener('cancel',e=>e.preventDefault());
  }
- function finalAction(){actions.replaceChildren(button('Voltar à Arena',()=>{close();document.querySelector('#tie-break-continue')?.click();}));}
+ function finalAction(){actions.replaceChildren(button('Ver resumo da partida',()=>{close();document.querySelector('#tie-break-continue')?.click();}));}
  function nextAction(text){return new Promise(resolve=>{continueStep=resolve;actions.replaceChildren(button(text,()=>{continueStep=null;actions.replaceChildren();resolve();}));});}
  function setHeading(head,copy){title.textContent=head;subtitle.textContent=copy;}
  function side(name,cardId,sideKey){
@@ -51,14 +51,14 @@
    setHeading(data.eclipse==='eclipse-lunar'?'ECLIPSE LUNAR':'ECLIPSE SOLAR','A face revelada decide a partida');await pause(1000);if(token!==generation)return;
    const label=el('div','tb-assigned-labels');for(const key of ['player_one','player_two'])label.append(el('span',key===data.winner_side?'tb-victor-label':'',names[key]+' · '+(key===data.lunar_side?'LUNAR':'SOLAR')));stage.append(label);
   }
-  const won=data.winner_side===own;dialog.dataset.result=won?'victory':'defeat';subtitle.textContent=names[data.winner_side]+' VENCEU A PARTIDA';subtitle.classList.add('tb-victory-text');chime(won);skip.hidden=true;finalAction();window.MythicOnline?.refreshProfile?.();
+  const won=data.winner_side===own;dialog.dataset.result=won?'victory':'defeat';subtitle.textContent=names[data.winner_side]+' VENCEU A PARTIDA';subtitle.classList.add('tb-victory-text');chime(won);skip.hidden=true;window.dispatchEvent(new CustomEvent("mythic-tiebreak-resolved",{detail:{...data,my_side:own}}));finalAction();window.MythicOnline?.refreshProfile?.();
  }
  async function open(key,request){
   if(activeKey===key&&dialog?.open)return;close();ensure();activeKey=key;fast=matchMedia('(prefers-reduced-motion: reduce)').matches;const token=generation;
   dialog.className='tb-cinematic'+(fast?' tb-reduced':'');delete dialog.dataset.result;skip.hidden=false;history.replaceChildren();actions.replaceChildren();stage.replaceChildren();subtitle.classList.remove('tb-victory-text');kicker.textContent='O DESTINO DA ARENA';setHeading('PREPARANDO O DESEMPATE','Confirmando o sorteio…');
   dialog.showModal();document.body.classList.add('tiebreak-open');document.querySelector('#match-result-banner').hidden=true;
   try{const data=await request();if(token!==generation)return;if(data?.version!==2||!data.winner_side)throw Error('Aplique o SQL 030 para ativar o novo desempate.');await present(data,token);}
-  catch(e){if(token!==generation)return;setHeading('NÃO FOI POSSÍVEL CARREGAR',e.message);actions.replaceChildren(button('Tentar novamente',()=>{activeKey=null;open(key,request);}),button('Voltar à Arena',()=>{close();document.querySelector('#tie-break-continue')?.click();}));skip.hidden=true;}
+  catch(e){if(token!==generation)return;setHeading('NÃO FOI POSSÍVEL CARREGAR',e.message);actions.replaceChildren(button('Tentar novamente',()=>{activeKey=null;open(key,request);}),button('Ver resumo da partida',()=>{close();document.querySelector('#tie-break-continue')?.click();}));skip.hidden=true;}
  }
  window.MythicTieBreak={openOnline:id=>open('online:'+id,()=>window.MythicOnline.portalRequest('get_tiebreak_state',{p_match_id:id})),openGuardian:({id,points,cards})=>open('guardian:'+id,()=>window.MythicOnline.portalRequest('resolve_guardian_tiebreak',{p_match_id:id,p_points:points,p_cards:cards})),close};
  window.addEventListener('mythic-account-signed-out',close);window.addEventListener('mythic-session-changed',close);

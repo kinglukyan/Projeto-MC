@@ -19,9 +19,9 @@
   $('#lobby-partner').hidden=!inRoom;
   if(inRoom){avatar($('#lobby-partner-avatar'),other?.icon,other?.name);$('#lobby-partner-name').textContent=other?.name||'Aliado';$('#lobby-partner-rank').textContent=rankName(other?.rating);$('#lobby-partner-label').textContent=p.status==='inviting'?'CONVITE ENVIADO':isHost?'JOGADOR 2':'ANFITRIÃO';}
   const joined=inRoom&&p.status!=='inviting';$('#lobby-format').textContent=joined?'Dupla · 2 × 2':'Solo · 1 × 1';
-  $('#lobby-message').textContent=incoming?'Você recebeu um convite para uma sala.':p?.status==='inviting'?'Aguardando seu amigo aceitar o convite…':joined?(isHost?'Dupla formada. Convirjam quando estiverem prontos.':'Sala pronta. Aguarde o anfitrião convergir.'):'Sua jornada pode começar solo ou ao lado de um amigo.';
+  $('#lobby-message').textContent=p?.awaiting_report?'Aguardando seu parceiro voltar do resumo da partida.':incoming?'Você recebeu um convite para uma sala.':p?.status==='inviting'?'Aguardando seu amigo aceitar o convite…':joined?(isHost?'Dupla formada. Convirjam quando estiverem prontos.':'Sala pronta. Aguarde o anfitrião convergir.'):'Sua jornada pode começar solo ou ao lado de um amigo.';
   $('#lobby-leave').textContent=p?.status==='inviting'?'Cancelar convite':isHost?'Desfazer dupla':'Sair da sala';$('#lobby-leave').disabled=state.busy||queue.active;
-  const button=$('#queue-join');button.disabled=Boolean(queue.active||state.busy||incoming||(inRoom&&(!isHost||p.status!=='ready')));
+  const button=$('#queue-join');button.disabled=Boolean(queue.active||state.busy||incoming||p?.awaiting_report||(inRoom&&(!isHost||p.status!=='ready')));
   $('#converge-label').textContent=queue.active?(queue.phase==='queued'?'Em convergência':'Conectando…'):state.busy?'Aguarde…':inRoom&&!isHost?'Aguardando anfitrião':'Convergir';
   const queued=queue.active&&queue.phase==='queued';$('#converge-action').classList.toggle('is-queued',Boolean(queued));$('#converge-clock').hidden=!queued;$('#cancel-queue').hidden=!queued;
 

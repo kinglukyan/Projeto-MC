@@ -1,7 +1,7 @@
 (() => {
  'use strict';
  const $=s=>document.querySelector(s),api=()=>window.MythicOnline;
- let room=null,busy=false,requesting=false,inboxBusy=false,incoming=null,choice=null,slot=2,openedMatch=null,restoreUser=null,revision=0;
+ let room=null,busy=false,requesting=false,inboxBusy=false,incoming=null,choice=null,slot=2,openedMatch=null,restoreUser=null,revision=0,lastRoomId=null;
  const dialog=$('#custom-role-dialog'),popup=$('#custom-invitation');
  const request=(name,args={})=>api().portalRequest(name,args);
  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
@@ -21,17 +21,17 @@
   if(!room)return;
   $('#custom-room-code').textContent=room.code;
   $('#custom-rules-summary').textContent=`Até ${room.rules.max_cards} cartas · ${room.rules.starting_hand} na mão · ${room.rules.turn_seconds}s por turno`;
-  const a=members.filter(m=>m.slot%2===1).length,b=members.filter(m=>m.slot%2===0).length,ready=a===b&&(a===1||a===2);
-  $('#custom-room-format').textContent=ready?(a===1?'1 × 1':'2 × 2'):'Formando equipes';
+  const a=members.filter(m=>m.slot%2===1).length,b=members.filter(m=>m.slot%2===0).length,returned=members.every(m=>m.ready!==false),balanced=a===b&&(a===1||a===2),ready=balanced&&returned;
+  $('#custom-room-format').textContent=balanced?(a===1?'1 × 1':'2 × 2'):'Formando equipes';
   for(let n=1;n<=4;n++){
    const card=$(`[data-custom-slot="${n}"]`),m=members.find(m=>m.slot===n);card.replaceChildren();card.classList.toggle('filled',Boolean(m));
    const label=el('small','',m?.id===room.host_id?'ANFITRIÃO':`JOGADOR ${n%2===1?(n+1)/2:n/2}`);card.append(label);
-   if(m){const icon=el('span','lobby-avatar');avatar(icon,m.icon,m.name);card.append(icon,el('b','',m.name),el('span','',window.MythicRank?.from?.(m.rating)?.name||'Aprendiz de Herói'));}
+   if(m){const icon=el('span','lobby-avatar');avatar(icon,m.icon,m.name);card.append(icon,el('b','',m.name),el('span','',m.ready===false?'Lendo o resumo da partida':window.MythicRank?.from?.(m.rating)?.name||'Aprendiz de Herói'));}
    else{const plus=el('button','custom-add-seat','+');plus.type='button';plus.disabled=!host||busy;plus.setAttribute('aria-label',`Convidar para o lado ${n%2===1?1:2}, vaga ${n>2?2:1}`);plus.addEventListener('click',()=>{slot=n;window.dispatchEvent(new CustomEvent('mythic-lobby-picker',{detail:{context:'custom',slot:n}}));});card.append(plus,el('b','','Vaga livre'),el('span','',host?'Convide um amigo':'Aguardando convite'));}
   }
   $('#custom-observer').textContent=room.observer?`Observando: ${room.observer.name}`:'Uma vaga de observador disponível';
   const start=$('#custom-start');start.hidden=!host;start.disabled=busy||!ready||room.status!=='open';start.textContent=busy?'Aguarde…':ready?`Começar ${a===1?'1 × 1':'2 × 2'}`:'Aguardando equipes';
-  $('#custom-wait-message').textContent=host?(ready?'As equipes estão prontas. Você pode iniciar ou convidar mais amigos.':'Preencha os dois lados com a mesma quantidade de jogadores.'):'Aguarde o anfitrião iniciar a partida.';
+  $('#custom-wait-message').textContent=!returned?'Aguardando todos voltarem do resumo da partida.':host?(ready?'As equipes estão prontas. Você pode iniciar ou convidar mais amigos.':'Preencha os dois lados com a mesma quantidade de jogadores.'):'Aguarde o anfitrião iniciar a partida.';
   $('#custom-leave').textContent=host?'Encerrar sala':'Sair da sala';$('#custom-leave').disabled=busy;
  }
  async function act(fn){if(busy)return;busy=true;paint();try{await fn();}catch(e){status(e.message);}finally{busy=false;paint();}}
@@ -43,7 +43,7 @@
    if(next.status==='closed'){room=null;revision++;paint();status('O anfitrião encerrou a sala.');return;}
    room=next;paint();
    if(next.status==='playing'&&next.match_id&&openedMatch!==next.match_id){
-    openedMatch=next.match_id;
+    openedMatch=next.match_id;lastRoomId=next.id;
     if(next.observer?.id===api().userId())await api().watchCustomMatch(next.match_id);
     else await api().openMatch(next.match_id);
     room=null;revision++;paint();
@@ -87,12 +87,12 @@
   try{const next=await request('custom_room_current');if(uid!==api()?.userId?.()||version!==revision)return;room=next;revision++;paint();}
   catch{restoreUser=null;}pollInbox();
  }
- window.MythicCustomLobby={choose,openFriends:()=>{slot=room?.members?.find(m=>m.slot===2)?3:2;window.dispatchEvent(new CustomEvent('mythic-lobby-picker',{detail:{context:'custom',slot}}));},invite:async(friendId,targetSlot=slot)=>{
+ window.MythicCustomLobby={choose,roomForMatch:id=>openedMatch===id?lastRoomId:null,returnToRoom:async id=>{const rid=id||lastRoomId;if(!rid){document.querySelector('[data-view="custom"]')?.click();return;}const next=await request('custom_room_return',{p_room_id:rid});openedMatch=null;lastRoomId=rid;enter(next);},openFriends:()=>{slot=room?.members?.find(m=>m.slot===2)?3:2;window.dispatchEvent(new CustomEvent('mythic-lobby-picker',{detail:{context:'custom',slot}}));},invite:async(friendId,targetSlot=slot)=>{
   if(!room||room.host_id!==api()?.userId?.())return{error:'Crie uma sala antes de convidar.'};
   try{await request('custom_room_invite',{p_room_id:room.id,p_friend_id:friendId,p_slot:targetSlot});status('Convite enviado. Aguardando seu amigo aceitar.');return{status:'sent'};}catch(e){return{error:e.message};}
  }};
  window.addEventListener('mythic-profile-loaded',restore);window.addEventListener('mythic-concept-profile',restore);
- window.addEventListener('mythic-account-signed-out',()=>{room=null;incoming=null;choice=null;restoreUser=null;revision++;if(dialog.open)dialog.close();front(false);paint();});
+ window.addEventListener('mythic-account-signed-out',()=>{room=null;incoming=null;choice=null;restoreUser=null;lastRoomId=null;openedMatch=null;revision++;if(dialog.open)dialog.close();front(false);paint();});
  document.querySelectorAll('[data-view="custom"]').forEach(b=>b.addEventListener('click',()=>{restore();refresh();}));
  // Convite não modal na camada superior, reposicionável mesmo sobre painéis com transform.
  let drag=null,position=null;const grip=$('#custom-invitation-grip');

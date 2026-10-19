@@ -8,8 +8,8 @@
     "sha256": "3691e263b84403eb2c1a5c8e1fae527121a4c5d2da08297a108b4eb48ed1b3f2"
   },
   "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
-    "bytes": 2510,
-    "sha256": "2282dbd4cac466530964b5ec17eb1db4b60a2480a95e2ff7a44dc54f86ffb646"
+    "bytes": 2545,
+    "sha256": "fa04a441b2aa54f106537bbfdaa26d94d2bfed96ea082f852d62eeeb8183524f"
   },
   "_manutencao/preparar-publicacao.cjs": {
     "bytes": 1545,
@@ -72,8 +72,8 @@
     "sha256": "70aa329c6c0c44e1b210ba0b975b00fbd38bb463e16b0b7b6e04d340e879e90e"
   },
   "app.js": {
-    "bytes": 117766,
-    "sha256": "cbff924af3c7ab09afe2933a9ff7e675e0265b782328b279e607aa83b6623e0c"
+    "bytes": 120786,
+    "sha256": "e9adf62e49c123cb7bcb4a9129eae33b5b12927738c911435be4bee530f42025"
   },
   "arcane-palette.css": {
     "bytes": 37719,
@@ -980,8 +980,8 @@
     "sha256": "6cc51a82aec8c2ae014df08f3dbe4bb372d2cedfae333ef365bc956172a9b754"
   },
   "COMECE-AQUI.txt": {
-    "bytes": 4044,
-    "sha256": "1a3058e3e0771941dadbe584465768eedffeb4f88a26f6ab8d0e516ceada089b"
+    "bytes": 4361,
+    "sha256": "c1d1f25a327272d9523711171db9ce5a0aa72f2e18b099beaad1787bb18005e5"
   },
   "CONCEPT-ART-ASSETS.json": {
     "bytes": 5044,
@@ -1008,8 +1008,8 @@
     "sha256": "732d5551364ae8ca421d1dc1fc04a0c6917fe080b019ccc0be101c8e7aebf6d3"
   },
   "convergence-lobby.js": {
-    "bytes": 11162,
-    "sha256": "dc971f3150871193b85fb80e7033f1c44a3d28e8723e1c948144caac480fbdb0"
+    "bytes": 11256,
+    "sha256": "0cd69bf5eb4736b2b59b2760d396a5ab63a9d8d3f1d84fb5486c9098377f23c6"
   },
   "CORRECAO-AFRODITE-FILEIRAS.md": {
     "bytes": 1148,
@@ -1048,8 +1048,8 @@
     "sha256": "405e1838d2c98db12b3899941c6d0ecb11070a77da396d647727439877f1bc76"
   },
   "custom-lobby.js": {
-    "bytes": 10255,
-    "sha256": "4a370c07dfdd1bb55e0baed1eefbf5127f430b8e20eb7788a55ab741d6f8580e"
+    "bytes": 10782,
+    "sha256": "26eaee7dbfdfea90f293938a4ac61d54ad98e786d5d7e6df8beaa73f32556841"
   },
   "deck-builder.css": {
     "bytes": 19603,
@@ -1148,8 +1148,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 71413,
-    "sha256": "ff731a27a0d42b082709c0e936a37b6847dcd5472ba9d02c0471ef22543e2b44"
+    "bytes": 71660,
+    "sha256": "3bba1f0dbad63f9c2ffb075169ba4bb8f8745e91f73ee8ffd03ace5551616b0a"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -1198,6 +1198,14 @@
   "manifest.webmanifest": {
     "bytes": 450,
     "sha256": "4cc467e3ab34e4cc8f312d5ac5bb4caf87f6d1e5ce250ea7a1e5f7a93f10e620"
+  },
+  "match-report.css": {
+    "bytes": 4095,
+    "sha256": "504527320f1c5f886a8e9addc9184b21e71d61e1152e5430114083b6400c3d51"
+  },
+  "match-report.js": {
+    "bytes": 10284,
+    "sha256": "6291d74712276e0cf6ccb6d3e8c549af697062a29635f9f5c1794e1d731902b5"
   },
   "missions-menu.css": {
     "bytes": 2774,
@@ -1282,6 +1290,10 @@
   "responsive-layout.css": {
     "bytes": 19257,
     "sha256": "8b8a215449509e25d082d14a1b42b858e6ef31f1d493feb109bcbce920967dbc"
+  },
+  "RESUMO-DA-PARTIDA.md": {
+    "bytes": 2775,
+    "sha256": "fd235b8cc43b2936b2ee8949604c9d77870242efd732fb9946fc1e24cd1edea3"
   },
   "rework.css": {
     "bytes": 59751,
@@ -1539,6 +1551,10 @@
     "bytes": 15859,
     "sha256": "547eb96ff010689085c20d12f6f27adca79dcbde01ed0da21e50a16651fa45ac"
   },
+  "supabase/migrations/202610190039_match_report.sql": {
+    "bytes": 10352,
+    "sha256": "033eb407c9918ddd87c200849cf54114b827d255097e742b36d5b2df275d4e92"
+  },
   "supabase/README.md": {
     "bytes": 2053,
     "sha256": "317190d2e911059045588edd73f6f78cecbcbf1f4df1c13dfff9aa4f8594c24e"
@@ -1572,8 +1588,8 @@
     "sha256": "68b25b0b5e6d7b287e25c2f59ae658a5f9bfd40c2182b0702fb4847e68bd6881"
   },
   "tiebreak-cinematic.js": {
-    "bytes": 9417,
-    "sha256": "2de07ef40c3eb88f0c66810fce96ff786262982211a4246da341559be00b1c10"
+    "bytes": 9591,
+    "sha256": "50ce3f428b42b0430cb61bcf439d3a24d01fea07ce1ffa4c6bec14d1f9dbc7b4"
   },
   "TITULOS-E-MEDALHAS.md": {
     "bytes": 2728,
