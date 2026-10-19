@@ -6,8 +6,19 @@
   let matchFallbackTicker=null,lastMatchSnapshot="",actionSequence=0,forceNextMatchRender=false;const matchRefreshes=new Map();
   let deckLoadedFor=null, profileRequest=0, accountReady=false, profileRefresh=Promise.resolve();
   let supabase = null, session = null, profile = null, activeFriend = null, activeMatchId = null, pendingFriendInviteCode = null, actionPending = false, adminAuthorized = false, adminPlayers = [], adminCatalog = [], adminGifts = [], adminLore = [], adminCardSourceUrl = null, adminCardPreviewUrl = null, adminCardPreviewToken = 0, tutorialSyncPending = false;
-  let customRoomTicker=null,customRoomId=null,customRoomInviteCode=null,customSpectatorMatchId=null,duoQueueChannel=null,duoQueueTicker=null,pendingDuoPartyId=null,activeDuoPartyId=null;
+  let customRoomTicker=null,customRoomId=null,customRoomInviteCode=null,customSpectatorMatchId=null,duoQueueChannel=null,duoQueueTicker=null,pendingDuoPartyId=null,activeDuoPartyId=null,pendingDuoMode=null;
   let messageChannel = null, inviteChannel = null, queueChannel = null, gameChannel = null, queueTimeout = null, queueSeconds = 0, queueTicker = null, spectatorTicker=null,spectatorMatchId=null,tieBreakTicker=null,replayCurrent=null,replayTicker=null,storeItems = [], ownedItems = new Set(), activeStoreCategory = "icons";
+  let floatingQueueState={active:false},queueRequest=0,queueCancelling=false;
+  function setQueueState(update){
+    if(!update)floatingQueueState={active:false};
+    else{
+      const same=floatingQueueState.active&&floatingQueueState.format===update.format&&(!update.partyId||floatingQueueState.partyId===update.partyId);
+      const startedAt=update.phase==='queued'?(same&&floatingQueueState.phase==='queued'?floatingQueueState.startedAt:Date.now()):null;
+      floatingQueueState={...(same?floatingQueueState:{}),...update,active:true,startedAt};
+    }
+    const join=$("#queue-join");if(join){join.disabled=floatingQueueState.active;join.textContent=floatingQueueState.active?(floatingQueueState.phase==='inviting'?"Aguardando parceiro…":"Busca em andamento…"):$("#queue-duo-details").hidden?"Entrar na fila solo":"Convidar parceiro e entrar na fila";}
+    window.dispatchEvent(new CustomEvent('mythic-queue-state',{detail:{...floatingQueueState}}));
+  }
   const escapeHTML = value => String(value).replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
   const notify = message => { const toast=$("#toast"); if(!toast)return; toast.textContent=message; toast.classList.add("show"); setTimeout(()=>toast.classList.remove("show"),2800); };
   const showAuthMessage = message => { $("#auth-message").textContent=message||""; };
@@ -47,6 +58,7 @@
   }
 
   function cleanupChannels(){
+    queueRequest++;queueCancelling=false;setQueueState(null);
     stopPresence();
     for(const ticker of [queueTicker,queueTimeout,customRoomTicker,spectatorTicker,tieBreakTicker,replayTicker,matchFallbackTicker])clearInterval(ticker);
     queueTicker=queueTimeout=customRoomTicker=spectatorTicker=tieBreakTicker=replayTicker=matchFallbackTicker=null;
@@ -422,15 +434,24 @@
     listenForDuoQueue();
   }
 
-  async function pollDuoQueue(){if(!session||!activeDuoPartyId)return;const {data,error}=await supabase.rpc("try_match_duo_queue",{p_party_id:activeDuoPartyId});if(error)return;const result=typeof data==="string"?JSON.parse(data):data;if(result?.status==="matched"&&result.match_id){const matchId=result.match_id;activeDuoPartyId=null;if(duoQueueTicker)clearInterval(duoQueueTicker);duoQueueTicker=null;if(activeMatchId!==matchId)loadOnlineMatch(matchId);}}
+  async function pollDuoQueue(){
+    if(!session||!activeDuoPartyId)return;
+    const uid=session.user.id,partyId=activeDuoPartyId;
+    const {data,error}=await supabase.rpc("try_match_duo_queue",{p_party_id:partyId});
+    if(session?.user?.id!==uid||activeDuoPartyId!==partyId||error)return;
+    const result=typeof data==='string'?JSON.parse(data):data;
+    if(result?.status==='matched'&&result.match_id){activeDuoPartyId=null;clearInterval(duoQueueTicker);duoQueueTicker=null;if(activeMatchId!==result.match_id)loadOnlineMatch(result.match_id);}
+    else if(result?.status==='cancelled'){activeDuoPartyId=null;clearInterval(duoQueueTicker);duoQueueTicker=null;setQueueState(null);$("#queue-status").hidden=true;}
+  }
+
   function startDuoQueuePolling(){if(duoQueueTicker)clearInterval(duoQueueTicker);pollDuoQueue();duoQueueTicker=setInterval(pollDuoQueue,5000);}
   function listenForDuoQueue(){if(duoQueueChannel)supabase.removeChannel(duoQueueChannel);
-    if(duoQueueTicker)clearInterval(duoQueueTicker);duoQueueTicker=null;if(!session)return;const userId=session.user.id;const showInvite=row=>{pendingDuoPartyId=row.id;$("#duo-invite-message").textContent=`${row.mode==="ranked"?"Fila ranqueada":"Jogo normal"}: seu amigo convidou você para formar uma dupla.`;$("#duo-invite-inbox").hidden=false;window.dispatchEvent(new CustomEvent("mythic-open-view",{detail:{view:"queue"}}));};const openActiveMatch=async matchId=>{const {data}=await supabase.from("game_matches").select("id").eq("id",matchId).eq("status","active").maybeSingle();if(data){notify("Outra dupla encontrada. Abrindo o 2 × 2…");if(activeMatchId!==matchId)loadOnlineMatch(matchId);}};const handleHost=row=>{if(row.status==="inviting"){activeDuoPartyId=row.id;$("#queue-status").hidden=false;$("#cancel-queue").hidden=false;$("#queue-status-text").textContent="Convite enviado. Aguardando seu amigo aceitar…";}if(row.status==="queued"){activeDuoPartyId=row.id;$("#queue-status").hidden=false;$("#cancel-queue").hidden=false;$("#queue-status-text").textContent="Seu parceiro aceitou. Procurando outra dupla…";startDuoQueuePolling();}if(row.status==="matched"&&row.match_id){activeDuoPartyId=null;openActiveMatch(row.match_id);}};const handlePartner=row=>{if(row.status==="inviting")showInvite(row);if(row.status==="queued"){activeDuoPartyId=row.id;$("#queue-status").hidden=false;$("#cancel-queue").hidden=false;$("#queue-status-text").textContent="Dupla formada. Procurando outra dupla…";startDuoQueuePolling();}if(row.status==="cancelled"&&(pendingDuoPartyId===row.id||activeDuoPartyId===row.id)){pendingDuoPartyId=null;activeDuoPartyId=null;if(duoQueueTicker)clearInterval(duoQueueTicker);duoQueueTicker=null;$("#duo-invite-inbox").hidden=true;$("#queue-status").hidden=true;notify("O convite ou a busca da dupla foi cancelado.");}if(row.status==="matched"&&row.match_id){pendingDuoPartyId=null;activeDuoPartyId=null;$("#duo-invite-inbox").hidden=true;openActiveMatch(row.match_id);}};duoQueueChannel=supabase.channel(`duo-queue-${userId}`).on("postgres_changes",{event:"INSERT",schema:"public",table:"duo_queue_parties",filter:`partner_id=eq.${userId}`},payload=>{if(payload.new.status==="inviting")showInvite(payload.new);}).on("postgres_changes",{event:"UPDATE",schema:"public",table:"duo_queue_parties",filter:`host_id=eq.${userId}`},payload=>handleHost(payload.new)).on("postgres_changes",{event:"UPDATE",schema:"public",table:"duo_queue_parties",filter:`partner_id=eq.${userId}`},payload=>handlePartner(payload.new)).subscribe();supabase.from("duo_queue_parties").select("id,mode,status,match_id,host_id,partner_id,created_at").eq("partner_id",userId).eq("status","inviting").order("created_at",{ascending:false}).limit(1).maybeSingle().then(({data})=>{if(data)showInvite(data);});supabase.from("duo_queue_parties").select("id,mode,status,match_id,host_id,partner_id,created_at").eq("host_id",userId).in("status",["inviting","queued","matched"]).order("created_at",{ascending:false}).limit(1).maybeSingle().then(({data})=>{if(data)handleHost(data);});supabase.from("duo_queue_parties").select("id,mode,status,match_id,host_id,partner_id,created_at").eq("partner_id",userId).eq("status","queued").order("created_at",{ascending:false}).limit(1).maybeSingle().then(({data})=>{if(data)handlePartner(data);});supabase.from("duo_queue_parties").select("id,mode,status,match_id,host_id,partner_id,created_at").eq("partner_id",userId).eq("status","matched").order("created_at",{ascending:false}).limit(1).maybeSingle().then(({data})=>{if(data)handlePartner(data);});}
+    if(duoQueueTicker)clearInterval(duoQueueTicker);duoQueueTicker=null;if(!session)return;const userId=session.user.id;const showInvite=row=>{if(session?.user?.id!==userId)return;window.queueGameMode=row.mode;pendingDuoMode=row.mode;pendingDuoPartyId=row.id;$("#duo-invite-message").textContent=`${row.mode==="ranked"?"Fila ranqueada":"Jogo normal"}: seu amigo convidou você para formar uma dupla.`;$("#duo-invite-inbox").hidden=false;window.dispatchEvent(new CustomEvent("mythic-open-view",{detail:{view:"queue"}}));};const openActiveMatch=async matchId=>{if(session?.user?.id!==userId)return;const {data}=await supabase.from("game_matches").select("id").eq("id",matchId).eq("status","active").maybeSingle();if(data&&session?.user?.id===userId){notify("Outra dupla encontrada. Abrindo o 2 × 2…");if(activeMatchId!==matchId)loadOnlineMatch(matchId);}};const handleHost=row=>{if(session?.user?.id!==userId)return;if(row.status==='cancelled'&&activeDuoPartyId===row.id){activeDuoPartyId=null;clearInterval(duoQueueTicker);duoQueueTicker=null;setQueueState(null);$("#queue-status").hidden=true;}if(row.status==="inviting"){activeDuoPartyId=row.id;setQueueState({format:'duo',mode:row.mode,phase:'inviting',partyId:row.id});$("#queue-status").hidden=false;$("#cancel-queue").hidden=false;$("#queue-status-text").textContent="Convite enviado. Aguardando seu amigo aceitar…";}if(row.status==="queued"){activeDuoPartyId=row.id;setQueueState({format:'duo',mode:row.mode,phase:'queued',partyId:row.id});$("#queue-status").hidden=false;$("#cancel-queue").hidden=false;$("#queue-status-text").textContent="Seu parceiro aceitou. Procurando outra dupla…";startDuoQueuePolling();}if(row.status==="matched"&&row.match_id){activeDuoPartyId=null;openActiveMatch(row.match_id);}};const handlePartner=row=>{if(session?.user?.id!==userId)return;if(row.status==="inviting")showInvite(row);if(row.status==="queued"){activeDuoPartyId=row.id;setQueueState({format:'duo',mode:row.mode,phase:'queued',partyId:row.id});$("#queue-status").hidden=false;$("#cancel-queue").hidden=false;$("#queue-status-text").textContent="Dupla formada. Procurando outra dupla…";startDuoQueuePolling();}if(row.status==="cancelled"&&(pendingDuoPartyId===row.id||activeDuoPartyId===row.id)){pendingDuoPartyId=null;activeDuoPartyId=null;setQueueState(null);if(duoQueueTicker)clearInterval(duoQueueTicker);duoQueueTicker=null;$("#duo-invite-inbox").hidden=true;$("#queue-status").hidden=true;notify("O convite ou a busca da dupla foi cancelado.");}if(row.status==="matched"&&row.match_id){pendingDuoPartyId=null;activeDuoPartyId=null;$("#duo-invite-inbox").hidden=true;openActiveMatch(row.match_id);}};duoQueueChannel=supabase.channel(`duo-queue-${userId}`).on("postgres_changes",{event:"INSERT",schema:"public",table:"duo_queue_parties",filter:`partner_id=eq.${userId}`},payload=>{if(payload.new.status==="inviting")showInvite(payload.new);}).on("postgres_changes",{event:"UPDATE",schema:"public",table:"duo_queue_parties",filter:`host_id=eq.${userId}`},payload=>handleHost(payload.new)).on("postgres_changes",{event:"UPDATE",schema:"public",table:"duo_queue_parties",filter:`partner_id=eq.${userId}`},payload=>handlePartner(payload.new)).subscribe();supabase.from("duo_queue_parties").select("id,mode,status,match_id,host_id,partner_id,created_at").eq("partner_id",userId).eq("status","inviting").order("created_at",{ascending:false}).limit(1).maybeSingle().then(({data})=>{if(data)showInvite(data);});supabase.from("duo_queue_parties").select("id,mode,status,match_id,host_id,partner_id,created_at").eq("host_id",userId).in("status",["inviting","queued","matched"]).order("created_at",{ascending:false}).limit(1).maybeSingle().then(({data})=>{if(data)handleHost(data);});supabase.from("duo_queue_parties").select("id,mode,status,match_id,host_id,partner_id,created_at").eq("partner_id",userId).eq("status","queued").order("created_at",{ascending:false}).limit(1).maybeSingle().then(({data})=>{if(data)handlePartner(data);});supabase.from("duo_queue_parties").select("id,mode,status,match_id,host_id,partner_id,created_at").eq("partner_id",userId).eq("status","matched").order("created_at",{ascending:false}).limit(1).maybeSingle().then(({data})=>{if(data)handlePartner(data);});}
 
   async function loadOnlineMatch(matchId){
     if(!session||!matchId)return;const uid=session.user.id;
     clearInterval(matchFallbackTicker);lastMatchSnapshot="";forceNextMatchRender=false;actionSequence++;actionPending=false;
-    clearInterval(queueTicker);queueTicker=null;activeMatchId=matchId;$("#queue-status").hidden=true;
+    setQueueState(null);queueRequest++;clearInterval(queueTicker);queueTicker=null;activeMatchId=matchId;$("#queue-status").hidden=true;
     const {data,error}=await supabase.rpc("get_online_match",{p_match_id:matchId});
     if(session?.user?.id!==uid||activeMatchId!==matchId)return;
     if(error){notify("Não foi possível abrir a partida: "+displayError(error));return;}
@@ -470,27 +491,75 @@
   document.addEventListener("visibilitychange",()=>{if(!document.hidden&&activeMatchId)refreshOnlineMatch(activeMatchId).catch(()=>{});});
 
   async function startQueue(mode){
-    if(!requireLogin())return;
-    $("#queue-status").hidden=false;queueSeconds=0;clearInterval(queueTicker);$("#queue-status-text").textContent=mode==="ranked"?"Procurando adversário da sua faixa · 00:00":"Procurando jogador · 00:00";queueTicker=setInterval(()=>{queueSeconds++;const elapsed=`${String(Math.floor(queueSeconds/60)).padStart(2,"0")}:${String(queueSeconds%60).padStart(2,"0")}`;$("#queue-status-text").textContent=(mode==="ranked"?"Procurando adversário da sua faixa":"Procurando jogador")+` · ${elapsed}`;},1000);
-    const {data,error}=await supabase.rpc("join_matchmaking",{p_mode:mode});
-    if(error){clearInterval(queueTicker);queueTicker=null;$("#queue-status-text").textContent=displayError(error);return;}
-    const entry=Array.isArray(data)?data[0]:data;
-    if(entry?.queue_status==="matched"){
-      $("#queue-status-text").textContent=`Oponente encontrado. Sala ${entry.match_id.slice(0,8)} criada; carregando partida…`;
-      $("#cancel-queue").hidden=true;
-      notify("Partida encontrada. Abrindo a arena…");loadOnlineMatch(entry.match_id);
-      return;
-    }
-    $("#cancel-queue").hidden=false;
-    queueChannel=supabase.channel(`queue-${session.user.id}`).on("postgres_changes",{event:"UPDATE",schema:"public",table:"matchmaking_queue",filter:`user_id=eq.${session.user.id}`},payload=>{
-      if(payload.new.status==="matched"){$("#queue-status-text").textContent="Oponente encontrado. Conectando à partida…";$("#cancel-queue").hidden=true;notify("Partida encontrada. Abrindo a arena…");loadOnlineMatch(payload.new.match_id);}
-    }).subscribe();
+    if(!requireLogin()||floatingQueueState.active)return;
+    const uid=session.user.id,request=++queueRequest;
+    setQueueState({format:'solo',mode,phase:'joining'});
+    $("#queue-status").hidden=false;$("#cancel-queue").hidden=true;
+    $("#queue-status-text").textContent="Entrando na fila…";
+    try{
+      const {data,error}=await supabase.rpc("join_matchmaking",{p_mode:mode});
+      if(session?.user?.id!==uid||request!==queueRequest)return;
+      if(error)throw error;
+      const entry=Array.isArray(data)?data[0]:data;
+      if(entry?.queue_status==='matched'){
+        $("#queue-status-text").textContent="Oponente encontrado. Abrindo a partida…";
+        notify("Partida encontrada. Abrindo a arena…");loadOnlineMatch(entry.match_id);return;
+      }
+      if(entry?.queue_status!=='waiting')throw Error('Não foi possível confirmar a entrada na fila.');
+      setQueueState({format:'solo',mode,phase:'queued'});
+      clearInterval(queueTicker);
+      const tick=()=>{const seconds=Math.max(0,Math.floor((Date.now()-floatingQueueState.startedAt)/1000));$("#queue-status-text").textContent=(mode==='ranked'?"Procurando adversário da sua faixa":"Procurando jogador")+` · ${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`;};
+      tick();queueTicker=setInterval(tick,1000);$("#cancel-queue").hidden=false;
+      if(queueChannel)supabase.removeChannel(queueChannel);
+      const check=row=>{if(session?.user?.id!==uid||request!==queueRequest)return;if(row?.status==='matched'&&row.match_id){$("#cancel-queue").hidden=true;notify("Partida encontrada. Abrindo a arena…");loadOnlineMatch(row.match_id);}else if(row?.status==='cancelled'){clearInterval(queueTicker);queueTicker=null;setQueueState(null);$("#queue-status").hidden=true;}};
+      queueChannel=supabase.channel(`queue-${uid}`).on("postgres_changes",{event:"UPDATE",schema:"public",table:"matchmaking_queue",filter:`user_id=eq.${uid}`},payload=>check(payload.new)).subscribe(status=>{
+        if(status==='SUBSCRIBED')supabase.from('matchmaking_queue').select('status,match_id').eq('user_id',uid).maybeSingle().then(({data})=>check(data));
+      });
+    }catch(error){if(session?.user?.id!==uid||request!==queueRequest)return;clearInterval(queueTicker);queueTicker=null;setQueueState(null);$("#queue-status-text").textContent=displayError(error);$("#cancel-queue").hidden=true;}
   }
 
-  async function startDuoQueue(mode,partnerCode){if(!requireLogin())return{error:"Entre na sua conta para entrar na fila."};if(!["normal","ranked"].includes(mode))return{error:"Este modo ainda não aceita fila em dupla."};const {data,error}=await supabase.rpc("create_duo_queue",{p_mode:mode,p_partner_code:partnerCode});if(error)return{error:displayError(error)};const row=Array.isArray(data)?data[0]:data;activeDuoPartyId=row?.party_id||null;$("#queue-status").hidden=false;$("#cancel-queue").hidden=false;$("#queue-status-text").textContent=`Convite enviado para ${row?.partner_name||"seu amigo"}. A fila começa quando ele aceitar.`;$("#queue-join").disabled=true;$("#queue-join").textContent="Aguardando parceiro…";return{partyId:activeDuoPartyId,partnerName:row?.partner_name};}
-  async function respondDuoInvite(accept){if(!requireLogin()||!pendingDuoPartyId)return{error:"Convite indisponível."};const id=pendingDuoPartyId,{data,error}=await supabase.rpc("respond_duo_queue_invite",{p_party_id:id,p_accept:accept});if(error)return{error:displayError(error)};if(!accept){pendingDuoPartyId=null;$("#duo-invite-inbox").hidden=true;return{status:"declined"};}activeDuoPartyId=id;pendingDuoPartyId=null;$("#duo-invite-inbox").hidden=true;$("#queue-status").hidden=false;$("#cancel-queue").hidden=false;$("#queue-join").disabled=true;const result=typeof data==="string"?JSON.parse(data):data;if(result?.status==="matched"&&result.match_id){activeDuoPartyId=null;await loadOnlineMatch(result.match_id);}else{$("#queue-status-text").textContent="Dupla formada. Procurando outra dupla…";startDuoQueuePolling();}return result||{status:"queued"};}
+  async function startDuoQueue(mode,partnerCode){
+    if(!requireLogin())return{error:"Entre na sua conta para entrar na fila."};
+    if(floatingQueueState.active)return{error:"Você já tem uma busca ou convite em andamento."};
+    if(!['normal','ranked'].includes(mode))return{error:"Este modo ainda não aceita fila em dupla."};
+    const uid=session.user.id,request=++queueRequest;
+    setQueueState({format:'duo',mode,phase:'joining'});
+    try{
+      const {data,error}=await supabase.rpc('create_duo_queue',{p_mode:mode,p_partner_code:partnerCode});
+      if(session?.user?.id!==uid||request!==queueRequest)return{error:'A conta foi alterada.'};
+      if(error)throw error;
+      const row=Array.isArray(data)?data[0]:data;
+      if(!row?.party_id)throw Error('Não foi possível confirmar o convite.');
+      activeDuoPartyId=row.party_id;
+      setQueueState({format:'duo',mode,phase:'inviting',partyId:activeDuoPartyId});
+      $("#queue-status").hidden=false;$("#cancel-queue").hidden=false;
+      $("#queue-status-text").textContent=`Convite enviado para ${row.partner_name||'seu amigo'}. A fila começa quando ele aceitar.`;
+      return{partyId:activeDuoPartyId,partnerName:row.partner_name};
+    }catch(error){if(session?.user?.id===uid&&request===queueRequest)setQueueState(null);return{error:displayError(error)};}
+  }
+  async function respondDuoInvite(accept){if(!requireLogin()||!pendingDuoPartyId)return{error:"Convite indisponível."};const id=pendingDuoPartyId,uid=session.user.id,duoMode=pendingDuoMode||window.queueGameMode||"normal",{data,error}=await supabase.rpc("respond_duo_queue_invite",{p_party_id:id,p_accept:accept});if(session?.user?.id!==uid)return{error:"A conta foi alterada."};if(error)return{error:displayError(error)};if(!accept){pendingDuoPartyId=null;$("#duo-invite-inbox").hidden=true;return{status:"declined"};}activeDuoPartyId=id;pendingDuoPartyId=null;$("#duo-invite-inbox").hidden=true;$("#queue-status").hidden=false;$("#cancel-queue").hidden=false;$("#queue-join").disabled=true;const result=typeof data==="string"?JSON.parse(data):data;if(result?.status==="matched"&&result.match_id){activeDuoPartyId=null;await loadOnlineMatch(result.match_id);}else{$("#queue-status-text").textContent="Dupla formada. Procurando outra dupla…";setQueueState({format:'duo',mode:duoMode,phase:'queued',partyId:id});startDuoQueuePolling();}return result||{status:"queued"};}
 
-  async function cancelQueue(){clearInterval(queueTicker);queueTicker=null;if(duoQueueTicker)clearInterval(duoQueueTicker);duoQueueTicker=null;if(!session)return;await supabase.rpc("cancel_matchmaking");await supabase.rpc("cancel_duo_queue");activeDuoPartyId=null;$("#queue-join").disabled=false;$("#queue-join").textContent=$("#queue-duo-details").hidden?"Entrar na fila solo":"Convidar parceiro e entrar na fila";if(queueChannel)supabase.removeChannel(queueChannel);queueChannel=null;$("#queue-status").hidden=true;$("#cancel-queue").hidden=false;}
+  async function cancelQueue(){
+    if(!session||queueCancelling||floatingQueueState.phase==='joining')return false;
+    const uid=session.user.id,partyId=activeDuoPartyId||floatingQueueState.partyId,isDuo=floatingQueueState.format==='duo'||Boolean(partyId);queueCancelling=true;
+    try{
+      const name=isDuo?'cancel_duo_queue':'cancel_matchmaking';
+      const {error}=await supabase.rpc(name);if(error)throw error;
+      if(session?.user?.id!==uid)return false;
+      const result=isDuo&&partyId?await supabase.from('duo_queue_parties').select('status,match_id').eq('id',partyId).maybeSingle():await supabase.from('matchmaking_queue').select('status,match_id').eq('user_id',uid).maybeSingle();
+      if(session?.user?.id!==uid)return false;
+      if(result.error)throw result.error;
+      if(result.data?.status==='matched'&&result.data.match_id){
+        if(activeMatchId!==result.data.match_id){notify('A partida já foi encontrada. Abrindo a arena…');loadOnlineMatch(result.data.match_id);}
+        return true;
+      }
+      queueRequest++;clearInterval(queueTicker);queueTicker=null;clearInterval(duoQueueTicker);duoQueueTicker=null;activeDuoPartyId=null;
+      if(queueChannel)supabase.removeChannel(queueChannel);queueChannel=null;
+      setQueueState(null);$("#queue-status").hidden=true;$("#cancel-queue").hidden=false;
+      notify('Você saiu da fila.');return true;
+    }catch(error){if(session?.user?.id===uid)notify('Não foi possível sair da fila: '+displayError(error));return false;}
+    finally{if(session?.user?.id===uid)queueCancelling=false;}
+  }
 
   document.addEventListener("click",async event=>{
     if(event.target.id==="friend-menu-scrim"){closeFriendActions();return;}
@@ -592,7 +661,7 @@
   async function welcomeRequest(name,args={}){if(!session||!supabase)throw Error("Entre na conta para continuar.");const uid=session.user.id;const {data,error}=await supabase.rpc(name,args);if(session?.user?.id!==uid)throw Error("A conta mudou. Entre novamente.");if(error)throw Error(/PGRST202|42883/.test(String(error.code))?"As boas-vindas estão temporariamente indisponíveis. Tente novamente em instantes.":displayError(error));return data;}
   async function openStarterPack(mythology){const data=await welcomeRequest("open_starter_pack",{p_mythology:mythology});deckLoadedFor=null;return data;}
   async function portalRequest(name,args={}){if(!supabase)throw Error('A conexão não está disponível.');const uid=session?.user?.id;const {data,error}=await supabase.rpc(name,args);if(uid!==session?.user?.id)throw Error('A conta foi alterada.');if(error)throw Error(displayError(error));return data;}
-  window.MythicOnline={refreshAdminAccess:loadAdminAccess,portalRequest,account:()=>session?.user||null,getWelcomeState:()=>welcomeRequest("get_welcome_state"),openStarterPack,completeWelcome:()=>welcomeRequest("complete_welcome"),refreshPresentation:()=>{emitConceptProfile();if(session){loadProfileAnalytics(session.user.id,"profile");loadCommunityHub().catch(()=>{});}},loadHonors:loadPlayerHonors,equipHonors:equipPlayerHonors,signOut:signOutAccount,saveDeckCounts,saveNamedDeck,saveBuilderDeck,deleteBuilderDeck,isConnected:()=>Boolean(session),showLogin,requireLogin,userId:()=>session?.user?.id||null,activeMatchId:()=>activeMatchId,openMatch:loadOnlineMatch,isAdmin:()=>adminAuthorized,openAdmin,submitAction,expireTurn,loadTieBreak,leaveMatch,startQueue,startDuoQueue,respondDuoInvite,findFriendByCode,profileReady:()=>accountReady,pvpUnlocked:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),tutorialCompleted:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),isTutorialComplete:()=>Boolean(profile?.tutorial_completed),completeTutorial:async()=>{if(!session)return false;const {data,error}=await supabase.rpc("complete_tutorial_once");if(!error){await loadProfile();if(profile?.tutorial_completed||Number(profile?.xp||0)>=100){try{localStorage.setItem("mythic-clash-tutorial-complete","true");localStorage.setItem("mythic-clash-level","2");}catch{}return true;}notify("Tutorial registrado, mas o perfil ainda não recebeu o nível 2. Atualize a migração de progressão no Supabase.");return false;}notify("Não foi possível registrar o tutorial. Tente novamente após verificar a atualização do banco.");return false;},recordGuardianMatch:async(matchId,outcome,playerPoints,opponentPoints)=>{if(!session)return;const {error}=await supabase.rpc("record_guardian_match",{p_match_id:matchId,p_outcome:outcome,p_player_points:playerPoints,p_opponent_points:opponentPoints});if(error)notify(displayError(error));else{await loadProfile();}},refreshProfile:loadProfile};
+  window.MythicOnline={refreshAdminAccess:loadAdminAccess,portalRequest,account:()=>session?.user||null,getWelcomeState:()=>welcomeRequest("get_welcome_state"),openStarterPack,completeWelcome:()=>welcomeRequest("complete_welcome"),refreshPresentation:()=>{emitConceptProfile();if(session){loadProfileAnalytics(session.user.id,"profile");loadCommunityHub().catch(()=>{});}},loadHonors:loadPlayerHonors,equipHonors:equipPlayerHonors,signOut:signOutAccount,saveDeckCounts,saveNamedDeck,saveBuilderDeck,deleteBuilderDeck,isConnected:()=>Boolean(session),showLogin,requireLogin,userId:()=>session?.user?.id||null,activeMatchId:()=>activeMatchId,openMatch:loadOnlineMatch,isAdmin:()=>adminAuthorized,openAdmin,submitAction,expireTurn,loadTieBreak,leaveMatch,startQueue,startDuoQueue,respondDuoInvite,cancelQueue,getQueueState:()=>({...floatingQueueState}),findFriendByCode,profileReady:()=>accountReady,pvpUnlocked:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),tutorialCompleted:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),isTutorialComplete:()=>Boolean(profile?.tutorial_completed),completeTutorial:async()=>{if(!session)return false;const {data,error}=await supabase.rpc("complete_tutorial_once");if(!error){await loadProfile();if(profile?.tutorial_completed||Number(profile?.xp||0)>=100){try{localStorage.setItem("mythic-clash-tutorial-complete","true");localStorage.setItem("mythic-clash-level","2");}catch{}return true;}notify("Tutorial registrado, mas o perfil ainda não recebeu o nível 2. Atualize a migração de progressão no Supabase.");return false;}notify("Não foi possível registrar o tutorial. Tente novamente após verificar a atualização do banco.");return false;},recordGuardianMatch:async(matchId,outcome,playerPoints,opponentPoints)=>{if(!session)return;const {error}=await supabase.rpc("record_guardian_match",{p_match_id:matchId,p_outcome:outcome,p_player_points:playerPoints,p_opponent_points:opponentPoints});if(error)notify(displayError(error));else{await loadProfile();}},refreshProfile:loadProfile};
   window.addEventListener("mythic-availability-updated",()=>{if(storeItems.length)renderStore();});
   window.MythicOnline.avatarAsset=resolveAvatarAsset;window.MythicOnline.playerName=()=>profile?.nickname||profile?.display_name||"Você";window.MythicOnline.playerIcon=()=>profile?.equipped_avatar||"default";window.MythicOnline.playerRating=()=>profile?.rating_points||1000;
 })();

@@ -1,0 +1,18 @@
+.floating-queue{position:fixed;z-index:1050;width:276px;max-width:calc(100vw - 24px);box-sizing:border-box;padding:0 14px 14px;border:1px solid #caa86a99;border-radius:13px;background:linear-gradient(135deg,#291c3bf5,#120d1ffb);color:#f7ecd7;box-shadow:0 12px 38px #0008,inset 0 0 0 3px #d7b9890b;font-family:'Mythic UI',Arial,sans-serif;isolation:isolate}
+.floating-queue[hidden]{display:none!important}
+.floating-queue *{box-sizing:border-box}
+.floating-queue-grip{display:flex;align-items:center;gap:9px;width:100%;min-height:44px;margin:0;padding:10px 0;background:none;border:0;color:#e8c986;font:700 12px/1.3 'Mythic UI',Arial,sans-serif;cursor:grab;touch-action:none;user-select:none;text-align:left}
+.floating-queue.dragging .floating-queue-grip{cursor:grabbing}
+.floating-queue-dot{width:7px;height:7px;flex:0 0 7px;border-radius:50%;background:#bc8cf0;box-shadow:0 0 10px #bc8cf088}
+.floating-queue-handle{margin-left:auto;color:#b39cbb;font-size:20px;line-height:1}
+.floating-queue-info{display:flex;align-items:center;justify-content:space-between;gap:12px;border-top:1px solid #bd9dd52b;padding-top:10px}
+.floating-queue-mode{color:#d3c4dd;font-size:12px}
+.floating-queue-time{color:#e5c2ff;font:700 26px/1.2 'Mythic UI',Arial,sans-serif;font-variant-numeric:tabular-nums;letter-spacing:.03em}
+.floating-queue-status{min-height:32px;margin:9px 0 12px;font-size:11px;line-height:1.5;color:#baacc8}
+.floating-queue-actions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.floating-queue-actions button{display:flex;align-items:center;justify-content:center;min-height:44px;border:1px solid #b18ed67a;border-radius:7px;padding:8px 6px;font:700 11px/1.3 'Mythic UI',Arial,sans-serif;cursor:pointer}
+.floating-queue-back{background:linear-gradient(135deg,#63408b,#332746);color:#fff4ff}
+.floating-queue-cancel{background:#110d1b;color:#d3bdcf;border-color:#bd8b9e50!important}
+.floating-queue button:disabled{opacity:.6;cursor:wait}
+.floating-queue button:focus-visible{outline:2px solid #e9c580;outline-offset:3px}
+@media(max-width:600px){.floating-queue{width:260px}.floating-queue-time{font-size:24px}}
