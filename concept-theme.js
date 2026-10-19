@@ -72,7 +72,16 @@
   const stats=model.deckStats.find(d=>d.name===selected.name);if(stats)deckDetail.append(make('p','concept-deck-stat',`${stats.win_rate||0}% de vitórias · ${stats.games||0} partidas registradas`));
   deckDetail.append(button(model.previewSlot===state.activeSlot?'Baralho ativo':'Usar este baralho',()=>{const select=$('#deck-slot-select');select.value=String(model.previewSlot);select.dispatchEvent(new Event('change',{bubbles:true}));drawDecks();},'button button-primary'),button('Editar baralho',()=>{const select=$('#deck-slot-select');select.value=String(model.previewSlot);select.dispatchEvent(new Event('change',{bubbles:true}));window.MythicDeckBuilder?.open();}),button('Copiar código',()=>copyCode(JSON.stringify({name:selected.name,cards:selected.cards}))),button('Excluir baralho',()=>requestDeleteDeck(model.previewSlot),'button concept-deck-delete'));
   const mini=$('#concept-arena-decks');if(mini){mini.replaceChildren();state.decks.slice(0,3).forEach((deck,i)=>{const n=button('',()=>{const select=$('#arena-deck-select');select.value=String(i);select.dispatchEvent(new Event('change',{bubbles:true}));},'concept-mini-deck');n.setAttribute('aria-pressed',String(i===state.activeSlot));n.append(fan(deck.cards),make('b','',deck.name),make('small','',`${total(deck)} cartas`));mini.append(n);});}
-  $$('.concept-queue-deck').forEach(root=>{root.replaceChildren(make('h3','',`Meu baralho · ${state.decks[state.activeSlot].name}`),fan(state.decks[state.activeSlot].cards),button('Trocar baralho',()=>window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'decks'}}))));});
+  $$('.concept-queue-deck').forEach(root=>{
+   const active=state.decks[state.activeSlot],change=button('Trocar baralho',()=>window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'decks'}})));
+   if(!root.classList.contains('queue-room-deck')){root.replaceChildren(make('h3','',`Meu baralho · ${active.name}`),fan(active.cards),change);return;}
+   const heading=make('header','queue-room-deck-heading');heading.append(make('small','','SEU BARALHO SELECIONADO'),make('h2','',active.name));
+   const metrics=make('div','concept-deck-metrics'),counts=active.cards||{},catalog=new Map(state.cards.map(card=>[card.id,card]));let units=0;const factions=new Map();
+   for(const [id,raw]of Object.entries(counts)){const count=Number(raw)||0;if(count<=0)continue;const card=catalog.get(id);if(card?.kind==='unit')units+=count;if(card?.faction)factions.set(card.faction,(factions.get(card.faction)||0)+count);}
+   const size=total(active);for(const [value,label]of [[size,'cartas'],[units,'unidades'],[size-units,'especiais']]){const metric=make('span');metric.append(make('b','',String(value)),make('small','',label));metrics.append(metric);}
+   const composition=make('div','queue-room-factions');composition.setAttribute('aria-label','Facções do baralho');for(const [name,count]of [...factions].sort((a,b)=>b[1]-a[1]))composition.append(make('span','',`${name} · ${count}`));
+   root.replaceChildren(heading,fan(counts,'queue-room-fan'),metrics,composition,change);
+  });
  }
  deckSearch.addEventListener('input',drawDecks);deckSort.addEventListener('change',drawDecks);
  let deckFrame=0;const queueDecks=()=>{if(deckFrame)return;deckFrame=requestAnimationFrame(()=>{deckFrame=0;drawDecks();});};new MutationObserver(queueDecks).observe($('#deck-slot-select'),{childList:true});new MutationObserver(queueDecks).observe($('#deck-card-list'),{childList:true});
@@ -172,7 +181,7 @@
 
  // Queue / custom rooms: retain seats, privacy rules and all live controls.
  const queuePreview=$('#view-queue .queue-team-preview'),selfAvatar=make('span','concept-queue-avatar self','MC');queuePreview.querySelector('article').insertBefore(selfAvatar,queuePreview.querySelector('article>b'));queuePreview.querySelector('article:last-child').insertBefore(picture('assets/concept-ui/mode-x1.png','concept-opponent-sigil'),queuePreview.querySelector('article:last-child>b'));
- const queueDeck=make('section','epic-panel concept-queue-deck');$('#view-queue .queue-setup-panel').after(queueDeck);
+ const queueDeck=make('section','epic-panel concept-queue-deck queue-room-deck'),queueSetup=$('#view-queue .queue-setup-panel'),queueRoom=make('div','queue-room-layout');queueSetup.before(queueRoom);queueRoom.append(queueSetup,queueDeck);
  $('#view-custom .custom-page-heading>img').src='assets/concept-ui/mode-custom.png';
  const customDeck=make('section','epic-panel concept-queue-deck');$('#view-custom .custom-room-panel').after(customDeck);
  function decorateSeats(){$$('#view-custom .custom-seat').forEach(seat=>{if(seat.querySelector('.concept-seat-sigil'))return;const img=picture('assets/concept-ui/'+(seat.classList.contains('spectator-seat')?'mode-custom.png':'mode-normal.png'),'concept-seat-sigil');img.style.cssText='width:70px;height:70px;object-fit:contain';seat.prepend(img);});}new MutationObserver(decorateSeats).observe($('#view-custom .custom-room-seats'),{childList:true,subtree:true});decorateSeats();
