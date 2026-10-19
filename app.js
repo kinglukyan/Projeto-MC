@@ -63,7 +63,19 @@
   window.MythicLocalDeck={get:()=>({...deckCounts}),set:counts=>{deckCounts=Object.fromEntries(cards.map(card=>[card.id,Math.max(0,Math.min(ownedCopies(card),Math.floor(Number(counts?.[card.id])||0)))]));deckSlots[activeDeckSlot].cards={...deckCounts};persistDeckSlots();renderDeck();renderDeckSlots();}};
   window.MythicLocalDeckSlots={set:rows=>{const merged=[];for(const row of rows||[]){const index=Math.max(0,Math.min(DECK_SLOTS-1,(Number(row.slot)||1)-1));merged[index]={name:String(row.name||`Deck ${index+1}`).slice(0,24),cards:Object.fromEntries(cards.map(card=>[card.id,Math.max(0,Math.min(ownedCopies(card),Math.floor(Number(row.cards?.[card.id])||0)))]))};}deckSlots=Array.from({length:Math.min(merged.length,DECK_SLOTS)},(_,index)=>merged[index]||{name:`Deck ${index+1}`,cards:{}});if(!deckSlots.length)deckSlots=[{name:"Deck 1",cards:{}}];activeDeckSlot=Math.min(activeDeckSlot,deckSlots.length-1);deckCounts={...deckSlots[activeDeckSlot].cards};persistDeckSlots();renderDeck();renderDeckSlots();}};
   window.MythicResetAccountDeck=()=>{deckSlots=[{name:"Deck 1",cards:{}}];activeDeckSlot=0;deckCounts={};renderDeck();renderDeckSlots();};
+  let lobbyDeckSelecting=false;
   window.MythicDeckEditor={
+    isSelecting:()=>lobbyDeckSelecting,
+    select:async slot=>{
+      if(lobbyDeckSelecting)throw Error('Aguarde a troca de baralho.');
+      if(window.MythicOnline?.getQueueState?.().active||window.MythicOnline?.activeMatchId?.())throw Error('Saia da fila ou da partida antes de trocar o baralho.');
+      if(window.MythicDeckBuilder?.isOpen?.())throw Error('Feche o construtor antes de trocar o baralho.');
+      if(!Number.isInteger(slot)||!deckSlots[slot])throw Error('Escolha um baralho válido.');
+      const userId=window.MythicOnline?.userId?.();if(!userId)throw Error('Entre na conta para selecionar seu baralho.');
+      const selected=deckSlots[slot];lobbyDeckSelecting=true;window.dispatchEvent(new CustomEvent('mythic-deck-selection-state',{detail:{busy:true}}));
+      try{await window.MythicDeckEditor.commit({slot,name:selected.name,counts:{...selected.cards},userId});}
+      finally{lobbyDeckSelecting=false;window.dispatchEvent(new CustomEvent('mythic-deck-selection-state',{detail:{busy:false}}));}
+    },
     read:()=>({slot:activeDeckSlot,name:deckSlots[activeDeckSlot].name,counts:{...deckCounts},userId:window.MythicOnline?.userId?.()||null,cards:cards.map(card=>({...card,owned:ownedCopies(card)}))}),
     remove:async slot=>{
       const viewer=window.MythicOnline?.userId?.();

@@ -549,7 +549,7 @@
   document.addEventListener("visibilitychange",()=>{if(!document.hidden&&activeMatchId)refreshOnlineMatch(activeMatchId).catch(()=>{});});
 
   async function startQueue(mode){
-    if(!requireLogin()||floatingQueueState.active)return;
+    if(!requireLogin()||floatingQueueState.active)return;if(window.MythicDeckEditor?.isSelecting?.()){notify("Aguarde o salvamento do baralho antes de entrar na fila.");return;}
     const uid=session.user.id,request=++queueRequest;
     $("#queue-setup-status").textContent='';
     setQueueState({format:'solo',mode,phase:'joining'});
@@ -616,7 +616,7 @@
     finally{if(uid===session?.user?.id){lobbyBusy=false;emitLobby();}}
   }
   async function convergeLobby(){
-    if(!requireLogin()||lobbyBusy||floatingQueueState.active)return;
+    if(!requireLogin()||lobbyBusy||floatingQueueState.active)return;if(window.MythicDeckEditor?.isSelecting?.()){notify("Aguarde o salvamento do baralho antes de convergir.");return;}
     if(!lobbyParty){await startQueue(window.queueGameMode||'normal');return;}
     if(lobbyParty.host_id!==session.user.id||lobbyParty.status!=='ready')return;
     const uid=session.user.id;lobbyBusy=true;emitLobby();

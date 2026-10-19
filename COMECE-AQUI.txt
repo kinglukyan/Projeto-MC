@@ -1,7 +1,13 @@
 MYTHIC CLASH — PACOTE COMPLETO
 Consolidado em 19/10/2026 a partir da versão local mais recente.
 
-ATUALIZAÇÃO ATUAL: RESUMO DA PARTIDA
+ATUALIZAÇÃO ATUAL: SELETOR DE DECKS E HALL
+Leia AJUSTES-HALL-E-DECKS.md. Seleção direta nas salas, vídeo menor com
+explicações de cartas e banner proporcional com prévias dos próximos heróis.
+Esta alteração não precisa de novo SQL; é necessário publicar os arquivos.
+O site online ainda não foi atualizado por esta entrega.
+
+RESUMO DA PARTIDA
 Leia RESUMO-DA-PARTIDA.md. Após vitória/derrota há um relatório com duração,
 Rounds, pontos e cartas jogadas, antes do botão de voltar à sala.
 Aplicar a migração 039 depois da 038 e publicar o cliente atualizado.

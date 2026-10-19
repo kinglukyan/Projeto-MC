@@ -71,9 +71,13 @@
     "bytes": 2955,
     "sha256": "70aa329c6c0c44e1b210ba0b975b00fbd38bb463e16b0b7b6e04d340e879e90e"
   },
+  "AJUSTES-HALL-E-DECKS.md": {
+    "bytes": 1737,
+    "sha256": "4ac19c29405481b9da492304052472cdf8bb699e2e7218a9dad6d2384e4af25a"
+  },
   "app.js": {
-    "bytes": 120786,
-    "sha256": "e9adf62e49c123cb7bcb4a9129eae33b5b12927738c911435be4bee530f42025"
+    "bytes": 121858,
+    "sha256": "7abcf524f4018113d08111a10422e7cf32fac879fff24439149fb86d6078b079"
   },
   "arcane-palette.css": {
     "bytes": 37719,
@@ -980,8 +984,8 @@
     "sha256": "6cc51a82aec8c2ae014df08f3dbe4bb372d2cedfae333ef365bc956172a9b754"
   },
   "COMECE-AQUI.txt": {
-    "bytes": 4361,
-    "sha256": "c1d1f25a327272d9523711171db9ce5a0aa72f2e18b099beaad1787bb18005e5"
+    "bytes": 4687,
+    "sha256": "c0f3039faa851b735a12f6d8dc796787cd968b3a6e73e4f810f761f1a65adf8d"
   },
   "CONCEPT-ART-ASSETS.json": {
     "bytes": 5044,
@@ -996,8 +1000,8 @@
     "sha256": "ef0b230fee2e30173be44a0815da58075255328cd9055ad443cff8b0d741ae6c"
   },
   "concept-theme.js": {
-    "bytes": 39507,
-    "sha256": "b290c153542020e03f4c18aea9ed3e28be6c2da3a91d72e2d18d3f15fa72f658"
+    "bytes": 41063,
+    "sha256": "279245150d1593c80d334b7b693c9ebdce2865ea46721b456ba12bdd9c797af8"
   },
   "CONSTRUTOR-DE-DECKS.md": {
     "bytes": 4200,
@@ -1008,8 +1012,8 @@
     "sha256": "732d5551364ae8ca421d1dc1fc04a0c6917fe080b019ccc0be101c8e7aebf6d3"
   },
   "convergence-lobby.js": {
-    "bytes": 11256,
-    "sha256": "0cd69bf5eb4736b2b59b2760d396a5ab63a9d8d3f1d84fb5486c9098377f23c6"
+    "bytes": 11359,
+    "sha256": "f814134f68b2c1aae54cb7b4653333d1396490c3578791598dba2ab1a11b2bbe"
   },
   "CORRECAO-AFRODITE-FILEIRAS.md": {
     "bytes": 1148,
@@ -1048,8 +1052,8 @@
     "sha256": "405e1838d2c98db12b3899941c6d0ecb11070a77da396d647727439877f1bc76"
   },
   "custom-lobby.js": {
-    "bytes": 10782,
-    "sha256": "26eaee7dbfdfea90f293938a4ac61d54ad98e786d5d7e6df8beaa73f32556841"
+    "bytes": 11084,
+    "sha256": "8a1cac0588d110a5171def0ba197c92551df3df4a65131a81a05894b06ff61ff"
   },
   "deck-builder.css": {
     "bytes": 19603,
@@ -1149,7 +1153,7 @@
   },
   "index.html": {
     "bytes": 71660,
-    "sha256": "3bba1f0dbad63f9c2ffb075169ba4bb8f8745e91f73ee8ffd03ace5551616b0a"
+    "sha256": "28f4f190b583df41d7ddfe9215fe28ff682011cef5c18790f508725aa1d09c57"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -1232,8 +1236,8 @@
     "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
   },
   "online.js": {
-    "bytes": 140241,
-    "sha256": "91427e1c7243639057ee949866343f82b0df0b5c724516b0b1f6b1a19e97baad"
+    "bytes": 140476,
+    "sha256": "3b3967193544b60d7d372a7773b86b0825b5833f1777db83652b367e0ca99b95"
   },
   "portal-upgrade.css": {
     "bytes": 19957,
@@ -1260,16 +1264,16 @@
     "sha256": "64083f51b3a99bfe99b4babb87ac31dc24d664ea1e9b72072a9eaa6432eb1843"
   },
   "public-hall.css": {
-    "bytes": 11169,
-    "sha256": "a4d5ab59102d1c96d6e66d74477b50053505c86a9e7eb4c5d18706ddc09c7007"
+    "bytes": 15569,
+    "sha256": "a16f813d5033257779e8ff1daf948d37d05311b4a0f50a0950dc278ed4896558"
   },
   "public-hall.js": {
-    "bytes": 15318,
-    "sha256": "011119272054977946bcae12a518510363a56bd095f35e7002abefe625baa4ab"
+    "bytes": 17493,
+    "sha256": "7ab03810cd6387996925627e24fc8b05987f338e2d050b39513122e1c371c0e5"
   },
   "queue-room-layout.css": {
-    "bytes": 2185,
-    "sha256": "2198086cb43fdc86be9f20698f63bf026030d825615121b0eeb3d5ed4066e086"
+    "bytes": 3034,
+    "sha256": "41d40f5b781669f93a4ee9afbb42421454cf8fd57d19aa9e28587128068aeb28"
   },
   "RANK-ESTRELAS-STRIX.md": {
     "bytes": 2856,

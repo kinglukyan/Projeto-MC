@@ -21,7 +21,7 @@
   const joined=inRoom&&p.status!=='inviting';$('#lobby-format').textContent=joined?'Dupla · 2 × 2':'Solo · 1 × 1';
   $('#lobby-message').textContent=p?.awaiting_report?'Aguardando seu parceiro voltar do resumo da partida.':incoming?'Você recebeu um convite para uma sala.':p?.status==='inviting'?'Aguardando seu amigo aceitar o convite…':joined?(isHost?'Dupla formada. Convirjam quando estiverem prontos.':'Sala pronta. Aguarde o anfitrião convergir.'):'Sua jornada pode começar solo ou ao lado de um amigo.';
   $('#lobby-leave').textContent=p?.status==='inviting'?'Cancelar convite':isHost?'Desfazer dupla':'Sair da sala';$('#lobby-leave').disabled=state.busy||queue.active;
-  const button=$('#queue-join');button.disabled=Boolean(queue.active||state.busy||incoming||p?.awaiting_report||(inRoom&&(!isHost||p.status!=='ready')));
+  const button=$('#queue-join');button.disabled=Boolean(window.MythicDeckEditor?.isSelecting?.()||queue.active||state.busy||incoming||p?.awaiting_report||(inRoom&&(!isHost||p.status!=='ready')));
   $('#converge-label').textContent=queue.active?(queue.phase==='queued'?'Em convergência':'Conectando…'):state.busy?'Aguarde…':inRoom&&!isHost?'Aguardando anfitrião':'Convergir';
   const queued=queue.active&&queue.phase==='queued';$('#converge-action').classList.toggle('is-queued',Boolean(queued));$('#converge-clock').hidden=!queued;$('#cancel-queue').hidden=!queued;
 
@@ -84,7 +84,7 @@
  for(const type of ['pointerup','pointercancel','lostpointercapture'])grip.addEventListener(type,()=>drag=null);
  grip.addEventListener('keydown',e=>{const d={ArrowLeft:[-12,0],ArrowRight:[12,0],ArrowUp:[0,-12],ArrowDown:[0,12]}[e.key];if(!d)return;e.preventDefault();place();position.x+=d[0];position.y+=d[1];place();});
  window.addEventListener('resize',place);window.visualViewport?.addEventListener('resize',place);window.visualViewport?.addEventListener('scroll',place);
- window.addEventListener('mythic-lobby-state',e=>{state=e.detail;paint();});window.addEventListener('mythic-queue-state',e=>{queue=e.detail;paint();});window.addEventListener('mythic-profile-loaded',paint);window.addEventListener('mythic-concept-profile',paint);
+ window.addEventListener('mythic-lobby-state',e=>{state=e.detail;paint();});window.addEventListener('mythic-queue-state',e=>{queue=e.detail;paint();});window.addEventListener('mythic-deck-selection-state',paint);window.addEventListener('mythic-profile-loaded',paint);window.addEventListener('mythic-concept-profile',paint);
  window.addEventListener('mythic-lobby-friends',()=>{friends=api()?.lobbyFriends?.()||[];if(dialog.open)drawFriends();});window.addEventListener('mythic-lobby-picker',openFriends);
  window.addEventListener('mythic-account-signed-out',()=>{state={};queue={active:false};friends=[];if(dialog.open)dialog.close();paint();});
  document.addEventListener('visibilitychange',()=>{if(!document.hidden){tick();api()?.refreshLobby?.();}});

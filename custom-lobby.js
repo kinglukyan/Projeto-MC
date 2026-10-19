@@ -30,7 +30,7 @@
    else{const plus=el('button','custom-add-seat','+');plus.type='button';plus.disabled=!host||busy;plus.setAttribute('aria-label',`Convidar para o lado ${n%2===1?1:2}, vaga ${n>2?2:1}`);plus.addEventListener('click',()=>{slot=n;window.dispatchEvent(new CustomEvent('mythic-lobby-picker',{detail:{context:'custom',slot:n}}));});card.append(plus,el('b','','Vaga livre'),el('span','',host?'Convide um amigo':'Aguardando convite'));}
   }
   $('#custom-observer').textContent=room.observer?`Observando: ${room.observer.name}`:'Uma vaga de observador disponível';
-  const start=$('#custom-start');start.hidden=!host;start.disabled=busy||!ready||room.status!=='open';start.textContent=busy?'Aguarde…':ready?`Começar ${a===1?'1 × 1':'2 × 2'}`:'Aguardando equipes';
+  const start=$('#custom-start');start.hidden=!host;start.disabled=busy||window.MythicDeckEditor?.isSelecting?.()||!ready||room.status!=='open';start.textContent=busy?'Aguarde…':ready?`Começar ${a===1?'1 × 1':'2 × 2'}`:'Aguardando equipes';
   $('#custom-wait-message').textContent=!returned?'Aguardando todos voltarem do resumo da partida.':host?(ready?'As equipes estão prontas. Você pode iniciar ou convidar mais amigos.':'Preencha os dois lados com a mesma quantidade de jogadores.'):'Aguarde o anfitrião iniciar a partida.';
   $('#custom-leave').textContent=host?'Encerrar sala':'Sair da sala';$('#custom-leave').disabled=busy;
  }
@@ -66,7 +66,7 @@
  $('#custom-role-close').addEventListener('click',()=>{if(!busy)dialog.close();});dialog.addEventListener('cancel',e=>{if(busy)e.preventDefault();});
  $('#sandbox-form').addEventListener('submit',e=>{e.preventDefault();if(!api()?.requireLogin?.())return;act(async()=>{enter(await request('custom_room_create',{p_rules:{max_cards:Number($('#custom-max-cards').value),starting_hand:Number($('#custom-starting-hand').value),turn_seconds:Number($('#custom-turn-seconds').value)}}));});});
  $('#sandbox-join-form').addEventListener('submit',e=>{e.preventDefault();choose($('#sandbox-code').value);});
- $('#custom-start').addEventListener('click',()=>act(async()=>{await request('custom_room_start',{p_room_id:room.id});await refresh();}));
+ $('#custom-start').addEventListener('click',()=>act(async()=>{if(window.MythicDeckEditor?.isSelecting?.())throw Error('Aguarde o salvamento do baralho.');await request('custom_room_start',{p_room_id:room.id});await refresh();}));
  $('#custom-leave').addEventListener('click',()=>act(async()=>{await request('custom_room_leave',{p_room_id:room.id});room=null;revision++;status('');}));
  $('#custom-copy-code').addEventListener('click',async()=>{try{await navigator.clipboard.writeText(room.code);status('Código copiado.');}catch{status(`Código da sala: ${room.code}`);}});
  async function pollInbox(){
@@ -91,7 +91,7 @@
   if(!room||room.host_id!==api()?.userId?.())return{error:'Crie uma sala antes de convidar.'};
   try{await request('custom_room_invite',{p_room_id:room.id,p_friend_id:friendId,p_slot:targetSlot});status('Convite enviado. Aguardando seu amigo aceitar.');return{status:'sent'};}catch(e){return{error:e.message};}
  }};
- window.addEventListener('mythic-profile-loaded',restore);window.addEventListener('mythic-concept-profile',restore);
+ window.addEventListener('mythic-deck-selection-state',paint);window.addEventListener('mythic-profile-loaded',restore);window.addEventListener('mythic-concept-profile',restore);
  window.addEventListener('mythic-account-signed-out',()=>{room=null;incoming=null;choice=null;restoreUser=null;lastRoomId=null;openedMatch=null;revision++;if(dialog.open)dialog.close();front(false);paint();});
  document.querySelectorAll('[data-view="custom"]').forEach(b=>b.addEventListener('click',()=>{restore();refresh();}));
  // Convite não modal na camada superior, reposicionável mesmo sobre painéis com transform.
