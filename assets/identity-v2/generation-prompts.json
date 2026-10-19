@@ -1,0 +1,60 @@
+{
+  "mode": "built-in image_gen",
+  "assets": [
+    {
+      "id": "coin",
+      "asset": "coin.webp",
+      "prompt": "Use case: stylized-concept. Production game UI asset for Mythic Clash, a mythological card game with plum purple, silver and aged gold interface. Create ONE exquisite round game currency coin icon, front facing orthographic, embossed FOUR-POINT diamond Convergence star in the center, thick finely engraved gold rim, deep amethyst enamel center, polished gold relief with readable silhouette at 24px, subtle rim highlights. Center it with generous transparent padding, isolated on a genuinely transparent background. No letters, no numbers, no surrounding panel, no ground, no cast shadow outside the coin. Square 1024 canvas. Premium hand-painted semi-realistic collectible game UI, restrained glow."
+    },
+    {
+      "id": "aprendiz-de-heroi",
+      "asset": "aprendiz-de-heroi.webp",
+      "prompt": "Use case: stylized-concept. ONE premium hand-painted semi-realistic rank emblem for Mythic Clash mythology card game UI. Square canvas, front-facing, centered, symmetrical, isolated genuine transparent background, ample transparent padding, bold silhouette readable at 32px, sculpted metal and amethyst enamel, restrained magical glow, no text, letters, numbers or panel. A modest bronze round shield with small four-point Convergence star, two restrained laurel sprigs, humble beginner rank."
+    },
+    {
+      "id": "escudeiro",
+      "asset": "escudeiro.webp",
+      "prompt": "Use case: stylized-concept. ONE premium hand-painted semi-realistic rank emblem for Mythic Clash mythology card game UI. Square canvas, front-facing, centered, symmetrical, isolated genuine transparent background, ample transparent padding, bold silhouette readable at 32px, sculpted metal and amethyst enamel, restrained magical glow, no text, letters, numbers or panel. A polished silver shield and crossed short swords, amethyst four-point star in center, modest silver laurel, second tier."
+    },
+    {
+      "id": "heroi",
+      "asset": "heroi.webp",
+      "prompt": "Use case: stylized-concept. ONE premium hand-painted semi-realistic rank emblem for Mythic Clash mythology card game UI. Square canvas, front-facing, centered, symmetrical, isolated genuine transparent background, ample transparent padding, bold silhouette readable at 32px, sculpted metal and amethyst enamel, restrained magical glow, no text, letters, numbers or panel. A commanding gold Greek hoplite helmet above a sturdy shield, balanced gold laurels and small violet star, heroic third tier."
+    },
+    {
+      "id": "lenda",
+      "asset": "lenda.webp",
+      "prompt": "Use case: stylized-concept. ONE premium hand-painted semi-realistic rank emblem for Mythic Clash mythology card game UI. Square canvas, front-facing, centered, symmetrical, isolated genuine transparent background, ample transparent padding, bold silhouette readable at 32px, sculpted metal and amethyst enamel, restrained magical glow, no text, letters, numbers or panel. An ornate golden crown above a violet gem shield, substantial gold laurel wreath and two small swept wings, legendary fourth tier."
+    },
+    {
+      "id": "semideus",
+      "asset": "semideus.webp",
+      "prompt": "Use case: stylized-concept. ONE premium hand-painted semi-realistic rank emblem for Mythic Clash mythology card game UI. Square canvas, front-facing, centered, symmetrical, isolated genuine transparent background, ample transparent padding, bold silhouette readable at 32px, sculpted metal and amethyst enamel, restrained magical glow, no text, letters, numbers or panel. An imposing gold and platinum shield with a violet lightning bolt jewel, large gold feather wings and sculpted sunburst crown, demigod fifth tier."
+    },
+    {
+      "id": "deus",
+      "asset": "deus.webp",
+      "prompt": "Use case: stylized-concept. ONE premium hand-painted semi-realistic rank emblem for Mythic Clash mythology card game UI. Square canvas, front-facing, centered, symmetrical, isolated genuine transparent background, ample transparent padding, bold silhouette readable at 32px, sculpted metal and amethyst enamel, restrained magical glow, no text, letters, numbers or panel. A majestic celestial gold crown, silver white wings and glowing amethyst eye-shaped diamond gem, divine circular halo, imposing god sixth tier."
+    },
+    {
+      "id": "convergente",
+      "asset": "convergente.webp",
+      "prompt": "Use case: stylized-concept. ONE premium hand-painted semi-realistic rank emblem for Mythic Clash mythology card game UI. Square canvas, front-facing, centered, symmetrical, isolated genuine transparent background, ample transparent padding, bold silhouette readable at 32px, sculpted metal and amethyst enamel, restrained magical glow, no text, letters, numbers or panel. The ultimate cosmic rank: a prominent FOUR-POINT violet Convergence star inside an intricate platinum and aged gold astrolabe, huge symmetrical crystalline wings and radiant gold crown, regal celestial seventh tier."
+    },
+    {
+      "id": "medal-atlas",
+      "asset": "medal-atlas.webp",
+      "prompt": "Use case: stylized-concept. A production SPRITE ATLAS for Mythic Clash game UI, one image with EXACTLY FIVE columns and TWO rows, TEN equal square cells in a perfectly regular grid. Wide 5:2 canvas. Each cell contains one isolated premium sculpted mythological medal on genuinely transparent background, absolutely no text or grid lines. Identical visual scale, centered, generous 16% clear padding inside every cell, nothing crossing cells. Gold/silver/bronze metal, purple enamel, hand-painted collectible game art, crisp silhouettes at 48px. Row 1 left to right: bronze four-point star badge; crossed swords gold victory medal; bronze shield medal; silver tower medal; gold crown medal. Row 2 left to right: silver compass explorer medal; gold battle helmet medal; purple ascending wings medal; two crossed silver blades friendship medal; gold lion guardian medal. Each medal has a short purple ribbon and finely detailed consistent gold rim. Orthographic front facing, symmetric lighting."
+    },
+    {
+      "id": "title-atlas",
+      "asset": "title-atlas.webp",
+      "prompt": "Use case: stylized-concept. A production SPRITE ATLAS for Mythic Clash game UI, one image with EXACTLY FOUR columns and TWO rows, EIGHT equal square cells in a perfectly regular grid. Wide 2:1 canvas. Each cell contains one isolated premium mythological heraldic title crest on genuinely transparent background, no text or grid lines. Identical visual scale, centered, generous 16% clear padding inside every cell, nothing crossing cells. Sculpted aged gold, silver and purple enamel, hand-painted game art, crisp silhouettes at 48px. Row 1 left to right: four-point compass star travel crest; crossed swords initiation crest; winged gold laurel victory crest; ornate silver veterans shield crest. Row 2 left to right: competitive gold crown crest; paired curved legendary duelist blades crest; conquering gold globe and laurel crest; immortal gold phoenix and violet sun crest. All eight have matching small unfurled dark purple ribbon below the motif, but NO lettering. Frontal symmetrical heraldry."
+    },
+    {
+      "id": "eclipse-vortex",
+      "asset": "eclipse-vortex.webp",
+      "prompt": "Use case: stylized-concept. Production transparent VFX overlay for Mythic Clash card game celestial tie-break reveal. ONE large circular magical vortex, square composition, transparent background and transparent central opening occupying 40% diameter for a separate card. Left half elegant silver violet lunar smoke, right half luminous gold orange solar plasma. Sweeping symmetrical spiral tendrils and fine sparks around the ring, dramatic realistic painted energy, rich violet shadows, bright fine highlights, no moon disc, no sun disc, no card, no text, no UI, no characters. Isolated RGBA game effect, clean transparent corners, no rectangle. Centered celestial ring readable and cinematic."
+    }
+  ]
+}

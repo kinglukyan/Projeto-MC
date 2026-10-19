@@ -8,7 +8,7 @@
  const empty=(root,text)=>root.append(make('p','empty-state',text));
  const data=()=>window.MythicPresentation?.read()||{cards:[],decks:[],activeSlot:0};
  const model={profile:null,deckStats:[],community:[],authors:{},guild:null,previewSlot:0};
- const rankAsset=value=>'assets/ranks/'+(value<1100?'aprendiz-de-heroi':value<1250?'escudeiro':value<1450?'heroi':value<1700?'lenda':value<2000?'semideus':value<2400?'deus':'convergente')+'.svg';
+ const rankAsset=value=>'assets/identity-v2/'+(value<1100?'aprendiz-de-heroi':value<1250?'escudeiro':value<1450?'heroi':value<1700?'lenda':value<2000?'semideus':value<2400?'deus':'convergente')+'.webp';
  const fan=(counts,cls='')=>{const n=make('div','concept-card-fan '+cls),catalog=data().cards;const cards=Object.entries(counts||{}).filter(([,v])=>Number(v)>0).map(([id])=>catalog.find(c=>c.id===id)).filter(Boolean).sort((a,b)=>Number(b.power)-Number(a.power));for(const card of cards.slice(0,3))n.append(picture(card.art,'',card.name));if(!cards.length)n.append(picture('assets/card-back.svg'));return n;};
  const setHeading=(id,title,subtitle)=>{const root=$(id);if(!root)return;const h=root.querySelector(':scope>.page-heading h1'),p=root.querySelector(':scope>.page-heading>div>p:last-child');if(h)h.textContent=title;if(p)p.textContent=subtitle;};
  document.body.classList.add('concept-ui');
