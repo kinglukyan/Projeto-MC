@@ -28,9 +28,9 @@
 .mythic-public-home::after{content:'';position:fixed;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(125deg,#35184c55,#281a4455 55%,#24113366)}
 .public-nav{background:#1d132755}.public-worlds,.public-how{background:#21132935}.public-footer{background:#1b12254d}
 @media(max-width:700px){.welcome-mythology .welcome-faction-emblem{padding:12px}.welcome-mythology::before{filter:blur(1.6px)}.mythic-public-home::before{background-position:42% center}}
-/* Comfortable header spacing, including the narrow sidebar layout. */
+/* Compact desktop header with balanced space around its controls. */
 body.mythic-rework.arcane-sidebar .main-content>.topbar{
- min-height:96px!important;height:auto!important;padding:22px 30px!important;
+ min-height:56px!important;height:auto!important;padding:8px 28px!important;
  gap:20px!important;box-sizing:border-box;flex-wrap:wrap;
 }
 body.mythic-rework.arcane-sidebar .main-content>.topbar .breadcrumb{min-width:0;line-height:1.8}

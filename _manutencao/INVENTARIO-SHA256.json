@@ -1153,7 +1153,7 @@
   },
   "index.html": {
     "bytes": 71660,
-    "sha256": "5b1e2e8f3449b477ec5e63f7952496cdb4ba37faf39923942b8732c5ac539510"
+    "sha256": "8d458131208f3e87cc39ee52a0e7ab25e905c0a6f93e8d88701f40ef1666868c"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -1244,8 +1244,8 @@
     "sha256": "9c30498429cee6e0de81602342fa8372d355d6957953430516fba5f0e995f9b9"
   },
   "portal-upgrade.css": {
-    "bytes": 19957,
-    "sha256": "99bbd3a63dd1d4dd36803da9533c0ccbe5c3a21413d2c44a39b31f7625eedb7a"
+    "bytes": 19955,
+    "sha256": "302d8db7b766b26d6d94c540d2736be41ed9d802d50df496a55ce2443a091ed2"
   },
   "portal-upgrade.js": {
     "bytes": 28984,
