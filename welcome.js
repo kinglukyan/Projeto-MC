@@ -2,10 +2,10 @@
  'use strict';
  const PACK='assets/onboarding/starter-pack.png',BACK='assets/card-back.svg';
  const paths=[
-  {id:'Grécia',name:'Mitologia Grega',image:'assets/card-badges/greece.svg',scene:'assets/onboarding/greek-realm.webp',text:'O Olimpo, seus heróis e formações lendárias.',tone:'greek'},
-  {id:'Nórdicos',name:'Mitologia Nórdica',image:'assets/card-badges/norse-viking.png',scene:'assets/onboarding/norse-realm.webp',text:'Runas, guerreiros e o poder dos Nove Reinos.',tone:'norse'},
-  {id:'Egípcios',name:'Mitologia Egípcia',image:'assets/card-badges/egypt.svg',scene:'assets/onboarding/egyptian-realm.webp',text:'Os deuses antigos e os mistérios do Nilo.',tone:'egypt'},
-  {id:'Alyns',name:'Reino de Alyn',image:'assets/card-badges/alyans.png',scene:'assets/onboarding/public-citadel.webp',text:'Lukyan, Butter e o início de uma lenda original.',tone:'alyn'}
+  {id:'Grécia',name:'Mitologia Grega',image:'assets/card-badges/gregos-v3.png',scene:'assets/onboarding/greek-realm.webp',text:'O Olimpo, seus heróis e formações lendárias.',tone:'greek'},
+  {id:'Nórdicos',name:'Mitologia Nórdica',image:'assets/card-badges/nordicos-v3.png',scene:'assets/onboarding/norse-realm.webp',text:'Runas, guerreiros e o poder dos Nove Reinos.',tone:'norse'},
+  {id:'Egípcios',name:'Mitologia Egípcia',image:'assets/card-badges/egipcios-v3.png',scene:'assets/onboarding/egyptian-realm.webp',text:'Os deuses antigos e os mistérios do Nilo.',tone:'egypt'},
+  {id:'Alyns',name:'Reino de Alyn',image:'assets/card-badges/alyns-v3.png',scene:'assets/onboarding/public-citadel.webp',text:'Lukyan, Butter e o início de uma lenda original.',tone:'alyn'}
  ];
  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
  const button=(text,fn,cls='welcome-button')=>{const n=el('button',cls,text);n.type='button';n.addEventListener('click',fn);return n;};

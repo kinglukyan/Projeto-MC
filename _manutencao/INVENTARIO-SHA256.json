@@ -76,8 +76,8 @@
     "sha256": "4ac19c29405481b9da492304052472cdf8bb699e2e7218a9dad6d2384e4af25a"
   },
   "app.js": {
-    "bytes": 122590,
-    "sha256": "7bd56a6091c3bb42997407d5e554033d266af7728c037c79f26d1e65534ed283"
+    "bytes": 125672,
+    "sha256": "b55d8978ea916cec03ff3090287328e86d72c02bf043e5d905f914de67c79f73"
   },
   "arcane-palette.css": {
     "bytes": 37719,
@@ -92,8 +92,8 @@
     "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
   },
   "asset-manifest.json": {
-    "bytes": 11506,
-    "sha256": "a3dd1e8304969d3a7fd1fff269179753cc36ee14a8078a94a65f67ef48a55564"
+    "bytes": 13964,
+    "sha256": "8986f2dca1a13a36e9dccfb894da826e898bc461123e8c38c583b035c84b7fca"
   },
   "assets/app-icon.svg": {
     "bytes": 531,
@@ -167,9 +167,21 @@
     "bytes": 266,
     "sha256": "3e20d25d1546fa32063d91fcbf1a532dd33bcc6121f131fde0e4918054c1885c"
   },
+  "assets/card-badges/alyns-v3.png": {
+    "bytes": 861363,
+    "sha256": "6133e11abb7feb41e9e9015480d5e3a937b78e97ce5ae247571d3cbed4a6fb70"
+  },
+  "assets/card-badges/celtas-v3.png": {
+    "bytes": 1339830,
+    "sha256": "6090c9bb486b62a5bd790d68329271e2b0aa5ae0ccdc4ecad76d68b650071095"
+  },
   "assets/card-badges/celtic.svg": {
     "bytes": 272,
     "sha256": "465be959921df7c00717532f8dd4fe9f96669cfc514644dcc72e4629de991785"
+  },
+  "assets/card-badges/egipcios-v3.png": {
+    "bytes": 1524427,
+    "sha256": "2e8f2fbd2bc0662d7bbaaeb7613986ab61478a2cf632a9af55a8616cf995a2d9"
   },
   "assets/card-badges/egypt.svg": {
     "bytes": 198,
@@ -179,6 +191,10 @@
     "bytes": 287,
     "sha256": "efecf5659936cdbc3bdc8a30b9f1e840f5d08ad3dc96360e299575e62912b3eb"
   },
+  "assets/card-badges/gregos-v3.png": {
+    "bytes": 1881772,
+    "sha256": "e2eeb8120e3628ec0605f0556402d22b252894e492f4430f9123335c8830341a"
+  },
   "assets/card-badges/monster.png": {
     "bytes": 53628,
     "sha256": "3a422880a6a5dd12241a9ce47dcd8dde6e461fb3eb9e93906076323f02dbfd41"
@@ -186,6 +202,14 @@
   "assets/card-badges/monster.svg": {
     "bytes": 218,
     "sha256": "4705eefa735b97d0e209b8f817b4039e8c9cc797c7472dee0ae43a888d474d06"
+  },
+  "assets/card-badges/monstros-v3.png": {
+    "bytes": 1568069,
+    "sha256": "bf618d43d342020f8df607dbd3bd43aee86794708ae78171b49d00ae21c42f8d"
+  },
+  "assets/card-badges/nordicos-v3.png": {
+    "bytes": 1303993,
+    "sha256": "00dd76432a93b11466f9eeaa6e8ad68471d2cf22efa321946c4fc88fe69f5894"
   },
   "assets/card-badges/norse-viking.png": {
     "bytes": 24586,
@@ -326,6 +350,162 @@
   "assets/cards-20261017/thor.png": {
     "bytes": 2451577,
     "sha256": "6bd10a622938d2a3fb24cc34ff2b84a799080b04609c35cefdb90a735f06d67b"
+  },
+  "assets/cards-v3/afrodite.webp": {
+    "bytes": 301270,
+    "sha256": "a13896e113698318d2dc30ffe3cb395e0748085cc5bc70169bea3603aa39da80"
+  },
+  "assets/cards-v3/anubis.webp": {
+    "bytes": 253706,
+    "sha256": "9aebb9082ffa834f01adb4fc62cc511457cf6e4b73e5c0d609c6b8a03c794ad0"
+  },
+  "assets/cards-v3/apolo.webp": {
+    "bytes": 298290,
+    "sha256": "b838fada7f63e74250fe1010a9d7d4afd1efa8631cb2e7474f4e81da2916b3ff"
+  },
+  "assets/cards-v3/aquiles.webp": {
+    "bytes": 291314,
+    "sha256": "5ebc77ec8a9e4fedf01ef599577ba27dc7f6d99b2be5e616192bda4617c1308c"
+  },
+  "assets/cards-v3/ares.webp": {
+    "bytes": 166330,
+    "sha256": "35de3770e0a6d44c748f3258c784796ac3168eec738695f622bf7fc5b4c73084"
+  },
+  "assets/cards-v3/artemis.webp": {
+    "bytes": 285534,
+    "sha256": "0018b5beb87749cf51f00aaf04b10f58a2788aa4ade729fc1f75ba5e594a93f2"
+  },
+  "assets/cards-v3/athena.webp": {
+    "bytes": 296556,
+    "sha256": "f602a74adb45c669f14c1a7bba586d92e09e7592461ee1255fbf715f53d57a9d"
+  },
+  "assets/cards-v3/beowulf.webp": {
+    "bytes": 293492,
+    "sha256": "cc0ff8f01e76e41db208e1fdb43adde3424a557db38e2fd18e38b67ed8b8cce2"
+  },
+  "assets/cards-v3/butter.webp": {
+    "bytes": 160966,
+    "sha256": "c723ed164812301e953f6ef4e676414ea2bb24f02227b7576ef785a7b34ca4a8"
+  },
+  "assets/cards-v3/dionisio.webp": {
+    "bytes": 318966,
+    "sha256": "a2644999eb77944feb85c64f63982a6a34e531587542176622fa46075c0a2200"
+  },
+  "assets/cards-v3/guardiao-nordico.webp": {
+    "bytes": 319102,
+    "sha256": "490e705f3bad12c47eadc9519bb4a7b56a04eccb25c8046e47200d4f1733e961"
+  },
+  "assets/cards-v3/hades.webp": {
+    "bytes": 192816,
+    "sha256": "12d0316aa329cbc3fad8e908842a9a2d13f7204b1cbad04030067ace85339cfd"
+  },
+  "assets/cards-v3/hefesto.webp": {
+    "bytes": 306350,
+    "sha256": "5875fefeda17156370063c5f3b27bde0bc382ffe729b2e2216e974abe2ff0dff"
+  },
+  "assets/cards-v3/heimdall.webp": {
+    "bytes": 289430,
+    "sha256": "51fd43fb8b12e724e2f801a735fcb66df3dc89e0b4d050039af587ab6b2c6240"
+  },
+  "assets/cards-v3/hercules.webp": {
+    "bytes": 152500,
+    "sha256": "9a66c6d88ab19911c6c48eaf905da6ef8ead2d16ff38992beb7093de86d7f972"
+  },
+  "assets/cards-v3/hermes.webp": {
+    "bytes": 280074,
+    "sha256": "08011103f66088fc6eb09ea00b1ae430e0456a8ebb7844b44eb3ea740d52d6e0"
+  },
+  "assets/cards-v3/homem.webp": {
+    "bytes": 303778,
+    "sha256": "37c058156097765b8975606a1b86e997af1f923dbad45b59e9a7971e818f7e0d"
+  },
+  "assets/cards-v3/horus.webp": {
+    "bytes": 275868,
+    "sha256": "481accd7ecd71615e97ad4690a016ca282be410e0d688a9b43b359706aa256e1"
+  },
+  "assets/cards-v3/isis.webp": {
+    "bytes": 290966,
+    "sha256": "2f971e8a8f8dd615338f8ab2a6706cde0a2cf63e99ac4675454d5100fa301839"
+  },
+  "assets/cards-v3/lobo-alfa.webp": {
+    "bytes": 203658,
+    "sha256": "38aa7d7c84e0ca7415e30e7d682b832b25af095cb6b1cc15e41438626e26f775"
+  },
+  "assets/cards-v3/lobo-beta.webp": {
+    "bytes": 197870,
+    "sha256": "b15bda8fb728c9090637bb94a470c8774a44ad9a95e407ffd5d10b55f2db9bd8"
+  },
+  "assets/cards-v3/lobo-omega.webp": {
+    "bytes": 190362,
+    "sha256": "e59a9bf436813f68db403835e41934d4188be22688ed327e8067c3d6b151dd1d"
+  },
+  "assets/cards-v3/loki.webp": {
+    "bytes": 270196,
+    "sha256": "651d081067cf8d216a0670c1e4b8a731a2464fadfbcd7a2fa9ce87c65fbf273e"
+  },
+  "assets/cards-v3/lukyan-rei-de-todos.webp": {
+    "bytes": 192388,
+    "sha256": "fd0e15438a402bbc387666c59e9320b31c31a03d401700088a9cc91bc970765a"
+  },
+  "assets/cards-v3/lukyan.webp": {
+    "bytes": 202156,
+    "sha256": "e3aa7f2b245a95de6efdefb5af8b857dd7ab74be03378441d7ecf65660fcf6c4"
+  },
+  "assets/cards-v3/manifest.json": {
+    "bytes": 3685,
+    "sha256": "385e0fc4f3efcfa19e56cd56f3deeeb62054e81156d54a0ad5d5755829ba984d"
+  },
+  "assets/cards-v3/medusa.webp": {
+    "bytes": 180472,
+    "sha256": "55d3385841b62f185ec96cb1242a0c09680ed37959f701682787db6a89dbb5b8"
+  },
+  "assets/cards-v3/minotauro.webp": {
+    "bytes": 186078,
+    "sha256": "c59e19e6f6e77c3c7b3a5458fb1ac6337a987bbd91abe2fd7eae7dab474b4ba6"
+  },
+  "assets/cards-v3/mulher.webp": {
+    "bytes": 302974,
+    "sha256": "32cd394e6379e8d95fb79074740f7d682215dd4377f7e7d1801c170835072619"
+  },
+  "assets/cards-v3/odin.webp": {
+    "bytes": 299946,
+    "sha256": "30c5246b9f0eb1790027f4bcb90d6eddd741252e3f18cdda5dd6f84ee1f1d96b"
+  },
+  "assets/cards-v3/osiris.webp": {
+    "bytes": 280634,
+    "sha256": "2513cf6532727cdcc588eb2e6ea1cd62384b99f5af32706090eb8e3c2ba8d9b3"
+  },
+  "assets/cards-v3/poseidon.webp": {
+    "bytes": 230500,
+    "sha256": "918a9ff9aa8bdbf397d31855d4c7d0fbe3638846ad51ad0d7bc9f52a205315e9"
+  },
+  "assets/cards-v3/ra.webp": {
+    "bytes": 298308,
+    "sha256": "3faf35d41afb6a61cae4e4bba22b0d6cf704daee995c0269001cfc57663190e4"
+  },
+  "assets/cards-v3/ragnar.webp": {
+    "bytes": 295068,
+    "sha256": "c60e79fda4cdd139701d33af3193e62e1ab48098dcd8abbdde3e9cad54fe6172"
+  },
+  "assets/cards-v3/seth.webp": {
+    "bytes": 275612,
+    "sha256": "bee5e0cab02fcce0e80c64c881994913d61527fe61ec6ae9755bb3281ac0596d"
+  },
+  "assets/cards-v3/sobek.webp": {
+    "bytes": 310742,
+    "sha256": "817006b8e470a78419b27ace192e9d50d5e36b10f715bf7798e5f48f546e799f"
+  },
+  "assets/cards-v3/soldado-esparta.webp": {
+    "bytes": 160110,
+    "sha256": "4a44d48223b14832aebe170c12b7373b5713791d7f29f2533430e136b75ce895"
+  },
+  "assets/cards-v3/thor.webp": {
+    "bytes": 293486,
+    "sha256": "3daf06549248954b02f7e1a48d972cdf5c65e888c5e17737e5301bcfa7e8b66b"
+  },
+  "assets/cards-v3/zeus.webp": {
+    "bytes": 195638,
+    "sha256": "43f4c6db29c212b04c920b5ac18b203e4c6f9d60939ea7ffdfa6a71c4d1cb890"
   },
   "assets/concept-ui/citadela-luminosa.png": {
     "bytes": 2944419,
@@ -1153,7 +1333,7 @@
   },
   "index.html": {
     "bytes": 71660,
-    "sha256": "f406365da6d6f37dfaebf010072336dafbc3d89ebaf02a23f9468a4d150a06f9"
+    "sha256": "9f1465d4035c0deda672015b16da9e4877229ce82dca8c1eeac3aba6f045f77f"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -1236,8 +1416,8 @@
     "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
   },
   "online.js": {
-    "bytes": 140476,
-    "sha256": "3b3967193544b60d7d372a7773b86b0825b5833f1777db83652b367e0ca99b95"
+    "bytes": 140493,
+    "sha256": "79d28b56a1fd617b49f96e81311f78d44a6ca9dd7c32a258a91b59d175e275e1"
   },
   "PELOTOES-DE-COMPANHEIROS.md": {
     "bytes": 884,
@@ -1248,8 +1428,8 @@
     "sha256": "302d8db7b766b26d6d94c540d2736be41ed9d802d50df496a55ce2443a091ed2"
   },
   "portal-upgrade.js": {
-    "bytes": 28984,
-    "sha256": "d265770129d00e33f536ed80e80d3b02d8673d9cefd1f599ed3e4df912ae2398"
+    "bytes": 28994,
+    "sha256": "0fa53b6d84b5fa6760d54570ed093d65b3bb59524e56d949e7e87aca77161c2b"
   },
   "practice-mode.css": {
     "bytes": 2070,
@@ -1272,8 +1452,8 @@
     "sha256": "f453aba1e1a88acdad10abd98b4695121d2cbac92e9ee3d734483c68693c02c1"
   },
   "public-hall.js": {
-    "bytes": 17648,
-    "sha256": "18734d716fb77627577fb6d6d3047407ac6e1a853e4970cc8810adf81a94b6b1"
+    "bytes": 17662,
+    "sha256": "ddcf205a048c16e07e04c7d84ee3ed7872fbe2565ad92dc675b37e78f843e029"
   },
   "queue-room-layout.css": {
     "bytes": 3034,
@@ -1346,6 +1526,10 @@
   "sidebar-arcane.js": {
     "bytes": 8124,
     "sha256": "c04a4667a32412d6dad0abf9c1add530f916043f6d1b13002ee2af5eb0b46701"
+  },
+  "SIMBOLOS-E-CARTAS-V3.md": {
+    "bytes": 870,
+    "sha256": "8713871ef52ad83cea21b1f2f3ec89a56d8a67c01066bddeb2a04217a9af59d9"
   },
   "styles.css": {
     "bytes": 204347,
@@ -1632,8 +1816,8 @@
     "sha256": "f8f48f32638609d12c2af3fda614e437026aede9effc39d9e1cb71564845d72f"
   },
   "welcome.js": {
-    "bytes": 19738,
-    "sha256": "b2487e529062299469150596b3876cf3558102272d61884cc61b3a36fbaa66ad"
+    "bytes": 19748,
+    "sha256": "03da2b4f724256308a569f47280d3bdb45666d0ac63c1e6af7b14f50f5527ad7"
   },
   "world-lore.js": {
     "bytes": 22706,

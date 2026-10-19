@@ -265,7 +265,7 @@
 
   }
 
-  const cardBadgeStyles={"Grécia":{key:"greece",color:"#245b89",asset:"assets/card-badges/greece.svg"},"Nórdicos":{key:"norse",color:"#865bb2",asset:"assets/card-badges/norse-viking.png"},"Egípcios":{key:"egypt",color:"#d3a52a",asset:"assets/card-badges/egypt.svg"},"Celtas":{key:"celtic",color:"#37844d",asset:"assets/card-badges/celtic.svg"},"Monstros":{key:"monster",color:"#171719",asset:"assets/card-badges/monster.png"},"Alyns":{key:"alyans",color:"#b83240",asset:"assets/card-badges/alyans.png"}};
+  const cardBadgeStyles={"Grécia":{key:"greece",color:"#245b89",asset:"assets/card-badges/gregos-v3.png"},"Nórdicos":{key:"norse",color:"#865bb2",asset:"assets/card-badges/nordicos-v3.png"},"Egípcios":{key:"egypt",color:"#d3a52a",asset:"assets/card-badges/egipcios-v3.png"},"Celtas":{key:"celtic",color:"#37844d",asset:"assets/card-badges/celtas-v3.png"},"Monstros":{key:"monster",color:"#171719",asset:"assets/card-badges/monstros-v3.png"},"Alyns":{key:"alyans",color:"#b83240",asset:"assets/card-badges/alyns-v3.png"}};
   async function loadPublicLore(){if(!supabase)return;const {data,error}=await supabase.from("card_lore").select(cardLoreSelect);if(!error){window.MythicApplyLore?.(data||[]);for(const card of window.MythicCardData?.()||[]){profileCardNames[card.id]=card.name;profileCardArt[card.id]=safeUrl(card.art);}}}
   async function loadPublicAnnouncement(){
     if(!supabase)return;
