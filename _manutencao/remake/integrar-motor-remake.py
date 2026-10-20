@@ -1,0 +1,28 @@
+from pathlib import Path
+root=Path(__file__).resolve().parents[1];site=root/'outputs/Mythic-Clash-Completo'
+p=site/'abilities-engine.js';s=p.read_text(encoding='utf-8-sig')
+fragment=(root/'work/remake-engine-fragment.js').read_text(encoding='utf-8')
+if '// Character expansion:' not in s:
+ s=s.replace("function terrainBonus",fragment+'\nfunction terrainBonus',1)
+ s=s.replace("function active(x,t,u){return live(x.s)||Boolean", "function active(x,t,u){if(localSilence(x,u))return false;return (u?.silenceExemptStamp&&u.silenceExemptStamp===x.s.silenceStartedBy)||live(x.s)||Boolean")
+ s=s.replace("p+=Number(u.bonus)||0;", "p+=Number(u.bonus)||0;p+=remakeBonus(x,t,u);")
+ s=s.replace("for(const equipment of [...(u.equipment||[]),...(u.copiedEquipment||[])])", "for(const equipment of (u.equipmentMuted?[]:[...(u.equipment||[]),...(u.copiedEquipment||[])]))")
+ s=s.replace("if(id==='lukyan-rei-de-todos')p*=2**Math.max(0,a.field.length-1);", "if(id==='lukyan-rei-de-todos')p+=Math.max(0,a.field.length-1);")
+ s=s.replace("function graveUnit(x,t,u,killed=true){if(killed)","function graveUnit(x,t,u,killed=true,from=x.s.remakeSource||other(t)){if(killed&&!remakeBeforeDestroy(x,t,u,from))return;if(u.token){x.s[t].field=x.s[t].field.filter(v=>v!==u);return;}if(killed)")
+ s=s.replace("shielded:shield(x,t,u.lane)});}","shielded:shield(x,t,u.lane)});remakeAfterDestroy(x,t,u,wasLive,killed);}")
+ s=s.replace("function spawn(x,id,t,owner,lane,progress=0)","function spawn(x,id,t,owner,lane,progress=0,quiet=false)")
+ s=s.replace("if(!c||c.specialOnly)throw", "if(!c||(c.specialOnly&&!(quiet&&c.token)))throw",1)
+ s=s.replace("if(active(x,t,u)&&x.s[t].field.includes(u))", "if(!quiet&&active(x,t,u)&&x.s[t].field.includes(u))")
+ s=s.replace("function eligibleGrave(x,e,g){", "function eligibleGrave(x,e,g){if(!remakeGraveAllowed(x,e,g))return false;")
+ s=s.replace("switch(e.op){\n case 'revive'", "switch(e.op){\n case 'remake':return remakeOptions(x,e);\n case 'revive'",1)
+ s=s.replace("if(!u||protectedRow(x,t,u.lane,from))return;", "if(!u||protectedRow(x,t,u.lane,from)||(amount<0&&remakeBlocked(x,t,u,from,'reduce')))return;")
+ s=s.replace("if(e.op!=='osiris'&&!['equip','anubis_revive','move_lane'].includes(e.op)&&!u)return;", "if(e.op!=='osiris'&&!['equip','anubis_revive','move_lane','remake'].includes(e.op)&&!u)return;\n if(e.op==='remake'){remakeResolve(x,e);reconcile(x);return;}\n if(e.op==='steal'&&remakeBlocked(x,en,b.field.find(v=>v.uid===selected),t,'steal'))return;")
+ s=s.replace("if(auto)e.selection=list[0].value;else{x.s.pendingEffect={id:uid(),actor:e.owner", "if(auto)e.selection=list[0].value;else{x.s.pendingEffect={id:uid(),actor:e.choiceActor||e.owner")
+ s=s.replace("resolve(x,e);}return x;}","x.s.remakeSource=e.team;resolve(x,e);delete x.s.remakeSource;}return x;}")
+ s=s.replace("init(x);reconcile(x);const t=x.r[owner]?.team;", "init(x);remakeStart(x,owner);reconcile(x);const t=x.r[owner]?.team;")
+ s=s.replace("if(Number(x.s.silenceTurns)>0", "remakeEnd(x,owner);\n if(Number(x.s.silenceTurns)>0",1)
+ s=s.replace("for(const g of x.s[t].grave)g.progress=0;", "for(const g of x.s[t].grave){g.progress=0;delete g.lockedRound;}")
+ # Explicit hero classes now complement legacy soldier tags for Achilles.
+ s=s.replace("(C[v.cardId].tags||[]).some(tag=>['heroi','soldado','espartano'].includes(tag))", "(C[v.cardId].characterClass==='Herói'||(C[v.cardId].tags||[]).some(tag=>['heroi','soldado','espartano'].includes(tag)))")
+ p.write_text(s,encoding='utf-8')
+print('Motor local integrado',flush=True)

@@ -1,3 +1,4 @@
+// Remake 20261020: 108 cartas, hologramas e chibis; cache de mídia preservado.
 // Realm scenes and enlarged fan: content-based code revisions, media cache preserved.
 // Portal, Alyn e administração — revisão 027/028.
 // Boas-vindas com escolha de mitologia e pacote inicial.

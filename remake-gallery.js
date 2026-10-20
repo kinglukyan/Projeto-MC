@@ -1,0 +1,1 @@
+const s=document.querySelector('#search'),f=document.querySelector('#faction'),norm=v=>v.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLocaleLowerCase('pt-BR');function update(){for(const a of document.querySelectorAll('main article'))a.hidden=!(norm(a.dataset.name).includes(norm(s.value))&&(!f.value||a.dataset.faction===f.value));}s.oninput=update;f.onchange=update;

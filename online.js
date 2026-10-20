@@ -266,6 +266,7 @@
   }
 
   const cardBadgeStyles={"Grécia":{key:"greece",color:"#245b89",asset:"assets/card-badges/gregos-v3.png"},"Nórdicos":{key:"norse",color:"#865bb2",asset:"assets/card-badges/nordicos-v3.png"},"Egípcios":{key:"egypt",color:"#d3a52a",asset:"assets/card-badges/egipcios-v3.png"},"Celtas":{key:"celtic",color:"#37844d",asset:"assets/card-badges/celtas-v3.png"},"Monstros":{key:"monster",color:"#171719",asset:"assets/card-badges/monstros-v3.png"},"Alyns":{key:"alyans",color:"#b83240",asset:"assets/card-badges/alyns-v3.png"}};
+  Object.assign(cardBadgeStyles,{"Japonesa":{"key":"japanese","color":"#C94832","asset":"assets/card-badges/remake-japanese.png"},"Chinesa":{"key":"chinese","color":"#18734B","asset":"assets/card-badges/remake-chinese.png"},"Brasil":{"key":"brasil","color":"#147D52","asset":"assets/card-badges/remake-brasil.png"},"Asteca":{"key":"aztec","color":"#087F8C","asset":"assets/card-badges/remake-aztec.png"},"Hindu":{"key":"hindu","color":"#B96308","asset":"assets/card-badges/remake-hindu.png"},"Mesopotâmica":{"key":"mesopotamian","color":"#414A9C","asset":"assets/card-badges/remake-mesopotamian.png"}});
   async function loadPublicLore(){if(!supabase)return;const {data,error}=await supabase.from("card_lore").select(cardLoreSelect);if(!error){window.MythicApplyLore?.(data||[]);for(const card of window.MythicCardData?.()||[]){profileCardNames[card.id]=card.name;profileCardArt[card.id]=safeUrl(card.art);}}}
   async function loadPublicAnnouncement(){
     if(!supabase)return;

@@ -1,0 +1,1085 @@
+{
+  "archive": "Cartas.zip",
+  "cards": [
+    {
+      "id": "afrodite",
+      "file": "Afrodite.png",
+      "new": false,
+      "name": "Afrodite",
+      "power": 5,
+      "faction": "Grécia",
+      "abilityTitle": "MEU AMADO TRAIDOR",
+      "ability": "Ao entrar em campo, o invocador pode escolher uma carta inimiga em campo para roubar, desde que ela tenha menos de 5 de poder."
+    },
+    {
+      "id": "japonesa-amaterasu",
+      "file": "Amaterasu.png",
+      "new": true,
+      "name": "Amaterasu",
+      "power": 5,
+      "faction": "Japonesa",
+      "abilityTitle": "AURORA CELESTIAL",
+      "ability": "Enquanto estiver em campo, as outras unidades Japonesas aliadas em sua fileira recebem +2 de poder. Não acumula com outra Amaterasu."
+    },
+    {
+      "id": "anubis",
+      "file": "Anúbis.png",
+      "new": false,
+      "name": "Anúbis",
+      "power": 5,
+      "faction": "Egípcios",
+      "abilityTitle": "TROCA VELOZ",
+      "ability": "Ao entrar, envia uma unidade inimiga ao Submundo e pode recuperar uma unidade do próprio Submundo com o mesmo poder atual que a vítima tinha antes de sair."
+    },
+    {
+      "id": "chinesa-ao-guang",
+      "file": "Ao Guang.png",
+      "new": true,
+      "name": "Ao Guang",
+      "power": 4,
+      "faction": "Chinesa",
+      "abilityTitle": "TRIBUTO DO MAR",
+      "ability": "Ao entrar, devolva um equipamento inimigo à mão de seu dono. Se fizer isso, compre 1 carta."
+    },
+    {
+      "id": "apolo",
+      "file": "Apolo.png",
+      "new": false,
+      "name": "Apolo",
+      "power": 6,
+      "faction": "Grécia",
+      "abilityTitle": "BENÇÃO DO SOL",
+      "ability": "Enquanto Apolo estiver em campo, dobra o poder de todas as cartas aliadas na sua fileira, incluindo ele próprio e as que entrarem depois."
+    },
+    {
+      "id": "aquiles",
+      "file": "Aquiles.png",
+      "new": false,
+      "name": "Aquiles",
+      "power": 3,
+      "faction": "Grécia",
+      "abilityTitle": "A FÚRIA DE MIRMIDÃO",
+      "ability": "Ao entrar em campo, ganha +1 de poder para cada soldado grego ou herói aliado em sua fileira."
+    },
+    {
+      "id": "ares",
+      "file": "Ares.png",
+      "new": false,
+      "name": "Ares",
+      "power": 5,
+      "faction": "Grécia",
+      "abilityTitle": "DEUS DA GUERRA",
+      "ability": "Ao entrar, concede +2 aos espartanos e a Leônidas e +1 aos demais gregos aliados na mesma fileira."
+    },
+    {
+      "id": "athena",
+      "file": "Athena.png",
+      "new": false,
+      "name": "Athena",
+      "power": 4,
+      "faction": "Grécia",
+      "abilityTitle": "FORMAÇÃO FALANGE",
+      "ability": "Todas as outras cartas na mesma fileira de Athena ganham +2 pontos de poder cada."
+    },
+    {
+      "id": "beowulf",
+      "file": "Beowulf.png",
+      "new": false,
+      "name": "Beowulf",
+      "power": 3,
+      "faction": "Nórdicos",
+      "abilityTitle": "CORAGEM DE GEAT",
+      "ability": "Ao entrar em campo, se houver alguma carta da facção Monstros na mesa, ganha +3 pontos de poder adicional."
+    },
+    {
+      "id": "brasil-boitata",
+      "file": "Boitatá.png",
+      "new": true,
+      "name": "Boitatá",
+      "power": 6,
+      "faction": "Brasil",
+      "abilityTitle": "FOGO QUE PROTEGE",
+      "ability": "Uma vez por Round, enquanto Boitatá estiver em campo com a habilidade ativa, impeça a primeira destruição causada por um efeito inimigo contra outra unidade Brasil aliada de sua fileira."
+    },
+    {
+      "id": "brasil-boto",
+      "file": "Boto Encantado.png",
+      "new": true,
+      "name": "Boto Encantado",
+      "power": 5,
+      "faction": "Brasil",
+      "abilityTitle": "BAILE DO ENCANTADO",
+      "ability": "Ao entrar, você pode devolver outra unidade Brasil aliada de sua fileira para a sua mão. Se ela voltar para a mão, Boto recebe +2 de poder até o fim do Round. Retornar à mão não conta como destruição."
+    },
+    {
+      "id": "celtas-brigid",
+      "file": "Brigid.png",
+      "new": true,
+      "name": "Brigid",
+      "power": 4,
+      "faction": "Celtas",
+      "abilityTitle": "CHAMA DE RENOVAÇÃO",
+      "ability": "Ao entrar, remova as reduções de poder de outra unidade aliada em sua fileira e conceda +2 a ela até o fim do Round."
+    },
+    {
+      "id": "butter",
+      "file": "Butter.png",
+      "new": false,
+      "name": "Butter",
+      "power": 4,
+      "faction": "Alyns",
+      "abilityTitle": "CLEPTOMANÍACO",
+      "ability": "Ao entrar, rouba uma carta aleatória da mão inimiga. Sem cartas na mão, rouba do baralho; se também estiver vazio, do Submundo inimigo."
+    },
+    {
+      "id": "brasil-caipora",
+      "file": "Caipora.png",
+      "new": true,
+      "name": "Caipora",
+      "power": 4,
+      "faction": "Brasil",
+      "abilityTitle": "PACTO DA MATA",
+      "ability": "Enquanto Caipora estiver em campo com a habilidade ativa, as outras unidades Brasil aliadas de sua fileira recebem +1 de poder, incluindo as que chegarem depois. O bônus termina ao sair da fileira ou quando a habilidade deixar de atuar."
+    },
+    {
+      "id": "asteca-chalchiuhtlicue",
+      "file": "Chalchiuhtlicue.png",
+      "new": true,
+      "name": "Chalchiuhtlicue",
+      "power": 4,
+      "faction": "Asteca",
+      "abilityTitle": "ÁGUAS DO RENASCIMENTO",
+      "ability": "Ao entrar, recupere uma unidade Asteca de poder base até 4 do seu submundo para sua mão."
+    },
+    {
+      "id": "chinesa-change",
+      "file": "Chang'e.png",
+      "new": true,
+      "name": "Chang'e",
+      "power": 4,
+      "faction": "Chinesa",
+      "abilityTitle": "REFÚGIO NA LUA",
+      "ability": "Ao entrar, escolha outra unidade aliada nesta fileira. Até o início do seu próximo turno, ela não pode ser destruída ou roubada por efeitos inimigos."
+    },
+    {
+      "id": "asteca-coatlicue",
+      "file": "Coatlicue.png",
+      "new": true,
+      "name": "Coatlicue",
+      "power": 5,
+      "faction": "Asteca",
+      "abilityTitle": "VENTRE DA TERRA",
+      "ability": "Enquanto estiver em campo, Coatlicue recebe +1 de poder por cada 2 unidades no seu submundo."
+    },
+    {
+      "id": "brasil-cuca",
+      "file": "Cuca.png",
+      "new": true,
+      "name": "Cuca",
+      "power": 4,
+      "faction": "Brasil",
+      "abilityTitle": "NÉVOA DOS PESADELOS",
+      "ability": "Ao entrar, silencie a habilidade de uma unidade inimiga na fileira oposta pelas próximas 2 jogadas da partida, contando aliados e inimigos. A contagem começa após esta jogada."
+    },
+    {
+      "id": "brasil-curupira",
+      "file": "Curupira.png",
+      "new": true,
+      "name": "Curupira",
+      "power": 5,
+      "faction": "Brasil",
+      "abilityTitle": "CAMINHOS INVERTIDOS",
+      "ability": "Enquanto Curupira estiver em campo com a habilidade ativa, efeitos inimigos não podem mover as unidades aliadas de sua fileira."
+    },
+    {
+      "id": "celtas-cu-chulainn",
+      "file": "Cú Chulainn.png",
+      "new": true,
+      "name": "Cú Chulainn",
+      "power": 7,
+      "faction": "Celtas",
+      "abilityTitle": "FÚRIA DO CÃO",
+      "ability": "Na primeira vez em cada Round que outra unidade aliada de sua fileira for destruída, Cú Chulainn recebe +4 até o fim do Round."
+    },
+    {
+      "id": "celtas-dagda",
+      "file": "Dagda.png",
+      "new": true,
+      "name": "Dagda",
+      "power": 4,
+      "faction": "Celtas",
+      "abilityTitle": "CALDEIRÃO DA ABUNDÂNCIA",
+      "ability": "Ao entrar, ressuscite uma unidade Celta de poder base até 3 do seu submundo nesta fileira, sem ativar sua habilidade de entrada."
+    },
+    {
+      "id": "celtas-dama-do-lago",
+      "file": "Dama do Lago.png",
+      "new": true,
+      "name": "Dama do Lago",
+      "power": 4,
+      "faction": "Celtas",
+      "abilityTitle": "DÁDIVA DO LAGO",
+      "ability": "Ao entrar, recupere um equipamento do seu submundo para sua mão."
+    },
+    {
+      "id": "dionisio",
+      "file": "Dionísio.png",
+      "new": false,
+      "name": "Dionísio",
+      "power": 4,
+      "faction": "Grécia",
+      "abilityTitle": "FESTIVAL DO VINHO",
+      "ability": "Ao entrar, silencia efeitos pelas próximas 3 jogadas da partida, contando aliados e adversários. Fileiras inimigas protegidas por Heimdall resistem ao silêncio."
+    },
+    {
+      "id": "hindu-durga",
+      "file": "Durga.png",
+      "new": true,
+      "name": "Durga",
+      "power": 7,
+      "faction": "Hindu",
+      "abilityTitle": "MURALHA DA DEUSA",
+      "ability": "Enquanto Durga estiver em campo, as outras unidades Hindus aliadas em sua fileira não podem ser destruídas por habilidades inimigas."
+    },
+    {
+      "id": "mesopotamica-enki",
+      "file": "Enki.png",
+      "new": true,
+      "name": "Enki",
+      "power": 4,
+      "faction": "Mesopotâmica",
+      "abilityTitle": "ÁGUAS DA SABEDORIA",
+      "ability": "Ao entrar, recupere uma carta de Local ou Terreno do seu submundo para sua mão."
+    },
+    {
+      "id": "mesopotamica-enlil",
+      "file": "Enlil.png",
+      "new": true,
+      "name": "Enlil",
+      "power": 6,
+      "faction": "Mesopotâmica",
+      "abilityTitle": "SOPRO DOS IMPÉRIOS",
+      "ability": "Ao entrar, mova outra unidade aliada para uma fileira aliada com espaço. Ela recebe +2 até o fim do Round se for Mesopotâmica."
+    },
+    {
+      "id": "mesopotamica-ereshkigal",
+      "file": "Ereshkigal.png",
+      "new": true,
+      "name": "Ereshkigal",
+      "power": 7,
+      "faction": "Mesopotâmica",
+      "abilityTitle": "TRONO DO SUBMUNDO",
+      "ability": "Enquanto Ereshkigal estiver em campo, unidades no submundo inimigo não podem ser ressuscitadas na fileira oposta."
+    },
+    {
+      "id": "chinesa-erlang-shen",
+      "file": "Erlang Shen.png",
+      "new": true,
+      "name": "Erlang Shen",
+      "power": 6,
+      "faction": "Chinesa",
+      "abilityTitle": "OLHO DA VERDADE",
+      "ability": "Ao entrar, remova os bônus positivos de poder de uma unidade inimiga à sua escolha. Equipamentos permanecem e deixam de conceder poder neste Round."
+    },
+    {
+      "id": "chinesa-fuxi",
+      "file": "Fuxi.png",
+      "new": true,
+      "name": "Fuxi",
+      "power": 4,
+      "faction": "Chinesa",
+      "abilityTitle": "OITO TRIGRAMAS",
+      "ability": "Ao entrar, veja as 3 primeiras cartas do seu deck e devolva-as ao topo na ordem que quiser. Compre 1 carta."
+    },
+    {
+      "id": "japonesa-fujin",
+      "file": "Fūjin.png",
+      "new": true,
+      "name": "Fūjin",
+      "power": 4,
+      "faction": "Japonesa",
+      "abilityTitle": "VENTOS ERRANTES",
+      "ability": "Ao entrar, mova outra unidade aliada para uma fileira aliada à sua escolha que tenha espaço."
+    },
+    {
+      "id": "hindu-ganesha",
+      "file": "Ganesha.png",
+      "new": true,
+      "name": "Ganesha",
+      "power": 4,
+      "faction": "Hindu",
+      "abilityTitle": "ABRIDOR DE CAMINHOS",
+      "ability": "Ao entrar, remova o silêncio de outra unidade aliada. Se nenhuma estiver silenciada, compre 1 carta."
+    },
+    {
+      "id": "chinesa-guanyin",
+      "file": "Guanyin.png",
+      "new": true,
+      "name": "Guanyin",
+      "power": 4,
+      "faction": "Chinesa",
+      "abilityTitle": "COMPAIXÃO INFINITA",
+      "ability": "Ao entrar, recupere para sua mão uma unidade de poder base até 4 do seu submundo."
+    },
+    {
+      "id": "guardiao-nordico",
+      "file": "Guardião Nórdico.png",
+      "new": false,
+      "name": "Guardião Nórdico",
+      "power": 2,
+      "faction": "Nórdicos",
+      "abilityTitle": "VONTADE DO NORTE",
+      "ability": "Cada outro Guardião Nórdico aliado na mesma fileira dobra seu poder. O efeito é recíproco e acumulativo."
+    },
+    {
+      "id": "japonesa-hachiman",
+      "file": "Hachiman.png",
+      "new": true,
+      "name": "Hachiman",
+      "power": 6,
+      "faction": "Japonesa",
+      "abilityTitle": "ESTANDARTE DE GUERRA",
+      "ability": "Ao fim de cada turno do seu dono, Hachiman recebe +1 de poder até o fim do Round se houver outra unidade aliada nesta fileira."
+    },
+    {
+      "id": "hades",
+      "file": "Hades.png",
+      "new": false,
+      "name": "Hades",
+      "power": 7,
+      "faction": "Grécia",
+      "abilityTitle": "SUBMUNDO RESPONDA",
+      "ability": "Ao entrar, escolha uma unidade do seu próprio Submundo para retornar na fileira de Hades, ativando sua habilidade de entrada."
+    },
+    {
+      "id": "hindu-hanuman",
+      "file": "Hanuman.png",
+      "new": true,
+      "name": "Hanuman",
+      "power": 6,
+      "faction": "Hindu",
+      "abilityTitle": "SALTO DEVOTO",
+      "ability": "Ao entrar, você pode mover Hanuman para outra fileira aliada com espaço. Se mover, ele recebe +2 até o fim do Round."
+    },
+    {
+      "id": "hefesto",
+      "file": "Hefestos.png",
+      "new": false,
+      "name": "Hefestos",
+      "power": 4,
+      "faction": "Grécia",
+      "abilityTitle": "MELHORIA ARTEFATUAL",
+      "ability": "Ao entrar em campo, aumenta em +3 os pontos de poder de um personagem com carta de equipamento."
+    },
+    {
+      "id": "heimdall",
+      "file": "Heimdall.png",
+      "new": false,
+      "name": "Heimdall",
+      "power": 3,
+      "faction": "Nórdicos",
+      "abilityTitle": "VIGÍLIA DE BIFRÖST",
+      "ability": "Enquanto ativo, protege a própria fileira de efeitos inimigos, incluindo destruição, roubo, movimento, transformação e alterações de poder. Medusa afeta o jogador e não é bloqueada."
+    },
+    {
+      "id": "hermes",
+      "file": "Hermes.png",
+      "new": false,
+      "name": "Hermes",
+      "power": 3,
+      "faction": "Grécia",
+      "abilityTitle": "TROCA VELOZ",
+      "ability": "Ao entrar em campo, você pode mover outra carta sua de uma fileira para outra, reorganizando sua pontuação."
+    },
+    {
+      "id": "homem",
+      "file": "Homem.png",
+      "new": false,
+      "name": "Homem",
+      "power": 1,
+      "faction": "Monstros",
+      "abilityTitle": "JUNTOS SOMOS FORTES",
+      "ability": "Cada outro Homem aliado na mesma fileira dobra seu poder. No Eclipse Lunar, Homem da facção Monstros vira Lobisomem Beta; fora do Lunar, recupera sua forma original."
+    },
+    {
+      "id": "chinesa-hou-yi",
+      "file": "Hou Yi.png",
+      "new": true,
+      "name": "Hou Yi",
+      "power": 6,
+      "faction": "Chinesa",
+      "abilityTitle": "FLECHA DOS NOVE SÓIS",
+      "ability": "Ao entrar, uma unidade inimiga à sua escolha perde 4 de poder até o fim do Round."
+    },
+    {
+      "id": "asteca-huitzilopochtli",
+      "file": "Huitzilopochtli.png",
+      "new": true,
+      "name": "Huitzilopochtli",
+      "power": 5,
+      "faction": "Asteca",
+      "abilityTitle": "MARCHA DO SOL",
+      "ability": "Ao entrar, você pode destruir outra unidade aliada desta fileira. Se fizer isso, as demais unidades aliadas já nela recebem +2 até o fim do Round."
+    },
+    {
+      "id": "hercules",
+      "file": "Hércules.png",
+      "new": false,
+      "name": "Hércules",
+      "power": 4,
+      "faction": "Grécia",
+      "abilityTitle": "OS DOZE TRABALHOS",
+      "ability": "No fim de cada turno do dono, ganha +1 de poder, até 12 de progresso. Todo progresso é zerado ao trocar de Round."
+    },
+    {
+      "id": "horus",
+      "file": "Hórus.png",
+      "new": false,
+      "name": "Hórus",
+      "power": 4,
+      "faction": "Egípcios",
+      "abilityTitle": "OLHO DE HÓRUS",
+      "ability": "Ao entrar, somente o dono vê até duas cartas aleatórias da mão adversária, inclusive em duplas."
+    },
+    {
+      "id": "brasil-iara",
+      "file": "Iara.png",
+      "new": true,
+      "name": "Iara",
+      "power": 5,
+      "faction": "Brasil",
+      "abilityTitle": "CANTO DAS ÁGUAS",
+      "ability": "Ao entrar, escolha uma unidade inimiga com até 5 de poder atual na fileira oposta. Traga-a para a fileira de Iara, se houver espaço. A habilidade de entrada da unidade não é ativada."
+    },
+    {
+      "id": "chinesa-imperador-jade",
+      "file": "Imperador de Jade.png",
+      "new": true,
+      "name": "Imperador de Jade",
+      "power": 8,
+      "faction": "Chinesa",
+      "abilityTitle": "MANDATO CELESTIAL",
+      "ability": "Enquanto estiver em campo, as outras unidades Chinesas aliadas em sua fileira recebem +1 de poder para cada fileira aliada ocupada."
+    },
+    {
+      "id": "japonesa-inari",
+      "file": "Inari.png",
+      "new": true,
+      "name": "Inari",
+      "power": 3,
+      "faction": "Japonesa",
+      "abilityTitle": "COLHEITA DAS RAPOSAS",
+      "ability": "Ao entrar, compre 1 carta. Se houver outra unidade Japonesa aliada nesta fileira, Inari recebe +2 até o fim do Round."
+    },
+    {
+      "id": "hindu-indra",
+      "file": "Indra.png",
+      "new": true,
+      "name": "Indra",
+      "power": 5,
+      "faction": "Hindu",
+      "abilityTitle": "VAJRA CELESTIAL",
+      "ability": "Ao entrar, destrua um equipamento inimigo à sua escolha. Se não houver equipamento inimigo, Indra recebe +2 até o fim do Round."
+    },
+    {
+      "id": "mesopotamica-ishtar",
+      "file": "Ishtar.png",
+      "new": true,
+      "name": "Ishtar",
+      "power": 5,
+      "faction": "Mesopotâmica",
+      "abilityTitle": "ESTRELA DA CONQUISTA",
+      "ability": "Ao entrar, se sua fileira tiver menos poder total que a oposta, roube uma unidade inimiga dela de poder atual até 4 para sua fileira, se houver espaço."
+    },
+    {
+      "id": "japonesa-izanagi",
+      "file": "Izanagi.png",
+      "new": true,
+      "name": "Izanagi",
+      "power": 5,
+      "faction": "Japonesa",
+      "abilityTitle": "SOPRO DA CRIAÇÃO",
+      "ability": "Ao entrar, ressuscite uma unidade Japonesa de poder base até 4 do seu submundo nesta fileira, sem ativar sua habilidade de entrada."
+    },
+    {
+      "id": "japonesa-izanami",
+      "file": "Izanami.png",
+      "new": true,
+      "name": "Izanami",
+      "power": 6,
+      "faction": "Japonesa",
+      "abilityTitle": "PORTÕES DE YOMI",
+      "ability": "Ao entrar, escolha uma unidade inimiga de poder atual até 5. Destrua-a e dê -2 a Izanami até o fim do Round."
+    },
+    {
+      "id": "hindu-kali",
+      "file": "Kali.png",
+      "new": true,
+      "name": "Kali",
+      "power": 7,
+      "faction": "Hindu",
+      "abilityTitle": "FIM DO CICLO",
+      "ability": "Ao entrar, escolha outra unidade aliada nesta fileira e destrua-a. Depois, destrua uma unidade inimiga de poder atual até o dela antes da destruição."
+    },
+    {
+      "id": "hindu-krishna",
+      "file": "Krishna.png",
+      "new": true,
+      "name": "Krishna",
+      "power": 5,
+      "faction": "Hindu",
+      "abilityTitle": "CANÇÃO DO DEVER",
+      "ability": "Enquanto Krishna estiver em campo, as outras unidades Hindus aliadas em sua fileira recebem +1 de poder por equipamento nelas, até +3 por unidade."
+    },
+    {
+      "id": "hindu-lakshmi",
+      "file": "Lakshmi.png",
+      "new": true,
+      "name": "Lakshmi",
+      "power": 3,
+      "faction": "Hindu",
+      "abilityTitle": "FORTUNA FLORESCENTE",
+      "ability": "Ao entrar, compre 1 carta. Se houver outra unidade Hindu aliada nesta fileira, dê +2 a ela até o fim do Round."
+    },
+    {
+      "id": "brasil-lampiao",
+      "file": "Lampião.png",
+      "new": true,
+      "name": "Lampião",
+      "power": 6,
+      "faction": "Brasil",
+      "abilityTitle": "EMBOSCADA DA CAATINGA",
+      "ability": "Ao entrar, você pode mover outra unidade Brasil aliada para a fileira de Lampião, se houver espaço. Se ela mudar de fileira, recebe +2 de poder até o fim do Round."
+    },
+    {
+      "id": "celtas-lancelot",
+      "file": "Lancelot.png",
+      "new": true,
+      "name": "Lancelot",
+      "power": 4,
+      "faction": "Celtas",
+      "abilityTitle": "CAMPEÃO DO REI",
+      "ability": "Enquanto houver outra unidade Celta aliada na mesma fileira, Lancelot recebe +3 de poder."
+    },
+    {
+      "id": "lobo-alfa",
+      "file": "Lobisomem Alfa.png",
+      "new": false,
+      "name": "Lobisomem Alfa",
+      "power": 4,
+      "faction": "Monstros",
+      "abilityTitle": "UIVO DE ALFA",
+      "ability": "Recebe +2 de poder por Lobisomem Beta aliado na mesma fileira."
+    },
+    {
+      "id": "lobo-beta",
+      "file": "Lobisomem Beta.png",
+      "new": false,
+      "name": "Lobisomem Beta",
+      "power": 2,
+      "faction": "Monstros",
+      "abilityTitle": "UIVO DO BETINHA",
+      "ability": "Ao entrar em campo, chama os outros Betas que estiverem na mão do invocador para o campo."
+    },
+    {
+      "id": "lobo-omega",
+      "file": "Lobisomem Omega.png",
+      "new": false,
+      "name": "Lobisomem Omega",
+      "power": 1,
+      "faction": "Monstros",
+      "abilityTitle": "ENCURRALADO",
+      "ability": "Se o Lobisomem Omega for o único na sua fileira de batalha e o inimigo tiver mais poder que o Omega, seu poder aumenta em 8."
+    },
+    {
+      "id": "loki",
+      "file": "Loki.png",
+      "new": false,
+      "name": "Loki",
+      "power": 3,
+      "faction": "Nórdicos",
+      "abilityTitle": "ILUSÃO TRAIÇOEIRA",
+      "ability": "Ao entrar, copia a habilidade, a identidade e o poder completo de um inimigo, incluindo bônus e equipamentos. A cópia termina ao sair do campo ou encerrar o Round."
+    },
+    {
+      "id": "celtas-lugh",
+      "file": "Lugh.png",
+      "new": true,
+      "name": "Lugh",
+      "power": 6,
+      "faction": "Celtas",
+      "abilityTitle": "MESTRE DAS ARTES",
+      "ability": "Ao entrar, escolha: compre 1 carta ou conceda +3 de poder a outra unidade aliada desta fileira até o fim do Round."
+    },
+    {
+      "id": "lukyan",
+      "file": "Lukyan — Rei da Festa.png",
+      "new": false,
+      "name": "Lukyan — Rei da Festa",
+      "power": 3,
+      "faction": "Alyns",
+      "abilityTitle": "REI DA FESTA",
+      "ability": "Enquanto houver outro aliado na mesma fileira, recebe +3 de poder. O bônus é recalculado ao mudar de fileira."
+    },
+    {
+      "id": "lukyan-rei-de-todos",
+      "file": "Lukyan — Rei de Todos.png",
+      "new": false,
+      "name": "Lukyan — Rei de Todos",
+      "power": 6,
+      "faction": "Alyns",
+      "abilityTitle": "REI DE TODOS",
+      "ability": "COM EXCALIBUR, SEU PODER GANHA 1 PONTO POR CADA OUTRO ALIADO EM TODO O SEU CAMPO."
+    },
+    {
+      "id": "brasil-mapinguari",
+      "file": "Mapinguari.png",
+      "new": true,
+      "name": "Mapinguari",
+      "power": 4,
+      "faction": "Brasil",
+      "abilityTitle": "RUGIDO DA FLORESTA",
+      "ability": "Enquanto houver pelo menos 2 outras unidades Brasil aliadas em sua fileira, Mapinguari recebe +3 de poder. O bônus é recalculado quando unidades entram, saem ou mudam de fileira."
+    },
+    {
+      "id": "mesopotamica-marduk",
+      "file": "Marduk.png",
+      "new": true,
+      "name": "Marduk",
+      "power": 7,
+      "faction": "Mesopotâmica",
+      "abilityTitle": "DECRETO DA BABILÔNIA",
+      "ability": "Ao entrar, destrua uma unidade inimiga de poder atual até 6. Marduk perde 2 de poder até o fim do Round se destruir uma unidade."
+    },
+    {
+      "id": "medusa",
+      "file": "Medusa.png",
+      "new": false,
+      "name": "Medusa",
+      "power": 4,
+      "faction": "Grécia",
+      "abilityTitle": "VIRE PEDRA",
+      "ability": "Ao entrar, os jogadores inimigos perdem seu próximo turno. Em duplas, afeta ambos os adversários, mesmo com Heimdall."
+    },
+    {
+      "id": "celtas-merlin",
+      "file": "Merlin.png",
+      "new": true,
+      "name": "Merlin",
+      "power": 3,
+      "faction": "Celtas",
+      "abilityTitle": "VISÃO DE AVALON",
+      "ability": "Ao entrar, veja as 3 primeiras cartas do seu deck. Escolha 1 para sua mão e devolva as demais ao fundo, na ordem que quiser."
+    },
+    {
+      "id": "asteca-mictecacihuatl",
+      "file": "Mictecacíhuatl.png",
+      "new": true,
+      "name": "Mictecacíhuatl",
+      "power": 4,
+      "faction": "Asteca",
+      "abilityTitle": "MEMÓRIA DOS MORTOS",
+      "ability": "Ao entrar, compre 1 carta se seu submundo contiver uma unidade. Se contiver 3 ou mais, Mictecacíhuatl também recebe +2 até o fim do Round."
+    },
+    {
+      "id": "asteca-mictlantecuhtli",
+      "file": "Mictlantecuhtli.png",
+      "new": true,
+      "name": "Mictlantecuhtli",
+      "power": 5,
+      "faction": "Asteca",
+      "abilityTitle": "SENHOR DE MICTLAN",
+      "ability": "Ao entrar, escolha até 2 unidades no submundo inimigo. Elas não podem sair de lá até o fim do Round."
+    },
+    {
+      "id": "minotauro",
+      "file": "Minotauro.png",
+      "new": false,
+      "name": "Minotauro",
+      "power": 3,
+      "faction": "Grécia",
+      "abilityTitle": "FÚRIA DO LABIRINTO",
+      "ability": "Ao entrar em campo, se estiver sozinho em sua fileira de batalha, ganha +3 pontos de poder."
+    },
+    {
+      "id": "celtas-morgana",
+      "file": "Morgana.png",
+      "new": true,
+      "name": "Morgana",
+      "power": 5,
+      "faction": "Celtas",
+      "abilityTitle": "VÉU DA FEITICEIRA",
+      "ability": "Ao entrar, escolha uma unidade inimiga na fileira oposta. Silencie sua habilidade até o fim do próximo turno do dono dela."
+    },
+    {
+      "id": "celtas-morrigan",
+      "file": "Morrigan.png",
+      "new": true,
+      "name": "Morrigan",
+      "power": 5,
+      "faction": "Celtas",
+      "abilityTitle": "PRESSÁGIO DOS CORVOS",
+      "ability": "Ao entrar, uma unidade inimiga à sua escolha perde 1 de poder por unidade no submundo inimigo, até o fim do Round."
+    },
+    {
+      "id": "brasil-mula-sem-cabeca",
+      "file": "Mula sem Cabeça.png",
+      "new": true,
+      "name": "Mula sem Cabeça",
+      "power": 7,
+      "faction": "Brasil",
+      "abilityTitle": "GALOPE EM CHAMAS",
+      "ability": "Ao entrar, reduza em 2 o poder de cada unidade inimiga que já estiver na fileira oposta, até o fim do Round, sem reduzir abaixo de 0. Não afeta unidades que entrarem depois."
+    },
+    {
+      "id": "mulher",
+      "file": "Mulher.png",
+      "new": false,
+      "name": "Mulher",
+      "power": 2,
+      "faction": "Monstros",
+      "abilityTitle": "AINDA SOU ALFA",
+      "ability": "Cada Homem aliado na mesma fileira dobra seu poder. No Eclipse Lunar, Mulher da facção Monstros vira Lobisomem Alfa; fora do Lunar, recupera sua forma original."
+    },
+    {
+      "id": "mesopotamica-nanna-sin",
+      "file": "Nanna - Sîn.png",
+      "new": true,
+      "name": "Nanna - Sîn",
+      "power": 5,
+      "faction": "Mesopotâmica",
+      "abilityTitle": "CRESCENTE DE UR",
+      "ability": "Ao fim de cada turno do seu dono, Nanna / Sin recebe +1 de poder até o fim do Round se houver uma carta de Clima em campo."
+    },
+    {
+      "id": "mesopotamica-nergal",
+      "file": "Nergal.png",
+      "new": true,
+      "name": "Nergal",
+      "power": 6,
+      "faction": "Mesopotâmica",
+      "abilityTitle": "SOMBRA DA PESTE",
+      "ability": "Ao entrar, todas as outras unidades já presentes na fileira de Nergal e na fileira oposta perdem 2 de poder até o fim do Round."
+    },
+    {
+      "id": "chinesa-nezha",
+      "file": "Nezha.png",
+      "new": true,
+      "name": "Nezha",
+      "power": 6,
+      "faction": "Chinesa",
+      "abilityTitle": "RODAS DE FOGO",
+      "ability": "Ao entrar, mova uma unidade inimiga da fileira oposta para outra fileira inimiga com espaço. Ela perde 2 de poder até o fim do Round."
+    },
+    {
+      "id": "mesopotamica-ninurta",
+      "file": "Ninurta.png",
+      "new": true,
+      "name": "Ninurta",
+      "power": 7,
+      "faction": "Mesopotâmica",
+      "abilityTitle": "CAÇADOR DE MONSTROS",
+      "ability": "Ao entrar, destrua uma unidade inimiga da facção Monstros com poder atual até 6 na fileira oposta."
+    },
+    {
+      "id": "chinesa-nuwa",
+      "file": "Nüwa.png",
+      "new": true,
+      "name": "Nüwa",
+      "power": 5,
+      "faction": "Chinesa",
+      "abilityTitle": "REMENDO DOS CÉUS",
+      "ability": "Ao entrar, remova as reduções de poder de até 2 outras unidades aliadas em sua fileira."
+    },
+    {
+      "id": "odin",
+      "file": "Odin.png",
+      "new": false,
+      "name": "Odin",
+      "power": 8,
+      "faction": "Nórdicos",
+      "abilityTitle": "SABEDORIA DE YGGDRASIL",
+      "ability": "No início do próximo turno do dono, observe a carta do topo do seu baralho. Você pode descartá-la para ganhar +2 na soma da rodada ou mantê-la no topo."
+    },
+    {
+      "id": "osiris",
+      "file": "Osíris.png",
+      "new": false,
+      "name": "Osíris",
+      "power": 6,
+      "faction": "Egípcios",
+      "abilityTitle": "JUSTIÇA CÍCLICA",
+      "ability": "Ao ser destruído e enviado para o cemitério, dobra o poder de outra carta aliada aleatória em campo."
+    },
+    {
+      "id": "poseidon",
+      "file": "Poseidon.png",
+      "new": false,
+      "name": "Poseidon",
+      "power": 7,
+      "faction": "Grécia",
+      "abilityTitle": "DEUS DO MAR",
+      "ability": "Ao entrar, o tsunami reduz em 2 o poder das unidades inimigas presentes na fileira superior. Novas entradas não são afetadas."
+    },
+    {
+      "id": "asteca-quetzalcoatl",
+      "file": "Quetzalcóatl.png",
+      "new": true,
+      "name": "Quetzalcóatl",
+      "power": 5,
+      "faction": "Asteca",
+      "abilityTitle": "SOPRO DA SERPENTE",
+      "ability": "Ao entrar, compre 1 carta. Depois, você pode mover outra unidade aliada para uma fileira aliada com espaço."
+    },
+    {
+      "id": "ragnar",
+      "file": "Ragnar.png",
+      "new": false,
+      "name": "Ragnar",
+      "power": 3,
+      "faction": "Nórdicos",
+      "abilityTitle": "INVASORES DE KATGAT",
+      "ability": "Ao entrar em campo, move uma carta aliada de baixo poder de outra fileira para a mesma fileira de Ragnar, unindo as forças."
+    },
+    {
+      "id": "japonesa-raijin",
+      "file": "Raijin.png",
+      "new": true,
+      "name": "Raijin",
+      "power": 6,
+      "faction": "Japonesa",
+      "abilityTitle": "TAMBORES DO TROVÃO",
+      "ability": "Ao entrar, escolha até 2 unidades inimigas na fileira oposta. Cada uma perde 2 de poder até o fim do Round."
+    },
+    {
+      "id": "rei-arthur",
+      "file": "Rei Arthur.png",
+      "new": true,
+      "name": "Rei Arthur",
+      "power": 5,
+      "faction": "Celtas",
+      "abilityTitle": "JURAMENTO DA TÁVOLA",
+      "ability": "Enquanto Arthur estiver em campo, as outras unidades Celtas aliadas em sua fileira recebem +1 de poder."
+    },
+    {
+      "id": "japonesa-ryujin",
+      "file": "Ryūjin.png",
+      "new": true,
+      "name": "Ryūjin",
+      "power": 8,
+      "faction": "Japonesa",
+      "abilityTitle": "MARÉ DO REI DRAGÃO",
+      "ability": "Ao entrar, as unidades inimigas já presentes na fileira oposta perdem 2 de poder até o fim do Round."
+    },
+    {
+      "id": "ra",
+      "file": "Rá.png",
+      "new": false,
+      "name": "Rá",
+      "power": 8,
+      "faction": "Egípcios",
+      "abilityTitle": "LUZ DA CRIAÇÃO",
+      "ability": "No fim de cada turno do dono, concede +1 de poder a cada egípcio aliado na mesma fileira. Os bônus são limpos no fim do Round."
+    },
+    {
+      "id": "brasil-saci",
+      "file": "Saci-Pererê.png",
+      "new": true,
+      "name": "Saci-Pererê",
+      "power": 3,
+      "faction": "Brasil",
+      "abilityTitle": "REDEMOINHO TRAVESSO",
+      "ability": "Ao entrar, escolha uma unidade inimiga na fileira oposta. Mova-a para outra fileira inimiga à sua escolha, se houver espaço."
+    },
+    {
+      "id": "hindu-saraswati",
+      "file": "Saraswati.png",
+      "new": true,
+      "name": "Saraswati",
+      "power": 4,
+      "faction": "Hindu",
+      "abilityTitle": "MELODIA DO CONHECIMENTO",
+      "ability": "Ao entrar, veja as 2 primeiras cartas do seu deck. Adicione 1 à sua mão e coloque a outra no fundo."
+    },
+    {
+      "id": "seth",
+      "file": "Seth.png",
+      "new": false,
+      "name": "Seth",
+      "power": 4,
+      "faction": "Egípcios",
+      "abilityTitle": "TROVOADA DO CAOS",
+      "ability": "Ao entrar em campo, escolhe uma fileira e troca os valores de poder de todas as cartas nela, aliadas e inimigas, de forma aleatória entre elas."
+    },
+    {
+      "id": "hindu-shiva",
+      "file": "Shiva.png",
+      "new": true,
+      "name": "Shiva",
+      "power": 8,
+      "faction": "Hindu",
+      "abilityTitle": "DANÇA DA RENOVAÇÃO",
+      "ability": "Ao entrar, destrua a outra unidade de menor poder atual em cada lado. Em caso de empate, seu dono escolhe entre as empatadas."
+    },
+    {
+      "id": "sobek",
+      "file": "Sobek.png",
+      "new": false,
+      "name": "Sobek",
+      "power": 2,
+      "faction": "Egípcios",
+      "abilityTitle": "INUNDAÇÃO FERTILIZANTE",
+      "ability": "Ao entrar em campo, se houver outra carta aliada na mesma fileira, ganha +2 de poder adicional."
+    },
+    {
+      "id": "soldado-esparta",
+      "file": "Soldado de Esparta.png",
+      "new": false,
+      "name": "Soldado de Esparta",
+      "power": 3,
+      "faction": "Grécia",
+      "abilityTitle": "FORMAÇÃO ESPARTANA",
+      "ability": "Cada outro Soldado de Esparta aliado na mesma fileira dobra o poder desta carta. O efeito é recíproco e acumulativo."
+    },
+    {
+      "id": "chinesa-sun-wukong",
+      "file": "Sun Wukong.png",
+      "new": true,
+      "name": "Sun Wukong",
+      "power": 7,
+      "faction": "Chinesa",
+      "abilityTitle": "PELOS DO REI MACACO",
+      "ability": "Ao entrar, invoque nesta fileira até 2 Clones Macacos de poder 2, sem habilidade. Eles são unidades Chinesas e desaparecem ao fim do Round."
+    },
+    {
+      "id": "japonesa-susanoo",
+      "file": "Susanoo.png",
+      "new": true,
+      "name": "Susanoo",
+      "power": 5,
+      "faction": "Japonesa",
+      "abilityTitle": "CORTE DA TEMPESTADE",
+      "ability": "Ao entrar, destrua uma unidade inimiga de poder atual até 4 na fileira oposta."
+    },
+    {
+      "id": "asteca-tezcatlipoca",
+      "file": "Tezcatlipoca.png",
+      "new": true,
+      "name": "Tezcatlipoca",
+      "power": 6,
+      "faction": "Asteca",
+      "abilityTitle": "ESPELHO DE OBSIDIANA",
+      "ability": "Ao entrar, escolha outra unidade aliada nesta fileira. Troque o poder atual dela com o de Tezcatlipoca até o fim do Round."
+    },
+    {
+      "id": "thor",
+      "file": "Thor.png",
+      "new": false,
+      "name": "Thor",
+      "power": 6,
+      "faction": "Nórdicos",
+      "abilityTitle": "MARTELADA DE MJÖLNIR",
+      "ability": "Ao entrar em campo, escolhe a carta inimiga de maior poder e a envia para o Submundo."
+    },
+    {
+      "id": "mesopotamica-tiamat",
+      "file": "Tiamat.png",
+      "new": true,
+      "name": "Tiamat",
+      "power": 9,
+      "faction": "Mesopotâmica",
+      "abilityTitle": "MAR PRIMORDIAL",
+      "ability": "Ao entrar, destrua outra unidade aliada desta fileira, se houver. Se destruir, Tiamat recebe metade do poder atual dela, arredondada para baixo, até o fim do Round."
+    },
+    {
+      "id": "asteca-tlaloc",
+      "file": "Tláloc.png",
+      "new": true,
+      "name": "Tláloc",
+      "power": 6,
+      "faction": "Asteca",
+      "abilityTitle": "CHUVA DE JADE",
+      "ability": "Ao entrar, as unidades inimigas já presentes na fileira central perdem 2 de poder até o fim do Round."
+    },
+    {
+      "id": "japonesa-tsukuyomi",
+      "file": "Tsukuyomi.png",
+      "new": true,
+      "name": "Tsukuyomi",
+      "power": 3,
+      "faction": "Japonesa",
+      "abilityTitle": "ESPELHO DA LUA",
+      "ability": "Ao entrar, escolha outra unidade em campo. Tsukuyomi copia seu poder atual até o fim do Round, sem copiar sua habilidade."
+    },
+    {
+      "id": "mesopotamica-utu-shamash",
+      "file": "Utu - Shamash.png",
+      "new": true,
+      "name": "Utu - Shamash",
+      "power": 6,
+      "faction": "Mesopotâmica",
+      "abilityTitle": "LUZ DO JULGAMENTO",
+      "ability": "Ao entrar, remova o silêncio e as reduções de poder das outras unidades Mesopotâmicas aliadas já presentes nesta fileira."
+    },
+    {
+      "id": "hindu-vishnu",
+      "file": "Vishnu.png",
+      "new": true,
+      "name": "Vishnu",
+      "power": 6,
+      "faction": "Hindu",
+      "abilityTitle": "PRESERVAÇÃO DIVINA",
+      "ability": "Enquanto Vishnu estiver em campo, as outras unidades Hindus aliadas em sua fileira não podem ter seu poder reduzido por efeitos inimigos."
+    },
+    {
+      "id": "asteca-xipe-totec",
+      "file": "Xipe Tótec.png",
+      "new": true,
+      "name": "Xipe Tótec",
+      "power": 5,
+      "faction": "Asteca",
+      "abilityTitle": "PELE RENOVADA",
+      "ability": "Na primeira vez que Xipe Tótec for destruído neste Round, devolva-o à mesma fileira com poder 3, sem equipamentos e sem ativar habilidades de entrada."
+    },
+    {
+      "id": "asteca-xochiquetzal",
+      "file": "Xochiquétzal.png",
+      "new": true,
+      "name": "Xochiquétzal",
+      "power": 4,
+      "faction": "Asteca",
+      "abilityTitle": "JARDIM DA BELEZA",
+      "ability": "Enquanto estiver em campo, as outras unidades Astecas aliadas em sua fileira recebem +2 de poder."
+    },
+    {
+      "id": "zeus",
+      "file": "Zeus.png",
+      "new": false,
+      "name": "Zeus",
+      "power": 8,
+      "faction": "Grécia",
+      "abilityTitle": "SENHOR DOS CÉUS",
+      "ability": "Ao entrar, destrói até duas unidades inimigas aleatórias que possam ser afetadas."
+    },
+    {
+      "id": "artemis",
+      "file": "Ártemis.png",
+      "new": false,
+      "name": "Ártemis",
+      "power": 5,
+      "faction": "Grécia",
+      "abilityTitle": "TIRO PRECISO",
+      "ability": "Ao entrar em campo, elimina duas cartas Monstros de cada lado."
+    },
+    {
+      "id": "isis",
+      "file": "Ísis.png",
+      "new": false,
+      "name": "Ísis",
+      "power": 4,
+      "faction": "Egípcios",
+      "abilityTitle": "RESSURREIÇÃO DE OSÍRIS",
+      "ability": "Ao entrar em campo, escolha uma carta com 2 ou menos de poder do seu próprio Submundo para retornar ao campo na fileira de Ísis."
+    }
+  ]
+}

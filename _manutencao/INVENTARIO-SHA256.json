@@ -15,6 +15,546 @@
     "bytes": 1545,
     "sha256": "ea0db36a89bfd496c37ca36b0d591cc97f42053239d61c71fbe55a76e0937cb7"
   },
+  "_manutencao/remake/ajustar-regras-remake.py": {
+    "bytes": 4506,
+    "sha256": "f7004634b5a7fb0e038b3e7d518ed38215c6db0f132182a01560748c124899a4"
+  },
+  "_manutencao/remake/cartas-recebidas.json": {
+    "bytes": 38981,
+    "sha256": "d0c86d10d053f7af7a5cfd25621a52a78997389b0f02824eddc2351dc52f14f6"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/afrodite.webp": {
+    "bytes": 1640414,
+    "sha256": "6aa39afe7e09826c29447dda4d01e1c2cd31852d203ddaca0dacabc4f86909b6"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/anubis.webp": {
+    "bytes": 1481122,
+    "sha256": "00788878a60660cc59291ca6ffed5eb8fefb01e5bb4a09afbcfbbfc33af77475"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/apolo.webp": {
+    "bytes": 1671618,
+    "sha256": "0dde776d21c85b35d4480bcd6bc776f5b80d2976001faa36f28edd3064962ebe"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/aquiles.webp": {
+    "bytes": 1612612,
+    "sha256": "7d84a429c4cf45c84c0e8b3d0177fc7e5e593024d6307a284ba7092e97e57155"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/ares.webp": {
+    "bytes": 1084478,
+    "sha256": "9e05391c7bcc337390e25e6e1f50692a44420d1936a9a859a2e05519bba23b59"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/artemis.webp": {
+    "bytes": 1608434,
+    "sha256": "8d803663cc50df9258ca12195c1232e28b1f14a95dd4fa4553d79ec6a46348e4"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/asteca-chalchiuhtlicue.webp": {
+    "bytes": 2092364,
+    "sha256": "767b51ee50bb91468ac1f888bb5499a6298ceb170a81b07b2489fb1b3ca81593"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/asteca-coatlicue.webp": {
+    "bytes": 1820492,
+    "sha256": "643244e405ee8f6723662c755d4178658fcf7bb0f531f16ffe592faede7d7755"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/asteca-huitzilopochtli.webp": {
+    "bytes": 1905466,
+    "sha256": "381ad44a18a1aead38112e2ff4fa5e3f658748fc1458ef77fd5375456bc5f069"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/asteca-mictecacihuatl.webp": {
+    "bytes": 1760082,
+    "sha256": "64e084643fe20f6b0cd3819270dac02eaa26a9279033e344554c0e2e9e4ed6c8"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/asteca-mictlantecuhtli.webp": {
+    "bytes": 1831102,
+    "sha256": "449f08bd8170d2bd374bda2e0c7fc7b2006fc1610bdaea1f390f2b5ed5464660"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/asteca-quetzalcoatl.webp": {
+    "bytes": 1854572,
+    "sha256": "e3db88f5cfbcef5c325a1ee859d0a7bc860a3e0144fcf7bcbe49aab63d3e4d42"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/asteca-tezcatlipoca.webp": {
+    "bytes": 1802014,
+    "sha256": "6ecbd4fcefee8f4efeddf1d970448f225367a3de131b6288459e096f5badc217"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/asteca-tlaloc.webp": {
+    "bytes": 1959266,
+    "sha256": "c0e3d47bf981c5f7a2c13c222dd8b2153fd319adba23b46c748d2d6d9869b276"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/asteca-xipe-totec.webp": {
+    "bytes": 1958344,
+    "sha256": "6dd3d26edbb091873e7b3dc332140a1ad828217fedfe84412df61ade95977653"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/asteca-xochiquetzal.webp": {
+    "bytes": 1923774,
+    "sha256": "f8de74c438f846222cd4d87eaceb765917261ea7cdae04f7a3e89b7cf2080272"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/athena.webp": {
+    "bytes": 1599544,
+    "sha256": "0541db34815aa9da982f87ddda0505a6967911961c2f7667e93449e2eb56ebfa"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/beowulf.webp": {
+    "bytes": 1649264,
+    "sha256": "37fb18f94f0cd8dc926c03d730e1fd097f04507474043a0b830d13eace3f2579"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/brasil-boitata.webp": {
+    "bytes": 1813558,
+    "sha256": "2f06a69df603e6d12dcdc19c0a758d51ca957812e253a7162e11de15fc6794bc"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/brasil-boto.webp": {
+    "bytes": 1523732,
+    "sha256": "8a60a9c124e7c9a241a0f99fac2fdf2391abacce3ed54a27e0800d86e65dcee2"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/brasil-caipora.webp": {
+    "bytes": 1803650,
+    "sha256": "4cd7481d0a9a4228c0e58e281485155b02e617b730ab42d6d0135ec40416867a"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/brasil-cuca.webp": {
+    "bytes": 1616552,
+    "sha256": "7cb67d1ca2d1cf56a77d32388b39dde24389b3fbaef52fac638f57febbd389a8"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/brasil-curupira.webp": {
+    "bytes": 1731966,
+    "sha256": "480dfdb74d34dce73686c74d64832e60f1b25f6d73c63793789bf541eb42a74e"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/brasil-iara.webp": {
+    "bytes": 1716308,
+    "sha256": "da55a23f9b5b2b2dca043b5b18c8d546b84b03c2ab641f98b9318118a252ae32"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/brasil-lampiao.webp": {
+    "bytes": 1606600,
+    "sha256": "ed852a0494622a42ec932b14916233613bd5233cbad1b66757e5a21102a11b71"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/brasil-mapinguari.webp": {
+    "bytes": 1738542,
+    "sha256": "4688b2a38e0261aae20ab108d1cb598497c6bcd6f0d9a1e0d333d4ff68cb57a4"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/brasil-mula-sem-cabeca.webp": {
+    "bytes": 1591584,
+    "sha256": "895c3fe355added7f434eeee024fdfa95a4fadc95bf7073951f380e55a24ff6c"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/brasil-saci.webp": {
+    "bytes": 1853492,
+    "sha256": "83da855405420c4e72f42be86d6fdb9c5a4905e06fcf2e6bb8145f6284a3aa5b"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/butter.webp": {
+    "bytes": 1164098,
+    "sha256": "b39385d445ef6f8045d439d05f20cc17ad18c34b7e476baf3eb03c17c698107a"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/celtas-brigid.webp": {
+    "bytes": 1851118,
+    "sha256": "ec096c68471ce7180ad4957be269f34346e49cce3cc423a623d3ba567cd3d816"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/celtas-cu-chulainn.webp": {
+    "bytes": 1885890,
+    "sha256": "37a09bf793fa81ba2e41777b19fce79c5a4ccd6389f0d69e4888845caccc3330"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/celtas-dagda.webp": {
+    "bytes": 1865122,
+    "sha256": "be9e6912777619e80c5bd8e84e62d4ab82400c57296030cf07c60151ba26c334"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/celtas-dama-do-lago.webp": {
+    "bytes": 1743580,
+    "sha256": "084da01e23e65dcca4d415b8529c57823e05f8ad03ff4ef490dcde975da775e1"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/celtas-lancelot.webp": {
+    "bytes": 1805504,
+    "sha256": "b34393554e460663b1474cffcc8d27cceeeb821279d27a181b62bc1da4d73326"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/celtas-lugh.webp": {
+    "bytes": 1857940,
+    "sha256": "579b0d6a0e4e1e5614428b6359a482e5f45bd07948b91b5273edeaebdbe09430"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/celtas-merlin.webp": {
+    "bytes": 1828342,
+    "sha256": "f71d600d314e27cb62a307e741d53185845e4a849759e33544e0cb95f5e4447c"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/celtas-morgana.webp": {
+    "bytes": 1754540,
+    "sha256": "bca9fd22f9ab5e6d444936524bb4a474cedb2b00b36c84890976d16e98a799b0"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/celtas-morrigan.webp": {
+    "bytes": 1697034,
+    "sha256": "a23febf27441c9f99f1780f929a5e0d86c9a39490efe4db111d814bfb455aad6"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/chinesa-ao-guang.webp": {
+    "bytes": 1958440,
+    "sha256": "c597b33b103b18abcad23c1fb0cfcc0819c0b359b74b9ebba04daf4e62e4ade4"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/chinesa-change.webp": {
+    "bytes": 1784936,
+    "sha256": "a731e774a43eecc679e3a1db38d28903db39e144d3e4af0ef83e6afa28af7e97"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/chinesa-erlang-shen.webp": {
+    "bytes": 1971330,
+    "sha256": "1b60b08f9c48f992594c56374a30f452de1f77bb54144be5eedc7347c80191e7"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/chinesa-fuxi.webp": {
+    "bytes": 1730184,
+    "sha256": "a079d94d07047788a1448159301293b6221e537cdd0329091ebe725ad10cedd3"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/chinesa-guanyin.webp": {
+    "bytes": 1647876,
+    "sha256": "6067571373d672055243536405ae108771c41612395c324ec4dd114979f97456"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/chinesa-hou-yi.webp": {
+    "bytes": 1806170,
+    "sha256": "8bf07782b0e444fa6756968191dc2b9a2a0995810587f3b2e67e113e33dd261a"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/chinesa-imperador-jade.webp": {
+    "bytes": 1785408,
+    "sha256": "d1dbb2a635e71cade491264dff1e56481401f27883036f2da9053efeb54c99ac"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/chinesa-nezha.webp": {
+    "bytes": 1767068,
+    "sha256": "426a84f2e20fc09fc266cd72be04fd46eedbf2b0dd0d76befaeee5fef0cf190e"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/chinesa-nuwa.webp": {
+    "bytes": 1883116,
+    "sha256": "c61c12fddfda7a38ee20e33b8b256ab756353d6448704180351eb13d43ec300d"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/chinesa-sun-wukong.webp": {
+    "bytes": 1806796,
+    "sha256": "8923fd22c88ed1d7af1fc95c130855cb2f3aa5a8626f09761ccf63de5f455720"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/clone-macaco.webp": {
+    "bytes": 1765070,
+    "sha256": "8ffc513486064b6d053ca34cc64da052c02b1e2e7b9fbb343756823d6f16f9f8"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/dionisio.webp": {
+    "bytes": 1762874,
+    "sha256": "88a425c9991f22d7a4b548477b1d6a753d4542920d7e7640b9e3f0079b979ec2"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/guardiao-nordico.webp": {
+    "bytes": 1829838,
+    "sha256": "6b8eff8daa5769b74db2e8ab6571c963e1042cca71d9e7eba126caf5b347f46c"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/hades.webp": {
+    "bytes": 1157932,
+    "sha256": "aebbb5150b443a8bf1228f08c386405f9d6f9267a252ee2c19385b21c2f4153d"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/hefesto.webp": {
+    "bytes": 1673166,
+    "sha256": "90ec6f653aab696ed31f58f843509abdf554821d46e2bb6486741e4fe8f83c0f"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/heimdall.webp": {
+    "bytes": 1595008,
+    "sha256": "fd4f5cfec9b437478b323a23531f5be786883fa02ba471927c46afbcfee358c4"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/hercules.webp": {
+    "bytes": 1060680,
+    "sha256": "b89a92becc9670c4d12b30976e13715594c626c9bf538c1faa45bfb7ec3b26e6"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/hermes.webp": {
+    "bytes": 1592098,
+    "sha256": "9512a8a606f3b7ee063f3b62f0ebdd8dcf08f7c2a5b3c9eaf4ea29799436db0e"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/hindu-durga.webp": {
+    "bytes": 1903472,
+    "sha256": "d7f699c1b3c08ddbbd2e18447b3b8cdb00e22f82b0065a6652cc002d54fd64d1"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/hindu-ganesha.webp": {
+    "bytes": 1876362,
+    "sha256": "2981fe4a6d3abe66cfd56ff6e3d9e1b9a810c45fd949245047bb72e564126a20"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/hindu-hanuman.webp": {
+    "bytes": 1758398,
+    "sha256": "49a20a4231e583567683ce0cad0bb074c76919877fb8345c0e7118223d4ddfa4"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/hindu-indra.webp": {
+    "bytes": 1844788,
+    "sha256": "7ee9a183c9f781b377b8d93ce14774ff9ad3d865679341a68f1a7f78d98687a3"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/hindu-kali.webp": {
+    "bytes": 1978086,
+    "sha256": "73cb628550c2cb4b3e22a9cc8cc83ec5dad53edd5d601bfc7132de6c606fa2fe"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/hindu-krishna.webp": {
+    "bytes": 1904238,
+    "sha256": "aa909394b303e7ad149c645f7e8a49a95328fb746cfb44e79591648c4845d89c"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/hindu-lakshmi.webp": {
+    "bytes": 1855178,
+    "sha256": "85ffe26ea4994f475745f52a8cb0918a9ac72bf4fd7ba556b8db51f918adde5e"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/hindu-saraswati.webp": {
+    "bytes": 1845144,
+    "sha256": "d62ea8652ab24623bfe884cb4ef1dfff7651318dbb552100a2eb1017728ddf27"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/hindu-shiva.webp": {
+    "bytes": 1834456,
+    "sha256": "17eb0cdaa62b6559888aa24b95fde2b6912b4f55de1a963de9a253d3c2b65b77"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/hindu-vishnu.webp": {
+    "bytes": 1977760,
+    "sha256": "ceb982c7936d573bac5e50c5ed66330ade7637bb6df88b1100c037e72d21178f"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/homem.webp": {
+    "bytes": 1576436,
+    "sha256": "4b4cd232cd95c869d20f8dfcdceb80d226d8b504445ced0bb5e5dc7776569bfe"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/horus.webp": {
+    "bytes": 1620360,
+    "sha256": "c942e6feae3d6d2a13838aeb23675894fa411af231a16f7afb32651015276eda"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/isis.webp": {
+    "bytes": 1668796,
+    "sha256": "5438174a0e686806841e33b9976bd53aa8d4a0f2b9026e3307bf21c47b0081be"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/japonesa-amaterasu.webp": {
+    "bytes": 1899786,
+    "sha256": "fe217c72d2455b1ceabfa536328f01f5291ea6743b2af15ffc95a5cad24a15a0"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/japonesa-fujin.webp": {
+    "bytes": 1727700,
+    "sha256": "55fd92e961e959bb6d790f84430306ca8aa11581864ac0a07f0f80cbd6d335b9"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/japonesa-hachiman.webp": {
+    "bytes": 1849546,
+    "sha256": "2d8ac453da174e2574783eddc124417adbf815bc1a26486a1bfc7d390b540e8f"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/japonesa-inari.webp": {
+    "bytes": 1863082,
+    "sha256": "2590a89de47c5e209dc7ab9bb1bd109ef6399aef14ebaf75c4b5bc2390fe156d"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/japonesa-izanagi.webp": {
+    "bytes": 1879938,
+    "sha256": "dc8f01d98abde63ac634e2af4cc695b24405a2971b8022a9b37c51ad658ff17b"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/japonesa-izanami.webp": {
+    "bytes": 1802648,
+    "sha256": "989bc5906e30190fbb7a3ea56baa2ab9e4f19a0ba439e1f287e05646f95e0ce7"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/japonesa-raijin.webp": {
+    "bytes": 1832046,
+    "sha256": "288abb94a659243b1dcc210bad54ddf2f863e6dee1c9b450a7e71a7c1fa16530"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/japonesa-ryujin.webp": {
+    "bytes": 1953864,
+    "sha256": "d53bbe7f4b87465a6c047bbdbdda402f4fd2c9b300f98846486e51b163c39134"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/japonesa-susanoo.webp": {
+    "bytes": 1900000,
+    "sha256": "4ff3d56377f190f8e166c67513f47cfecf11745b1cb047a59820e1fda9a4fbad"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/japonesa-tsukuyomi.webp": {
+    "bytes": 1759368,
+    "sha256": "2563883333360ac5079f5c2ec120d21b4a062703178852e8e972ddef716fcb9c"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/lobo-alfa.webp": {
+    "bytes": 1255580,
+    "sha256": "f848f24ead73211ab96c240efae03db48d03a503ee3de2d144898b4b8fae8417"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/lobo-beta.webp": {
+    "bytes": 1202210,
+    "sha256": "4825fb70827aa1a68fe2ebfea2823fe961c28bebb6eb5929f8bb8df8d078c84f"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/lobo-omega.webp": {
+    "bytes": 1171954,
+    "sha256": "0ef138a7789b76b6eb2695deb11a94928f8760b0bbc0217117dc7f071d9b6200"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/loki.webp": {
+    "bytes": 1518250,
+    "sha256": "842572785fd9e981ee8a1104a7c311f8ae06a4a87b5403d787a36158e7dd185c"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/lukyan-rei-de-todos.webp": {
+    "bytes": 1302950,
+    "sha256": "c19f862056d677c8fc4d0c9114d3405a5f83795c323559cce4addf89d82d6df7"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/lukyan.webp": {
+    "bytes": 1292146,
+    "sha256": "99614c74b3646cec63ad1db4da7eb8161b1a9b44a44294cf1959902bbfc0bbab"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/medusa.webp": {
+    "bytes": 1139242,
+    "sha256": "a98c36003c49e6fd4d238707dbff8a95ad02500820dc42d51578f7cf1bc46ad8"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-enki.webp": {
+    "bytes": 1975286,
+    "sha256": "d18ba1738d048d1c3658db8fc4d8c868640415e9d17ab1153874022979f241e0"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-enlil.webp": {
+    "bytes": 1724502,
+    "sha256": "67156298f93ffb5dc4ba8a6c22a156e60a7bfcb7f8ad07a3896867d6933d38a1"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-ereshkigal.webp": {
+    "bytes": 1681702,
+    "sha256": "0007b2f58ed4f7e3cbbde4c10c7ff2dba54f16217246619ae485257b34282664"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-ishtar.webp": {
+    "bytes": 1809978,
+    "sha256": "00da70ad5c66094c33bdbb4273a8a2261ddd91418b8fab7e5e20a7efe27fdb33"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-marduk.webp": {
+    "bytes": 2000090,
+    "sha256": "d6c34af570ddc3073f9ac3cdd85d44c5189056ee0f3da38556f0e15e8ad5617b"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-nanna-sin.webp": {
+    "bytes": 1879692,
+    "sha256": "3811322e354699842d84bee365ccf4d5a20cfa8b2c07562d1eaeee36d9c7ee19"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-nergal.webp": {
+    "bytes": 1795676,
+    "sha256": "e8d938883be0a1df38a97e304933425e453ecadf10e19c43dcc0e13f603b2074"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-ninurta.webp": {
+    "bytes": 1931284,
+    "sha256": "0836fcb46df4db170be8a0dcc548d7281ee8df07b8bf555c033df61b5e949f0f"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-tiamat.webp": {
+    "bytes": 1973568,
+    "sha256": "ac777ae7d5595b2cb10776f490cb74cae0055a21e3a047f76d293f2ec504e1e4"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-utu-shamash.webp": {
+    "bytes": 1802900,
+    "sha256": "a903e4748521d9458dfa7fc87f71f8c4548088e885edc8103a5e420a1440cd54"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/minotauro.webp": {
+    "bytes": 1150344,
+    "sha256": "36f20d8004287f483036d696a306d8b652e7b65909a3e92d858930b88b48e0fd"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/mulher.webp": {
+    "bytes": 1617030,
+    "sha256": "16220718648260ada9bdc75a442c3a8e4cf0282d9c05921795e547e758a66f60"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/odin.webp": {
+    "bytes": 1656174,
+    "sha256": "aa330cae1e1429dc73f3e81a7ecf73baef439a73052c43bc76863282ef29872a"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/osiris.webp": {
+    "bytes": 1640844,
+    "sha256": "f0ed76e7b066198ddaaad14c3750a00bac0ee6806155bde8e2c1555849e430a1"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/poseidon.webp": {
+    "bytes": 1283204,
+    "sha256": "162b1088e0bad05554cde162472696f64a8388e337a7a1085e15b6a1020c91c1"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/ra.webp": {
+    "bytes": 1702482,
+    "sha256": "518b6272bf0330a6675445a6748e4f6e835375128b84103215867539146bb13d"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/ragnar.webp": {
+    "bytes": 1618486,
+    "sha256": "01b8e011a1d548c17b8bb1c796d955cb797493fe6c5a890859a7408fef366521"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/rei-arthur.webp": {
+    "bytes": 1824818,
+    "sha256": "2cddfc2ecb9ad01385804d1dbc77d1ac80664cc969fa16def22fb5f872a33834"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/seth.webp": {
+    "bytes": 1566844,
+    "sha256": "5f4a7ecda62462277994418724ec71869903af1a1bd02446ea0eb60c2b4a6684"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/sobek.webp": {
+    "bytes": 1734466,
+    "sha256": "7a3491d71b25861179f77fd87d1abf026bc04cea40d86ea3b3dc36c6adacd10d"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/soldado-esparta.webp": {
+    "bytes": 729752,
+    "sha256": "29140688f8758ef6edc7d666ed99f16dfcefa9147ab5b9df29b3b7ac2f38690d"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/thor.webp": {
+    "bytes": 1626682,
+    "sha256": "e2fda259bbf595a3b600bcbc9529efe08a2f79222bdb7b3416a156ecd8bb76d4"
+  },
+  "_manutencao/remake/cartas-resolucao-recebida/zeus.webp": {
+    "bytes": 1166212,
+    "sha256": "e6678eb1896b4e5959f89f94cbbef4e194e5ac68664bf1c59e6ee60fecd0b1b3"
+  },
+  "_manutencao/remake/CATALOGO-REMAKE.md": {
+    "bytes": 20156,
+    "sha256": "6f82d520af4abb8b64085e4191afdc8ff01d0450455b9cc1ae4d2f44b091a445"
+  },
+  "_manutencao/remake/compilar-sql-remake.py": {
+    "bytes": 3489,
+    "sha256": "5a67e41206e8e829bd22192a61046b340b2086fd5b24b3719c9343011a79f1ed"
+  },
+  "_manutencao/remake/completar-hooks-remake.py": {
+    "bytes": 3714,
+    "sha256": "735698902aa0d8be1cf1b8c5e384f535cd2dd14a85fb17be24846e959d47b5f7"
+  },
+  "_manutencao/remake/definir-regras-remake.py": {
+    "bytes": 5170,
+    "sha256": "8a22aa519d9b7de69c33403a5f2d6f0235e18ebb192e32024405aa36933f5f00"
+  },
+  "_manutencao/remake/finalizar-assets-remake.py": {
+    "bytes": 10962,
+    "sha256": "ed852efcba5f42937a3636957243795219446bc093d76b1650874dcd5f1a8ff0"
+  },
+  "_manutencao/remake/fragmentos-log-geracao.json": {
+    "bytes": 489,
+    "sha256": "80d2e615813178e615fda1f06e9435b13ea4ecd14541595a7d9bc8679e14fcf5"
+  },
+  "_manutencao/remake/geracoes.jsonl": {
+    "bytes": 140068,
+    "sha256": "60fe282d322f121bdfdd993e77e0f223bb0e902148c2a79d25a730fdb6433fe7"
+  },
+  "_manutencao/remake/importar-cartas-site.py": {
+    "bytes": 3298,
+    "sha256": "8d046e764d5bc0b9da25a90ca1cecf81567fc7d8015b71d2049fcc7de912d1c4"
+  },
+  "_manutencao/remake/integrar-interface-remake.py": {
+    "bytes": 3043,
+    "sha256": "3d68216a2d040f3ba4af9286de7b26c6ea38a1049af287a9728734030f7ae19e"
+  },
+  "_manutencao/remake/integrar-motor-remake.py": {
+    "bytes": 3531,
+    "sha256": "7c627f8d86499e9cfe2799f59604d7e2d246bbc6bd2c7abad59ff27ffef864f8"
+  },
+  "_manutencao/remake/otimizar-cartas-remake.py": {
+    "bytes": 1351,
+    "sha256": "6386556e3926dc32ac9b763498638a1084dc9e1b22e6f700e30c84e3d4a62e06"
+  },
+  "_manutencao/remake/preparar-entrega-remake.py": {
+    "bytes": 11057,
+    "sha256": "68c633c0c38d13f83d792dc7e959d9addd755dbc3af6adcf0a60006d75cebe32"
+  },
+  "_manutencao/remake/preparar-importacao-cartas.py": {
+    "bytes": 3093,
+    "sha256": "815c28d06c18054731cf0dda843ced6460b357f86ed6dc954d779de41e956eef"
+  },
+  "_manutencao/remake/produzir-clone-macaco.py": {
+    "bytes": 1612,
+    "sha256": "55ba82fbb7f91e4388267e977c9d96371b0fca38a64924fe3f5193f86873c80d"
+  },
+  "_manutencao/remake/prompts-selecionados.json": {
+    "bytes": 283809,
+    "sha256": "7c00a8b8cf8793f9a5b89f97d5c8131560ec09f6c80e225573884e9bd222feb7"
+  },
+  "_manutencao/remake/README.md": {
+    "bytes": 281,
+    "sha256": "d1d6780a53c3a907edec9da7f90a9cd6e4cdcca5bcaed83cebbab10bc9c54b9f"
+  },
+  "_manutencao/remake/remake-choice-timeout.sql": {
+    "bytes": 1655,
+    "sha256": "0f4dcb3ecec2a97d3b0ce07cdd8ddad97964f524d7f81e01f6333c89da5d6f5a"
+  },
+  "_manutencao/remake/remake-engine-fragment.js": {
+    "bytes": 16002,
+    "sha256": "f12a0dc104e4fd87f873e08290d84314f257a95be10b9a5539f35199237945c3"
+  },
+  "_manutencao/remake/remake-foreign-choices.sql": {
+    "bytes": 4858,
+    "sha256": "c9cd7396dedfe971a3b9d45b5b36e005d43914e85199229c35b64832cec2c9fe"
+  },
+  "_manutencao/remake/remake-legacy-protections.sql": {
+    "bytes": 3990,
+    "sha256": "64b1896fbd3d586b81a1c07579ffcd4bdeaf6ce00ea4f505c1dd365768b69c23"
+  },
+  "_manutencao/remake/remake-local-silence.sql": {
+    "bytes": 4396,
+    "sha256": "5705cd67f0e4244a15b049785ac1f31d3ef46909086ad57b932c729d7aa6c687"
+  },
+  "_manutencao/remake/remake-round-memory.sql": {
+    "bytes": 1126,
+    "sha256": "1d9205b84429948ef39d14497bc0708dabb9fc3e98b9ce9cb1fe59ca504149f7"
+  },
+  "_manutencao/remake/remake-server-hooks.sql": {
+    "bytes": 13921,
+    "sha256": "293ea3d908658ff636f1941f1fcfe9d673b75c87da840c97843a32bc0e3c76f9"
+  },
+  "_manutencao/remake/remake-server.sql": {
+    "bytes": 29733,
+    "sha256": "e72722f9bd00a1ee808c0abf15e300a42c1d3613b075821cb81d04aca758b172"
+  },
   "_manutencao/seguranca/escopo.json": {
     "bytes": 615,
     "sha256": "617acae2a8d773cf7ec99fc4e518d304048ec0af214e31d07ae2db9c5486007b"
@@ -48,16 +588,16 @@
     "sha256": "2e5cccce3781f22c44ede8a662c6db83c00a3f6c98aa0936807ec64b72bc7d5f"
   },
   "abilities-data.js": {
-    "bytes": 46690,
-    "sha256": "82df79f0ecdd82a745b046bbcc4686f0690bc086ec9a94f00a50d927d5dd3cbe"
+    "bytes": 110135,
+    "sha256": "ac470a3d5f232b4758a6cf105203cddc7fadca4b955cbb553c0b78787c7932f0"
   },
   "abilities-data.json": {
-    "bytes": 58565,
-    "sha256": "37e05e40b39639cfb765091660ffcdcfa0db5b8f86ea156b42667782dd6ccee0"
+    "bytes": 145536,
+    "sha256": "783546d5e73e154ab161e6f63b3aff204a5c3c49c89475e515957015e6d9d718"
   },
   "abilities-engine.js": {
-    "bytes": 22516,
-    "sha256": "0a680041d1772af7b78410b6403f2d117706d6527892a948344ac4cf7d4f9451"
+    "bytes": 41074,
+    "sha256": "57c5507e388ec7f6f0d779c9538f30ae79e56f87dd27683797e9c6a3e5e6b4ea"
   },
   "abilities-ui.js": {
     "bytes": 3082,
@@ -76,8 +616,8 @@
     "sha256": "4ac19c29405481b9da492304052472cdf8bb699e2e7218a9dad6d2384e4af25a"
   },
   "app.js": {
-    "bytes": 125672,
-    "sha256": "b55d8978ea916cec03ff3090287328e86d72c02bf043e5d905f914de67c79f73"
+    "bytes": 122756,
+    "sha256": "24909e62911c4fcaf94d1ea50288a691cc52daa51f668641abc0a48c1f2cd0dd"
   },
   "arcane-palette.css": {
     "bytes": 37719,
@@ -92,8 +632,8 @@
     "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
   },
   "asset-manifest.json": {
-    "bytes": 13964,
-    "sha256": "8986f2dca1a13a36e9dccfb894da826e898bc461123e8c38c583b035c84b7fca"
+    "bytes": 34825,
+    "sha256": "25597c4cff74e652eea1973f9d82bd12fcd02977ea903091208484e57fb90287"
   },
   "assets/app-icon.svg": {
     "bytes": 531,
@@ -102,6 +642,286 @@
   "assets/ares-helm.svg": {
     "bytes": 621,
     "sha256": "b027e61e6b46728cfff3731907f5a120b7e2751ec8b084b87f1209ee90b02acf"
+  },
+  "assets/avatars-chibi/asteca-chalchiuhtlicue.webp": {
+    "bytes": 145552,
+    "sha256": "e80a72d7a7e7068784e9681c9b282c496e66c3adc75136898eccfdfe26e447fb"
+  },
+  "assets/avatars-chibi/asteca-coatlicue.webp": {
+    "bytes": 157612,
+    "sha256": "cccdb5533c5fc1167af4bd1a74af736f319ce53289c6cdc11906f152bc393279"
+  },
+  "assets/avatars-chibi/asteca-huitzilopochtli.webp": {
+    "bytes": 140244,
+    "sha256": "aa9cb0e577575b703544fb74a2f995482fe0d3c9cc2fef5c0f8664ab7bc64cf0"
+  },
+  "assets/avatars-chibi/asteca-mictecacihuatl.webp": {
+    "bytes": 152212,
+    "sha256": "685d6339bc80ba7f6afc3dbee85e454717e48a90dfc48476082ef07dedd72d4d"
+  },
+  "assets/avatars-chibi/asteca-mictlantecuhtli.webp": {
+    "bytes": 167210,
+    "sha256": "7cef2dcfb4fa29885fa13e5ad5d34722b035f847c1354eb8f777abc9b27eda8e"
+  },
+  "assets/avatars-chibi/asteca-quetzalcoatl.webp": {
+    "bytes": 153724,
+    "sha256": "b3bc062c4dfa943874db05d4ef1442de38d183f3bc48bc9529b485ea751b7e10"
+  },
+  "assets/avatars-chibi/asteca-tezcatlipoca.webp": {
+    "bytes": 157826,
+    "sha256": "6e1014be57b131270cf3a3ab8d394317e619d4f79f6d48cf6e95ce92a9f1b395"
+  },
+  "assets/avatars-chibi/asteca-tlaloc.webp": {
+    "bytes": 157984,
+    "sha256": "c61db64e7f718021b4daad199923c95503e41d9b0515dcded2758d0327a82d33"
+  },
+  "assets/avatars-chibi/asteca-xipe-totec.webp": {
+    "bytes": 159804,
+    "sha256": "ff269335af86fadf4fcd66249f072bb7312e809c3f03f56b8e4598c6c9f77262"
+  },
+  "assets/avatars-chibi/asteca-xochiquetzal.webp": {
+    "bytes": 154348,
+    "sha256": "4df265adb9bd55d6525635b7eea826045bb9a72d3ca65ceccdaeac67c2e9428a"
+  },
+  "assets/avatars-chibi/brasil-boitata.webp": {
+    "bytes": 143924,
+    "sha256": "3454c7ecb43a6b2ff16ee4928c10990c4cdb52b08088cffdbabaf3123b15d51a"
+  },
+  "assets/avatars-chibi/brasil-boto.webp": {
+    "bytes": 103672,
+    "sha256": "2bf8963e09b859969b697f57fb414ddcd427c287aa586ab2b92d9c38a34ab44c"
+  },
+  "assets/avatars-chibi/brasil-caipora.webp": {
+    "bytes": 157312,
+    "sha256": "0f38658ff0e82578a578ae1c02e21fc66c1adf9387bf03129ed7135cb3ea9dbe"
+  },
+  "assets/avatars-chibi/brasil-cuca.webp": {
+    "bytes": 137948,
+    "sha256": "e7c87485585548f09ddf44aa163e63a8ae223e51ea7e33cfc5942777f6d922ab"
+  },
+  "assets/avatars-chibi/brasil-curupira.webp": {
+    "bytes": 147292,
+    "sha256": "0b7056dfa96e1a96f4219233acef65f207346dd177ed9693bd7d7d09ea52c943"
+  },
+  "assets/avatars-chibi/brasil-iara.webp": {
+    "bytes": 128434,
+    "sha256": "a1fff63bf212eb3c01205cdaea1f3cd0e5635a6e07c4feb506bd1bab1dc2cf1e"
+  },
+  "assets/avatars-chibi/brasil-lampiao.webp": {
+    "bytes": 130276,
+    "sha256": "c6483a62111b5f3c6cd454373c5548a4fc062d7a15af147b735af623ab7f5f68"
+  },
+  "assets/avatars-chibi/brasil-mapinguari.webp": {
+    "bytes": 159124,
+    "sha256": "8de320d5a0119af8c9749ec1a4c6387e837b9fd5990ac65d7f7ec680cc122263"
+  },
+  "assets/avatars-chibi/brasil-mula-sem-cabeca.webp": {
+    "bytes": 126374,
+    "sha256": "e09ee1e9f3ffa967dc5f51415a93d63c6a909de1a2753a42a810289e19440b66"
+  },
+  "assets/avatars-chibi/brasil-saci.webp": {
+    "bytes": 81928,
+    "sha256": "7ad8cdf04c196905b3cd32de401b3f7b55c8e169f2910eecf247d8e4c6c71521"
+  },
+  "assets/avatars-chibi/celtas-brigid.webp": {
+    "bytes": 130628,
+    "sha256": "b04035834ec16e1dae8f02155edaad00e6a9522e7157c5155166e0cf041820db"
+  },
+  "assets/avatars-chibi/celtas-cu-chulainn.webp": {
+    "bytes": 140266,
+    "sha256": "08f2cd612fe1c5a34f7148f455dceb751a37747de352997af000529cbfed7afa"
+  },
+  "assets/avatars-chibi/celtas-dagda.webp": {
+    "bytes": 146682,
+    "sha256": "1cf82dac363d3c5081bdb85399c076f76fca0c4a09da3289ea755227f692a2ef"
+  },
+  "assets/avatars-chibi/celtas-dama-do-lago.webp": {
+    "bytes": 146354,
+    "sha256": "62c58b0ac13644d321dd78b0abec8ed4b5d33b5d2a01af1dbae497edc9774e34"
+  },
+  "assets/avatars-chibi/celtas-lancelot.webp": {
+    "bytes": 129900,
+    "sha256": "767950448528da37f72bc5dfd84af72fad400fd39540f50254a42d7ad0cb75c0"
+  },
+  "assets/avatars-chibi/celtas-lugh.webp": {
+    "bytes": 139364,
+    "sha256": "9122026b36b553fafb3191708ce5d8ea440584dcc54f75545493c8492d5d88b2"
+  },
+  "assets/avatars-chibi/celtas-merlin.webp": {
+    "bytes": 161628,
+    "sha256": "d7c901ea1fd0cd86ff055d059caf6d22c3d599d84f67e3f5aa6610a5bc8e8934"
+  },
+  "assets/avatars-chibi/celtas-morgana.webp": {
+    "bytes": 135006,
+    "sha256": "afdcaf6ff33a4f2a5536dc580790d171762a1324616a40228dd152574e106881"
+  },
+  "assets/avatars-chibi/celtas-morrigan.webp": {
+    "bytes": 141994,
+    "sha256": "7d24534122bf9746d124af7e2f29bf64fdcb814517ac0d700c4f067d3dafdd88"
+  },
+  "assets/avatars-chibi/chinesa-ao-guang.webp": {
+    "bytes": 155654,
+    "sha256": "f8056b1cc4afd72d09f66d01e7a4b9930ad667670e6f7913b4a80d29b62eea07"
+  },
+  "assets/avatars-chibi/chinesa-change.webp": {
+    "bytes": 147276,
+    "sha256": "da61bb98aa5ef345d6b172cd1face8a4da5dff101db7ea80a036123a0095c254"
+  },
+  "assets/avatars-chibi/chinesa-erlang-shen.webp": {
+    "bytes": 132342,
+    "sha256": "5e5be49c0f0675e0682d9e66634c97271b2fe2820ff94894e671039203ac4329"
+  },
+  "assets/avatars-chibi/chinesa-fuxi.webp": {
+    "bytes": 138144,
+    "sha256": "1f899b57401b808450df681f99ead99d532c788ad0e888a2be95a47bbc6ebb3a"
+  },
+  "assets/avatars-chibi/chinesa-guanyin.webp": {
+    "bytes": 126984,
+    "sha256": "53af7e9078d3a33e2f000582e96a26fde5c9347d23d4cb5234d044280d23c29d"
+  },
+  "assets/avatars-chibi/chinesa-hou-yi.webp": {
+    "bytes": 128140,
+    "sha256": "516187132b2387a6971bba2f7ec86def51a74d238c44c43fae3c6f3a7d94505e"
+  },
+  "assets/avatars-chibi/chinesa-imperador-jade.webp": {
+    "bytes": 156526,
+    "sha256": "508fe16931311b0e88a4f0c27f759ce54a35549264da52a5935e380773e2a04a"
+  },
+  "assets/avatars-chibi/chinesa-nezha.webp": {
+    "bytes": 142480,
+    "sha256": "9051c1dee4a2027b0dd1f0546fb90d5014df3a174bd2d0a323427f0a84cbc262"
+  },
+  "assets/avatars-chibi/chinesa-nuwa.webp": {
+    "bytes": 142702,
+    "sha256": "6fbec87edf0c3beec44b599a39d3c7c984fb478ee0caa7a3b4b54a24f8f35f6e"
+  },
+  "assets/avatars-chibi/chinesa-sun-wukong.webp": {
+    "bytes": 152546,
+    "sha256": "d6fa8e32eb7b8d1c785a758b9ba58473d411d92ae24fc00d77b4bffc15e26b2f"
+  },
+  "assets/avatars-chibi/hindu-durga.webp": {
+    "bytes": 139746,
+    "sha256": "fb0adc0363ab3d227bd1311ab3ba7a5427c6272ff84a4e29dd691268361ddbba"
+  },
+  "assets/avatars-chibi/hindu-ganesha.webp": {
+    "bytes": 124214,
+    "sha256": "98137ac026aa7801adbb64fe6d11eeae2c2e400a18a3fd04f31cce82a3b93065"
+  },
+  "assets/avatars-chibi/hindu-hanuman.webp": {
+    "bytes": 137912,
+    "sha256": "9b77460540d9da644a36aec94cca958bb86cd52c6322d2dd0fd8c34a2a1137ee"
+  },
+  "assets/avatars-chibi/hindu-indra.webp": {
+    "bytes": 137564,
+    "sha256": "aaa55541d246d827306a2073b5c64b4825927e78d8d236ee87668d03c9a20215"
+  },
+  "assets/avatars-chibi/hindu-kali.webp": {
+    "bytes": 142632,
+    "sha256": "80ecdce9f6ce1a231f085310f42c960eae69f4ead92c46bad47b6ca61026297a"
+  },
+  "assets/avatars-chibi/hindu-krishna.webp": {
+    "bytes": 139188,
+    "sha256": "45922f64bf1e3a3c3a1677e7e812755028b6d540183e8879570aca2334a00a79"
+  },
+  "assets/avatars-chibi/hindu-lakshmi.webp": {
+    "bytes": 148598,
+    "sha256": "8af0c604c573073e6e1f6122995b5445fb50d68dbe90ee0828fab48b3fc25b69"
+  },
+  "assets/avatars-chibi/hindu-saraswati.webp": {
+    "bytes": 130478,
+    "sha256": "211b1d5875cbb128ef606d1c2528136006aa245420993c9d361e0a02ea5dca64"
+  },
+  "assets/avatars-chibi/hindu-shiva.webp": {
+    "bytes": 138578,
+    "sha256": "a494d9569aefb453f372b7390101fa1777b33b0c4485270944f8ae17f8a77804"
+  },
+  "assets/avatars-chibi/hindu-vishnu.webp": {
+    "bytes": 133620,
+    "sha256": "c7de4ad7ff62f6f130b03d3f0ad88a709b7511e77b7415ad4fb453a21355019a"
+  },
+  "assets/avatars-chibi/japonesa-amaterasu.webp": {
+    "bytes": 163808,
+    "sha256": "63a8f8c637651ecc6d47f08411dbf6b949dbcee00014f2e46a6db9504c6a97e1"
+  },
+  "assets/avatars-chibi/japonesa-fujin.webp": {
+    "bytes": 142058,
+    "sha256": "b30c5d3f5f17ad822a4de8df809e4d41d3b2f429f2ab3b999dafd335b1132d20"
+  },
+  "assets/avatars-chibi/japonesa-hachiman.webp": {
+    "bytes": 160314,
+    "sha256": "083d2a58916885dc6f43ebae0a2fd764310c4ace581d6f2affb28817885d6356"
+  },
+  "assets/avatars-chibi/japonesa-inari.webp": {
+    "bytes": 151016,
+    "sha256": "ddb568bdea5c0e87037f36cab7b651f70df2a0137550fc720fedc07be73cd818"
+  },
+  "assets/avatars-chibi/japonesa-izanagi.webp": {
+    "bytes": 139272,
+    "sha256": "90d34e190d78aca0f9f0fb08b41604e8a97cf17f8e2907b08400cac0dba814a7"
+  },
+  "assets/avatars-chibi/japonesa-izanami.webp": {
+    "bytes": 160734,
+    "sha256": "5edbe48131dc4e517b259e2b3ca166daee421d4970e6ae366a5f2bc9e08d8bb9"
+  },
+  "assets/avatars-chibi/japonesa-raijin.webp": {
+    "bytes": 159282,
+    "sha256": "1bd8dc3c3450388ae141daa0e5f1bb028a6aa04a628ba748847a490529ad4e65"
+  },
+  "assets/avatars-chibi/japonesa-ryujin.webp": {
+    "bytes": 165700,
+    "sha256": "fabc8bfadea6785330e5f5b48c0acf3bb7152f6556cd07a459c667c08a3dff39"
+  },
+  "assets/avatars-chibi/japonesa-susanoo.webp": {
+    "bytes": 166436,
+    "sha256": "f4f9135e362818109139f90c4d7ed343eac6be8d515c8461ac3508ce76ab8a24"
+  },
+  "assets/avatars-chibi/japonesa-tsukuyomi.webp": {
+    "bytes": 165532,
+    "sha256": "6553408a399cc075e0b22c3f7a4b5cae9b77430ce282b6ac04ccf7570879542a"
+  },
+  "assets/avatars-chibi/lukyan-rei-de-todos.webp": {
+    "bytes": 92648,
+    "sha256": "8f540e76a7e3d20ea297ef9a6b43244f6b01f48ef167782d2123291e30339811"
+  },
+  "assets/avatars-chibi/mesopotamica-enki.webp": {
+    "bytes": 133178,
+    "sha256": "e096088ba91e5843012e2b63f9f0642db5643aae5fd2e8bbfe148b5fcad5c68d"
+  },
+  "assets/avatars-chibi/mesopotamica-enlil.webp": {
+    "bytes": 143520,
+    "sha256": "e2cf190f321af56809b5be956b95b03a88166a3fbecc481f85ec0c8ed589574e"
+  },
+  "assets/avatars-chibi/mesopotamica-ereshkigal.webp": {
+    "bytes": 143482,
+    "sha256": "9a7afd0cbce34e0eed4c4a9ed1c7a3738e7536721e32dffce47e81cc316d50a1"
+  },
+  "assets/avatars-chibi/mesopotamica-ishtar.webp": {
+    "bytes": 145922,
+    "sha256": "5822bbf45cfd1aff2b99a8d9b06c51a5d5bf19008ffca12712f1d67cd4db20f6"
+  },
+  "assets/avatars-chibi/mesopotamica-marduk.webp": {
+    "bytes": 135864,
+    "sha256": "810a1d644d5215a3fb11a4bf3ebd40895aa37d2a788e2fe062b3761c27c6f09b"
+  },
+  "assets/avatars-chibi/mesopotamica-nanna-sin.webp": {
+    "bytes": 138982,
+    "sha256": "4d01c21209673e3822c1cb08a01f5f3b4baf17218e26ea82f0e6327a2a4396d3"
+  },
+  "assets/avatars-chibi/mesopotamica-nergal.webp": {
+    "bytes": 136876,
+    "sha256": "51bfd43c8972c3e4bc1ad9b75296298aa9709c2a7204c3958c014e4418ed0533"
+  },
+  "assets/avatars-chibi/mesopotamica-ninurta.webp": {
+    "bytes": 126702,
+    "sha256": "9e8ede434315c21df02cea7735660836b8a2586b1645525337fe5e4ce37484c4"
+  },
+  "assets/avatars-chibi/mesopotamica-tiamat.webp": {
+    "bytes": 155952,
+    "sha256": "6e671a16338a683ec64fb6277f08dd7b6d8fa8594e078205548aa197bceff7e2"
+  },
+  "assets/avatars-chibi/mesopotamica-utu-shamash.webp": {
+    "bytes": 144068,
+    "sha256": "0395d5aa29fae92415f88aa0c76a4e3302bff72d673c7e16b4b0e4bc50a7523d"
   },
   "assets/avatars-chibi/portraits-01.png": {
     "bytes": 2472764,
@@ -138,6 +958,10 @@
   "assets/avatars-chibi/PROMPTS.json": {
     "bytes": 13818,
     "sha256": "8a9a96af6d4fe0b6ab65c8c4905d273ae195021e16db796eb5f6072efe088882"
+  },
+  "assets/avatars-chibi/rei-arthur.webp": {
+    "bytes": 147140,
+    "sha256": "9b7afd24727e3241e7038b75e8c6868923e74c0c14245f9fb48684dacdb84da1"
   },
   "assets/backgrounds/citadela-paisagem.png": {
     "bytes": 3040106,
@@ -218,6 +1042,30 @@
   "assets/card-badges/norse.svg": {
     "bytes": 295,
     "sha256": "8cd73f1585a543e78480e66ae105dffcfd16896cb552afcf2d7099ec3700ea7d"
+  },
+  "assets/card-badges/remake-aztec.png": {
+    "bytes": 293485,
+    "sha256": "85f4f01dbeeb912e00573fb59e65128b25be12177ed12fec42420ea5e6f1e92b"
+  },
+  "assets/card-badges/remake-brasil.png": {
+    "bytes": 1610633,
+    "sha256": "5e898eaa691b2cacb23062c2765c2d218f49c19d2db7a52b28dd95e080590ff0"
+  },
+  "assets/card-badges/remake-chinese.png": {
+    "bytes": 383993,
+    "sha256": "3f04b0f78c88d408b11a75e1f24b111a9bea967ea907b7e700cd18421d95a760"
+  },
+  "assets/card-badges/remake-hindu.png": {
+    "bytes": 308946,
+    "sha256": "ad5fe884b76b8ddf5cb6dc6527a1be25654580ff227325957cffca84ee40ecfc"
+  },
+  "assets/card-badges/remake-japanese.png": {
+    "bytes": 216508,
+    "sha256": "08486e33852cdf9d3bfc7f7d58431d24aaea2af353a2aa37988b2d4ebb7b6bad"
+  },
+  "assets/card-badges/remake-mesopotamian.png": {
+    "bytes": 293431,
+    "sha256": "bd6f290aa1b7e65a2f13714710ad0cae650f1e4edd51e38263916b68e7c86eea"
   },
   "assets/cards-20261017/afrodite.png": {
     "bytes": 2444986,
@@ -350,6 +1198,442 @@
   "assets/cards-20261017/thor.png": {
     "bytes": 2451577,
     "sha256": "6bd10a622938d2a3fb24cc34ff2b84a799080b04609c35cefdb90a735f06d67b"
+  },
+  "assets/cards-remake/afrodite.webp": {
+    "bytes": 339174,
+    "sha256": "bd4a866cad514aafc175aae3e7ee22ad1654fb978b524d5a803d9d49dda8f776"
+  },
+  "assets/cards-remake/anubis.webp": {
+    "bytes": 293978,
+    "sha256": "fe7868514ffa6b91346ec47e7ccaa9a6d76e9fb6fe811eb72f1bfd0c31c930cc"
+  },
+  "assets/cards-remake/apolo.webp": {
+    "bytes": 334688,
+    "sha256": "25566d6198afc2371f2a76cdedef02937a134c47ddd15585af2e12fff7e85562"
+  },
+  "assets/cards-remake/aquiles.webp": {
+    "bytes": 329996,
+    "sha256": "a778ac618a70c577b919c2a9f607c13ba14d3420f114cb2e646c2851a7809366"
+  },
+  "assets/cards-remake/ares.webp": {
+    "bytes": 197198,
+    "sha256": "6c0e30e338a915b92401f9f7a67fa7ba9ce4f32872c0067e75c89a37b45b54c6"
+  },
+  "assets/cards-remake/artemis.webp": {
+    "bytes": 321032,
+    "sha256": "1ba0051744178d0b36ecbe2ab164e47ef355ef72ebc1d40d240e4d68481a29fd"
+  },
+  "assets/cards-remake/asteca-chalchiuhtlicue.webp": {
+    "bytes": 428718,
+    "sha256": "b337b527f155670358050e4b56f9dddf0b9b45261ad8dfd58e3e84c3981777c1"
+  },
+  "assets/cards-remake/asteca-coatlicue.webp": {
+    "bytes": 393398,
+    "sha256": "8b59a5a76f9a6b34b5159a0871c5cc5a586b7d00ddcf2c9c33b035f57e6d0ea0"
+  },
+  "assets/cards-remake/asteca-huitzilopochtli.webp": {
+    "bytes": 381888,
+    "sha256": "591e7d5af8c31b59b40fc851f21126bdca506a928a514ffbb9f27dac57ccfaa3"
+  },
+  "assets/cards-remake/asteca-mictecacihuatl.webp": {
+    "bytes": 369104,
+    "sha256": "9d2d1b8cc7c5678922453f531b2c99d4ad67e8b49bab552f44be57bd0f8f069b"
+  },
+  "assets/cards-remake/asteca-mictlantecuhtli.webp": {
+    "bytes": 394656,
+    "sha256": "f912f8e7e16de9893cde0f2401b9c48af87c95dabe72c610cbd208f7aa283475"
+  },
+  "assets/cards-remake/asteca-quetzalcoatl.webp": {
+    "bytes": 381320,
+    "sha256": "e4b7b510c6b1179eee30187907c4d390a02c9538b130ebdff490e5de88a79be2"
+  },
+  "assets/cards-remake/asteca-tezcatlipoca.webp": {
+    "bytes": 387606,
+    "sha256": "ccb3a04d9a99954314da87dab5934f71751be29ae36be8b7818f2b0d7e7cafff"
+  },
+  "assets/cards-remake/asteca-tlaloc.webp": {
+    "bytes": 414832,
+    "sha256": "2289b1b2516f01cf8d19b4f3aa31c5f0f6251050a1a3efe2105b324e6fd54c4f"
+  },
+  "assets/cards-remake/asteca-xipe-totec.webp": {
+    "bytes": 412708,
+    "sha256": "13466387f873b65133482981fe34ed7bd0d3324691c9eaeda4a570b95fe050b1"
+  },
+  "assets/cards-remake/asteca-xochiquetzal.webp": {
+    "bytes": 390800,
+    "sha256": "2d6279bf28e93432c33908780b0db364d89fd9a599c8604baf8a154ac3f55581"
+  },
+  "assets/cards-remake/athena.webp": {
+    "bytes": 334106,
+    "sha256": "08e79c397b6e3907822290c4b8b6a1834de0df4912b8fde07ca9b98289f2ce70"
+  },
+  "assets/cards-remake/beowulf.webp": {
+    "bytes": 334028,
+    "sha256": "5d60b6c7c2d93a34ec8ea3094134dda363fd370a510cb52a1f4b02453593c7a6"
+  },
+  "assets/cards-remake/brasil-boitata.webp": {
+    "bytes": 381978,
+    "sha256": "fbf9ac7fc85ff073d358932ca3397d633ab760fee460e4ec6e1075f606c2af59"
+  },
+  "assets/cards-remake/brasil-boto.webp": {
+    "bytes": 331400,
+    "sha256": "fc1725e2c38d9a39d2290af9364682d3483d7e54118de77e3502b55087c2c00e"
+  },
+  "assets/cards-remake/brasil-caipora.webp": {
+    "bytes": 406536,
+    "sha256": "cc254d5c5f08f21bf355667683e0d52f45fcfbeaea2979a1169507706f48862c"
+  },
+  "assets/cards-remake/brasil-cuca.webp": {
+    "bytes": 355912,
+    "sha256": "1925cfa395e243bb83fef5ba90ee03d2d7a26e8f46a818a0f83e1e1aeeb3d94b"
+  },
+  "assets/cards-remake/brasil-curupira.webp": {
+    "bytes": 386836,
+    "sha256": "899abf353971c70cded1d3209df29aade0cb4ce6b117faf216b0657e74857641"
+  },
+  "assets/cards-remake/brasil-iara.webp": {
+    "bytes": 367876,
+    "sha256": "aaae3ea9ea09d9c4ef0f895aad3cf748f3564a954e80b99e22557932c0f4daad"
+  },
+  "assets/cards-remake/brasil-lampiao.webp": {
+    "bytes": 364858,
+    "sha256": "675d53e23e93c91249e3f09f42c17ea486655f39dc341c80232b0d42c7292d00"
+  },
+  "assets/cards-remake/brasil-mapinguari.webp": {
+    "bytes": 375046,
+    "sha256": "2a334a1cfb76c5f57abbfd1142db8d1eb72feaed105632da0bd8fa6029da6591"
+  },
+  "assets/cards-remake/brasil-mula-sem-cabeca.webp": {
+    "bytes": 340646,
+    "sha256": "cccf5a93b4df8eee812cd8b665c7a4a278ebf4848f4e42f4f21520d46fc59e8c"
+  },
+  "assets/cards-remake/brasil-saci.webp": {
+    "bytes": 402176,
+    "sha256": "b022af0452095441bab455f132f031ba56078eb6c4e5a28a9432cafa093dcc56"
+  },
+  "assets/cards-remake/butter.webp": {
+    "bytes": 190220,
+    "sha256": "81c589dc32453f5831f594134c8c0b5af7a6dadd6d1f657feb2ab8b112b14de5"
+  },
+  "assets/cards-remake/celtas-brigid.webp": {
+    "bytes": 378052,
+    "sha256": "5a48150eb46d43e3b3a7015c76bc7825deb8b92ac8f1eef7dba6cdd4e2e11384"
+  },
+  "assets/cards-remake/celtas-cu-chulainn.webp": {
+    "bytes": 394144,
+    "sha256": "d282d5e2778674dbadd0a9de7eb6c19cf9029fa33dd1647caf3cd69d0ec81064"
+  },
+  "assets/cards-remake/celtas-dagda.webp": {
+    "bytes": 408716,
+    "sha256": "b0a2917f074004f4c11f4c78820ed83f6f22455b1e7deeb7171563be263b7764"
+  },
+  "assets/cards-remake/celtas-dama-do-lago.webp": {
+    "bytes": 357904,
+    "sha256": "a1eb2efcf7a481bf3ceefa94c737675895c05c441f8d7fb88dbdc560942a53c0"
+  },
+  "assets/cards-remake/celtas-lancelot.webp": {
+    "bytes": 389028,
+    "sha256": "1b79fb3ec7a49aff0573b0416d7f298e2bc03e08d8ca9f8e2b9e5cf4dfa5a338"
+  },
+  "assets/cards-remake/celtas-lugh.webp": {
+    "bytes": 375788,
+    "sha256": "f3b480a1b35e8bb97a90c088921df264a345bce707c08d83a6034ece9aaa71c5"
+  },
+  "assets/cards-remake/celtas-merlin.webp": {
+    "bytes": 386846,
+    "sha256": "a5f667acf9496e268eb7ed3e6014b0de4fda1f169cd1df44089741e8be046c22"
+  },
+  "assets/cards-remake/celtas-morgana.webp": {
+    "bytes": 368416,
+    "sha256": "5afef2948c2a6fb3a30fa7ddcccc9a131f701c19cda63f66dae05831ed406698"
+  },
+  "assets/cards-remake/celtas-morrigan.webp": {
+    "bytes": 347582,
+    "sha256": "1dbd0c0db2b84cb5c9b4c7dc123e72c31089532bc089339bbf8674297aa7b1ea"
+  },
+  "assets/cards-remake/chinesa-ao-guang.webp": {
+    "bytes": 408344,
+    "sha256": "c3132d241351dcdef3f58226b4ff081ab07a4baa698c140928d61d7dc855904c"
+  },
+  "assets/cards-remake/chinesa-change.webp": {
+    "bytes": 369670,
+    "sha256": "8a2b6c44062a79a1aa4f69c1d52543d7e405187e49677f6ce415b56f63305b46"
+  },
+  "assets/cards-remake/chinesa-erlang-shen.webp": {
+    "bytes": 406238,
+    "sha256": "bbcb7fed1bdcf6a52d728005a37736bc3b4584bf2864b239d09c8f3a0bb42288"
+  },
+  "assets/cards-remake/chinesa-fuxi.webp": {
+    "bytes": 355788,
+    "sha256": "7f06678fa4d6de75007b978a38989b7414ed810df256e53619042137546085b1"
+  },
+  "assets/cards-remake/chinesa-guanyin.webp": {
+    "bytes": 333352,
+    "sha256": "e4d81f8642e551c0eeab64e2b2f493f4d0369a19cb78f6e0a069f69a4db355d5"
+  },
+  "assets/cards-remake/chinesa-hou-yi.webp": {
+    "bytes": 377244,
+    "sha256": "3a5c0d77a7de4cd154efcfd2c441c336e77188be70bc1c7d91c019b3caddc491"
+  },
+  "assets/cards-remake/chinesa-imperador-jade.webp": {
+    "bytes": 375152,
+    "sha256": "491b7c4b92d067e131f0265d84b3cc1f129b5a5788cc6546e8fdeaf643957284"
+  },
+  "assets/cards-remake/chinesa-nezha.webp": {
+    "bytes": 364142,
+    "sha256": "7c066c18a5bf7bb99bfc0d8b377a549c9bec418265ef661b7d62b1d465d0a8d2"
+  },
+  "assets/cards-remake/chinesa-nuwa.webp": {
+    "bytes": 388848,
+    "sha256": "d1118ca6eaa8beb6af651773c392720a7034edc05f15e69707a0347a3c002bf9"
+  },
+  "assets/cards-remake/chinesa-sun-wukong.webp": {
+    "bytes": 374526,
+    "sha256": "fb2d091f16277c14809d6918a3fb9e84b3307f96890a39eb795cfda25ae1d7f4"
+  },
+  "assets/cards-remake/clone-macaco.webp": {
+    "bytes": 361688,
+    "sha256": "ca633c3c7c7da8dc50f717114d6cc70c4a3042b2a5c54cb853bbafb0a600a6e8"
+  },
+  "assets/cards-remake/dionisio.webp": {
+    "bytes": 356084,
+    "sha256": "e600f8b7dfa88df0a0de69ab93feba5a98247cac1fa334e024de7a76c05847de"
+  },
+  "assets/cards-remake/guardiao-nordico.webp": {
+    "bytes": 361252,
+    "sha256": "5f1ebe300d7cdd3d15644861d747baec586864deb50b19e7f1b4d4bbb588cf08"
+  },
+  "assets/cards-remake/hades.webp": {
+    "bytes": 222696,
+    "sha256": "6a45683836e0f980d04543bc6588f7cdcccd7b9c359b737cc0c578aac6b4d9d3"
+  },
+  "assets/cards-remake/hefesto.webp": {
+    "bytes": 343918,
+    "sha256": "da7e1e372d40e58edfaa6e1db9eda7040ee13c3324660a6eda535e713c734d6d"
+  },
+  "assets/cards-remake/heimdall.webp": {
+    "bytes": 328044,
+    "sha256": "a925e4cb3ebed83a5a660e74260bfd889c1cb7d8b129e31d455a48bea885e2c9"
+  },
+  "assets/cards-remake/hercules.webp": {
+    "bytes": 177872,
+    "sha256": "111a6eb2ac23d9e894192d71efc0e4328b6ce4088953ef98faa25334f460d26c"
+  },
+  "assets/cards-remake/hermes.webp": {
+    "bytes": 316064,
+    "sha256": "233a50585462ba0f06bc6bf709910f06df5245adc0d0635fa334ba7b251be20e"
+  },
+  "assets/cards-remake/hindu-durga.webp": {
+    "bytes": 391894,
+    "sha256": "ac0195e4d4a5c344598479b3316626f040053440e520d554f41ccbe01b7b404a"
+  },
+  "assets/cards-remake/hindu-ganesha.webp": {
+    "bytes": 385364,
+    "sha256": "0dbae9c815cb82c90da680b097fc57dff86f9f2708d95a27adced52f76b50be2"
+  },
+  "assets/cards-remake/hindu-hanuman.webp": {
+    "bytes": 364906,
+    "sha256": "96e1d0d3c2e4f888f34eb22337017804893e3807ea9c2c3fcf408fd62e775313"
+  },
+  "assets/cards-remake/hindu-indra.webp": {
+    "bytes": 371840,
+    "sha256": "e0b56738e6653b391c9f7c42594ef0938e1c69226fbc7dd773b6a8e1064b3691"
+  },
+  "assets/cards-remake/hindu-kali.webp": {
+    "bytes": 399396,
+    "sha256": "0df4a4cc3be604a49f1442aed00f5975a15ad2673ea7a85a30377d383768757f"
+  },
+  "assets/cards-remake/hindu-krishna.webp": {
+    "bytes": 384856,
+    "sha256": "c1c40bbce47866e51e4e3043d920d3cd3dde5ecbeffba1124ddd40eaf254e36e"
+  },
+  "assets/cards-remake/hindu-lakshmi.webp": {
+    "bytes": 384384,
+    "sha256": "477e25424670f9f54dbf8ebc9b57b8ba7f0c608fe5782df6240d840f38a0a746"
+  },
+  "assets/cards-remake/hindu-saraswati.webp": {
+    "bytes": 383324,
+    "sha256": "22ce3abfbeb861e02affd6062a5b27388816f73ab26ea9d7a68588fb26c208af"
+  },
+  "assets/cards-remake/hindu-shiva.webp": {
+    "bytes": 386724,
+    "sha256": "bb18c4a744c9023337e73285eeaff7988328da2da09011fac796f26f79d2001f"
+  },
+  "assets/cards-remake/hindu-vishnu.webp": {
+    "bytes": 402488,
+    "sha256": "c5ea26fa947f5eb41650da949793afd74c21c670f40248848a34d66fc7ce83ff"
+  },
+  "assets/cards-remake/homem.webp": {
+    "bytes": 347390,
+    "sha256": "fc014368ee564520860a026d7e62e22119c62fa43f987aba43f1c078e294abdf"
+  },
+  "assets/cards-remake/horus.webp": {
+    "bytes": 312190,
+    "sha256": "1e5a62077e0cba43d80931c2df8e1d2bca82212779fd876315c08b1ceab84b6a"
+  },
+  "assets/cards-remake/isis.webp": {
+    "bytes": 331700,
+    "sha256": "3034ae87caa7b5cde2502895c42790c7f7de704c326c740674395d7bbac5e5c2"
+  },
+  "assets/cards-remake/japonesa-amaterasu.webp": {
+    "bytes": 384722,
+    "sha256": "89bde55ac965780897b708e63d0cdcf4b85bbcd364239540374d62c6f442e6de"
+  },
+  "assets/cards-remake/japonesa-fujin.webp": {
+    "bytes": 355634,
+    "sha256": "a40728ac51ec64cbfe30ba2ec41034e71af7eacd9a8a8bfdaf3f277631d0c1ac"
+  },
+  "assets/cards-remake/japonesa-hachiman.webp": {
+    "bytes": 382570,
+    "sha256": "087dad660d667268fcd6a63bdd6febc72019a4e1c62779e9dbe73262b0c11af4"
+  },
+  "assets/cards-remake/japonesa-inari.webp": {
+    "bytes": 381604,
+    "sha256": "9e6ec8aa62022629ee58d42997e3685a9cce7cd13cb1c90e81bd63efbc652a5b"
+  },
+  "assets/cards-remake/japonesa-izanagi.webp": {
+    "bytes": 403442,
+    "sha256": "a1ead903f92c6bb09b91b928a85f84bd941eb0db7b97dc9a80671ac98dd5d1f3"
+  },
+  "assets/cards-remake/japonesa-izanami.webp": {
+    "bytes": 374560,
+    "sha256": "8f0e5dc5e6eb4ddda97b3c29738be88fc0679c753a09a1e6b308010ac5cc5b91"
+  },
+  "assets/cards-remake/japonesa-raijin.webp": {
+    "bytes": 380494,
+    "sha256": "2ccaffa06fffb3994cb97721c26473f9bcf5e2e73b946381217e9728ef6f08d5"
+  },
+  "assets/cards-remake/japonesa-ryujin.webp": {
+    "bytes": 414976,
+    "sha256": "94449ca77fe6ae79bc0a2568b02ec8c4836132082dbfd24222a7be1c56bb02e0"
+  },
+  "assets/cards-remake/japonesa-susanoo.webp": {
+    "bytes": 397812,
+    "sha256": "cb7544f3bbf35f8db4089ecc812c9545ed31f9be1ca045a10beb471577ee8a1f"
+  },
+  "assets/cards-remake/japonesa-tsukuyomi.webp": {
+    "bytes": 380722,
+    "sha256": "e0d480f5bed35fc90eb8e263fcb2a35d5f3786da6a46c741c9a22eefce77b5a9"
+  },
+  "assets/cards-remake/lobo-alfa.webp": {
+    "bytes": 240002,
+    "sha256": "2e2b5198d8d8e737fe419c32f224ced37f0fa4bb886ae280b61ee0c987a5ad83"
+  },
+  "assets/cards-remake/lobo-beta.webp": {
+    "bytes": 233786,
+    "sha256": "074f06a3e627657882611675a338ba6b406b7700372b8cc0b793d68fa7125c61"
+  },
+  "assets/cards-remake/lobo-omega.webp": {
+    "bytes": 220500,
+    "sha256": "6e8970da7155fd5bbcaaf22efc0337a2b4ce157209d3dcaa26cdea264161a83d"
+  },
+  "assets/cards-remake/loki.webp": {
+    "bytes": 311804,
+    "sha256": "0db44fbefe2783bc4c809e74609de6762aa7b08443e962b79fffb49616130b07"
+  },
+  "assets/cards-remake/lukyan-rei-de-todos.webp": {
+    "bytes": 225004,
+    "sha256": "5b3dfb614db076dc2c56beea5678ba7cac64f43a8d8db5ce204aece264b847bc"
+  },
+  "assets/cards-remake/lukyan.webp": {
+    "bytes": 235144,
+    "sha256": "163226894991a8384a0bd8feeff04a0d123c858997ac846dd9dbb81ca17f0f87"
+  },
+  "assets/cards-remake/medusa.webp": {
+    "bytes": 209016,
+    "sha256": "0d80ebc477ff8230262b2cb8dda3879af8cec8fd874ab27d9eaa01044c6b5460"
+  },
+  "assets/cards-remake/mesopotamica-enki.webp": {
+    "bytes": 402674,
+    "sha256": "d262e2e99c220b0a2fce95ed5fa09734b85405633179f9bc14eefaa0da125cea"
+  },
+  "assets/cards-remake/mesopotamica-enlil.webp": {
+    "bytes": 369476,
+    "sha256": "03b0b4aaac455823d99be2f28e34a844deded74b07017fb9f4ab6d3c760571b1"
+  },
+  "assets/cards-remake/mesopotamica-ereshkigal.webp": {
+    "bytes": 353622,
+    "sha256": "eb742e0487f36dca115913b5e367e2a8fff27d50516930a102c9c05854991345"
+  },
+  "assets/cards-remake/mesopotamica-ishtar.webp": {
+    "bytes": 375776,
+    "sha256": "642ff739145f03cd693346558d7f95e8b1344177021378987bdca811adce8c43"
+  },
+  "assets/cards-remake/mesopotamica-marduk.webp": {
+    "bytes": 404596,
+    "sha256": "946974e50b8d9d4f9a753bb6154a1a018d579a5c145b065dd08bb0e41003bfe0"
+  },
+  "assets/cards-remake/mesopotamica-nanna-sin.webp": {
+    "bytes": 399084,
+    "sha256": "4c7c330e04d0ae76fa0a4ca7e6bdbef920b1e37f8ddfbf59bef984fb1543351a"
+  },
+  "assets/cards-remake/mesopotamica-nergal.webp": {
+    "bytes": 391114,
+    "sha256": "972f8e7f35a2f149961bbaeea3a1e101ba73c0ab76cdf6d543cc41b43527e762"
+  },
+  "assets/cards-remake/mesopotamica-ninurta.webp": {
+    "bytes": 397852,
+    "sha256": "bb7d74b9b98d6e24f1316b5ac9a6212deb84ab7964c5c3abfe898724f01c4d4d"
+  },
+  "assets/cards-remake/mesopotamica-tiamat.webp": {
+    "bytes": 431196,
+    "sha256": "1780bc9a2bc79fd6d249f4c6d041d57793fd3dd6453b3f38879f970fd175654b"
+  },
+  "assets/cards-remake/mesopotamica-utu-shamash.webp": {
+    "bytes": 378970,
+    "sha256": "02b59aac50ea7bbeb9aa2def14e10058cdbad8d87390304dcb715fb4d86ea6e3"
+  },
+  "assets/cards-remake/minotauro.webp": {
+    "bytes": 217396,
+    "sha256": "acaeb98b7f885b7d424a538f87c203cc0543322568331486f8d0b7ee3558941c"
+  },
+  "assets/cards-remake/mulher.webp": {
+    "bytes": 343856,
+    "sha256": "203aa330c7a12700e76f3ee7ad1f3626bc8a5ef0937b2234467eae3b456b15bc"
+  },
+  "assets/cards-remake/odin.webp": {
+    "bytes": 334438,
+    "sha256": "aaabb980fad4bc5e8802fb19802edb3da204c5df2743b6777c3a8102df4d5133"
+  },
+  "assets/cards-remake/osiris.webp": {
+    "bytes": 317146,
+    "sha256": "f32dfb526cda5aa920d04a54f841f2ead3d903eed9f9833660ddeb58f11a5ca5"
+  },
+  "assets/cards-remake/poseidon.webp": {
+    "bytes": 263760,
+    "sha256": "1891c7991f0e84fa86a7008d5612810034cbf53555bb4a880172217209bb901c"
+  },
+  "assets/cards-remake/ra.webp": {
+    "bytes": 335450,
+    "sha256": "7916b49bda166c533be246becdba9ebdf72b59af9eea0d0b17e465c713fa343b"
+  },
+  "assets/cards-remake/ragnar.webp": {
+    "bytes": 333720,
+    "sha256": "6fa1a6b9e4d1db6037009ee61a77a69232cfbbffa7e30dcbf41efa88076509d4"
+  },
+  "assets/cards-remake/rei-arthur.webp": {
+    "bytes": 382058,
+    "sha256": "09a234d3351ae3403b46dbb3ad237a2a9b0ee2e45d21c7011c60d5f714ffc40d"
+  },
+  "assets/cards-remake/seth.webp": {
+    "bytes": 314938,
+    "sha256": "fa02a950452d444787dfaac3a1f471db8174866d1a51b4e557e1ec2c4de9e4ef"
+  },
+  "assets/cards-remake/sobek.webp": {
+    "bytes": 347826,
+    "sha256": "ccc35e9f1a9a90d8c89a2faa8e8a86006fb21533615eed20052f4e24d52d29d9"
+  },
+  "assets/cards-remake/soldado-esparta.webp": {
+    "bytes": 184032,
+    "sha256": "175d16c4b3db633a01118d5c72b9e2ba1885712d37efc2d8b4a7ae8de1e45226"
+  },
+  "assets/cards-remake/thor.webp": {
+    "bytes": 332126,
+    "sha256": "2c4f51eb5418da9f4a1aafa45c39fd47b7fd810a8f624a2451bbd2a867576093"
+  },
+  "assets/cards-remake/zeus.webp": {
+    "bytes": 225886,
+    "sha256": "0f8f10fb016060c1b6161b24d89cb80548ab193a99c4c4368b354296aebc3e59"
   },
   "assets/cards-v3/afrodite.webp": {
     "bytes": 301270,
@@ -619,6 +1903,46 @@
     "bytes": 2769078,
     "sha256": "1dae085ba83ad25b8dbc768a9d87cba10570f6851e96a72abdae5bd71335e7b0"
   },
+  "assets/holograms/asteca-chalchiuhtlicue-hologram.webp": {
+    "bytes": 900828,
+    "sha256": "b28c649c67eb8b8164574a0628af73a818aa35651663664fa7c6ed8278d160bb"
+  },
+  "assets/holograms/asteca-coatlicue-hologram.webp": {
+    "bytes": 714522,
+    "sha256": "69dc3c221b37831effeea84963d9868472e8ecdfd08d905feff884b282c38477"
+  },
+  "assets/holograms/asteca-huitzilopochtli-hologram.webp": {
+    "bytes": 673638,
+    "sha256": "0b5325e654708a0197248c3e782e8fdaf377a82e93646d3dfef1f1a453de77b2"
+  },
+  "assets/holograms/asteca-mictecacihuatl-hologram.webp": {
+    "bytes": 720074,
+    "sha256": "a92d5c8438f23dcdddcfe689545b83bd5aaa66f5ad282f91b8fa84d2842dc27d"
+  },
+  "assets/holograms/asteca-mictlantecuhtli-hologram.webp": {
+    "bytes": 723960,
+    "sha256": "74da0ba9458fe732ce8735a1f7429906223684dbb29b16ec046a20ab271fd39e"
+  },
+  "assets/holograms/asteca-quetzalcoatl-hologram.webp": {
+    "bytes": 891348,
+    "sha256": "c9a8200f388dd804cf80a24524cdfc2b902085bc2b5c7a6f0dee75d123da9b9c"
+  },
+  "assets/holograms/asteca-tezcatlipoca-hologram.webp": {
+    "bytes": 697386,
+    "sha256": "bf6bb26e87a527ecb15e9b67bd31bb72dbbad4db0824a05defd6a284c6c28626"
+  },
+  "assets/holograms/asteca-tlaloc-hologram.webp": {
+    "bytes": 898618,
+    "sha256": "328315003f7617a23da985ee9eeb2a792023665269cc72c223d97f9fa84694c2"
+  },
+  "assets/holograms/asteca-xipe-totec-hologram.webp": {
+    "bytes": 710504,
+    "sha256": "e9484d83f422f562a1a9f6a1068f1e909aaf5ae5eb725d0f30fdfdd0c46cff1e"
+  },
+  "assets/holograms/asteca-xochiquetzal-hologram.webp": {
+    "bytes": 749424,
+    "sha256": "0cccbcae04171f8cf200a87933f0c99e78adf3dc5ba9392af2d304451bca921e"
+  },
   "assets/holograms/athena-hologram.png": {
     "bytes": 2990641,
     "sha256": "c0b55ba81e15dbd82419e831d2ecddd925f45109a0f3a24bec04399d0be2c5a1"
@@ -627,9 +1951,125 @@
     "bytes": 2796844,
     "sha256": "981b17704dfaee34f667036ab047c747607452c103f69ca064937289d915cb5c"
   },
+  "assets/holograms/brasil-boitata-hologram.webp": {
+    "bytes": 708048,
+    "sha256": "6bfbdd62c661b7d8b91eba4b4c97b6c80ca0145a93414787ee236e13e043b214"
+  },
+  "assets/holograms/brasil-boto-hologram.webp": {
+    "bytes": 469060,
+    "sha256": "614c63aa9acdace4b9532613609fbc7579b0503a267a11fcbc0026946e2bc68a"
+  },
+  "assets/holograms/brasil-caipora-hologram.webp": {
+    "bytes": 595776,
+    "sha256": "bd2a7d03415eee128627b41ecf0416ab6971aefab48d17db3a6ac4680a226b9b"
+  },
+  "assets/holograms/brasil-cuca-hologram.webp": {
+    "bytes": 723062,
+    "sha256": "36b0fd72570d6aef7aede3b6a0f761885f0e2752efa76955c6c2f25742c81bc6"
+  },
+  "assets/holograms/brasil-curupira-hologram.webp": {
+    "bytes": 500298,
+    "sha256": "324a8c996c6d740c4d5a9a8571e5031c55c5983c6095af5fe674ed68ec90a7df"
+  },
+  "assets/holograms/brasil-iara-hologram.webp": {
+    "bytes": 631632,
+    "sha256": "8951631ef7e54e101db8cae5d978bbd6c77413f3df200009e0ca53ff74a9b538"
+  },
+  "assets/holograms/brasil-lampiao-hologram.webp": {
+    "bytes": 347760,
+    "sha256": "f3959a18d0a3da5e6e47038345755e8a2abf591863eeb50e3e0007d30f571298"
+  },
+  "assets/holograms/brasil-mapinguari-hologram.webp": {
+    "bytes": 837618,
+    "sha256": "a17870d00d1e48ea5f56d998f4126f039e92df4d039a45dfcecaa9d2eec14c6a"
+  },
+  "assets/holograms/brasil-mula-sem-cabeca-hologram.webp": {
+    "bytes": 587650,
+    "sha256": "3ed2a0d60ea423885f557d1e98adac16e6af2fe4a5998c67cf43c1a77c893e74"
+  },
+  "assets/holograms/brasil-saci-hologram.webp": {
+    "bytes": 662762,
+    "sha256": "fc78ccd9533974d5cb569a04d47cb5abfebd9d89e4bf7d22845695a6b08a8a4d"
+  },
   "assets/holograms/butter-hologram.png": {
     "bytes": 2159319,
     "sha256": "55c5e04d4e5c2cf45e86bc645bd4c3cab7a0cb6be9f20423e21b5197170c7d25"
+  },
+  "assets/holograms/celtas-brigid-hologram.webp": {
+    "bytes": 611124,
+    "sha256": "bd0e10e60300d29183a330d204f5038688ca09da6c1b95ff258ed9e8c3ae1e5d"
+  },
+  "assets/holograms/celtas-cu-chulainn-hologram.webp": {
+    "bytes": 639534,
+    "sha256": "a569afbfab7fa6b7c8c75593c502a199842721157183846c6e8ec76fae40424d"
+  },
+  "assets/holograms/celtas-dagda-hologram.webp": {
+    "bytes": 626180,
+    "sha256": "6328359b448aae5e3257b98d979f5d8af10b6ef3e2ec6b9463c033e833047971"
+  },
+  "assets/holograms/celtas-dama-do-lago-hologram.webp": {
+    "bytes": 775694,
+    "sha256": "17f10352be6baaf526fc045ba895d6c3852ce69d43fa93a4079db2264b80c024"
+  },
+  "assets/holograms/celtas-lancelot-hologram.webp": {
+    "bytes": 550080,
+    "sha256": "1153ff112e7b5a3a56520bbf8d058332fe8709b095052294d461b920a1e1f0c1"
+  },
+  "assets/holograms/celtas-lugh-hologram.webp": {
+    "bytes": 693540,
+    "sha256": "51a6be712b501c0b1039b5d357157f5af16bc4a8fef7afbf91b8064e390bd612"
+  },
+  "assets/holograms/celtas-merlin-hologram.webp": {
+    "bytes": 714928,
+    "sha256": "9707658a5a14ef44523a22e201c3d56705b380b7c7f07ed6759e6e86387a456b"
+  },
+  "assets/holograms/celtas-morgana-hologram.webp": {
+    "bytes": 731494,
+    "sha256": "384b17e9a96a2a6ebd011c187dd6175ea5146fd70a283fa0c19d0b83b06e86a3"
+  },
+  "assets/holograms/celtas-morrigan-hologram.webp": {
+    "bytes": 748444,
+    "sha256": "9e1eab3a8b5381d5e063645c3222c45f648fb3e6e1584d2c9339b245970b7444"
+  },
+  "assets/holograms/chinesa-ao-guang-hologram.webp": {
+    "bytes": 749584,
+    "sha256": "4cdd3cc7631c8f537a8351a949132dccd3955e36f4bd03a1ec66951a54311f1f"
+  },
+  "assets/holograms/chinesa-change-hologram.webp": {
+    "bytes": 791974,
+    "sha256": "be72fa1cb39830091d8bb65e5b384238492b6b8372db5587faa5c3aee48de4a7"
+  },
+  "assets/holograms/chinesa-erlang-shen-hologram.webp": {
+    "bytes": 732354,
+    "sha256": "7ba6a00e4eb18bad0b09d44051333cb70b47e1f4df792992e4bfc3aae2f74b9d"
+  },
+  "assets/holograms/chinesa-fuxi-hologram.webp": {
+    "bytes": 729734,
+    "sha256": "fde434126b551d4b539f2d2517022d2c8f6d5a82686617ce455a7ab7ece78be1"
+  },
+  "assets/holograms/chinesa-guanyin-hologram.webp": {
+    "bytes": 674582,
+    "sha256": "7c7795fda2b246dee6506ac1ef28aca663153bd95f977146947110c3778c47f4"
+  },
+  "assets/holograms/chinesa-hou-yi-hologram.webp": {
+    "bytes": 590212,
+    "sha256": "f6c09dcc2c778d0a9b992a835d9cc0ed5f15b29847840b58bde98e7899ba4be4"
+  },
+  "assets/holograms/chinesa-imperador-jade-hologram.webp": {
+    "bytes": 646362,
+    "sha256": "384e24bbb28f7bd166ef206c2a15935e7f4b8a65e08707479b0fa758152de4b5"
+  },
+  "assets/holograms/chinesa-nezha-hologram.webp": {
+    "bytes": 695284,
+    "sha256": "69cc5838490efb70d6b6c5f0e7a659e6619eb922ebc4d21cc0ab23cb604ca887"
+  },
+  "assets/holograms/chinesa-nuwa-hologram.webp": {
+    "bytes": 789940,
+    "sha256": "6e28b63a60115fd2d3390e2c6b869e2c8efd66cd6c8a14cb490dace74965f08e"
+  },
+  "assets/holograms/chinesa-sun-wukong-hologram.webp": {
+    "bytes": 597030,
+    "sha256": "8cc1f3fd429c71ed64a164326282eede9ed1fca1c27e3fe156cd8c170fae7bc7"
   },
   "assets/holograms/CINEMATIC-PROMPTS.json": {
     "bytes": 1834,
@@ -667,6 +2107,46 @@
     "bytes": 2724672,
     "sha256": "6868cdd7e61e42b61fe99bc12c9f3c2bb07f0a21246b249bab69cb2b971dba1f"
   },
+  "assets/holograms/hindu-durga-hologram.webp": {
+    "bytes": 734980,
+    "sha256": "d52e85454614afed050350da77319a1d5f1e20305f946b55491ee344776cd849"
+  },
+  "assets/holograms/hindu-ganesha-hologram.webp": {
+    "bytes": 704698,
+    "sha256": "56c0c98671e99d6631a005a5add91435ba97fd1182eab30fbe2865832b831cfc"
+  },
+  "assets/holograms/hindu-hanuman-hologram.webp": {
+    "bytes": 619090,
+    "sha256": "67a4041f1aa9b219012ee0a008a02cf60c5be890725c83cc7cf3c1704e8c0c6f"
+  },
+  "assets/holograms/hindu-indra-hologram.webp": {
+    "bytes": 675032,
+    "sha256": "230aa9167b7370302b27c648adf0b6b08cd9e5dad285859e4ec43fceef20aa62"
+  },
+  "assets/holograms/hindu-kali-hologram.webp": {
+    "bytes": 734298,
+    "sha256": "7528aca2f197b37a63344616162f2a8dc308e2af940199dba0a8c6c22a9815d3"
+  },
+  "assets/holograms/hindu-krishna-hologram.webp": {
+    "bytes": 562108,
+    "sha256": "493c2b7f0cbece675590b3fea06c701320bcf8977002c8b3c1711b4363bb7d1e"
+  },
+  "assets/holograms/hindu-lakshmi-hologram.webp": {
+    "bytes": 652694,
+    "sha256": "4e0d3995b678db3135d35e1a5c13e023bcb4a33269bd636afcc24817575ec973"
+  },
+  "assets/holograms/hindu-saraswati-hologram.webp": {
+    "bytes": 612376,
+    "sha256": "a106028bcb31954501e8696ea08b8506134f0c4cba4b47358a3ecba79b699224"
+  },
+  "assets/holograms/hindu-shiva-hologram.webp": {
+    "bytes": 689370,
+    "sha256": "7e2f9e8c123a53c6eee0357c1cde4a49f05bc464199c59c9ec869c930b4726ae"
+  },
+  "assets/holograms/hindu-vishnu-hologram.webp": {
+    "bytes": 649374,
+    "sha256": "20982e14d516d520e04c217c0d172131423bec8499cd6844b427d1dfe007601e"
+  },
   "assets/holograms/homem-hologram.png": {
     "bytes": 2112711,
     "sha256": "ff957a26e63d2edb83483f12246e2150272b5ba03dd77ddc686cf3cacbffcc68"
@@ -678,6 +2158,46 @@
   "assets/holograms/isis-hologram.png": {
     "bytes": 2914996,
     "sha256": "610193b66af827095e7e32fb92d3f2a0e0464a2778ea79c8640db6e99872501a"
+  },
+  "assets/holograms/japonesa-amaterasu-hologram.webp": {
+    "bytes": 636342,
+    "sha256": "0aeaccde5de8af8134da3b6e9b6c08b6570dbe62b52aa7ae5312c311c6d7be75"
+  },
+  "assets/holograms/japonesa-fujin-hologram.webp": {
+    "bytes": 737758,
+    "sha256": "a73f76a7614bd38adf483c6da8ea0453c359f4d1de868c110a32b66f43ed81f9"
+  },
+  "assets/holograms/japonesa-hachiman-hologram.webp": {
+    "bytes": 644728,
+    "sha256": "02c6aa8a5b3cc3b220fa5ddeec0bca224ed3a625a5493b8fd5d9558e3666a2c4"
+  },
+  "assets/holograms/japonesa-inari-hologram.webp": {
+    "bytes": 726238,
+    "sha256": "4c254be8a564d285ce77687d521090bfa88acb0e337bb5fe6433d7e13f6fa194"
+  },
+  "assets/holograms/japonesa-izanagi-hologram.webp": {
+    "bytes": 818530,
+    "sha256": "0486c3ccf6685dd264bceb3fd51dd622786752d95986693d5d63d3a0f4d57392"
+  },
+  "assets/holograms/japonesa-izanami-hologram.webp": {
+    "bytes": 801396,
+    "sha256": "ef6de96354586c3810aa0897b30891b3371a62b37f0f408d1b611fc443404a49"
+  },
+  "assets/holograms/japonesa-raijin-hologram.webp": {
+    "bytes": 696360,
+    "sha256": "508a380e43236a072205e81a609991a295b8462ee34c2a6247cb1bd9dc8b445a"
+  },
+  "assets/holograms/japonesa-ryujin-hologram.webp": {
+    "bytes": 753182,
+    "sha256": "9a1a8ef9c231b435db9f997f3f67ce342a692ecf33d54bae44edd52611239b78"
+  },
+  "assets/holograms/japonesa-susanoo-hologram.webp": {
+    "bytes": 741428,
+    "sha256": "977c31c063d700a7ee0837d4cb303db8ea93de9b1035f7fe06db29e5d3427be4"
+  },
+  "assets/holograms/japonesa-tsukuyomi-hologram.webp": {
+    "bytes": 797676,
+    "sha256": "5ee916334487b84ed45dca3d37dd7799eebae3e39f34fcbe0f3602b9f8037b1b"
   },
   "assets/holograms/lobo-alfa-hologram.png": {
     "bytes": 2497676,
@@ -707,6 +2227,46 @@
     "bytes": 2341235,
     "sha256": "adf915f01d38eaff53a975094085a86bfdac176d9c553ddce1c9b2e460aa95d4"
   },
+  "assets/holograms/mesopotamica-enki-hologram.webp": {
+    "bytes": 747174,
+    "sha256": "ebbd3cf6f068e7dd0f14b54285c2dd8a2bf76f1ebd6d767e0bf75cc6aba35879"
+  },
+  "assets/holograms/mesopotamica-enlil-hologram.webp": {
+    "bytes": 689482,
+    "sha256": "f632346f0b3f02b299b1601cce3ed6b8cc097a12b440fe23480f7639a37f76dc"
+  },
+  "assets/holograms/mesopotamica-ereshkigal-hologram.webp": {
+    "bytes": 650364,
+    "sha256": "7b914575e17e43af99ee2eb5c084e296a8b622a2e5f5cf4aca3fdd04e6f95117"
+  },
+  "assets/holograms/mesopotamica-ishtar-hologram.webp": {
+    "bytes": 633244,
+    "sha256": "2e037c8d13315b6bbb9fb08ec88a0e9660816e1869240ade50d56133cfb976ec"
+  },
+  "assets/holograms/mesopotamica-marduk-hologram.webp": {
+    "bytes": 709768,
+    "sha256": "1e66fa4573b474b3549284b4efedcfc63cf3a0f1eb6eda127f199ac453b8c707"
+  },
+  "assets/holograms/mesopotamica-nanna-sin-hologram.webp": {
+    "bytes": 703318,
+    "sha256": "7a88408dc2ff7363d0c5003304c9ba860591e8747aee9c577078808e263c9962"
+  },
+  "assets/holograms/mesopotamica-nergal-hologram.webp": {
+    "bytes": 635622,
+    "sha256": "1c22a57081c52e3d3fd77ef697b6e2b5b4a3973bd184cbb168fcd062a7d1abc7"
+  },
+  "assets/holograms/mesopotamica-ninurta-hologram.webp": {
+    "bytes": 698046,
+    "sha256": "4201181d3668d48c08e0900609c4c8ebf81c6a179d7393ce6ed0b95602ebeae2"
+  },
+  "assets/holograms/mesopotamica-tiamat-hologram.webp": {
+    "bytes": 969562,
+    "sha256": "e0b01483d30a7e77344437a8a2b280a4e3a6dfa188a53a7a13755297b4cfc043"
+  },
+  "assets/holograms/mesopotamica-utu-shamash-hologram.webp": {
+    "bytes": 672788,
+    "sha256": "4da723354d5bbd98f18e2496847b7963b9398de38b54b9afe58b65ea3f62500c"
+  },
   "assets/holograms/minotauro-hologram.png": {
     "bytes": 2170636,
     "sha256": "a8996c4bf50760479a3afe5e35094f801f8b477174c77db346b8381396afadd4"
@@ -735,6 +2295,10 @@
     "bytes": 2755778,
     "sha256": "1309086c244941cf927d9384136ce3e0707d6a370b5bfe48117cf1ab475ef916"
   },
+  "assets/holograms/rei-arthur-hologram.webp": {
+    "bytes": 571048,
+    "sha256": "3c6f390a07ede3313394e90c3635f05727a9fbc57d12deb1e1bf5e8e1285c33f"
+  },
   "assets/holograms/seth-hologram.png": {
     "bytes": 2680506,
     "sha256": "25624ed75e150b7b527f3197eab88c1c1f57b0027fc4d32631416503abefb100"
@@ -742,6 +2306,10 @@
   "assets/holograms/sobek-hologram.png": {
     "bytes": 2934218,
     "sha256": "8c9ca14fe844fe7f83b113e1e79399a6ff4185619ca8d7d880ac16a35cf56cc4"
+  },
+  "assets/holograms/soldado-esparta-hologram.webp": {
+    "bytes": 417970,
+    "sha256": "fa85e460fbf4995513a0dab8be4ac9671793aafc16a32f04ccd486bd2a105f59"
   },
   "assets/holograms/spartan-hologram.png": {
     "bytes": 2057674,
@@ -1079,6 +2647,10 @@
     "bytes": 2383,
     "sha256": "842bb389420dafdad4393e12c1e8970d5a1e0a4a77414c27af33ba341f472729"
   },
+  "ATUALIZACAO-CARTAS-REMAKE.md": {
+    "bytes": 3212,
+    "sha256": "4b94738d208588226d34564489f1816cc9464b24a6f150cc943b1214ff49cb1a"
+  },
   "ATUALIZACAO-CENARIOS-BOAS-VINDAS.md": {
     "bytes": 2152,
     "sha256": "f341be7428bccf6b10695ed02acdb71e3b7015186f4f6c8103ea63c2590dac8d"
@@ -1124,12 +2696,12 @@
     "sha256": "52f2e5032c7e070a8fa4a7669cee3902451a95b2b8ec4ba7f466d64dd6f1a3a2"
   },
   "avatars-chibi.js": {
-    "bytes": 5635,
-    "sha256": "f806ffcc09b419aa8e8a8579c1040a6241ee958a746cd8bd1b5d3193f116e27c"
+    "bytes": 15867,
+    "sha256": "04ac9cb0370c1cf5bc7bb8169b03592765667672eb5ed24573f4165132c698ad"
   },
   "avatars-chibi.json": {
-    "bytes": 7624,
-    "sha256": "5ad70013da2ec128252dca1eee9fb06cf86012b138beb6fce3f7ded5ad1ca246"
+    "bytes": 22358,
+    "sha256": "fd050ba484a447850cad8f397178de3090a1dc53878087edec880f63b9c3249e"
   },
   "BOAS-VINDAS-PACOTE-INICIAL.md": {
     "bytes": 5521,
@@ -1140,16 +2712,20 @@
     "sha256": "e71d8b5790992cca9859df3705aa97040b1dfad79d83fd6869e353157958069e"
   },
   "card-expansion.js": {
-    "bytes": 31570,
-    "sha256": "1fee405718daa7e9f61f0835de0af3f454a4d05751a3d474217860b3c47bb14a"
+    "bytes": 114891,
+    "sha256": "45e5a3bd586a91c52dbda27e7a2af1bdbc981f95f68f5be569a1d247dba94894"
   },
   "card-hologram-map.json": {
-    "bytes": 31500,
-    "sha256": "3d51c448eb1fb0ac0a27cfbc9c3e37fbcce66411b2dbe48e7e35122188a88333"
+    "bytes": 114524,
+    "sha256": "dadb900e624d86a998ecf08148a21d2a2cecc076572abc3e8b1576f5f5ea996f"
+  },
+  "cards-remake.json": {
+    "bytes": 114524,
+    "sha256": "dadb900e624d86a998ecf08148a21d2a2cecc076572abc3e8b1576f5f5ea996f"
   },
   "cartas-hologramas.html": {
-    "bytes": 10152,
-    "sha256": "62a0f0812530b87459db17f36eb1178d71289b61908281a464c4dbc47c46aea2"
+    "bytes": 80234,
+    "sha256": "7629f8fc2a8c7c07cbd176a9c7f08a673a1582e570a311e9d34e76ace878013d"
   },
   "CARTAS-HOLOGRAMAS.md": {
     "bytes": 4051,
@@ -1312,8 +2888,8 @@
     "sha256": "4b6ed33fa0d941b320af3317ec1c6a0b0fe2e4abd52b817551985d9dd8539775"
   },
   "icones-chibi.html": {
-    "bytes": 8322,
-    "sha256": "2b09b22b7828e418a1b14c3512e216ab3186caf4906afd19ea362a8a0dc0e969"
+    "bytes": 17736,
+    "sha256": "69a3cda8acb6a9e5d9d9a20ebaf22879855a867790677f3f26c848e8eb4e0dce"
   },
   "identity-art.css": {
     "bytes": 2959,
@@ -1332,8 +2908,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 71660,
-    "sha256": "9f1465d4035c0deda672015b16da9e4877229ce82dca8c1eeac3aba6f045f77f"
+    "bytes": 71879,
+    "sha256": "152ef2c1e7675fc477a77ef97916867e455f300e7fc88dd28a55275eb382e62a"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -1416,8 +2992,8 @@
     "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
   },
   "online.js": {
-    "bytes": 140493,
-    "sha256": "79d28b56a1fd617b49f96e81311f78d44a6ca9dd7c32a258a91b59d175e275e1"
+    "bytes": 141099,
+    "sha256": "3af0ec17bbb0124db7f81951bd0816157067dd8cc415276d9fd0b0588a7ff0a9"
   },
   "PELOTOES-DE-COMPANHEIROS.md": {
     "bytes": 884,
@@ -1474,6 +3050,22 @@
   "REGRAS-CARTAS-DECISOES.md": {
     "bytes": 20997,
     "sha256": "3d478dcd0bab988f4565934e05badd74eda430c241bf5b35f14cf2563dd65282"
+  },
+  "remake-gallery.css": {
+    "bytes": 1513,
+    "sha256": "f70723bd80931e76ae618bf4d926bdeb5beb48b776e5ba3108520a2143caa5a8"
+  },
+  "remake-gallery.js": {
+    "bytes": 373,
+    "sha256": "9b1a2b8d7575d8c3688bb6ade2d33be17b1f417d8a04ed9bd1509c64aa6de796"
+  },
+  "remake-rules.js": {
+    "bytes": 4074,
+    "sha256": "408562c4995a2cd0d206ef4a05e000b0a945fec3a23060cbf1a5a6dba0732b25"
+  },
+  "remake-rules.json": {
+    "bytes": 5932,
+    "sha256": "0acf56725211187ca3b7e41a79010f076e77d735cf8f0fadcbc8636cee044ad1"
   },
   "responsive-layout.css": {
     "bytes": 19257,
@@ -1747,6 +3339,14 @@
     "bytes": 10352,
     "sha256": "033eb407c9918ddd87c200849cf54114b827d255097e742b36d5b2df275d4e92"
   },
+  "supabase/migrations/202610200040_remake_character_collection.sql": {
+    "bytes": 327985,
+    "sha256": "2d4c09822e0da339979e0742231fb4bb969112e030ad8fc8020c2e3bc45bab04"
+  },
+  "supabase/migrations/202610200041_remake_chibi_icons.sql": {
+    "bytes": 9684,
+    "sha256": "7dda8ce63efb0f47beb80047a336061381f885795cb72893804f7fa16852d141"
+  },
   "supabase/README.md": {
     "bytes": 2053,
     "sha256": "317190d2e911059045588edd73f6f78cecbcbf1f4df1c13dfff9aa4f8594c24e"
@@ -1756,8 +3356,8 @@
     "sha256": "9b6a1a6c0d7deb0d97e5daa0ef0d1d3262096d20a9b5f4ece74afa9169fa7b02"
   },
   "sw.js": {
-    "bytes": 5649,
-    "sha256": "7a18c795839632e1e20ab1a1f66e19774b313b6df2ed0ba56fea7aee1c385c38"
+    "bytes": 5731,
+    "sha256": "f60ddd645a96c10c1a62804ab6236967165a39323e63f2eae8891d4b7b7dc86c"
   },
   "terrain-cards.js": {
     "bytes": 15141,
