@@ -119,9 +119,33 @@
     "bytes": 3038,
     "sha256": "abf264fb6b76eb58e3c151e2402febb632de9e9755f3d12968fee509db421571"
   },
+  "_manutencao/guardian-campaign/catalogo-servidor.json": {
+    "bytes": 292246,
+    "sha256": "77f03eb3d1343b57d84301cc28fb5a0bf8623b6bb6c5972ed625b7bb7067ea80"
+  },
+  "_manutencao/guardian-campaign/compilar-campanha.py": {
+    "bytes": 1427,
+    "sha256": "8715d06aeeb4a14786c554f033922e7c919465e3a12f1d7834be30286d5c961e"
+  },
+  "_manutencao/guardian-campaign/guardian-campaign-api.sql": {
+    "bytes": 14294,
+    "sha256": "d32338214dcf371c927bd6291fcb6844e6eab0e9add8af03983ea05125ce772b"
+  },
+  "_manutencao/guardian-campaign/guardian-campaign-engine.sql": {
+    "bytes": 12596,
+    "sha256": "af56441f489a1629b3588b0d0812f501363dbf8338f33730f1b9f200949ff2d7"
+  },
+  "_manutencao/guardian-campaign/guardian-campaign-schema.sql": {
+    "bytes": 15981,
+    "sha256": "b558bd4667c065a4015f593915d31b96a210082e2289e43b9e82d10a6eefcbe3"
+  },
+  "_manutencao/guardian-campaign/preparar-campanha.py": {
+    "bytes": 11380,
+    "sha256": "83b55af70174e8177ae628288161458f50a11370fc5f2ecf5ce4130827f58a7c"
+  },
   "_manutencao/interface-fontes.json": {
-    "bytes": 877,
-    "sha256": "a988751ee867a6b7697f8cd4adbbe1867349333b520ae74fa37e7a73d1586e42"
+    "bytes": 907,
+    "sha256": "784acebb7f40250b5dd7e7c70c29c363d2d4271abb08f51c1f6e58cb21d7e6fd"
   },
   "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
     "bytes": 2545,
@@ -756,8 +780,8 @@
     "sha256": "4ac19c29405481b9da492304052472cdf8bb699e2e7218a9dad6d2384e4af25a"
   },
   "app.js": {
-    "bytes": 124698,
-    "sha256": "b9bdfd99d43493052be154f12f1e165f9b12efd30a18bb392568981a1b40ba84"
+    "bytes": 125222,
+    "sha256": "311754c6502f32ae01b0b2b55ce56f9ba025d7a07875ca6f397c74e3744205da"
   },
   "arcane-palette.css": {
     "bytes": 37675,
@@ -772,8 +796,8 @@
     "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
   },
   "asset-manifest.json": {
-    "bytes": 54196,
-    "sha256": "5307078e02e260e4d28b55840122d306736f10a919273c7991a48aa54fab0c5e"
+    "bytes": 54263,
+    "sha256": "ba25029b1ac2e5eb3ad826067d7645703b0f3afd9bb8ca2c5bda1fdbc5348122"
   },
   "assets/app-icon.svg": {
     "bytes": 531,
@@ -2795,6 +2819,10 @@
     "bytes": 491,
     "sha256": "7fc73ea364411ddf4440f8b4283adf535730b32a4622847199ba0302c3256549"
   },
+  "assets/guardian-campaign/world.svg": {
+    "bytes": 2814,
+    "sha256": "d84022a01388539f980cefb8d2d21bd2cda45cdf513349e7dd70d95a3a735cdf"
+  },
   "assets/hades-full.png": {
     "bytes": 1787977,
     "sha256": "1b6c6bd0e4b61d24d0843268177d42fc3904bb3f0b530b33848823b0fdb6082e"
@@ -4120,8 +4148,24 @@
     "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
   },
   "game-interface.css": {
-    "bytes": 579101,
-    "sha256": "c3114504c3ac31f335b1e779ba9dd5e988d167f429f263069917b7c8f60a9005"
+    "bytes": 586461,
+    "sha256": "bb19f180e5705607cf9b5548f0a41795c6d0d69675ba6906695b0f62820de556"
+  },
+  "guardian-campaign-data.js": {
+    "bytes": 59773,
+    "sha256": "0b556aa06914add1f88139fa820487923a13f873b2b2073decccd654d2c5f0a5"
+  },
+  "guardian-campaign.css": {
+    "bytes": 7331,
+    "sha256": "ac42b61ac604e54e603064fa5d6a756ba06f4bd02d0084f1bde26ef99a5fb4a6"
+  },
+  "guardian-campaign.js": {
+    "bytes": 19094,
+    "sha256": "55a1952e296c0de3761645808bdd96080f3c7ee5be622bee61f7c0bb2314f12d"
+  },
+  "GUARDIAO-CAMPANHA.md": {
+    "bytes": 5539,
+    "sha256": "a2195a433d06d2924f2f3c543f188486917a0e8cce7757f2e0e8a32094bb26bb"
   },
   "GUARDIAO-NORDICO-ATUALIZACAO.md": {
     "bytes": 4366,
@@ -4172,8 +4216,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 75253,
-    "sha256": "63c7b32f9d5be262449089aaf0626157cfbc0376f28b2e3f61064974282dd918"
+    "bytes": 75412,
+    "sha256": "f09fe215c10141dcef70cc7cc86b0e7523174c204dbba58901106ccaf66cb925"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -4232,8 +4276,8 @@
     "sha256": "a0742fcb060cc42e44d1467a28715682415468f5e1beb0004bb4fc1322b5d95b"
   },
   "match-report.js": {
-    "bytes": 10284,
-    "sha256": "6291d74712276e0cf6ccb6d3e8c549af697062a29635f9f5c1794e1d731902b5"
+    "bytes": 11010,
+    "sha256": "7a3ec82d89b708a63ea0e1e8886fde9e7b433a71a906e25eeadf4ff717b5a579"
   },
   "missions-menu.css": {
     "bytes": 2799,
@@ -4272,8 +4316,8 @@
     "sha256": "302d8db7b766b26d6d94c540d2736be41ed9d802d50df496a55ce2443a091ed2"
   },
   "portal-upgrade.js": {
-    "bytes": 29080,
-    "sha256": "113d06ff8c2c52841e809a900c3fb4cdd5bcf8be0b5548360b2ce4290f7010e4"
+    "bytes": 29111,
+    "sha256": "10f51394f386a8d695133ecae232b67eb5489f281f39eaabb7d4a0d78b8eb226"
   },
   "practice-mode.css": {
     "bytes": 2082,
@@ -4380,8 +4424,8 @@
     "sha256": "bb835b4ae8b4c2d4b2783f0d771cac5b532531352347dedfc814c5aa42bedc5c"
   },
   "session-resume.js": {
-    "bytes": 4850,
-    "sha256": "28c3805eeba052b0157a81006027f0660a840061081e0882834373027443352e"
+    "bytes": 4924,
+    "sha256": "cad65fa960b89dbb95d7f2ef44c151af2265b8d49c22d2720c7aaed1a4fa666b"
   },
   "shop-filters.js": {
     "bytes": 4870,
@@ -4639,6 +4683,10 @@
     "bytes": 49735,
     "sha256": "64f4e9e43639c35646cdbbeb803fd32b3940ac1808faf3ccff1e9714f67616e2"
   },
+  "supabase/migrations/202610200045_guardian_world_campaign.sql": {
+    "bytes": 245960,
+    "sha256": "2da72a35f937bec391e322f79529090889412e92e019918134dc3e90fb06bdbd"
+  },
   "supabase/README.md": {
     "bytes": 2053,
     "sha256": "317190d2e911059045588edd73f6f78cecbcbf1f4df1c13dfff9aa4f8594c24e"
@@ -4672,8 +4720,8 @@
     "sha256": "4c0c77af544c92614ce0d9e6bcdcfd2a3ae3d714967c02e01ecdcd2cf693ccc9"
   },
   "tiebreak-cinematic.js": {
-    "bytes": 9591,
-    "sha256": "50ce3f428b42b0430cb61bcf439d3a24d01fea07ce1ffa4c6bec14d1f9dbc7b4"
+    "bytes": 9668,
+    "sha256": "0be19192b7410a7b1807fa6812864bb53e47fdcf506b7be6bf2c1f6483effd93"
   },
   "TITULOS-E-MEDALHAS.md": {
     "bytes": 2728,

@@ -60,6 +60,6 @@
   try{const data=await request();if(token!==generation)return;if(data?.version!==2||!data.winner_side)throw Error('Aplique o SQL 030 para ativar o novo desempate.');await present(data,token);}
   catch(e){if(token!==generation)return;setHeading('NÃO FOI POSSÍVEL CARREGAR',e.message);actions.replaceChildren(button('Tentar novamente',()=>{activeKey=null;open(key,request);}),button('Ver resumo da partida',()=>{close();document.querySelector('#tie-break-continue')?.click();}));skip.hidden=true;}
  }
- window.MythicTieBreak={openOnline:id=>open('online:'+id,()=>window.MythicOnline.portalRequest('get_tiebreak_state',{p_match_id:id})),openGuardian:({id,points,cards})=>open('guardian:'+id,()=>window.MythicOnline.portalRequest('resolve_guardian_tiebreak',{p_match_id:id,p_points:points,p_cards:cards})),close};
+ window.MythicTieBreak={openCampaign:data=>open('campaign:'+data.match_id,()=>Promise.resolve(data)),openOnline:id=>open('online:'+id,()=>window.MythicOnline.portalRequest('get_tiebreak_state',{p_match_id:id})),openGuardian:({id,points,cards})=>open('guardian:'+id,()=>window.MythicOnline.portalRequest('resolve_guardian_tiebreak',{p_match_id:id,p_points:points,p_cards:cards})),close};
  window.addEventListener('mythic-account-signed-out',close);window.addEventListener('mythic-session-changed',close);
 })();

@@ -32,6 +32,7 @@
     "custom-lobby.css",
     "match-report.css",
     "deck-tools.css",
-    "journey-tools.css"
+    "journey-tools.css",
+    "guardian-campaign.css"
   ]
 }
