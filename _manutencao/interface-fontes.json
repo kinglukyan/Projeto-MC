@@ -33,6 +33,7 @@
     "match-report.css",
     "deck-tools.css",
     "journey-tools.css",
-    "guardian-campaign.css"
+    "guardian-campaign.css",
+    "match-surrender.css"
   ]
 }

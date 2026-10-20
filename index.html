@@ -13,8 +13,8 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link rel="preconnect" href="https://ytiwezadkkhfseafnhtq.supabase.co" crossorigin>
   <link rel="stylesheet" href="entry-critical.css?v=cbef21651b8de00fd021">
-  <link rel="preload" href="game-interface.css?v=bb19f180e5705607cf9b" as="style">
-  <link rel="stylesheet" href="game-interface.css?v=bb19f180e5705607cf9b" media="print" id="mythic-game-styles" data-fonts="game-fonts.css?v=790fd0e879f517b1f7bd">
+  <link rel="preload" href="game-interface.css?v=178c19940b87e7443fdd" as="style">
+  <link rel="stylesheet" href="game-interface.css?v=178c19940b87e7443fdd" media="print" id="mythic-game-styles" data-fonts="game-fonts.css?v=790fd0e879f517b1f7bd">
   <script src="entry-startup.js?v=05b2d4397322918e2084" async fetchpriority="high"></script>
 </head>
 <body class="mythic-rework public-home-open">
@@ -59,7 +59,7 @@
       </section>
 
       <section class="view" id="view-duel" hidden>
-        <div class="page-heading duel-heading"><div><p class="eyebrow" id="duel-mode-label">✦ &nbsp; PARTIDA LOCAL</p><h1>Duelo em andamento<span>.</span></h1><p id="duel-mode-caption">Simulação contra o Guardião da Arena.</p></div><button class="button button-secondary" id="leave-duel">Sair do duelo</button></div>
+        <div class="page-heading duel-heading"><div><p class="eyebrow" id="duel-mode-label">✦ &nbsp; PARTIDA LOCAL</p><h1>Duelo em andamento<span>.</span></h1><p id="duel-mode-caption">Simulação contra o Guardião da Arena.</p></div><button class="button button-secondary" id="leave-duel">Desistir</button></div>
         <div class="match-status"><b id="turn-label">SEU TURNO · 1</b><span id="turn-phase">Jogue suas cartas ou encerre o turno</span><div class="turn-clock" id="turn-clock" hidden aria-live="polite" aria-label="Tempo do seu turno"><b id="turn-timer">30</b><small>s</small></div></div>
           <section class="battle-board panel" aria-label="Campo de batalha">
           <div class="battle-side enemy-side"><div class="battle-row-label">CAMPO DO OPONENTE</div><div class="enemy-hidden-hand" id="enemy-hidden-hand" aria-label="Mão do oponente"></div><div class="battle-layout enemy-layout"><div class="opponent-hud"><div class="deck-pile enemy-deck" id="enemy-deck" aria-label="Baralho do oponente"><span class="deck-pile-count" id="enemy-deck-remaining">0</span><span class="deck-pile-star">✦</span><small>BARALHO</small></div><div class="opponent-hud-discard"><button class="underworld-pile enemy-underworld" id="enemy-underworld" aria-label="Submundo do oponente: 0 cartas"><span class="underworld-stack" id="enemy-underworld-stack"></span><small>SUBMUNDO</small><b id="enemy-underworld-count">0</b></button></div><div class="opponent-hud-identity"><span class="battle-avatar enemy-avatar">?</span><div><small>OPONENTE</small><b id="enemy-player-name">Guardião</b></div></div></div><div class="battle-field enemy-field" id="enemy-field"></div></div><div class="underworld-list enemy-underworld-list" id="enemy-underworld-cards"><span>Nenhuma carta no Submundo</span></div></div>
@@ -221,7 +221,7 @@
   <script src="world-rules.js?v=c5f44355ae95dff2c4fe" defer></script>
   <script src="remake-rules.js?v=408562c4995a2cd0d206" defer></script>
   <script src="abilities-engine.js?v=c8700fd8c3869466ee1e" defer></script>
-  <script src="abilities-ui.js?v=5aeda3c09af0cbaa65a0" defer></script>
+  <script src="abilities-ui.js?v=0aba9ffd6b026e6224fd" defer></script>
   <script src="avatars-chibi.js?v=04ac9cb0370c1cf5bc7b" defer></script>
   <script src="vfx-runtime.js?v=a657815d63805cf8abf7" defer></script>
   <script src="combat-fx.js?v=0586bc538dd79bc95029" defer></script>
@@ -230,9 +230,9 @@
   <script src="universe-banners.js?v=b70016d4917fb859c57a" defer></script>
   <script src="tiebreak-cinematic.js?v=0be19192b7410a7b1807" defer></script>
   <script src="rank-progression.js?v=5dba1c847732cb1b9805" defer></script>
-  <script src="app.js?v=311754c6502f32ae01b0" defer></script>
+  <script src="app.js?v=d5cb2e3c8bc2e3e2d4a3" defer></script>
   <script src="welcome.js?v=9bf16e4248fe407ef2f4" defer></script>
-  <script src="online.js?v=8d4e594f0af819158134" defer></script>
+  <script src="online.js?v=78f3db1b9e0742fbfded" defer></script>
   <script src="portal-upgrade.js?v=10f51394f386a8d69513" defer></script>
   <script src="security-center.js?v=d59f7dcbb7022a798167" defer></script>
   <script src="public-hall.js?v=c0ae5564f2670aec2403" defer></script>
@@ -249,13 +249,13 @@
   <script src="convergence-lobby.js?v=bf5ecfa58fda1ffd3c54" defer></script>
   <script src="floating-queue.js?v=edaa5071b2ae326e3cb7" defer></script>
   <script src="custom-lobby.js?v=b3b1a6f15959645b040c" defer></script>
-  <script src="match-report.js?v=7a3ec82d89b708a63ea0" defer></script>
+  <script src="match-report.js?v=124cb88bd357468df390" defer></script>
   <script src="direct-lobby.js?v=e74cf362f737c9202d21" defer></script>
   <script src="shop-filters.js?v=4eb123eefad643c35785" defer></script>
   <script src="auto-deck.js?v=9647e3ca3989d016bcd9" defer></script>
   <script src="unified-custom.js?v=c4d9ff7125e1d4c257a6" defer></script>
   <script src="guardian-campaign-data.js?v=0b556aa06914add1f881" defer></script>
-  <script src="guardian-campaign.js?v=55a1952e296c0de37616" defer></script>
+  <script src="guardian-campaign.js?v=7f8583ee5d7fb2c2f969" defer></script>
   <script src="session-resume.js?v=cad65fa960b89dbb95d7" defer></script>
 </body>
 </html>

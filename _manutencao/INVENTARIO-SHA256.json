@@ -144,8 +144,8 @@
     "sha256": "83b55af70174e8177ae628288161458f50a11370fc5f2ecf5ce4130827f58a7c"
   },
   "_manutencao/interface-fontes.json": {
-    "bytes": 907,
-    "sha256": "784acebb7f40250b5dd7e7c70c29c363d2d4271abb08f51c1f6e58cb21d7e6fd"
+    "bytes": 935,
+    "sha256": "548b115611da8eae517dfc66d290729ab860e9de3687c0f69025407b7c0d60c0"
   },
   "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
     "bytes": 2545,
@@ -764,8 +764,8 @@
     "sha256": "c8700fd8c3869466ee1e8f98dd14201e32fb0d0f3033a0ed70845e95cf1fc853"
   },
   "abilities-ui.js": {
-    "bytes": 3388,
-    "sha256": "5aeda3c09af0cbaa65a0a419ac8a3baea6c572fac73290e82184c227687f4310"
+    "bytes": 3680,
+    "sha256": "0aba9ffd6b026e6224fd1d74014859de0b443d8573c98f14c4907116c53e41c5"
   },
   "abilities.css": {
     "bytes": 2045,
@@ -780,8 +780,8 @@
     "sha256": "4ac19c29405481b9da492304052472cdf8bb699e2e7218a9dad6d2384e4af25a"
   },
   "app.js": {
-    "bytes": 125222,
-    "sha256": "311754c6502f32ae01b0b2b55ce56f9ba025d7a07875ca6f397c74e3744205da"
+    "bytes": 129302,
+    "sha256": "d5cb2e3c8bc2e3e2d4a3bb62d2daad4cd48970aa05beae10a6ed33e1cbaafe76"
   },
   "arcane-palette.css": {
     "bytes": 37675,
@@ -4087,6 +4087,10 @@
     "bytes": 10130,
     "sha256": "2c04148793de35c70226faf2ac61a8f1d31a279a39020da188068411e074e8b9"
   },
+  "DESISTENCIA-DE-PARTIDA.md": {
+    "bytes": 2064,
+    "sha256": "0c5b1b9f368993672ba968428e61efaa3b1b4e092c18ab1fc4e634036bf52685"
+  },
   "direct-lobby.js": {
     "bytes": 7860,
     "sha256": "e74cf362f737c9202d213c856c39520a6561e5a84c30b61912a0c7b8f7c2da66"
@@ -4148,8 +4152,8 @@
     "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
   },
   "game-interface.css": {
-    "bytes": 586461,
-    "sha256": "bb19f180e5705607cf9b5548f0a41795c6d0d69675ba6906695b0f62820de556"
+    "bytes": 587439,
+    "sha256": "178c19940b87e7443fdda21afdbfd52f3b3251d81cc4e4389fb7623234d35c25"
   },
   "guardian-campaign-data.js": {
     "bytes": 59773,
@@ -4160,8 +4164,8 @@
     "sha256": "ac42b61ac604e54e603064fa5d6a756ba06f4bd02d0084f1bde26ef99a5fb4a6"
   },
   "guardian-campaign.js": {
-    "bytes": 19094,
-    "sha256": "55a1952e296c0de3761645808bdd96080f3c7ee5be622bee61f7c0bb2314f12d"
+    "bytes": 19507,
+    "sha256": "7f8583ee5d7fb2c2f969ec04031c7198ba562242a793f313f3185d5cd345539a"
   },
   "GUARDIAO-CAMPANHA.md": {
     "bytes": 5539,
@@ -4216,8 +4220,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 75412,
-    "sha256": "f09fe215c10141dcef70cc7cc86b0e7523174c204dbba58901106ccaf66cb925"
+    "bytes": 75407,
+    "sha256": "96e4eb197bcf80b5dd96f2713ce58b8ae15f5a420e6fb2675e61b68b4c43a2f1"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -4276,8 +4280,12 @@
     "sha256": "a0742fcb060cc42e44d1467a28715682415468f5e1beb0004bb4fc1322b5d95b"
   },
   "match-report.js": {
-    "bytes": 11010,
-    "sha256": "7a3ec82d89b708a63ea0e1e8886fde9e7b433a71a906e25eeadf4ff717b5a579"
+    "bytes": 11246,
+    "sha256": "124cb88bd357468df390e1cd812c1cf162a3db334b295272da2b184fc387cc5f"
+  },
+  "match-surrender.css": {
+    "bytes": 951,
+    "sha256": "f393f9c0e3d94fc5055e1ae39b8ab41485342574b24199c95a5ae66833e715a1"
   },
   "missions-menu.css": {
     "bytes": 2799,
@@ -4304,8 +4312,8 @@
     "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
   },
   "online.js": {
-    "bytes": 145244,
-    "sha256": "8d4e594f0af8191581344358f46b8ead45752cfed89540716b6af92ec68b06cf"
+    "bytes": 145637,
+    "sha256": "78f3db1b9e0742fbfded23a5523b6654b18ee928cba8f4a99cb34a2c528b7532"
   },
   "PELOTOES-DE-COMPANHEIROS.md": {
     "bytes": 884,
@@ -4686,6 +4694,10 @@
   "supabase/migrations/202610200045_guardian_world_campaign.sql": {
     "bytes": 245960,
     "sha256": "2da72a35f937bec391e322f79529090889412e92e019918134dc3e90fb06bdbd"
+  },
+  "supabase/migrations/202610200046_match_surrender.sql": {
+    "bytes": 5625,
+    "sha256": "9d34b078c39f80c4de8a2fa76ab1c71d76e5f3302a8eebf2d8022d3980fb63df"
   },
   "supabase/README.md": {
     "bytes": 2053,
