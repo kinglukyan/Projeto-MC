@@ -44,7 +44,7 @@
   const deckTotal = () => Object.values(deckCounts).reduce((sum,count) => sum + count, 0);
   function ownedCopies(card){return card.previewOnly||card.specialOnly?0:Number.isInteger(window.MythicCollectionCopies?.[card.id])?Math.max(0,window.MythicCollectionCopies[card.id]):window.MythicCollectionCopies?0:Number.isInteger(card.collectionCopies)?Math.max(0,card.collectionCopies):3;}
   function loadDeck(){try{const stored=JSON.parse(localStorage.getItem("mythic-clash-deck"));if(stored&&typeof stored==="object")return Object.fromEntries(cards.map(card=>[card.id,Math.max(0,Math.min(ownedCopies(card),(stored[card.id]===undefined&&["poseidon","zeus","hades"].includes(card.id)?1:Math.floor(Number(stored[card.id])||0))))]));}catch{storageAvailable=false;}return {...suggestedDeck};}
-  function loadDeckSlots(){try{const saved=JSON.parse(localStorage.getItem("mythic-clash-deck-slots"));if(Array.isArray(saved)&&saved.length)return saved.slice(0,DECK_SLOTS).map((slot,index)=>({name:String(slot.name||`Deck ${index+1}`).slice(0,24),cards:Object.fromEntries(cards.map(card=>[card.id,Math.max(0,Math.min(ownedCopies(card),(slot.cards?.[card.id]===undefined&&["poseidon","zeus","hades"].includes(card.id)?1:Math.floor(Number(slot.cards?.[card.id])||0))))]))}));}catch{storageAvailable=false;}return [{name:"Deck 1",cards:loadDeck()}];}
+  function loadDeckSlots(){try{const saved=JSON.parse(localStorage.getItem("mythic-clash-deck-slots"));if(Array.isArray(saved)&&saved.length)return saved.slice(0,DECK_SLOTS).map((slot,index)=>({name:String(slot.name||`Deck ${index+1}`).slice(0,24),iconKey:slot.iconKey||"convergencia",iconColor:slot.iconColor||"#44305E",cards:Object.fromEntries(cards.map(card=>[card.id,Math.max(0,Math.min(ownedCopies(card),(slot.cards?.[card.id]===undefined&&["poseidon","zeus","hades"].includes(card.id)?1:Math.floor(Number(slot.cards?.[card.id])||0))))]))}));}catch{storageAvailable=false;}return [{name:"Deck 1",cards:loadDeck()}];}
   function persistDeckSlots(){try{localStorage.setItem("mythic-clash-deck-slots",JSON.stringify(deckSlots));localStorage.setItem("mythic-clash-deck",JSON.stringify(deckCounts));storageAvailable=true;}catch{storageAvailable=false;}}
   function renderDeckSlots(){const select=$("#deck-slot-select");if(!select)return;select.innerHTML=deckSlots.map((slot,index)=>`<option value="${index}">${escapeHTML(slot.name)}</option>`).join("");select.value=String(activeDeckSlot);const arenaSelect=$("#arena-deck-select");if(arenaSelect){arenaSelect.innerHTML=deckSlots.map((slot,index)=>`<option value="${index}">${escapeHTML(slot.name)}</option>`).join("");arenaSelect.value=String(activeDeckSlot);}const nameInput=$("#deck-name-input");if(nameInput&&document.activeElement!==nameInput)nameInput.value=deckSlots[activeDeckSlot].name;$("#new-deck").disabled=deckSlots.length>=DECK_SLOTS;$("#new-deck").title=deckSlots.length>=DECK_SLOTS?"Limite de 7 decks atingido":"Criar outro deck";renderArenaDeckPreview();}
   function renderArenaDeckPreview(){const root=$("#arena-deck-preview"),selector=$("#arena-deck-select");if(!root||!selector)return;selector.value=String(activeDeckSlot);const slot=deckSlots[activeDeckSlot],allEntries=cards.filter(card=>(slot.cards[card.id]||0)>0),units=allEntries.filter(card=>card.kind==="unit").reduce((n,card)=>n+slot.cards[card.id],0),specials=allEntries.filter(card=>card.kind!=="unit").reduce((n,card)=>n+slot.cards[card.id],0),total=units+specials,filter=$("#arena-deck-filter")?.value||"all",sort=$("#arena-deck-sort")?.value||"name";$("#arena-deck-total").textContent=`${total} cartas`;
@@ -63,10 +63,19 @@
   $("#tutorial-next").addEventListener("click",()=>{if(tutorialStep<tutorialSteps.length-1){tutorialStep++;renderTutorialStep();}else finishTutorial();});
   function saveDeck(showMessage=true){deckSlots[activeDeckSlot].cards={...deckCounts};persistDeckSlots();window.MythicOnline?.saveDeckCounts({...deckCounts});window.MythicOnline?.saveNamedDeck?.(activeDeckSlot,deckSlots[activeDeckSlot].name,{...deckCounts});renderDeck();renderDeckSlots();if(showMessage){$("#deck-save-status").textContent=storageAvailable?"Deck salvo neste aparelho.":"O navegador bloqueou o salvamento local; alterações valem nesta sessão.";showToast(storageAvailable?"Deck salvo.":"O navegador bloqueou o salvamento local.");}}
   window.MythicLocalDeck={get:()=>({...deckCounts}),set:counts=>{deckCounts=Object.fromEntries(cards.map(card=>[card.id,Math.max(0,Math.min(ownedCopies(card),Math.floor(Number(counts?.[card.id])||0)))]));deckSlots[activeDeckSlot].cards={...deckCounts};persistDeckSlots();renderDeck();renderDeckSlots();}};
-  window.MythicLocalDeckSlots={set:rows=>{const merged=[];for(const row of rows||[]){const index=Math.max(0,Math.min(DECK_SLOTS-1,(Number(row.slot)||1)-1));merged[index]={name:String(row.name||`Deck ${index+1}`).slice(0,24),cards:Object.fromEntries(cards.map(card=>[card.id,Math.max(0,Math.min(ownedCopies(card),Math.floor(Number(row.cards?.[card.id])||0)))]))};}deckSlots=Array.from({length:Math.min(merged.length,DECK_SLOTS)},(_,index)=>merged[index]||{name:`Deck ${index+1}`,cards:{}});if(!deckSlots.length)deckSlots=[{name:"Deck 1",cards:{}}];activeDeckSlot=Math.min(activeDeckSlot,deckSlots.length-1);deckCounts={...deckSlots[activeDeckSlot].cards};persistDeckSlots();renderDeck();renderDeckSlots();}};
+  window.MythicLocalDeckSlots={set:rows=>{const merged=[];for(const row of rows||[]){const index=Math.max(0,Math.min(DECK_SLOTS-1,(Number(row.slot)||1)-1));merged[index]={name:String(row.name||`Deck ${index+1}`).slice(0,24),iconKey:row.iconKey||"convergencia",iconColor:row.iconColor||"#44305E",cards:Object.fromEntries(cards.map(card=>[card.id,Math.max(0,Math.min(ownedCopies(card),Math.floor(Number(row.cards?.[card.id])||0)))]))};}deckSlots=Array.from({length:Math.min(merged.length,DECK_SLOTS)},(_,index)=>merged[index]||{name:`Deck ${index+1}`,cards:{}});if(!deckSlots.length)deckSlots=[{name:"Deck 1",cards:{}}];activeDeckSlot=Math.min(activeDeckSlot,deckSlots.length-1);deckCounts={...deckSlots[activeDeckSlot].cards};persistDeckSlots();renderDeck();renderDeckSlots();}};
   window.MythicResetAccountDeck=()=>{deckSlots=[{name:"Deck 1",cards:{}}];activeDeckSlot=0;deckCounts={};renderDeck();renderDeckSlots();};
   let lobbyDeckSelecting=false;
   window.MythicDeckEditor={
+    personalize:async({slot,name,iconKey,iconColor,userId})=>{
+      const viewer=window.MythicOnline?.userId?.();
+      if(!viewer||viewer!==userId||!Number.isInteger(slot)||!deckSlots[slot])throw Error('A conta ou o baralho mudou. Abra novamente.');
+      if(window.MythicDeckBuilder?.isOpen?.()||lobbyDeckSelecting)throw Error('Conclua a edição ou troca de baralho antes de personalizar.');
+      const result=await window.MythicOnline.saveDeckPersonalization(slot,name,iconKey,iconColor);
+      if(viewer!==window.MythicOnline?.userId?.()||!deckSlots[slot])throw Error('A conta mudou durante o salvamento.');
+      deckSlots[slot]={...deckSlots[slot],name:result.name,iconKey:result.iconKey,iconColor:result.iconColor};
+      persistDeckSlots();renderDeckSlots();window.dispatchEvent(new CustomEvent('mythic-deck-saved',{detail:{slot}}));
+    },
     isSelecting:()=>lobbyDeckSelecting,
     select:async slot=>{
       if(lobbyDeckSelecting)throw Error('Aguarde a troca de baralho.');
@@ -83,7 +92,7 @@
       const viewer=window.MythicOnline?.userId?.();
       if(!viewer||!Number.isInteger(slot)||!deckSlots[slot])throw new Error("Abra sua conta e selecione um baralho válido.");
       if(window.MythicDeckBuilder?.isOpen?.())throw new Error("Feche o construtor antes de excluir um baralho.");
-      const snapshot=deckSlots.map((deck,index)=>({name:deck.name,cards:{...(index===activeDeckSlot?deckCounts:deck.cards)}}));
+      const snapshot=deckSlots.map((deck,index)=>({...deck,name:deck.name,cards:{...(index===activeDeckSlot?deckCounts:deck.cards)}}));
       const result=await window.MythicOnline.deleteBuilderDeck(slot,activeDeckSlot,snapshot);
       if(window.MythicOnline?.userId?.()!==viewer)throw new Error("A conta mudou durante a exclusão.");
       deckSlots=result.decks;activeDeckSlot=result.activeSlot;deckCounts={...deckSlots[activeDeckSlot].cards};
@@ -106,7 +115,7 @@
       await window.MythicOnline.saveBuilderDeck(slot,title,clean);
       if((window.MythicOnline?.userId?.()||null)!==viewer)throw new Error("A conta mudou durante o salvamento.");
       activeDeckSlot=slot;deckCounts=Object.fromEntries(cards.map(card=>[card.id,clean[card.id]||0]));
-      deckSlots[slot]={name:title,cards:{...deckCounts}};persistDeckSlots();renderDeck();renderDeckSlots();
+      deckSlots[slot]={...deckSlots[slot],name:title,cards:{...deckCounts}};persistDeckSlots();renderDeck();renderDeckSlots();
       $("#deck-save-status").textContent="Baralho salvo na sua conta.";
       window.dispatchEvent(new CustomEvent("mythic-deck-saved",{detail:{slot,name:title}}));
     }

@@ -55,9 +55,9 @@
     const row=el('article','lobby-friend'),icon=el('span','lobby-avatar');avatar(icon,friend.equipped_avatar,friend.display_name);
     const copy=el('div','lobby-friend-copy'),status=el('small','lobby-friend-presence',friend.presence==='online'?'Online':friend.presence==='away'?'Ausente':'Offline');status.dataset.status=friend.presence;
     const elo=el('span','lobby-friend-elo',rankName(friend.rating_points)),progress=window.MythicRank?.from?.(friend.rating_points);if(progress?.emblem){const badge=el('img');badge.src=progress.emblem;badge.alt='';elo.prepend(badge);}copy.append(el('b','',friend.display_name),elo,status);
-    const invite=el('button','button button-secondary','Convidar');invite.type='button';invite.disabled=sending;invite.setAttribute('aria-label','Convidar '+friend.display_name);invite.addEventListener('click',async()=>{
+    const invite=el('button','button button-secondary',pickerContext==='direct'?'Desafiar':'Convidar');invite.type='button';invite.disabled=sending;invite.setAttribute('aria-label','Convidar '+friend.display_name);invite.addEventListener('click',async()=>{
       if(sending)return;sending=true;$('#lobby-friends-status').textContent='Enviando convite…';drawFriends();
-      try{const result=pickerContext==='custom'?await window.MythicCustomLobby.invite(friend.friend_id,pickerSlot):await api().startDuoQueue(window.queueGameMode||'normal',friend.friend_code);if(!result)throw Error('Conexão indisponível.');if(result?.error)showInviteError(result);else dialog.close();}
+      try{const result=pickerContext==='direct'?await window.MythicDirectLobby.invite(friend):pickerContext==='custom'?await window.MythicCustomLobby.invite(friend.friend_id,pickerSlot):await api().startDuoQueue(window.queueGameMode||'normal',friend.friend_code);if(!result)throw Error('Conexão indisponível.');if(result?.error)showInviteError(result);else dialog.close();}
       catch{ $('#lobby-friends-status').textContent='Não foi possível enviar. Tente novamente.'; }
       finally{sending=false;drawFriends();}
     });row.append(icon,copy,invite);list.append(row);
@@ -65,8 +65,9 @@
   if(!sorted.length)list.append(el('p','empty-state',text?'Nenhum amigo com esse nick.':'Sua lista de amigos ainda está vazia.'));
  }
  async function openFriends(event){
-  pickerContext=event?.detail?.context==='custom'?'custom':'queue';pickerSlot=event?.detail?.slot||null;
+  pickerContext=['custom','direct'].includes(event?.detail?.context)?event.detail.context:'queue';pickerSlot=event?.detail?.slot||null;
   if(!api()?.requireLogin?.())return;if(pickerContext==='queue'&&(queue.active||state.party||state.busy))return;
+  $('#lobby-friends-heading').textContent=pickerContext==='direct'?'Escolha seu adversário':'Seus aliados';dialog.querySelector('header small').textContent=pickerContext==='direct'?'DESAFIO DIRETO X1':'CONVIDAR PARA A SALA';
   returnFocus=document.activeElement;$('#lobby-friends-search').value='';$('#lobby-friends-status').textContent='Carregando amigos…';
   friends=api().lobbyFriends();drawFriends();if(!dialog.open)dialog.showModal();
   try{friends=await api().loadLobbyFriends();$('#lobby-friends-status').textContent='Online primeiro. Você também pode convidar amigos offline.';drawFriends();}

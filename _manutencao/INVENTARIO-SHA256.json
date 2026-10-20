@@ -7,6 +7,18 @@
     "bytes": 869,
     "sha256": "3691e263b84403eb2c1a5c8e1fae527121a4c5d2da08297a108b4eb48ed1b3f2"
   },
+  "_manutencao/decks-x1/integrar-deck-tools.py": {
+    "bytes": 8677,
+    "sha256": "37358aa8057a1d45d4acd8f9d50a29f4bec83aedc3df3b98b0c0db57984c0e47"
+  },
+  "_manutencao/decks-x1/preparar-deck-identidade.py": {
+    "bytes": 7239,
+    "sha256": "80dfa05b2d27089ea6d68a59f34b6b6eb12a0989f1f648979fa8a994925a1faf"
+  },
+  "_manutencao/decks-x1/README.md": {
+    "bytes": 294,
+    "sha256": "f8afe61f026e5c780e94275ee1181b94a2892b57b9c839c798274befe5f0d40a"
+  },
   "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
     "bytes": 2545,
     "sha256": "fa04a441b2aa54f106537bbfdaa26d94d2bfed96ea082f852d62eeeb8183524f"
@@ -616,8 +628,8 @@
     "sha256": "4ac19c29405481b9da492304052472cdf8bb699e2e7218a9dad6d2384e4af25a"
   },
   "app.js": {
-    "bytes": 122756,
-    "sha256": "24909e62911c4fcaf94d1ea50288a691cc52daa51f668641abc0a48c1f2cd0dd"
+    "bytes": 123788,
+    "sha256": "7b80466afe6c19921d8dbb315601c030ea92d740aa6c7dbede2f728d8e38c708"
   },
   "arcane-palette.css": {
     "bytes": 37719,
@@ -632,8 +644,8 @@
     "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
   },
   "asset-manifest.json": {
-    "bytes": 34825,
-    "sha256": "25597c4cff74e652eea1973f9d82bd12fcd02977ea903091208484e57fb90287"
+    "bytes": 35571,
+    "sha256": "5e94487e5194da18af2707a74b21189542d63b9aff0bc5ac326bc472ee0dbfbd"
   },
   "assets/app-icon.svg": {
     "bytes": 531,
@@ -1831,6 +1843,54 @@
     "bytes": 1077,
     "sha256": "e1527eda9deb91c416acb9b85a1bb21a7edbb56a91b18a9361ea1c08f9d63954"
   },
+  "assets/deck-icons/arsenal.svg": {
+    "bytes": 295,
+    "sha256": "73d788accb3543ddf63dfd0cdee3a15ac6ff6dabd3139f366d360c32aba743d4"
+  },
+  "assets/deck-icons/caos.svg": {
+    "bytes": 309,
+    "sha256": "617ff91f9baec6c5a38b337a2f5893b82c72d695ddd14bff400bb4c689d73222"
+  },
+  "assets/deck-icons/combos.svg": {
+    "bytes": 375,
+    "sha256": "e6af575a6101174e7746ff394b5f30d3fc33855282c5d8e9b4073fdfc1f4ad05"
+  },
+  "assets/deck-icons/convergencia.svg": {
+    "bytes": 305,
+    "sha256": "1b9ddce0c3bd9aa7a4013515d58a29490313a635e18e94127ea4ad68d87821fc"
+  },
+  "assets/deck-icons/eclipse.svg": {
+    "bytes": 288,
+    "sha256": "21d24d9e74cbbca4f1096f3a9bc039f900641b00ed6781a3f810f5a12754af41"
+  },
+  "assets/deck-icons/lunar.svg": {
+    "bytes": 303,
+    "sha256": "24ceb44abed48bf9cffa98286ac2a1855c7fffde07199ba1bbfe51de5ad61099"
+  },
+  "assets/deck-icons/matilha.svg": {
+    "bytes": 251,
+    "sha256": "d85b1878ba7969d120a795317c9517b8c8f2def695bcecdd991c66d12bb0b698"
+  },
+  "assets/deck-icons/ofensiva.svg": {
+    "bytes": 253,
+    "sha256": "732d3250341d1ca3fec689768b72d40455dd9129b944add5b70061eda3455821"
+  },
+  "assets/deck-icons/pelotao.svg": {
+    "bytes": 319,
+    "sha256": "6671b9b1e0bf11746b6922137a762e5699554b2bac7f200a256801f1ef5b11ee"
+  },
+  "assets/deck-icons/protecao.svg": {
+    "bytes": 291,
+    "sha256": "06493e2b8d6f0dea4808329f633a0c737e4aa4dc5f61a9350cab806f90202af9"
+  },
+  "assets/deck-icons/realeza.svg": {
+    "bytes": 268,
+    "sha256": "e445531c8a3bace9635c28b514673d7b91a659ae6d0e5d13d0f5286d5e8c1665"
+  },
+  "assets/deck-icons/submundo.svg": {
+    "bytes": 325,
+    "sha256": "ec8fbdf13e87bf57b6f0e91cbc90198442e75035d24f27ba129917257024d4e8"
+  },
   "assets/defeat-emblem.png": {
     "bytes": 1482081,
     "sha256": "006356ac3df8b2e8438fd5cfda4886ea470716b02300cd535b5f8bff4d569d69"
@@ -2663,6 +2723,10 @@
     "bytes": 1219,
     "sha256": "59aad6e080f25b489c851afaf7e700b47c66410c2df56a3b3a39930496b13ba2"
   },
+  "ATUALIZACAO-DECKS-E-X1.md": {
+    "bytes": 4539,
+    "sha256": "638fb6d1fdd16c16e67dc74f9c41658fed284456b17f9527b2b46a2f27113ab1"
+  },
   "ATUALIZACAO-DESEMPENHO-DECKS.md": {
     "bytes": 1417,
     "sha256": "ee338fc58fd49d43de71a98a74295fd8023cbed9bdbfd686283e10267048b6b7"
@@ -2756,8 +2820,8 @@
     "sha256": "ef0b230fee2e30173be44a0815da58075255328cd9055ad443cff8b0d741ae6c"
   },
   "concept-theme.js": {
-    "bytes": 41063,
-    "sha256": "279245150d1593c80d334b7b693c9ebdce2865ea46721b456ba12bdd9c797af8"
+    "bytes": 42062,
+    "sha256": "a5bfb8a2cfecd1165d4e2a88e081f5bff0ebfc298249e1e248d0b4f9d4b002c3"
   },
   "CONSTRUTOR-DE-DECKS.md": {
     "bytes": 4200,
@@ -2768,8 +2832,8 @@
     "sha256": "732d5551364ae8ca421d1dc1fc04a0c6917fe080b019ccc0be101c8e7aebf6d3"
   },
   "convergence-lobby.js": {
-    "bytes": 11359,
-    "sha256": "f814134f68b2c1aae54cb7b4653333d1396490c3578791598dba2ab1a11b2bbe"
+    "bytes": 11724,
+    "sha256": "bf5ecfa58fda1ffd3c54a611a91a6c921af5cd6bf0781886bafef8eb34756a6d"
   },
   "CORRECAO-AFRODITE-FILEIRAS.md": {
     "bytes": 1148,
@@ -2816,8 +2880,24 @@
     "sha256": "718235a7683d375b2bd9a427b0b350de10b4c4615f6c0067433e8ffef2eda4e8"
   },
   "deck-builder.js": {
-    "bytes": 24473,
-    "sha256": "49e0c1a6a00ca14abd2eca5e6ee178e245adb11907c01c21d86b4429e91ccac0"
+    "bytes": 24732,
+    "sha256": "e57b0bd9edc6ad2e0916abec31cfa30461456e882f7fabdebae4d86c757f15dc"
+  },
+  "deck-evaluator.js": {
+    "bytes": 15575,
+    "sha256": "bdc5198643776d67901c393af0f8b57f2db9110db3750da309be5d493232cd9e"
+  },
+  "deck-identity.js": {
+    "bytes": 6593,
+    "sha256": "52067bd6bf666ea51a885558ab00f5f662a07ea80061b09285b06cf4e2e71544"
+  },
+  "deck-tools.css": {
+    "bytes": 10086,
+    "sha256": "69a4f7535d3cae634e54503abb5bd10b5c10c1e345e17e4129da53be2e14938a"
+  },
+  "direct-lobby.js": {
+    "bytes": 7860,
+    "sha256": "e74cf362f737c9202d213c856c39520a6561e5a84c30b61912a0c7b8f7c2da66"
   },
   "eclipse-cards.json": {
     "bytes": 3502,
@@ -2908,8 +2988,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 71879,
-    "sha256": "152ef2c1e7675fc477a77ef97916867e455f300e7fc88dd28a55275eb382e62a"
+    "bytes": 72170,
+    "sha256": "87ea736de9c1de5764143d341319d14d2fc6e8e8921a086c1334f0bf139e6ebc"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -2992,8 +3072,8 @@
     "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
   },
   "online.js": {
-    "bytes": 141099,
-    "sha256": "3af0ec17bbb0124db7f81951bd0816157067dd8cc415276d9fd0b0588a7ff0a9"
+    "bytes": 143079,
+    "sha256": "09aeaf4eb4c92fd2d8453dfe8b0f1a23852fdfbafaeb7853e64de110910cdc1c"
   },
   "PELOTOES-DE-COMPANHEIROS.md": {
     "bytes": 884,
@@ -3346,6 +3426,10 @@
   "supabase/migrations/202610200041_remake_chibi_icons.sql": {
     "bytes": 9684,
     "sha256": "7dda8ce63efb0f47beb80047a336061381f885795cb72893804f7fa16852d141"
+  },
+  "supabase/migrations/202610200042_deck_identity_direct_room.sql": {
+    "bytes": 5205,
+    "sha256": "62f54905f433f9bb959ece880d3a9b29b763c694ffa57012d5d7af095696e607"
   },
   "supabase/README.md": {
     "bytes": 2053,

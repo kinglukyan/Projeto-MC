@@ -1,0 +1,1 @@
+Scripts de preparação desta atualização. Os arquivos finais utilizáveis estão na raiz do jogo; os scripts registram a integração no workspace original e não precisam ser executados para publicar. O guia ATUALIZACAO-DECKS-E-X1.md contém as instruções de publicação e o algoritmo.
