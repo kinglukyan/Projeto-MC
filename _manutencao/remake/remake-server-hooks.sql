@@ -93,7 +93,7 @@ begin d:=pg_get_functiondef('public._r_drain(jsonb,boolean)'::regprocedure);d:=r
 
 create or replace function public._r_turn_start(s jsonb,resources jsonb,actor text) returns jsonb language plpgsql volatile set search_path='' as $$
 declare t text;v jsonb;x jsonb:=jsonb_build_object('s',s,'r',resources);
-begin foreach t in array array['player_one','player_two'] loop for v in select value from jsonb_array_elements(coalesce(s#>array[t,'field'],'[]')) where value->>'guardOwner'=actor loop x:=public._r_set_unit(x,t,v->>'uid',v-'guardOwner');end loop;end loop;return public._r_turn_start_before_remake(x->'s',resources,actor);end $$;
+begin foreach t in array array['player_one','player_two'] loop for v in select value from jsonb_array_elements(coalesce(s#>array[t,'field'],'[]')) where value->>'guardOwner'=actor and value->>'guardStamp' is distinct from actor||':'||coalesce(resources#>>array[actor,'turnsTaken'],'0') loop x:=public._r_set_unit(x,t,v->>'uid',v-'guardOwner'-'guardStamp');end loop;end loop;return public._r_turn_start_before_remake(x->'s',resources,actor);end $$;
 create or replace function public._r_turn_end(s jsonb,actor text,t text,turn_no integer) returns jsonb language plpgsql volatile set search_path='' as $$
 declare x jsonb:=jsonb_build_object('s',s,'r','{}'::jsonb);u jsonb;r jsonb;team text;stamp text:=actor||':'||turn_no::text;
 begin
@@ -104,7 +104,7 @@ begin
  -- Owner-end expiry is applied after end-of-turn growth, while the silence still acts.
  s:=public._r_turn_end_before_remake(x->'s',actor,t,turn_no);x:=jsonb_build_object('s',s,'r','{}'::jsonb);
  foreach team in array array['player_one','player_two'] loop for u in select value from jsonb_array_elements(coalesce(s#>array[team,'field'],'[]')) loop
-  if u->>'guardOwner'=actor then u:=u-'guardOwner';end if;
+  
   if coalesce((u->>'silencedOwnerEnd')::boolean,false) and u->>'playedBy'=actor then u:=u-'silencedOwnerEnd';end if;
   if coalesce((u->>'silencedJogadas')::integer,0)>0 and u->>'silencedStamp' is distinct from stamp then u:=u||jsonb_build_object('silencedJogadas',(u->>'silencedJogadas')::integer-1);end if;x:=public._r_set_unit(x,team,u->>'uid',u);
  end loop;end loop;return public._r_reconcile(x)->'s';

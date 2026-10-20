@@ -1,0 +1,1195 @@
+{
+  "mode": "built-in-imagegen",
+  "records": [
+    {
+      "id": "japonesa-amaterasu",
+      "name": "Amaterasu",
+      "faction": "Japonesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Amaterasu of Japonesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: sacred Japanese shrine above clouds, torii gates and a glorious sunrise. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/japonesa-amaterasu-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/japonesa-amaterasu.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 408126
+    },
+    {
+      "id": "chinesa-ao-guang",
+      "name": "Ao Guang",
+      "faction": "Chinesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Ao Guang of Chinesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: East Sea dragon palace, green jade columns, aquatic lanterns and deep blue water. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/chinesa-ao-guang-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/chinesa-ao-guang.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 470136
+    },
+    {
+      "id": "brasil-boitata",
+      "name": "Boitatá",
+      "faction": "Brasil",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Boitatá of Brasil. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Brazilian wetland at night, sinuous trails of protective fire across reeds and dark still water. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/brasil-boitata-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/brasil-boitata.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 402054
+    },
+    {
+      "id": "brasil-boto",
+      "name": "Boto Encantado",
+      "faction": "Brasil",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Boto Encantado of Brasil. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Amazon riverside at dusk, pink sunset on still water, distant stilt houses and floating river mist. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/brasil-boto-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/brasil-boto.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 374236
+    },
+    {
+      "id": "celtas-brigid",
+      "name": "Brigid",
+      "faction": "Celtas",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Brigid of Celtas. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: sacred forge in a Celtic sanctuary, warm forge fire against cool woodland morning. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/celtas-brigid-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/celtas-brigid.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 424554
+    },
+    {
+      "id": "brasil-caipora",
+      "name": "Caipora",
+      "faction": "Brasil",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Caipora of Brasil. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Brazilian Atlantic rainforest, dense leaves, ancient tree roots and soft russet dawn light. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/brasil-caipora-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/brasil-caipora.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 447160
+    },
+    {
+      "id": "asteca-chalchiuhtlicue",
+      "name": "Chalchiuhtlicue",
+      "faction": "Asteca",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Chalchiuhtlicue of Asteca. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: jade waterfall beside an ancient Mesoamerican shrine, luminous river and blue-green mist. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/asteca-chalchiuhtlicue-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/asteca-chalchiuhtlicue.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 515620
+    },
+    {
+      "id": "chinesa-change",
+      "name": "Chang'e",
+      "faction": "Chinesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Chang'e of Chinesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: moon palace terrace, silver osmanthus tree, Earth in distant star-filled sky. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/chinesa-change-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/chinesa-change.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 411320
+    },
+    {
+      "id": "asteca-coatlicue",
+      "name": "Coatlicue",
+      "faction": "Asteca",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Coatlicue of Asteca. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: ancient earth goddess sanctuary, basalt temple walls, serpent carvings and jade green storm light. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/asteca-coatlicue-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/asteca-coatlicue.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 410610
+    },
+    {
+      "id": "brasil-cuca",
+      "name": "Cuca",
+      "faction": "Brasil",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Cuca of Brasil. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: old crooked hut in Brazilian forest, a bronze cauldron, green magical light and moonlit vines. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/brasil-cuca-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/brasil-cuca.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 444492
+    },
+    {
+      "id": "brasil-curupira",
+      "name": "Curupira",
+      "faction": "Brasil",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Curupira of Brasil. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: dense Brazilian rainforest with huge roots, glowing green fireflies and dappled amber sunlight. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/brasil-curupira-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/brasil-curupira.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 435004
+    },
+    {
+      "id": "celtas-cu-chulainn",
+      "name": "Cú Chulainn",
+      "faction": "Celtas",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Cú Chulainn of Celtas. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: windswept Irish cliffs, distant battlefield banners and storm breaking over the sea. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/celtas-cu-chulainn-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/celtas-cu-chulainn.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 372858
+    },
+    {
+      "id": "celtas-dagda",
+      "name": "Dagda",
+      "faction": "Celtas",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Dagda of Celtas. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: sacred oak grove, mossy stones and golden harvest light with a great bronze cauldron. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/celtas-dagda-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/celtas-dagda.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 473216
+    },
+    {
+      "id": "celtas-dama-do-lago",
+      "name": "Dama do Lago",
+      "faction": "Celtas",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Dama do Lago of Celtas. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: enchanted Avalon lake, water lilies, pale blue light and a sword emerging from water. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/celtas-dama-do-lago-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/celtas-dama-do-lago.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 397100
+    },
+    {
+      "id": "hindu-durga",
+      "name": "Durga",
+      "faction": "Hindu",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Durga of Hindu. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: grand temple steps above a battlefield plain, powerful red and gold sunset, heroic atmosphere. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/hindu-durga-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/hindu-durga.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 402446
+    },
+    {
+      "id": "mesopotamica-enki",
+      "name": "Enki",
+      "faction": "Mesopotâmica",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Enki of Mesopotâmica. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: ancient Sumerian waterside temple, reed beds, flowing channels and turquoise dawn. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/mesopotamica-enki-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/mesopotamica-enki.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 442272
+    },
+    {
+      "id": "mesopotamica-enlil",
+      "name": "Enlil",
+      "faction": "Mesopotâmica",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Enlil of Mesopotâmica. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Sumerian ziggurat on an open plain, whirling sand and cloud-lit winds. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/mesopotamica-enlil-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/mesopotamica-enlil.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 377724
+    },
+    {
+      "id": "mesopotamica-ereshkigal",
+      "name": "Ereshkigal",
+      "faction": "Mesopotâmica",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Ereshkigal of Mesopotâmica. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: seven monumental gates of the Mesopotamian underworld, cold violet torchlight and black stone. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/mesopotamica-ereshkigal-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/mesopotamica-ereshkigal.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 325198
+    },
+    {
+      "id": "chinesa-erlang-shen",
+      "name": "Erlang Shen",
+      "faction": "Chinesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Erlang Shen of Chinesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: mountain temple terrace above a sea of mist, steel-blue sky and silver divine rays. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/chinesa-erlang-shen-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/chinesa-erlang-shen.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 402672
+    },
+    {
+      "id": "chinesa-fuxi",
+      "name": "Fuxi",
+      "faction": "Chinesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Fuxi of Chinesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: ancient riverside stone platform, floating subtle bagua patterns and tranquil emerald dawn. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/chinesa-fuxi-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/chinesa-fuxi.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 446422
+    },
+    {
+      "id": "japonesa-fujin",
+      "name": "Fūjin",
+      "faction": "Japonesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Fūjin of Japonesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: wind-swept mountain pass, floating maple leaves and pale jade curling wind. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/japonesa-fujin-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/japonesa-fujin.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 440644
+    },
+    {
+      "id": "hindu-ganesha",
+      "name": "Ganesha",
+      "faction": "Hindu",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Ganesha of Hindu. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: welcoming temple courtyard, marigold garlands, golden lamps and warm morning light. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/hindu-ganesha-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/hindu-ganesha.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 391944
+    },
+    {
+      "id": "chinesa-guanyin",
+      "name": "Guanyin",
+      "faction": "Chinesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Guanyin of Chinesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: misty sacred cliff above the sea, lotus flowers, white robes of sea fog and merciful soft light. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/chinesa-guanyin-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/chinesa-guanyin.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 429838
+    },
+    {
+      "id": "japonesa-hachiman",
+      "name": "Hachiman",
+      "faction": "Japonesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Hachiman of Japonesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Japanese fortress courtyard, war banners, distant archers and red sunset. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/japonesa-hachiman-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/japonesa-hachiman.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 386184
+    },
+    {
+      "id": "hindu-hanuman",
+      "name": "Hanuman",
+      "faction": "Hindu",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Hanuman of Hindu. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: mountainous forest valley with distant Indian stone bridges, orange sunrise and drifting clouds. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/hindu-hanuman-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/hindu-hanuman.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 393828
+    },
+    {
+      "id": "chinesa-hou-yi",
+      "name": "Hou Yi",
+      "faction": "Chinesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Hou Yi of Chinesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: ancient Chinese mountain ridge, glowing sunset sky and the fading trails of celestial arrows. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/chinesa-hou-yi-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/chinesa-hou-yi.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 402364
+    },
+    {
+      "id": "asteca-huitzilopochtli",
+      "name": "Huitzilopochtli",
+      "faction": "Asteca",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Huitzilopochtli of Asteca. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: great stepped pyramid, sun blazing through red clouds, turquoise ceremonial banners. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/asteca-huitzilopochtli-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/asteca-huitzilopochtli.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 431082
+    },
+    {
+      "id": "brasil-iara",
+      "name": "Iara",
+      "faction": "Brasil",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Iara of Brasil. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Amazon river at twilight, water lilies, flooded trees, luminous turquoise reflections and subtle mist. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/brasil-iara-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/brasil-iara.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 410562
+    },
+    {
+      "id": "chinesa-imperador-jade",
+      "name": "Imperador de Jade",
+      "faction": "Chinesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Imperador de Jade of Chinesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: immense jade-and-gold celestial throne palace, cloud terraces and ceremonial lanterns. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/chinesa-imperador-jade-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/chinesa-imperador-jade.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 397124
+    },
+    {
+      "id": "japonesa-inari",
+      "name": "Inari",
+      "faction": "Japonesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Inari of Japonesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: long path of red torii gates through an autumn shrine forest, small fox spirits and glowing lanterns. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/japonesa-inari-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/japonesa-inari.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 441938
+    },
+    {
+      "id": "hindu-indra",
+      "name": "Indra",
+      "faction": "Hindu",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Indra of Hindu. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: celestial Indian palace amid thunderclouds, gold pillars and violet-white lightning. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/hindu-indra-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/hindu-indra.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 409030
+    },
+    {
+      "id": "mesopotamica-ishtar",
+      "name": "Ishtar",
+      "faction": "Mesopotâmica",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Ishtar of Mesopotâmica. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Babylon Ishtar Gate, lapis blue glazed bricks, lions and a brilliant evening star. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/mesopotamica-ishtar-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/mesopotamica-ishtar.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 406594
+    },
+    {
+      "id": "japonesa-izanagi",
+      "name": "Izanagi",
+      "faction": "Japonesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Izanagi of Japonesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: primordial ocean seen from a celestial stone bridge, luminous mist and islands taking form. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/japonesa-izanagi-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/japonesa-izanagi.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 411974
+    },
+    {
+      "id": "japonesa-izanami",
+      "name": "Izanami",
+      "faction": "Japonesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Izanami of Japonesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: entrance to Yomi, dark cavern with hanging shimenawa rope, cold spirit fire and drifting shadows. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/japonesa-izanami-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/japonesa-izanami.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 419806
+    },
+    {
+      "id": "hindu-kali",
+      "name": "Kali",
+      "faction": "Hindu",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Kali of Hindu. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: ancient stone temple at night, crimson embers, blue spiritual fire and dramatic shadows. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/hindu-kali-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/hindu-kali.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 409964
+    },
+    {
+      "id": "hindu-krishna",
+      "name": "Krishna",
+      "faction": "Hindu",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Krishna of Hindu. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Vrindavan riverbank, flowering trees, peacocks, blue twilight and floating fireflies. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/hindu-krishna-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/hindu-krishna.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 414578
+    },
+    {
+      "id": "hindu-lakshmi",
+      "name": "Lakshmi",
+      "faction": "Hindu",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Lakshmi of Hindu. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: lotus-covered sacred pool before an ornate Indian palace, warm gold dawn and rose petals. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/hindu-lakshmi-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/hindu-lakshmi.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 438524
+    },
+    {
+      "id": "brasil-lampiao",
+      "name": "Lampião",
+      "faction": "Brasil",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Lampião of Brasil. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Brazilian caatinga at sunset, cactus, dry thorn trees, sandstone rocks and distant sertao settlement. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/brasil-lampiao-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/brasil-lampiao.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 382390
+    },
+    {
+      "id": "celtas-lancelot",
+      "name": "Lancelot",
+      "faction": "Celtas",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Lancelot of Celtas. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: medieval stone bridge before Camelot, silver morning mist and tournament banners. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/celtas-lancelot-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/celtas-lancelot.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 408030
+    },
+    {
+      "id": "celtas-lugh",
+      "name": "Lugh",
+      "faction": "Celtas",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Lugh of Celtas. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: sunlit Celtic hillfort, spears and woven banners, radiant gold morning rays. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/celtas-lugh-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/celtas-lugh.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 420328
+    },
+    {
+      "id": "brasil-mapinguari",
+      "name": "Mapinguari",
+      "faction": "Brasil",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Mapinguari of Brasil. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: deep Amazon jungle, enormous buttress roots, broken vines and dark emerald humid mist. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/brasil-mapinguari-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/brasil-mapinguari.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 488118
+    },
+    {
+      "id": "mesopotamica-marduk",
+      "name": "Marduk",
+      "faction": "Mesopotâmica",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Marduk of Mesopotâmica. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Babylon ziggurat overlooking a mighty river, banners, a vast storm sky and golden lightning. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/mesopotamica-marduk-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/mesopotamica-marduk.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 419360
+    },
+    {
+      "id": "celtas-merlin",
+      "name": "Merlin",
+      "faction": "Celtas",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Merlin of Celtas. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: ancient standing stones amid oak forest, blue arcane runes and drifting fireflies at twilight. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/celtas-merlin-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/celtas-merlin.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 456120
+    },
+    {
+      "id": "asteca-mictecacihuatl",
+      "name": "Mictecacíhuatl",
+      "faction": "Asteca",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Mictecacíhuatl of Asteca. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: quiet Mictlan temple, orange marigolds, pale spirit lights and moonlit stone steps. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/asteca-mictecacihuatl-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/asteca-mictecacihuatl.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 395334
+    },
+    {
+      "id": "asteca-mictlantecuhtli",
+      "name": "Mictlantecuhtli",
+      "faction": "Asteca",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Mictlantecuhtli of Asteca. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Mictlan underworld, monumental stone gate, bones as architectural ornament and cold green spirit fire. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/asteca-mictlantecuhtli-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/asteca-mictlantecuhtli.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 412380
+    },
+    {
+      "id": "celtas-morgana",
+      "name": "Morgana",
+      "faction": "Celtas",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Morgana of Celtas. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: ruined Avalon tower reflected in a black lake, violet mist and distant moon. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/celtas-morgana-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/celtas-morgana.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 403248
+    },
+    {
+      "id": "celtas-morrigan",
+      "name": "Morrigan",
+      "faction": "Celtas",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Morrigan of Celtas. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: ancient Celtic battlefield under a crimson dusk, ravens circling ruined standing stones. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/celtas-morrigan-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/celtas-morrigan.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 377274
+    },
+    {
+      "id": "brasil-mula-sem-cabeca",
+      "name": "Mula sem Cabeça",
+      "faction": "Brasil",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Mula sem Cabeça of Brasil. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: remote Brazilian stone chapel and dirt road at midnight, fire trails, sparks and blue moonlight. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/brasil-mula-sem-cabeca-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/brasil-mula-sem-cabeca.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 378972
+    },
+    {
+      "id": "mesopotamica-nanna-sin",
+      "name": "Nanna - Sîn",
+      "faction": "Mesopotâmica",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Nanna - Sîn of Mesopotâmica. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: moonlit ziggurat of Ur, crescent moon, blue desert night and silver palm silhouettes. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/mesopotamica-nanna-sin-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/mesopotamica-nanna-sin.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 407902
+    },
+    {
+      "id": "mesopotamica-nergal",
+      "name": "Nergal",
+      "faction": "Mesopotâmica",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Nergal of Mesopotâmica. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: ruined bronze-age city under a burning dusk, red dust and embers, no gore. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/mesopotamica-nergal-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/mesopotamica-nergal.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 369226
+    },
+    {
+      "id": "chinesa-nezha",
+      "name": "Nezha",
+      "faction": "Chinesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Nezha of Chinesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: burning celestial causeway above clouds, fiery wheel trails and red-gold martial light. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/chinesa-nezha-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/chinesa-nezha.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 379460
+    },
+    {
+      "id": "mesopotamica-ninurta",
+      "name": "Ninurta",
+      "faction": "Mesopotâmica",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Ninurta of Mesopotâmica. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: stormy Mesopotamian mountain pass, ancient temple towers and bronze war banners. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/mesopotamica-ninurta-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/mesopotamica-ninurta.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 379516
+    },
+    {
+      "id": "chinesa-nuwa",
+      "name": "Nüwa",
+      "faction": "Chinesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Nüwa of Chinesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: primordial sky being repaired with five colored celestial stones, distant Chinese mountain silhouettes. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/chinesa-nuwa-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/chinesa-nuwa.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 431490
+    },
+    {
+      "id": "asteca-quetzalcoatl",
+      "name": "Quetzalcóatl",
+      "faction": "Asteca",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Quetzalcóatl of Asteca. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Mesoamerican pyramid above a jungle canopy, emerald feather-like clouds and golden sunrise. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/asteca-quetzalcoatl-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/asteca-quetzalcoatl.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 461578
+    },
+    {
+      "id": "japonesa-raijin",
+      "name": "Raijin",
+      "faction": "Japonesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Raijin of Japonesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: thunderclouds over a mountain shrine, immense ceremonial drums and branching golden lightning. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/japonesa-raijin-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/japonesa-raijin.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 418298
+    },
+    {
+      "id": "rei-arthur",
+      "name": "Rei Arthur",
+      "faction": "Celtas",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Rei Arthur of Celtas. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Camelot castle above a misty emerald valley, crimson banners and warm dawn. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/rei-arthur-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/rei-arthur.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 389238
+    },
+    {
+      "id": "japonesa-ryujin",
+      "name": "Ryūjin",
+      "faction": "Japonesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Ryūjin of Japonesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: majestic underwater dragon palace, coral columns, turquoise water and shafts of sunlight. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/japonesa-ryujin-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/japonesa-ryujin.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 529148
+    },
+    {
+      "id": "brasil-saci",
+      "name": "Saci-Pererê",
+      "faction": "Brasil",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Saci-Pererê of Brasil. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Brazilian forest trail, swirling leaves and mischievous dust whirlwind in warm late afternoon light. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/brasil-saci-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/brasil-saci.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 401368
+    },
+    {
+      "id": "hindu-saraswati",
+      "name": "Saraswati",
+      "faction": "Hindu",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Saraswati of Hindu. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: quiet white marble riverside sanctuary, flowing water, lotus blossoms and soft ivory light. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/hindu-saraswati-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/hindu-saraswati.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 450112
+    },
+    {
+      "id": "hindu-shiva",
+      "name": "Shiva",
+      "faction": "Hindu",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Shiva of Hindu. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Himalayan snowy peaks under a starry night, blue cosmic light and distant sacred fire. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/hindu-shiva-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/hindu-shiva.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 385986
+    },
+    {
+      "id": "chinesa-sun-wukong",
+      "name": "Sun Wukong",
+      "faction": "Chinesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Sun Wukong of Chinesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Flower Fruit Mountain, waterfalls, twisted pines and golden magical clouds. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/chinesa-sun-wukong-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/chinesa-sun-wukong.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 425764
+    },
+    {
+      "id": "japonesa-susanoo",
+      "name": "Susanoo",
+      "faction": "Japonesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Susanoo of Japonesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: storm-lashed Japanese coast, broken waves, distant torii and electric blue lightning. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/japonesa-susanoo-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/japonesa-susanoo.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 423344
+    },
+    {
+      "id": "asteca-tezcatlipoca",
+      "name": "Tezcatlipoca",
+      "faction": "Asteca",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Tezcatlipoca of Asteca. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: obsidian temple terrace beneath a smoky night sky, dark mirror reflections and jaguar shadows. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/asteca-tezcatlipoca-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/asteca-tezcatlipoca.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 389314
+    },
+    {
+      "id": "mesopotamica-tiamat",
+      "name": "Tiamat",
+      "faction": "Mesopotâmica",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Tiamat of Mesopotâmica. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: primordial storm ocean, enormous waves, ancient shattered pillars and violet abyssal lightning. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/mesopotamica-tiamat-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/mesopotamica-tiamat.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 431488
+    },
+    {
+      "id": "asteca-tlaloc",
+      "name": "Tláloc",
+      "faction": "Asteca",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Tláloc of Asteca. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: rain-swept Mesoamerican terraces, swelling water channels and turquoise lightning. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/asteca-tlaloc-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/asteca-tlaloc.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 479690
+    },
+    {
+      "id": "japonesa-tsukuyomi",
+      "name": "Tsukuyomi",
+      "faction": "Japonesa",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Tsukuyomi of Japonesa. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: moonlit Japanese palace terrace, still water, silver full moon and falling white petals. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/japonesa-tsukuyomi-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/japonesa-tsukuyomi.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 454294
+    },
+    {
+      "id": "mesopotamica-utu-shamash",
+      "name": "Utu - Shamash",
+      "faction": "Mesopotâmica",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Utu - Shamash of Mesopotâmica. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: Mesopotamian city gate at sunrise, gold rays crossing dark carved stone. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/mesopotamica-utu-shamash-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/mesopotamica-utu-shamash.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 414044
+    },
+    {
+      "id": "hindu-vishnu",
+      "name": "Vishnu",
+      "faction": "Hindu",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Vishnu of Hindu. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: celestial ocean of milk, golden temple silhouettes and luminous lotus flowers. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/hindu-vishnu-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/hindu-vishnu.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 397694
+    },
+    {
+      "id": "asteca-xipe-totec",
+      "name": "Xipe Tótec",
+      "faction": "Asteca",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Xipe Tótec of Asteca. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: weathered Mesoamerican ceremonial court, gold maize fields beyond, dusk and renewal sparks, no gore. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/asteca-xipe-totec-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/asteca-xipe-totec.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 433726
+    },
+    {
+      "id": "asteca-xochiquetzal",
+      "name": "Xochiquétzal",
+      "faction": "Asteca",
+      "prompt": "Use case: stylized-concept. Asset type: final individual wide cinematic character banner for the Mythic Clash Universe page. Create ONE seamless panoramic illustration, aspect ratio 3:1, approximately 2304x768. Character: Xochiquétzal of Asteca. Image 1 is the identity reference: preserve this character's face, age, skin, species, silhouette, clothing, armor, colors, signature weapons and anatomy. Do not redesign them. Image 2 is a STYLE reference containing four existing game banners; match its premium detailed semi-realistic painted fantasy rendering, materials, cinematic rim light and atmospheric landscapes, but DO NOT copy its grid or its characters. Scene: lush sacred flower garden above a Mesoamerican city, butterflies and pink-gold morning light. Compose the referenced character as a commanding waist-up or three-quarter figure on the RIGHT 45 percent, face fully visible with safe margins, looking inward; the LEFT 55 percent is a continuous beautiful atmospheric location, with calm dark-midtones suitable for readable HTML title overlays. Natural perspective, fully integrated painted scenery, coherent atmospheric depth, rich but controlled colors. One character only unless an animal familiar is present in their identity reference. For serpent, dragon, or headless figures retain their exact anatomy and adapt the composition. Do not add a head to Mula sem Cabeca; its neck emits flames. No written text, no lettering, no logo, no frame, no card layout, no split panels, no collage, no watermarks. Fully opaque background.",
+      "references": [
+        "assets/holograms/asteca-xochiquetzal-hologram.webp",
+        "assets/universe/banner-02.png"
+      ],
+      "status": "completed",
+      "asset": "assets/universe/characters/asteca-xochiquetzal.webp",
+      "dimensions": [
+        1920,
+        640
+      ],
+      "bytes": 444518
+    }
+  ]
+}

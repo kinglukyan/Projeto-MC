@@ -7,6 +7,102 @@
     "bytes": 869,
     "sha256": "3691e263b84403eb2c1a5c8e1fae527121a4c5d2da08297a108b4eb48ed1b3f2"
   },
+  "_manutencao/auditoria-habilidades/ability-allied-identity.sql": {
+    "bytes": 618,
+    "sha256": "feb6d67bf02bbb8175ca34ebaccf54531c429e1f2be15e6c83b6c24eef3cd806"
+  },
+  "_manutencao/auditoria-habilidades/ability-audit-zones.sql": {
+    "bytes": 2318,
+    "sha256": "70945a62fbf88a7b1c014b360b4a9d80ba32bbf8872744d369e1c63c9b22c6b6"
+  },
+  "_manutencao/auditoria-habilidades/ability-exact-power.sql": {
+    "bytes": 2355,
+    "sha256": "a742d17a24fd6d1ce84fd6b8db6a2928842e7da2507662f1a93b05952c68d1b5"
+  },
+  "_manutencao/auditoria-habilidades/ability-grave-kind.sql": {
+    "bytes": 640,
+    "sha256": "45c71430cf0086418abd68f4d9bd681cea9e4d481b048052e61ddacd892f4f2b"
+  },
+  "_manutencao/auditoria-habilidades/ability-power-ledger.sql": {
+    "bytes": 6171,
+    "sha256": "e1d12e0cc992d9ecfd2c4f687726028e74c38ffd0f4fcd009cd655e13929c960"
+  },
+  "_manutencao/auditoria-habilidades/ability-revival-audit.sql": {
+    "bytes": 2470,
+    "sha256": "76ce61e8bccf5b35bb5c3858190e3d529019ede0c85a68b8acca985365550eec"
+  },
+  "_manutencao/auditoria-habilidades/ability-round-snapshot.sql": {
+    "bytes": 1244,
+    "sha256": "97549bab916ea22fcb48636ba9f5bb851f7aeb64d0e08013a99c9626c6aa7acb"
+  },
+  "_manutencao/auditoria-habilidades/ajustar-efeitos-silenciosos.py": {
+    "bytes": 2389,
+    "sha256": "5b43d564195c30d8c7ea1d88b7dae8ffc31a67b7356b9ca7b27d9de6ac1b6ea1"
+  },
+  "_manutencao/auditoria-habilidades/ajustar-identidades-aliadas.py": {
+    "bytes": 1626,
+    "sha256": "fd6c01e63e6eef5de7552389dcc037ad69dd7fd5b12b89e22582d9a2fa73afbe"
+  },
+  "_manutencao/auditoria-habilidades/ajustar-poder-exato.py": {
+    "bytes": 5007,
+    "sha256": "c1358c25f599fdc9e3482faf03341744e1fb34eb460bbf0d404db39a30cc135a"
+  },
+  "_manutencao/auditoria-habilidades/ajustar-registros-poder.py": {
+    "bytes": 2752,
+    "sha256": "b30695387c0508fd2d1853d9cc3b423a524239beb835b4315e732098dc1e0a8f"
+  },
+  "_manutencao/auditoria-habilidades/auditar-habilidades-v44.py": {
+    "bytes": 6873,
+    "sha256": "6219597b218e2a561343dfd3eb1c1dca56d6bd881fb05904f6b7ad6fd399132e"
+  },
+  "_manutencao/auditoria-habilidades/choice-guard-compatible.sql": {
+    "bytes": 1703,
+    "sha256": "64d3b7b33e3c7f324671a78c3f814ceb643b740b3e33046479e91948d466b639"
+  },
+  "_manutencao/auditoria-habilidades/concluir-registros-poder.py": {
+    "bytes": 2011,
+    "sha256": "fe79d1a6d5d6351088d36899b4a8619b25b6a7c74b0c11669ac9cdd9387c7376"
+  },
+  "_manutencao/auditoria-habilidades/corrigir-compatibilidade-sql044.py": {
+    "bytes": 3730,
+    "sha256": "4c7bc43cb5b18bb54e032eca9194316bc0c365d3cf6178d76c02ad7e5c05c748"
+  },
+  "_manutencao/auditoria-habilidades/fechar-auditoria-v44.py": {
+    "bytes": 1212,
+    "sha256": "3e0452f52f73e9f89eeb49c7d8506010ee958a6a6d1f4e59d6621455bb950301"
+  },
+  "_manutencao/auditoria-habilidades/fechar-poderes-do-round.py": {
+    "bytes": 1701,
+    "sha256": "35e50217981cc63f7377528009a5210d3ca63a2563bd275900544b9e0e2cd240"
+  },
+  "_manutencao/auditoria-habilidades/finalizar-auditoria-habilidades.py": {
+    "bytes": 7705,
+    "sha256": "0fb531444a52943d8a3be3e17a145594c73d65ab532839a364fc44ec62ed2dc9"
+  },
+  "_manutencao/auditoria-habilidades/finalizar-pacote-habilidades-universo.py": {
+    "bytes": 1605,
+    "sha256": "d7080876599c3943dc284fd1d0ce34a13b7e15bfa31906c1e89c98c8a777650f"
+  },
+  "_manutencao/auditoria-habilidades/LEIA-ME.md": {
+    "bytes": 622,
+    "sha256": "47fd43c1bc563c1d167940d1bc5ad0b1afba187e09bba005685b5768e2cd38ba"
+  },
+  "_manutencao/auditoria-habilidades/preparar-entrega-auditoria-universo.py": {
+    "bytes": 4117,
+    "sha256": "5e442cc6b915306d4a23e76dd031fc36fc9798b47d3df36d7922f41d1c82767d"
+  },
+  "_manutencao/auditoria-habilidades/revival-compatible.sql": {
+    "bytes": 2185,
+    "sha256": "e8613d57e988e453fa947ba0c9ea6e742fed0c84793a798fe7c0a0942bf32377"
+  },
+  "_manutencao/banners-universo/integrar-banners-universo.py": {
+    "bytes": 5699,
+    "sha256": "22341cf1070bf25a6d513a6ff32b1fb2016f10defd14f56b8c2b877aceca6381"
+  },
+  "_manutencao/banners-universo/prompts.json": {
+    "bytes": 138607,
+    "sha256": "9947213dfffa2a9b91fdc540b7191902bc7e2111a430e558fdae8cc351324105"
+  },
   "_manutencao/decks-x1/integrar-deck-tools.py": {
     "bytes": 8677,
     "sha256": "37358aa8057a1d45d4acd8f9d50a29f4bec83aedc3df3b98b0c0db57984c0e47"
@@ -592,12 +688,12 @@
     "sha256": "1d9205b84429948ef39d14497bc0708dabb9fc3e98b9ce9cb1fe59ca504149f7"
   },
   "_manutencao/remake/remake-server-hooks.sql": {
-    "bytes": 13921,
-    "sha256": "293ea3d908658ff636f1941f1fcfe9d673b75c87da840c97843a32bc0e3c76f9"
+    "bytes": 13984,
+    "sha256": "1d7edd0ec365fca764e429ba3e2f89b8c9a20d94c50cbbf2185d21617b063ab0"
   },
   "_manutencao/remake/remake-server.sql": {
-    "bytes": 29733,
-    "sha256": "e72722f9bd00a1ee808c0abf15e300a42c1d3613b075821cb81d04aca758b172"
+    "bytes": 30278,
+    "sha256": "437cb1afa014efa10b2982667f12a54233ef452a2af9ef37394e6ab2bfe44e0c"
   },
   "_manutencao/seguranca/escopo.json": {
     "bytes": 615,
@@ -640,12 +736,12 @@
     "sha256": "783546d5e73e154ab161e6f63b3aff204a5c3c49c89475e515957015e6d9d718"
   },
   "abilities-engine.js": {
-    "bytes": 41074,
-    "sha256": "57c5507e388ec7f6f0d779c9538f30ae79e56f87dd27683797e9c6a3e5e6b4ea"
+    "bytes": 43194,
+    "sha256": "c8700fd8c3869466ee1e8f98dd14201e32fb0d0f3033a0ed70845e95cf1fc853"
   },
   "abilities-ui.js": {
-    "bytes": 3082,
-    "sha256": "cc927c73170d344c55fe5822b14c71c3f8897b022409e84afbe50d31f03fbd46"
+    "bytes": 3388,
+    "sha256": "5aeda3c09af0cbaa65a0a419ac8a3baea6c572fac73290e82184c227687f4310"
   },
   "abilities.css": {
     "bytes": 2045,
@@ -660,8 +756,8 @@
     "sha256": "4ac19c29405481b9da492304052472cdf8bb699e2e7218a9dad6d2384e4af25a"
   },
   "app.js": {
-    "bytes": 124629,
-    "sha256": "faa9dca764bb20778a63f85e64cce095f6beda4dc6cfa3cb4ef53b617ef6a824"
+    "bytes": 124698,
+    "sha256": "b9bdfd99d43493052be154f12f1e165f9b12efd30a18bb392568981a1b40ba84"
   },
   "arcane-palette.css": {
     "bytes": 37675,
@@ -676,8 +772,8 @@
     "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
   },
   "asset-manifest.json": {
-    "bytes": 48540,
-    "sha256": "4f33696287b371ce703df9f200aed1f6b6aaf5b5c409f69d916ec6b1cf1d2ab0"
+    "bytes": 54196,
+    "sha256": "5307078e02e260e4d28b55840122d306736f10a919273c7991a48aa54fab0c5e"
   },
   "assets/app-icon.svg": {
     "bytes": 531,
@@ -3435,6 +3531,286 @@
     "bytes": 2768749,
     "sha256": "f963138574b6ffbecaa121ab4716005deda268f34c38df3a0902ec350cb2986f"
   },
+  "assets/universe/characters/asteca-chalchiuhtlicue.webp": {
+    "bytes": 515620,
+    "sha256": "537208c64cae19de9df6a44208372190b0542755e0d78df50706a1d894db5c0e"
+  },
+  "assets/universe/characters/asteca-coatlicue.webp": {
+    "bytes": 410610,
+    "sha256": "34f9ae7f1abaad0fbb893be2ef6fff47ca80accbd0613b17ed6faa4b368347e1"
+  },
+  "assets/universe/characters/asteca-huitzilopochtli.webp": {
+    "bytes": 431082,
+    "sha256": "5302acc740c3141345450f2da015b410df2faaf193cae7856e3f8f989a27b4e3"
+  },
+  "assets/universe/characters/asteca-mictecacihuatl.webp": {
+    "bytes": 395334,
+    "sha256": "5254abbf5d4fe48a30563c0294a8c137509c971860eb69c25f78afbc93397e6e"
+  },
+  "assets/universe/characters/asteca-mictlantecuhtli.webp": {
+    "bytes": 412380,
+    "sha256": "3df7597ca4aba9f44835a20fec78f33f023d312a4187983988963c63b6596586"
+  },
+  "assets/universe/characters/asteca-quetzalcoatl.webp": {
+    "bytes": 461578,
+    "sha256": "4f1099a46be2de3ced4324f8b40622b142bbbdf412a17a5d4d47831e13de3ed1"
+  },
+  "assets/universe/characters/asteca-tezcatlipoca.webp": {
+    "bytes": 389314,
+    "sha256": "2a8c418b8de14d45efb8c226556e5a33bb21a19bc7903da7f5dfd4f972969c65"
+  },
+  "assets/universe/characters/asteca-tlaloc.webp": {
+    "bytes": 479690,
+    "sha256": "9a5dffbfac8ebcbd79738eca5f5bca4d570b2fae8e81f70e93137aa6e02806fb"
+  },
+  "assets/universe/characters/asteca-xipe-totec.webp": {
+    "bytes": 433726,
+    "sha256": "6a6d89392f9036b7edd2113370747744cd3a9c97ad07f1b8abd731c9f7b21102"
+  },
+  "assets/universe/characters/asteca-xochiquetzal.webp": {
+    "bytes": 444518,
+    "sha256": "2fbce42fe5eea71f11c9f226e5be9e313327ac2e6b8d0ef8384be17b4b2ffd9a"
+  },
+  "assets/universe/characters/brasil-boitata.webp": {
+    "bytes": 402054,
+    "sha256": "16090283ba83fb86f6e3f44f08f5768e5f41af4fd82fa771f69e383f8dbebf6e"
+  },
+  "assets/universe/characters/brasil-boto.webp": {
+    "bytes": 374236,
+    "sha256": "aed839d902bdf1ad4441dd3e1e28b4668df36973ba924aac9ec577dd8c322527"
+  },
+  "assets/universe/characters/brasil-caipora.webp": {
+    "bytes": 447160,
+    "sha256": "1a82c3a5d6aa547fa22f6125f0d43cbffb5da8927e8f0009de21aeb36db89a25"
+  },
+  "assets/universe/characters/brasil-cuca.webp": {
+    "bytes": 444492,
+    "sha256": "1fcc91af0bc06276585a52c50823bbdfa785be58b1d3cd790c93722d390b8099"
+  },
+  "assets/universe/characters/brasil-curupira.webp": {
+    "bytes": 435004,
+    "sha256": "7bf63c3ad1486402d4d15c325ae51335964162921e3f80264cafad6712fab358"
+  },
+  "assets/universe/characters/brasil-iara.webp": {
+    "bytes": 410562,
+    "sha256": "1546be0970d1ba7a1053a76aed2b08af45ca7a01d457173e588c35c7c0549f71"
+  },
+  "assets/universe/characters/brasil-lampiao.webp": {
+    "bytes": 382390,
+    "sha256": "0d37abf91aa0eaa54cad85be75c8cd653abe8eb8f2667a8eb14a7271cf919786"
+  },
+  "assets/universe/characters/brasil-mapinguari.webp": {
+    "bytes": 488118,
+    "sha256": "e9d1069127d7ae66f24d833083f57688166c9559397b8ef39af8d88a99ef558b"
+  },
+  "assets/universe/characters/brasil-mula-sem-cabeca.webp": {
+    "bytes": 378972,
+    "sha256": "e10096c935f9ee2f5d5ecca525422c090291dfa9969bb28753e39965b8bab485"
+  },
+  "assets/universe/characters/brasil-saci.webp": {
+    "bytes": 401368,
+    "sha256": "0bd46e6748b5f87927a6bb0a1f5012ecbf11370d23a7d5d714be0e47d15d01fa"
+  },
+  "assets/universe/characters/celtas-brigid.webp": {
+    "bytes": 424554,
+    "sha256": "47e32c9eb2d1d5f2ef511c49f6803fa882342d404b173a8c4dc2e685f5eb667e"
+  },
+  "assets/universe/characters/celtas-cu-chulainn.webp": {
+    "bytes": 372858,
+    "sha256": "eb9b8acf24ab7dbc0e511d999384b6c9696fd106c17b6370ef3ba3fba3578dda"
+  },
+  "assets/universe/characters/celtas-dagda.webp": {
+    "bytes": 473216,
+    "sha256": "4811c5cc5299c8f7e3889d0df9764294e1b09cd9a38eb564a3d99c8871d10aa5"
+  },
+  "assets/universe/characters/celtas-dama-do-lago.webp": {
+    "bytes": 397100,
+    "sha256": "953a777091da2ebded68ca8d11299726ac13d163b9cade4eec7a8ce2261a5ef7"
+  },
+  "assets/universe/characters/celtas-lancelot.webp": {
+    "bytes": 408030,
+    "sha256": "a1102823e0879dab9c7fdd6ee699400ecea0254b51fe88020bf38d760e77c7e9"
+  },
+  "assets/universe/characters/celtas-lugh.webp": {
+    "bytes": 420328,
+    "sha256": "f006a4c0446802a817b5b00ea7e99053a243395498a6c1f091461ed19d671a27"
+  },
+  "assets/universe/characters/celtas-merlin.webp": {
+    "bytes": 456120,
+    "sha256": "97b7bcb077e2d8c982cf0ccd947ca26a31df5d2ea648fca662ca728b46f7674b"
+  },
+  "assets/universe/characters/celtas-morgana.webp": {
+    "bytes": 403248,
+    "sha256": "3c163fce6b3e79677c1b17cdf4c4b37bcc090f788e6b64f60050fc410635ce84"
+  },
+  "assets/universe/characters/celtas-morrigan.webp": {
+    "bytes": 377274,
+    "sha256": "54f241b7166dbef715513bfd7dd960240a0034940636dce18a866518366f4db3"
+  },
+  "assets/universe/characters/chinesa-ao-guang.webp": {
+    "bytes": 470136,
+    "sha256": "45fe92597c27501c89cfcc57a5d92c9b0c9cf09310283077f0fb84dad3c4b198"
+  },
+  "assets/universe/characters/chinesa-change.webp": {
+    "bytes": 411320,
+    "sha256": "1c695ae8b4c4093d429cc169849f3b4bd3dc5254121ca2fff1130b8ffa9204ba"
+  },
+  "assets/universe/characters/chinesa-erlang-shen.webp": {
+    "bytes": 402672,
+    "sha256": "de510c4842a36314a32134ee735c76e4f8fc4be3ee0a31651d2db3584a50ae19"
+  },
+  "assets/universe/characters/chinesa-fuxi.webp": {
+    "bytes": 446422,
+    "sha256": "0386be4915c5a2960dfb2476b43e9928ad308a13cc06fc9e12432309cf999710"
+  },
+  "assets/universe/characters/chinesa-guanyin.webp": {
+    "bytes": 429838,
+    "sha256": "531c84f82b82379230b6b7848838af92df5d431b1098681afac0b19cdc806a48"
+  },
+  "assets/universe/characters/chinesa-hou-yi.webp": {
+    "bytes": 402364,
+    "sha256": "270816921cfb023cabdc942afb5801647baf8a09eb894ae401d4e69d303bd4fd"
+  },
+  "assets/universe/characters/chinesa-imperador-jade.webp": {
+    "bytes": 397124,
+    "sha256": "8af2a53fb7087111b319c052f83f69ecdb2b9ca71e19090551648fecd9ade1e1"
+  },
+  "assets/universe/characters/chinesa-nezha.webp": {
+    "bytes": 379460,
+    "sha256": "fa7c82a249e92289aefd54e0591aacae74bf14f92bed5a433821c8c702e755d8"
+  },
+  "assets/universe/characters/chinesa-nuwa.webp": {
+    "bytes": 431490,
+    "sha256": "159408a58b32ba04b95529aa464c50ae46a9c3c939eab07820e47d8b287b9310"
+  },
+  "assets/universe/characters/chinesa-sun-wukong.webp": {
+    "bytes": 425764,
+    "sha256": "70812e19c1ca8693175b5ab1c9ef9b1a6e9bf67904de46470b854e71fb05396e"
+  },
+  "assets/universe/characters/hindu-durga.webp": {
+    "bytes": 402446,
+    "sha256": "5e4b1304861e39da3c140fa3b54929267ece23592e20aef17a208f44ef723a95"
+  },
+  "assets/universe/characters/hindu-ganesha.webp": {
+    "bytes": 391944,
+    "sha256": "2ee401bdbf7a4378936eb9a8583cf929a5189f72fa2fb2f4d0b2a0db9deb7af5"
+  },
+  "assets/universe/characters/hindu-hanuman.webp": {
+    "bytes": 393828,
+    "sha256": "c8a12e5e9fd31e6c9e97cf1b10dd6310fe04254db3fbec19fb27ce1b69951bab"
+  },
+  "assets/universe/characters/hindu-indra.webp": {
+    "bytes": 409030,
+    "sha256": "f619da42e6faa6559186885f78acdd7cef22cbe85b081ab05d091d2fab32c178"
+  },
+  "assets/universe/characters/hindu-kali.webp": {
+    "bytes": 409964,
+    "sha256": "4a057cc535a955b3a06d41e81255fd619423f15d1cfce8d3237d2a8f6a3a485e"
+  },
+  "assets/universe/characters/hindu-krishna.webp": {
+    "bytes": 414578,
+    "sha256": "3d5fadb6cdd116526ab4a26f624a8cd7d657604265099fd29b673d442d6194d9"
+  },
+  "assets/universe/characters/hindu-lakshmi.webp": {
+    "bytes": 438524,
+    "sha256": "b8b28cba56332df7bf07be8f66e0b51b51a1ac30f9aba875f5e3b382427804d0"
+  },
+  "assets/universe/characters/hindu-saraswati.webp": {
+    "bytes": 450112,
+    "sha256": "196ce0868d8069c7e9e4b71b95f99bba5da3082be8f11de69c64dc815aafb300"
+  },
+  "assets/universe/characters/hindu-shiva.webp": {
+    "bytes": 385986,
+    "sha256": "da66d9f36f84110298e7ea8a85f52c5895731c951567c05ba40196f33a2ac460"
+  },
+  "assets/universe/characters/hindu-vishnu.webp": {
+    "bytes": 397694,
+    "sha256": "0c833099dad0de0b6ce912ab97e14a86570b03b59e97d9c8f067b2bb23b7eaa3"
+  },
+  "assets/universe/characters/japonesa-amaterasu.webp": {
+    "bytes": 408126,
+    "sha256": "6e64c6fa04df4f02556653bd57a77b8422fda94acb8d4c99071b4257d89d4456"
+  },
+  "assets/universe/characters/japonesa-fujin.webp": {
+    "bytes": 440644,
+    "sha256": "b127f7344ba6b5797a7f2b9c582b40f29481196904f646935e72688c23bdec29"
+  },
+  "assets/universe/characters/japonesa-hachiman.webp": {
+    "bytes": 386184,
+    "sha256": "e826c836d5d0aa17d25c0d01a3db44c53f39470aaa070f7c55f4f267c15e0a1c"
+  },
+  "assets/universe/characters/japonesa-inari.webp": {
+    "bytes": 441938,
+    "sha256": "3199e38fb03b6ea0217cd7801fea884c97f39aafaec4e19cc097be9850f5c8ac"
+  },
+  "assets/universe/characters/japonesa-izanagi.webp": {
+    "bytes": 411974,
+    "sha256": "3b552e886227c6ebad150dc9d97103a53681ff43438ba42d5752a37063c294fb"
+  },
+  "assets/universe/characters/japonesa-izanami.webp": {
+    "bytes": 419806,
+    "sha256": "307192248654d16eacd4e29db53779f5f9f9024ebf5966079089ed5a2dfecb32"
+  },
+  "assets/universe/characters/japonesa-raijin.webp": {
+    "bytes": 418298,
+    "sha256": "1c19fb6f6e6f917928505b36729025c9a7ab3fde5433fade2f3081710bb9a350"
+  },
+  "assets/universe/characters/japonesa-ryujin.webp": {
+    "bytes": 529148,
+    "sha256": "24b31d62073c9850dbf328b809c440716d0ce3e39618ced3146c994b5da56400"
+  },
+  "assets/universe/characters/japonesa-susanoo.webp": {
+    "bytes": 423344,
+    "sha256": "52d58479eacc8b2b619a34d171bc46425c9a85ae4203a7b7b81a9faf8666ae6c"
+  },
+  "assets/universe/characters/japonesa-tsukuyomi.webp": {
+    "bytes": 454294,
+    "sha256": "b62699962c77d67e1d04a8a23d87f51b9f3a72616b66ee440100eac912996e44"
+  },
+  "assets/universe/characters/mesopotamica-enki.webp": {
+    "bytes": 442272,
+    "sha256": "a72fc6a3ac4fd7aadd8040f33394f18a4ec1a110f7de0ace2024ebae8eaa45e8"
+  },
+  "assets/universe/characters/mesopotamica-enlil.webp": {
+    "bytes": 377724,
+    "sha256": "d5819ad315dc3b91d671555a1a51f6cdcbdb0ca5784fb71df51d03f46e0fb38f"
+  },
+  "assets/universe/characters/mesopotamica-ereshkigal.webp": {
+    "bytes": 325198,
+    "sha256": "83daf9f56662b62206ab10b2b5f0771559900c6dd61792fac45788070c0b6872"
+  },
+  "assets/universe/characters/mesopotamica-ishtar.webp": {
+    "bytes": 406594,
+    "sha256": "79b7fd034cdf627770e8bb315de9ffae332b5e67be6356394c8ab88ddc7e3ab3"
+  },
+  "assets/universe/characters/mesopotamica-marduk.webp": {
+    "bytes": 419360,
+    "sha256": "48373e5d9f634c3298575715238c58ebdcd7622c11d1d5cb0c7ce1e213b8f9d8"
+  },
+  "assets/universe/characters/mesopotamica-nanna-sin.webp": {
+    "bytes": 407902,
+    "sha256": "0f094b73beba4fbeedc416e2928ad3cb9821cfb6a7f61bdf79adb3c3935017b9"
+  },
+  "assets/universe/characters/mesopotamica-nergal.webp": {
+    "bytes": 369226,
+    "sha256": "b281369a0f687eaae1666f729c016887668fec58fb367b7c8cd18c91ad9c17d6"
+  },
+  "assets/universe/characters/mesopotamica-ninurta.webp": {
+    "bytes": 379516,
+    "sha256": "6168efc2a0a0ff535abc5adf3cc416c96b8d754fb031f521c5267d749f17ffee"
+  },
+  "assets/universe/characters/mesopotamica-tiamat.webp": {
+    "bytes": 431488,
+    "sha256": "a020b1226c2c33300c362a6566a4743b1648e32e84bb66d83ce7151f84a903eb"
+  },
+  "assets/universe/characters/mesopotamica-utu-shamash.webp": {
+    "bytes": 414044,
+    "sha256": "dad77a5c087864c2711241fdf8c54dc0d16eb6ff81a106647fca69f213f9486a"
+  },
+  "assets/universe/characters/rei-arthur.webp": {
+    "bytes": 389238,
+    "sha256": "832a98d780c31cca53f451c2437a6bb58bd926a2193ec86ff5975487536207cb"
+  },
   "assets/vfx/hearts.png": {
     "bytes": 2178412,
     "sha256": "29d77bd34a3b1e161e6c6020d5b8de6c41bd840737c09b78d0b56fec9180237c"
@@ -3503,6 +3879,10 @@
     "bytes": 1417,
     "sha256": "ee338fc58fd49d43de71a98a74295fd8023cbed9bdbfd686283e10267048b6b7"
   },
+  "ATUALIZACAO-HABILIDADES-E-UNIVERSO.md": {
+    "bytes": 3229,
+    "sha256": "cac2001c271f59576765ba0c4e978ea238872ffc3f18ac2255e97959696d5b80"
+  },
   "ATUALIZACAO-ICONES-DESEMPATE.md": {
     "bytes": 2834,
     "sha256": "dd859806192ad14604a420eb42edba2127f4bced7e3454220b7a9258dee3a610"
@@ -3543,6 +3923,14 @@
     "bytes": 22358,
     "sha256": "fd050ba484a447850cad8f397178de3090a1dc53878087edec880f63b9c3249e"
   },
+  "banners-universo.css": {
+    "bytes": 494,
+    "sha256": "9eed02a48a50b7a626ae13f8dc07b3373696bc8e2390b289ea8b8d0b66f7e054"
+  },
+  "banners-universo.html": {
+    "bytes": 18829,
+    "sha256": "6ecd45626864842bcccf74f36313b7071ff24edddf8bf0cc7ea1dba0d20fd647"
+  },
   "BOAS-VINDAS-PACOTE-INICIAL.md": {
     "bytes": 5521,
     "sha256": "42889314f95d8e30758fa263e6f81c8f1df1eeeac5c888eee6b732a31ee0bd79"
@@ -3576,8 +3964,8 @@
     "sha256": "8920d3c52402266cf3f9478b0caed59d381e5041f0d052a529251a917e7d3485"
   },
   "combat-fx.js": {
-    "bytes": 14196,
-    "sha256": "6cc51a82aec8c2ae014df08f3dbe4bb372d2cedfae333ef365bc956172a9b754"
+    "bytes": 14208,
+    "sha256": "0586bc538dd79bc95029cb1fea5e5474752b2ab9375f616ac02adf15776afdf6"
   },
   "COMECE-AQUI.txt": {
     "bytes": 4985,
@@ -3732,8 +4120,8 @@
     "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
   },
   "game-interface.css": {
-    "bytes": 578562,
-    "sha256": "6309809f03e26431c2974c2881400699fbfc04e480a278e2bc1f6509636b1e2e"
+    "bytes": 579101,
+    "sha256": "c3114504c3ac31f335b1e779ba9dd5e988d167f429f263069917b7c8f60a9005"
   },
   "GUARDIAO-NORDICO-ATUALIZACAO.md": {
     "bytes": 4366,
@@ -3785,7 +4173,7 @@
   },
   "index.html": {
     "bytes": 75253,
-    "sha256": "25d6d2f2cada8c57e7e007cff6e9ff3abdaf445d6ba4bae08195fbb3a3c9c2e1"
+    "sha256": "63c7b32f9d5be262449089aaf0626157cfbc0376f28b2e3f61064974282dd918"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -3908,8 +4296,8 @@
     "sha256": "f453aba1e1a88acdad10abd98b4695121d2cbac92e9ee3d734483c68693c02c1"
   },
   "public-hall.js": {
-    "bytes": 17914,
-    "sha256": "b2de1c5511be301bb48f505db84a2dda38e7a3838191718657750980da8cb5db"
+    "bytes": 17967,
+    "sha256": "c0ae5564f2670aec24038d524d9f742f373a98d4aae301496c1deb9c131a9cf5"
   },
   "queue-room-layout.css": {
     "bytes": 3034,
@@ -3954,6 +4342,10 @@
   "RESUMO-DA-PARTIDA.md": {
     "bytes": 2775,
     "sha256": "fd235b8cc43b2936b2ee8949604c9d77870242efd732fb9946fc1e24cd1edea3"
+  },
+  "REVISAO-HABILIDADES.md": {
+    "bytes": 33129,
+    "sha256": "42471e7068b0e88c7ea28caba099d1493104d18699efdc2fe1fd9baba3bf0f2f"
   },
   "rework.css": {
     "bytes": 59751,
@@ -4228,8 +4620,8 @@
     "sha256": "033eb407c9918ddd87c200849cf54114b827d255097e742b36d5b2df275d4e92"
   },
   "supabase/migrations/202610200040_remake_character_collection.sql": {
-    "bytes": 327985,
-    "sha256": "2d4c09822e0da339979e0742231fb4bb969112e030ad8fc8020c2e3bc45bab04"
+    "bytes": 328593,
+    "sha256": "dba25ef520f3ffff8d487868ebad00966a9c1fca793a6d281324590c5f30929b"
   },
   "supabase/migrations/202610200041_remake_chibi_icons.sql": {
     "bytes": 9684,
@@ -4242,6 +4634,10 @@
   "supabase/migrations/202610200043_resume_my_game.sql": {
     "bytes": 1046,
     "sha256": "2c299cd16df58c45d285b5a1f65211875f1093b7df85da00534dd916fe279771"
+  },
+  "supabase/migrations/202610200044_ability_interaction_audit.sql": {
+    "bytes": 49735,
+    "sha256": "64f4e9e43639c35646cdbbeb803fd32b3940ac1808faf3ccff1e9714f67616e2"
   },
   "supabase/README.md": {
     "bytes": 2053,
@@ -4288,16 +4684,16 @@
     "sha256": "c4d9ff7125e1d4c257a68a029c8fdc5d06f03d464db97c812a51265c1e904c10"
   },
   "universe-banners.js": {
-    "bytes": 2934,
-    "sha256": "70ee27553db494dbab20e735a4516ed8b4da686232007a50013d250b714ecdf6"
+    "bytes": 10611,
+    "sha256": "b70016d4917fb859c57af000eb5426dfbafc698a7b4e443820b3a7424e9df3df"
   },
   "universe-banners.json": {
     "bytes": 3565,
     "sha256": "798759de9dbca64f62f5ecb6f031819889e424951e98b090c75eca4bd6fac88c"
   },
   "universe-upgrade.css": {
-    "bytes": 8424,
-    "sha256": "4146b330d41a9e510ee82b3ae98932e8ae7228af2185d8cabe6c4f95407fd700"
+    "bytes": 8963,
+    "sha256": "2933fc5667ea47602f9563146a0350c16c0de5933e129c9ff87d6ce5b291b1a1"
   },
   "vercel.json": {
     "bytes": 2828,

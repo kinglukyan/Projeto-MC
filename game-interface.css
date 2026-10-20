@@ -2495,6 +2495,10 @@ body.concept-ui #view-lore .concept-lore-reader[data-mode="preview"] .universe-b
  body.concept-ui #view-lore .concept-lore-reader[data-mode="preview"]{--universe-preview-height:440px}
 }
 
+/* Individual panoramic banners: preserve the original character proportions. */
+.concept-story-banner[data-banner-format="wide"] .universe-banner-art{inset:0;width:100%;height:100%;aspect-ratio:auto;background-size:cover;background-position:center}
+body.concept-ui #view-lore .concept-lore-reader[data-mode="preview"] .concept-story-banner[data-banner-format="wide"] .universe-banner-art{inset:auto 0 auto auto;top:50%;width:max(100%,calc(var(--universe-preview-height) * 3));height:auto;aspect-ratio:3/1;transform:translateY(-50%)}
+
 /* practice-mode.css */
 body.mythic-rework #practice-start{margin-left:auto;min-height:48px;padding:12px 24px;font-weight:700;border-color:#d6b4ff;box-shadow:0 0 18px #a36bd333}
 #practice-controls-open{position:fixed;right:18px;bottom:18px;z-index:1400;min-height:44px;box-shadow:0 5px 24px #000a}
