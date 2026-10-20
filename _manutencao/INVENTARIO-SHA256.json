@@ -148,8 +148,8 @@
     "sha256": "548b115611da8eae517dfc66d290729ab860e9de3687c0f69025407b7c0d60c0"
   },
   "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
-    "bytes": 2545,
-    "sha256": "fa04a441b2aa54f106537bbfdaa26d94d2bfed96ea082f852d62eeeb8183524f"
+    "bytes": 2866,
+    "sha256": "8b623c78d2715a8a8e7391e972937ae14a970f5cc9c146191e56063c8a5102de"
   },
   "_manutencao/otimizacao-entrada.json": {
     "bytes": 4687,
@@ -716,8 +716,8 @@
     "sha256": "1d7edd0ec365fca764e429ba3e2f89b8c9a20d94c50cbbf2185d21617b063ab0"
   },
   "_manutencao/remake/remake-server.sql": {
-    "bytes": 30278,
-    "sha256": "437cb1afa014efa10b2982667f12a54233ef452a2af9ef37394e6ab2bfe44e0c"
+    "bytes": 30968,
+    "sha256": "4e8afc3e9c21b7404dd6e4876c20743e16def6bda2720a17ad7c7b734f8a6add"
   },
   "_manutencao/seguranca/escopo.json": {
     "bytes": 615,
@@ -4043,6 +4043,10 @@
     "bytes": 1307,
     "sha256": "e90be4248eeb4c57cb9ff26158b3c98397124773f35845b8fa1477509bb82fdd"
   },
+  "CORRECAO-DESISTENCIA-BONUS.md": {
+    "bytes": 1504,
+    "sha256": "37512a71595c244f307f196b5a3070e1340674a5330cc0178a1f1878f3f1c04e"
+  },
   "CORRECAO-ECLIPSE-FORMAS.md": {
     "bytes": 2229,
     "sha256": "d121c32c22ea242ef30c2b73d4e89d0e3d96e69f4fc51c252d26194839a4ddd0"
@@ -4672,8 +4676,8 @@
     "sha256": "033eb407c9918ddd87c200849cf54114b827d255097e742b36d5b2df275d4e92"
   },
   "supabase/migrations/202610200040_remake_character_collection.sql": {
-    "bytes": 328593,
-    "sha256": "dba25ef520f3ffff8d487868ebad00966a9c1fca793a6d281324590c5f30929b"
+    "bytes": 329283,
+    "sha256": "d34c9c44506b0f950157c9eede636e030d3fa1edc31473c773a75417a1527fe6"
   },
   "supabase/migrations/202610200041_remake_chibi_icons.sql": {
     "bytes": 9684,
@@ -4698,6 +4702,10 @@
   "supabase/migrations/202610200046_match_surrender.sql": {
     "bytes": 5625,
     "sha256": "9d34b078c39f80c4de8a2fa76ab1c71d76e5f3302a8eebf2d8022d3980fb63df"
+  },
+  "supabase/migrations/202610200047_card_bonus_alias_fix.sql": {
+    "bytes": 2668,
+    "sha256": "4276319f5d90a01f329f0c3822083380632d2011cf094d3b5b37d5d3cb0e5362"
   },
   "supabase/README.md": {
     "bytes": 2053,

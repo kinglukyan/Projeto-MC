@@ -59,3 +59,12 @@ Não reaplicar todos os scripts no banco de produção.
 51. 202610190037_security_and_fair_play.sql
 52. 202610190038_custom_room_lobby.sql
 53. 202610190039_match_report.sql
+
+202610200040_remake_character_collection.sql
+202610200041_remake_chibi_icons.sql
+202610200042_deck_identity_direct_room.sql
+202610200043_resume_my_game.sql
+202610200044_ability_interaction_audit.sql
+202610200045_guardian_world_campaign.sql
+202610200046_match_surrender.sql
+202610200047_card_bonus_alias_fix.sql
