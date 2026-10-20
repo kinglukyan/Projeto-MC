@@ -1,4 +1,5 @@
 const fs=require('fs'),path=require('path');
+require('./gerar-interface.cjs');
 const root=path.resolve(__dirname,'..'),out=path.join(root,'site-publico');
 const rootExtensions=new Set(['.html','.js','.css','.json','.webmanifest']);
 const excluded=new Set(['vercel.json','package.json','package-lock.json']);

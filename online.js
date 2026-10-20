@@ -15,7 +15,7 @@
     if(!update)floatingQueueState={active:false};
     else{
       const same=floatingQueueState.active&&floatingQueueState.format===update.format&&(!update.partyId||floatingQueueState.partyId===update.partyId);
-      const startedAt=update.phase==='queued'?(same&&floatingQueueState.phase==='queued'?floatingQueueState.startedAt:Date.now()):null;
+      const startedAt=update.phase==='queued'?(Number.isFinite(update.startedAt)&&update.startedAt>0?Math.min(Date.now(),update.startedAt):same&&floatingQueueState.phase==='queued'?floatingQueueState.startedAt:Date.now()):null;
       floatingQueueState={...(same?floatingQueueState:{}),...update,active:true,startedAt};
     }
     window.dispatchEvent(new CustomEvent('mythic-queue-state',{detail:{...floatingQueueState}}));
@@ -57,7 +57,7 @@
     gate.hidden=Boolean(session);
     $("#connection-status-text").textContent=session?"Online":"Entre na conta";
     $("#auth-description").textContent="Entre ou crie uma conta para acessar o jogo.";
-    if(session){window.MythicPortal?.checkAccess?.().then(ok=>{if(ok)window.MythicWelcome?.begin(session.user);});startPresence();loadProfile().catch(()=>{});loadCommunityHub().catch(()=>{});loadFriends();loadIncomingFriendInvite();listenForInvites();loadAdminAccess();if(new URLSearchParams(location.search).has("replay"))setTimeout(()=>document.querySelector('[data-view="profile"]')?.click(),0);}else{profile=null;emitConceptProfile();adminAuthorized=false;$("#admin-nav").hidden=true;if($("#friend-challenge-inbox"))$("#friend-challenge-inbox").hidden=true;pendingFriendInviteCode=null;loadStore().catch(()=>{});activeFriend=null;cleanupChannels();$("#sidebar-player-name").textContent="Entre na sua conta";$("#sidebar-player-rank").textContent="Perfil indisponível";$("#profile-display-name").textContent="Entre na sua conta";$("#sidebar-rank-emblem").src=rankEmblem(1000);$("#sidebar-player-record").textContent="";$("#sidebar-player-code").textContent="";$("#profile-email").textContent="Entre na sua conta para abrir o perfil.";$("#auth-message").textContent="";renderLocalHistory();}
+    if(session){startPresence();loadProfile().catch(()=>{});loadIncomingFriendInvite();listenForInvites();loadAdminAccess();if(new URLSearchParams(location.search).has("replay"))setTimeout(()=>document.querySelector('[data-view="profile"]')?.click(),0);}else{profile=null;emitConceptProfile();adminAuthorized=false;$("#admin-nav").hidden=true;if($("#friend-challenge-inbox"))$("#friend-challenge-inbox").hidden=true;pendingFriendInviteCode=null;activeFriend=null;cleanupChannels();$("#sidebar-player-name").textContent="Entre na sua conta";$("#sidebar-player-rank").textContent="Perfil indisponível";$("#profile-display-name").textContent="Entre na sua conta";$("#sidebar-rank-emblem").src=rankEmblem(1000);$("#sidebar-player-record").textContent="";$("#sidebar-player-code").textContent="";$("#profile-email").textContent="Entre na sua conta para abrir o perfil.";$("#auth-message").textContent="";renderLocalHistory();}
   }
 
   function cleanupChannels(){
@@ -173,6 +173,20 @@
   window.addEventListener("mythic-history-updated",()=>{if(!session)renderLocalHistory();});
   $("#history-mode-filter")?.addEventListener("change",()=>renderHistory(historyRows));$("#history-period-filter")?.addEventListener("change",()=>renderHistory(historyRows));
   if(!configured)renderLocalHistory();
+  async function loadOwnedItems(){
+    const uid=session?.user?.id;if(!uid||!supabase)return;
+    const {data,error}=await supabase.from('player_inventory').select('item_id').eq('player_id',uid);
+    if(session?.user?.id!==uid)return;if(error)throw Error(displayError(error));
+    ownedItems=new Set((data||[]).map(item=>item.item_id));paintProfileAvatars();renderAvatarPicker();
+  }
+  let extrasTimer=null;
+  function scheduleAccountExtras(uid){
+    clearTimeout(extrasTimer);
+    const run=()=>{if(uid!==session?.user?.id||!accountReady)return;
+      if(window.MythicWelcome?.isOpen?.()||document.body.classList.contains('public-home-open')){extrasTimer=setTimeout(run,1500);return;}
+      loadStore().catch(()=>{});loadCommunityHub().catch(()=>{});loadFriends().catch(()=>{});loadHistory();loadProfileAnalytics(uid,'profile');loadPlayerHonors();
+    };extrasTimer=setTimeout(run,200);
+  }
   async function loadStore(){
     if(!supabase)return;const uid=session?.user?.id;
     const [catalog,inventory]=await Promise.all([
@@ -185,7 +199,7 @@
   }
   function resolveAvatarAsset(id){if(id==="ares-helm")return null;const chibi=window.MythicChibiAvatars?.avatars.find(a=>a.id===id);if(chibi)return chibi.asset;if(id==="guardian")return "assets/mode-guardian.png";const fixed={"spartan-chibi":"assets/spartan-chibi.svg"};if(fixed[id])return fixed[id];const item=storeItems.find(entry=>entry.item_id===id&&entry.kind==="avatar");if(!item?.asset_path||item.asset_path.includes(".."))return null;return item.asset_path.startsWith("assets/")||item.asset_path.startsWith("https://")?item.asset_path:null;}
   function paintProfileAvatars(){if(!profile)return;emitConceptProfile();const name=profile.nickname||profile.display_name||"Lenda",initials=name.trim().split(/\s+/).slice(0,2).map(part=>part[0]).join("").toUpperCase(),asset=resolveAvatarAsset(profile.equipped_avatar),html=asset?`<img src="${escapeHTML(asset)}" alt="Ícone de ${escapeHTML(name)}">`:escapeHTML(initials);$("#sidebar-avatar").innerHTML=html;$("#profile-avatar").innerHTML=html;}
-  function renderStore(){const categories={icons:{kicker:"ROSTOS DA CONVERGÊNCIA",title:"Ícones de perfil",copy:"Escolha a imagem que representará você antes de cada batalha.",items:storeItems.filter(item=>item.kind==="avatar").sort((a,b)=>Number(b.item_id==="spartan-chibi")-Number(a.item_id==="spartan-chibi")),empty:"Novos ícones de perfil chegarão em breve."},cards:{kicker:"COLEÇÃO DE CARTAS",title:"Cartas",copy:"Adicione novas cartas à sua coleção para montar seus baralhos.",items:storeItems.filter(item=>item.kind==="card"&&!window.MythicAvailability?.isDisabled(item.card_id)),empty:"Novas cartas chegarão em breve."},appearances:{kicker:"PERSONALIZE SUA ARENA",title:"Aparências",copy:"Personalize o campo de batalha e a apresentação da sua mão.",items:storeItems.filter(item=>["battlefield","hand"].includes(item.kind)),empty:"Novas aparências chegarão em breve."}};const category=categories[activeStoreCategory]||categories.icons;document.querySelectorAll("[data-store-category]").forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.storeCategory===activeStoreCategory)));$("#store-product-area").hidden=activeStoreCategory==="redeem";$("#store-redeem-area").hidden=activeStoreCategory!=="redeem";if(activeStoreCategory==="redeem")return;$("#store-section-kicker").textContent=category.kicker;$("#store-section-title").textContent=category.title;$("#store-section-copy").textContent=category.copy;$("#store-grid").classList.toggle("store-icon-grid",activeStoreCategory==="icons");$("#store-grid").innerHTML=category.items.map(item=>{const owned=ownedItems.has(item.item_id)||(item.kind==="card"&&Number(window.MythicCollectionCopies?.[item.card_id])>0),equipped=profile?.equipped_avatar===item.item_id||profile?.equipped_battlefield===item.item_id||profile?.equipped_hand===item.item_id,asset=/\.(?:svg|png|webp|jpe?g)(?:#|$)/.test(item.asset_path||"")?`<img loading="lazy" decoding="async" src="${escapeHTML(item.asset_path)}" alt="">`:"✦";return `<article class="store-item panel ${owned?"store-item-owned":""}" data-shop-kind="${escapeHTML(item.kind)}" data-shop-card-id="${escapeHTML(item.card_id||"")}">${owned?'<span class="store-owned-badge"><span aria-hidden="true">✓</span> Você já tem</span>':""}<div class="store-item-art">${item.kind==="card"&&item.card_id?`<button type="button" class="store-card-preview" aria-label="Ampliar ${escapeHTML(item.title)} e ver informações">${asset}</button>`:asset}</div><small>${escapeHTML(item.kind.toUpperCase())}</small><h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.description)}</p><button class="button ${owned?"button-secondary":"button-primary"}" data-store-action="${owned?"equip":"buy"}" data-item-id="${escapeHTML(item.item_id)}" ${equipped||(owned&&item.kind==="card")?"disabled":""}>${owned&&item.kind==="card"?"Na sua coleção":equipped?"Equipado":owned?"Equipar":`<img class="mythic-coin-icon" src="assets/identity-v2/coin.webp" alt="">${item.price===0?"Resgatar ícone":item.price+" Mythic Coins"}`}</button></article>`;}).join("")||`<p class="empty-state">${category.empty}</p>`;}
+  function renderStore(){const categories={icons:{kicker:"ROSTOS DA CONVERGÊNCIA",title:"Ícones de perfil",copy:"Escolha a imagem que representará você antes de cada batalha.",items:storeItems.filter(item=>item.kind==="avatar").sort((a,b)=>Number(b.item_id==="spartan-chibi")-Number(a.item_id==="spartan-chibi")),empty:"Novos ícones de perfil chegarão em breve."},cards:{kicker:"COLEÇÃO DE CARTAS",title:"Cartas",copy:"Adicione novas cartas à sua coleção para montar seus baralhos.",items:storeItems.filter(item=>item.kind==="card"&&!window.MythicAvailability?.isDisabled(item.card_id)),empty:"Novas cartas chegarão em breve."},appearances:{kicker:"PERSONALIZE SUA ARENA",title:"Aparências",copy:"Personalize o campo de batalha e a apresentação da sua mão.",items:storeItems.filter(item=>["battlefield","hand"].includes(item.kind)),empty:"Novas aparências chegarão em breve."}};const baseCategory=categories[activeStoreCategory]||categories.icons,category={...baseCategory,items:window.MythicShopFilters?.apply(baseCategory.items,activeStoreCategory)||baseCategory.items};document.querySelectorAll("[data-store-category]").forEach(button=>button.setAttribute("aria-pressed",String(button.dataset.storeCategory===activeStoreCategory)));$("#store-product-area").hidden=activeStoreCategory==="redeem";$("#store-redeem-area").hidden=activeStoreCategory!=="redeem";if(activeStoreCategory==="redeem")return;$("#store-section-kicker").textContent=category.kicker;$("#store-section-title").textContent=category.title;$("#store-section-copy").textContent=category.copy;$("#store-grid").classList.toggle("store-icon-grid",activeStoreCategory==="icons");$("#store-grid").innerHTML=category.items.map(item=>{const owned=ownedItems.has(item.item_id)||(item.kind==="card"&&Number(window.MythicCollectionCopies?.[item.card_id])>0),equipped=profile?.equipped_avatar===item.item_id||profile?.equipped_battlefield===item.item_id||profile?.equipped_hand===item.item_id,asset=/\.(?:svg|png|webp|jpe?g)(?:#|$)/.test(item.asset_path||"")?`<img loading="lazy" decoding="async" src="${escapeHTML(item.asset_path)}" alt="">`:"✦";return `<article class="store-item panel ${owned?"store-item-owned":""}" data-shop-kind="${escapeHTML(item.kind)}" data-shop-card-id="${escapeHTML(item.card_id||"")}">${owned?'<span class="store-owned-badge"><span aria-hidden="true">✓</span> Você já tem</span>':""}<div class="store-item-art">${item.kind==="card"&&item.card_id?`<button type="button" class="store-card-preview" aria-label="Ampliar ${escapeHTML(item.title)} e ver informações">${asset}</button>`:asset}</div><small>${escapeHTML(window.MythicShopFilters?((m)=>m.faction+" · "+(m.characterClass||m.type))(window.MythicShopFilters.classify(item)):item.kind.toUpperCase())}</small><h3>${escapeHTML(item.title)}</h3><p>${escapeHTML(item.description)}</p><button class="button ${owned?"button-secondary":"button-primary"}" data-store-action="${owned?"equip":"buy"}" data-item-id="${escapeHTML(item.item_id)}" ${equipped||(owned&&item.kind==="card")?"disabled":""}>${owned&&item.kind==="card"?"Na sua coleção":equipped?"Equipado":owned?"Equipar":`<img class="mythic-coin-icon" src="assets/identity-v2/coin.webp" alt="">${item.price===0?"Resgatar ícone":item.price+" Mythic Coins"}`}</button></article>`;}).join("")||`<p class="empty-state">${category.empty}</p>`;}
   function renderAvatarPicker(){const options=$("#profile-avatar-options"),ownedAvatars=storeItems.filter(item=>item.kind==="avatar"&&ownedItems.has(item.item_id));if(profile?.equipped_avatar&&profile.equipped_avatar!=="ares-helm"&&!ownedAvatars.some(item=>item.item_id===profile.equipped_avatar))ownedAvatars.unshift({item_id:profile.equipped_avatar,title:profile.equipped_avatar==="default"?"Ícone Mythic Clash":"Ícone equipado",asset_path:resolveAvatarAsset(profile.equipped_avatar)});options.innerHTML=ownedAvatars.map(item=>{const equipped=profile?.equipped_avatar===item.item_id,asset=resolveAvatarAsset(item.item_id);return `<button class="avatar-picker-option ${equipped?"equipped":""}" type="button" data-profile-avatar="${escapeHTML(item.item_id)}" ${equipped?"disabled":""}><span>${asset?`<img src="${escapeHTML(asset)}" alt="">`:escapeHTML((profile?.nickname||"MC").slice(0,2).toUpperCase())}</span><b>${escapeHTML(item.title)}</b><small>${equipped?"Equipado":"Usar ícone"}</small></button>`;}).join("")||'<p class="empty-state">Você ainda não tem ícones extras. Visite a loja para escolher um.</p>';}
   async function loadCardCopies(){
     const uid=session?.user?.id;if(!uid)return;
@@ -253,7 +267,7 @@
       const entitlement=await entitlementRequest;
       if(session?.user?.id!==uid||request!==profileRequest)return;
       // Profile information is already visible; inventory still waits for grants.
-      await Promise.all([loadStore(),loadCardCopies()]);
+      await Promise.all([loadOwnedItems(),loadCardCopies()]);
       if(session?.user?.id!==uid||request!==profileRequest)return;
       if(deckLoadedFor!==uid){const hasSaved=await loadSavedDecks();if(!hasSaved)await loadCloudDeck();if(session?.user?.id===uid)deckLoadedFor=uid;}
       if(session?.user?.id!==uid||request!==profileRequest)return;
@@ -261,7 +275,7 @@
       window.dispatchEvent(new CustomEvent("mythic-profile-loaded"));
       window.dispatchEvent(new CustomEvent("mythic-inventory-loaded"));
     }catch(error){notify("Não foi possível atualizar seus itens: "+displayError(error));throw error;}
-    loadHistory();loadProfileAnalytics(uid,"profile");loadPlayerHonors();
+    scheduleAccountExtras(uid);
 
   }
 
@@ -420,7 +434,7 @@
     finally{directInviteBusy=false;}
   }
   async function sendInviteAction(action){if(!requireLogin())return;const friend=cachedFriends.find(item=>item.friend_id===$("#invite-flow-friend").value&&item.request_status==="accepted");if(!friend){$("#invite-flow-status").textContent="Escolha um amigo da sua lista.";return;}const status=$("#invite-flow-status");status.textContent="Enviando convite…";document.querySelectorAll("[data-invite-action]").forEach(button=>button.disabled=true);
-    if(action==="x1"){try{await createDirectInvite(friend.friend_code);status.textContent=`Desafio X1 enviado para ${friend.display_name}.`;$('#invite-flow-backdrop').hidden=true;window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'direct'}}));}catch(error){status.textContent=error.message;}}
+    if(action==="x1"){window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'custom'}}));const result=await window.MythicCustomLobby.createAndInvite(friend.friend_id);if(result?.error)status.textContent=result.error;else $('#invite-flow-backdrop').hidden=true;}
     else if(action==="duo-normal"||action==="duo-ranked"){
       openQueueLobby(action==="duo-ranked"?"ranked":"normal");
       window.dispatchEvent(new CustomEvent("mythic-open-view",{detail:{view:"queue"}}));
@@ -507,7 +521,7 @@
     emitLobby();
     if(lobbyParty?.status==='matched'&&lobbyParty.match_id&&activeMatchId!==lobbyParty.match_id)loadOnlineMatch(lobbyParty.match_id);
   }
-  function openQueueLobby(mode){
+  function openQueueLobby(mode){try{if(session)localStorage.setItem("mythic-last-queue-mode:"+session.user.id,mode==="ranked"?"ranked":"normal");}catch{}
     window.queueGameMode=lobbyParty?.mode||(['normal','ranked'].includes(mode)?mode:'normal');
     $("#queue-heading").textContent=window.queueGameMode==='ranked'?'Convergência ranqueada':'Convergência normal';
     $("#queue-setup-status").textContent='';emitLobby();if(session)refreshLobby();
@@ -566,6 +580,25 @@
 
   document.addEventListener("visibilitychange",()=>{if(!document.hidden&&activeMatchId)refreshOnlineMatch(activeMatchId).catch(()=>{});});
 
+  function watchSoloQueue(mode,uid,request,startedAt=null){
+      setQueueState({format:'solo',mode,phase:'queued',startedAt});keepMatchSession();
+      clearInterval(queueTicker);
+      const tick=()=>{const seconds=Math.max(0,Math.floor((Date.now()-floatingQueueState.startedAt)/1000));$("#queue-status-text").textContent=(mode==='ranked'?"Procurando adversário da sua faixa":"Procurando jogador")+` · ${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`;};
+      tick();queueTicker=setInterval(tick,1000);
+      if(queueChannel)supabase.removeChannel(queueChannel);
+      const check=row=>{if(session?.user?.id!==uid||request!==queueRequest)return;if(row?.status==='matched'&&row.match_id){notify("Partida encontrada. Abrindo a arena…");loadOnlineMatch(row.match_id);}else if(row?.status==='cancelled'){clearInterval(queueTicker);queueTicker=null;setQueueState(null);$("#queue-status").hidden=true;}};
+      queueChannel=supabase.channel(`queue-${uid}`).on("postgres_changes",{event:"UPDATE",schema:"public",table:"matchmaking_queue",filter:`user_id=eq.${uid}`},payload=>check(payload.new)).subscribe(status=>{
+        if(status==='SUBSCRIBED')supabase.from('matchmaking_queue').select('status,match_id').eq('user_id',uid).maybeSingle().then(({data})=>check(data));
+      });
+  }
+  async function resumeSavedQueue(){
+    const uid=session?.user?.id;if(!uid||activeMatchId||floatingQueueState.active)return false;
+    const {data,error}=await supabase.from('matchmaking_queue').select('status,match_id,mode,joined_at,session_touched_at').eq('user_id',uid).maybeSingle();
+    if(error||session?.user?.id!==uid||!data)return false;
+    if(data.status==='matched'&&data.match_id){await loadOnlineMatch(data.match_id);return true;}
+    if(data.status!=='waiting'||!['normal','ranked'].includes(data.mode)||Date.now()-Date.parse(data.session_touched_at||data.joined_at)>90000)return false;
+    window.queueGameMode=data.mode;const request=++queueRequest;watchSoloQueue(data.mode,uid,request,Date.parse(data.joined_at));return true;
+  }
   async function startQueue(mode){
     if(!requireLogin()||floatingQueueState.active)return;if(window.MythicDeckEditor?.isSelecting?.()){notify("Aguarde o salvamento do baralho antes de entrar na fila.");return;}
     const uid=session.user.id,request=++queueRequest;
@@ -583,15 +616,7 @@
         notify("Partida encontrada. Abrindo a arena…");loadOnlineMatch(entry.match_id);return;
       }
       if(entry?.queue_status!=='waiting')throw Error('Não foi possível confirmar a entrada na fila.');
-      setQueueState({format:'solo',mode,phase:'queued'});keepMatchSession();
-      clearInterval(queueTicker);
-      const tick=()=>{const seconds=Math.max(0,Math.floor((Date.now()-floatingQueueState.startedAt)/1000));$("#queue-status-text").textContent=(mode==='ranked'?"Procurando adversário da sua faixa":"Procurando jogador")+` · ${String(Math.floor(seconds/60)).padStart(2,'0')}:${String(seconds%60).padStart(2,'0')}`;};
-      tick();queueTicker=setInterval(tick,1000);
-      if(queueChannel)supabase.removeChannel(queueChannel);
-      const check=row=>{if(session?.user?.id!==uid||request!==queueRequest)return;if(row?.status==='matched'&&row.match_id){notify("Partida encontrada. Abrindo a arena…");loadOnlineMatch(row.match_id);}else if(row?.status==='cancelled'){clearInterval(queueTicker);queueTicker=null;setQueueState(null);$("#queue-status").hidden=true;}};
-      queueChannel=supabase.channel(`queue-${uid}`).on("postgres_changes",{event:"UPDATE",schema:"public",table:"matchmaking_queue",filter:`user_id=eq.${uid}`},payload=>check(payload.new)).subscribe(status=>{
-        if(status==='SUBSCRIBED')supabase.from('matchmaking_queue').select('status,match_id').eq('user_id',uid).maybeSingle().then(({data})=>check(data));
-      });
+      watchSoloQueue(mode,uid,request);
     }catch(error){if(session?.user?.id!==uid||request!==queueRequest)return;clearInterval(queueTicker);queueTicker=null;setQueueState(null);$("#queue-status-text").textContent=displayError(error);$("#queue-setup-status").textContent=displayError(error);}
   }
 
@@ -773,7 +798,7 @@
   async function welcomeRequest(name,args={}){if(!session||!supabase)throw Error("Entre na conta para continuar.");const uid=session.user.id;const {data,error}=await supabase.rpc(name,args);if(session?.user?.id!==uid)throw Error("A conta mudou. Entre novamente.");if(error)throw Error(/PGRST202|42883/.test(String(error.code))?"As boas-vindas estão temporariamente indisponíveis. Tente novamente em instantes.":displayError(error));return data;}
   async function openStarterPack(mythology){const data=await welcomeRequest("open_starter_pack",{p_mythology:mythology});deckLoadedFor=null;return data;}
   async function portalRequest(name,args={}){if(!supabase)throw Error('A conexão não está disponível.');const uid=session?.user?.id;const {data,error}=await supabase.rpc(name,args);if(uid!==session?.user?.id)throw Error('A conta foi alterada.');if(error)throw Error(displayError(error));return data;}
-  window.MythicOnline={watchCustomMatch:async id=>{document.querySelector('[data-view="friends"]')?.click();$("#friends-spectator-panel").hidden=false;await watchFriendMatch(id);},refreshAdminAccess:loadAdminAccess,portalRequest,account:()=>session?.user||null,getWelcomeState:()=>welcomeRequest("get_welcome_state"),openStarterPack,completeWelcome:()=>welcomeRequest("complete_welcome"),refreshPresentation:()=>{emitConceptProfile();if(session){loadProfileAnalytics(session.user.id,"profile");loadCommunityHub().catch(()=>{});}},loadHonors:loadPlayerHonors,equipHonors:equipPlayerHonors,signOut:signOutAccount,saveDeckCounts,saveNamedDeck,saveBuilderDeck,deleteBuilderDeck,saveDeckPersonalization,createDirectInvite,isConnected:()=>Boolean(session),showLogin,requireLogin,userId:()=>session?.user?.id||null,activeMatchId:()=>activeMatchId,openMatch:loadOnlineMatch,isAdmin:()=>adminAuthorized,openAdmin,submitAction,expireTurn,loadTieBreak,leaveMatch,startQueue,startDuoQueue,respondDuoInvite,cancelQueue,convergeLobby,leaveLobby,openQueueLobby,refreshLobby,lobbyFriends,loadLobbyFriends:async()=>{await loadFriends();await syncPresence();return lobbyFriends();},getLobbyState:()=>({party:lobbyParty,busy:lobbyBusy,userId:session?.user?.id||null}),getQueueState:()=>({...floatingQueueState}),rankProgress:()=>profile&&session?window.MythicRank.from(profile.rating_points):null,findFriendByCode,profileReady:()=>accountReady,pvpUnlocked:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),tutorialCompleted:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),isTutorialComplete:()=>Boolean(profile?.tutorial_completed),completeTutorial:async()=>{if(!session)return false;const {data,error}=await supabase.rpc("complete_tutorial_once");if(!error){await loadProfile();if(profile?.tutorial_completed||Number(profile?.xp||0)>=100){try{localStorage.setItem("mythic-clash-tutorial-complete","true");localStorage.setItem("mythic-clash-level","2");}catch{}return true;}notify("Tutorial registrado, mas o perfil ainda não recebeu o nível 2. Atualize a migração de progressão no Supabase.");return false;}notify("Não foi possível registrar o tutorial. Tente novamente após verificar a atualização do banco.");return false;},recordGuardianMatch:async(matchId,outcome,playerPoints,opponentPoints)=>{if(!session)return;const {error}=await supabase.rpc("record_guardian_match",{p_match_id:matchId,p_outcome:outcome,p_player_points:playerPoints,p_opponent_points:opponentPoints});if(error)notify(displayError(error));else{await loadProfile();}},refreshProfile:loadProfile};
+  window.MythicOnline={watchCustomMatch:async id=>{document.querySelector('[data-view="friends"]')?.click();$("#friends-spectator-panel").hidden=false;await watchFriendMatch(id);},refreshAdminAccess:loadAdminAccess,portalRequest,account:()=>session?.user||null,getWelcomeState:()=>welcomeRequest("get_welcome_state"),openStarterPack,completeWelcome:()=>welcomeRequest("complete_welcome"),refreshPresentation:()=>{emitConceptProfile();if(session){loadProfileAnalytics(session.user.id,"profile");loadCommunityHub().catch(()=>{});}},loadHonors:loadPlayerHonors,equipHonors:equipPlayerHonors,signOut:signOutAccount,saveDeckCounts,saveNamedDeck,saveBuilderDeck,deleteBuilderDeck,saveDeckPersonalization,createDirectInvite,resumeSavedQueue,repaintStore:renderStore,storeOwned:item=>ownedItems.has(item.item_id)||(item.kind==="card"&&Number(window.MythicCollectionCopies?.[item.card_id])>0),isConnected:()=>Boolean(session),showLogin,requireLogin,userId:()=>session?.user?.id||null,activeMatchId:()=>activeMatchId,openMatch:loadOnlineMatch,isAdmin:()=>adminAuthorized,openAdmin,submitAction,expireTurn,loadTieBreak,leaveMatch,startQueue,startDuoQueue,respondDuoInvite,cancelQueue,convergeLobby,leaveLobby,openQueueLobby,refreshLobby,lobbyFriends,loadLobbyFriends:async()=>{await loadFriends();await syncPresence();return lobbyFriends();},getLobbyState:()=>({party:lobbyParty,busy:lobbyBusy,userId:session?.user?.id||null}),getQueueState:()=>({...floatingQueueState}),rankProgress:()=>profile&&session?window.MythicRank.from(profile.rating_points):null,findFriendByCode,profileReady:()=>accountReady,pvpUnlocked:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),tutorialCompleted:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),isTutorialComplete:()=>Boolean(profile?.tutorial_completed),completeTutorial:async()=>{if(!session)return false;const {data,error}=await supabase.rpc("complete_tutorial_once");if(!error){await loadProfile();if(profile?.tutorial_completed||Number(profile?.xp||0)>=100){try{localStorage.setItem("mythic-clash-tutorial-complete","true");localStorage.setItem("mythic-clash-level","2");}catch{}return true;}notify("Tutorial registrado, mas o perfil ainda não recebeu o nível 2. Atualize a migração de progressão no Supabase.");return false;}notify("Não foi possível registrar o tutorial. Tente novamente após verificar a atualização do banco.");return false;},recordGuardianMatch:async(matchId,outcome,playerPoints,opponentPoints)=>{if(!session)return;const {error}=await supabase.rpc("record_guardian_match",{p_match_id:matchId,p_outcome:outcome,p_player_points:playerPoints,p_opponent_points:opponentPoints});if(error)notify(displayError(error));else{await loadProfile();}},refreshProfile:loadProfile};
   window.addEventListener("mythic-availability-updated",()=>{if(storeItems.length)renderStore();});
   window.MythicOnline.loadPublicNews=loadPublicAnnouncement;window.MythicOnline.avatarAsset=resolveAvatarAsset;window.MythicOnline.playerName=()=>profile?.nickname||profile?.display_name||"Você";window.MythicOnline.playerIcon=()=>profile?.equipped_avatar||"default";window.MythicOnline.playerRating=()=>profile?.rating_points||1000;
 })();

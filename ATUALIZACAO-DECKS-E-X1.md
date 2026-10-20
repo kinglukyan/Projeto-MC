@@ -1,3 +1,5 @@
+> A tela X1 foi reunida à Personalizada na atualização seguinte. Consulte `ATUALIZACAO-CARREGAMENTO-E-CONTINUIDADE.md` para a interface atual e o SQL 043.
+
 # Decks personalizados, avaliador e sala X1 — 20/10/2026
 
 ## Publicação

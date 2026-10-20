@@ -1,6 +1,6 @@
 (() => {
  'use strict';
- const PACK='assets/onboarding/starter-pack.png',BACK='assets/card-back.svg';
+ const PACK=window.MythicEntryMedia?.optimized?.['assets/onboarding/starter-pack.png']||'assets/onboarding/starter-pack.png',BACK='assets/card-back.svg';
  const paths=[
   {id:'Grécia',name:'Mitologia Grega',image:'assets/card-badges/gregos-v3.png',scene:'assets/onboarding/greek-realm.webp',text:'O Olimpo, seus heróis e formações lendárias.',tone:'greek'},
   {id:'Nórdicos',name:'Mitologia Nórdica',image:'assets/card-badges/nordicos-v3.png',scene:'assets/onboarding/norse-realm.webp',text:'Runas, guerreiros e o poder dos Nove Reinos.',tone:'norse'},
@@ -9,8 +9,9 @@
  ];
  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
  const button=(text,fn,cls='welcome-button')=>{const n=el('button',cls,text);n.type='button';n.addEventListener('click',fn);return n;};
- const picture=(src,alt='',cls='')=>{const n=el('img',cls);n.src=window.MythicSecurity.assetUrl(src);n.alt=alt;n.draggable=false;n.decoding=cls==='welcome-faction-emblem'?'sync':'async';return n;};
+ const picture=(src,alt='',cls='',full=false)=>{const n=el('img',cls);n.src=window.MythicSecurity.assetUrl(full?src:window.MythicEntryMedia?.byArt?.[src]||src);n.alt=alt;n.draggable=false;n.decoding=cls==='welcome-faction-emblem'?'sync':'async';return n;};
  const reduced=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let collectionRefresh=null;
  let root=null,stage=null,heading=null,subheading=null,actions=null,message=null,rail=null,user=null,receipt=null,chosen=null,phase='idle',generation=0,busy=false,animations=new Set(),previousFocus=null,inspector=null,packReady=Promise.resolve();
  const catalog=()=>window.MythicCardData?.()||window.MythicAbilitiesData?.cards||[];
  const current=token=>token===generation&&Boolean(user);
@@ -29,15 +30,15 @@
  }
  function stopAnimations(){for(const a of animations)a.cancel();animations.clear();}
  function show(){ensure();if(!root.open){previousFocus=document.activeElement;root.showModal();document.body.classList.add('welcome-open');}}
- function close(){stopAnimations();inspector?.close();if(root?.open)root.close();document.body.classList.remove('welcome-open');if(previousFocus?.isConnected)previousFocus.focus({preventScroll:true});}
- function reset(){generation++;user=null;receipt=null;chosen=null;phase='idle';busy=false;close();}
+ function close(){const wasOpen=Boolean(root?.open);stopAnimations();inspector?.close();if(root?.open)root.close();document.body.classList.remove('welcome-open');if(previousFocus?.isConnected)previousFocus.focus({preventScroll:true});if(wasOpen)window.dispatchEvent(new Event('mythic-welcome-closed'));}
+ function reset(){collectionRefresh=null;generation++;user=null;receipt=null;chosen=null;phase='idle';busy=false;close();}
  function screen(name,title,copy,step){show();stopAnimations();phase=name;root.dataset.phase=name;heading.textContent=title;subheading.textContent=copy;stage.replaceChildren();actions.replaceChildren();message.textContent='';Array.from(rail.children).forEach((n,i)=>{n.classList.toggle('is-current',i===step);n.classList.toggle('is-done',i<step);if(i===step)n.setAttribute('aria-current','step');else n.removeAttribute('aria-current');});heading.focus({preventScroll:true});}
  function preload(src){return new Promise(resolve=>{const img=new Image();let done=false;const finish=()=>{if(done)return;done=true;clearTimeout(timer);resolve();};const timer=setTimeout(finish,8000);img.onload=finish;img.onerror=finish;img.src=src;if(img.complete)finish();});}
  function intro(){
   screen('welcome','Bem-vindo à Convergência'+(user.name?', '+user.name:'')+'.','Sua lenda começa com um presente. Escolha uma mitologia, descubra suas cartas e prepare seu primeiro baralho.',0);
   const visual=el('div','welcome-intro-visual');visual.append(el('div','welcome-orbit'),picture(PACK,'Seu primeiro pacotinho de Mythic Clash','welcome-intro-pack'));
   const facts=el('div','welcome-gifts');for(const [value,label] of [['14','cartas para começar'],['2','ícones de perfil'],['1','nova jornada']]){const item=el('div');item.append(el('strong','',value),el('span','',label));facts.append(item);}stage.append(visual,facts);
-  actions.append(button('Começar minha jornada →',chooseScreen));packReady=preload(PACK);for(const path of paths){preload(path.image);preload(path.scene);}
+  actions.append(button('Começar minha jornada →',chooseScreen));packReady=preload(PACK);
  }
  function chooseScreen(){
   screen('choice','Qual mitologia desperta sua curiosidade?','A sua escolha favorece as cartas do pacote. Um ícone será dessa mitologia e o outro será de uma mitologia diferente — ambos sorteados.',1);
@@ -50,7 +51,7 @@
  async function claim(){
   if(busy||!chosen)return;const token=generation;busy=true;for(const b of actions.querySelectorAll('button'))b.disabled=true;for(const b of stage.querySelectorAll('button'))b.disabled=true;message.textContent='Preparando seu presente…';
   try{const data=await window.MythicOnline.openStarterPack(chosen);if(!current(token))return;receipt=data;if(data.stage==='completed'){close();return;}if(data.stage!=='granted'||data.card_ids?.length!==14||data.icon_ids?.length!==2)throw Error('Seu pacote ainda não ficou pronto. Tente novamente.');
-   await window.MythicOnline.refreshProfile();if(!current(token))return;packScreen();
+   collectionRefresh=window.MythicOnline.refreshProfile().then(()=>true,()=>false);if(!current(token))return;packScreen();
   }catch(error){if(current(token)){message.textContent=error.message||'Não foi possível preparar seu pacote. Tente novamente.';for(const b of actions.querySelectorAll('button'))b.disabled=false;for(const b of stage.querySelectorAll('button'))b.disabled=false;}}
   finally{if(current(token))busy=false;}
  }
@@ -59,7 +60,7 @@
   screen('pack','Um começo digno de uma lenda.','Seu pacote de '+(receipt.mythology||'Mythic Clash')+' está pronto. Toque para abrir e conhecer suas 14 cartas.',2);
   const portal=el('div','welcome-pack-portal'),pack=button('',openPack,'welcome-sealed-pack');pack.setAttribute('aria-label','Abrir seu pacotinho de cartas');pack.append(picture(PACK,'Pacotinho de Mythic Clash'));
   pack.querySelector('img').onerror=()=>{pack.replaceChildren(picture(BACK,'Pacotinho de Mythic Clash'));};portal.append(el('div','welcome-pack-halo'),pack,el('span','welcome-pack-caption','Toque no pacotinho para abrir'));stage.append(portal);actions.append(button('Abrir pacotinho ✦',openPack));
-  packReady=Promise.all([preload(PACK),preload(BACK),...cards().map(c=>preload(c.art||BACK))]);
+  packReady=Promise.all([preload(PACK),preload(BACK)]);for(const c of cards().slice(0,3))preload(window.MythicEntryMedia?.byArt?.[c.art]||c.art||BACK);
  }
  function animate(node,frames,options){const a=node.animate(frames,{fill:'forwards',...options});animations.add(a);a.finished.catch(()=>{}).finally(()=>animations.delete(a));return a;}
  function sound(){
@@ -72,7 +73,7 @@
   const fan=el('div','welcome-card-fan');cards().forEach((card,index)=>{const n=button('',()=>inspect(card),'welcome-reward-card');n.disabled=true;n.setAttribute('aria-label','Ampliar '+card.name);n.dataset.index=index;setPosition(n,index);const flipper=el('span','welcome-card-flipper'),back=el('span','welcome-card-back'),front=el('span','welcome-card-front');back.append(picture(BACK,''));const image=picture(card.art||BACK,card.name);image.onerror=()=>{image.onerror=null;image.src=BACK;front.append(el('b','welcome-card-fallback',card.name));};front.append(image);flipper.append(back,front);n.append(flipper);fan.append(n);});return fan;
  }
  async function openPack(){
-  if(busy||phase!=='pack')return;busy=true;const token=generation;for(const b of root.querySelectorAll('button:not(.welcome-signout)'))b.disabled=true;message.textContent='Suas cartas estão chegando…';await packReady;if(!current(token)||phase!=='pack')return;
+  if(busy||phase!=='pack')return;busy=true;const token=generation;for(const b of root.querySelectorAll('button:not(.welcome-signout)'))b.disabled=true;message.textContent='Suas cartas estão chegando…';await Promise.race([packReady,new Promise(resolve=>setTimeout(resolve,500))]);if(!current(token)||phase!=='pack')return;
   screen('opening','O destino está em suas mãos.','14 cartas. Uma nova estratégia esperando por você.',2);busy=true;stage.append(makeCards());actions.append(button('Pular animação',revealNow,'welcome-secondary'));
   const pack=el('div','welcome-opening-pack'),body=el('div','welcome-pack-body'),cap=el('div','welcome-pack-cap');body.append(picture(PACK,''));cap.append(picture(PACK,''));pack.append(body,cap);stage.append(pack);
   const spark=el('div','welcome-reveal-flash');stage.append(spark);sound();
@@ -105,7 +106,7 @@
  function renderInspect(){
   const all=cards(),selected=all[inspectIndex],fan=el('div','welcome-large-fan');fan.setAttribute('aria-label','Arraste para os lados ou escolha uma carta vizinha');
   for(let i=Math.max(0,inspectIndex-2);i<=Math.min(all.length-1,inspectIndex+2);i++){
-   const c=all[i],d=i-inspectIndex,n=button('',()=>{if(inspector._dragged)return;inspectIndex=i;renderInspect();},'welcome-large-card');n.style.setProperty('--offset',d);n.dataset.selected=String(!d);n.setAttribute('aria-label',c.name);n.setAttribute('aria-pressed',String(!d));n.append(picture(c.art||BACK,c.name));fan.append(n);
+   const c=all[i],d=i-inspectIndex,n=button('',()=>{if(inspector._dragged)return;inspectIndex=i;renderInspect();},'welcome-large-card');n.style.setProperty('--offset',d);n.dataset.selected=String(!d);n.setAttribute('aria-label',c.name);n.setAttribute('aria-pressed',String(!d));n.append(picture(c.art||BACK,c.name,'',d===0));fan.append(n);
   }
   fan.addEventListener('pointerdown',e=>{if(e.button!==0)return;inspector._dragged=false;swipe={x:e.clientX,y:e.clientY,id:e.pointerId};const capture=e.target.closest('button')||fan;capture.setPointerCapture(e.pointerId);});
   fan.addEventListener('pointermove',e=>{if(swipe&&Math.abs(e.clientX-swipe.x)>12)inspector._dragged=true;});
@@ -117,7 +118,7 @@
  }
  async function finish(){
   if(busy)return;busy=true;const token=generation;actions.querySelector('button').disabled=true;message.textContent='Preparando seu construtor…';
-  try{await window.MythicOnline.completeWelcome();await window.MythicOnline.refreshProfile();if(!current(token))return;phase='completed';close();window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'decks'}}));requestAnimationFrame(()=>window.MythicDeckBuilder?.open());}
+  try{await window.MythicOnline.completeWelcome();if(!collectionRefresh||!await collectionRefresh)await window.MythicOnline.refreshProfile();if(!current(token))return;phase='completed';close();window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'decks'}}));requestAnimationFrame(()=>window.MythicDeckBuilder?.open());}
   catch(error){if(current(token)){message.textContent=error.message||'Não foi possível abrir o construtor. Tente novamente.';actions.querySelector('button').disabled=false;}}finally{if(current(token))busy=false;}
  }
  async function begin(account){
@@ -127,5 +128,5 @@
  }
  window.addEventListener('resize',()=>{if(phase==='revealed')for(const [i,node] of Array.from(stage.querySelectorAll('.welcome-reward-card')).entries())setPosition(node,i);});
  window.addEventListener('mythic-account-signed-out',reset);
- window.MythicWelcome={begin,reset,isOpen:()=>Boolean(root?.open)};
+ window.MythicWelcome={begin,reset,getStage:()=>phase,isOpen:()=>Boolean(root?.open)};
 })();

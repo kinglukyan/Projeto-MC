@@ -19,13 +19,45 @@
     "bytes": 294,
     "sha256": "f8afe61f026e5c780e94275ee1181b94a2892b57b9c839c798274befe5f0d40a"
   },
+  "_manutencao/gerar-interface.cjs": {
+    "bytes": 3038,
+    "sha256": "abf264fb6b76eb58e3c151e2402febb632de9e9755f3d12968fee509db421571"
+  },
+  "_manutencao/interface-fontes.json": {
+    "bytes": 877,
+    "sha256": "a988751ee867a6b7697f8cd4adbbe1867349333b520ae74fa37e7a73d1586e42"
+  },
   "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
     "bytes": 2545,
     "sha256": "fa04a441b2aa54f106537bbfdaa26d94d2bfed96ea082f852d62eeeb8183524f"
   },
+  "_manutencao/otimizacao-entrada.json": {
+    "bytes": 4687,
+    "sha256": "45569be95119cb109bcdbac289d15c8a3c6506b853dcb2f490822f86a8982f19"
+  },
   "_manutencao/preparar-publicacao.cjs": {
-    "bytes": 1545,
-    "sha256": "ea0db36a89bfd496c37ca36b0d591cc97f42053239d61c71fbe55a76e0937cb7"
+    "bytes": 1580,
+    "sha256": "8fa358cc455c5abdabfa534bff3fc3a5e79603924aa4b9b39e291bdd2e32a603"
+  },
+  "_manutencao/primeiro-acesso/agilizar-boas-vindas.py": {
+    "bytes": 4591,
+    "sha256": "6f03aa46b0ff69653de93a0149b44663c18a18d16398c74eb4d11d535ab0e0f5"
+  },
+  "_manutencao/primeiro-acesso/otimizar-primeiro-acesso.py": {
+    "bytes": 2822,
+    "sha256": "4fd0408754fff6bb0dacdc097dc438e4662a0da964ada0e0a5c84b8ec8530d92"
+  },
+  "_manutencao/primeiro-acesso/otimizar-simbolos-entrada.py": {
+    "bytes": 1268,
+    "sha256": "27721cc726b4e12256a630e18ec50d35918c48ef8462db907a81dbd8fdc68f94"
+  },
+  "_manutencao/primeiro-acesso/preparar-entrada-estatica.py": {
+    "bytes": 1978,
+    "sha256": "0cf94e8e219d5261472b104361a5eaed8885a4bd70ec5fe58cba096585048965"
+  },
+  "_manutencao/primeiro-acesso/README.md": {
+    "bytes": 206,
+    "sha256": "4aa6f5b0cd4e15c447019bd526b9ee2590a661999430e2fdcca7af20140cbf7f"
   },
   "_manutencao/remake/ajustar-regras-remake.py": {
     "bytes": 4506,
@@ -616,8 +648,8 @@
     "sha256": "cc927c73170d344c55fe5822b14c71c3f8897b022409e84afbe50d31f03fbd46"
   },
   "abilities.css": {
-    "bytes": 2033,
-    "sha256": "202f6231b4ab10c9fcfd8ddba7e10a72fae2aeb2d0f1dee937dc269ee9ac13bb"
+    "bytes": 2045,
+    "sha256": "f9f55b1b17e24e6af8804e3dbcfbdacd997fba8324c48b352bc660bdae147858"
   },
   "ADAPTACAO-CELULARES-TABLETS.md": {
     "bytes": 2955,
@@ -628,24 +660,24 @@
     "sha256": "4ac19c29405481b9da492304052472cdf8bb699e2e7218a9dad6d2384e4af25a"
   },
   "app.js": {
-    "bytes": 123788,
-    "sha256": "7b80466afe6c19921d8dbb315601c030ea92d740aa6c7dbede2f728d8e38c708"
+    "bytes": 124629,
+    "sha256": "faa9dca764bb20778a63f85e64cce095f6beda4dc6cfa3cb4ef53b617ef6a824"
   },
   "arcane-palette.css": {
-    "bytes": 37719,
-    "sha256": "c54619413c1e993f2d5cf0a5c9f30fe56b0665cd7688ae7004631a3344ca8186"
+    "bytes": 37675,
+    "sha256": "8230556f646ab1b14e4b3296af2d6eb4ca86724393b424896aaef5b2fb234922"
   },
   "arcane-upgrade.css": {
-    "bytes": 26455,
-    "sha256": "23b660d177a19999bb4ddd9fc2a9d626aa5e70aa9842bd9a589f17adaa72a48b"
+    "bytes": 26426,
+    "sha256": "62ea583eae52f12a160793ebccab9de924a5c94eae5e86eb5873434c04c3e835"
   },
   "arcane-upgrade.js": {
     "bytes": 6614,
     "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
   },
   "asset-manifest.json": {
-    "bytes": 35571,
-    "sha256": "5e94487e5194da18af2707a74b21189542d63b9aff0bc5ac326bc472ee0dbfbd"
+    "bytes": 48540,
+    "sha256": "4f33696287b371ce703df9f200aed1f6b6aaf5b5c409f69d916ec6b1cf1d2ab0"
   },
   "assets/app-icon.svg": {
     "bytes": 531,
@@ -1907,6 +1939,742 @@
     "bytes": 3941644,
     "sha256": "cee7ad82d27166941c2d483097ea0814925dc4effb6bb36dad63fa60e1f7668d"
   },
+  "assets/entry/afrodite-preview.webp": {
+    "bytes": 61998,
+    "sha256": "5f1ed9909a0b6b24e72a1f34e358ee3e30f5458aa8f1184de0735daf90fb5bef"
+  },
+  "assets/entry/alto-egito-full.webp": {
+    "bytes": 388374,
+    "sha256": "18f40e1480e24ccdacae34a1058a32fccdb5ca4ef0caad0473d279fe8eacc804"
+  },
+  "assets/entry/alto-egito-preview.webp": {
+    "bytes": 76346,
+    "sha256": "4fa9e0da1590b518ccbd93780abeb059b826121cfa4a12583c96b5456dd8ada7"
+  },
+  "assets/entry/anubis-preview.webp": {
+    "bytes": 52592,
+    "sha256": "78d40c86dc01acd82c01c086f002ae8e21907ed26d1ea4bf18227d0dae76baa3"
+  },
+  "assets/entry/apolo-preview.webp": {
+    "bytes": 59614,
+    "sha256": "ad76a541d591f5f539605211753d8be19c6fa077e1aaac7e58df0a1c6b97879d"
+  },
+  "assets/entry/aquiles-preview.webp": {
+    "bytes": 57528,
+    "sha256": "d17c23e867a4ff37856a084aaa3dd4de8ce02911a371dba3b7b9170748b2ad74"
+  },
+  "assets/entry/ares-preview.webp": {
+    "bytes": 37856,
+    "sha256": "af927fc93a44510b6ac9197b6dcd346797519dace79fa8d6335f52d1b78732cd"
+  },
+  "assets/entry/artemis-preview.webp": {
+    "bytes": 57152,
+    "sha256": "64b87396523dfaad0437d6c859a0b73577d563177ca432fcc8391d50825c180d"
+  },
+  "assets/entry/asgard-full.webp": {
+    "bytes": 379646,
+    "sha256": "7f21f9fcd74166e58d47dc1a6e7ae290f3caf55abbffdc06f1c1e02072155b46"
+  },
+  "assets/entry/asgard-preview.webp": {
+    "bytes": 78552,
+    "sha256": "104eacc12a07eeddbf5e774558adc0bd634c5350020e55e3ad68da95a18c3b44"
+  },
+  "assets/entry/asteca-chalchiuhtlicue-preview.webp": {
+    "bytes": 78432,
+    "sha256": "17b0036d7fcf692145b7f21c5d0f19c9d5185885549bd968adba8843f3e4f5d9"
+  },
+  "assets/entry/asteca-coatlicue-preview.webp": {
+    "bytes": 70308,
+    "sha256": "58a1242d6a764d0674761a77bc63b7447646750a12f626eb959afebbf48486fa"
+  },
+  "assets/entry/asteca-huitzilopochtli-preview.webp": {
+    "bytes": 71964,
+    "sha256": "5bfa650b2a258ce6c5c11707d707d8378bf36f510303b7628d0b328d6e15b5dd"
+  },
+  "assets/entry/asteca-mictecacihuatl-preview.webp": {
+    "bytes": 69202,
+    "sha256": "808c1a1415fc6477f032da9a70ab43ca28f305f2169926da6777f9b9119dd7aa"
+  },
+  "assets/entry/asteca-mictlantecuhtli-preview.webp": {
+    "bytes": 71426,
+    "sha256": "871ec6903438a129277330a4c60a9c3e80d4a4386624ac7ca5a9d52bd399737e"
+  },
+  "assets/entry/asteca-quetzalcoatl-preview.webp": {
+    "bytes": 70058,
+    "sha256": "f92b599f2c79362a7b7aafd980f1d4773782039028cca0795e6b0c6535577fbc"
+  },
+  "assets/entry/asteca-tezcatlipoca-preview.webp": {
+    "bytes": 70440,
+    "sha256": "e51eee2967cb71c97d99894c4f5ad5a419213af907d99fbc0ef7bcce63852cd7"
+  },
+  "assets/entry/asteca-tlaloc-preview.webp": {
+    "bytes": 75476,
+    "sha256": "9ad3b9062de3ec210873583c392e8bc033ad7b73b9c48bbba985151ef82df500"
+  },
+  "assets/entry/asteca-xipe-totec-preview.webp": {
+    "bytes": 74190,
+    "sha256": "1c11dc4df96663ec5311259127579cb255b6be2abd7c6cfe35a32155ede6a56e"
+  },
+  "assets/entry/asteca-xochiquetzal-preview.webp": {
+    "bytes": 72330,
+    "sha256": "0dcba369d380c9b8c1c2a10ed009ce4605bfbef070b4955c6e8c10c1ff89a88c"
+  },
+  "assets/entry/athena-preview.webp": {
+    "bytes": 59532,
+    "sha256": "fde0ffdfbf80dea5521fdddd7c704c1315c7a427eba3236eff9f72e7e67cf904"
+  },
+  "assets/entry/avatars-chibi-portraits-01.webp": {
+    "bytes": 316520,
+    "sha256": "28391393663d7cbcc1efc53f341c90bfebf84ec8817bcf3c29ee2ae24e07bbcd"
+  },
+  "assets/entry/avatars-chibi-portraits-02.webp": {
+    "bytes": 305804,
+    "sha256": "365ede716b15fa513d60bb12610424308b841fde914a16f77d9f7545b61dde0d"
+  },
+  "assets/entry/avatars-chibi-portraits-03.webp": {
+    "bytes": 326534,
+    "sha256": "94371aef8929d109a383faf11deefdd63995cbade04a94ae2d8584b374ab44d0"
+  },
+  "assets/entry/avatars-chibi-portraits-04.webp": {
+    "bytes": 413584,
+    "sha256": "0c22c7c8c80d7abcc4b3cc3eee9bf3fed3b866e0783b5b6d2c3720ed290802cf"
+  },
+  "assets/entry/avatars-chibi-portraits-05.webp": {
+    "bytes": 397384,
+    "sha256": "00061c2d114f5e079df8384171eefd017e4b61eafeb4d95d291228bc32a1b2b9"
+  },
+  "assets/entry/avatars-chibi-portraits-06.webp": {
+    "bytes": 364516,
+    "sha256": "864b6215b89e9d753034f9d69a2ea87a011ffedd38078e2819fc541053822a31"
+  },
+  "assets/entry/avatars-chibi-portraits-07.webp": {
+    "bytes": 330760,
+    "sha256": "904c4792f78a0ef17ec0814918f936a8b28dca3dce75e06d961277fc8437282a"
+  },
+  "assets/entry/avatars-chibi-portraits-08.webp": {
+    "bytes": 138800,
+    "sha256": "718d5090e1cab97196dae2cf2eb6f4f46583632ef1d09fc0c595e20520a73761"
+  },
+  "assets/entry/baixo-egito-full.webp": {
+    "bytes": 404290,
+    "sha256": "6928da08118b772d98e946e5b19da022b3f1a5400df775f1dcafa11e03744bf6"
+  },
+  "assets/entry/baixo-egito-preview.webp": {
+    "bytes": 72130,
+    "sha256": "a09b9323dfe92b3b68f1633acc8baea26fe5e65618ed7ed00157b26f0e15ff17"
+  },
+  "assets/entry/banner-01.webp": {
+    "bytes": 556816,
+    "sha256": "89bef16392ff4d4b93b66ea8c113e1ea458c8aae251497fbe92cd5eaa18fec63"
+  },
+  "assets/entry/banner-02.webp": {
+    "bytes": 548756,
+    "sha256": "507883065551a25dba3860ca6850175d8c911907dd45d8a802fd5ad4d22e84e9"
+  },
+  "assets/entry/banner-03.webp": {
+    "bytes": 587654,
+    "sha256": "433af4ef2c2ae65abc38e965726947c1b7839fb04c04fba753d47dc71e91fdf9"
+  },
+  "assets/entry/banner-04.webp": {
+    "bytes": 600112,
+    "sha256": "8f7312964e47233b0efe3cfa448cbbc1e5a0cd30f76780e6b3d9e248a579748c"
+  },
+  "assets/entry/banner-05.webp": {
+    "bytes": 594734,
+    "sha256": "b0e62f7b97ce01a4ab1404d269ce7ca2817d1d5751d3fac5e06b044cba1008d0"
+  },
+  "assets/entry/banner-06.webp": {
+    "bytes": 508532,
+    "sha256": "a69948b51455ee3c02ed13e91691d9a893615e4dc2f79f1bfbf9da54e312b683"
+  },
+  "assets/entry/banner-07.webp": {
+    "bytes": 508416,
+    "sha256": "d3ffaa0d379e759052c87447b17823620e8c92eec9a03107f65bac28f5e62bc6"
+  },
+  "assets/entry/banner-08.webp": {
+    "bytes": 502434,
+    "sha256": "b6e4a632287232a1c55c055f8ebd845a4a0042f7105698d755803391d894ae0c"
+  },
+  "assets/entry/banner-09.webp": {
+    "bytes": 425862,
+    "sha256": "aa30866f943218d13f33e8ec8801a05bbe14bdd97738a7a2c03561eed8a2df1b"
+  },
+  "assets/entry/banner-10.webp": {
+    "bytes": 356044,
+    "sha256": "cc1ef60eaf937c03cb172dc6c3c612a9fa63441eed1679557f07e61a8f042aab"
+  },
+  "assets/entry/beowulf-preview.webp": {
+    "bytes": 58564,
+    "sha256": "466d3e0337d3d943c71ea68fa9c8148b6b123ea06ea1bc0fbbf03ce24243c0a0"
+  },
+  "assets/entry/bifrost-full.webp": {
+    "bytes": 328824,
+    "sha256": "a4cc71400705a4afc51e2ad196b6cb753dd759c60ff98343840d5351451c507f"
+  },
+  "assets/entry/bifrost-preview.webp": {
+    "bytes": 71060,
+    "sha256": "a76bc3002ae930dd9b574a3aa69ea5b048855278118f21335a76c6ea9b2f0566"
+  },
+  "assets/entry/brasil-boitata-preview.webp": {
+    "bytes": 68988,
+    "sha256": "c745f252bbdafaabede05ab0688189760a101cb4f61ba1dc307d5b9bf493b4da"
+  },
+  "assets/entry/brasil-boto-preview.webp": {
+    "bytes": 61310,
+    "sha256": "c512746329ebc9c9db08d4c91c9634c2aa69949a7eb1136bc150c94305e04d97"
+  },
+  "assets/entry/brasil-caipora-preview.webp": {
+    "bytes": 72586,
+    "sha256": "f84349bc1ce14c5fb47fa2cbeafaca827df93a1acd4f0a006247f4ddda6d8f72"
+  },
+  "assets/entry/brasil-cuca-preview.webp": {
+    "bytes": 64286,
+    "sha256": "2e03329b3d52acb39b4c528fad59ff5c67a90069cb7e2122b28fdcf4a404c6d5"
+  },
+  "assets/entry/brasil-curupira-preview.webp": {
+    "bytes": 69572,
+    "sha256": "405a19db96777cbb480ddcde7b126608a9d63a1d745cf9122ff9db74ab5fc8c3"
+  },
+  "assets/entry/brasil-iara-preview.webp": {
+    "bytes": 67974,
+    "sha256": "712fb331474ea0cfe94a99a1041448abd9cc34e1d3fa0bd9a0c1a5884a4fbaf9"
+  },
+  "assets/entry/brasil-lampiao-preview.webp": {
+    "bytes": 66500,
+    "sha256": "a481f24a5f24555ae23656ecb929058e9b38cae0b998db09fac4899dad312de8"
+  },
+  "assets/entry/brasil-mapinguari-preview.webp": {
+    "bytes": 66506,
+    "sha256": "b89fcb5a38d53846ee4628fb5ddb2eaf3ae116ac07f74de2d0489f0707c40f62"
+  },
+  "assets/entry/brasil-mula-sem-cabeca-preview.webp": {
+    "bytes": 61520,
+    "sha256": "17f0bf1b9f43b2993dd98e7e24aab4ae85ffe053f180af81ddedd2d96be72ebd"
+  },
+  "assets/entry/brasil-saci-preview.webp": {
+    "bytes": 73470,
+    "sha256": "1c711e7bf1059e2121af22fccc982b9e23911e66140598a33c8cf9f942ed3908"
+  },
+  "assets/entry/butter-preview.webp": {
+    "bytes": 38258,
+    "sha256": "85f881fac0276591b17db7f1745f3877f70e98e1623eb32852855905e2328bb1"
+  },
+  "assets/entry/campo-troia-full.webp": {
+    "bytes": 438714,
+    "sha256": "41adf450878d0cb49cca5e445589ec880c741d681c4f442f459d720a39bf6ba9"
+  },
+  "assets/entry/campo-troia-preview.webp": {
+    "bytes": 83012,
+    "sha256": "89bf8549031bf24160dbadc88b752c03010661b83cc76399a79f629ee498d64c"
+  },
+  "assets/entry/card-badges-alyans.webp": {
+    "bytes": 19670,
+    "sha256": "5b10d3628d6df66b1f1cf7d15522376da5dac8a38126afa0ef3b845e09b8cb00"
+  },
+  "assets/entry/card-badges-alyns-v3.webp": {
+    "bytes": 18764,
+    "sha256": "ece802326ebd613981bc81005e96f06a8a032813043b08143cfe255a37e65c18"
+  },
+  "assets/entry/card-badges-celtas-v3.webp": {
+    "bytes": 20538,
+    "sha256": "88012994ddaf1e1dfead854ed90357472caae35fc1b20aca9d266c82cba406d4"
+  },
+  "assets/entry/card-badges-egipcios-v3.webp": {
+    "bytes": 23864,
+    "sha256": "dc94391933389f7a32992abd57a53f9b184304e3a1c49686cb074bfb62396004"
+  },
+  "assets/entry/card-badges-gregos-v3.webp": {
+    "bytes": 26592,
+    "sha256": "e90cad0934dbe1ab17fe83d70fda9eaa49af410a3acccf4e1b0f4ef3aed5c7fd"
+  },
+  "assets/entry/card-badges-monster.webp": {
+    "bytes": 9018,
+    "sha256": "1798a289323b469d67b53fe69160a35ee3858b2bd0a4bde82c2ad3530b935f0f"
+  },
+  "assets/entry/card-badges-monstros-v3.webp": {
+    "bytes": 23852,
+    "sha256": "337cf5a310be253192b1c18f288ab283ddde53c704365f04db30c50312f63bcb"
+  },
+  "assets/entry/card-badges-nordicos-v3.webp": {
+    "bytes": 21564,
+    "sha256": "f2419f3e612ef5f30c0f6ce1737ec623a8bbf2865b88906e81ca29da890beb87"
+  },
+  "assets/entry/card-badges-norse-viking.webp": {
+    "bytes": 6716,
+    "sha256": "0eec556b04159ceae64a24ef9bed13437c8e6dd77a787e11afe78d4632f737ca"
+  },
+  "assets/entry/card-badges-remake-aztec.webp": {
+    "bytes": 29132,
+    "sha256": "6a1e63ce8a30a85e2b4198deb716f2f1cd1e5666ec6acc1f64af2160039fd646"
+  },
+  "assets/entry/card-badges-remake-brasil.webp": {
+    "bytes": 31658,
+    "sha256": "dbfab1bbb1303656bb88a21e77f3dbea86be35082134ad4b92d6561ca1109360"
+  },
+  "assets/entry/card-badges-remake-chinese.webp": {
+    "bytes": 35356,
+    "sha256": "9e7c362db1c47aa3386a91bbf259deba5f848dadcbbd9b10164579752e3c467e"
+  },
+  "assets/entry/card-badges-remake-hindu.webp": {
+    "bytes": 28822,
+    "sha256": "57d690c3ae78ee6f4ce464c59b6d90a555805f8aaa9128e20e61bb12e376ce36"
+  },
+  "assets/entry/card-badges-remake-japanese.webp": {
+    "bytes": 17412,
+    "sha256": "ffb6aaf3efc7d6abc0c396be00fa1bc79cacae9025eebf6639cc66e09881ecfa"
+  },
+  "assets/entry/card-badges-remake-mesopotamian.webp": {
+    "bytes": 25994,
+    "sha256": "2d6d7c022b6b1f5bf9142af2c58ca486168f3440e9e3fc7c79e662ad17ff720c"
+  },
+  "assets/entry/celtas-brigid-preview.webp": {
+    "bytes": 70000,
+    "sha256": "0d81624bf6b7dbe5a6b25125c2cbe544d2e40efebbdb297e05e755420f6e954e"
+  },
+  "assets/entry/celtas-cu-chulainn-preview.webp": {
+    "bytes": 69814,
+    "sha256": "111c89eab3f4a05a756678d4b84f3b00287ee4c8ef6b9794b90ac309e4b8ebd8"
+  },
+  "assets/entry/celtas-dagda-preview.webp": {
+    "bytes": 72390,
+    "sha256": "c9ee6eec088077a85b6940ccabecf40c64276c1f12dced686d93937a3e081d51"
+  },
+  "assets/entry/celtas-dama-do-lago-preview.webp": {
+    "bytes": 64108,
+    "sha256": "4d35b9200637cecbadf70d8589255233594bc3fdd7ddfde5e03c6b151ce6471b"
+  },
+  "assets/entry/celtas-lancelot-preview.webp": {
+    "bytes": 69276,
+    "sha256": "1d5baf22629fa2d031694768a869335c270bd3246777cf27ac3e458bcb995c4b"
+  },
+  "assets/entry/celtas-lugh-preview.webp": {
+    "bytes": 68900,
+    "sha256": "34939eb2eacec08b7664c3cde324e006a925f25339e5f33216f128d012ba76f3"
+  },
+  "assets/entry/celtas-merlin-preview.webp": {
+    "bytes": 69892,
+    "sha256": "feae57a10cd8cfe7b0ad651617ba7a9eba2014dd45239aec6c38ceed78c3a57b"
+  },
+  "assets/entry/celtas-morgana-preview.webp": {
+    "bytes": 67230,
+    "sha256": "1f77fc0dd537771f10f6c426103f52c9339141838e7b2fb542fe01b169911c13"
+  },
+  "assets/entry/celtas-morrigan-preview.webp": {
+    "bytes": 62994,
+    "sha256": "f0a993497eeae6e13ef389173bb148ba37e67b63fe0ddaad25f35ae78fe21af4"
+  },
+  "assets/entry/chinesa-ao-guang-preview.webp": {
+    "bytes": 71520,
+    "sha256": "6e23fc4ae2e56b361a226a3d1ef49ed049cfc2adf3f39dd7fba834e30423dc98"
+  },
+  "assets/entry/chinesa-change-preview.webp": {
+    "bytes": 66440,
+    "sha256": "39877851c7e6cdec4e9ff8ccc253ad1f257d3926ba30e867f86bbb2ba065d385"
+  },
+  "assets/entry/chinesa-erlang-shen-preview.webp": {
+    "bytes": 73978,
+    "sha256": "a66d0f257f5f8c76e7c1e9a1c7e54cea8b302c937e222e0dbc45a43231334ce4"
+  },
+  "assets/entry/chinesa-fuxi-preview.webp": {
+    "bytes": 65238,
+    "sha256": "d54ff5e125f51ee66d2ad028e7863a763f85330155138a3123b8bd7007e912fa"
+  },
+  "assets/entry/chinesa-guanyin-preview.webp": {
+    "bytes": 61944,
+    "sha256": "66edd150af750b62c7e73ce01eb0f5c36d8932a247e048b5555c14ae5d7de4f7"
+  },
+  "assets/entry/chinesa-hou-yi-preview.webp": {
+    "bytes": 67738,
+    "sha256": "59e29e2cf9912e15e6a3b9b08a86f068b9d804d178252b7a36fed61bef2e063a"
+  },
+  "assets/entry/chinesa-imperador-jade-preview.webp": {
+    "bytes": 67980,
+    "sha256": "b246a32de4979f1a1996819db1b5836efcbddc9fc8bbca6695f13e7397c54022"
+  },
+  "assets/entry/chinesa-nezha-preview.webp": {
+    "bytes": 69326,
+    "sha256": "a4a91d4bd5f94eea75f7d21092f08699af44083cb985b687779c8502bcf7564c"
+  },
+  "assets/entry/chinesa-nuwa-preview.webp": {
+    "bytes": 69222,
+    "sha256": "e0d6018ab284da8627eca5450f0f6ba460846aadbf195537ddb5526a25ea1ea1"
+  },
+  "assets/entry/chinesa-sun-wukong-preview.webp": {
+    "bytes": 69320,
+    "sha256": "f2790b4cd5d4c80885070bf4d54069372cbc349e469b1db1b21d1b3e086df4bb"
+  },
+  "assets/entry/citadela-luminosa.webp": {
+    "bytes": 412864,
+    "sha256": "445512ed26ea450f686f433bdd4aa03cd6c3c31b33c49702b5765109a4378588"
+  },
+  "assets/entry/citadela-paisagem.webp": {
+    "bytes": 412864,
+    "sha256": "445512ed26ea450f686f433bdd4aa03cd6c3c31b33c49702b5765109a4378588"
+  },
+  "assets/entry/clone-macaco-preview.webp": {
+    "bytes": 64520,
+    "sha256": "672facf5b242d0203722fdaef03edd0d9dcd33cc579f2440d653a9acac4342d4"
+  },
+  "assets/entry/crystal-texture.webp": {
+    "bytes": 75820,
+    "sha256": "b7db011a8ecd0864f79fa1b26e7e8a42dbbbea0d3ff9b8780d7d4e24ca9029ef"
+  },
+  "assets/entry/dionisio-preview.webp": {
+    "bytes": 64632,
+    "sha256": "53a98f8d18aaa98e086d60f85f6c79be86303544ba81ec61541ac80d0d7a81cb"
+  },
+  "assets/entry/eclipse-full.webp": {
+    "bytes": 421866,
+    "sha256": "00ecd06ae3a14b22e1c8c654d008e0090528f395080033b97c216bda3a8c1904"
+  },
+  "assets/entry/eclipse-lunar-full.webp": {
+    "bytes": 279002,
+    "sha256": "1c97f45417b17aa82939b8ecaf0c6b8b194baafd4545b1226cd1a9ff4f60fce6"
+  },
+  "assets/entry/eclipse-lunar-preview.webp": {
+    "bytes": 53344,
+    "sha256": "f330b93f67889bbfd3e4f035c82a759441badddd9b81271127b009310bb2a75c"
+  },
+  "assets/entry/eclipse-preview.webp": {
+    "bytes": 86562,
+    "sha256": "b38963f93ffee290464fb3a6b2a606ec2dcbd4b685c300677ec127f8296629ff"
+  },
+  "assets/entry/eclipse-solar-full.webp": {
+    "bytes": 244360,
+    "sha256": "3992a1c4458110b1ce108aec2084f9db41972b68153587ccf63179cf202e71e1"
+  },
+  "assets/entry/eclipse-solar-preview.webp": {
+    "bytes": 51654,
+    "sha256": "02d4babcfa900fa88f8238427ab075301180fae1daf83e72d2e617ff4ad51056"
+  },
+  "assets/entry/egito-full.webp": {
+    "bytes": 362106,
+    "sha256": "78f71c16811f0e62f6e9baf9f817f18fd61d7a19ab4d6bef31d8cd3a4e06bedd"
+  },
+  "assets/entry/egito-preview.webp": {
+    "bytes": 67460,
+    "sha256": "531ed8d67600f7b0b1e354a210ecd5fa91bf878e22fc7c9eb712270047e9db40"
+  },
+  "assets/entry/esparta-full.webp": {
+    "bytes": 393222,
+    "sha256": "c5a00e649f32eeba48bb10b2b9300f7a51c77f2afa6181e89f943cc787f1dfdd"
+  },
+  "assets/entry/esparta-preview.webp": {
+    "bytes": 74650,
+    "sha256": "f1d11ed03cc0bd266b47b278d6ae18cceb3ad63f38023db2d0963051428bf1cd"
+  },
+  "assets/entry/excalibur-full.webp": {
+    "bytes": 235176,
+    "sha256": "bc48030cdabec9fa32c200081e500309389527b75ac26de80c5ff0ec090ad40e"
+  },
+  "assets/entry/excalibur-preview.webp": {
+    "bytes": 49590,
+    "sha256": "43bff931a39add135a8eee91ba2a3e0e54a10605279a8ec5c96b42e732a28ef1"
+  },
+  "assets/entry/grecia-full.webp": {
+    "bytes": 345008,
+    "sha256": "c9d035e25813bbc5d45330380e94b02475a73e13a99708021280c7c664eac671"
+  },
+  "assets/entry/grecia-preview.webp": {
+    "bytes": 66920,
+    "sha256": "4a89550dd55c874ff8081853fcc223ff570c6087066dd0223a378f527c38f4b2"
+  },
+  "assets/entry/guardiao-nordico-preview.webp": {
+    "bytes": 69890,
+    "sha256": "1178a5ada44fe5752d7b31aedaeca85490838f79360180c52dd2f7feb289baf0"
+  },
+  "assets/entry/hades-preview.webp": {
+    "bytes": 41938,
+    "sha256": "b902f2a1e57d5b3927cc17e0d58df7e3e01f5eba06822a48788750ecd271d5e5"
+  },
+  "assets/entry/hefesto-preview.webp": {
+    "bytes": 61624,
+    "sha256": "70983baa6d351c69e5011a74a0a0e6af08ac9175e15a3040bd93a927758e039d"
+  },
+  "assets/entry/heimdall-preview.webp": {
+    "bytes": 60082,
+    "sha256": "1b5b2a13aa08c05f34fae24e76cfbb379d9dd49864cb995a5aa0e79469d68355"
+  },
+  "assets/entry/hercules-preview.webp": {
+    "bytes": 37088,
+    "sha256": "79646f3b42bcfffb357bc1e65ceffbe950016db151bf9a6e301804ac26dd95e0"
+  },
+  "assets/entry/hermes-preview.webp": {
+    "bytes": 58274,
+    "sha256": "d4f87e8c25cc20b55f362f9cbfae5595e97c9d1cde61f199e8c0560ecf564c45"
+  },
+  "assets/entry/hindu-durga-preview.webp": {
+    "bytes": 70212,
+    "sha256": "58ac345c046f6b78de0b667f451a7426dcf650119ebb964a69df0edf91aa52d1"
+  },
+  "assets/entry/hindu-ganesha-preview.webp": {
+    "bytes": 69908,
+    "sha256": "c79e775af603a48db1e7b61bb32a30428581bd98bc29a2c8b62009856d844942"
+  },
+  "assets/entry/hindu-hanuman-preview.webp": {
+    "bytes": 64676,
+    "sha256": "daf4802da804edf6dbd258e3c5cb71dcc2b05b7ec4919978e056b2b87bc61414"
+  },
+  "assets/entry/hindu-indra-preview.webp": {
+    "bytes": 68288,
+    "sha256": "95455378cc3e5d8841070874cfea5df96d48cecd761747df95dbf804f237caf1"
+  },
+  "assets/entry/hindu-kali-preview.webp": {
+    "bytes": 71354,
+    "sha256": "ec523f6f1727591a5469dba3b74c879fdd6f947122fec5252f97685b126aede5"
+  },
+  "assets/entry/hindu-krishna-preview.webp": {
+    "bytes": 69622,
+    "sha256": "c4dde8ec69399f9115e38262043e7f7a8f4d2d526f40d72960376182922bce36"
+  },
+  "assets/entry/hindu-lakshmi-preview.webp": {
+    "bytes": 67532,
+    "sha256": "8120b15fbc5237eae8fa0ec56bee4f1f5f2457411c63aaf6aadb5b38cecb3e75"
+  },
+  "assets/entry/hindu-saraswati-preview.webp": {
+    "bytes": 66710,
+    "sha256": "c9e796a98d12f82aab3aaf6df3e42cef980b7cdc18d129ff9992b8e30051e63a"
+  },
+  "assets/entry/hindu-shiva-preview.webp": {
+    "bytes": 70352,
+    "sha256": "a36ceae5f6793fc6e8fd35930ea85b06f424d65f849cbd4d5491cbe6d887e0ce"
+  },
+  "assets/entry/hindu-vishnu-preview.webp": {
+    "bytes": 71460,
+    "sha256": "7825249198d03021f0dde13394f35d76687c34606a6dbed2f37b41e860141161"
+  },
+  "assets/entry/homem-preview.webp": {
+    "bytes": 62174,
+    "sha256": "510b2e4b9f9a1521896ca2e4336060a5051007c53b771d2bf578db1f00345462"
+  },
+  "assets/entry/horus-preview.webp": {
+    "bytes": 55414,
+    "sha256": "b7ca57dc41dc6298ad6fe15b44efd7e12ce2c913459e748ca3370039789f5435"
+  },
+  "assets/entry/isis-preview.webp": {
+    "bytes": 59626,
+    "sha256": "575e04cf0f34eeb495c0ad7c554fc6b20726e361b8ec53f3ac67004dc8fbb076"
+  },
+  "assets/entry/japonesa-amaterasu-preview.webp": {
+    "bytes": 69914,
+    "sha256": "65d2409322b55744146767226be15f069dea9421039932f3d5e76d8dbe719654"
+  },
+  "assets/entry/japonesa-fujin-preview.webp": {
+    "bytes": 65496,
+    "sha256": "3e12f548ce615b6ad2e65e3ea99648a6d6f025ac4a1e80db3f1c3bbdd70dcf5d"
+  },
+  "assets/entry/japonesa-hachiman-preview.webp": {
+    "bytes": 70244,
+    "sha256": "4465c168f379a7dbb7118e1160fe53586c97767db8bb186582fc58fcaec6ba20"
+  },
+  "assets/entry/japonesa-inari-preview.webp": {
+    "bytes": 69064,
+    "sha256": "8d08bbb35fe60410c63b45aeec8178d3c2def3233cd2cb96ebdab9ae43fb55c5"
+  },
+  "assets/entry/japonesa-izanagi-preview.webp": {
+    "bytes": 72328,
+    "sha256": "dfb9934f79d4a14feff3ff34d62a54c784cd2c8e339f32f6a13275c5dc4c562d"
+  },
+  "assets/entry/japonesa-izanami-preview.webp": {
+    "bytes": 68322,
+    "sha256": "c48a3d5237dd09bafc6adb1df5eabee42617deb6b741195fc514bca583edab37"
+  },
+  "assets/entry/japonesa-raijin-preview.webp": {
+    "bytes": 69122,
+    "sha256": "640ffce43cb6a644cc6f010b4dc2f52fb374ff73460d9723c115e8cf90434f97"
+  },
+  "assets/entry/japonesa-ryujin-preview.webp": {
+    "bytes": 73754,
+    "sha256": "cc9cba6bd49cad7d12b6c39eb249734b72b4added6ddf3a4a66d9725b531ee0e"
+  },
+  "assets/entry/japonesa-susanoo-preview.webp": {
+    "bytes": 70454,
+    "sha256": "64e09ba3a3e0535421f0d55ed51c485ff7e56bd1f857dd71862a1c5561116b58"
+  },
+  "assets/entry/japonesa-tsukuyomi-preview.webp": {
+    "bytes": 66818,
+    "sha256": "2740eb13aa88335eafdacedf927fd9ff1b514b1cc943ae1238a38df35263dff4"
+  },
+  "assets/entry/labirinto-dedalos-full.webp": {
+    "bytes": 347556,
+    "sha256": "2ffb799c64ea458b88888031fc56bfe737d4f7dad3ac32105351ea7087f0b8fc"
+  },
+  "assets/entry/labirinto-dedalos-preview.webp": {
+    "bytes": 67824,
+    "sha256": "ed3acde6359c7db70d9a680d04a8c0ef1b271425bdc38925c736ecb8376a7a2f"
+  },
+  "assets/entry/lobo-alfa-preview.webp": {
+    "bytes": 42980,
+    "sha256": "5aab0b6b725e68c5d5dc64775febfc039104a9f8b6ea24defaa2453704410716"
+  },
+  "assets/entry/lobo-beta-preview.webp": {
+    "bytes": 42210,
+    "sha256": "0e866a05ca8bfed5b0f892a3679b64fa6946b1675eeda96fd3f7b4cb77f24d5c"
+  },
+  "assets/entry/lobo-omega-preview.webp": {
+    "bytes": 42220,
+    "sha256": "ec4bed2651d3286ffc410fabd577d9f5800e55f9ad2f893a56d9e2d5d4621138"
+  },
+  "assets/entry/loki-preview.webp": {
+    "bytes": 57176,
+    "sha256": "85fee209b472ec9e5e63b662715560affe9183e3bc87eb1112ce3e2743c6c199"
+  },
+  "assets/entry/lukyan-preview.webp": {
+    "bytes": 46966,
+    "sha256": "fc9cfdd1ba73196fc1718857f72d93e8d44c2cf328c162f6b2428ae16771495d"
+  },
+  "assets/entry/lukyan-rei-de-todos-preview.webp": {
+    "bytes": 45886,
+    "sha256": "d83fbc722e3ea87e7328aa95735d1c00535d69d41793f350f5f3099745d28806"
+  },
+  "assets/entry/medusa-preview.webp": {
+    "bytes": 40876,
+    "sha256": "0f42bec800f6f0038e0037c917a916994dd68a49586f56e6c01b69e42edf4052"
+  },
+  "assets/entry/mesopotamica-enki-preview.webp": {
+    "bytes": 71816,
+    "sha256": "b00f724983a45c26783ca0ef1e3b65865e0e8b7032156e091785286c3cf408ec"
+  },
+  "assets/entry/mesopotamica-enlil-preview.webp": {
+    "bytes": 65600,
+    "sha256": "76c54f585fb9cf85d37776f87efce9544412a5c608de2a9afdeff49ef0d4f4f0"
+  },
+  "assets/entry/mesopotamica-ereshkigal-preview.webp": {
+    "bytes": 64646,
+    "sha256": "d7694d36c1daccc322e7825d990edec2aaf92efb2294b5dd5f3e41b754d57041"
+  },
+  "assets/entry/mesopotamica-ishtar-preview.webp": {
+    "bytes": 69124,
+    "sha256": "d218dd98751f2d10af411d5ab37a638ae054f42011fd896828da90984f48a54f"
+  },
+  "assets/entry/mesopotamica-marduk-preview.webp": {
+    "bytes": 73704,
+    "sha256": "ebbaa8fc242e57ceee3c83951176ec00af730f5742a1e0ca16b883009d8569f5"
+  },
+  "assets/entry/mesopotamica-nanna-sin-preview.webp": {
+    "bytes": 70390,
+    "sha256": "66174eaa072038aecc27d7c2e706eb0d88df621678aa627ae2ce8ef401bc6397"
+  },
+  "assets/entry/mesopotamica-nergal-preview.webp": {
+    "bytes": 69732,
+    "sha256": "229eaee07091e1fba49892001bd255356594423f4772f1f9a0d591dc7038e8c8"
+  },
+  "assets/entry/mesopotamica-ninurta-preview.webp": {
+    "bytes": 71584,
+    "sha256": "aa00f2b01d353b0da310b59ae9558e7fb698c078fa7d422de7fb1ca1104e3b52"
+  },
+  "assets/entry/mesopotamica-tiamat-preview.webp": {
+    "bytes": 74536,
+    "sha256": "23dd43ac33e07e09740292b01a0fed3ba4a8170f582dde0e2e807bc6f97e33b9"
+  },
+  "assets/entry/mesopotamica-utu-shamash-preview.webp": {
+    "bytes": 66924,
+    "sha256": "a58ecf2924899f5dd1ea3aa47cd904faabc69488e45e4edb96de2bfb722458d9"
+  },
+  "assets/entry/minotauro-preview.webp": {
+    "bytes": 42694,
+    "sha256": "50978aaa614d297334b33b02b1b99e1074e2d9ddc5d90d55b9bdf60d8cc9a799"
+  },
+  "assets/entry/mjolnir-full.webp": {
+    "bytes": 337810,
+    "sha256": "0caacd599ce66d42b81e473d0f4b5000ade550d378e2c58189bcd98ae72938c5"
+  },
+  "assets/entry/mjolnir-preview.webp": {
+    "bytes": 72252,
+    "sha256": "2457c450727fc998533b23ffb892747a15199feddc6f6b3b406fcf8dfa786a39"
+  },
+  "assets/entry/mulher-preview.webp": {
+    "bytes": 64670,
+    "sha256": "f47abf60946c5d83697cfde50936a1e4bece5b34ae9a4bdad2cc0a03083e1d7b"
+  },
+  "assets/entry/nilfheim-full.webp": {
+    "bytes": 267438,
+    "sha256": "16a0d7bd8f6c5f3dc9fa733f3f22611ea371be20c77c99d86d3ac1bb087145f6"
+  },
+  "assets/entry/nilfheim-preview.webp": {
+    "bytes": 54710,
+    "sha256": "4bc0940b3c9cfaf6de90052d8e4a99621b61f8b735b0cbe94e58dfe56173b81e"
+  },
+  "assets/entry/odin-preview.webp": {
+    "bytes": 58598,
+    "sha256": "5b04cfb481ff1614895d29e3b471f815de61ce75b78385cb72488a2f1241ad1d"
+  },
+  "assets/entry/olho-que-tudo-ve-full.webp": {
+    "bytes": 312104,
+    "sha256": "67528398268a850a75f3746e1322379cf25832dd8a548b32129eb4908f38ee55"
+  },
+  "assets/entry/olho-que-tudo-ve-preview.webp": {
+    "bytes": 66314,
+    "sha256": "6ebf949e0a2737364ebd5381d949bd01da3d5379d8148601248996956b5a311d"
+  },
+  "assets/entry/osiris-preview.webp": {
+    "bytes": 57114,
+    "sha256": "35203c46e3cd44be44a80e86e93676248accc48059d2012b77be70c447822873"
+  },
+  "assets/entry/poseidon-preview.webp": {
+    "bytes": 49880,
+    "sha256": "fad0084665d4289bf5cc997ec37b1478c417331eb9c87f4b937767741c806a75"
+  },
+  "assets/entry/ra-preview.webp": {
+    "bytes": 58762,
+    "sha256": "0ca158ebe07ca59eceee5ea3cf545413d19c9b409048dc473a130c3129da0624"
+  },
+  "assets/entry/ragnar-preview.webp": {
+    "bytes": 57870,
+    "sha256": "bb679b552697c59d994042cb46084fca7f0e7e4f34259843dd3b2ecaef237c6b"
+  },
+  "assets/entry/raio-de-zeus-full.webp": {
+    "bytes": 264682,
+    "sha256": "95924bd1fc7016ae700622f8158f699b17a30b682cd2e58606e6a0bd5e1d1439"
+  },
+  "assets/entry/raio-de-zeus-preview.webp": {
+    "bytes": 55444,
+    "sha256": "9bed162052929b2922a3a4f5134e539ce9e938725ce8b59112c210614ed4cc2b"
+  },
+  "assets/entry/rei-arthur-preview.webp": {
+    "bytes": 68666,
+    "sha256": "45774216579f1bcb68dc1622931f5585b897f4b164b29eabe21da35601ed7323"
+  },
+  "assets/entry/runas-nordicas-full.webp": {
+    "bytes": 301504,
+    "sha256": "f11c0eaf4eef9cbea02ed81d842c0c9f7a763d9d1a9bca6eebf109c178a95931"
+  },
+  "assets/entry/runas-nordicas-preview.webp": {
+    "bytes": 62620,
+    "sha256": "f87627d83f5dff1fd5fd7892afc2cea187daa8324852181f8bef8cbf7015e171"
+  },
+  "assets/entry/seth-preview.webp": {
+    "bytes": 55356,
+    "sha256": "d025d2aa28ae5daee8700ca41d837944008688b39808e3422e91f735ba9a9f61"
+  },
+  "assets/entry/sobek-preview.webp": {
+    "bytes": 61474,
+    "sha256": "ba407c56ec6db95344c3ad3a4aed61521829010e61b4cb2562b6ec8a5326e283"
+  },
+  "assets/entry/soldado-esparta-preview.webp": {
+    "bytes": 40474,
+    "sha256": "2c81dbacb693443727825b931e573e9839b7893de8217c837c098ad42f1fcd83"
+  },
+  "assets/entry/starter-pack.webp": {
+    "bytes": 165646,
+    "sha256": "f14711b0d89a055f6c8648f4cbf44b4509c7835671590a55019ab6c4039a8686"
+  },
+  "assets/entry/thor-preview.webp": {
+    "bytes": 58180,
+    "sha256": "87699ce5334372c2cac26044f6cbea615784ef512073e63c08110d21cd49cf7f"
+  },
+  "assets/entry/yggdrasil-full.webp": {
+    "bytes": 395380,
+    "sha256": "9bdc3095b2775e5be338164c8db3f96df1909108d37630f18de4968e29b32c7d"
+  },
+  "assets/entry/yggdrasil-preview.webp": {
+    "bytes": 84934,
+    "sha256": "97967b51630bcc25cbc7c164aa17d758e2b3888b24c0225934294c62f1e5706e"
+  },
+  "assets/entry/zeus-preview.webp": {
+    "bytes": 44570,
+    "sha256": "e11bf9ac98e065ada9830f873116dae3ef095547d8d899ca406448d2f56912a1"
+  },
   "assets/equipment/excalibur.png": {
     "bytes": 3587760,
     "sha256": "10e6897c6e32efb8e71fe332073d877e17d5a5762b04e2d9a005f496119d55c2"
@@ -2707,6 +3475,10 @@
     "bytes": 2383,
     "sha256": "842bb389420dafdad4393e12c1e8970d5a1e0a4a77414c27af33ba341f472729"
   },
+  "ATUALIZACAO-CARREGAMENTO-E-CONTINUIDADE.md": {
+    "bytes": 6383,
+    "sha256": "573d50c1a31c7b12c945973c938419e4e48cc6572dfd815a31796bd5843ac471"
+  },
   "ATUALIZACAO-CARTAS-REMAKE.md": {
     "bytes": 3212,
     "sha256": "4b94738d208588226d34564489f1816cc9464b24a6f150cc943b1214ff49cb1a"
@@ -2724,8 +3496,8 @@
     "sha256": "59aad6e080f25b489c851afaf7e700b47c66410c2df56a3b3a39930496b13ba2"
   },
   "ATUALIZACAO-DECKS-E-X1.md": {
-    "bytes": 4539,
-    "sha256": "638fb6d1fdd16c16e67dc74f9c41658fed284456b17f9527b2b46a2f27113ab1"
+    "bytes": 4762,
+    "sha256": "aa302096f9be9e99a1a64cccd62a4dc83d37acf292de8ce7277a9db2f3bfc98f"
   },
   "ATUALIZACAO-DESEMPENHO-DECKS.md": {
     "bytes": 1417,
@@ -2758,6 +3530,10 @@
   "AUDITORIA-SEGURANCA-DESEMPENHO.md": {
     "bytes": 14009,
     "sha256": "52f2e5032c7e070a8fa4a7669cee3902451a95b2b8ec4ba7f466d64dd6f1a3a2"
+  },
+  "auto-deck.js": {
+    "bytes": 7415,
+    "sha256": "9647e3ca3989d016bcd9a6bf4c8596ec814d64860f3d9707b4945c34878125af"
   },
   "avatars-chibi.js": {
     "bytes": 15867,
@@ -2796,8 +3572,8 @@
     "sha256": "b90decac1956f349e63a93e008e1391c0a6d6d9b9f2cc28cfc1760b82f653eb4"
   },
   "combat-cinematics.css": {
-    "bytes": 5174,
-    "sha256": "b72577431fe8cd835467bfa8253c573095db007682d54c564da9482ca26190ea"
+    "bytes": 5203,
+    "sha256": "8920d3c52402266cf3f9478b0caed59d381e5041f0d052a529251a917e7d3485"
   },
   "combat-fx.js": {
     "bytes": 14196,
@@ -2816,8 +3592,8 @@
     "sha256": "f6f966208f9de17b761f50cfac46145afae6a0ea894d1da3c7afca77aff9f95b"
   },
   "concept-theme.css": {
-    "bytes": 43530,
-    "sha256": "ef0b230fee2e30173be44a0815da58075255328cd9055ad443cff8b0d741ae6c"
+    "bytes": 43663,
+    "sha256": "cfc0013b47aa70721b269587924560c3927df2c300b63d81169beea4684d1e75"
   },
   "concept-theme.js": {
     "bytes": 42062,
@@ -2868,32 +3644,32 @@
     "sha256": "dfe7004477a24d33b04c6bb415ec607c96437d19ff26e2e621aead62fbf7aaf3"
   },
   "custom-lobby.css": {
-    "bytes": 4008,
-    "sha256": "405e1838d2c98db12b3899941c6d0ecb11070a77da396d647727439877f1bc76"
+    "bytes": 4031,
+    "sha256": "9ff95e2bfbff3c88507785d09a3fd15de7b0685ecfd923b251b9f3bb8bc978dd"
   },
   "custom-lobby.js": {
-    "bytes": 11084,
-    "sha256": "8a1cac0588d110a5171def0ba197c92551df3df4a65131a81a05894b06ff61ff"
+    "bytes": 11898,
+    "sha256": "b3b1a6f15959645b040c7e4a49e9f3c7f5aa5a9998dc788306be70255e7eb02c"
   },
   "deck-builder.css": {
-    "bytes": 19603,
-    "sha256": "718235a7683d375b2bd9a427b0b350de10b4c4615f6c0067433e8ffef2eda4e8"
+    "bytes": 19583,
+    "sha256": "92e18b1650be73d51c9cbec7a7ae13531e8d7c8adbc2c9b8218bde4758fabbf4"
   },
   "deck-builder.js": {
-    "bytes": 24732,
-    "sha256": "e57b0bd9edc6ad2e0916abec31cfa30461456e882f7fabdebae4d86c757f15dc"
+    "bytes": 25339,
+    "sha256": "f3c3b4718792587f58712de53454ffd9f6689541d5082946230d082f842148da"
   },
   "deck-evaluator.js": {
     "bytes": 15575,
     "sha256": "bdc5198643776d67901c393af0f8b57f2db9110db3750da309be5d493232cd9e"
   },
   "deck-identity.js": {
-    "bytes": 6593,
-    "sha256": "52067bd6bf666ea51a885558ab00f5f662a07ea80061b09285b06cf4e2e71544"
+    "bytes": 6625,
+    "sha256": "518ca7fad927cd2e6f995b1dade68f53df3c9cf95d310361079b1822f9892740"
   },
   "deck-tools.css": {
-    "bytes": 10086,
-    "sha256": "69a4f7535d3cae634e54503abb5bd10b5c10c1e345e17e4129da53be2e14938a"
+    "bytes": 10130,
+    "sha256": "2c04148793de35c70226faf2ac61a8f1d31a279a39020da188068411e074e8b9"
   },
   "direct-lobby.js": {
     "bytes": 7860,
@@ -2908,8 +3684,8 @@
     "sha256": "89a361fc23504a0f784b58f1df6d1a61de62d4427f48944c231cd3fae3081671"
   },
   "eclipse.css": {
-    "bytes": 8038,
-    "sha256": "b2adf8b049ce797ca6c51993c6b9216f47d0a58d2b0cc45540b90400d85fb852"
+    "bytes": 8097,
+    "sha256": "35beabe5641efd3028a94ea719dc8e8e2a40575d0f4f869374899ac43cede5ba"
   },
   "eclipse.js": {
     "bytes": 10161,
@@ -2918,6 +3694,18 @@
   "ECLIPSE.md": {
     "bytes": 2813,
     "sha256": "a742a1944df285cd110ed9ca387455f3730deeee89a6ac162bd8f9b680566d79"
+  },
+  "entry-critical.css": {
+    "bytes": 5516,
+    "sha256": "cbef21651b8de00fd021194aee3a7fbb48305541e44bdd2ab9f3e7ad0bf7fcd7"
+  },
+  "entry-media.js": {
+    "bytes": 23239,
+    "sha256": "44cb73bc4455dc6b193b3a3f9a4d47c4712092a17f570ed7e69813c19f338206"
+  },
+  "entry-startup.js": {
+    "bytes": 2964,
+    "sha256": "05b2d4397322918e2084fb1982c64d8e5a3bd6e99ac446183d2fbedfaebb9eff"
   },
   "EQUIPAMENTOS.md": {
     "bytes": 1578,
@@ -2932,12 +3720,20 @@
     "sha256": "087e4509f10a7471d4f17d63e70e8e67bfc83f75868d86e60dea8a39949745c8"
   },
   "floating-queue.css": {
-    "bytes": 2118,
-    "sha256": "be8b08a716adb7122fdbfa6c0a9bb7f9427f4b69cc283e6d7b41f6668f892fcd"
+    "bytes": 2136,
+    "sha256": "02b08c4b5745a737004576df673f1b4d7a72e08750c83f403299ceeddeda6209"
   },
   "floating-queue.js": {
     "bytes": 5764,
     "sha256": "edaa5071b2ae326e3cb76014fc66d5fa129896f55403618e650e1fda9b6d0e84"
+  },
+  "game-fonts.css": {
+    "bytes": 402,
+    "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
+  },
+  "game-interface.css": {
+    "bytes": 578562,
+    "sha256": "6309809f03e26431c2974c2881400699fbfc04e480a278e2bc1f6509636b1e2e"
   },
   "GUARDIAO-NORDICO-ATUALIZACAO.md": {
     "bytes": 4366,
@@ -2960,8 +3756,8 @@
     "sha256": "cac6b168f24c986b471116f7394c75dfbfe2797f3fc30a68fbce3eb07f3b1bd7"
   },
   "honors.css": {
-    "bytes": 2515,
-    "sha256": "239eb3ec9b53367a1c52a1b9b80777662f7e68d04490a4c6ed5a002162e95f11"
+    "bytes": 2540,
+    "sha256": "1ffa5f8de5852af630827352f8c348379cb625a137ccaa9afdd5bf09ad474dc7"
   },
   "honors.js": {
     "bytes": 5389,
@@ -2972,28 +3768,32 @@
     "sha256": "69a3cda8acb6a9e5d9d9a20ebaf22879855a867790677f3f26c848e8eb4e0dce"
   },
   "identity-art.css": {
-    "bytes": 2959,
-    "sha256": "6c7d27943f500e426c232dc44d49ebb3cfb5bd2115bf70dfe2f8020864414b6f"
+    "bytes": 2977,
+    "sha256": "886f804b290edf82a768d20994c7efe0a4b4d01c0a7c17e1aaece6a90e3c31e0"
   },
   "identity-art.js": {
     "bytes": 2385,
     "sha256": "c3d83dca7d4a1c98b195ad4bd12cc3cd1727d224e5481572e57ec8dacbc56434"
   },
   "identity-upgrade.css": {
-    "bytes": 2553,
-    "sha256": "3435fb16cbb7a6ddb14ae6d372d988806b152e4d7c90003971112c5d8084221e"
+    "bytes": 2571,
+    "sha256": "2b489e753d76713df25eb7a6bc371fbb36ba77680786f93d582412ab24982597"
   },
   "image-generation-prompts.json": {
     "bytes": 22209,
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 72170,
-    "sha256": "87ea736de9c1de5764143d341319d14d2fc6e8e8921a086c1334f0bf139e6ebc"
+    "bytes": 75253,
+    "sha256": "25d6d2f2cada8c57e7e007cff6e9ff3abdaf445d6ba4bae08195fbb3a3c9c2e1"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
     "sha256": "0d908dc96b0210426e4579fe80d1e08651edf0ff340284703044bef53a9c0402"
+  },
+  "journey-tools.css": {
+    "bytes": 3303,
+    "sha256": "5a0164d21458b07104d5c5d924c72d675f68ad3855e27f0d828801cd9e63be89"
   },
   "landscape-zones.css": {
     "bytes": 2731,
@@ -3040,16 +3840,16 @@
     "sha256": "4cc467e3ab34e4cc8f312d5ac5bb4caf87f6d1e5ce250ea7a1e5f7a93f10e620"
   },
   "match-report.css": {
-    "bytes": 4095,
-    "sha256": "504527320f1c5f886a8e9addc9184b21e71d61e1152e5430114083b6400c3d51"
+    "bytes": 4101,
+    "sha256": "a0742fcb060cc42e44d1467a28715682415468f5e1beb0004bb4fc1322b5d95b"
   },
   "match-report.js": {
     "bytes": 10284,
     "sha256": "6291d74712276e0cf6ccb6d3e8c549af697062a29635f9f5c1794e1d731902b5"
   },
   "missions-menu.css": {
-    "bytes": 2774,
-    "sha256": "47087d4182860644506fd1cd09ac90279e34d9af06fc36ff9e2f16f4a8e5b2e1"
+    "bytes": 2799,
+    "sha256": "81978ab62f4ed74259a93650fae0c2da7ea53511631d43e966c9235145efea5f"
   },
   "missions-menu.js": {
     "bytes": 3176,
@@ -3061,7 +3861,7 @@
   },
   "mobile.html": {
     "bytes": 1085,
-    "sha256": "5a8068e12584160b710bffa0cfca6dcc4ce0da6ef397bee132c5dad4ed9a0aa4"
+    "sha256": "86d1655ce1fd8a1949105a00e8fe3ba84240c525d742a350cec61edfb5f7b8fa"
   },
   "MODO-TESTE.md": {
     "bytes": 2660,
@@ -3072,8 +3872,8 @@
     "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
   },
   "online.js": {
-    "bytes": 143079,
-    "sha256": "09aeaf4eb4c92fd2d8453dfe8b0f1a23852fdfbafaeb7853e64de110910cdc1c"
+    "bytes": 145244,
+    "sha256": "8d4e594f0af8191581344358f46b8ead45752cfed89540716b6af92ec68b06cf"
   },
   "PELOTOES-DE-COMPANHEIROS.md": {
     "bytes": 884,
@@ -3084,20 +3884,20 @@
     "sha256": "302d8db7b766b26d6d94c540d2736be41ed9d802d50df496a55ce2443a091ed2"
   },
   "portal-upgrade.js": {
-    "bytes": 28994,
-    "sha256": "0fa53b6d84b5fa6760d54570ed093d65b3bb59524e56d949e7e87aca77161c2b"
+    "bytes": 29080,
+    "sha256": "113d06ff8c2c52841e809a900c3fb4cdd5bcf8be0b5548360b2ce4290f7010e4"
   },
   "practice-mode.css": {
-    "bytes": 2070,
-    "sha256": "46c47210a6e190847e73c03be23733a1e88b032d69cdf80ac1038017db794d2b"
+    "bytes": 2082,
+    "sha256": "2e17d912618ce3de8c46a25b304944a033a03868a5c3f1cc4ac9b6380da25bb6"
   },
   "practice-mode.js": {
     "bytes": 4345,
     "sha256": "8c93c278f646f9695462974919acc34c3dbfcaa52382d8a196b79730e0015960"
   },
   "profile-redesign.css": {
-    "bytes": 12991,
-    "sha256": "c7d65b425c069cbfe9fa3320efc0c82d92497c96d35dcc3569efe55a560ff6db"
+    "bytes": 13090,
+    "sha256": "2f6ce61d1a963cd1df60bfa2280618d122d7723a161ee69b8ccf810dbe3adf84"
   },
   "profile-redesign.js": {
     "bytes": 7767,
@@ -3108,8 +3908,8 @@
     "sha256": "f453aba1e1a88acdad10abd98b4695121d2cbac92e9ee3d734483c68693c02c1"
   },
   "public-hall.js": {
-    "bytes": 17662,
-    "sha256": "ddcf205a048c16e07e04c7d84ee3ed7872fbe2565ad92dc675b37e78f843e029"
+    "bytes": 17914,
+    "sha256": "b2de1c5511be301bb48f505db84a2dda38e7a3838191718657750980da8cb5db"
   },
   "queue-room-layout.css": {
     "bytes": 3034,
@@ -3120,8 +3920,8 @@
     "sha256": "5897f273fc08a7e157920200f891853c99f2fd11d9f679e4f0cc9642036b3302"
   },
   "rank-progression.css": {
-    "bytes": 3721,
-    "sha256": "0b3c2ceb0e117bbc68968ff013a8bb39865f4c201ee34ebcd55d0b23fa928458"
+    "bytes": 3753,
+    "sha256": "f0a7db3dbae9fab2a74d1d510a0548581cc972f26b4e30ce35742fb9a3371f16"
   },
   "rank-progression.js": {
     "bytes": 5928,
@@ -3148,8 +3948,8 @@
     "sha256": "0acf56725211187ca3b7e41a79010f076e77d735cf8f0fadcbc8636cee044ad1"
   },
   "responsive-layout.css": {
-    "bytes": 19257,
-    "sha256": "8b8a215449509e25d082d14a1b42b858e6ef31f1d493feb109bcbce920967dbc"
+    "bytes": 19485,
+    "sha256": "ef45c5696acb07d8041de505d78f76dafd94ce29687c69e98469a1e3d9f1ec40"
   },
   "RESUMO-DA-PARTIDA.md": {
     "bytes": 2775,
@@ -3160,8 +3960,8 @@
     "sha256": "aa58c23de920df858b360c8894ca7c3a3b7460036976119df0ce831fe8d12ac4"
   },
   "row-holograms.css": {
-    "bytes": 2722,
-    "sha256": "4e1c979d2e9e23a2a1e739ef8a1938f711c759af123e1bfa21b5f79a2c3e7826"
+    "bytes": 2740,
+    "sha256": "ff7857528e65bcdc8dd185d5d60717a839be419c5cb0f7f4d49056c8f9734e99"
   },
   "SALA-BARALHO-LATERAL.md": {
     "bytes": 974,
@@ -3180,20 +3980,28 @@
     "sha256": "d59f7dcbb7022a7981673f062c3c94ffde2f54beda9351a63dc8f2c293f00e20"
   },
   "security.js": {
-    "bytes": 956,
-    "sha256": "a698f42d22d6e30051036e06ef1bcdcfead86b4ca5d9ee919c956ee1e732e929"
+    "bytes": 1383,
+    "sha256": "834bf98035c0665b8c15971428b84ee89b0c93bcc066593fc8ee50e618d9915e"
   },
   "SEGURANCA-E-JOGO-JUSTO.md": {
     "bytes": 9365,
     "sha256": "bb835b4ae8b4c2d4b2783f0d771cac5b532531352347dedfc814c5aa42bedc5c"
+  },
+  "session-resume.js": {
+    "bytes": 4850,
+    "sha256": "28c3805eeba052b0157a81006027f0660a840061081e0882834373027443352e"
+  },
+  "shop-filters.js": {
+    "bytes": 4870,
+    "sha256": "4eb123eefad643c35785b7f85813cf2e82b66817bf69a1265184e81871881f2a"
   },
   "SIDEBAR-ARCANA.md": {
     "bytes": 2707,
     "sha256": "859d0a78cedb907f04fc513e29ab374f91a8b85a58121017badaf22107948b83"
   },
   "sidebar-arcane.css": {
-    "bytes": 16060,
-    "sha256": "dbcbbe844a5c60d73232bb3fdd251270cc56635095d33da6b661d31fccce6e02"
+    "bytes": 16176,
+    "sha256": "0d8739c240ceed9877034fd5a1e91a207b046145d38ac64da3a2a8e0c1145a0a"
   },
   "sidebar-arcane.js": {
     "bytes": 8124,
@@ -3204,8 +4012,8 @@
     "sha256": "8713871ef52ad83cea21b1f2f3ec89a56d8a67c01066bddeb2a04217a9af59d9"
   },
   "styles.css": {
-    "bytes": 204347,
-    "sha256": "39610fda20ef27c1a280f0bca05b0e8f0419164538ee60c10b68cf1744c7b6d7"
+    "bytes": 204349,
+    "sha256": "542905ca1c2da1ddf5579572ad9e5b5cf96db9837769bd5702752e44ab3aeb56"
   },
   "supabase/migrations/202609270001_online_game.sql": {
     "bytes": 37255,
@@ -3431,6 +4239,10 @@
     "bytes": 5205,
     "sha256": "62f54905f433f9bb959ece880d3a9b29b763c694ffa57012d5d7af095696e607"
   },
+  "supabase/migrations/202610200043_resume_my_game.sql": {
+    "bytes": 1046,
+    "sha256": "2c299cd16df58c45d285b5a1f65211875f1093b7df85da00534dd916fe279771"
+  },
   "supabase/README.md": {
     "bytes": 2053,
     "sha256": "317190d2e911059045588edd73f6f78cecbcbf1f4df1c13dfff9aa4f8594c24e"
@@ -3460,8 +4272,8 @@
     "sha256": "6433dc5cd2641c0f115ef26deea5112efc771338a59a672d24a83df69a0f1a8a"
   },
   "tiebreak-cinematic.css": {
-    "bytes": 7599,
-    "sha256": "68b25b0b5e6d7b287e25c2f59ae658a5f9bfd40c2182b0702fb4847e68bd6881"
+    "bytes": 7652,
+    "sha256": "4c0c77af544c92614ce0d9e6bcdcfd2a3ae3d714967c02e01ecdcd2cf693ccc9"
   },
   "tiebreak-cinematic.js": {
     "bytes": 9591,
@@ -3471,9 +4283,13 @@
     "bytes": 2728,
     "sha256": "453bd29ed95e5df9a04453d734a43625103e6c38d04ab09dc83735340115c647"
   },
+  "unified-custom.js": {
+    "bytes": 970,
+    "sha256": "c4d9ff7125e1d4c257a68a029c8fdc5d06f03d464db97c812a51265c1e904c10"
+  },
   "universe-banners.js": {
-    "bytes": 3010,
-    "sha256": "3ab03201b14616835ddcfe14335fc19e6275dc728ba872f8dfad4e28281aab98"
+    "bytes": 2934,
+    "sha256": "70ee27553db494dbab20e735a4516ed8b4da686232007a50013d250b714ecdf6"
   },
   "universe-banners.json": {
     "bytes": 3565,
@@ -3500,8 +4316,8 @@
     "sha256": "f8f48f32638609d12c2af3fda614e437026aede9effc39d9e1cb71564845d72f"
   },
   "welcome.js": {
-    "bytes": 19748,
-    "sha256": "03da2b4f724256308a569f47280d3bdb45666d0ac63c1e6af7b14f50f5527ad7"
+    "bytes": 20203,
+    "sha256": "9bf16e4248fe407ef2f41ea74c5ae8fd00aa62067a17a0a63c18c41b5d96e2e5"
   },
   "world-lore.js": {
     "bytes": 22706,

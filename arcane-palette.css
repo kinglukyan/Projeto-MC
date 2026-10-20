@@ -323,7 +323,7 @@ body.mythic-rework::after{background:linear-gradient(180deg,transparent 25%,#0e0
 @media(max-width:960px){.mythic-rework :is(.friends-submenu,.deck-submenu){background:#1d1525}
 .mythic-rework .nav-group-universe .nav-item{color:#baaec6}}
 .mythic-rework .sidebar{scrollbar-color:#9f783a #15101a}
-body.concept-ui:not(.duel-fullscreen) .main-content::before{background:linear-gradient(180deg,#1a122238,#150f1b6b 55%,#130e19bb),url('assets/concept-ui/citadela-luminosa.png') center top/cover no-repeat}
+body.concept-ui:not(.duel-fullscreen) .main-content::before{background:linear-gradient(180deg,#1a122238,#150f1b6b 55%,#130e19bb),url('assets/entry/citadela-luminosa.webp') center top/cover no-repeat}
 body.concept-ui .view:not(#view-duel) .panel,body.concept-ui .epic-panel,body.concept-ui .missions-dialog{background:linear-gradient(120deg,#261c30ed,#17101eef)}
 body.concept-ui .view:not(#view-duel) :is(.panel-heading,.community-card>header,.admin-card>header){background:linear-gradient(90deg,#372a4555,#1c142533)}
 body.concept-ui .view:not(#view-duel) .button-secondary{background:linear-gradient(#3f314e,#21172b);border-color:#a89bb699;box-shadow:inset 0 1px #e6d0ff22}
@@ -332,12 +332,12 @@ body.concept-ui .view:not(#view-duel) :is(.button,input,select,textarea):focus-v
 .concept-account-avatar{background:#2e213c;box-shadow:0 0 0 3px #1d1526,0 0 0 4px #b9975088}
 .concept-account-name progress{accent-color:#c99aff}
 .concept-coin{box-shadow:0 0 0 2px #1e1627}
-body.concept-ui #view-arena .arena-mode-card{background:linear-gradient(180deg,#2a1e3733 0%,#1f1628c9 55%,#150f1cfa 80%),url('assets/concept-ui/citadela-luminosa.png') center/auto 100%}
+body.concept-ui #view-arena .arena-mode-card{background:linear-gradient(180deg,#2a1e3733 0%,#1f1628c9 55%,#150f1cfa 80%),url('assets/entry/citadela-luminosa.webp') center/auto 100%}
 body.concept-ui #view-arena .arena-mode-card.selected{border-color:#d2acff;box-shadow:0 0 0 1px #c08aff,0 0 18px #c08aff77,inset 0 0 15px #c08aff22}
 .concept-mini-deck{background:#1e1527}
 .concept-mini-deck[aria-pressed="true"]{border-color:#cfa7ff;box-shadow:0 0 12px #c08aff55}
 .concept-mini-deck small{color:#c8bdd4}
-.concept-deck-tile{background:linear-gradient(#261b3244,#17101ef5 63%),var(--deck-art,url('assets/concept-ui/citadela-luminosa.png')) center 25%/cover}
+.concept-deck-tile{background:linear-gradient(#261b3244,#17101ef5 63%),var(--deck-art,url('assets/entry/citadela-luminosa.webp')) center 25%/cover}
 .concept-deck-tile[aria-pressed="true"]{box-shadow:inset 0 0 0 2px #c99bff,0 0 16px #c28eff55}
 .concept-deck-tile>small{color:#c3b7cf}
 .concept-deck-active{color:#dec3ff;border:1px solid #ba85f7;background:#2d203b}
@@ -349,12 +349,12 @@ body.concept-ui #view-lore .lore-story-copy{background:linear-gradient(transpare
 .concept-lore-empty{color:#c6b9d3}
 .concept-lore-filters button{background:#251a30}
 .concept-lore-filters button[aria-pressed="true"]{color:#e4ceff;border-color:#c593ff}
-.concept-guild-banner{background:linear-gradient(90deg,#1f1629e8,#1f162988),url('assets/concept-ui/citadela-luminosa.png') center/cover}
+.concept-guild-banner{background:linear-gradient(90deg,#1f1629e8,#1f162988),url('assets/entry/citadela-luminosa.webp') center/cover}
 .concept-guild-banner p{color:#d2c6df}
 .concept-guild-member small{color:#c3b5d2}
-.concept-guild-wars-art{background:linear-gradient(#21172b33,#21172b88),url('assets/concept-ui/citadela-luminosa.png') center/cover}
+.concept-guild-wars-art{background:linear-gradient(#21172b33,#21172b88),url('assets/entry/citadela-luminosa.webp') center/cover}
 body.concept-ui .missions-dialog{background:linear-gradient(#1c1425f2,#1a1222f5)}
-.concept-mission-path{background:linear-gradient(#31223f55,#150f1bc9),url('assets/concept-ui/citadela-luminosa.png') center/cover}
+.concept-mission-path{background:linear-gradient(#31223f55,#150f1bc9),url('assets/entry/citadela-luminosa.webp') center/cover}
 .concept-mission-node{color:#ad9fbc}
 .concept-mission-node::before{background:#c5b8d555}
 .concept-mission-node>span{background:#251a31}
@@ -362,14 +362,14 @@ body.concept-ui .missions-dialog{background:linear-gradient(#1c1425f2,#1a1222f5)
 body.concept-ui .missions-dialog .mission-step{background:linear-gradient(90deg,#4434565c,#1d1526)}
 .concept-mission-meter{accent-color:#ca9bff}
 .concept-community-deck{background:#1c1425}
-.concept-community-banner{background:linear-gradient(transparent,#1b1323),var(--deck-art,url('assets/concept-ui/citadela-luminosa.png')) center 25%/cover}
+.concept-community-banner{background:linear-gradient(transparent,#1b1323),var(--deck-art,url('assets/entry/citadela-luminosa.webp')) center 25%/cover}
 .concept-community-deck p{color:#c4b7d2}
 .concept-community-footer>span{color:#bcadcc}
 .concept-publish-form{background:#21172be8}
-.concept-shop-hero{background:linear-gradient(90deg,#1c1425f5,#281c3455),url('assets/concept-ui/citadela-luminosa.png') center/cover}
+.concept-shop-hero{background:linear-gradient(90deg,#1c1425f5,#281c3455),url('assets/entry/citadela-luminosa.webp') center/cover}
 .concept-shop-preview img{background:#2d2239}
 body.concept-ui #view-store .store-item-art{background:radial-gradient(#735e8855,transparent 70%)}
-body.concept-ui #view-queue .queue-setup-panel{background:linear-gradient(#1e1527cc,#1e1527f2),url('assets/concept-ui/citadela-luminosa.png') center/cover}
+body.concept-ui #view-queue .queue-setup-panel{background:linear-gradient(#1e1527cc,#1e1527f2),url('assets/entry/citadela-luminosa.webp') center/cover}
 body.concept-ui #view-queue .queue-team-preview>article{background:linear-gradient(#362746bc,#191221f5)}
 .concept-queue-avatar{background:radial-gradient(#5c4a6e,#1f1629)}
 .concept-opponent-sigil{filter:drop-shadow(0 0 10px #c18aff44)}
@@ -381,14 +381,14 @@ body.concept-ui #view-custom .custom-seat[data-player-slot="2"],body.concept-ui 
 .concept-admin-tabs button{background:#21172bdc}
 body.concept-ui :is(.friend-action-dialog,.friend-profile-dialog,.invite-flow-dialog,.friend-chat-window){background:linear-gradient(130deg,#31243f,#18111f)}
 body.concept-ui .friend-chat-window header{background:#2d203b}
-body.concept-ui #view-lore .lore-story-card{background:linear-gradient(90deg,#22182de0,#30213e33),url('assets/concept-ui/citadela-luminosa.png') center/cover;box-shadow:inset 0 0 0 4px #160f1c88}
+body.concept-ui #view-lore .lore-story-card{background:linear-gradient(90deg,#22182de0,#30213e33),url('assets/entry/citadela-luminosa.webp') center/cover;box-shadow:inset 0 0 0 4px #160f1c88}
 body.concept-ui #view-lore .lore-story-card:hover,body.concept-ui #view-lore .lore-story-card:focus-within,body.concept-ui #view-lore .lore-story-card.selected{border-color:#d7b5ff;box-shadow:inset 0 0 0 2px #d9b8ff44,0 0 18px #af7de844}
 body.concept-ui #view-lore .lore-story-copy{background:linear-gradient(0deg,#150f1cf5 5%,#150f1c88 45%,transparent)}
 .concept-convergence-entry{background:radial-gradient(ellipse at 20% 50%,#8a63b755,transparent 65%),linear-gradient(135deg,#332443,#18111f)}
 .concept-convergence-entry>img{filter:drop-shadow(0 0 13px #c08aff55)}
 .concept-convergence-entry small{color:#d6c6e7}
 .concept-convergence-entry:hover,.concept-convergence-entry:focus-visible{border-color:#d9b8ff;box-shadow:0 0 18px #c18aff44}
-.concept-story-banner{background:linear-gradient(90deg,#16101deb,#2f213d22),url('assets/concept-ui/citadela-luminosa.png') center/cover}
+.concept-story-banner{background:linear-gradient(90deg,#16101deb,#2f213d22),url('assets/entry/citadela-luminosa.webp') center/cover}
 .concept-story-banner::after{box-shadow:inset 0 0 50px #0f0b1477}
 .concept-story-banner-copy{background:linear-gradient(0deg,#16101dfc 0%,#16101de6 20%,#16101d22 75%,transparent)}
 .concept-story-banner.convergence .concept-story-character{filter:drop-shadow(0 0 25px #c18aff77)}
