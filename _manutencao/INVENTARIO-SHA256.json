@@ -144,8 +144,8 @@
     "sha256": "83b55af70174e8177ae628288161458f50a11370fc5f2ecf5ce4130827f58a7c"
   },
   "_manutencao/interface-fontes.json": {
-    "bytes": 935,
-    "sha256": "548b115611da8eae517dfc66d290729ab860e9de3687c0f69025407b7c0d60c0"
+    "bytes": 958,
+    "sha256": "936677e4f19c84b914139e6e18061c2cde99c72164686541c145de69762aa2eb"
   },
   "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
     "bytes": 2866,
@@ -3939,6 +3939,10 @@
     "bytes": 14009,
     "sha256": "52f2e5032c7e070a8fa4a7669cee3902451a95b2b8ec4ba7f466d64dd6f1a3a2"
   },
+  "auth-entry.css": {
+    "bytes": 7437,
+    "sha256": "e158e16cc96598842b460cf3d8b9bd5ef434b3b8f581c8bc8f52f109aa0a1c92"
+  },
   "auto-deck.js": {
     "bytes": 7415,
     "sha256": "9647e3ca3989d016bcd9a6bf4c8596ec814d64860f3d9707b4945c34878125af"
@@ -4156,8 +4160,8 @@
     "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
   },
   "game-interface.css": {
-    "bytes": 587439,
-    "sha256": "178c19940b87e7443fdda21afdbfd52f3b3251d81cc4e4389fb7623234d35c25"
+    "bytes": 594898,
+    "sha256": "29ee6f7ad1e4428a588d4d665c5febda067e71404a5846fb4ccfab6d8ef10c38"
   },
   "guardian-campaign-data.js": {
     "bytes": 59773,
@@ -4224,8 +4228,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 75407,
-    "sha256": "96e4eb197bcf80b5dd96f2713ce58b8ae15f5a420e6fb2675e61b68b4c43a2f1"
+    "bytes": 76817,
+    "sha256": "9c764993627abc12fafa9610badbb1c783930df3306e229680d5962196401037"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -4774,6 +4778,10 @@
   "vfx-runtime.js": {
     "bytes": 2427,
     "sha256": "a657815d63805cf8abf77e5bbec0d11bb7c148e36b199d0eec3c67945f0e7ac9"
+  },
+  "VISUAL-TELA-DE-ACESSO.md": {
+    "bytes": 1394,
+    "sha256": "2f3be5ad76a2592837fc85b8812b4a97f2b081e1da29a3721141c0850eab1eb1"
   },
   "welcome.css": {
     "bytes": 12222,

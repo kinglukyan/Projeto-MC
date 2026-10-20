@@ -34,6 +34,7 @@
     "deck-tools.css",
     "journey-tools.css",
     "guardian-campaign.css",
-    "match-surrender.css"
+    "match-surrender.css",
+    "auth-entry.css"
   ]
 }
