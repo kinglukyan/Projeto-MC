@@ -71,7 +71,7 @@
  function nextFeature(delta){if(!featureIds.length)return;featureIndex=(featureIndex+delta+featureIds.length)%featureIds.length;paintFeature();}paintFeature();
  const storyDialog=el('dialog','hall-story-dialog'),storyClose=button('Fechar história',()=>storyDialog.close(),'button button-secondary'),storyBody=el('div');storyDialog.setAttribute('aria-labelledby','hall-story-title');storyDialog.append(storyClose,storyBody);document.body.append(storyDialog);
  function showStory(id){const c=card(id);if(!c)return;storyBody.replaceChildren();const art=el('div','hall-story-art');banner(art,id);const name=el('h2','',c.name);name.id='hall-story-title';storyBody.append(art,el('small','',c.faction),name);const paragraphs=storyParagraphs(c);for(const p of paragraphs.length?paragraphs:['Esta lenda ainda está sendo escrita.'])storyBody.append(el('p','',p));storyDialog.showModal();}
- const observer=new IntersectionObserver(entries=>{for(const e of entries)if(e.target===universe)universeVisible=e.isIntersecting;else if(e.target===preview&&!e.isIntersecting)video.pause();},{threshold:.15});observer.observe(universe);observer.observe(preview);
+ if(window.IntersectionObserver){const observer=new IntersectionObserver(entries=>{for(const e of entries)if(e.target===universe)universeVisible=e.isIntersecting;else if(e.target===preview&&!e.isIntersecting)video.pause();},{threshold:.15});observer.observe(universe);observer.observe(preview);}else universeVisible=true;
  setInterval(()=>{if(motion&&!featurePause&&universeVisible&&!document.hidden&&!home.hidden&&!universe.matches(':hover')&&!universe.contains(document.activeElement)&&!storyDialog.open)nextFeature(1);},9000);
  // Informações compactas e anúncios reais, sem inventar eventos em andamento.
  const news=el('section','hall-news');news.id='public-news';news.innerHTML='<p class="eyebrow">O QUE ACONTECE NA ARENA</p><h2>Novidades e eventos.</h2><div class="hall-news-grid"><article><small>EXPERIÊNCIA</small><h3>Convirjam juntos</h3><p>Convide seus amigos para a sala e encontre partidas solo ou em dupla.</p></article><article><small>COLEÇÃO</small><h3>Conheça suas cartas</h3><p>Explore os personagens das facções e encontre o próximo combo do seu baralho.</p><a href="#public-worlds">Explorar facções ↑</a></article><article class="hall-live-news"><small>COMUNICADOS</small><h3>Direto da Arena</h3><p>Carregando comunicados…</p></article></div>';
@@ -83,5 +83,5 @@
  const visibilityObserver=new MutationObserver(syncVisibility);visibilityObserver.observe(home,{attributes:true,attributeFilter:['hidden']});visibilityObserver.observe(document.body,{attributes:true,attributeFilter:['class']});
 
  document.addEventListener('visibilitychange',()=>{if(document.hidden){soundtrack.pause();video.pause();}else if(audioOn&&!home.hidden)soundtrack.play().catch(()=>{});});
- reduced.addEventListener('change',e=>{if(e.matches)setMotion(false);});setMotion(motion);
+ const changeMotion=e=>{if(e.matches)setMotion(false);};if(reduced.addEventListener)reduced.addEventListener('change',changeMotion);else reduced.addListener?.(changeMotion);setMotion(motion);
 })();

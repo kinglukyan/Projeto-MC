@@ -1,0 +1,124 @@
+{
+  "date": "2026-10-21",
+  "release": "ac5be2c1ded57fbfe3f0",
+  "scope": "Servidor local; autenticação, conta, inventário e RPCs simulados, sem criar contas ou alterar dados de jogadores. Política CSP de produção aplicada, retirando apenas upgrade-insecure-requests para HTTP local.",
+  "browsers": [
+    {
+      "name": "Chromium",
+      "version": "151.0.7922.34",
+      "checks": [
+        "initial-loader-visible",
+        "public-hall-ready",
+        "hall-width-375",
+        "hall-width-768",
+        "hall-width-1440",
+        "login-data-loader-arena",
+        "refresh-restores-decks",
+        "same-match-loader-design",
+        "responsive-arena",
+        "responsive-decks",
+        "responsive-store",
+        "responsive-profile",
+        "responsive-custom",
+        "responsive-guardian",
+        "responsive-lore",
+        "logout-login-always-arena",
+        "signup-email-confirm-loader",
+        "invalid-login-loader-releases",
+        "signup-session-loads-real-welcome"
+      ],
+      "errors": [],
+      "warnings": [],
+      "missing": [],
+      "transferBytes": 12458522,
+      "profileRequests": 4
+    },
+    {
+      "name": "Brave",
+      "version": "155.0.8059.85",
+      "checks": [
+        "initial-loader-visible",
+        "public-hall-ready",
+        "hall-width-375",
+        "hall-width-768",
+        "hall-width-1440",
+        "login-data-loader-arena",
+        "refresh-restores-decks",
+        "same-match-loader-design",
+        "responsive-arena",
+        "responsive-decks",
+        "responsive-store",
+        "responsive-profile",
+        "responsive-custom",
+        "responsive-guardian",
+        "responsive-lore",
+        "logout-login-always-arena",
+        "signup-email-confirm-loader",
+        "invalid-login-loader-releases",
+        "signup-session-loads-real-welcome"
+      ],
+      "errors": [],
+      "warnings": [],
+      "missing": [],
+      "transferBytes": 13367842,
+      "profileRequests": 4
+    },
+    {
+      "name": "Firefox",
+      "failure": "O processo do navegador encerrou antes de abrir o site neste ambiente. Firefox: saída 3221225477. Não verificado."
+    },
+    {
+      "name": "WebKit",
+      "version": "26.5",
+      "checks": [
+        "initial-loader-visible",
+        "public-hall-ready",
+        "hall-width-375",
+        "hall-width-768",
+        "hall-width-1440",
+        "login-data-loader-arena",
+        "refresh-restores-decks",
+        "same-match-loader-design",
+        "responsive-arena",
+        "responsive-decks",
+        "responsive-store",
+        "responsive-profile",
+        "responsive-custom",
+        "responsive-guardian",
+        "responsive-lore",
+        "logout-login-always-arena",
+        "signup-email-confirm-loader",
+        "invalid-login-loader-releases",
+        "signup-session-loads-real-welcome"
+      ],
+      "errors": [],
+      "warnings": [
+        "WebKit: chamada de presença interceptada cancelada durante recarga da página de teste."
+      ],
+      "missing": [],
+      "transferBytes": 17851764,
+      "profileRequests": 4
+    },
+    {
+      "name": "Microsoft Edge",
+      "status": "Não verificado",
+      "failure": "O processo instalado encerrou antes de abrir o site durante duas tentativas neste ambiente."
+    }
+  ],
+  "additional_checks": [
+    "service-worker-versioned-runtime-cached",
+    "new-release-never-interrupts-active-match",
+    "new-release-reloads-safe-screen",
+    "dialog-popover-uuid-capability-fallbacks",
+    "profile-failure-shows-recoverable-auth-screen",
+    "profile-retry-recovers-without-relogin"
+  ],
+  "limitations": [
+    "WebKit é o motor de teste; não substitui Safari/iPhone físico.",
+    "Firefox e Edge não iniciaram no ambiente; compatibilidade funcional neles não foi confirmada.",
+    "Um aviso de rede do WebKit na chamada de presença cancelada durante recarga com interceptação foi registrado separadamente; não foi contado como aprovação dessa chamada.",
+    "Não foi executada uma partida completa nem uma medição em rede móvel real."
+  ],
+  "runtime_sha256": "b191058d3742c573b05f54120a068b45b5271a6e97bfed49fdae6eb75f940a49",
+  "transfer_scope": "Bytes dos corpos recebidos durante todo o conjunto de testes, com múltiplas entradas e recargas; não mede apenas o primeiro acesso."
+}

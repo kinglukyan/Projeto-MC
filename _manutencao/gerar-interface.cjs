@@ -22,3 +22,5 @@ html=html.replace(/id="mythic-game-styles"(?: data-fonts="[^"]*")?/, 'id="mythic
 html=html.replace(/<!-- MYTHIC_PUBLIC_SHELL_START -->[\s\S]*?<!-- MYTHIC_PUBLIC_SHELL_END -->/,'<!-- MYTHIC_PUBLIC_SHELL_START -->\n'+hall+'\n<!-- MYTHIC_PUBLIC_SHELL_END -->');
 for(const name of ['game-interface.css','entry-critical.css','entry-startup.js','entry-media.js']){const version=hash(fs.readFileSync(path.join(root,name)));const escaped=name.replace(/\./g,'\\.');html=html.replace(new RegExp('((?:src|href)=")'+escaped+'(?:\\?[^" ]*)?("|$)','g'),'$1'+name+'?v='+version+'$2');}
 fs.writeFileSync(index,html);console.log('Hall estático e CSS agrupado preparados: '+config.styles.length+' folhas.');
+
+require("./gerar-runtime.cjs");

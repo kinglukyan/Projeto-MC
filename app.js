@@ -120,7 +120,7 @@
       window.dispatchEvent(new CustomEvent("mythic-deck-saved",{detail:{slot,name:title}}));
     }
   };
-  window.MythicRefreshDeck=()=>{for(const slot of deckSlots)for(const card of cards)slot.cards[card.id]=Math.min(slot.cards[card.id]||0,ownedCopies(card));deckCounts={...deckSlots[activeDeckSlot].cards};renderDeck();renderDeckSlots();};window.MythicRefreshCollection=()=>renderCollection();
+  window.MythicRefreshDeck=()=>{for(const slot of deckSlots)for(const card of cards)slot.cards[card.id]=Math.min(slot.cards[card.id]||0,ownedCopies(card));deckCounts={...deckSlots[activeDeckSlot].cards};renderDeck();renderDeckSlots();};window.MythicRefreshCollection=()=>{if(activeView==="collection")renderCollection();else $("#nav-card-count").textContent=String(cards.filter(card=>ownedCopies(card)>0).length).padStart(2,"0");};
   function saveDuel(){if(duel?.online||duel?.practice)return;const uid=window.MythicOnline?.userId?.();if(!uid)return;try{if(duel?.finished){localStorage.removeItem("mythic-clash-current-duel:"+uid);return;}if(duel){duel.ownerUserId=duel.ownerUserId||uid;if(duel.ownerUserId!==uid)return;localStorage.setItem("mythic-clash-current-duel:"+uid,JSON.stringify(duel));}else localStorage.removeItem("mythic-clash-current-duel:"+uid);}catch{storageAvailable=false;}}
   function loadDuel(){const uid=window.MythicOnline?.userId?.();if(!uid)return null;try{const saved=JSON.parse(localStorage.getItem("mythic-clash-current-duel:"+uid));if(saved?.finished){localStorage.removeItem("mythic-clash-current-duel:"+uid);return null;}if(saved?.ownerUserId!==uid||saved?.online||saved?.practice)return null;if(saved&&saved.player&&saved.enemy&&Array.isArray(saved.player.hand)&&Array.isArray(saved.player.deck)&&Array.isArray(saved.player.field)&&Array.isArray(saved.enemy.hand)&&Array.isArray(saved.enemy.deck)&&Array.isArray(saved.enemy.field)&&["player","enemy"].includes(saved.owner)){for(const side of [saved.player,saved.enemy]){if(side.hand.length>256||side.deck.length>256||side.field.length>256||[...side.hand,...side.deck].some(id=>!cardById[id])||side.field.some(unit=>!unit||!cardById[unit.cardId]))return null;}saved.rulesVersion=9;saved.sharedZones=saved.sharedZones||{local:null,terrain:null,climate:null};saved.round=saved.round||1;saved.roundCycles=0;saved.totalPoints=saved.lastRoundPoints||{player:0,enemy:0};saved.roundWins=saved.roundWins||{player:0,enemy:0};for(const side of [saved.player,saved.enemy]){side.trixx=Number.isInteger(side.trixx)?side.trixx:2;side.roundPenalty=side.roundPenalty||0;side.turnsTaken=side.turnsTaken||0;side.passed=Boolean(side.passed);side.playedThisTurn=Boolean(side.playedThisTurn);delete side.energy;delete side.maxEnergy;side.underworld=(Array.isArray(side.underworld)?side.underworld:[]).map(id=>id==="lukyan-rei-de-todos"?"lukyan":id);side.hand=side.hand.map(id=>id==="lukyan-rei-de-todos"?"lukyan":id);side.deck=side.deck.filter(id=>!cardById[id]?.specialOnly);side.hand=side.hand.filter(id=>!cardById[id]?.specialOnly);side.field.forEach((unit,index)=>{unit.bonus=unit.bonus||0;unit.lane=Number.isInteger(unit.lane)?unit.lane:index%3;});delete side.life;}saved.finished=Boolean(saved.finished);saved.reportSummaryShown=false;return saved;}}catch{storageAvailable=false;}return null;}
   function showToast(message){const toast=$("#toast");toast.textContent=message;toast.classList.add("show");clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove("show"),2400);}
@@ -250,7 +250,7 @@
   $("#lore-story-list").addEventListener("click",event=>{const cardButton=event.target.closest("[data-lore-card]");if(cardButton){openCardDetail(cardButton.dataset.loreCard,null,true);return;}const story=event.target.closest("[data-story-card]");if(story)openStory(story.dataset.storyCard);});
   $("#lore-detail-close").addEventListener("click",closeStory);$("#lore-detail-backdrop").addEventListener("click",event=>{if(event.target.id==="lore-detail-backdrop")closeStory();});document.addEventListener("keydown",event=>{if(event.key==="Escape")closeStory();});
   window.MythicRefreshStories=renderStories;
-  window.MythicApplyLore=rows=>{for(const row of rows||[]){const card=cardById[row.card_id];if(!card)continue;if(Array.isArray(row.story)&&row.story.length){card.story=row.story;card.customStory=!row.story.some(p=>/^Habilidade[ —:]|· Facção/.test(p));}if(row.card_name)card.name=row.card_name;if(row.ability_title)card.abilityTitle=row.ability_title;if(row.ability_text)card.ability=row.ability_text;if(row.art_url)card.art=safeUrl(row.art_url,card.art);if(row.faction)card.faction=row.faction;if(Number.isInteger(row.power))card.power=row.power;if(row.badge_key){card.badgeKey=row.badge_key;card.glow=({greece:"rgba(36,91,137,.42)",norse:"rgba(134,91,178,.42)",egypt:"rgba(211,165,42,.42)",celtic:"rgba(55,132,77,.42)",monster:"rgba(23,23,25,.5)",alyans:"rgba(184,50,64,.42)"})[row.badge_key]||card.glow;}card.sourceArtUrl=safeUrl(row.source_art_url)||null;card.themeUrl=safeUrl(row.theme_url)||null;card.comicUrl=safeUrl(row.comic_url)||null;}renderCollection();renderDeck();renderStories();if(duel)renderDuel();};
+  window.MythicApplyLore=rows=>{for(const row of rows||[]){const card=cardById[row.card_id];if(!card)continue;if(Array.isArray(row.story)&&row.story.length){card.story=row.story;card.customStory=!row.story.some(p=>/^Habilidade[ —:]|· Facção/.test(p));}if(row.card_name)card.name=row.card_name;if(row.ability_title)card.abilityTitle=row.ability_title;if(row.ability_text)card.ability=row.ability_text;if(row.art_url)card.art=safeUrl(row.art_url,card.art);if(row.faction)card.faction=row.faction;if(Number.isInteger(row.power))card.power=row.power;if(row.badge_key){card.badgeKey=row.badge_key;card.glow=({greece:"rgba(36,91,137,.42)",norse:"rgba(134,91,178,.42)",egypt:"rgba(211,165,42,.42)",celtic:"rgba(55,132,77,.42)",monster:"rgba(23,23,25,.5)",alyans:"rgba(184,50,64,.42)"})[row.badge_key]||card.glow;}card.sourceArtUrl=safeUrl(row.source_art_url)||null;card.themeUrl=safeUrl(row.theme_url)||null;card.comicUrl=safeUrl(row.comic_url)||null;}window.MythicRefreshCollection();renderDeck();if(activeView==="lore")renderStories();if(duel)renderDuel();};
 
   function renderDeck(){
     const total=deckTotal();
@@ -501,8 +501,7 @@
   $("#enemy-field").addEventListener("click",event=>{const mini=event.target.closest(".battle-mini-card");if(mini)openCardDetail(mini.dataset.cardId,null,true);});
   $("#end-turn").addEventListener("click",()=>{if(duel?.practice){practiceNextTurn();return;}if(!duel||duel.owner!=="player"||duel.finished||duel.player.passed||window.MythicCombatFX?.isBusy()||window.MythicEclipseUI?.isRevealing())return;if(duel.online){window.MythicOnline?.submitAction({type:duel.player.skipNextTurn?"skip_turn":"pass"});return;}trackLocalAction("player",{type:duel.player.skipNextTurn?"skip_turn":"pass"});if(duel.player.skipNextTurn){duel.player.skipNextTurn=false;duel.player.playedThisTurn=true;log("Você foi petrificado e perdeu apenas este turno.");}else{duel.player.passed=true;log("Você passou a vez e não jogará mais neste Round.");}endAbilityTurn("player");duel.owner="enemy";renderDuel();scheduleEnemyTurn(500);});
 
-  function revealArena(){const loader=$("#loading-screen");if(!loader)return;loader.classList.add("is-hidden");loader.setAttribute("aria-hidden","true");setTimeout(()=>loader.remove(),200);}
-  if(document.readyState==="complete")revealArena();else document.addEventListener("DOMContentLoaded",revealArena,{once:true});
+  // Initial loading is released by the shared data coordinator.
   // Presentation bridge: all state changes remain in the existing UI handlers.
   window.MythicPresentation={
     read:()=>({cards:cards.map(card=>({...card,story:[...(card.story||[])],owned:ownedCopies(card)})),decks:deckSlots.map(deck=>({...deck,cards:{...deck.cards}})),activeSlot:activeDeckSlot}),
@@ -512,7 +511,7 @@
     notify:showToast,
     refresh:()=>window.MythicOnline?.refreshPresentation?.()
   };
-  renderCollection();renderDeck();renderDeckSlots();renderStories();
+  window.MythicRefreshCollection();renderDeck();renderDeckSlots();if(activeView==="lore")renderStories();
   function resumeLocalDuel(){
     const uid=window.MythicOnline?.userId?.();if(!uid||localRestoreOwner===uid||duel||window.MythicWelcome?.getStage?.()!=='completed')return false;
     localRestoreOwner=uid;const savedDuel=loadDuel();if(!savedDuel)return false;
@@ -520,24 +519,5 @@
   }
   window.MythicGame.resumeLocalDuel=resumeLocalDuel;
   window.addEventListener('mythic-account-signed-out',()=>{localRestoreOwner=null;});
-  if("serviceWorker" in navigator&&location.protocol!=="file:"){
-    const hadController=Boolean(navigator.serviceWorker.controller);let refreshing=false;
-    navigator.serviceWorker.addEventListener("controllerchange",()=>{
-      if(!hadController||refreshing)return;
-      if(document.body.classList.contains("duel-fullscreen")){showToast("Atualização disponível. Recarregue ao terminar a partida.");return;}
-      refreshing=true;location.reload();
-    });
-    navigator.serviceWorker.addEventListener("message",event=>{
-      if(event.data?.type!=="MYTHIC_MEDIA_UPDATED"||refreshing)return;
-      if(document.body.classList.contains("duel-fullscreen")){showToast("Novas imagens disponíveis. Recarregue ao terminar a partida.");return;}
-      refreshing=true;location.reload();
-    });
-    window.addEventListener("load",async()=>{try{
-      const registration=await navigator.serviceWorker.register("./sw.js",{updateViaCache:"none"});
-      if(registration.waiting)registration.waiting.postMessage({type:"MYTHIC_SKIP_WAITING"});
-      await registration.update();
-    }catch{}});
-  }
+  // Service-worker lifecycle and release checks live in site-updates.js.
 })();
-
-

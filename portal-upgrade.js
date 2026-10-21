@@ -28,10 +28,13 @@
   home.hidden=inGame;document.body.classList.toggle('public-home-open',!inGame);
  }
  function showHome(){entryRun++;window.MythicGame?.dismissFinishedMatch?.();for(const id of ['#menu-music','#battle-music','#lore-theme-audio'])$(id)?.pause();inGame=false;gate.hidden=true;document.body.classList.remove('public-auth-open','duel-fullscreen');syncHome();window.scrollTo({top:0});}
+ let entering=null;
  async function enterGame(){
-  if(!connected)return false;const intent=entryRun,account=window.MythicOnline.account?.();if(!account)return false;
-  const ready=await window.MythicWelcome.begin(account);if(!ready||intent!==entryRun||account.id!==window.MythicOnline.userId())return false;
-  inGame=true;gate.hidden=true;document.body.classList.remove('public-auth-open');syncHome();return true;
+  if(!connected)return false;if(inGame&&window.MythicOnline.profileReady?.()&&window.MythicWelcome.getStage?.()==='completed')return true;if(entering)return entering;const intent=entryRun,account=window.MythicOnline.account?.();if(!account)return false;
+  window.MythicLoading?.begin('account-entry','CARREGANDO PERFIL E COLEÇÃO');
+  entering=(async()=>{try{const [ready]=await Promise.all([window.MythicWelcome.begin(account),window.MythicOnline.whenProfileReady()]);if(!ready||intent!==entryRun||account.id!==window.MythicOnline.userId())return false;
+   inGame=true;gate.hidden=true;gate.querySelector('[data-account-retry]')?.remove();document.body.classList.remove('public-auth-open');syncHome();return true;
+  }catch(error){if(account.id===window.MythicOnline.userId()){gate.hidden=false;document.body.classList.add('public-auth-open');document.querySelector('#auth-message').textContent=error.message;if(!gate.querySelector('[data-account-retry]')){const retry=document.createElement('button');retry.type='button';retry.className='button button-primary';retry.dataset.accountRetry='true';retry.textContent='Tentar carregar meus dados';retry.onclick=()=>enterGame();document.querySelector('#auth-message').after(retry);}window.MythicLoading?.end('restore');}tell(error.message);return false;}finally{entering=null;window.MythicLoading?.end('account-entry');}})();return entering;
  }
  async function play(){
   if(!connected){auth('signup');return;}

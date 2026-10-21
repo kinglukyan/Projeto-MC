@@ -1,0 +1,807 @@
+{
+  "images": 100,
+  "original_bytes": 222761051,
+  "optimized_bytes": 38678410,
+  "files": [
+    {
+      "original": "assets/battlefield-forest.png",
+      "optimized": "assets/optimized/battlefield-forest-a7f446d693a79a7e.webp",
+      "before": 1814300,
+      "after": 391512,
+      "width": 768,
+      "height": 1376
+    },
+    {
+      "original": "assets/battlefield-mud.png",
+      "optimized": "assets/optimized/battlefield-mud-8d6e0b5d7acdef6f.webp",
+      "before": 1572502,
+      "after": 378152,
+      "width": 1408,
+      "height": 768
+    },
+    {
+      "original": "assets/cards-20261017/afrodite.png",
+      "optimized": "assets/optimized/afrodite-0c1bcf5a5aa72b36.webp",
+      "before": 2444986,
+      "after": 380174,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/anubis.png",
+      "optimized": "assets/optimized/anubis-6ed205d41b790020.webp",
+      "before": 2224010,
+      "after": 316232,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/apolo.png",
+      "optimized": "assets/optimized/apolo-117e239c44b1bff1.webp",
+      "before": 2429369,
+      "after": 371670,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/aquiles.png",
+      "optimized": "assets/optimized/aquiles-63625b19f7b1a4c0.webp",
+      "before": 2418751,
+      "after": 377464,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/ares.png",
+      "optimized": "assets/optimized/ares-59ee143eae327c7d.webp",
+      "before": 1648687,
+      "after": 187224,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/artemis.png",
+      "optimized": "assets/optimized/artemis-f0bb42bb96fb68c9.webp",
+      "before": 2448702,
+      "after": 366034,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/athena.png",
+      "optimized": "assets/optimized/athena-ee8e5372b7a5863c.webp",
+      "before": 2415015,
+      "after": 367456,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/beowulf.png",
+      "optimized": "assets/optimized/beowulf-9988ec0a1d4b64ee.webp",
+      "before": 2488990,
+      "after": 394618,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/butter.png",
+      "optimized": "assets/optimized/butter-f9238075ef348b85.webp",
+      "before": 1770005,
+      "after": 192698,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/dionisio.png",
+      "optimized": "assets/optimized/dionisio-96c308bf301bd3c8.webp",
+      "before": 2516066,
+      "after": 392010,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/guardiao-nordico.png",
+      "optimized": "assets/optimized/guardiao-nordico-57879f5ca8bb80b6.webp",
+      "before": 2181928,
+      "after": 266028,
+      "width": 1060,
+      "height": 1484
+    },
+    {
+      "original": "assets/cards-20261017/hefesto.png",
+      "optimized": "assets/optimized/hefesto-3b7514ac75020d82.webp",
+      "before": 2403419,
+      "after": 387584,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/heimdall.png",
+      "optimized": "assets/optimized/heimdall-c20b489e3940c3b3.webp",
+      "before": 2377826,
+      "after": 362270,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/hercules.png",
+      "optimized": "assets/optimized/hercules-26fb222941766c1a.webp",
+      "before": 1550922,
+      "after": 181956,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/hermes.png",
+      "optimized": "assets/optimized/hermes-92a182d9b8021d95.webp",
+      "before": 2346494,
+      "after": 354824,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/homem.png",
+      "optimized": "assets/optimized/homem-b13da54b68c5d71f.webp",
+      "before": 2391795,
+      "after": 367266,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/horus.png",
+      "optimized": "assets/optimized/horus-d1bda7a44789f401.webp",
+      "before": 2412747,
+      "after": 346612,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/isis.png",
+      "optimized": "assets/optimized/isis-c01739e8fb8a8a13.webp",
+      "before": 2445026,
+      "after": 365806,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/lobo-alfa.png",
+      "optimized": "assets/optimized/lobo-alfa-e5b750658d4459c0.webp",
+      "before": 1951222,
+      "after": 237544,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/lobo-beta.png",
+      "optimized": "assets/optimized/lobo-beta-5fa3a267b8c65921.webp",
+      "before": 1841959,
+      "after": 229764,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/lobo-omega.png",
+      "optimized": "assets/optimized/lobo-omega-ede041f35e9ab6a0.webp",
+      "before": 1756845,
+      "after": 216256,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/loki.png",
+      "optimized": "assets/optimized/loki-cc2f2cede29c5607.webp",
+      "before": 2275839,
+      "after": 335952,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/lukyan-rei-de-todos.png",
+      "optimized": "assets/optimized/lukyan-rei-de-todos-d9a82bdcc2e60370.webp",
+      "before": 2036309,
+      "after": 253634,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/lukyan.png",
+      "optimized": "assets/optimized/lukyan-1ee737e5a1ed6794.webp",
+      "before": 1993131,
+      "after": 251056,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/minotauro.png",
+      "optimized": "assets/optimized/minotauro-9b1ff93254014552.webp",
+      "before": 1754417,
+      "after": 219556,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/mulher.png",
+      "optimized": "assets/optimized/mulher-ff3deb5a8e21260e.webp",
+      "before": 2402069,
+      "after": 371852,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/odin.png",
+      "optimized": "assets/optimized/odin-f00be8918d289fbd.webp",
+      "before": 2465336,
+      "after": 376782,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/osiris.png",
+      "optimized": "assets/optimized/osiris-de07dc2be00b3db4.webp",
+      "before": 2408018,
+      "after": 353486,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/ra.png",
+      "optimized": "assets/optimized/ra-3d95464dccf4b160.webp",
+      "before": 2491186,
+      "after": 381334,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/ragnar.png",
+      "optimized": "assets/optimized/ragnar-e20889badc994574.webp",
+      "before": 2471921,
+      "after": 378878,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/seth.png",
+      "optimized": "assets/optimized/seth-c22476ccf4777557.webp",
+      "before": 2348429,
+      "after": 356496,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/sobek.png",
+      "optimized": "assets/optimized/sobek-3839adb6dacfb318.webp",
+      "before": 2582493,
+      "after": 417336,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/cards-20261017/thor.png",
+      "optimized": "assets/optimized/thor-6bd10a622938d2a3.webp",
+      "before": 2451577,
+      "after": 372486,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/concept-ui/mode-custom.png",
+      "optimized": "assets/optimized/mode-custom-9dcf80506d943407.webp",
+      "before": 2400902,
+      "after": 492860,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "original": "assets/concept-ui/mode-guardian.png",
+      "optimized": "assets/optimized/mode-guardian-d8c0f3537321ae8c.webp",
+      "before": 2857697,
+      "after": 595130,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "original": "assets/concept-ui/mode-normal.png",
+      "optimized": "assets/optimized/mode-normal-09935e96c125ae04.webp",
+      "before": 2760997,
+      "after": 596766,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "original": "assets/concept-ui/mode-ranked.png",
+      "optimized": "assets/optimized/mode-ranked-971aa37a45565e39.webp",
+      "before": 2512585,
+      "after": 563934,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "original": "assets/concept-ui/mode-x1.png",
+      "optimized": "assets/optimized/mode-x1-592fb54587729736.webp",
+      "before": 2061674,
+      "after": 499440,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "original": "assets/defeat-emblem.png",
+      "optimized": "assets/optimized/defeat-emblem-006356ac3df8b2e8.webp",
+      "before": 1482081,
+      "after": 140620,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "original": "assets/hades-full.png",
+      "optimized": "assets/optimized/hades-full-1b6c6bd0e4b61d24.webp",
+      "before": 1787977,
+      "after": 206606,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/hand-heaven.png",
+      "optimized": "assets/optimized/hand-heaven-498523c5d1cc5ab2.webp",
+      "before": 856958,
+      "after": 115786,
+      "width": 1024,
+      "height": 559
+    },
+    {
+      "original": "assets/holograms/afrodite-hologram.png",
+      "optimized": "assets/optimized/afrodite-hologram-b40e81ac553d3e95.webp",
+      "before": 2950439,
+      "after": 594080,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/anubis-hologram.png",
+      "optimized": "assets/optimized/anubis-hologram-06f41a27a0e25486.webp",
+      "before": 2635697,
+      "after": 422218,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/apolo-hologram.png",
+      "optimized": "assets/optimized/apolo-hologram-15a0dc8aac1b54f1.webp",
+      "before": 2694779,
+      "after": 490508,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/aquiles-hologram.png",
+      "optimized": "assets/optimized/aquiles-hologram-4e0b6a9806926a1b.webp",
+      "before": 2794813,
+      "after": 503394,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/ares-hologram.png",
+      "optimized": "assets/optimized/ares-hologram-368b15594b123af2.webp",
+      "before": 2423218,
+      "after": 376290,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/artemis-hologram.png",
+      "optimized": "assets/optimized/artemis-hologram-1dae085ba83ad25b.webp",
+      "before": 2769078,
+      "after": 488042,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/athena-hologram.png",
+      "optimized": "assets/optimized/athena-hologram-c0b55ba81e15dbd8.webp",
+      "before": 2990641,
+      "after": 573502,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/beowulf-hologram.png",
+      "optimized": "assets/optimized/beowulf-hologram-981b17704dfaee34.webp",
+      "before": 2796844,
+      "after": 517336,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/butter-hologram.png",
+      "optimized": "assets/optimized/butter-hologram-55c5e04d4e5c2cf4.webp",
+      "before": 2159319,
+      "after": 318412,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/dionisio-hologram.png",
+      "optimized": "assets/optimized/dionisio-hologram-d8ee181d799f16f1.webp",
+      "before": 2827074,
+      "after": 539346,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/feiticeira-serpentes-hologram.png",
+      "optimized": "assets/optimized/feiticeira-serpentes-hologram-e7e6748ee467a23e.webp",
+      "before": 3122822,
+      "after": 659346,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/guardiao-nordico-hologram.png",
+      "optimized": "assets/optimized/guardiao-nordico-hologram-35cd2c08b3b4830f.webp",
+      "before": 3173276,
+      "after": 636018,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/hades-hologram.png",
+      "optimized": "assets/optimized/hades-hologram-a562f39f3504c51a.webp",
+      "before": 2792858,
+      "after": 516092,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/hefesto-hologram.png",
+      "optimized": "assets/optimized/hefesto-hologram-19883fd2ed166166.webp",
+      "before": 2590147,
+      "after": 447776,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/heimdall-hologram.png",
+      "optimized": "assets/optimized/heimdall-hologram-7235d93a3a72ddbb.webp",
+      "before": 2860590,
+      "after": 506596,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/hercules-hologram.png",
+      "optimized": "assets/optimized/hercules-hologram-256a836efc82c61f.webp",
+      "before": 2414228,
+      "after": 351980,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/hermes-hologram.png",
+      "optimized": "assets/optimized/hermes-hologram-6868cdd7e61e42b6.webp",
+      "before": 2724672,
+      "after": 515450,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/homem-hologram.png",
+      "optimized": "assets/optimized/homem-hologram-ff957a26e63d2edb.webp",
+      "before": 2112711,
+      "after": 288154,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/horus-hologram.png",
+      "optimized": "assets/optimized/horus-hologram-cb2f449358883df3.webp",
+      "before": 2955341,
+      "after": 569650,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/isis-hologram.png",
+      "optimized": "assets/optimized/isis-hologram-610193b66af82709.webp",
+      "before": 2914996,
+      "after": 527518,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/lobo-alfa-hologram.png",
+      "optimized": "assets/optimized/lobo-alfa-hologram-901d06214e3be32e.webp",
+      "before": 2497676,
+      "after": 407798,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/lobo-beta-hologram.png",
+      "optimized": "assets/optimized/lobo-beta-hologram-abb0b12b7fd580bc.webp",
+      "before": 2474158,
+      "after": 393510,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/lobo-omega-hologram.png",
+      "optimized": "assets/optimized/lobo-omega-hologram-4ee118414d86eba6.webp",
+      "before": 2514124,
+      "after": 405054,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/loki-hologram.png",
+      "optimized": "assets/optimized/loki-hologram-2aec5de8e7fd4e6a.webp",
+      "before": 2961981,
+      "after": 682500,
+      "width": 1199,
+      "height": 1312
+    },
+    {
+      "original": "assets/holograms/lukyan-hologram.png",
+      "optimized": "assets/optimized/lukyan-hologram-fd857f2180cc2d2b.webp",
+      "before": 2214866,
+      "after": 312876,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/lukyan-rei-de-todos-hologram.png",
+      "optimized": "assets/optimized/lukyan-rei-de-todos-hologram-c3acb17ebde91e5c.webp",
+      "before": 2132998,
+      "after": 304140,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/medusa-hologram.png",
+      "optimized": "assets/optimized/medusa-hologram-adf915f01d38eaff.webp",
+      "before": 2341235,
+      "after": 342926,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/minotauro-hologram.png",
+      "optimized": "assets/optimized/minotauro-hologram-a8996c4bf5076047.webp",
+      "before": 2170636,
+      "after": 497228,
+      "width": 1199,
+      "height": 1312
+    },
+    {
+      "original": "assets/holograms/mulher-hologram.png",
+      "optimized": "assets/optimized/mulher-hologram-807a772a5d845cf7.webp",
+      "before": 2346515,
+      "after": 355098,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/odin-hologram.png",
+      "optimized": "assets/optimized/odin-hologram-39a49f986be060e2.webp",
+      "before": 2974119,
+      "after": 551804,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/osiris-hologram.png",
+      "optimized": "assets/optimized/osiris-hologram-168be08729f714a2.webp",
+      "before": 2571606,
+      "after": 439382,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/poseidon-hologram.png",
+      "optimized": "assets/optimized/poseidon-hologram-cf2a744682dc46d8.webp",
+      "before": 2625169,
+      "after": 481966,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/ra-hologram.png",
+      "optimized": "assets/optimized/ra-hologram-f0cb8f4e15e151c1.webp",
+      "before": 2941357,
+      "after": 574798,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/ragnar-hologram.png",
+      "optimized": "assets/optimized/ragnar-hologram-1309086c244941cf.webp",
+      "before": 2755778,
+      "after": 479958,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/seth-hologram.png",
+      "optimized": "assets/optimized/seth-hologram-25624ed75e150b7b.webp",
+      "before": 2680506,
+      "after": 496878,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/sobek-hologram.png",
+      "optimized": "assets/optimized/sobek-hologram-8c9ca14fe844fe7f.webp",
+      "before": 2934218,
+      "after": 548280,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/spartan-hologram.png",
+      "optimized": "assets/optimized/spartan-hologram-3bd06b6950aeecc4.webp",
+      "before": 2057674,
+      "after": 518612,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/thor-hologram.png",
+      "optimized": "assets/optimized/thor-hologram-ec3e39d852765ae8.webp",
+      "before": 2974562,
+      "after": 564244,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/holograms/zeus-hologram.png",
+      "optimized": "assets/optimized/zeus-hologram-f656cd7f134ba04e.webp",
+      "before": 2309210,
+      "after": 349086,
+      "width": 1024,
+      "height": 1536
+    },
+    {
+      "original": "assets/medusa-full.png",
+      "optimized": "assets/optimized/medusa-full-16934264e4aa1a94.webp",
+      "before": 1723111,
+      "after": 202038,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/medusa-illustration.png",
+      "optimized": "assets/optimized/medusa-illustration-2042bd3eb76ec8f0.webp",
+      "before": 1492671,
+      "after": 126924,
+      "width": 1180,
+      "height": 916
+    },
+    {
+      "original": "assets/mode-custom.png",
+      "optimized": "assets/optimized/mode-custom-482aab37983dbc14.webp",
+      "before": 241294,
+      "after": 35446,
+      "width": 1024,
+      "height": 559
+    },
+    {
+      "original": "assets/mode-guardian.png",
+      "optimized": "assets/optimized/mode-guardian-61ed6d1013e159c6.webp",
+      "before": 337672,
+      "after": 44780,
+      "width": 1408,
+      "height": 768
+    },
+    {
+      "original": "assets/mode-normal.png",
+      "optimized": "assets/optimized/mode-normal-b25046d295e78bf2.webp",
+      "before": 336251,
+      "after": 42522,
+      "width": 1408,
+      "height": 768
+    },
+    {
+      "original": "assets/mode-ranked.png",
+      "optimized": "assets/optimized/mode-ranked-a491c0996cdfcb00.webp",
+      "before": 294807,
+      "after": 36798,
+      "width": 1408,
+      "height": 768
+    },
+    {
+      "original": "assets/mode-x1.png",
+      "optimized": "assets/optimized/mode-x1-b36841ffa54ad9b4.webp",
+      "before": 362596,
+      "after": 48528,
+      "width": 1408,
+      "height": 768
+    },
+    {
+      "original": "assets/poseidon-full.png",
+      "optimized": "assets/optimized/poseidon-full-25616da396696f7f.webp",
+      "before": 2024964,
+      "after": 255524,
+      "width": 1500,
+      "height": 2100
+    },
+    {
+      "original": "assets/soldado-esparta-sem-pontas-azuis.png",
+      "optimized": "assets/optimized/soldado-esparta-sem-pontas-azuis-be844d9bab4182b0.webp",
+      "before": 643152,
+      "after": 82424,
+      "width": 750,
+      "height": 1050
+    },
+    {
+      "original": "assets/soldado-esparta.png",
+      "optimized": "assets/optimized/soldado-esparta-486c15f3fed2fc50.webp",
+      "before": 643193,
+      "after": 82636,
+      "width": 750,
+      "height": 1050
+    },
+    {
+      "original": "assets/vfx/hearts.png",
+      "optimized": "assets/optimized/hearts-29d77bd34a3b1e16.webp",
+      "before": 2178412,
+      "after": 757472,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "original": "assets/vfx/lightning.png",
+      "optimized": "assets/optimized/lightning-9c48e9092429de6a.webp",
+      "before": 2061213,
+      "after": 672796,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "original": "assets/vfx/lunar-morph.png",
+      "optimized": "assets/optimized/lunar-morph-f5230c5c0f9d3f98.webp",
+      "before": 2271772,
+      "after": 708948,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "original": "assets/vfx/solar-morph.png",
+      "optimized": "assets/optimized/solar-morph-9a7bd4058fcd1b8e.webp",
+      "before": 2704493,
+      "after": 834918,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "original": "assets/vfx/tsunami.png",
+      "optimized": "assets/optimized/tsunami-8ecb95d87853dc1f.webp",
+      "before": 2003620,
+      "after": 622246,
+      "width": 1254,
+      "height": 1254
+    },
+    {
+      "original": "assets/victory-emblem.png",
+      "optimized": "assets/optimized/victory-emblem-89c770fe9da717d6.webp",
+      "before": 1469229,
+      "after": 105394,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "original": "assets/vs-emblem.png",
+      "optimized": "assets/optimized/vs-emblem-bc8e8991eb6f1b8b.webp",
+      "before": 2691464,
+      "after": 542012,
+      "width": 1536,
+      "height": 1024
+    },
+    {
+      "original": "assets/zeus-full.png",
+      "optimized": "assets/optimized/zeus-full-763e2eb7a200170b.webp",
+      "before": 1846044,
+      "after": 218014,
+      "width": 1500,
+      "height": 2100
+    }
+  ]
+}

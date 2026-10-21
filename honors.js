@@ -51,7 +51,7 @@
  window.addEventListener('mythic-honors-loaded',event=>{
    const {playerId,data,error}=event.detail;
    if(playerId===window.MythicOnline?.userId()){
-     current=data||null;status.textContent=error?'Títulos e medalhas aguardam a atualização do banco de dados.':'Escolha um título e até três medalhas para exibir no perfil.';render();
+     current=data&&Array.isArray(data.catalog)?{...data,medals:Array.isArray(data.medals)?data.medals:[]}:null;status.textContent=error?'Títulos e medalhas aguardam a atualização do banco de dados.':'Escolha um título e até três medalhas para exibir no perfil.';render();
    }else if(document.getElementById('friend-profile-backdrop').dataset.playerId===playerId){
      friendArea.replaceChildren();if(!data)return;const friendTitle=make('b');const friendMedals=make('div','featured-medals');friendArea.append(friendTitle,friendMedals);paintFeatured(data,friendTitle,friendMedals);
    }

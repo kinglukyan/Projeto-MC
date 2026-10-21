@@ -1,0 +1,1 @@
+window.MythicRelease=Object.freeze({id:"ac5be2c1ded57fbfe3f0"});

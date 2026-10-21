@@ -1,0 +1,14 @@
+/* Release detection does not wait for window.load, video or background media. */
+(() => {
+ 'use strict';
+ const installed=window.MythicRelease?.id;let registration=null,checking=false,announced='',reloading=false,notice=null;const dirty=new WeakSet();
+ document.addEventListener('input',e=>{if(e.target.form)dirty.add(e.target.form);},{passive:true});document.addEventListener('submit',e=>{if(e.target.tagName==='FORM')dirty.delete(e.target);},true);
+ function safe(){const view=window.MythicGame?.current?.()||{};return !view.matchId&&!view.local&&!window.MythicOnline?.getQueueState?.().active&&!document.querySelector('dialog[open]')&&![...document.forms].some(f=>dirty.has(f))&&(document.body.classList.contains('public-home-open')||view.view==='arena');}
+ function reload(){if(reloading)return;reloading=true;window.MythicLoading?.begin('update','CARREGANDO A NOVA VERSÃO');location.reload();}
+ function available(id){if(!id||id===installed||id===announced)return;announced=id;if(safe()){reload();return;}if(!notice){notice=document.createElement('aside');notice.className='site-update-notice';notice.setAttribute('role','status');const text=document.createElement('span'),action=document.createElement('button');text.textContent='Uma atualização do jogo está pronta.';action.type='button';action.textContent='Atualizar';action.onclick=()=>{if(window.MythicGame?.current?.().matchId){text.textContent='Termine a partida para atualizar com segurança.';return;}reload();};notice.append(text,action);document.body.append(notice);}}
+ async function check(){if(checking||document.hidden||!installed)return;checking=true;try{const controller=new AbortController(),timeout=setTimeout(()=>controller.abort(),10000);try{const response=await fetch(`release.json?check=${Date.now()}`,{cache:'no-store',signal:controller.signal});if(response.ok){const data=await response.json();available(data.id);}}finally{clearTimeout(timeout);}await registration?.update();}catch{}finally{checking=false;}}
+ async function register(){if(!('serviceWorker'in navigator)||location.protocol==='file:')return;try{registration=await navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'});if(registration.waiting)registration.waiting.postMessage({type:'MYTHIC_SKIP_WAITING'});await registration.update();}catch{}}
+ if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',()=>{register();check();},{once:true});else{register();check();}
+ document.addEventListener('visibilitychange',()=>{if(!document.hidden)check();});window.addEventListener('online',check);window.addEventListener('mythic-view-changed',()=>{if(announced&&safe())reload();});
+ if('serviceWorker'in navigator)navigator.serviceWorker.addEventListener('message',e=>{if(e.data?.type==='MYTHIC_RELEASE')available(e.data.id);});setInterval(check,45000);
+})();

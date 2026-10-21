@@ -6,17 +6,20 @@
   Referrer-Policy: strict-origin-when-cross-origin
   X-Frame-Options: DENY
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
-  Content-Security-Policy: default-src 'self'; script-src 'self' https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' blob: https:; font-src 'self' data:; connect-src 'self' https://ytiwezadkkhfseafnhtq.supabase.co wss://ytiwezadkkhfseafnhtq.supabase.co; worker-src 'self' blob:; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
+  Content-Security-Policy: default-src 'self'; script-src 'self'; script-src-attr 'none'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https:; media-src 'self' blob: https:; font-src 'self' data:; connect-src 'self' https://ytiwezadkkhfseafnhtq.supabase.co wss://ytiwezadkkhfseafnhtq.supabase.co; worker-src 'self' blob:; object-src 'none'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests
 /sw.js
   Cache-Control: no-store, max-age=0
   Service-Worker-Allowed: /
 /
-  Cache-Control: no-cache, max-age=0, must-revalidate
+  Cache-Control: no-store, max-age=0, s-maxage=0, must-revalidate
 /*.html
-  Cache-Control: no-cache, max-age=0, must-revalidate
+  Cache-Control: no-store, max-age=0, s-maxage=0, must-revalidate
 /*.js
-  Cache-Control: no-cache, max-age=0, must-revalidate
+  Cache-Control: no-store, max-age=0, s-maxage=0, must-revalidate
 /*.css
-  Cache-Control: no-cache, max-age=0, must-revalidate
+  Cache-Control: no-store, max-age=0, s-maxage=0, must-revalidate
 /asset-manifest.json
-  Cache-Control: no-cache, max-age=0, must-revalidate
+  Cache-Control: no-store, max-age=0, s-maxage=0, must-revalidate
+
+/release.json
+  Cache-Control: no-store, max-age=0, s-maxage=0

@@ -36,6 +36,7 @@
     "guardian-campaign.css",
     "match-surrender.css",
     "auth-entry.css",
-    "rewards-tournaments.css"
+    "rewards-tournaments.css",
+    "loading-ui.css"
   ]
 }
