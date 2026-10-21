@@ -20,7 +20,7 @@
 
  // Arena: keep the live mode buttons and their event handlers.
  const modeAssets={bot:'guardian',normal:'normal',ranked:'ranked',friend:'x1',custom:'custom'};
- $$('#view-arena .arena-mode-card').forEach(card=>{const img=card.querySelector('img');if(img)img.src=`assets/concept-ui/mode-${modeAssets[card.dataset.mode]}.png`;});
+ $$('#view-arena .arena-mode-card').forEach(card=>{const img=card.querySelector('img');if(img)img.src=card.dataset.mode==='tournament'?'assets/mode-tournament.webp':`assets/concept-ui/mode-${modeAssets[card.dataset.mode]}.png`;});
  const arenaLayout=$('#view-arena .arena-layout'),activeDeck=$('#view-arena .arena-active-deck'),featured=$('#view-arena .featured-panel');
  if(arenaLayout&&activeDeck){$('#view-arena .home-lower').append(featured);arenaLayout.append(activeDeck);const minis=make('div','concept-mini-decks');minis.id='concept-arena-decks';activeDeck.querySelector('header').after(minis);}
  if(featured){featured.querySelector('.featured-card-button img')?.classList.add('concept-feature-art');}

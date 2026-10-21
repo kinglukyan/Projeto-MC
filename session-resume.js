@@ -1,8 +1,8 @@
 (() => {
  'use strict';
  const api=()=>window.MythicOnline,game=()=>window.MythicGame?.current?.()||{},key=id=>'mythic-last-screen:'+id;
- const allowed=new Set(['arena','decks','collection','lore','guilds','community-decks','custom','queue','guardian','profile','friends','store','settings','duel','admin']);
- let uid=null,saved=null,done=false,working=false,revision=0,epoch=0,timer=null,scrollTimer=null,banner=null,restoredScroll=null;
+ const allowed=new Set(['arena','decks','collection','lore','guilds','community-decks','custom','queue','guardian','profile','friends','store','settings','duel','admin','tournaments']);
+ let uid=null,saved=null,done=false,working=false,revision=0,epoch=0,timer=null,scrollTimer=null,banner=null,restoredScroll=null,explicitLogin=false;
  function capture(){
   const next=api()?.userId?.();if(next===uid)return;uid=next;done=false;working=false;revision++;epoch++;
   try{saved=uid?JSON.parse(localStorage.getItem(key(uid))):null;}catch{saved=null;}
@@ -42,6 +42,7 @@
   if(window.MythicWelcome?.getStage?.()!=='completed'||window.MythicWelcome?.isOpen?.()){
    clearTimeout(timer);if(!window.MythicWelcome?.getStage?.()||window.MythicWelcome.getStage()==='idle')timer=setTimeout(()=>attempt(),600);return;
   }
+  if(explicitLogin){explicitLogin=false;done=true;saved=null;working=true;const who=uid,version=epoch;try{const ready=await window.MythicPortal?.enterGame?.();if(ready&&who===api()?.userId?.()&&version===epoch)window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'arena'}}));}finally{if(who===api()?.userId?.()&&version===epoch){working=false;persist();}}return;}
   if(api().activeMatchId?.()){done=true;await finishStartup(saved,uid);persist();return;}
   working=true;const owner=uid,token=epoch,nav=revision,record=saved&&Date.now()-Number(saved.at)<30*86400000?saved:null;
   const current=()=>owner===api()?.userId?.()&&token===epoch;
@@ -72,10 +73,11 @@
  window.addEventListener('mythic-profile-loaded',()=>{capture();attempt();});
  window.addEventListener('mythic-welcome-ready',()=>attempt());
  window.addEventListener('mythic-welcome-closed',()=>setTimeout(()=>attempt(),150));
+ window.addEventListener('mythic-explicit-login',()=>{explicitLogin=true;saved=null;done=false;revision++;epoch++;});
  window.addEventListener('pagehide',persist);
  window.addEventListener('scroll',()=>{clearTimeout(scrollTimer);scrollTimer=setTimeout(persist,300);},{passive:true});
  window.addEventListener('online',()=>{if(!api()?.activeMatchId?.())attempt(true);});
- window.addEventListener('mythic-account-signed-out',()=>{uid=null;saved=null;done=false;working=false;revision++;epoch++;clearTimeout(timer);if(banner)banner.hidden=true;});
+ window.addEventListener('mythic-account-signed-out',()=>{uid=null;saved=null;done=false;working=false;explicitLogin=false;revision++;epoch++;clearTimeout(timer);if(banner)banner.hidden=true;});
  window.addEventListener('mythic-session-restore-cancelled',()=>{done=true;working=false;revision++;epoch++;restoredScroll=null;clearTimeout(timer);});
  const bodyObserver=new MutationObserver(()=>{if(!working)persist();});bodyObserver.observe(document.body,{attributes:true,attributeFilter:['class']});capture();attempt();
 })();

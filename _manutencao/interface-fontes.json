@@ -35,6 +35,7 @@
     "journey-tools.css",
     "guardian-campaign.css",
     "match-surrender.css",
-    "auth-entry.css"
+    "auth-entry.css",
+    "rewards-tournaments.css"
   ]
 }

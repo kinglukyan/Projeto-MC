@@ -156,8 +156,8 @@
     "sha256": "83b55af70174e8177ae628288161458f50a11370fc5f2ecf5ce4130827f58a7c"
   },
   "_manutencao/interface-fontes.json": {
-    "bytes": 958,
-    "sha256": "936677e4f19c84b914139e6e18061c2cde99c72164686541c145de69762aa2eb"
+    "bytes": 990,
+    "sha256": "5127928084275e634131fcb2eb63d6bef60446735df9907e951d959e85bb046c"
   },
   "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
     "bytes": 2911,
@@ -731,6 +731,10 @@
     "bytes": 30968,
     "sha256": "4e8afc3e9c21b7404dd6e4876c20743e16def6bda2720a17ad7c7b734f8a6add"
   },
+  "_manutencao/rewards-tournaments/prompt-icone.json": {
+    "bytes": 855,
+    "sha256": "31411f1174384aa92e61852a44cd0da2a4c19be537e5a6e20dc79b005a1e1177"
+  },
   "_manutencao/seguranca/escopo.json": {
     "bytes": 615,
     "sha256": "617acae2a8d773cf7ec99fc4e518d304048ec0af214e31d07ae2db9c5486007b"
@@ -792,8 +796,8 @@
     "sha256": "4ac19c29405481b9da492304052472cdf8bb699e2e7218a9dad6d2384e4af25a"
   },
   "app.js": {
-    "bytes": 131344,
-    "sha256": "7d09ea18e336068750e73f9359394fcab83325f7d1a2d72ff6fe4c6b5af33aa1"
+    "bytes": 131534,
+    "sha256": "86103807bf01810585563822262c13b1ff42c20de6dc769abfecb17753fd26fa"
   },
   "arcane-palette.css": {
     "bytes": 37675,
@@ -808,8 +812,8 @@
     "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
   },
   "asset-manifest.json": {
-    "bytes": 55857,
-    "sha256": "2568f2582d9aee540a81dd4ea87f34626c07bf05ed05686de7ad690dc18ef12d"
+    "bytes": 55917,
+    "sha256": "1df00483cf340068a5dd42ce50274135d42623e47327d370a4af7a0c558ef38c"
   },
   "assets/app-icon.svg": {
     "bytes": 531,
@@ -3459,6 +3463,10 @@
     "bytes": 294807,
     "sha256": "a491c0996cdfcb0063c7b95f11e3b66e5ceaf453e67ea969cce86ce9a8207c6d"
   },
+  "assets/mode-tournament.webp": {
+    "bytes": 127318,
+    "sha256": "2a51fb622a92625b16e14a5da1f532a9fd8e466808f83713573abf2f68a34e5c"
+  },
   "assets/mode-x1.png": {
     "bytes": 362596,
     "sha256": "b36841ffa54ad9b4f01c23f931141f62379ef300fa83226a24f09e611ed12618"
@@ -4112,8 +4120,8 @@
     "sha256": "cfc0013b47aa70721b269587924560c3927df2c300b63d81169beea4684d1e75"
   },
   "concept-theme.js": {
-    "bytes": 42062,
-    "sha256": "a5bfb8a2cfecd1165d4e2a88e081f5bff0ebfc298249e1e248d0b4f9d4b002c3"
+    "bytes": 42125,
+    "sha256": "778782fdca2b6ed1dfa3aaf81a6d1cb728279e278bb1b1398774c8198529bb7f"
   },
   "CONSTRUTOR-DE-DECKS.md": {
     "bytes": 4200,
@@ -4264,8 +4272,8 @@
     "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
   },
   "game-interface.css": {
-    "bytes": 609590,
-    "sha256": "b25471a99f19a4b5c41b615653fe5bc9e2e01077f21f44a5cdefd03c2e97c703"
+    "bytes": 619999,
+    "sha256": "b88314fe173125062f751fc2a1ca4ad22b8cfda8c621bd5b3ec59229e2cd63dc"
   },
   "guardian-campaign-data.js": {
     "bytes": 59773,
@@ -4332,8 +4340,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 76886,
-    "sha256": "a9663439f04aeed1bb3fab0fe7816000b8129e0805afe4dbafc70fa255c0d674"
+    "bytes": 80004,
+    "sha256": "67b33be60702889d7d06f5e25536aa22292b57d278e5d47fb903b58c8061682b"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -4428,8 +4436,8 @@
     "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
   },
   "online.js": {
-    "bytes": 146942,
-    "sha256": "c19a7871cc2d752c634d78d77b3430b74e5d0b7163442a913e5fb0a89e55fda1"
+    "bytes": 145542,
+    "sha256": "266d469de484ac6af8c61f67be285f3bdfe4464dbcc3ef97f7193ebc8a64d244"
   },
   "PELOTOES-DE-COMPANHEIROS.md": {
     "bytes": 884,
@@ -4440,8 +4448,8 @@
     "sha256": "302d8db7b766b26d6d94c540d2736be41ed9d802d50df496a55ce2443a091ed2"
   },
   "portal-upgrade.js": {
-    "bytes": 30093,
-    "sha256": "fa1f005a4069af25006dec38fac6e495566cfb0a528690a49792c69ad11ed985"
+    "bytes": 30177,
+    "sha256": "11ad210ec0bd84fc2a20cbbb355db743e184c2b01e0de4cad72f8bf6c7935fed"
   },
   "practice-mode.css": {
     "bytes": 2082,
@@ -4483,6 +4491,10 @@
     "bytes": 5928,
     "sha256": "5dba1c847732cb1b9805d9cda10cb983431b4c6a5976f0d04e164bcd91dcff95"
   },
+  "RECOMPENSAS-E-TORNEIOS.md": {
+    "bytes": 4702,
+    "sha256": "a1a2ff0ac6023d6667f7b6436fd33410d521d131e79228bc25332529dc68513d"
+  },
   "REGRAS-CARTAS-DECISOES.md": {
     "bytes": 20997,
     "sha256": "3d478dcd0bab988f4565934e05badd74eda430c241bf5b35f14cf2563dd65282"
@@ -4514,6 +4526,14 @@
   "REVISAO-HABILIDADES.md": {
     "bytes": 33129,
     "sha256": "42471e7068b0e88c7ea28caba099d1493104d18699efdc2fe1fd9baba3bf0f2f"
+  },
+  "rewards-tournaments.css": {
+    "bytes": 10378,
+    "sha256": "d5482a231a09465c6a8011b3d81208dca74069ba3c6071a909c610e67d918a8b"
+  },
+  "rewards-tournaments.js": {
+    "bytes": 21098,
+    "sha256": "8cb73e7b855eab39d77d6c6f4f8d22cce6d9dca70e406121b2a30759136692cd"
   },
   "rework.css": {
     "bytes": 59751,
@@ -4548,8 +4568,8 @@
     "sha256": "bb835b4ae8b4c2d4b2783f0d771cac5b532531352347dedfc814c5aa42bedc5c"
   },
   "session-resume.js": {
-    "bytes": 6731,
-    "sha256": "c279daea45c2cff2fdda5a1aeb27b31a18cdd6303665b6ca2cdda64e94b70b75"
+    "bytes": 7286,
+    "sha256": "41c9a4e7dd36c2b0f1bf592c23cc2ec13592716434dd8e58891f74c219608f37"
   },
   "session-startup.js": {
     "bytes": 3067,
@@ -4826,6 +4846,10 @@
   "supabase/migrations/202610210048_resume_active_matches_only.sql": {
     "bytes": 1059,
     "sha256": "7c318021aa61257aeeb116b906027e9857c10e7466685feb701c0a5e7a3c787d"
+  },
+  "supabase/migrations/202610210049_rewards_and_tournament_hub.sql": {
+    "bytes": 18283,
+    "sha256": "c86fc606cb9564922cabfa888d641e652449da38178e8c19954f139df99a4b19"
   },
   "supabase/README.md": {
     "bytes": 2053,
