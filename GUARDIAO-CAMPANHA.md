@@ -7,7 +7,7 @@
 - Ordem: Grécia, Egito, Nove Reinos, Terras Celtas, Mesopotâmia, Caminhos Hindus, Reino Celestial, Ilhas do Sol, Terras Astecas, Lendas do Brasil e Lendas Europeias (Monstros).
 - Os Alyns não têm destino, adversários ou recompensas nesta campanha inicial. O jogador pode usar seu baralho normal.
 - Cada adversário usa seu ícone chibi e um deck montado com cartas de sua facção. Os Monstros também podem usar o Eclipse, que é um evento universal.
-- Quatro trechos de cenário em cada trilha, ligados por nós. Grécia, Egito e Nove Reinos usam os Locais e Terrenos existentes. Nas facções sem essas cartas, os trechos têm nomes cenográficos e reutilizam os banners existentes; não foram inventadas cartas de Local jogáveis.
+- Quatro áreas por destino, com cinco desafios por cenário e navegação lateral. O novo Atlas tem cenários próprios em `assets/guardian-campaign/atlas/`, inspirados nos Locais e Terrenos quando disponíveis. Nas facções sem essas cartas, os nomes das áreas são cenográficos; não foram inventadas cartas de Local jogáveis. Consulte `NOVO-ATLAS-DAS-LENDAS.md`.
 - Seleção de baralho antes de entrar no desafio, repetição de fases concluídas, retomada de uma batalha e relatório com retorno ao mapa.
 
 ## Progressão e recompensas

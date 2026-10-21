@@ -1,0 +1,215 @@
+{
+  "tool": "image_gen.imagegen (built-in)",
+  "assets": [
+    {
+      "id": "world",
+      "prompt": "Create a premium game background asset ONLY for Mythic Clash Atlas. Reference image is style reference only. Clean full Earth WORLD MAP, strict equirectangular plate carree projection, longitude -180 at left +180 right, latitude +90 at top -90 bottom, equator exactly halfway. Complete continents accurately shaped, north up, Atlantic centered. Entire map fills exactly a 2:1 landscape rectangle edge to edge, no border and no title area. Painterly satellite relief terrain in natural jade green, ochre and cream, deep midnight navy oceans with very subtle celestial fine gold navigation arcs. Rich high quality fantasy atlas rendering matching reference. No text, no labels, no symbols, NO UI, no pins, no compass, no panels, no clouds obscuring continents. Geography must remain clearly legible: Europe, Greece, Egypt, Iraq, India, China, Japan, Mexico and Brazil. Render 2048x1024 or larger 2:1.",
+      "output": "assets/guardian-campaign/atlas/world.webp",
+      "size": [
+        1774,
+        887
+      ],
+      "reference": "01-atlas-das-lendas.webp"
+    },
+    {
+      "id": "greece-0",
+      "prompt": "Create a clean 16:9 panoramic background painting asset for Mythic Clash Greek region sanctuary, based on scenic environment in reference. ONLY landscape environment, remove ALL interface, all text, all symbols, all emblems, all chibi portraits, all glowing paths and nodes. Cinematic ancient Greek temple on terraced marble cliffs on left center, statuary and cypress trees, a luminous Aegean sea opening across center and right, far coastal fortress, majestic mountains, golden sunset rays breaking through dramatic indigo clouds. Beautiful detailed polished fantasy game illustration, warm gold stone and deep blue waters, romantic epic scale, coherent architecture. Foreground stone terraces and low vegetation occupy lower third leaving room for UI to overlay later. No characters as focal point. Wide landscape fullbleed, no framing.",
+      "output": "assets/guardian-campaign/atlas/greece-0.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "greece-1",
+      "prompt": "Premium Mythic Clash game scenic background illustration. Wide 16:9 panoramic fullbleed landscape, environmental painting ONLY. Same polished detailed fantasy visual language as attached approved Greek scene: intricate stonework, epic scale, cinematic clouds and rich natural colors. No UI, no frames, no lettering, no logos, no icons, no portraits, no foreground characters. Keep lower middle relatively open for five game challenge buttons overlay. Scene: Ancient Sparta, crimson banners on Doric military citadel, rugged Taygetus mountains, empty training courts and olive groves, bronze sunset",
+      "output": "assets/guardian-campaign/atlas/greece-1.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "greece-2",
+      "prompt": "Premium Mythic Clash game scenic background illustration. Wide 16:9 panoramic fullbleed landscape, environmental painting ONLY. Same polished detailed fantasy visual language as attached approved Greek scene: intricate stonework, epic scale, cinematic clouds and rich natural colors. No UI, no frames, no lettering, no logos, no icons, no portraits, no foreground characters. Keep lower middle relatively open for five game challenge buttons overlay. Scene: Labyrinth of Daedalus in ancient Crete, monumental winding limestone maze terraced into cliffs, Minoan columns and bronze braziers, eerie teal and amber dusk",
+      "output": "assets/guardian-campaign/atlas/greece-2.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "greece-3",
+      "prompt": "Premium Mythic Clash game scenic background illustration. Wide 16:9 panoramic fullbleed landscape, environmental painting ONLY. Same polished detailed fantasy visual language as attached approved Greek scene: intricate stonework, epic scale, cinematic clouds and rich natural colors. No UI, no frames, no lettering, no logos, no icons, no portraits, no foreground characters. Keep lower middle relatively open for five game challenge buttons overlay. Scene: Troy battlefield and monumental walled city, wooden Trojan horse near distant gates, abandoned bronze shields, windswept coastal plain, fiery sunset",
+      "output": "assets/guardian-campaign/atlas/greece-3.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "egypt",
+      "prompt": "Premium Mythic Clash game scenic background illustration. Wide 16:9 panoramic fullbleed landscape, environmental painting ONLY. Same polished detailed fantasy visual language as attached approved Greek scene: intricate stonework, epic scale, cinematic clouds and rich natural colors. No UI, no frames, no lettering, no logos, no icons, no portraits, no foreground characters. Keep lower middle relatively open for five game challenge buttons overlay. Scene: Ancient Egypt Nile panoramic river, reeds and date palms, sandstone temple with seated pharaoh colossi and pylons covered in carvings, pyramids far away, gold sunlight",
+      "output": "assets/guardian-campaign/atlas/egypt.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "norse",
+      "prompt": "Premium Mythic Clash game scenic background illustration. Wide 16:9 panoramic fullbleed landscape, environmental painting ONLY. Same polished detailed fantasy visual language as attached approved Greek scene: intricate stonework, epic scale, cinematic clouds and rich natural colors. No UI, no frames, no lettering, no logos, no icons, no portraits, no foreground characters. Keep lower middle relatively open for five game challenge buttons overlay. Scene: Norse nine realms, towering frost covered mountains, golden halls of Asgard, rainbow Bifrost bridge and immense sacred Yggdrasil in distance, blue and amber twilight",
+      "output": "assets/guardian-campaign/atlas/norse.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "celtic",
+      "prompt": "Premium Mythic Clash game scenic background illustration. Wide 16:9 panoramic fullbleed landscape, environmental painting ONLY. Same polished detailed fantasy visual language as attached approved Greek scene: intricate stonework, epic scale, cinematic clouds and rich natural colors. No UI, no frames, no lettering, no logos, no icons, no portraits, no foreground characters. Keep lower middle relatively open for five game challenge buttons overlay. Scene: Arthurian Celtic Avalon, mossy ruined stone arches, mystical lake and castle of Camelot, green hills, flowering trees and druid standing stones, warm mist",
+      "output": "assets/guardian-campaign/atlas/celtic.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "mesopotamian",
+      "prompt": "Premium Mythic Clash game scenic background illustration. Wide 16:9 panoramic fullbleed landscape, environmental painting ONLY. Same polished detailed fantasy visual language as attached approved Greek scene: intricate stonework, epic scale, cinematic clouds and rich natural colors. No UI, no frames, no lettering, no logos, no icons, no portraits, no foreground characters. Keep lower middle relatively open for five game challenge buttons overlay. Scene: Ancient Mesopotamia Babylon and Ur, blue glazed Ishtar gate, terraced ziggurats, Euphrates canals, palms, hanging gardens and lapis gold architecture, golden dusk",
+      "output": "assets/guardian-campaign/atlas/mesopotamian.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "hindu",
+      "prompt": "Premium Mythic Clash game scenic background illustration. Wide 16:9 panoramic fullbleed landscape, environmental painting ONLY. Same polished detailed fantasy visual language as attached approved Greek scene: intricate stonework, epic scale, cinematic clouds and rich natural colors. No UI, no frames, no lettering, no logos, no icons, no portraits, no foreground characters. Keep lower middle relatively open for five game challenge buttons overlay. Scene: Mythological India, vast lotus lake and carved temple terraces, distant Himalayan peaks, sacred banyan trees, floating lanterns and sunrise, rich rose and saffron",
+      "output": "assets/guardian-campaign/atlas/hindu.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "chinese",
+      "prompt": "Premium Mythic Clash game scenic background illustration. Wide 16:9 panoramic fullbleed landscape, environmental painting ONLY. Same polished detailed fantasy visual language as attached approved Greek scene: intricate stonework, epic scale, cinematic clouds and rich natural colors. No UI, no frames, no lettering, no logos, no icons, no portraits, no foreground characters. Keep lower middle relatively open for five game challenge buttons overlay. Scene: Chinese mythological heavenly realm, jade palaces and red pavilions on misty mountainous terraces, graceful stone bridges, peach blossom trees, waterfalls and golden clouds",
+      "output": "assets/guardian-campaign/atlas/chinese.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "japanese",
+      "prompt": "Premium Mythic Clash game scenic background illustration. Wide 16:9 panoramic fullbleed landscape, environmental painting ONLY. Same polished detailed fantasy visual language as attached approved Greek scene: intricate stonework, epic scale, cinematic clouds and rich natural colors. No UI, no frames, no lettering, no logos, no icons, no portraits, no foreground characters. Keep lower middle relatively open for five game challenge buttons overlay. Scene: Japanese mythological islands, vermilion torii leading to ornate Shinto shrine, cherry trees, rugged coast and distant volcano, warm dawn through indigo clouds",
+      "output": "assets/guardian-campaign/atlas/japanese.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "aztec",
+      "prompt": "Premium Mythic Clash game scenic background illustration. Wide 16:9 panoramic fullbleed landscape, environmental painting ONLY. Same polished detailed fantasy visual language as attached approved Greek scene: intricate stonework, epic scale, cinematic clouds and rich natural colors. No UI, no frames, no lettering, no logos, no icons, no portraits, no foreground characters. Keep lower middle relatively open for five game challenge buttons overlay. Scene: Ancient Aztec Tenochtitlan, terraced temple pyramids, turquoise lake and causeways, green mountains, marigolds and carved feathered serpent stone monuments, golden hour",
+      "output": "assets/guardian-campaign/atlas/aztec.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "brasil",
+      "prompt": "Premium Mythic Clash game scenic background illustration. Wide 16:9 panoramic fullbleed landscape, environmental painting ONLY. Same polished detailed fantasy visual language as attached approved Greek scene: intricate stonework, epic scale, cinematic clouds and rich natural colors. No UI, no frames, no lettering, no logos, no icons, no portraits, no foreground characters. Keep lower middle relatively open for five game challenge buttons overlay. Scene: Brazilian folklore landscape, lush Atlantic forest meeting broad winding tropical river, giant fig tree roots, water lilies, distant dry sertao rocky hills, magical fireflies and warm dusk",
+      "output": "assets/guardian-campaign/atlas/brasil.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "monster",
+      "prompt": "Premium Mythic Clash game scenic background illustration. Wide 16:9 panoramic fullbleed landscape, environmental painting ONLY. Same polished detailed fantasy visual language as attached approved Greek scene: intricate stonework, epic scale, cinematic clouds and rich natural colors. No UI, no frames, no lettering, no logos, no icons, no portraits, no foreground characters. Keep lower middle relatively open for five game challenge buttons overlay. Scene: European folklore land, dark medieval village by a vast pine forest, ruined castle on mountain, moonlit trail through mossy rocks and glowing mist, eerie blue and amber lights",
+      "output": "assets/guardian-campaign/atlas/monster.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "egypt-1",
+      "prompt": "Create one clean 16:9 panoramic fantasy game environment asset for Mythic Clash. Premium detailed painterly scenic art matching the approved reference's rendering and architecture quality. Fullbleed landscape only. No UI, no labels, no lettering, no border, no portraits, no emblems, no paths of glowing game nodes, no large characters. Foreground lower third open for UI overlay. Scene: Upper Egypt monumental sandstone temple complex at Luxor, giant seated colossi, Nile cliffs and date palms, golden afternoon",
+      "output": "assets/guardian-campaign/atlas/egypt-1.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "egypt-2",
+      "prompt": "Create one clean 16:9 panoramic fantasy game environment asset for Mythic Clash. Premium detailed painterly scenic art matching the approved reference's rendering and architecture quality. Fullbleed landscape only. No UI, no labels, no lettering, no border, no portraits, no emblems, no paths of glowing game nodes, no large characters. Foreground lower third open for UI overlay. Scene: Lower Egypt wide green Nile delta, papyrus marshes, winding channels, boats and ancient city with limestone temples, gold and blue sunset",
+      "output": "assets/guardian-campaign/atlas/egypt-2.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "egypt-3",
+      "prompt": "Create one clean 16:9 panoramic fantasy game environment asset for Mythic Clash. Premium detailed painterly scenic art matching the approved reference's rendering and architecture quality. Fullbleed landscape only. No UI, no labels, no lettering, no border, no portraits, no emblems, no paths of glowing game nodes, no large characters. Foreground lower third open for UI overlay. Scene: Ancient Egyptian pyramid necropolis at twilight, great pyramids and sphinx in sand dunes, distant Nile and sacred sandstone temple entrance, golden stars",
+      "output": "assets/guardian-campaign/atlas/egypt-3.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "norse-1",
+      "prompt": "Create one clean 16:9 panoramic fantasy game environment asset for Mythic Clash. Premium detailed painterly scenic art matching the approved reference's rendering and architecture quality. Fullbleed landscape only. No UI, no labels, no lettering, no border, no portraits, no emblems, no paths of glowing game nodes, no large characters. Foreground lower third open for UI overlay. Scene: Bifrost Norse rainbow bridge of glowing light spanning icy fjord toward golden Asgard towers in distant mountains, blue and amber dusk",
+      "output": "assets/guardian-campaign/atlas/norse-1.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "norse-2",
+      "prompt": "Create one clean 16:9 panoramic fantasy game environment asset for Mythic Clash. Premium detailed painterly scenic art matching the approved reference's rendering and architecture quality. Fullbleed landscape only. No UI, no labels, no lettering, no border, no portraits, no emblems, no paths of glowing game nodes, no large characters. Foreground lower third open for UI overlay. Scene: Yggdrasil immense cosmic ash tree with ancient carved rune stones and roots spanning a tranquil forest lake, distant realm islands in azure aurora, amber glows",
+      "output": "assets/guardian-campaign/atlas/norse-2.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    },
+    {
+      "id": "norse-3",
+      "prompt": "Create one clean 16:9 panoramic fantasy game environment asset for Mythic Clash. Premium detailed painterly scenic art matching the approved reference's rendering and architecture quality. Fullbleed landscape only. No UI, no labels, no lettering, no border, no portraits, no emblems, no paths of glowing game nodes, no large characters. Foreground lower third open for UI overlay. Scene: Niflheim Norse realm of frost, frozen waterfalls and rugged ice mountains, ancient stone gateway by a misty frozen lake, subtle blue aurora and lantern light",
+      "output": "assets/guardian-campaign/atlas/norse-3.webp",
+      "size": [
+        1672,
+        941
+      ],
+      "reference": "02-regiao-grega-navegacao-lateral.webp"
+    }
+  ]
+}

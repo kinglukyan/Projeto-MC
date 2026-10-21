@@ -119,6 +119,18 @@
     "bytes": 3038,
     "sha256": "abf264fb6b76eb58e3c151e2402febb632de9e9755f3d12968fee509db421571"
   },
+  "_manutencao/guardian-atlas/01-atlas-das-lendas.webp": {
+    "bytes": 457754,
+    "sha256": "d1fc98d67a4129098da74576c5cc7e3371bbe84a3f7eeaf2e770818371258118"
+  },
+  "_manutencao/guardian-atlas/02-regiao-grega-navegacao-lateral.webp": {
+    "bytes": 400130,
+    "sha256": "d03dc88f8568c8278fdcfd8dd691cad888e5aecacaa1670ac6f68edbacf3d9e7"
+  },
+  "_manutencao/guardian-atlas/prompts.json": {
+    "bytes": 18088,
+    "sha256": "8c2cd0df193dfe8f92115b2e78c4ddc2cf33e8bd405e17edd93511217a3069d3"
+  },
   "_manutencao/guardian-campaign/catalogo-servidor.json": {
     "bytes": 292246,
     "sha256": "77f03eb3d1343b57d84301cc28fb5a0bf8623b6bb6c5972ed625b7bb7067ea80"
@@ -796,8 +808,8 @@
     "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
   },
   "asset-manifest.json": {
-    "bytes": 54263,
-    "sha256": "ba25029b1ac2e5eb3ad826067d7645703b0f3afd9bb8ca2c5bda1fdbc5348122"
+    "bytes": 55857,
+    "sha256": "2568f2582d9aee540a81dd4ea87f34626c07bf05ed05686de7ad690dc18ef12d"
   },
   "assets/app-icon.svg": {
     "bytes": 531,
@@ -2819,6 +2831,90 @@
     "bytes": 491,
     "sha256": "7fc73ea364411ddf4440f8b4283adf535730b32a4622847199ba0302c3256549"
   },
+  "assets/guardian-campaign/atlas/aztec.webp": {
+    "bytes": 507614,
+    "sha256": "f613e6e338a5d26fa947af18af4a1bae672dd7274d29a8a0a1179439babb94cc"
+  },
+  "assets/guardian-campaign/atlas/brasil.webp": {
+    "bytes": 562892,
+    "sha256": "242283d69c533eb71ffa92a8a3a597dbc5e4802c41137b436766cde211cca9d3"
+  },
+  "assets/guardian-campaign/atlas/celtic.webp": {
+    "bytes": 594614,
+    "sha256": "c4409a6f99981f0accb2cf8015253b16277455a2cad707d74aa7b665209e7119"
+  },
+  "assets/guardian-campaign/atlas/chinese.webp": {
+    "bytes": 550662,
+    "sha256": "3a731076918c0ba1c64fb5cb627ec4561e44ccbfae3fbf1b45eb18b23e5be0ca"
+  },
+  "assets/guardian-campaign/atlas/egypt-1.webp": {
+    "bytes": 447384,
+    "sha256": "791c0829011397438c1876c92e1993f0be7de63d623a78ae0e9d536946727281"
+  },
+  "assets/guardian-campaign/atlas/egypt-2.webp": {
+    "bytes": 563866,
+    "sha256": "0396ed474a065fbbc1c600ac3157a02641833867fd9138b502b452bc4a71f2c3"
+  },
+  "assets/guardian-campaign/atlas/egypt-3.webp": {
+    "bytes": 453932,
+    "sha256": "5f234a542fd20d57ba5759e7738351706bd91aca526be4418f361ef86691f660"
+  },
+  "assets/guardian-campaign/atlas/egypt.webp": {
+    "bytes": 530930,
+    "sha256": "e1030236ad59109bcee383726f0f1e8b2df02d1a0fce8d2e779c377d6f040e5a"
+  },
+  "assets/guardian-campaign/atlas/greece-0.webp": {
+    "bytes": 526254,
+    "sha256": "32010ef9855f9822947e2fda10b83471b3ed09f3b2ece6a2505f04edcdd18ed3"
+  },
+  "assets/guardian-campaign/atlas/greece-1.webp": {
+    "bytes": 534388,
+    "sha256": "ab9ea7530414b192c8fff987a9a2132c3f57d14b148846304184a880c118545d"
+  },
+  "assets/guardian-campaign/atlas/greece-2.webp": {
+    "bytes": 534398,
+    "sha256": "40d8c86e5bd862452c25f989cb07f038ae64635cc5b5bfb15a14626583301230"
+  },
+  "assets/guardian-campaign/atlas/greece-3.webp": {
+    "bytes": 571868,
+    "sha256": "b2d8009d92c3e2d0e099e0562b4c050e78cfea53f8e45de8adf975885c10d2a1"
+  },
+  "assets/guardian-campaign/atlas/hindu.webp": {
+    "bytes": 531884,
+    "sha256": "82dfe3e403495547a0c1f7d7d54a033c4882a569e0eb3f45d4c121d14dcfd6e3"
+  },
+  "assets/guardian-campaign/atlas/japanese.webp": {
+    "bytes": 530798,
+    "sha256": "e04d0922d3ba89b0af395c584d922c9b3e89f74ea2ca5b3d26bfb914a4b3f8ab"
+  },
+  "assets/guardian-campaign/atlas/mesopotamian.webp": {
+    "bytes": 539360,
+    "sha256": "cf67d8a5da389499647a4383437bbfbc621be5e7fbada73e1f46cfb79fc4d182"
+  },
+  "assets/guardian-campaign/atlas/monster.webp": {
+    "bytes": 474094,
+    "sha256": "a9f53b0749f83ea1e94d242c5fd15cc23b70b840f6a5e212f00ad043da3caa08"
+  },
+  "assets/guardian-campaign/atlas/norse-1.webp": {
+    "bytes": 442432,
+    "sha256": "e6eb89f01d43d42280daf301179ced5be2696ad970978bdfe97ce6685c2cdf3b"
+  },
+  "assets/guardian-campaign/atlas/norse-2.webp": {
+    "bytes": 554286,
+    "sha256": "9c8aea526b17ac068ae4169aebec613d8787af41028a272c245a75e987dba95c"
+  },
+  "assets/guardian-campaign/atlas/norse-3.webp": {
+    "bytes": 523050,
+    "sha256": "1fa1844f9e593dc1b26e227e1f57d442fd3b8bb5a766b406f9c7d3eff7133199"
+  },
+  "assets/guardian-campaign/atlas/norse.webp": {
+    "bytes": 581540,
+    "sha256": "995151a160417e86756ca06a19313d32c46eb27be049cf703fd74cd8499aef57"
+  },
+  "assets/guardian-campaign/atlas/world.webp": {
+    "bytes": 570008,
+    "sha256": "183793b661b6cf5edc75e24c0611923a8b536ccf066ffc0817a6af1e78ffc281"
+  },
   "assets/guardian-campaign/world.svg": {
     "bytes": 2814,
     "sha256": "d84022a01388539f980cefb8d2d21bd2cda45cdf513349e7dd70d95a3a735cdf"
@@ -4164,24 +4260,24 @@
     "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
   },
   "game-interface.css": {
-    "bytes": 594898,
-    "sha256": "29ee6f7ad1e4428a588d4d665c5febda067e71404a5846fb4ccfab6d8ef10c38"
+    "bytes": 609590,
+    "sha256": "b25471a99f19a4b5c41b615653fe5bc9e2e01077f21f44a5cdefd03c2e97c703"
   },
   "guardian-campaign-data.js": {
     "bytes": 59773,
     "sha256": "0b556aa06914add1f88139fa820487923a13f873b2b2073decccd654d2c5f0a5"
   },
   "guardian-campaign.css": {
-    "bytes": 7331,
-    "sha256": "ac42b61ac604e54e603064fa5d6a756ba06f4bd02d0084f1bde26ef99a5fb4a6"
+    "bytes": 22023,
+    "sha256": "1885e8d5b70ad5751a64e333bf6323528d58a9d704b6b37552c8cad9b3045f4e"
   },
   "guardian-campaign.js": {
-    "bytes": 19955,
-    "sha256": "a04366e9321625f45e2809ac8d309893ea86b75b006bde5bdc6d81d80632d828"
+    "bytes": 28788,
+    "sha256": "e39f339a96e227222fd8bc713a21257496aa9f21673c03d2bf3e974d9f55ff4e"
   },
   "GUARDIAO-CAMPANHA.md": {
-    "bytes": 5539,
-    "sha256": "a2195a433d06d2924f2f3c543f188486917a0e8cce7757f2e0e8a32094bb26bb"
+    "bytes": 5627,
+    "sha256": "dd9ce2a32950bc7d970d2f64a89506a9404f6f553de54de17bb8107ecbf2d66e"
   },
   "GUARDIAO-NORDICO-ATUALIZACAO.md": {
     "bytes": 4366,
@@ -4233,7 +4329,7 @@
   },
   "index.html": {
     "bytes": 76817,
-    "sha256": "2d2ed568a1018e096107467d412b5d3ed7fbc7fefb30184ac2c9e31dedb4675b"
+    "sha256": "b14069993f38e1ffa416fe23ceb4cc5c5dda402b738f594db03c2e997b2b4763"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -4318,6 +4414,10 @@
   "MODO-TESTE.md": {
     "bytes": 2660,
     "sha256": "d198454d41527e2f4c4bba0feae6b87dd8b5c7085a02361cac8455f19c0021b3"
+  },
+  "NOVO-ATLAS-DAS-LENDAS.md": {
+    "bytes": 2750,
+    "sha256": "d9bebe7043727148a2858b21cebc8bb2d717fd0940d3093657bee7402fe0f5a4"
   },
   "ONBOARDING-IMAGE-PROMPT.txt": {
     "bytes": 1620,
