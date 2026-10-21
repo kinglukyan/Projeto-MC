@@ -4159,6 +4159,10 @@
     "bytes": 1436,
     "sha256": "2e10d472118b26c74d67a86cbbc9fc82e667e2e86fa9373270b6add207c9a3e9"
   },
+  "CORRECAO-FLASH-DO-HALL.md": {
+    "bytes": 1232,
+    "sha256": "89a6b3d3268b8ce9066909dec0cf2ab85d8017cf67229d2f8f0e42dee8615ae0"
+  },
   "CORRECAO-REGRESSAO-CARREGAMENTO.md": {
     "bytes": 1198,
     "sha256": "1224a6f12a05b817c494b2b36a228bf9f8409d08802dd79068f15f2b4a0cca71"
@@ -4224,8 +4228,8 @@
     "sha256": "a742a1944df285cd110ed9ca387455f3730deeee89a6ac162bd8f9b680566d79"
   },
   "entry-critical.css": {
-    "bytes": 5516,
-    "sha256": "cbef21651b8de00fd021194aee3a7fbb48305541e44bdd2ab9f3e7ad0bf7fcd7"
+    "bytes": 6714,
+    "sha256": "11b33ae23ba7e578604fdbca779a62c1b0fd0661ea2102cc65c4785d53a2a73b"
   },
   "entry-media.js": {
     "bytes": 23239,
@@ -4328,8 +4332,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 76817,
-    "sha256": "b14069993f38e1ffa416fe23ceb4cc5c5dda402b738f594db03c2e997b2b4763"
+    "bytes": 76886,
+    "sha256": "a9663439f04aeed1bb3fab0fe7816000b8129e0805afe4dbafc70fa255c0d674"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -4544,8 +4548,12 @@
     "sha256": "bb835b4ae8b4c2d4b2783f0d771cac5b532531352347dedfc814c5aa42bedc5c"
   },
   "session-resume.js": {
-    "bytes": 5647,
-    "sha256": "b42387eb1ca717d31a2dafd05012770b44eab794af5f44c74ae567e920e7c91d"
+    "bytes": 6731,
+    "sha256": "c279daea45c2cff2fdda5a1aeb27b31a18cdd6303665b6ca2cdda64e94b70b75"
+  },
+  "session-startup.js": {
+    "bytes": 3067,
+    "sha256": "420fd6e8e4f711cb34387cff82e0d66bb1114b3c2788b69d47c8883c79b98bb2"
   },
   "shop-filters.js": {
     "bytes": 4870,
