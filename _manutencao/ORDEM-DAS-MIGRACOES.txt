@@ -68,3 +68,4 @@ Não reaplicar todos os scripts no banco de produção.
 202610200045_guardian_world_campaign.sql
 202610200046_match_surrender.sql
 202610200047_card_bonus_alias_fix.sql
+202610210048_resume_active_matches_only.sql

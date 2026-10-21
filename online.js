@@ -3,7 +3,7 @@
   const safeUrl=window.MythicSecurity.assetUrl;
   const config = window.MYTHIC_SUPABASE_CONFIG || {};
   const configured = Boolean(config.url && config.publishableKey);
-  let matchFallbackTicker=null,lastMatchSnapshot="",actionSequence=0,forceNextMatchRender=false;const matchRefreshes=new Map();
+  let matchFallbackTicker=null,lastMatchSnapshot="",actionSequence=0,forceNextMatchRender=false;const matchRefreshes=new Map(),matchOpens=new Map(),closedMatches=new Set();let matchOpenEpoch=0;
   let deckLoadedFor=null, profileRequest=0, accountReady=false, profileRefresh=Promise.resolve();
   let supabase = null, session = null, profile = null, activeFriend = null, activeMatchId = null, pendingFriendInviteCode = null, actionPending = false, adminAuthorized = false, adminPlayers = [], adminCatalog = [], adminGifts = [], adminLore = [], adminCardSourceUrl = null, adminCardPreviewUrl = null, adminCardPreviewToken = 0, tutorialSyncPending = false;
   let customRoomTicker=null,customRoomId=null,customRoomInviteCode=null,customSpectatorMatchId=null,duoQueueChannel=null,duoQueueTicker=null,pendingDuoPartyId=null,activeDuoPartyId=null,pendingDuoMode=null;
@@ -61,6 +61,7 @@
   }
 
   function cleanupChannels(){
+    matchOpenEpoch++;matchOpens.clear();closedMatches.clear();
     queueRequest++;queueCancelling=false;setQueueState(null);clearInterval(lobbyTicker);lobbyTicker=null;lobbyEpoch++;lobbyParty=null;lobbyBusy=false;emitLobby();
     clearInterval(matchSessionTimer);matchSessionTimer=null;
     stopPresence();
@@ -538,19 +539,27 @@
     update();lobbyTicker=setInterval(()=>{if(!document.hidden)update();},5000);
   }
 
-  async function loadOnlineMatch(matchId){
-    if(!session||!matchId)return;const uid=session.user.id;
-    clearInterval(matchFallbackTicker);lastMatchSnapshot="";forceNextMatchRender=false;actionSequence++;actionPending=false;
-    setQueueState(null);queueRequest++;clearInterval(queueTicker);queueTicker=null;clearInterval(duoQueueTicker);duoQueueTicker=null;lobbyParty=null;emitLobby();activeMatchId=matchId;$("#queue-status").hidden=true;
-    const {data,error}=await supabase.rpc("get_online_match",{p_match_id:matchId});
-    if(session?.user?.id!==uid||activeMatchId!==matchId)return;
-    if(error){notify("Não foi possível abrir a partida: "+displayError(error));activeMatchId=null;return;}
-    const match=data?.match;if(!match){notify("Partida não encontrada para esta conta.");activeMatchId=null;return;}keepMatchSession();
-    if(gameChannel)supabase.removeChannel(gameChannel);
-    gameChannel=supabase.channel(`game-${matchId}`).on("postgres_changes",{event:"UPDATE",schema:"public",table:"match_update_signals",filter:`match_id=eq.${matchId}`},()=>refreshOnlineMatch(matchId).catch(()=>{})).subscribe();
-    matchFallbackTicker=setInterval(()=>{if(!document.hidden&&activeMatchId===matchId)refreshOnlineMatch(matchId).catch(()=>{});},8000);
-    lastMatchSnapshot=JSON.stringify(data);
+  function loadOnlineMatch(matchId){
+    if(!session||!matchId)return Promise.resolve(false);const uid=session.user.id,key=uid+':'+matchId;
+    if(activeMatchId===matchId)return Promise.resolve(true);
+    if(closedMatches.has(key))return Promise.resolve(false);if(matchOpens.has(key))return matchOpens.get(key);
+    const epoch=++matchOpenEpoch;
+    const task=(async()=>{
+      const {data,error}=await supabase.rpc('get_online_match',{p_match_id:matchId});
+      if(session?.user?.id!==uid||epoch!==matchOpenEpoch)return false;
+      if(error){notify('Não foi possível abrir a partida: '+displayError(error));return false;}
+      const match=data?.match;if(!match)return false;
+      if(match.status!=='active'||match.state?.finished){closedMatches.add(key);return false;}
+      clearInterval(matchFallbackTicker);lastMatchSnapshot='';forceNextMatchRender=false;actionSequence++;actionPending=false;
+      setQueueState(null);queueRequest++;clearInterval(queueTicker);queueTicker=null;clearInterval(duoQueueTicker);duoQueueTicker=null;lobbyParty=null;emitLobby();activeMatchId=matchId;$('#queue-status').hidden=true;keepMatchSession();
+      if(gameChannel)supabase.removeChannel(gameChannel);
+      gameChannel=supabase.channel(`game-${matchId}`).on('postgres_changes',{event:'UPDATE',schema:'public',table:'match_update_signals',filter:`match_id=eq.${matchId}`},()=>refreshOnlineMatch(matchId).catch(()=>{})).subscribe();
+      matchFallbackTicker=setInterval(()=>{if(!document.hidden&&activeMatchId===matchId)refreshOnlineMatch(matchId).catch(()=>{});},8000);
+      lastMatchSnapshot=JSON.stringify(data);
     window.dispatchEvent(new CustomEvent("mythic-online-match",{detail:{match,userId:session.user.id,playerName:profile?.nickname||profile?.display_name||"Você",playerIcon:profile?.equipped_avatar||"default",playerRating:profile?.rating_points||1000,opponentName:data.opponent_name,teammateName:data.teammate_name||null,participants:data.participants||[],myTeam:data.my_team||null,mySeat:data.my_seat||1,teamSize:data.team_size||1,opponentIcon:data.opponent_icon||"default",opponentRating:data.opponent_rating||1000}}));
+      return true;
+    })().catch(error=>{if(uid===session?.user?.id&&epoch===matchOpenEpoch)notify('Não foi possível abrir a partida: '+displayError(error));return false;}).finally(()=>{if(matchOpens.get(key)===task)matchOpens.delete(key);});
+    matchOpens.set(key,task);return task;
   }
 
   function refreshOnlineMatch(matchId){
@@ -563,6 +572,7 @@
     const {data,error}=await supabase.rpc("get_online_match",{p_match_id:matchId});
     if(uid!==session?.user?.id||activeMatchId!==matchId)return;
     const snapshot=JSON.stringify(data);if(error||!data?.match||snapshot===lastMatchSnapshot&&!forceNextMatchRender)return;forceNextMatchRender=false;lastMatchSnapshot=snapshot;
+    if(data.match.status!=='active'||data.match.state?.finished)closedMatches.add(uid+':'+matchId);
     if(!error&&data?.match)window.dispatchEvent(new CustomEvent("mythic-online-match",{detail:{match:data.match,userId:session.user.id,playerName:profile?.nickname||profile?.display_name||"Você",playerIcon:profile?.equipped_avatar||"default",playerRating:profile?.rating_points||1000,opponentName:data.opponent_name,teammateName:data.teammate_name||null,participants:data.participants||[],myTeam:data.my_team||null,mySeat:data.my_seat||1,teamSize:data.team_size||1,opponentIcon:data.opponent_icon||"default",opponentRating:data.opponent_rating||1000}}));
   }
 
@@ -576,13 +586,20 @@
 
   async function expireTurn(){if(!session||!activeMatchId)return;const {error}=await supabase.rpc("expire_game_turns");if(error)notify(displayError(error));else await refreshOnlineMatch(activeMatchId);}
 
+  async function matchIsActive(matchId){
+    const uid=session?.user?.id;if(!uid||!matchId)return false;
+    const data=await portalRequest('get_online_match',{p_match_id:matchId});
+    if(uid!==session?.user?.id)throw Error('A conta mudou. Entre novamente.');
+    const active=data?.match?.status==='active'&&!data.match.state?.finished;
+    if(!active)closedMatches.add(uid+':'+matchId);return active;
+  }
   async function surrenderMatch(matchId){
     if(!session||!matchId||activeMatchId!==matchId)throw Error('Abra a partida antes de desistir.');
     const uid=session.user.id;await portalRequest('surrender_game_match',{p_match_id:matchId});
     if(uid!==session?.user?.id||activeMatchId!==matchId)return;
     forceNextMatchRender=true;await refreshOnlineMatch(matchId);
   }
-  function leaveMatch(){clearInterval(matchFallbackTicker);matchFallbackTicker=null;lastMatchSnapshot="";matchRefreshes.clear();actionSequence++;if(gameChannel)supabase.removeChannel(gameChannel);gameChannel=null;activeMatchId=null;actionPending=false;}
+  function leaveMatch(){matchOpenEpoch++;matchOpens.clear();clearInterval(matchFallbackTicker);matchFallbackTicker=null;lastMatchSnapshot="";matchRefreshes.clear();actionSequence++;if(gameChannel)supabase.removeChannel(gameChannel);gameChannel=null;activeMatchId=null;actionPending=false;}
 
   document.addEventListener("visibilitychange",()=>{if(!document.hidden&&activeMatchId)refreshOnlineMatch(activeMatchId).catch(()=>{});});
 
@@ -601,7 +618,7 @@
     const uid=session?.user?.id;if(!uid||activeMatchId||floatingQueueState.active)return false;
     const {data,error}=await supabase.from('matchmaking_queue').select('status,match_id,mode,joined_at,session_touched_at').eq('user_id',uid).maybeSingle();
     if(error||session?.user?.id!==uid||!data)return false;
-    if(data.status==='matched'&&data.match_id){await loadOnlineMatch(data.match_id);return true;}
+    if(data.status==='matched'&&data.match_id)return Boolean(await loadOnlineMatch(data.match_id));
     if(data.status!=='waiting'||!['normal','ranked'].includes(data.mode)||Date.now()-Date.parse(data.session_touched_at||data.joined_at)>90000)return false;
     window.queueGameMode=data.mode;const request=++queueRequest;watchSoloQueue(data.mode,uid,request,Date.parse(data.joined_at));return true;
   }
@@ -804,7 +821,7 @@
   async function welcomeRequest(name,args={}){if(!session||!supabase)throw Error("Entre na conta para continuar.");const uid=session.user.id;const {data,error}=await supabase.rpc(name,args);if(session?.user?.id!==uid)throw Error("A conta mudou. Entre novamente.");if(error)throw Error(/PGRST202|42883/.test(String(error.code))?"As boas-vindas estão temporariamente indisponíveis. Tente novamente em instantes.":displayError(error));return data;}
   async function openStarterPack(mythology){const data=await welcomeRequest("open_starter_pack",{p_mythology:mythology});deckLoadedFor=null;return data;}
   async function portalRequest(name,args={}){if(!supabase)throw Error('A conexão não está disponível.');const uid=session?.user?.id;const {data,error}=await supabase.rpc(name,args);if(uid!==session?.user?.id)throw Error('A conta foi alterada.');if(error)throw Error(displayError(error));return data;}
-  window.MythicOnline={watchCustomMatch:async id=>{document.querySelector('[data-view="friends"]')?.click();$("#friends-spectator-panel").hidden=false;await watchFriendMatch(id);},refreshAdminAccess:loadAdminAccess,portalRequest,account:()=>session?.user||null,getWelcomeState:()=>welcomeRequest("get_welcome_state"),openStarterPack,completeWelcome:()=>welcomeRequest("complete_welcome"),refreshPresentation:()=>{emitConceptProfile();if(session){loadProfileAnalytics(session.user.id,"profile");loadCommunityHub().catch(()=>{});}},loadHonors:loadPlayerHonors,equipHonors:equipPlayerHonors,signOut:signOutAccount,saveDeckCounts,saveNamedDeck,saveBuilderDeck,deleteBuilderDeck,saveDeckPersonalization,createDirectInvite,resumeSavedQueue,repaintStore:renderStore,storeOwned:item=>ownedItems.has(item.item_id)||(item.kind==="card"&&Number(window.MythicCollectionCopies?.[item.card_id])>0),isConnected:()=>Boolean(session),showLogin,requireLogin,userId:()=>session?.user?.id||null,activeMatchId:()=>activeMatchId,openMatch:loadOnlineMatch,isAdmin:()=>adminAuthorized,openAdmin,submitAction,expireTurn,loadTieBreak,surrenderMatch,leaveMatch,startQueue,startDuoQueue,respondDuoInvite,cancelQueue,convergeLobby,leaveLobby,openQueueLobby,refreshLobby,lobbyFriends,loadLobbyFriends:async()=>{await loadFriends();await syncPresence();return lobbyFriends();},getLobbyState:()=>({party:lobbyParty,busy:lobbyBusy,userId:session?.user?.id||null}),getQueueState:()=>({...floatingQueueState}),rankProgress:()=>profile&&session?window.MythicRank.from(profile.rating_points):null,findFriendByCode,profileReady:()=>accountReady,pvpUnlocked:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),tutorialCompleted:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),isTutorialComplete:()=>Boolean(profile?.tutorial_completed),completeTutorial:async()=>{if(!session)return false;const {data,error}=await supabase.rpc("complete_tutorial_once");if(!error){await loadProfile();if(profile?.tutorial_completed||Number(profile?.xp||0)>=100){try{localStorage.setItem("mythic-clash-tutorial-complete","true");localStorage.setItem("mythic-clash-level","2");}catch{}return true;}notify("Tutorial registrado, mas o perfil ainda não recebeu o nível 2. Atualize a migração de progressão no Supabase.");return false;}notify("Não foi possível registrar o tutorial. Tente novamente após verificar a atualização do banco.");return false;},recordGuardianMatch:async(matchId,outcome,playerPoints,opponentPoints)=>{if(!session)return;const {error}=await supabase.rpc("record_guardian_match",{p_match_id:matchId,p_outcome:outcome,p_player_points:playerPoints,p_opponent_points:opponentPoints});if(error)notify(displayError(error));else{await loadProfile();}},refreshProfile:loadProfile};
+  window.MythicOnline={watchCustomMatch:async id=>{document.querySelector('[data-view="friends"]')?.click();$("#friends-spectator-panel").hidden=false;await watchFriendMatch(id);},refreshAdminAccess:loadAdminAccess,portalRequest,account:()=>session?.user||null,getWelcomeState:()=>welcomeRequest("get_welcome_state"),openStarterPack,completeWelcome:()=>welcomeRequest("complete_welcome"),refreshPresentation:()=>{emitConceptProfile();if(session){loadProfileAnalytics(session.user.id,"profile");loadCommunityHub().catch(()=>{});}},loadHonors:loadPlayerHonors,equipHonors:equipPlayerHonors,signOut:signOutAccount,saveDeckCounts,saveNamedDeck,saveBuilderDeck,deleteBuilderDeck,saveDeckPersonalization,createDirectInvite,resumeSavedQueue,repaintStore:renderStore,storeOwned:item=>ownedItems.has(item.item_id)||(item.kind==="card"&&Number(window.MythicCollectionCopies?.[item.card_id])>0),isConnected:()=>Boolean(session),showLogin,requireLogin,userId:()=>session?.user?.id||null,activeMatchId:()=>activeMatchId,openMatch:loadOnlineMatch,isAdmin:()=>adminAuthorized,openAdmin,submitAction,expireTurn,loadTieBreak,surrenderMatch,matchIsActive,leaveMatch,startQueue,startDuoQueue,respondDuoInvite,cancelQueue,convergeLobby,leaveLobby,openQueueLobby,refreshLobby,lobbyFriends,loadLobbyFriends:async()=>{await loadFriends();await syncPresence();return lobbyFriends();},getLobbyState:()=>({party:lobbyParty,busy:lobbyBusy,userId:session?.user?.id||null}),getQueueState:()=>({...floatingQueueState}),rankProgress:()=>profile&&session?window.MythicRank.from(profile.rating_points):null,findFriendByCode,profileReady:()=>accountReady,pvpUnlocked:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),tutorialCompleted:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),isTutorialComplete:()=>Boolean(profile?.tutorial_completed),completeTutorial:async()=>{if(!session)return false;const {data,error}=await supabase.rpc("complete_tutorial_once");if(!error){await loadProfile();if(profile?.tutorial_completed||Number(profile?.xp||0)>=100){try{localStorage.setItem("mythic-clash-tutorial-complete","true");localStorage.setItem("mythic-clash-level","2");}catch{}return true;}notify("Tutorial registrado, mas o perfil ainda não recebeu o nível 2. Atualize a migração de progressão no Supabase.");return false;}notify("Não foi possível registrar o tutorial. Tente novamente após verificar a atualização do banco.");return false;},recordGuardianMatch:async(matchId,outcome,playerPoints,opponentPoints)=>{if(!session)return;const {error}=await supabase.rpc("record_guardian_match",{p_match_id:matchId,p_outcome:outcome,p_player_points:playerPoints,p_opponent_points:opponentPoints});if(error)notify(displayError(error));else{await loadProfile();}},refreshProfile:loadProfile};
   window.addEventListener("mythic-availability-updated",()=>{if(storeItems.length)renderStore();});
   window.MythicOnline.loadPublicNews=loadPublicAnnouncement;window.MythicOnline.avatarAsset=resolveAvatarAsset;window.MythicOnline.playerName=()=>profile?.nickname||profile?.display_name||"Você";window.MythicOnline.playerIcon=()=>profile?.equipped_avatar||"default";window.MythicOnline.playerRating=()=>profile?.rating_points||1000;
 })();

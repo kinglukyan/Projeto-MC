@@ -6,7 +6,7 @@ declare uid uuid:=auth.uid();g public.game_matches;rid uuid;
 begin
  perform public._security_rpc_gate('resume_my_game',30);
  select * into g from public.game_matches m where uid in(m.player_one,m.player_two,m.player_three,m.player_four)
- and (m.status='active' or (m.id=p_match_id and m.status in ('completed','abandoned')))
+ and m.status='active'
  order by (m.status='active') desc,(m.id=p_match_id) desc,m.created_at desc limit 1;
  if not found then return null;end if;
  select r.id into rid from public.sandbox_rooms r where r.match_id=g.id limit 1;

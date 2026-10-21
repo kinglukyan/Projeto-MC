@@ -11,7 +11,7 @@
  const button=(text,fn,cls='welcome-button')=>{const n=el('button',cls,text);n.type='button';n.addEventListener('click',fn);return n;};
  const picture=(src,alt='',cls='',full=false)=>{const n=el('img',cls);n.src=window.MythicSecurity.assetUrl(full?src:window.MythicEntryMedia?.byArt?.[src]||src);n.alt=alt;n.draggable=false;n.decoding=cls==='welcome-faction-emblem'?'sync':'async';return n;};
  const reduced=()=>matchMedia('(prefers-reduced-motion: reduce)').matches;
- let collectionRefresh=null;
+ let collectionRefresh=null,beginRequest=null;
  let root=null,stage=null,heading=null,subheading=null,actions=null,message=null,rail=null,user=null,receipt=null,chosen=null,phase='idle',generation=0,busy=false,animations=new Set(),previousFocus=null,inspector=null,packReady=Promise.resolve();
  const catalog=()=>window.MythicCardData?.()||window.MythicAbilitiesData?.cards||[];
  const current=token=>token===generation&&Boolean(user);
@@ -31,7 +31,7 @@
  function stopAnimations(){for(const a of animations)a.cancel();animations.clear();}
  function show(){ensure();if(!root.open){previousFocus=document.activeElement;root.showModal();document.body.classList.add('welcome-open');}}
  function close(){const wasOpen=Boolean(root?.open);stopAnimations();inspector?.close();if(root?.open)root.close();document.body.classList.remove('welcome-open');if(previousFocus?.isConnected)previousFocus.focus({preventScroll:true});if(wasOpen)window.dispatchEvent(new Event('mythic-welcome-closed'));}
- function reset(){collectionRefresh=null;generation++;user=null;receipt=null;chosen=null;phase='idle';busy=false;close();}
+ function reset(){collectionRefresh=null;beginRequest=null;generation++;user=null;receipt=null;chosen=null;phase='idle';busy=false;close();}
  function screen(name,title,copy,step){show();stopAnimations();phase=name;root.dataset.phase=name;heading.textContent=title;subheading.textContent=copy;stage.replaceChildren();actions.replaceChildren();message.textContent='';Array.from(rail.children).forEach((n,i)=>{n.classList.toggle('is-current',i===step);n.classList.toggle('is-done',i<step);if(i===step)n.setAttribute('aria-current','step');else n.removeAttribute('aria-current');});heading.focus({preventScroll:true});}
  function preload(src){return new Promise(resolve=>{const img=new Image();let done=false;const finish=()=>{if(done)return;done=true;clearTimeout(timer);resolve();};const timer=setTimeout(finish,8000);img.onload=finish;img.onerror=finish;img.src=src;if(img.complete)finish();});}
  function intro(){
@@ -50,7 +50,7 @@
  }
  async function claim(){
   if(busy||!chosen)return;const token=generation;busy=true;for(const b of actions.querySelectorAll('button'))b.disabled=true;for(const b of stage.querySelectorAll('button'))b.disabled=true;message.textContent='Preparando seu presente…';
-  try{const data=await window.MythicOnline.openStarterPack(chosen);if(!current(token))return;receipt=data;if(data.stage==='completed'){close();return;}if(data.stage!=='granted'||data.card_ids?.length!==14||data.icon_ids?.length!==2)throw Error('Seu pacote ainda não ficou pronto. Tente novamente.');
+  try{const data=await window.MythicOnline.openStarterPack(chosen);if(!current(token))return;receipt=data;if(data.stage==='completed'){phase='completed';close();window.dispatchEvent(new CustomEvent('mythic-welcome-ready',{detail:{userId:user.id,stage:'completed'}}));return;}if(data.stage!=='granted'||data.card_ids?.length!==14||data.icon_ids?.length!==2)throw Error('Seu pacote ainda não ficou pronto. Tente novamente.');
    collectionRefresh=window.MythicOnline.refreshProfile().then(()=>true,()=>false);if(!current(token))return;packScreen();
   }catch(error){if(current(token)){message.textContent=error.message||'Não foi possível preparar seu pacote. Tente novamente.';for(const b of actions.querySelectorAll('button'))b.disabled=false;for(const b of stage.querySelectorAll('button'))b.disabled=false;}}
   finally{if(current(token))busy=false;}
@@ -121,10 +121,24 @@
   try{await window.MythicOnline.completeWelcome();if(!collectionRefresh||!await collectionRefresh)await window.MythicOnline.refreshProfile();if(!current(token))return;phase='completed';close();window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'decks'}}));requestAnimationFrame(()=>window.MythicDeckBuilder?.open());}
   catch(error){if(current(token)){message.textContent=error.message||'Não foi possível abrir o construtor. Tente novamente.';actions.querySelector('button').disabled=false;}}finally{if(current(token))busy=false;}
  }
- async function begin(account){
-  if(!account?.id)return;if(user?.id===account.id)return;reset();user={id:account.id,name:account.user_metadata?.nickname||account.user_metadata?.display_name||''};const token=generation;screen('loading','Preparando sua entrada.','Consultando sua jornada…',0);
-  try{const data=await window.MythicOnline.getWelcomeState();if(!current(token))return;receipt=data;if(data.stage==='completed'){phase='completed';close();return;}if(data.stage==='granted'){chosen=data.mythology;packScreen();}else intro();}
-  catch(error){if(!current(token))return;screen('error','Sua jornada está quase pronta.','Não conseguimos carregar suas boas-vindas agora. Seu presente permanece protegido na conta.',0);message.textContent=error.message;actions.append(button('Tentar novamente',()=>{const retry={...account};user=null;begin(retry);}));}
+ function begin(account){
+  if(!account?.id)return Promise.resolve(null);
+  if(user?.id===account.id&&phase!=='error')return beginRequest||Promise.resolve(receipt);
+  reset();user={id:account.id,name:account.user_metadata?.nickname||account.user_metadata?.display_name||''};phase='checking';const token=generation;
+  beginRequest=(async()=>{
+   try{
+    const data=await window.MythicOnline.getWelcomeState();if(!current(token))return null;
+    if(!['welcome','granted','completed'].includes(data?.stage))throw Error('Não foi possível confirmar a etapa da sua conta.');
+    receipt=data;
+    if(data.stage==='completed'){phase='completed';close();}
+    else if(data.stage==='granted'){chosen=data.mythology;packScreen();}
+    else intro();
+    window.dispatchEvent(new CustomEvent('mythic-welcome-ready',{detail:{userId:user.id,stage:data.stage}}));return data;
+   }catch(error){
+    if(!current(token))return null;phase='error';close();
+    window.MythicPresentation?.notify?.('Não foi possível confirmar sua entrada. Clique em Jogar para tentar novamente.');return null;
+   }finally{if(current(token))beginRequest=null;}
+  })();return beginRequest;
  }
  window.addEventListener('resize',()=>{if(phase==='revealed')for(const [i,node] of Array.from(stage.querySelectorAll('.welcome-reward-card')).entries())setPosition(node,i);});
  window.addEventListener('mythic-account-signed-out',reset);

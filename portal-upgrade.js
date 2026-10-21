@@ -5,7 +5,7 @@
  const rpc=(name,args={})=>window.MythicOnline.portalRequest(name,args);
  const tell=text=>window.MythicPresentation?.notify(text);
  const cards=()=>window.MythicCardData?.()||[];
- let connected=Boolean(window.MythicOnline?.isConnected()),inGame=false,accessRun=0,accessTimer=null,adminRun=0,adminPage=0,usersResult=null,adminPending=false;
+ let connected=Boolean(window.MythicOnline?.isConnected()),inGame=false,entryRun=0,accessRun=0,accessTimer=null,adminRun=0,adminPage=0,usersResult=null,adminPending=false;
  const existingHome=$('#mythic-public-home'),home=existingHome||el('section','mythic-public-home');home.id='mythic-public-home';home.setAttribute('aria-label','Conheça Mythic Clash');
  if(!existingHome)home.innerHTML=`<header class="public-nav"><a class="public-brand" href="#inicio"><span>✦</span> MYTHIC CLASH</a><nav aria-label="Descubra o jogo"><a href="#public-universe">Universo</a><a href="#public-worlds">Mitologias</a><a href="#public-how">Como jogar</a></nav><div class="public-account-actions"></div></header>
  <main id="inicio"><section class="public-hero"><div class="public-hero-copy"><div class="hall-hero-logo"><img src="assets/sidebar-arcane/arcane-crest.svg" alt="" width="260" height="82"><span>MYTHIC CLASH</span><small>CARD GAME</small></div><h1>Mitologias se encontram.<br><em>Lendas entram em combate.</em></h1><p>Construa seu baralho, combine poderes de mundos diferentes e transforme cada escolha em uma nova estratégia.</p><div class="public-hero-actions"></div><div class="public-hero-facts"><span>14 cartas no primeiro pacote</span><span>2 ícones de presente</span><span>Jogue no navegador</span></div></div><div class="public-hero-cards" aria-label="Cartas de Mythic Clash"><img src="assets/portal/zeus.webp" alt="Zeus" decoding="async"><img src="assets/portal/poseidon.webp" alt="Poseidon" decoding="async"><img src="assets/portal/lukyan.webp" alt="Lukyan" decoding="async"></div></section>
@@ -27,9 +27,28 @@
   for(const selector of ['.public-account-actions','.public-hero-actions','.public-final-actions']){const node=$(selector);node.replaceChildren();if(connected)node.append(btn('JOGAR →',play,'button button-primary public-play'));else node.append(btn('Login',()=>auth()),btn('Criar conta',()=>auth('signup'),'button button-primary'));}
   home.hidden=inGame;document.body.classList.toggle('public-home-open',!inGame);
  }
- function showHome(){for(const id of ['#menu-music','#battle-music','#lore-theme-audio'])$(id)?.pause();inGame=false;gate.hidden=true;document.body.classList.remove('public-auth-open','duel-fullscreen');syncHome();window.scrollTo({top:0});}
- function enterGame(){if(!connected)return;const account=window.MythicOnline.account?.();if(account)window.MythicWelcome?.begin(account);inGame=true;gate.hidden=true;document.body.classList.remove('public-auth-open');syncHome();}
- async function play(){if(!connected){auth('signup');return;}if(!await checkAccess())return;enterGame();window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'arena'}}));const account=window.MythicOnline.account?.();if(account)window.MythicWelcome?.begin(account);}
+ function showHome(){entryRun++;window.MythicGame?.dismissFinishedMatch?.();for(const id of ['#menu-music','#battle-music','#lore-theme-audio'])$(id)?.pause();inGame=false;gate.hidden=true;document.body.classList.remove('public-auth-open','duel-fullscreen');syncHome();window.scrollTo({top:0});}
+ async function enterGame(){
+  if(!connected)return false;const intent=entryRun,account=window.MythicOnline.account?.();if(!account)return false;
+  const ready=await window.MythicWelcome.begin(account);if(!ready||intent!==entryRun||account.id!==window.MythicOnline.userId())return false;
+  inGame=true;gate.hidden=true;document.body.classList.remove('public-auth-open');syncHome();return true;
+ }
+ async function play(){
+  if(!connected){auth('signup');return;}
+  const intent=++entryRun,owner=window.MythicOnline.userId();
+  if(!await checkAccess()||intent!==entryRun||owner!==window.MythicOnline.userId())return;
+  window.MythicGame?.dismissFinishedMatch?.();let current=window.MythicGame?.current?.()||{};
+  if(current.matchId&&!current.finished){
+   try{
+    const active=current.campaign?await window.MythicGuardianCampaign.matchIsActive(current.matchId):await window.MythicOnline.matchIsActive(current.matchId);
+    if(intent!==entryRun||owner!==window.MythicOnline.userId())return;
+    if(!active)window.MythicGame?.discardInactiveMatch?.(current.matchId);
+   }catch(error){tell('Não foi possível consultar sua partida atual. Tente jogar novamente.');return;}
+  }
+  if(!await enterGame())return;current=window.MythicGame?.current?.()||{};
+  const view=!current.finished&&(current.matchId||current.local)?'duel':'arena';
+  window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view}}));
+ }
  async function checkAccess(){
   if(!window.MythicOnline?.isConnected())return false;const run=++accessRun;
   try{const data=await rpc('get_account_access');if(run!==accessRun)return false;if(data?.blocked){window.MythicWelcome?.reset();showHome();$('.public-access-message').textContent=data.message||'Esta conta está temporariamente suspensa.';await window.MythicOnline.signOut();return false;}return true;}
