@@ -106,8 +106,12 @@ end $$;
 
 create or replace function public._gc_finish(run public.guardian_campaign_runs) returns public.guardian_campaign_runs language plpgsql volatile set search_path='' as $$
 declare n jsonb:=public._gc_node(run.node_id);region text:=n->>'region';stage integer:=(n->>'stage')::integer;uid uuid:=run.player_id;
- old integer;total integer;milestone integer;first_clear boolean:=false;won boolean:=run.context#>>'{s,campaignWinner}'='player_one';xp_before integer;earned integer:=0;reward jsonb;
+ old integer;total integer;milestone integer;first_clear boolean:=false;won boolean:=run.context#>>'{s,campaignWinner}'='player_one';xp_before integer;earned integer:=0;coins integer:=0;reward jsonb;pay jsonb;inserted integer;
 begin
+ perform 1 from public.guardian_campaign_runs saved where saved.id=run.id for update;
+ if exists(select 1 from public.guardian_campaign_runs saved where saved.id=run.id and saved.status='completed') then
+  select saved.* into run from public.guardian_campaign_runs saved where saved.id=run.id;return run;
+ end if;
  if run.status='completed' or not coalesce((run.context#>>'{s,finished}')::boolean,false) then return run;end if;
  insert into public.guardian_campaign_progress(player_id,region_id) values(uid,region) on conflict do nothing;
  select cleared into old from public.guardian_campaign_progress where player_id=uid and region_id=region for update;
@@ -121,16 +125,19 @@ begin
   end if;
   if region='greece' and stage=1 then
    select xp into xp_before from public.profiles where id=uid and not coalesce(tutorial_completed,false) for update;
-   if found then earned:=greatest(0,100-coalesce(xp_before,0));update public.profiles set tutorial_completed=true,xp=greatest(coalesce(xp,0),100) where id=uid;end if;
+   if found then update public.profiles set tutorial_completed=true where id=uid;end if;
   end if;
  end if;
+ pay:=public._match_reward('guardian',case when won then 'victory' else 'defeat' end);earned:=(pay->>'xp')::integer;coins:=(pay->>'coins')::integer;
  run.status:='completed';run.finished_at:=clock_timestamp();
- run.context:=jsonb_set(run.context,'{s,campaignResult}',jsonb_build_object('firstClear',first_clear,'reward',reward,'xp',earned));
+ run.context:=jsonb_set(run.context,'{s,campaignResult}',jsonb_build_object('firstClear',first_clear,'reward',reward,'xp',earned,'coins',coins));
  update public.guardian_campaign_runs set status=run.status,finished_at=run.finished_at,context=run.context where id=run.id;
  insert into public.guardian_match_claims(match_id,player_id) values(run.id,uid) on conflict do nothing;
  insert into public.match_history(match_id,guardian_match_id,player_id,opponent_name,mode,outcome,player_points,opponent_points,xp_earned,coins_earned)
- values(null,run.id,uid,n->>'name','guardian',case when won then 'victory' else 'defeat' end,coalesce((run.context#>>'{s,roundWins,player_one}')::integer,0),coalesce((run.context#>>'{s,roundWins,player_two}')::integer,0),earned,0)
+ values(null,run.id,uid,n->>'name','guardian',case when won then 'victory' else 'defeat' end,coalesce((run.context#>>'{s,roundWins,player_one}')::integer,0),coalesce((run.context#>>'{s,roundWins,player_two}')::integer,0),earned,coins)
  on conflict do nothing;
+ get diagnostics inserted=row_count;
+ if inserted=1 then update public.profiles set xp=xp+earned,mythic_coins=mythic_coins+coins where id=uid;end if;
  return run;
 end $$;
 
@@ -138,7 +145,7 @@ create or replace function public._gc_snapshot(run public.guardian_campaign_runs
 declare s jsonb:=run.context->'s';r jsonb:=run.context->'r';uid text:=run.player_id::text;n jsonb:=public._gc_node(run.node_id);one jsonb;two jsonb;winner text;
 begin
  one:=(s->'player_one')||(r->uid);two:=(s->'player_two')||(r->'guardian-bot');s:=jsonb_set(jsonb_set(s,'{player_one}',one),'{player_two}',two);
- s:=s-'campaignDecks'-'campaignStats'-'campaignActor'-'campaignPhase'-'campaignPlayer';
+ s:=s-'campaignRegion'-'campaignStage'-'campaignDecks'-'campaignStats'-'campaignActor'-'campaignPhase'-'campaignPlayer';
  s:=public._audit_public_state(s,'player_one',run.player_id);
  s:=s||jsonb_build_object('guardianCampaign',jsonb_build_object('runId',run.id,'nodeId',run.node_id,'region',n->>'region','stage',n->'stage','version',run.version,'opponent',n->>'opponent','result',run.context#>'{s,campaignResult}'));
  winner:=case when run.status='completed' then case when run.context#>>'{s,campaignWinner}'='player_one' then uid else 'guardian-bot' end end;

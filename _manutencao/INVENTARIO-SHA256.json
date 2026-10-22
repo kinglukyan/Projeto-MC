@@ -135,29 +135,33 @@
     "bytes": 18088,
     "sha256": "8c2cd0df193dfe8f92115b2e78c4ddc2cf33e8bd405e17edd93511217a3069d3"
   },
+  "_manutencao/guardian-campaign/ATUALIZACAO-052.txt": {
+    "bytes": 394,
+    "sha256": "74ec111a61c0c5dea5634dc0131f7a29b0ca145176020ac92305d8e479c4c861"
+  },
   "_manutencao/guardian-campaign/catalogo-servidor.json": {
-    "bytes": 292246,
-    "sha256": "77f03eb3d1343b57d84301cc28fb5a0bf8623b6bb6c5972ed625b7bb7067ea80"
+    "bytes": 296598,
+    "sha256": "791018c28ff965f71f1b69443b24a2a8c388bc530f7e73d8b3f6d6e05eccbbda"
   },
   "_manutencao/guardian-campaign/compilar-campanha.py": {
     "bytes": 1427,
     "sha256": "8715d06aeeb4a14786c554f033922e7c919465e3a12f1d7834be30286d5c961e"
   },
   "_manutencao/guardian-campaign/guardian-campaign-api.sql": {
-    "bytes": 14294,
-    "sha256": "d32338214dcf371c927bd6291fcb6844e6eab0e9add8af03983ea05125ce772b"
+    "bytes": 14396,
+    "sha256": "56ddc72b1f4d2c855faab596ebcc8bf4d502777250f2a5d2f5c9342c13670bb1"
   },
   "_manutencao/guardian-campaign/guardian-campaign-engine.sql": {
-    "bytes": 12596,
-    "sha256": "af56441f489a1629b3588b0d0812f501363dbf8338f33730f1b9f200949ff2d7"
+    "bytes": 13233,
+    "sha256": "886a49690c33449a63f55d19607fb40d15741a6a456ff8f65d77448087e7a522"
   },
   "_manutencao/guardian-campaign/guardian-campaign-schema.sql": {
-    "bytes": 15981,
-    "sha256": "b558bd4667c065a4015f593915d31b96a210082e2289e43b9e82d10a6eefcbe3"
+    "bytes": 16505,
+    "sha256": "5c730dee6350cefeada3f53280eef84f8d1c100c6299cea28634b3e17f28bfa1"
   },
   "_manutencao/guardian-campaign/preparar-campanha.py": {
-    "bytes": 11380,
-    "sha256": "83b55af70174e8177ae628288161458f50a11370fc5f2ecf5ce4130827f58a7c"
+    "bytes": 11754,
+    "sha256": "43d8f712fce3119285566f995bc057ed1c53774c0e60b6e3dd755cf667b0af7c"
   },
   "_manutencao/interface-fontes.json": {
     "bytes": 1043,
@@ -760,8 +764,8 @@
     "sha256": "31411f1174384aa92e61852a44cd0da2a4c19be537e5a6e20dc79b005a1e1177"
   },
   "_manutencao/runtime-fontes.json": {
-    "bytes": 1170,
-    "sha256": "0edb3c7fc7db9251d13d1350197965e1e225f8cfa0ece5b82dd1d53a70b9d963"
+    "bytes": 1260,
+    "sha256": "ac5c3982cb5937563356c6308679f516d1d77332cc584e462152578689e71463"
   },
   "_manutencao/seguranca/escopo.json": {
     "bytes": 615,
@@ -832,8 +836,8 @@
     "sha256": "4ac19c29405481b9da492304052472cdf8bb699e2e7218a9dad6d2384e4af25a"
   },
   "app.js": {
-    "bytes": 131739,
-    "sha256": "04ff2bd6902d81b654b2324c5d3ca5cd6882d312d351374b8e531720f8665a34"
+    "bytes": 132077,
+    "sha256": "9e0d96752712a5c5dec3e8fb1cfbb7183b394c17620dadc3fde619f48822c425"
   },
   "arcane-palette.css": {
     "bytes": 37675,
@@ -848,8 +852,8 @@
     "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
   },
   "asset-manifest.json": {
-    "bytes": 71409,
-    "sha256": "c764d660b41b94077b40122ab99306d51a541a9f32d57a0e3c2b08c1137eb5f3"
+    "bytes": 71463,
+    "sha256": "c957ae0e8f25c75e6c65e7cf4f5c85aea9c953ae8839d3d8fcb557edbe58c51c"
   },
   "assets/app-icon.svg": {
     "bytes": 531,
@@ -3467,6 +3471,10 @@
     "bytes": 684326,
     "sha256": "a44b716fe8fcfbea5bbe8d91c0db1f1a64ee409c27c386de466cd7f9470346bd"
   },
+  "assets/identity-v2/trixx.svg": {
+    "bytes": 967,
+    "sha256": "d865b4cc4b952bc0572bad481070e87e1c31407ff71df303b7098b3e5b560f97"
+  },
   "assets/locations/asgard.png": {
     "bytes": 4307873,
     "sha256": "78ddfcf41fac241b5e839b944ea863925ee86603957fd3f9339d769d93702d40"
@@ -4427,6 +4435,10 @@
     "bytes": 1846044,
     "sha256": "763e2eb7a200170b1dd811406f36612f43e651f8dc2cffd2e5b3e7242b5e493c"
   },
+  "atlas-lessons.js": {
+    "bytes": 1694,
+    "sha256": "f676df70eb7d26491c240e50bfa73df8fc28f466af806f4724c16e248645ea2f"
+  },
   "ATUALIZACAO-ANIMACOES-COMBATE.md": {
     "bytes": 1989,
     "sha256": "a64a948971f13c7301ddc2006038d55c98c168de485c8d1730629ee7096fd8e6"
@@ -4564,8 +4576,8 @@
     "sha256": "0586bc538dd79bc95029cb1fea5e5474752b2ab9375f616ac02adf15776afdf6"
   },
   "COMECE-AQUI.txt": {
-    "bytes": 5428,
-    "sha256": "2f856a51f3daea2770f5d670847aab885b998a1eaf3557acc0fa1d784cb9a56e"
+    "bytes": 5578,
+    "sha256": "0176cb6ce2b74ad0093c63767b89bc441c4a7beb26dad00ad8e24ac06740dedf"
   },
   "CONCEPT-ART-ASSETS.json": {
     "bytes": 5044,
@@ -4580,8 +4592,8 @@
     "sha256": "cfc0013b47aa70721b269587924560c3927df2c300b63d81169beea4684d1e75"
   },
   "concept-theme.js": {
-    "bytes": 42362,
-    "sha256": "643a079e6716a7b96f1b9ba02ccab80a7cd778842ba0a6314cd66bcd60bb2267"
+    "bytes": 42529,
+    "sha256": "c60657b76482f10dfbbbae1fd7a2e7275f5681c069e145bab8f22dcce72d7c8f"
   },
   "CONSTRUTOR-DE-DECKS.md": {
     "bytes": 4200,
@@ -4663,6 +4675,10 @@
     "bytes": 7322,
     "sha256": "b2580e577c775d4fc8dd6a518a2ee1473573b7a9df86ce477d9c2896f3577641"
   },
+  "deck-picker.js": {
+    "bytes": 3322,
+    "sha256": "39d187153f49197012ea62d44203e491759ac2dc2709c578ea75d52d42354dd8"
+  },
   "deck-tools.css": {
     "bytes": 10130,
     "sha256": "2c04148793de35c70226faf2ac61a8f1d31a279a39020da188068411e074e8b9"
@@ -4697,7 +4713,7 @@
   },
   "entry-bootstrap.js": {
     "bytes": 10873,
-    "sha256": "971bbf94a84b882e0590c07775ac75b5409b3ddd9494c83a61b9bb896fcc950f"
+    "sha256": "9d6983f12a9215b03fb1d1c3b5d5d6f1303896e65034736fb87701825a7712f6"
   },
   "entry-critical.css": {
     "bytes": 9109,
@@ -4740,24 +4756,24 @@
     "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
   },
   "game-interface.css": {
-    "bytes": 637599,
-    "sha256": "741a21782ce3a7da7caf62c0a823c217ea87e20e74b9d2d92d72766ed89eb088"
+    "bytes": 640586,
+    "sha256": "47696c7946dd51d0c19a79e85c04fd6c866f50e5e3ea5fe7c67045bfc9011a14"
   },
   "game-runtime.js": {
-    "bytes": 1333277,
-    "sha256": "3150aa8fef08aa76be57a8625c32237d3143a6d32f1ce0cc8c140d884f2d23cd"
+    "bytes": 1351379,
+    "sha256": "6d3d60bc97cab9284ec2584ab4e0a10ac067d95bfaca54dd1fa4a23d69177e28"
   },
   "guardian-campaign-data.js": {
-    "bytes": 59773,
-    "sha256": "0b556aa06914add1f88139fa820487923a13f873b2b2073decccd654d2c5f0a5"
+    "bytes": 61909,
+    "sha256": "587b533135b520a2638a279dbcd40ee99f7f561af64a1645e0a5d1664619c4d5"
   },
   "guardian-campaign.css": {
     "bytes": 22023,
     "sha256": "1885e8d5b70ad5751a64e333bf6323528d58a9d704b6b37552c8cad9b3045f4e"
   },
   "guardian-campaign.js": {
-    "bytes": 28904,
-    "sha256": "3be2b3e075c17edc9540a59533b2fd69afcc1e764d848399e9ff67b0192f1b1c"
+    "bytes": 29220,
+    "sha256": "b3ee507851ac3925abf6bef9ef1202aa6f4d98e3f9ab6be122e50bc7f1114ff3"
   },
   "GUARDIAO-CAMPANHA.md": {
     "bytes": 5627,
@@ -4812,8 +4828,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 77718,
-    "sha256": "c5ddbe811c70e780f8c59c578b8d41484e15451f753864bea76a628c11d08a96"
+    "bytes": 77506,
+    "sha256": "8979936dfb616fcb149c0e6858b33e1170166ebd884965c165d4a517b61a87a6"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -4912,12 +4928,16 @@
     "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
   },
   "online.js": {
-    "bytes": 148778,
-    "sha256": "c2520a9f96e7e5c3de7ead7b06a1d451ec58ef0a8a3dac2b338b2f409da18e57"
+    "bytes": 147486,
+    "sha256": "0be36c87ad120eaedd6e521e00907d3c37dd5e2f2e62d508002396ca4d24d584"
   },
   "PELOTOES-DE-COMPANHEIROS.md": {
     "bytes": 884,
     "sha256": "9c30498429cee6e0de81602342fa8372d355d6957953430516fba5f0e995f9b9"
+  },
+  "player-progression.js": {
+    "bytes": 339,
+    "sha256": "fa5c7bd75afe99a8a2828fa2695f5cf53b0d5987acc80455070d556a51ff9f32"
   },
   "portal-upgrade.css": {
     "bytes": 19955,
@@ -4952,8 +4972,8 @@
     "sha256": "95262b15ee32ad83213907eb7c8fa516607dd3841caa050e01736094d00d2921"
   },
   "quality-updates.css": {
-    "bytes": 8982,
-    "sha256": "dc7b5ee2a96f65b1aec7ff195d1bd9f1c7af0017bdb7d99d510819aa6d0202ca"
+    "bytes": 11969,
+    "sha256": "93b515721cbd5c1c25875db48612b8b28799b90aba716ec99a26c4fa34d97922"
   },
   "quality-updates.js": {
     "bytes": 10638,
@@ -4985,11 +5005,11 @@
   },
   "release-stamp.js": {
     "bytes": 86,
-    "sha256": "bdf81e78445d823a978a15e57b95518fdec4283826904c210a7a5a2805e9d70a"
+    "sha256": "dd80631703c1b46f8079bbb8f54af98fd851f6e8989e5481fb83212685287089"
   },
   "release.json": {
     "bytes": 52,
-    "sha256": "4d248a6c6b44c3f9ced628b5d64c1d658dd23820d0758b72533765b02f61dfe2"
+    "sha256": "f4be2a6d12207490717b34de383a608ed94cb009f2c391855c64f9b2eadeee60"
   },
   "remake-gallery.css": {
     "bytes": 1513,
@@ -5016,8 +5036,8 @@
     "sha256": "fd235b8cc43b2936b2ee8949604c9d77870242efd732fb9946fc1e24cd1edea3"
   },
   "REVISAO-ATLAS-E-ARENA.md": {
-    "bytes": 8731,
-    "sha256": "f2c8a133ee84a089bfdaf6f28e7d55734a0625d75db688ce3abfc2a0eabc472d"
+    "bytes": 12020,
+    "sha256": "a94c3caa35019a7dad6baf872e7c6df1abea2e1c7873d64a231c971dad9dad34"
   },
   "REVISAO-HABILIDADES.md": {
     "bytes": 33129,
@@ -5359,6 +5379,10 @@
     "bytes": 8826,
     "sha256": "b105229f4409fa6541aea4e359b07a4ead91bbe8d61198eedf5d846d668bdc7c"
   },
+  "supabase/migrations/202610210052_progression_rewards_atlas.sql": {
+    "bytes": 237655,
+    "sha256": "eb18ae50767c4c091dbee7eac7ada6be6c3f528454ec93029041a1d40f907128"
+  },
   "supabase/README.md": {
     "bytes": 2053,
     "sha256": "317190d2e911059045588edd73f6f78cecbcbf1f4df1c13dfff9aa4f8594c24e"
@@ -5369,7 +5393,7 @@
   },
   "sw.js": {
     "bytes": 4187,
-    "sha256": "c4a08bd5264d784c1171c5b8d2c1f88b101d21258f71211d715afcabc958ffd7"
+    "sha256": "3a2eaab3721796bd6832f348a238f5da7fd1de70a2d8a5d74a1e3bbe6c791b7f"
   },
   "terrain-cards.js": {
     "bytes": 15141,
@@ -5430,6 +5454,10 @@
   "vfx-runtime.js": {
     "bytes": 2427,
     "sha256": "a657815d63805cf8abf77e5bbec0d11bb7c148e36b199d0eec3c67945f0e7ac9"
+  },
+  "video-replay.js": {
+    "bytes": 10976,
+    "sha256": "b4f69b178bf59fbdc26c247eb6642421b6981a17cce4b5d82192249bf29225fe"
   },
   "VISUAL-TELA-DE-ACESSO.md": {
     "bytes": 1394,

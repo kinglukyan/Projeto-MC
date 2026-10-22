@@ -1,6 +1,10 @@
 from pathlib import Path
 import json,math,collections,html
 here=Path(__file__).resolve();site=here.parents[2] if here.parent.name=='guardian-campaign' else here.parents[1]/'outputs/Mythic-Clash-Completo'
+if (site/'_manutencao/guardian-campaign/catalogo-servidor.json').exists():
+ current=json.loads((site/'_manutencao/guardian-campaign/catalogo-servidor.json').read_text(encoding='utf-8-sig'))
+ if current.get('version',1)>=2:raise SystemExit('Catálogo versão 2 preservado. Edite catalogo-servidor.json e use compilar-campanha.py; não regenere o balanceamento antigo.')
+
 data=json.loads((site/'abilities-data.json').read_text(encoding='utf-8'));C={c['id']:c for c in data['cards']};rules=data['remakeRules']
 avatars={a['characterId']:a for a in json.loads((site/'avatars-chibi.json').read_text(encoding='utf-8'))['avatars']}
 regions=[

@@ -1,5 +1,6 @@
-ATUALIZAÇÃO 2026.10.21 — ATLAS E REVISÃO DA ARENA
-Leia REVISAO-ATLAS-E-ARENA.md. Aplicar as migrações 050 e 051 após a 049 e publicar pelo GitHub/Vercel.
+ATUALIZAÇÃO 2026.10.21 — XP, RECOMPENSAS, VÍDEOS E ATLAS
+Leia REVISAO-ATLAS-E-ARENA.md. Aplicar as migrações 050, 051 e 052 em ordem após a 049 e publicar pelo GitHub/Vercel.
+Se 050 e 051 já foram aplicadas, aplique somente a nova 052. Vídeos são ativados em Configurações e ficam neste navegador.
 A pasta e o mesmo ZIP foram atualizados. Os testes de partidas reais serão feitos pelo proprietário.
 
 ATUALIZAÇÃO DE 21/10 — CARREGAMENTO E DESEMPENHO

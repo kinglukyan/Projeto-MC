@@ -6,6 +6,29 @@ Esta é a mesma pasta principal do jogo. O arquivo ao lado, **Mythic-Clash-Compl
 
 ## Publicação
 
+### Progressão, recompensas e vídeos — migração 052
+
+Depois das migrações anteriores, aplique **supabase/migrations/202610210052_progression_rewards_atlas.sql**. Ela atualiza as recompensas no servidor, incluindo duplas e desempates, e os decks do Atlas. Envie também os arquivos desta pasta ao GitHub conectado à Vercel. Esta entrega não foi publicada e o SQL não foi executado no banco online.
+
+| Modo | Vitória: moedas / XP | Derrota: moedas / XP |
+| --- | --- | --- |
+| Atlas | 50 / 20 | 25 / 10 |
+| Normal | 100 / 40 | 50 / 20 |
+| Ranqueada | 150 / 80 | 75 / 40 |
+| Personalizada | 50 / 20 | 25 / 10 |
+
+O mesmo valor vale por participante em 1×1 e 2×2. Empates provisórios recebem metade, e o desempate concede somente a diferença devida ao resultado final. Atualizar a página não concede novamente a recompensa. Não há alteração retroativa de saldo ou XP de partidas antigas. Tesouros por cinco desafios inéditos continuam separados das recompensas por partida.
+
+XP total: nível 1 de 0 a 99; nível 2 de 100 a 249; nível 3 de 250 a 399; nível 4 de 400 a 549, seguindo com 150 XP por nível. O XP acumulado é preservado, e o nível é recalculado pela nova faixa. O primeiro desafio da Grécia libera os modos pelo tutorial concluído; não concede mais XP extra para forçar o nível 2. O aviso de liberação desaparece a partir do nível 3.
+
+Grécia: decks de 14, 16, 18 e 20 cartas por área, dificuldades 1 e 2; decisões iniciais simplificadas e limite progressivo de jogadas do adversário antes de passar. Cada um dos vinte desafios apresenta um ensinamento antes da partida e uma dica recolhível durante o duelo. As outras mitologias aumentam gradualmente a dificuldade e o tamanho dos decks, até 35 cartas. Poderes impressos e habilidades das cartas foram mantidos.
+
+Replays: em **Configurações → Replays em vídeo**, ative e autorize a captura da aba antes de entrar na partida. A autorização mantém a captura pronta nesta sessão; a gravação começa na partida e termina ao seu encerramento. Se não houver uma captura autorizada, o duelo oferece “Autorizar gravação”. O navegador exige um clique e uma nova autorização após o encerramento da captura. A navegação para outras telas pausa a gravação. Não há captura de câmera ou microfone. O som da aba depende do suporte do navegador e da seleção feita na autorização.
+
+Vídeos ficam no armazenamento deste navegador, separados por conta, com reprodução, download e exclusão em **Perfil → Replays**. Fechar ou atualizar interrompe a captura; os trechos já armazenados podem aparecer como gravação interrompida. Limpar os dados do navegador apaga esses vídeos: baixe as cópias que quiser guardar. Navegadores sem captura de tela compatível mostram essa limitação. Não há envio automático dos vídeos ao servidor. Os registros antigos continuam no banco, mas a página passa a priorizar vídeos novos. A gravação para ao atingir 512 MB e preserva a parte salva.
+
+Outros ajustes: seletor de baralho do Atlas com ícone e cor de cada deck; remoção do Panorama da Arena; estrela da Convergência reutilizando o desenho central da logo. Compilação e sintaxe conferidas; partidas, captura, reprodução e migração ficam para validação manual.
+
 ### Ajustes visuais adicionais — 21/10
 
 - Baú alinhado com o texto e a trilha de recompensas; setas centralizadas com desenho vetorial.

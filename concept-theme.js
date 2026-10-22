@@ -15,7 +15,7 @@
 
  // Account header is separate from the preserved sidebar and battle.
  const account=make('div','concept-account-bar'),avatar=make('span','concept-account-avatar','MC'),identity=make('div','concept-account-name'),accountName=make('b','','Sua lenda'),accountLevel=make('small','','Entre na sua conta'),xp=make('progress'),balance=make('span','concept-account-coins');xp.max=100;xp.value=0;identity.append(accountName,accountLevel,xp);balance.append(make('span','concept-coin','MC'));const coins=make('b','','—');balance.append(coins);account.append(avatar,identity,balance);$('.main-content>.topbar').after(account);
- const syncAccount=()=>{const p=model.profile;accountName.textContent=p?.name||'Sua lenda';accountLevel.textContent=p?`Nível ${p.level} · ${p.rank}`:'Entre na sua conta';xp.value=Number(p?.xp||0)%100;coins.textContent=p?Number(p.coins||0).toLocaleString('pt-BR'):'—';avatar.replaceChildren();if(p?.avatar)avatar.append(picture(p.avatar));else avatar.textContent=(p?.name||'MC').slice(0,2).toUpperCase();$$('.concept-queue-avatar.self').forEach(n=>{n.replaceChildren();if(p?.avatar)n.append(picture(p.avatar));else n.textContent=(p?.name||'MC').slice(0,2).toUpperCase();});};
+ const syncAccount=()=>{const p=model.profile;accountName.textContent=p?.name||'Sua lenda';accountLevel.textContent=p?`Nível ${p.level} · ${p.rank}`:'Entre na sua conta';const progress=window.MythicXP.from(p?.xp);xp.max=progress.needed;xp.value=progress.within;xp.title=`${progress.xp} / ${progress.end} XP · faltam ${progress.remaining} XP para o nível ${progress.level+1}`;coins.textContent=p?Number(p.coins||0).toLocaleString('pt-BR'):'—';avatar.replaceChildren();if(p?.avatar)avatar.append(picture(p.avatar));else avatar.textContent=(p?.name||'MC').slice(0,2).toUpperCase();$$('.concept-queue-avatar.self').forEach(n=>{n.replaceChildren();if(p?.avatar)n.append(picture(p.avatar));else n.textContent=(p?.name||'MC').slice(0,2).toUpperCase();});};
  const syncAccountVisibility=()=>{account.hidden=document.body.classList.contains('duel-fullscreen');};new MutationObserver(syncAccountVisibility).observe(document.body,{attributes:true,attributeFilter:['class']});syncAccountVisibility();
 
  // Arena: keep the live mode buttons and their event handlers.
@@ -105,7 +105,7 @@
  const universeCharacter=card=>card?.kind==='unit'&&!card.specialOnly;
  const arenaRules=$('#view-lore .rules-overview');if(arenaRules)$('#view-settings').append(arenaRules);
  const lore=$('#view-lore'),loreList=lore.querySelector('.lore-stories'),loreLayout=make('div','concept-lore-layout'),reader=panel('','concept-lore-reader'),loreModal=$('#lore-detail-backdrop');loreList.before(loreLayout);loreLayout.append(loreList,reader);reader.append(loreModal);loreModal.querySelector('[role="dialog"]').removeAttribute('aria-modal');loreModal.querySelector('[role="dialog"]').setAttribute('role','region');
- const starAsset='assets/concept-ui/convergence-star.svg';
+ const starAsset='assets/identity-v2/trixx.svg';
  const convergence={id:'convergence',name:'A Convergência',faction:'O início de todas as lendas',abilityTitle:'Quando os mundos se encontram',story:[
   'Antes que os heróis dividissem a mesma arena, cada mundo guardava suas próprias lendas. Deuses reinavam sobre seus domínios, monstros habitavam as fronteiras do desconhecido e mortais construíam seus destinos sob o olhar das estrelas.',
   'Então, uma luz atravessou o firmamento. Fronteiras que pareciam eternas se abriram, aproximando terras, eras e mitologias. A esse encontro de mundos deu-se o nome de Convergência.',

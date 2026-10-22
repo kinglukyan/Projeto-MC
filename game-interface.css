@@ -3332,3 +3332,27 @@ body.concept-ui #view-lore .lore-story-copy{position:relative;z-index:1;backgrou
 body.concept-ui #view-lore .lore-story-copy button{pointer-events:auto}
 @media(max-width:760px){.gc-scene{height:clamp(330px,calc(var(--mythic-vh,1vh) * 52),440px);height:clamp(330px,52dvh,440px);min-height:330px}.gc-area-arrow svg{width:23px;height:23px}}
 @media(max-height:600px) and (min-width:761px){.gc-scene{height:clamp(330px,66vh,430px);min-height:330px}}
+
+/* Deck identities, progressive XP and opt-in video replays. */
+.visual-deck-picker{min-width:0;position:relative}
+.visual-deck-trigger{width:100%;min-height:42px;display:flex;align-items:center;gap:9px;text-align:left;padding:6px 12px;border:1px solid #ae94c5;border-radius:5px;background:#1b1427;color:#eee4cb;font:inherit}
+.visual-deck-trigger::after{content:'⌄';margin-left:auto;font-size:18px}
+.visual-deck-options{z-index:25000;background:#171021;border:1px solid #d4ac59;border-radius:8px;overflow:auto;padding:5px;box-shadow:0 12px 35px #000b}
+.visual-deck-options button{display:flex;align-items:center;gap:12px;text-align:left;width:100%;padding:9px;border:0;border-radius:5px;background:transparent;color:#f4e9d1;font:inherit}
+.visual-deck-options button:hover,.visual-deck-options button:focus-visible,.visual-deck-options button[aria-selected=true]{background:#4d3069;outline:1px solid #d7b66b}
+.visual-deck-trigger .deck-emblem,.visual-deck-options .deck-emblem{flex:0 0 34px;width:34px;height:34px;margin:0;padding:3px}
+.gc-deck .visual-deck-picker{grid-column:1;grid-row:2;min-width:0}
+.gc-deck{padding-left:0}.gc-deck::before{display:none}
+.gc-lesson,.gc-match-reward{padding:12px;border:1px solid #bd964a6b;border-radius:8px;background:#32203b;color:#f6e6b3}
+.gc-match-reward{font-size:13px}
+.video-replay-settings{margin-top:20px;padding:22px;display:grid;gap:14px}
+.video-replay-settings>small{color:#b9aac9}.video-replay-status{margin:0;color:#ead59d}
+.video-replay-library{display:grid;gap:16px}.video-replay-library video{width:100%;max-height:70vh;background:#000;border:1px solid #b49358;border-radius:8px}
+.video-replay-library .community-row{flex-wrap:wrap;gap:10px}.video-replay-library .community-row>span{flex:1 1 250px}
+.video-replay-bar{position:fixed;right:16px;bottom:12px;z-index:1800;display:flex;align-items:center;gap:10px;padding:7px 10px;border:1px solid #9974b0;border-radius:8px;background:#1a102bea;color:#ead9ef;font-size:12px}
+.video-replay-bar>span{color:#f1b1b1}.video-replay-bar button{min-height:32px;padding:6px 10px;font-size:12px}
+.atlas-lesson-panel{position:fixed;top:78px;left:50%;transform:translateX(-50%);width:min(440px,calc(100vw - 28px));z-index:1700;border:1px solid #c5a45a;border-radius:9px;background:#1b1429f5;box-shadow:0 8px 24px #0009;padding:12px 15px;color:#eee3cc}
+.atlas-lesson-panel strong{font-size:10px;letter-spacing:.12em;color:#e5c77d}.atlas-lesson-panel p{font-size:13px;line-height:1.5;margin:8px 0}.atlas-lesson-panel button{min-height:28px;padding:5px 12px;font-size:11px}
+.atlas-lesson-open{position:fixed;left:12px;top:78px;z-index:1700;min-height:30px;font-size:11px}
+.video-replay-bar[hidden],.atlas-lesson-panel[hidden],.atlas-lesson-open[hidden],.visual-deck-picker select[hidden]{display:none!important}
+@media(max-width:760px){.video-replay-bar{right:8px;bottom:8px;max-width:calc(100vw - 16px);flex-wrap:wrap}.atlas-lesson-panel{top:58px}.atlas-lesson-open{top:58px}}

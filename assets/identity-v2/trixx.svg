@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="106 17 48 48" fill="none"><defs>
+  <linearGradient id="silver" x1="15" y1="8" x2="237" y2="76" gradientUnits="userSpaceOnUse"><stop stop-color="#7c83a4" /><stop offset=".25" stop-color="#eee9ff" /><stop offset=".52" stop-color="#8585ad" /><stop offset=".75" stop-color="#e2d9fa" /><stop offset="1" stop-color="#646785" /></linearGradient>
+  <radialGradient id="aura"><stop stop-color="#bb8aff" stop-opacity=".55" /><stop offset="1" stop-color="#8961ff" stop-opacity="0" /></radialGradient>
+  <linearGradient id="crystal" x1="113" y1="20" x2="150" y2="64" gradientUnits="userSpaceOnUse"><stop stop-color="#ece7ff" /><stop offset=".5" stop-color="#c9a4ff" /><stop offset="1" stop-color="#8062e6" /></linearGradient>
+ </defs>
+ <path d="m130 19 5 17 17 5-17 5-5 17-5-17-17-5 17-5Z" fill="url(#crystal)" stroke="#e9deff" stroke-width=".7" />
+ <path d="M130 23v36m-18-18h36" stroke="#fff" stroke-width=".7" />
+ </svg>

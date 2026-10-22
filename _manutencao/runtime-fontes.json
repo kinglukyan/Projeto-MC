@@ -22,6 +22,7 @@
   "universe-banners.js",
   "tiebreak-cinematic.js",
   "rank-progression.js",
+  "player-progression.js",
   "app.js",
   "welcome.js",
   "online.js",
@@ -47,9 +48,12 @@
   "auto-deck.js",
   "unified-custom.js",
   "guardian-campaign-data.js",
+  "deck-picker.js",
   "guardian-campaign.js",
   "rewards-tournaments.js",
   "session-resume.js",
   "site-updates.js",
-  "quality-updates.js"
+  "quality-updates.js",
+  "video-replay.js",
+  "atlas-lessons.js"
 ]

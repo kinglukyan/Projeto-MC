@@ -81,6 +81,7 @@ begin
  select count(*)::integer,coalesce(sum(public._r_power(x->'s',t,value)),0) into n,own from jsonb_array_elements(x#>array['s',t,'field']) where (value->>'lane')::integer=l;
  select count(*)::integer into same from jsonb_array_elements(x#>array['s',t,'field']) where (value->>'lane')::integer=l and public._r_identity(value)=cid;
  select coalesce(sum(public._r_power(x->'s',enemy,value)),0) into opp from jsonb_array_elements(x#>array['s',enemy,'field']) where (value->>'lane')::integer=l;
+ if level=1 then return case when c->>'kind'='unit' then coalesce((c->>'power')::numeric,0)-n*.8 else 1 end;end if;
  if c->>'kind'='unit' then
   score:=score+level*.15*coalesce((public._gc_data()#>>array['impact',cid])::numeric,1);
   if cid in('soldado-esparta','guardiao-nordico','homem') then score:=score*power(2::numeric,same)+own*least(.75,same*.2);end if;
@@ -116,6 +117,7 @@ end $$;
 create or replace function public._gc_pick_play(x jsonb,actor text,level integer) returns jsonb language plpgsql stable set search_path='' as $$
 declare t text:=x#>>array['r',actor,'team'];enemy text:=public._r_other(t);cid text;c jsonb;l integer;score numeric;best numeric:=-1e30;result jsonb;zone text;own numeric;opp numeric;
 begin
+ if (x#>>'{s,guardianCampaign,region}'='greece' or x#>>'{s,campaignRegion}'='greece') and actor='guardian-bot' and coalesce((x#>>array['r',actor,'turnsTaken'])::integer,0)>case when coalesce((x#>>'{s,campaignStage}')::integer,1)<=5 then 3 when (x#>>'{s,campaignStage}')::integer<=10 then 4 when (x#>>'{s,campaignStage}')::integer<=15 then 5 else 6 end then return jsonb_build_object('type','pass');end if;
  own:=public._r_score(x->'s',t);opp:=public._r_score(x->'s',enemy);
  if (x#>>array['r',case when actor='guardian-bot' then x#>>'{s,campaignPlayer}' else 'guardian-bot' end,'passed'])::boolean and own>opp then return jsonb_build_object('type','pass');end if;
  if level>=3 and coalesce((x#>>'{s,round}')::integer,1)<3 and own>opp+12 and jsonb_array_length(x#>array['r',actor,'hand'])<=3 then return jsonb_build_object('type','pass');end if;

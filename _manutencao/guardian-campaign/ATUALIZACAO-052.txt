@@ -1,0 +1,4 @@
+O catálogo servidor versão 2 contém o balanceamento e as lições da Grécia.
+A migração 052 é a atualização para bancos já existentes; mantenha a ordem 045 a 052.
+Editar o catálogo exige sincronizar guardian-campaign-data.js, sem os decks privados, e a função _gc_data da migração mais recente.
+Não execute novamente a preparação antiga: ela usa o balanceamento anterior.
