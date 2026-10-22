@@ -49,6 +49,8 @@
   "unified-custom.js",
   "guardian-campaign-data.js",
   "deck-picker.js",
+  "atlas-dialogue-data.js",
+  "atlas-dialogue.js",
   "guardian-campaign.js",
   "rewards-tournaments.js",
   "session-resume.js",

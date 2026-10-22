@@ -7467,6 +7467,116 @@ window.MythicGuardianCampaignData={"regions":[{"id":"greece","name":"Grécia","f
 })();
 
 ;
+/* atlas-dialogue-data.js */
+/* Atlas stories are local presentation data. A duel starts only after the last choice. */
+window.MythicAtlasDialogueData={
+ fps:30,
+ frameHold:7,
+ textCharacterMs:28,
+ reactionHoldMs:1800,
+ characters:{
+  aquiles:{
+   name:'Aquiles',
+   location:'Grécia · Santuário dos Heróis',
+   images:{
+    normal:'assets/atlas-dialogue/aquiles-normal.png',
+    speaking:'assets/atlas-dialogue/aquiles-falando.png',
+    angry:'assets/atlas-dialogue/aquiles-bravo.png',
+    laughing:'assets/atlas-dialogue/aquiles-rindo.png'
+   },
+   opening:{
+    text:'Olá, soldado, você também viu aquela explosão gigantesca no céu?',
+    choices:[
+     {id:'saw',text:'Sim, eu vi, você sabe o que é?'},
+     {id:'lost',text:'Não vi não, mas onde estamos?'}
+    ]
+   },
+   question:{
+    text:'Como assim, onde estamos? Peraí, você é um soldado meu ou...?',
+    choices:[
+     {id:'soldier',text:'Sou um soldado seu sim',expression:'angry',reaction:'Aquiles faz uma cara de bravo.'},
+     {id:'traveler',text:'Sou um viajante de passagem, buscando conhecimento',expression:'laughing',reaction:'Aquiles solta uma risada.'}
+    ]
+   }
+  }
+ }
+};
+
+;
+/* atlas-dialogue.js */
+(() => {
+ 'use strict';
+ const data=window.MythicAtlasDialogueData;if(!data)return;
+ const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
+ const reduced=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+ let active=null;
+ function clearTimers(scene){clearTimeout(scene.textTimer);clearTimeout(scene.reactionTimer);scene.textTimer=scene.reactionTimer=null;}
+ function finish(){
+  const scene=active;if(!scene)return;active=null;clearTimers(scene);scene.resolve?.(false);scene.resolve=null;
+  scene.dialog.close();scene.dialog.remove();
+  if(scene.previous?.isConnected&&!scene.previous.disabled&&scene.previous.getClientRects().length)scene.previous.focus({preventScroll:true});
+ }
+ function play(node,options={}){
+  const character=data.characters[node?.opponent];if(!character)return Promise.resolve(true);
+  if(active?.loading)return Promise.resolve(false);finish();
+  return new Promise(resolve=>{
+   const dialog=el('dialog','atlas-conversation');dialog.setAttribute('aria-labelledby','atlas-conversation-name');dialog.setAttribute('aria-describedby','atlas-conversation-summary');
+   const scene={dialog,resolve,previous:document.activeElement,character,options,node,loading:false,writing:false,stage:'opening',textTimer:null,reactionTimer:null,ready:false};active=scene;
+   const safe=path=>window.MythicSecurity?.assetUrl?.(path)||path;
+   dialog.style.setProperty('--atlas-talk-frame',`${1000*data.frameHold/data.fps}ms`);
+   if(options.background)dialog.style.setProperty('--atlas-conversation-scene',`url("${safe(options.background)}")`);
+   dialog.dataset.expression='normal';dialog.dataset.speaking='false';
+   const header=el('header','atlas-conversation-header'),place=el('span','',character.location),exit=el('button','atlas-conversation-exit','×');exit.type='button';exit.setAttribute('aria-label','Voltar sem iniciar a partida');header.append(place,exit);
+   const summary=el('p','atlas-conversation-sr','Converse com Aquiles e escolha suas respostas. A partida começa após a última resposta.');summary.id='atlas-conversation-summary';
+   const figure=el('figure','atlas-conversation-portrait');figure.setAttribute('role','img');figure.setAttribute('aria-label','Aquiles, de armadura dourada, elmo de crista vermelha e cabelos loiros.');
+   const images=[];for(const [expression,path] of Object.entries(character.images)){const img=el('img','atlas-conversation-frame is-'+expression);img.src=safe(path);img.alt='';img.decoding='async';img.loading='eager';img.draggable=false;figure.append(img);images.push(img);}
+   const bubble=el('section','atlas-conversation-bubble'),eyebrow=el('small','atlas-conversation-kicker','ENCONTRO NO ATLAS'),name=el('h2','',character.name);name.id='atlas-conversation-name';
+   const reply=el('p','atlas-conversation-reply');reply.hidden=true;
+   const line=el('p','atlas-conversation-line');line.setAttribute('aria-hidden','true');
+   const accessible=el('p','atlas-conversation-sr');accessible.setAttribute('role','status');accessible.setAttribute('aria-live','polite');accessible.setAttribute('aria-atomic','true');
+   const complete=el('button','atlas-conversation-complete','Mostrar fala completa');complete.type='button';complete.hidden=true;
+   const choices=el('div','atlas-conversation-choices');choices.setAttribute('role','group');choices.setAttribute('aria-label','Escolha sua resposta');
+   const caption=el('p','atlas-conversation-caption','Sua resposta conduz este encontro.');bubble.append(eyebrow,name,reply,line,accessible,complete,choices,caption);dialog.append(header,summary,figure,bubble);document.body.append(dialog);
+   const valid=()=>active===scene&&(options.isValid?.()??true);
+   function showChoices(){
+    if(!valid()){if(active===scene)finish();return;}scene.writing=false;dialog.dataset.speaking='false';complete.hidden=true;line.textContent=scene.utterance.text;choices.replaceChildren();
+    scene.utterance.choices.forEach((choice,index)=>{const button=el('button','atlas-conversation-choice'),number=el('span','',String(index+1)),text=el('span','',choice.text);number.setAttribute('aria-hidden','true');button.type='button';button.append(number,text);button.onclick=()=>answer(choice);choices.append(button);});
+    caption.textContent='Escolha uma resposta para continuar.';
+   }
+   function speak(utterance){
+    clearTimers(scene);scene.utterance=utterance;scene.writing=true;scene.characters=Array.from(utterance.text);scene.position=0;choices.replaceChildren();complete.hidden=false;line.textContent='';accessible.textContent=utterance.text;dialog.dataset.expression='normal';dialog.dataset.speaking='true';caption.textContent='Aquiles está falando…';
+    if(reduced()){showChoices();return;}
+    function tick(){if(!valid()){if(active===scene)finish();return;}if(document.hidden){scene.textTimer=setTimeout(tick,150);return;}scene.position++;line.textContent=scene.characters.slice(0,scene.position).join('');if(scene.position>=scene.characters.length)showChoices();else scene.textTimer=setTimeout(tick,data.textCharacterMs);}
+    tick();
+   }
+   function beginDuel(){
+    if(!valid()){if(active===scene)finish();return;}if(document.hidden){scene.ready=true;return;}scene.ready=false;scene.loading=true;clearTimers(scene);exit.disabled=true;choices.replaceChildren();complete.hidden=true;dialog.dataset.speaking='false';caption.textContent='Preparando o duelo…';caption.setAttribute('role','status');dialog.setAttribute('aria-busy','true');scene.resolve?.(true);scene.resolve=null;
+   }
+   function answer(choice){
+    if(!valid()||scene.writing||scene.loading||scene.stage==='reaction')return;
+    reply.hidden=false;reply.textContent='Você: '+choice.text;
+    if(scene.stage==='opening'){scene.stage='question';speak(character.question);return;}
+    scene.stage='reaction';clearTimers(scene);choices.replaceChildren();dialog.dataset.speaking='false';dialog.dataset.expression=choice.expression;figure.setAttribute('aria-label',choice.reaction);line.textContent=choice.reaction;accessible.textContent=choice.reaction;caption.textContent='O duelo vai começar.';scene.reactionTimer=setTimeout(beginDuel,data.reactionHoldMs);
+   }
+   complete.onclick=()=>{if(scene.writing){clearTimeout(scene.textTimer);showChoices();choices.querySelector('button')?.focus();}};
+   exit.onclick=()=>{if(!scene.loading)finish();};dialog.addEventListener('cancel',e=>{e.preventDefault();if(!scene.loading)finish();});dialog.addEventListener('close',()=>{if(active===scene)finish();});
+   dialog.showModal();exit.focus({preventScroll:true});line.textContent='Aquiles se aproxima…';caption.textContent='Carregando o encontro…';dialog.setAttribute('aria-busy','true');
+   const load=img=>img.decode?img.decode():new Promise((done,fail)=>{if(img.complete)return img.naturalWidth?done():fail();img.onload=done;img.onerror=fail;});
+   async function prepare(){
+    dialog.setAttribute('aria-busy','true');choices.replaceChildren();line.textContent='Aquiles se aproxima…';caption.textContent='Carregando o encontro…';
+    try{await Promise.all(images.map(load));if(!valid()){if(active===scene)finish();return;}dialog.removeAttribute('aria-busy');speak(character.opening);}
+    catch{if(!valid())return;dialog.removeAttribute('aria-busy');line.textContent='Não foi possível carregar as imagens de Aquiles.';accessible.textContent=line.textContent;caption.textContent='Sua partida ainda não foi iniciada.';const retry=el('button','atlas-conversation-choice','Tentar novamente');retry.type='button';retry.onclick=()=>{for(const img of images){const src=img.src;img.removeAttribute('src');img.src=src;}prepare();};choices.append(retry);}
+   }
+   prepare();
+  });
+ }
+ document.addEventListener('visibilitychange',()=>{if(active?.ready&&!document.hidden){const scene=active;scene.reactionTimer=setTimeout(()=>{if(active===scene&&scene.options.isValid?.()!==false){scene.loading=true;scene.dialog.dataset.speaking='false';scene.dialog.setAttribute('aria-busy','true');scene.dialog.querySelector('.atlas-conversation-exit').disabled=true;scene.dialog.querySelector('.atlas-conversation-caption').textContent='Preparando o duelo…';scene.resolve?.(true);scene.resolve=null;scene.ready=false;}else if(active===scene)finish();},0);}});
+ window.addEventListener('mythic-account-signed-out',finish);
+ window.addEventListener('mythic-view-changed',e=>{if(e.detail?.view!=='guardian')finish();});
+ window.MythicAtlasDialogue={play,finish,has:node=>!!data.characters[node?.opponent]};
+})();
+
+;
 /* guardian-campaign.js */
 (() => {
  'use strict';
@@ -7548,7 +7658,7 @@ window.MythicGuardianCampaignData={"regions":[{"id":"greece","name":"Grécia","f
 
  function openNode(n){const d=dialog(`Desafio ${n.stage} · ${n.name}`),r=data.regions.find(r=>r.id===n.region);d.append(portrait(n.icon),el('p','eyebrow',r.chapters[n.chapter].name),el('p','',`${n.style} · dificuldade ${n.difficulty}/5 · ${n.deckSize} cartas`),el('p','',`O adversário usa cartas de ${r.faction}, com as habilidades e o poder originais. Conquiste dois Rounds para vencer, ou lidere em vitórias ao fim do terceiro.`),el('p','',n.stage<=cleared(r)?'Desafio concluído. Uma nova vitória rende 50 moedas e 20 XP; o tesouro de cinco desafios é concedido apenas na primeira passagem.':n.boss?'Uma carta ou um ícone aleatório espera por esta primeira vitória.':'Vença para abrir o próximo desafio.'));
   if(n.lesson)d.append(el('p','gc-lesson','Ensinamento: '+n.lesson));d.append(el('p','gc-match-reward','Vitória: 50 moedas + 20 XP · Derrota: 25 moedas + 10 XP'));
-  const start=button(busy?'Preparando…':'Enfrentar '+n.name,async()=>{if(busy)return;if(!uid()){api.requireLogin();return;}if(api.getQueueState?.().active||original.activeMatchId?.()){toast('Saia da fila ou termine sua partida antes de iniciar o desafio.');return;}busy=true;start.disabled=true;try{const current=window.MythicDeckEditor?.read?.();const ownerId=uid(),version=epoch,result=await api.portalRequest('start_guardian_campaign',{p_node_id:n.id,p_cards:current?.counts||{}});if(ownerId!==uid()||version!==epoch)return;closeModal();apply(result);save();}catch(e){toast(e.message);}finally{busy=false;start.disabled=false;}},'button button-primary');d.append(start,button('Trocar baralho',()=>{closeModal();nav('decks');}));}
+  const start=button(busy?'Preparando…':'Enfrentar '+n.name,async()=>{if(busy)return;if(!uid()){api.requireLogin();return;}if(api.getQueueState?.().active||original.activeMatchId?.()){toast('Saia da fila ou termine sua partida antes de iniciar o desafio.');return;}busy=true;start.disabled=true;const ownerId=uid(),version=epoch,hasDialogue=window.MythicAtlasDialogue?.has(n);try{if(hasDialogue){const continueToDuel=await window.MythicAtlasDialogue.play(n,{background:scene(r,n.chapter),isValid:()=>ownerId===uid()&&version===epoch&&!root.hidden});if(!continueToDuel||ownerId!==uid()||version!==epoch)return;}if(api.getQueueState?.().active||original.activeMatchId?.()){toast('Saia da fila ou termine sua partida antes de iniciar o desafio.');return;}const current=window.MythicDeckEditor?.read?.();if(!current||current.userId!==ownerId)throw Error('Abra novamente o desafio para conferir sua conta e seu baralho.');const result=await api.portalRequest('start_guardian_campaign',{p_node_id:n.id,p_cards:current.counts||{}});if(ownerId!==uid()||version!==epoch)return;closeModal();apply(result);save();}catch(e){toast(e.message);}finally{if(hasDialogue)window.MythicAtlasDialogue.finish();if(ownerId===uid()&&version===epoch)busy=false;start.disabled=false;}},'button button-primary');d.append(start,button('Trocar baralho',()=>{closeModal();nav('decks');}));}
  async function load(force=false){if(loading||!uid()||!api.profileReady?.())return;if(state&&!force&&owner===uid())return;loading=true;const who=uid(),token=epoch;error='';if(!state)draw();try{const result=await api.portalRequest('get_guardian_campaign');if(who!==uid()||token!==epoch)return;const saved=stored();if(owner!==who)areas=saved.areas||{};if(focusNextRegion){delete areas[focusNextRegion];focusNextRegion=null;}owner=who;state=result;region=region||saved.region||null;draw();}catch(e){if(who!==uid()||token!==epoch)return;error=/function|schema|guardian_campaign/i.test(e.message)?'A jornada aguarda a atualização 045 no servidor. Seu progresso está preservado.':e.message;draw();}finally{loading=false;}}
  function apply(result){if(!result?.match)return;const id=result.match.id;if(result.match.status!=='active'&&(!attached||snapshot?.match.id!==id)){if(state?.active?.id===id)state.active=null;if(snapshot?.match.id===id)snapshot=null;attached=false;save();if(!root.hidden){draw();load(true);}return false;}if(snapshot?.match.id===id&&Number(snapshot.version)>Number(result.version))return;if(attached&&snapshot?.match.id===id&&Number(snapshot.version)===Number(result.version))return;snapshot=result;attached=true;retryAction=null;window.MythicAtlasLesson?.set(result.node,result.match.id);save();const n=result.node,me=uid(),tie=result.match.state.campaignTieBreak;if(tie)Object.assign(tie,{match_id:id,player_one_name:api.playerName(),player_two_name:n.name,my_side:'player_one'});window.dispatchEvent(new CustomEvent('mythic-online-match',{detail:{match:result.match,userId:me,playerName:api.playerName(),playerIcon:api.playerIcon(),playerRating:api.playerRating(),opponentName:n.name,opponentIcon:n.icon,opponentRating:0,participants:[{id:me,name:api.playerName(),icon:api.playerIcon(),team:'player_one'},{id:'guardian-bot',name:n.name,icon:n.icon,team:'player_two'}]}}));}
  async function openRun(id){if(busy)return;busy=true;const who=uid(),token=epoch;try{const result=await api.portalRequest('get_guardian_campaign_run',{p_run_id:id});if(who===uid()&&token===epoch)apply(result);}catch(e){toast(e.message);}finally{busy=false;if(attached&&snapshot?.match.status==='active'&&snapshot.match.turn_user===uid()&&Date.parse(snapshot.match.turn_deadline)<=Date.now())submit({type:'expire'}).catch(()=>{});}}

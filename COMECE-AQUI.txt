@@ -1,3 +1,7 @@
+ATUALIZAÇÃO — DIÁLOGO INTERATIVO DE AQUILES NO ATLAS
+Leia ATLAS-DIALOGO-AQUILES.md. Inclui conversa com escolhas, animação de fala e reações de bravo e risada.
+Esta parte não exige SQL novo. Publique os arquivos atualizados; as artes estão dentro da pasta do jogo.
+
 ATUALIZAÇÃO 2026.10.21 — XP, RECOMPENSAS, VÍDEOS E ATLAS
 Leia REVISAO-ATLAS-E-ARENA.md. Aplicar as migrações 050, 051 e 052 em ordem após a 049 e publicar pelo GitHub/Vercel.
 Se 050 e 051 já foram aplicadas, aplique somente a nova 052. Vídeos são ativados em Configurações e ficam neste navegador.

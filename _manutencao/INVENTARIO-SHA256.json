@@ -164,8 +164,8 @@
     "sha256": "43d8f712fce3119285566f995bc057ed1c53774c0e60b6e3dd755cf667b0af7c"
   },
   "_manutencao/interface-fontes.json": {
-    "bytes": 1043,
-    "sha256": "31cf95d3d1fde940b6949515ec512a762edda3e76eee62b11f05d52284e42df2"
+    "bytes": 1070,
+    "sha256": "b38c89f207e83e30609ee251df4a8d3d86a207f2efa0ff5da9c31042091c59f9"
   },
   "_manutencao/krishna-revisao.txt": {
     "bytes": 140,
@@ -764,8 +764,8 @@
     "sha256": "31411f1174384aa92e61852a44cd0da2a4c19be537e5a6e20dc79b005a1e1177"
   },
   "_manutencao/runtime-fontes.json": {
-    "bytes": 1260,
-    "sha256": "ac5c3982cb5937563356c6308679f516d1d77332cc584e462152578689e71463"
+    "bytes": 1311,
+    "sha256": "b10815fe46b1cd7b343b8f3e8df14b836c62fe116c5225e6850fe5b165f98199"
   },
   "_manutencao/seguranca/escopo.json": {
     "bytes": 615,
@@ -852,8 +852,8 @@
     "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
   },
   "asset-manifest.json": {
-    "bytes": 71463,
-    "sha256": "c957ae0e8f25c75e6c65e7cf4f5c85aea9c953ae8839d3d8fcb557edbe58c51c"
+    "bytes": 71726,
+    "sha256": "03454db9cfb9e310c139dac1cd6839f6103b19fa7ca627e8bffaa6f763bc684b"
   },
   "assets/app-icon.svg": {
     "bytes": 531,
@@ -862,6 +862,22 @@
   "assets/ares-helm.svg": {
     "bytes": 621,
     "sha256": "b027e61e6b46728cfff3731907f5a120b7e2751ec8b084b87f1209ee90b02acf"
+  },
+  "assets/atlas-dialogue/aquiles-bravo.png": {
+    "bytes": 2174599,
+    "sha256": "522fd4fe0ccd6b1e91da3f758e05a65e83de906f81e692d2acfac0f9570c63fe"
+  },
+  "assets/atlas-dialogue/aquiles-falando.png": {
+    "bytes": 2554805,
+    "sha256": "7137e42e2df74a53aef396ac99cf3e261e7b3b055afbf9ed39173bfa08fac378"
+  },
+  "assets/atlas-dialogue/aquiles-normal.png": {
+    "bytes": 2565726,
+    "sha256": "322c3f68a367560ed696f1cb929689fd691b43e674fb66366a7c393e2c609ea9"
+  },
+  "assets/atlas-dialogue/aquiles-rindo.png": {
+    "bytes": 2199031,
+    "sha256": "5876ad31a6ffa8ac01e5c212d1bd1dfd7391d6435b0eb5cefbf11ef8fbdc26c4"
   },
   "assets/avatars-chibi/asteca-chalchiuhtlicue.webp": {
     "bytes": 145552,
@@ -4435,6 +4451,22 @@
     "bytes": 1846044,
     "sha256": "763e2eb7a200170b1dd811406f36612f43e651f8dc2cffd2e5b3e7242b5e493c"
   },
+  "ATLAS-DIALOGO-AQUILES.md": {
+    "bytes": 3590,
+    "sha256": "4d80a6b3162c6f5c1834308d891e7e6afe6af5d51e5ce75cc9191d0811f1574e"
+  },
+  "atlas-dialogue-data.js": {
+    "bytes": 1133,
+    "sha256": "34fa77bdd2bb5c361dd4c010ed4398a727a475466e19d6d62ae0ee7564969ba2"
+  },
+  "atlas-dialogue.css": {
+    "bytes": 6732,
+    "sha256": "1f8c7f8109b7174866472197c455b08a417e4bd9402263028d5ae21d4a021073"
+  },
+  "atlas-dialogue.js": {
+    "bytes": 8561,
+    "sha256": "31924376d4a41be49bdd19de17bf2efa207e2fa829b6545161a8050be479cfd9"
+  },
   "atlas-lessons.js": {
     "bytes": 1694,
     "sha256": "f676df70eb7d26491c240e50bfa73df8fc28f466af806f4724c16e248645ea2f"
@@ -4576,8 +4608,8 @@
     "sha256": "0586bc538dd79bc95029cb1fea5e5474752b2ab9375f616ac02adf15776afdf6"
   },
   "COMECE-AQUI.txt": {
-    "bytes": 5578,
-    "sha256": "0176cb6ce2b74ad0093c63767b89bc441c4a7beb26dad00ad8e24ac06740dedf"
+    "bytes": 5859,
+    "sha256": "04dd7c59beb704db60d8c24a3c349dfff78e09613e6bad5586b8ae9b333f8e09"
   },
   "CONCEPT-ART-ASSETS.json": {
     "bytes": 5044,
@@ -4713,7 +4745,7 @@
   },
   "entry-bootstrap.js": {
     "bytes": 10873,
-    "sha256": "9d6983f12a9215b03fb1d1c3b5d5d6f1303896e65034736fb87701825a7712f6"
+    "sha256": "d3d10f30a32f3eb56684d029a199106dbb445078b46171104e570dc26c8e05d9"
   },
   "entry-critical.css": {
     "bytes": 9109,
@@ -4756,12 +4788,12 @@
     "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
   },
   "game-interface.css": {
-    "bytes": 640586,
-    "sha256": "47696c7946dd51d0c19a79e85c04fd6c866f50e5e3ea5fe7c67045bfc9011a14"
+    "bytes": 647548,
+    "sha256": "e390b4b3bb8aa9792858b5d69767984c091ce5fa87e2967d7833918e83d6c5f0"
   },
   "game-runtime.js": {
-    "bytes": 1351379,
-    "sha256": "6d3d60bc97cab9284ec2584ab4e0a10ac067d95bfaca54dd1fa4a23d69177e28"
+    "bytes": 1361760,
+    "sha256": "0856eb15a12116baaa8651ec17042565f947984c2b09749f6db39b436f83c9a1"
   },
   "guardian-campaign-data.js": {
     "bytes": 61909,
@@ -4772,8 +4804,8 @@
     "sha256": "1885e8d5b70ad5751a64e333bf6323528d58a9d704b6b37552c8cad9b3045f4e"
   },
   "guardian-campaign.js": {
-    "bytes": 29220,
-    "sha256": "b3ee507851ac3925abf6bef9ef1202aa6f4d98e3f9ab6be122e50bc7f1114ff3"
+    "bytes": 29848,
+    "sha256": "d231d20b0d7dd72ce1a0c969aa31a9ef78c1e89a88f29ce2950b8db66dfcff07"
   },
   "GUARDIAO-CAMPANHA.md": {
     "bytes": 5627,
@@ -4828,8 +4860,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 77506,
-    "sha256": "8979936dfb616fcb149c0e6858b33e1170166ebd884965c165d4a517b61a87a6"
+    "bytes": 77504,
+    "sha256": "f42a6db4defd309a76cd3d384cdb03ff907c98e82a0f79a287750890bddbddcb"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -5005,11 +5037,11 @@
   },
   "release-stamp.js": {
     "bytes": 86,
-    "sha256": "dd80631703c1b46f8079bbb8f54af98fd851f6e8989e5481fb83212685287089"
+    "sha256": "a301a6772743a8debb9dcf9387805e4483048ef076ac57d049e3a5ae61ee86af"
   },
   "release.json": {
     "bytes": 52,
-    "sha256": "f4be2a6d12207490717b34de383a608ed94cb009f2c391855c64f9b2eadeee60"
+    "sha256": "df48b61321016f6ef2c4a5b86587778ef567d680ae702f9ffb7e47b948d6f872"
   },
   "remake-gallery.css": {
     "bytes": 1513,
@@ -5393,7 +5425,7 @@
   },
   "sw.js": {
     "bytes": 4187,
-    "sha256": "3a2eaab3721796bd6832f348a238f5da7fd1de70a2d8a5d74a1e3bbe6c791b7f"
+    "sha256": "fefc09c9f3f9548d194ef36925baef857d2745353ad59f19d4d08a878712a640"
   },
   "terrain-cards.js": {
     "bytes": 15141,

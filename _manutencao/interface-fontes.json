@@ -38,6 +38,7 @@
     "auth-entry.css",
     "rewards-tournaments.css",
     "loading-ui.css",
-    "quality-updates.css"
+    "quality-updates.css",
+    "atlas-dialogue.css"
   ]
 }
