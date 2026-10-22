@@ -3,7 +3,7 @@
  const $=s=>document.querySelector(s),reduce=()=>matchMedia('(prefers-reduced-motion:reduce)').matches;
  let rects=new Map(),portraits=new Map(),seen=new Set(),matchKey=null,last=null,transitionUntil=0,playUntil=0,root=null,generation=0;
  let fieldSnapshot=null,heldFields=null,fieldHoldUntil=0;
- const activeMorphs=new Map(),timers=new Set(),center=r=>({x:r.left+r.width/2,y:r.top+r.height/2});
+ const activeArrivals=new Map(),activeMorphs=new Map(),timers=new Set(),center=r=>({x:r.left+r.width/2,y:r.top+r.height/2});
  const wait=(fn,ms)=>{const token=generation,id=setTimeout(()=>{timers.delete(id);if(token===generation)fn();},Math.max(0,ms));timers.add(id);return id;};
  function layer(){if(!root){root=document.createElement('div');root.id='combat-effects';root.setAttribute('aria-hidden','true');document.body.append(root);}return root;}
  function effect(cls,point,text='',duration=900){const e=document.createElement('span');e.className='combat-fx '+cls;e.textContent=text;e.style.left=point.x+'px';e.style.top=point.y+'px';layer().append(e);wait(()=>e.remove(),duration);return e;}
@@ -18,6 +18,26 @@
  function portrait(card){const e=document.createElement('section');e.className='ability-cinematic';e.dataset.theme=themes[card.id]||'runes';e.setAttribute('role','status');e.setAttribute('aria-label',card.name+' — '+card.abilityTitle);
   const glow=document.createElement('i');glow.className='ability-cinematic-aura';const img=document.createElement('img');img.src=window.MythicSecurity.assetUrl(card.hologram||card.art);img.alt='';img.className='ability-cinematic-hero';img.decoding='async';const copy=document.createElement('div');copy.className='ability-cinematic-copy';const name=document.createElement('small');name.textContent=card.name;const title=document.createElement('h2');title.textContent=card.abilityTitle||'Habilidade ativada';copy.append(name,title);e.append(glow,img,copy);
   for(let i=0;i<(reduce()?0:12);i++){const spark=document.createElement('i');spark.className='ability-cinematic-spark';spark.style.setProperty('--i',i);e.append(spark);}e.style.visibility='hidden';layer().append(e);let shown=false;const reveal=()=>{if(shown||!e.isConnected)return;shown=true;e.style.visibility='';for(const node of [e,...e.querySelectorAll('*')])for(const animation of node.getAnimations?.()||[]){animation.currentTime=0;animation.play();}e.classList.add('is-ready');wait(()=>e.remove(),reduce()?250:2200);};for(const node of [e,...e.querySelectorAll('*')])for(const animation of node.getAnimations?.()||[])animation.pause();if(img.complete&&img.naturalWidth)reveal();else{img.onload=reveal;img.onerror=()=>{img.hidden=true;reveal();};wait(reveal,1800);}
+ }
+ function syncArrivals(){
+  const now=Date.now();
+  document.querySelectorAll('[data-unit-uid]').forEach(node=>{
+   const arrival=activeArrivals.get(node.dataset.unitUid),waiting=Boolean(arrival&&!arrival.started),running=Boolean(arrival?.started&&now<arrival.end),wasRunning=node.classList.contains('unit-field-arriving');
+   node.classList.toggle('unit-arrival-pending',waiting);
+   node.classList.toggle('unit-field-arriving',running);
+   if(running){if(!wasRunning){node.style.setProperty('--unit-arrival-duration',arrival.duration+'ms');node.style.setProperty('--unit-arrival-delay',Math.min(0,arrival.started-now)+'ms');}
+    if(node.matches('.battle-mini-card')&&!node.querySelector('.unit-arrival-label')){const label=document.createElement('span');label.className='ability-arrival-effect unit-arrival-label';label.textContent='✦ ENTRADA EM CAMPO';node.append(label);}
+   }else{node.style.removeProperty('--unit-arrival-duration');node.style.removeProperty('--unit-arrival-delay');node.querySelector('.unit-arrival-label')?.remove();}
+  });
+ }
+ function stageArrival(uid,delay){
+  const duration=reduce()?250:1700,arrival={duration,started:0,end:0};
+  activeArrivals.set(uid,arrival);
+  // Hide in the same render that inserts the unit, before the browser paints it.
+  syncArrivals();
+  wait(()=>{if(activeArrivals.get(uid)!==arrival)return;arrival.started=Date.now();arrival.end=arrival.started+duration;syncArrivals();
+   wait(()=>{if(activeArrivals.get(uid)!==arrival)return;activeArrivals.delete(uid);syncArrivals();},duration);
+  },delay);
  }
  function burst(r,d,t,star=false){const p=center(r),dest=$(sideKey(d,t)==='player'?'#underworld-pile':'#enemy-underworld')?.getBoundingClientRect(),end=dest?center(dest):p;effect(star?'fx-star-burst':'fx-card-burst',p,star?'✦':'',900);if(reduce())return;
   const count=matchMedia('(max-width:600px)').matches?12:22;
@@ -42,7 +62,7 @@
  }
  function showHeldFields(){if(!heldFields||Date.now()>=fieldHoldUntil)return;for(const side of ['player','enemy']){const field=$('#'+side+'-field');if(field)field.innerHTML=heldFields[side];}}
  function finishUI(){if(Date.now()<playUntil){wait(finishUI,playUntil-Date.now()+20);return;}window.MythicGame?.refreshBattle?.();}
- function reset(){heldFields=null;fieldHoldUntil=0;generation++;for(const id of timers)clearTimeout(id);timers.clear();root?.replaceChildren();document.querySelectorAll('.round-transition').forEach(e=>e.remove());document.querySelectorAll('.medusa-casting').forEach(e=>e.classList.remove('medusa-casting'));last=null;matchKey=null;transitionUntil=playUntil=0;seen.clear();activeMorphs.clear();document.querySelectorAll(".unit-morphing").forEach(n=>n.classList.remove("unit-morphing"));}
+ function reset(){activeArrivals.clear();syncArrivals();heldFields=null;fieldHoldUntil=0;generation++;for(const id of timers)clearTimeout(id);timers.clear();root?.replaceChildren();document.querySelectorAll('.round-transition').forEach(e=>e.remove());document.querySelectorAll('.medusa-casting').forEach(e=>e.classList.remove('medusa-casting'));last=null;matchKey=null;transitionUntil=playUntil=0;seen.clear();activeMorphs.clear();document.querySelectorAll(".unit-morphing").forEach(n=>n.classList.remove("unit-morphing"));}
  window.MythicCombatFX={
   before(){capture();},
   sync(d){const key=d.onlineMatchId||d.localMatchId||'guardian',cards=window.MythicCardData?.()||[],units=fieldUnits(d),pending=pendingSource(d,units,cards);
@@ -63,14 +83,14 @@
    }
    const ghosts=new Map();for(const e of events)if(e.kind==='destroy')for(const id of e.targets||[])if(!ghosts.has(id))ghosts.set(id,ghost(id,batch));
    if(events.length||cues.length||morphs.length){const start=Math.max(0,playUntil-Date.now(),window.MythicEclipseUI?.isRevealing()?(window.MythicEclipseUI.remaining?.()||3200):0),intro=reduce()?250:2300;cues.forEach((card,i)=>wait(()=>portrait(card),start+i*intro));const castEnd=start+cues.length*intro;
-    for(const entry of entries)for(const id of entry.targets||[]){const unit=units.find(u=>u.uid===id),card=cards.find(c=>c.id===unit?.cardId),node=document.querySelector('[data-unit-uid="'+CSS.escape(id)+'"]');if(!node||!card)continue;const r=node.getBoundingClientRect();if(!r.width||!r.height)continue;wait(()=>{const arrival=document.createElement('span');arrival.className='field-arrival';arrival.style.cssText=`left:${r.left-r.width*.2}px;top:${r.top-r.height*.35}px;width:${r.width*1.4}px;height:${r.height*1.4}px`;const image=document.createElement('img');image.src=window.MythicSecurity.assetUrl(card.hologram||card.art);image.alt='';arrival.append(image);layer().append(arrival);wait(()=>arrival.remove(),reduce()?250:1700);},castEnd);}
+    const arriving=new Set();for(const entry of entries)for(const id of entry.targets||[]){if(!units.some(u=>u.uid===id)||arriving.has(id))continue;arriving.add(id);stageArrival(id,castEnd);}
     for(const m of morphs){const ends=Date.now()+castEnd+1850;activeMorphs.set(m.uid,ends);window.MythicPaintedFX?.transform(layer(),m.before,m.card,m.box,m.lunar,castEnd,d.sharedZones?.climate==='eclipse-lunar',d.sharedZones?.climate==='eclipse-solar');wait(()=>{if(activeMorphs.get(m.uid)!==ends)return;activeMorphs.delete(m.uid);document.querySelector('[data-unit-uid="'+CSS.escape(m.uid)+'"]')?.classList.remove('unit-morphing');},castEnd+1850);}
-    const impact=castEnd+(morphs.length?1850:0);if(last&&last.round===d.round&&events.some(e=>e.kind==='hearts'))holdCharmFields(batch.fields,Date.now()+impact+1500);for(const e of events)wait(()=>showEvent(e,d,batch,ghosts),impact);playUntil=Date.now()+impact+(events.some(e=>e.kind!=='enter')?650:120);wait(finishUI,playUntil-Date.now()+20);}
+    const impact=castEnd+(morphs.length?1850:0);if(last&&last.round===d.round&&events.some(e=>e.kind==='hearts'))holdCharmFields(batch.fields,Date.now()+impact+1500);for(const e of events)wait(()=>showEvent(e,d,batch,ghosts),impact);playUntil=Date.now()+impact+Math.max(arriving.size?(reduce()?250:1700):120,events.some(e=>e.kind!=='enter')?650:0);wait(finishUI,playUntil-Date.now()+20);}
    document.querySelectorAll('[data-unit-uid]').forEach(node=>{node.classList.toggle('unit-morphing',(activeMorphs.get(node.dataset.unitUid)||0)>Date.now());const u=units.find(v=>v.uid===node.dataset.unitUid),night=u&&/^lobo-/.test(u.cardId);node.classList.toggle('lunar-empowered',Boolean(night&&d.sharedZones?.climate==='eclipse-lunar'&&unitEffectsActive(d,u)));});
    document.querySelectorAll('.companion-stack').forEach(pile=>pile.classList.toggle('lunar-formation',Boolean(pile.querySelector('.lunar-empowered'))));
    const petrified=d.rulesState?.petrifiedTeams||{},mine=d.myTeam||'player_one',other=mine==='player_one'?'player_two':'player_one';$('#player-field')?.classList.toggle('medusa-petrified',Boolean(d.player.skipNextTurn||petrified[mine]));$('#enemy-field')?.classList.toggle('medusa-petrified',Boolean(d.enemy.skipNextTurn||petrified[other]));
    if(last){for(const side of ['player','enemy'])if(d[side].trixx<last[side+'Stars']){const meter=$('#'+side+'-trixx'),star=meter?.children[d[side].trixx];if(star)burst(star.getBoundingClientRect(),d,teamFor(d,side),true);}if(d.round>last.round)roundBanner(d,last);}
-   showHeldFields();
+   showHeldFields();syncArrivals();
    last={round:d.round,playerStars:d.player.trixx,enemyStars:d.enemy.trixx,units,pendingId:d.pendingEffect?.id,pendingCard:pending};
   },
   isBusy:()=>Date.now()<Math.max(transitionUntil,playUntil),isTransitioning:()=>Date.now()<transitionUntil,clear:reset

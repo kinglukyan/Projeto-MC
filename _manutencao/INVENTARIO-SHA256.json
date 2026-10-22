@@ -884,8 +884,8 @@
     "sha256": "4ac19c29405481b9da492304052472cdf8bb699e2e7218a9dad6d2384e4af25a"
   },
   "app.js": {
-    "bytes": 133722,
-    "sha256": "4cb07e87aeacc96eddd942f3df1f71cc5a1da019771a242bff976b224fe09067"
+    "bytes": 133822,
+    "sha256": "cae297283fecc65809f699b6ca91fb4b813f9927aa48241aaa6c1752dc72ddf3"
   },
   "arcane-palette.css": {
     "bytes": 37675,
@@ -4828,8 +4828,8 @@
     "sha256": "8920d3c52402266cf3f9478b0caed59d381e5041f0d052a529251a917e7d3485"
   },
   "combat-fx.js": {
-    "bytes": 16159,
-    "sha256": "7b9c2135635f45a0823818067acad425f8f558ca669820e5fafac9c2fc6197cf"
+    "bytes": 17304,
+    "sha256": "67bf9932574b4178defffa5cabddf8e1be9e6cef9f65afd4635b6e02f40bd692"
   },
   "COMECE-AQUI.txt": {
     "bytes": 7446,
@@ -4890,6 +4890,10 @@
   "CORRECAO-ENTRADA-E-RETOMADA.md": {
     "bytes": 3057,
     "sha256": "ca27776b609f3ec9f4fd8874c1121bc4b37f5f51f83ae6c0a2d312d508a18b89"
+  },
+  "CORRECAO-ENTRADA-HOLOGRAMA.md": {
+    "bytes": 1385,
+    "sha256": "621a10321a16989665d999197942577c7032e9ec9ec0d8a122498f09128d32ab"
   },
   "CORRECAO-ESCOLHAS-E-RITMO-DO-BOT.md": {
     "bytes": 4899,
@@ -4981,7 +4985,7 @@
   },
   "entry-bootstrap.js": {
     "bytes": 10873,
-    "sha256": "827d38fb984bfa0a9528933e5f18d51d82ca46b51f7db15668eb3cb42e64ea2f"
+    "sha256": "86d46b9a1d699444794dc40a5c9cad18cf72fae30d3d8c5882cd4c7ba3cd07fa"
   },
   "entry-critical.css": {
     "bytes": 9109,
@@ -5024,12 +5028,12 @@
     "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
   },
   "game-interface.css": {
-    "bytes": 653901,
-    "sha256": "a2262bbde20e3932b042c34e73a5978ae0d644c2bd99dc965ad29bd2f9398c78"
+    "bytes": 654078,
+    "sha256": "89f69272fe0c836452642f96a1b94eb6e10cd6645c88fd8ab3bbae9b4c0b1eb5"
   },
   "game-runtime.js": {
-    "bytes": 1335873,
-    "sha256": "43dadab9760a40b365c1dcd9e4a4ee8ef62feb9d1566476eadebb130a51c778b"
+    "bytes": 1337118,
+    "sha256": "d4d2cb4cd2ccb4e2e9f65cfc36ff1e9a8c7a156d6a69b860737e2494cde3893f"
   },
   "gamepad-controls.js": {
     "bytes": 4231,
@@ -5105,7 +5109,7 @@
   },
   "index.html": {
     "bytes": 77510,
-    "sha256": "92201baabfeab9faee75ba4e7a2df93c805486ad25daabd550778263066842c4"
+    "sha256": "caab0cb2ac627675ec08e8034bd4df1bdf6df453c3c79e3e501f2b1199c57e6f"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -5305,11 +5309,11 @@
   },
   "release-stamp.js": {
     "bytes": 86,
-    "sha256": "716c8ebae6c19671b6ee8a56474e73404dd7f6605346b5005217159e62d31690"
+    "sha256": "46bbb288b8bea1c1ed50092ea7d9770fd94ed4ee15f2a7d5533e1051e8caed5c"
   },
   "release.json": {
     "bytes": 52,
-    "sha256": "ef3d8def52919519ce77290ae5d0acf27637e3219af3e12377ad3507913b6117"
+    "sha256": "88af309899ecbb5a19adefccca141590d791645306345d53ef40418330d59fef"
   },
   "remake-gallery.css": {
     "bytes": 1513,
@@ -5713,7 +5717,7 @@
   },
   "sw.js": {
     "bytes": 4241,
-    "sha256": "4ef432e86ccca03ec06616fb61f843f9854a28d2dbe62f6fa2d1932883dc022e"
+    "sha256": "5cd9484e74b0f899102d6c8c2a4ad9a3656e2f572ebed451ab3a84021d880947"
   },
   "terrain-cards.js": {
     "bytes": 15141,
@@ -5784,8 +5788,8 @@
     "sha256": "2f3be5ad76a2592837fc85b8812b4a97f2b081e1da29a3721141c0850eab1eb1"
   },
   "webapp-upgrade.css": {
-    "bytes": 2755,
-    "sha256": "7a034e6f7e2d73227868c8373964a593a9ec174e2e7f20e1ddf92fc897935023"
+    "bytes": 2932,
+    "sha256": "d4761f67a6e8f04366387ae7f94c77c99bf0a155f4be3bbabec1ae279ab67271"
   },
   "webapp-upgrade.js": {
     "bytes": 1674,
