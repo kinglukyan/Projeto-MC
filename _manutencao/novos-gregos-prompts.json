@@ -1,0 +1,101 @@
+{
+  "tool": "image_gen built-in",
+  "assets": [
+    {
+      "id": "hera",
+      "kind": "illustration",
+      "prompt": "Create one production character illustration for Mythic Clash Greek mythology card game. Hera, regal adult queen of Olympus, ivory complexion, dark wavy hair, emerald eyes, elaborate gold crown with peacock motifs, royal purple and ivory Greek robes over exquisite gold ceremonial armor, one hand holding a slender lotus-topped scepter, dignified formidable expression, peacock feather jeweled shoulder ornaments. Full figure head to feet with comfortable margins, centered vertical 2:3 composition. Premium highly detailed painterly realistic fantasy RPG trading card illustration, polished ornate gold metal, luminous fabric, cinematic warm gold rimlight, intricate believable face and anatomy. Background: Olympus palace marble terrace at violet dusk, faint peacock motifs, atmospheric clouds. NOT anime, NOT chibi, NOT a card frame, no text no lettering no watermark. Maintain this design for related chibi, hologram and banner assets. Save the generated full illustration.",
+      "path": "assets/new-greeks/hera-illustration.png"
+    },
+    {
+      "id": "demeter",
+      "kind": "illustration",
+      "prompt": "One standalone production character illustration for Mythic Clash Greek mythology RPG trading card game. DEMETER goddess of harvest: mature beautiful motherly adult with warm olive skin, long honey-brown wavy hair, hazel eyes, crown of golden wheat and tiny emeralds, ivory Greek peplos with deep green flowing mantle, exquisitely crafted gold armor clasp and belt with wheat motifs. Carries sheaf of wheat in one arm and a carved golden agricultural sickle in other, protective resolute gentle expression. Full body head to sandaled feet entirely inside frame with generous margins. Vertical 2:3. Premium highly detailed painterly realistic fantasy, polished ornate gold, realistic face/anatomy, luminous fabrics, cinematic golden hour. Background fertile Greek wheat fields, olive trees, distant marble sanctuary, abundant flowers, rich green and amber palette. No lettering no card borders no watermark. Same artistic universe as Hera royal purple illustration, distinct mature character design.",
+      "path": "assets/new-greeks/demeter-illustration.png"
+    },
+    {
+      "id": "hestia",
+      "kind": "illustration",
+      "prompt": "Standalone character illustration for Mythic Clash Greek fantasy trading card game: HESTIA goddess of hearth and sacred fire, adult woman with serene kind expression, warm olive complexion, soft auburn chestnut hair partly covered by ivory veil, amber eyes. Ivory and terracotta red Greek layered robes, ornate gold belt and bracelets, small elegant flame-shaped gold diadem. Holds a shallow golden bowl containing a small warm sacred flame, other hand cradling it protectively. Full body to golden sandals, entirely inside frame generous margins. Vertical 2:3. Highly detailed painterly realistic premium fantasy RPG, face anatomy believable, richly textured silk and gold, cinematic warm amber light, quiet strength, no sexualized outfit. Background ancient Greek home sanctuary with round marble hearth, warm embers, soft night light, columns and distant dark blue sky. Design must be distinct from Hera purple peacock queen and Demeter green harvest. No text, no card frame, no watermark.",
+      "path": "assets/new-greeks/hestia-illustration.png"
+    },
+    {
+      "id": "perseu",
+      "kind": "illustration",
+      "prompt": "Production standalone character art, PERSEUS Greek hero for Mythic Clash fantasy card game. Adult athletic young man with olive complexion, short curly dark brown hair, brown eyes, clean shaven heroic determined expression, ornate bronze and gold Greek cuirass, indigo blue short cape, leather pteruges, gold winged sandals. Wears elegant winged bronze helmet with face visible. Holds curved harpe sword pointing down in right hand and polished round bronze mirror shield in left, the shield reflecting softly, NO severed head. Entire full body and equipment entirely inside image, head to feet generous margin. Vertical 2:3. Premium highly detailed painterly realistic fantasy RPG trading-card illustration, cinematic sunrise, detailed crafted metal and believable anatomy. Background rocky Aegean coastline, waves and ancient ruins, misty heroic dawn, restrained blue and gold colors. Consistent design quality with Hera peacock queen, Demeter harvest and Hestia sacred fire. No text, no card frame, no watermark.",
+      "path": "assets/new-greeks/perseu-illustration.png"
+    },
+    {
+      "id": "hera",
+      "kind": "hologram",
+      "prompt": "Mythic Clash production game asset. Reference is the approved character design. Preserve the SAME person, face, hair, outfit colors, crown or helmet, equipment and identity, faithfully. Premium polished detailed painterly fantasy RPG rendering. No text no watermarks no lettering. Create a single FULL-BODY character cutout for the battlefield hologram, from head to feet including entire weapon/shield/scepter and flowing clothing, all within canvas with clear generous margins, vertical 2:3. Exact outfit and proportions from reference. Subtle luminous gold rimlight, natural colors and strong readable silhouette. True TRANSPARENT alpha background, no scenery, no floor, no pedestal, no opaque haze behind the figure. NOT blue monochrome, NOT translucent person: the game adds hologram effects. One isolated character.",
+      "path": "assets/new-greeks/hera-hologram.png"
+    },
+    {
+      "id": "demeter",
+      "kind": "hologram",
+      "prompt": "Mythic Clash production game asset. Reference is the approved character design. Preserve the SAME person, face, hair, outfit colors, crown or helmet, equipment and identity, faithfully. Premium polished detailed painterly fantasy RPG rendering. No text no watermarks no lettering. Create a single FULL-BODY character cutout for the battlefield hologram, from head to feet including entire weapon/shield/scepter and flowing clothing, all within canvas with clear generous margins, vertical 2:3. Exact outfit and proportions from reference. Subtle luminous gold rimlight, natural colors and strong readable silhouette. True TRANSPARENT alpha background, no scenery, no floor, no pedestal, no opaque haze behind the figure. NOT blue monochrome, NOT translucent person: the game adds hologram effects. One isolated character.",
+      "path": "assets/new-greeks/demeter-hologram.png"
+    },
+    {
+      "id": "hestia",
+      "kind": "hologram",
+      "prompt": "Mythic Clash production game asset. Reference is the approved character design. Preserve the SAME person, face, hair, outfit colors, crown or helmet, equipment and identity, faithfully. Premium polished detailed painterly fantasy RPG rendering. No text no watermarks no lettering. Create a single FULL-BODY character cutout for the battlefield hologram, from head to feet including entire weapon/shield/scepter and flowing clothing, all within canvas with clear generous margins, vertical 2:3. Exact outfit and proportions from reference. Subtle luminous gold rimlight, natural colors and strong readable silhouette. True TRANSPARENT alpha background, no scenery, no floor, no pedestal, no opaque haze behind the figure. NOT blue monochrome, NOT translucent person: the game adds hologram effects. One isolated character.",
+      "path": "assets/new-greeks/hestia-hologram.png"
+    },
+    {
+      "id": "perseu",
+      "kind": "hologram",
+      "prompt": "Mythic Clash production fantasy game art. The reference is the approved character design. Match the same adult character's face, hair, headwear, outfit colors and important accessories. Premium finely detailed painterly fantasy illustration, polished ornate gold materials. One subject. No text, no lettering, no watermark. Create a FULL BODY isolated character of the heroic adult Greek warrior Perseus with bronze gold armor, indigo cloak, winged helmet and winged sandals, round mirror shield, sword safely pointing down. Strong respectful classical heroic design with appropriate armored clothing. All limbs and gear inside frame with 10 percent margins, vertical format. TRANSPARENT ALPHA BACKGROUND, absolutely no scenery, no pedestal and no background glow rectangle. Natural colors, subtle golden edge light, readable silhouette for battlefield placement.",
+      "path": "assets/new-greeks/perseu-hologram.png"
+    },
+    {
+      "id": "hera",
+      "kind": "chibi",
+      "prompt": "Mythic Clash production fantasy game art. The reference is the approved character design. Match the same adult character's face, hair, headwear, outfit colors and important accessories. Premium finely detailed painterly fantasy illustration, polished ornate gold materials. One subject. No text, no lettering, no watermark. Create one deluxe cute CHIBI character portrait, big expressive head and eyes, tiny clothed upper body with richly detailed original costume, rounded friendly proportions. Bust ends at waist; centered square composition with clear transparent padding around headwear and accessories. Full crown/helmet included and not cropped. True transparent alpha background. No surrounding frame, no circle, no background. Retain recognizable identity and distinct palette: purple ivory peacock queen with dark hair and golden peacock crown, emerald eyes.",
+      "path": "assets/new-greeks/hera-chibi.png"
+    },
+    {
+      "id": "demeter",
+      "kind": "chibi",
+      "prompt": "Mythic Clash production fantasy game art. The reference is the approved character design. Match the same adult character's face, hair, headwear, outfit colors and important accessories. Premium finely detailed painterly fantasy illustration, polished ornate gold materials. One subject. No text, no lettering, no watermark. Create one deluxe cute CHIBI character portrait, big expressive head and eyes, tiny clothed upper body with richly detailed original costume, rounded friendly proportions. Bust ends at waist; centered square composition with clear transparent padding around headwear and accessories. Full crown/helmet included and not cropped. True transparent alpha background. No surrounding frame, no circle, no background. Retain recognizable identity and distinct palette: brown-haired harvest goddess, wheat crown, green ivory robes, little sheaf of golden wheat.",
+      "path": "assets/new-greeks/demeter-chibi.png"
+    },
+    {
+      "id": "hestia",
+      "kind": "chibi",
+      "prompt": "Mythic Clash production fantasy game art. The reference is the approved character design. Match the same adult character's face, hair, headwear, outfit colors and important accessories. Premium finely detailed painterly fantasy illustration, polished ornate gold materials. One subject. No text, no lettering, no watermark. Create one deluxe cute CHIBI character portrait, big expressive head and eyes, tiny clothed upper body with richly detailed original costume, rounded friendly proportions. Bust ends at waist; centered square composition with clear transparent padding around headwear and accessories. Full crown/helmet included and not cropped. True transparent alpha background. No surrounding frame, no circle, no background. Retain recognizable identity and distinct palette: auburn-haired hearth goddess, ivory veil and terracotta robes, small golden bowl with sacred warm flame.",
+      "path": "assets/new-greeks/hestia-chibi.png"
+    },
+    {
+      "id": "perseu",
+      "kind": "chibi",
+      "prompt": "Mythic Clash production fantasy game art. The reference is the approved character design. Match the same adult character's face, hair, headwear, outfit colors and important accessories. Premium finely detailed painterly fantasy illustration, polished ornate gold materials. One subject. No text, no lettering, no watermark. Create one deluxe cute CHIBI character portrait, big expressive head and eyes, tiny clothed upper body with richly detailed original costume, rounded friendly proportions. Bust ends at waist; centered square composition with clear transparent padding around headwear and accessories. Full crown/helmet included and not cropped. True transparent alpha background. No surrounding frame, no circle, no background. Retain recognizable identity and distinct palette: dark curly-haired hero, winged bronze helmet, blue cape and miniature bronze mirror shield.",
+      "path": "assets/new-greeks/perseu-chibi.png"
+    },
+    {
+      "id": "hera",
+      "kind": "banner",
+      "prompt": "Mythic Clash production fantasy game art. The reference is the approved character design. Match the same adult character's face, hair, headwear, outfit colors and important accessories. Premium finely detailed painterly fantasy illustration, polished ornate gold materials. One subject. No text, no lettering, no watermark. Create a new 16:9 LANDSCAPE UNIVERSE BANNER. Position this same character on the RIGHT THIRD, from waist upward, face/headwear and all hands clear. LEFT HALF reserved for future overlaid game text through a detailed atmospheric environment, no text painted in image. Keep the background fully illustrated and expansive, no artificial blank block. Olympus marble royal palace on mountains above clouds, violet dusk, gold banners and peacocks. Hera regal in purple ivory with her gold peacock crown and lotus scepter.",
+      "path": "assets/new-greeks/hera-banner.png"
+    },
+    {
+      "id": "demeter",
+      "kind": "banner",
+      "prompt": "Mythic Clash production fantasy game art. The reference is the approved character design. Match the same adult character's face, hair, headwear, outfit colors and important accessories. Premium finely detailed painterly fantasy illustration, polished ornate gold materials. One subject. No text, no lettering, no watermark. Create a new 16:9 LANDSCAPE UNIVERSE BANNER. Position this same character on the RIGHT THIRD, from waist upward, face/headwear and all hands clear. LEFT HALF reserved for future overlaid game text through a detailed atmospheric environment, no text painted in image. Keep the background fully illustrated and expansive, no artificial blank block. Greek wheat fields and olive terraces below a distant marble sanctuary, lush green and gold sunset. Demeter brown hair, wheat crown, green ivory robes and golden wheat bundle.",
+      "path": "assets/new-greeks/demeter-banner.png"
+    },
+    {
+      "id": "hestia",
+      "kind": "banner",
+      "prompt": "Mythic Clash production fantasy game art. The reference is the approved character design. Match the same adult character's face, hair, headwear, outfit colors and important accessories. Premium finely detailed painterly fantasy illustration, polished ornate gold materials. One subject. No text, no lettering, no watermark. Create a new 16:9 LANDSCAPE UNIVERSE BANNER. Position this same character on the RIGHT THIRD, from waist upward, face/headwear and all hands clear. LEFT HALF reserved for future overlaid game text through a detailed atmospheric environment, no text painted in image. Keep the background fully illustrated and expansive, no artificial blank block. Greek sacred hearth round marble sanctuary with warm amber fire, terracotta ivory fabrics and blue evening through columns. Hestia auburn hair, ivory veil, flame diadem and small bowl of sacred fire.",
+      "path": "assets/new-greeks/hestia-banner.png"
+    },
+    {
+      "id": "perseu",
+      "kind": "banner",
+      "prompt": "Mythic Clash production fantasy game art. The reference is the approved character design. Match the same adult character's face, hair, headwear, outfit colors and important accessories. Premium finely detailed painterly fantasy illustration, polished ornate gold materials. One subject. No text, no lettering, no watermark. Create a new 16:9 LANDSCAPE UNIVERSE BANNER. Position this same character on the RIGHT THIRD, from waist upward, face/headwear and all hands clear. LEFT HALF reserved for future overlaid game text through a detailed atmospheric environment, no text painted in image. Keep the background fully illustrated and expansive, no artificial blank block. Aegean rocky sea cliffs and ruined temple at heroic sunrise, turquoise sea and mist. Adult Perseus in bronze gold armor, winged helmet, indigo cape, round mirror shield and downward sword.",
+      "path": "assets/new-greeks/perseu-banner.png"
+    }
+  ]
+}
