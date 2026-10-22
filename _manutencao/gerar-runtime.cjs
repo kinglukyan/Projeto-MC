@@ -7,8 +7,8 @@ write('game-interface.css',css(read('game-interface.css')));write('entry-optimiz
 const sources=JSON.parse(read('_manutencao/runtime-fontes.json'));if(!sources.includes('site-updates.js'))sources.push('site-updates.js');write('_manutencao/runtime-fontes.json',JSON.stringify(sources,null,2));
 for(const s of sources){if(s.includes('..')||!s.endsWith('.js')||!fs.existsSync(path.join(root,s)))throw Error('Fonte inválida: '+s);}
 write('game-runtime.js',sources.map(n=>`/* ${n} */\n`+read(n).replace(/^\/\/# sourceMappingURL=.*$/gm,'')+'\n;').join('\n'));
-const assets={};function walk(dir){for(const n of fs.readdirSync(dir)){const p=path.join(dir,n);if(fs.statSync(p).isDirectory())walk(p);else assets[path.relative(root,p).split(path.sep).join('/')]=hash(fs.readFileSync(p));}}walk(path.join(root,'assets'));
-write('asset-manifest.json',JSON.stringify({version:2,assets,optimized}));
+const assets={},sizes={};function walk(dir){if(path.basename(dir)==='new-greeks')return;for(const n of fs.readdirSync(dir)){const p=path.join(dir,n);if(fs.statSync(p).isDirectory())walk(p);else{const key=path.relative(root,p).split(path.sep).join('/');assets[key]=hash(fs.readFileSync(p));sizes[key]=fs.statSync(p).size;}}}walk(path.join(root,'assets'));
+write('asset-manifest.json',JSON.stringify({version:3,assets,sizes,optimized}));
 const skip=new Set(['release.json','release-stamp.js','entry-bootstrap.js','sw.js']);const inputs=fs.readdirSync(root).filter(n=>!skip.has(n)&&/\.(js|css|json)$/.test(n)&&fs.statSync(path.join(root,n)).isFile()).sort();
 const htmlInputs=fs.readdirSync(root).filter(n=>n.endsWith('.html')).sort().map(n=>n+':'+hash(read(n).replace(/\?v=[a-f0-9]+/g,'?v=HASH').replace(/\s+/g,' ')));
 const workerSource=read('sw.js').replace(/const BUILD_ID\s*=\s*['"][a-f0-9]+['"];?/,"const BUILD_ID='BUILD';");

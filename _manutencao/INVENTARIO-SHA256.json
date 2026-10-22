@@ -127,6 +127,14 @@
     "bytes": 294,
     "sha256": "f8afe61f026e5c780e94275ee1181b94a2892b57b9c839c798274befe5f0d40a"
   },
+  "_manutencao/emblemas-novos-gregos.py": {
+    "bytes": 2071,
+    "sha256": "3d623a56cf0efe949b384be01e39971d02ee9d62938055fac5141d4ae5f86214"
+  },
+  "_manutencao/finalizar-artes-gregas.py": {
+    "bytes": 4659,
+    "sha256": "8965868f32e9f46288110d256fbbb6fedaf646f47a092bf539f73eb87b7797be"
+  },
   "_manutencao/gerar-emblemas.py": {
     "bytes": 7343,
     "sha256": "cb1469e0641d6a0b0745776e6117721e45711fbe57b6f66265dc66508526aab0"
@@ -136,8 +144,8 @@
     "sha256": "aae387281c0848bdd70818ebb44706c12ed7664289efb74cd4b7c4dae4d1b5eb"
   },
   "_manutencao/gerar-runtime.cjs": {
-    "bytes": 4709,
-    "sha256": "99e0012c31696554f9c0c634c33d3781314d974b4087b8ae1671b12aa05971b5"
+    "bytes": 4814,
+    "sha256": "bd7453461ebea23243e60bd793eb95421217021c5e95cea81a90a53957d3f2be"
   },
   "_manutencao/guardian-atlas/01-atlas-das-lendas.webp": {
     "bytes": 457754,
@@ -160,8 +168,8 @@
     "sha256": "74ec111a61c0c5dea5634dc0131f7a29b0ca145176020ac92305d8e479c4c861"
   },
   "_manutencao/guardian-campaign/catalogo-servidor.json": {
-    "bytes": 296787,
-    "sha256": "d7e55e7b7e2920e2666dc4327fd604ff4151e7b74fd42ede93bc875f1abc294f"
+    "bytes": 294801,
+    "sha256": "3a316d0564fb0a8ef766c8cff0ab8187a5a791cde4420c7763e5b77c3a6710c6"
   },
   "_manutencao/guardian-campaign/compilar-campanha.py": {
     "bytes": 1427,
@@ -172,28 +180,40 @@
     "sha256": "4b00b33f572fc5d18c47a00e456b8a4864376a952b6aa5101fce90d50bd4401d"
   },
   "_manutencao/guardian-campaign/guardian-campaign-api.sql": {
-    "bytes": 14825,
-    "sha256": "02e25f4475689817b17d5f195aa2ad0561159a26a4103a5679306dea7ae13f03"
+    "bytes": 14869,
+    "sha256": "1e1a5a8d810c5df0dcd6afe1ad50d64f87b2ae465feedd27201fc949490c6800"
   },
   "_manutencao/guardian-campaign/guardian-campaign-engine.sql": {
     "bytes": 14420,
     "sha256": "e39980db08e1343d9076eb8293f0747558f7a6ecc69f883a41b81bdc13dc8102"
   },
   "_manutencao/guardian-campaign/guardian-campaign-schema.sql": {
-    "bytes": 16561,
-    "sha256": "a0d1d36be0a01a4e54cbce070c7f7d97589dc86175c7ec09e9b8f401141ca673"
+    "bytes": 16615,
+    "sha256": "c8f351b566b692e02df21904ffa0f04df70a7e4c5f05a08e08d16bec6e13051e"
+  },
+  "_manutencao/guardian-campaign/preparar-055.py": {
+    "bytes": 13105,
+    "sha256": "27e58903c6226aed73e7d4622f0f54365bb2c0acebb9a619851732d3c5a47e25"
   },
   "_manutencao/guardian-campaign/preparar-campanha.py": {
     "bytes": 11754,
     "sha256": "43d8f712fce3119285566f995bc057ed1c53774c0e60b6e3dd755cf667b0af7c"
   },
   "_manutencao/interface-fontes.json": {
-    "bytes": 1070,
-    "sha256": "b38c89f207e83e30609ee251df4a8d3d86a207f2efa0ff5da9c31042091c59f9"
+    "bytes": 1097,
+    "sha256": "78b95d9686c8fc55c4eabc32935c23cf9fa2989a236dc9b0b4fcef4be968df0e"
   },
   "_manutencao/krishna-revisao.txt": {
     "bytes": 140,
     "sha256": "885c68be12e90a76cfb3309c8cb970dcbd1a8b24ae3af80da1214b0931ceb9ff"
+  },
+  "_manutencao/novos-gregos-prompts.json": {
+    "bytes": 16430,
+    "sha256": "6dafbfd4382ffed91fb8c38655ab6848ad9a8d24dcab502610d0f3e39737b1e9"
+  },
+  "_manutencao/novos-gregos.json": {
+    "bytes": 4408,
+    "sha256": "7d992abc721ba60ccf6b4049e650ae39af266a5ab41700bc60faebd269c8eed0"
   },
   "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
     "bytes": 3019,
@@ -208,8 +228,12 @@
     "sha256": "5e1abf4023cdde7a14fa8fdd52d221dcc0caab790d97b393a65f6d90a2aa48da"
   },
   "_manutencao/preparar-publicacao.cjs": {
-    "bytes": 1580,
-    "sha256": "8fa358cc455c5abdabfa534bff3fc3a5e79603924aa4b9b39e291bdd2e32a603"
+    "bytes": 1627,
+    "sha256": "48f974aba3c728cfff198ef1ae8c346e4f6937558f7d080e86bf918f6b65dc17"
+  },
+  "_manutencao/previas-novos-gregos.py": {
+    "bytes": 1137,
+    "sha256": "8f588620e26747edd70b34249ce19178b8f93bec1d418656facff768b27d9f85"
   },
   "_manutencao/primeiro-acesso/agilizar-boas-vindas.py": {
     "bytes": 4591,
@@ -788,8 +812,8 @@
     "sha256": "31411f1174384aa92e61852a44cd0da2a4c19be537e5a6e20dc79b005a1e1177"
   },
   "_manutencao/runtime-fontes.json": {
-    "bytes": 1311,
-    "sha256": "b10815fe46b1cd7b343b8f3e8df14b836c62fe116c5225e6850fe5b165f98199"
+    "bytes": 1385,
+    "sha256": "8a3aa604e290afc17763442715170ee8cafe0dfb2d6524ee015defa67c369e09"
   },
   "_manutencao/seguranca/escopo.json": {
     "bytes": 615,
@@ -832,12 +856,12 @@
     "sha256": "2e5cccce3781f22c44ede8a662c6db83c00a3f6c98aa0936807ec64b72bc7d5f"
   },
   "abilities-data.js": {
-    "bytes": 110053,
-    "sha256": "c13cd5ac3ff51454507ef115ab2b3fc68a5a486feb9e2ba60c27ebd852cebdc1"
+    "bytes": 113272,
+    "sha256": "cb1f4fba04276443002d021b68b5bd769f4df08d5d67dc80180ecf3109825c3f"
   },
   "abilities-data.json": {
-    "bytes": 145465,
-    "sha256": "98c46af74b5b597afacc52307aea5d6112c0f828b0decbfeb3747664ce381afe"
+    "bytes": 149830,
+    "sha256": "65ab246985daf88eac3a99c8846bb47530d6577a4bb73ff37ebc83d899d18acd"
   },
   "abilities-engine.js": {
     "bytes": 43195,
@@ -876,8 +900,8 @@
     "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
   },
   "asset-manifest.json": {
-    "bytes": 72086,
-    "sha256": "e5fe362ba872723a9714580cce737a9ff7f87320862c9977977a14b508242abd"
+    "bytes": 118532,
+    "sha256": "5e6021958df442541242d42ce519e9dbc9c0c9208a3f57651e77cd3316719cfa"
   },
   "assets/app-icon.svg": {
     "bytes": 531,
@@ -1059,6 +1083,18 @@
     "bytes": 152546,
     "sha256": "d6fa8e32eb7b8d1c785a758b9ba58473d411d92ae24fc00d77b4bffc15e26b2f"
   },
+  "assets/avatars-chibi/demeter.webp": {
+    "bytes": 317362,
+    "sha256": "f44df7f2a8debf9c5b300d837c983a743eda9a01c5d4ab8970a6384287e62bca"
+  },
+  "assets/avatars-chibi/hera.webp": {
+    "bytes": 333748,
+    "sha256": "4a8a775d50fe67c04877c18cab6c4b9d9059a239ba9a8069cf2741085d1d04e5"
+  },
+  "assets/avatars-chibi/hestia.webp": {
+    "bytes": 264698,
+    "sha256": "a9452e39ac35a74d9c97df05c62a36e483a3eb76af3ea168f869d612d47d8e17"
+  },
   "assets/avatars-chibi/hindu-durga.webp": {
     "bytes": 139746,
     "sha256": "fb0adc0363ab3d227bd1311ab3ba7a5427c6272ff84a4e29dd691268361ddbba"
@@ -1182,6 +1218,10 @@
   "assets/avatars-chibi/mesopotamica-utu-shamash.webp": {
     "bytes": 144068,
     "sha256": "0395d5aa29fae92415f88aa0c76a4e3302bff72d673c7e16b4b0e4bc50a7523d"
+  },
+  "assets/avatars-chibi/perseu.webp": {
+    "bytes": 298628,
+    "sha256": "b37853aa4f439c82258c3a620d0e604e8ab7eae17d4204e47290749683d1097e"
   },
   "assets/avatars-chibi/portraits-01.png": {
     "bytes": 2472764,
@@ -1655,6 +1695,10 @@
     "bytes": 361688,
     "sha256": "ca633c3c7c7da8dc50f717114d6cc70c4a3042b2a5c54cb853bbafb0a600a6e8"
   },
+  "assets/cards-remake/demeter.webp": {
+    "bytes": 706258,
+    "sha256": "565669a0e30a779f5210658da4da80e086be563f98dba2946c2cc0339eb68c43"
+  },
   "assets/cards-remake/dionisio.webp": {
     "bytes": 356084,
     "sha256": "e600f8b7dfa88df0a0de69ab93feba5a98247cac1fa334e024de7a76c05847de"
@@ -1675,6 +1719,10 @@
     "bytes": 328044,
     "sha256": "a925e4cb3ebed83a5a660e74260bfd889c1cb7d8b129e31d455a48bea885e2c9"
   },
+  "assets/cards-remake/hera.webp": {
+    "bytes": 635348,
+    "sha256": "5e8f7c897f29f7e09d572e0e76fcb8c3bd7bcadb7282e479087ef4e27c474091"
+  },
   "assets/cards-remake/hercules.webp": {
     "bytes": 177872,
     "sha256": "111a6eb2ac23d9e894192d71efc0e4328b6ce4088953ef98faa25334f460d26c"
@@ -1682,6 +1730,10 @@
   "assets/cards-remake/hermes.webp": {
     "bytes": 316064,
     "sha256": "233a50585462ba0f06bc6bf709910f06df5245adc0d0635fa334ba7b251be20e"
+  },
+  "assets/cards-remake/hestia.webp": {
+    "bytes": 523378,
+    "sha256": "853d27820dfcd7e6f5331b2e946005f7c2d60727c78f4eb01eb956c4f51902c3"
   },
   "assets/cards-remake/hindu-durga.webp": {
     "bytes": 391894,
@@ -1862,6 +1914,10 @@
   "assets/cards-remake/osiris.webp": {
     "bytes": 317146,
     "sha256": "f32dfb526cda5aa920d04a54f841f2ead3d903eed9f9833660ddeb58f11a5ca5"
+  },
+  "assets/cards-remake/perseu.webp": {
+    "bytes": 516796,
+    "sha256": "3583f66e75338d9089a9eb1b354a98c442c7fdc1e4582e3f1eccf4a48e82e2d9"
   },
   "assets/cards-remake/poseidon.webp": {
     "bytes": 263760,
@@ -2054,6 +2110,22 @@
   "assets/cards-v3/zeus.webp": {
     "bytes": 195638,
     "sha256": "43f4c6db29c212b04c920b5ac18b203e4c6f9d60939ea7ffdfa6a71c4d1cb890"
+  },
+  "assets/character-emblems/demeter.svg": {
+    "bytes": 704,
+    "sha256": "6492e83e1bc3822b216d518ded23bd1448def4bcdff035e4bde60d1d4f275b98"
+  },
+  "assets/character-emblems/hera.svg": {
+    "bytes": 805,
+    "sha256": "a1ccaf17de7bcc71a68ce7c83fe08a2f78a09180200b0d0fee7376047911df72"
+  },
+  "assets/character-emblems/hestia.svg": {
+    "bytes": 719,
+    "sha256": "215e328b0c1cf0fc80a384d0d8964bed054ffbd90539e99bba1a90b995b710ad"
+  },
+  "assets/character-emblems/perseu.svg": {
+    "bytes": 741,
+    "sha256": "5789967e1bc8c9ee426eba4730ed6c17acfcf695949a6d2cf3dc12e3ff581787"
   },
   "assets/concept-ui/citadela-luminosa.png": {
     "bytes": 2944419,
@@ -3219,6 +3291,10 @@
     "bytes": 1834,
     "sha256": "94df4489a20bd774c110eecbd82beff798d9089806f4a7ec371f3f71bbc2ae81"
   },
+  "assets/holograms/demeter-hologram.webp": {
+    "bytes": 617988,
+    "sha256": "3184e859a1447bd540c34004ed0d40b193c8246f80913858208cc9d8d721b89f"
+  },
   "assets/holograms/dionisio-hologram.png": {
     "bytes": 2827074,
     "sha256": "d8ee181d799f16f1a6ed4f86084734d8128a2bdc35044a015958db5476160af5"
@@ -3243,6 +3319,10 @@
     "bytes": 2860590,
     "sha256": "7235d93a3a72ddbbd5d0178fa244a28cd1fef196d35ced06f5fd94713f748397"
   },
+  "assets/holograms/hera-hologram.webp": {
+    "bytes": 508888,
+    "sha256": "43851da2e2012a246c3af1576d81e66877bad85e7020f0476c42094048562032"
+  },
   "assets/holograms/hercules-hologram.png": {
     "bytes": 2414228,
     "sha256": "256a836efc82c61fb0760ddb4e18765b17f629838f0a2f0986df7f6d2c52ddbc"
@@ -3250,6 +3330,10 @@
   "assets/holograms/hermes-hologram.png": {
     "bytes": 2724672,
     "sha256": "6868cdd7e61e42b61fe99bc12c9f3c2bb07f0a21246b249bab69cb2b971dba1f"
+  },
+  "assets/holograms/hestia-hologram.webp": {
+    "bytes": 398584,
+    "sha256": "764b15830df41a9cc53fabf4e02a837ab937459001b71d767f0a14755cfed1e6"
   },
   "assets/holograms/hindu-durga-hologram.webp": {
     "bytes": 734980,
@@ -3427,6 +3511,10 @@
     "bytes": 2571606,
     "sha256": "168be08729f714a264660c7e063bacd43fd2b0185ffbb3dfd8f045ca4737af71"
   },
+  "assets/holograms/perseu-hologram.webp": {
+    "bytes": 428386,
+    "sha256": "8828f1b6cdd73e5940b7eb6fa6c432068877f925c0544893a7e5b73b78c9a9f4"
+  },
   "assets/holograms/poseidon-hologram.png": {
     "bytes": 2625169,
     "sha256": "cf2a744682dc46d83468dccaab493c88315d02025ecc322c98a2638ed73b7330"
@@ -3566,6 +3654,70 @@
   "assets/mode-x1.png": {
     "bytes": 362596,
     "sha256": "b36841ffa54ad9b4f01c23f931141f62379ef300fa83226a24f09e611ed12618"
+  },
+  "assets/new-greeks/demeter-banner.png": {
+    "bytes": 3251245,
+    "sha256": "133d277d843b4f830ccf181f523bbf28aee9c91442fbca952e6f287fa23f5e59"
+  },
+  "assets/new-greeks/demeter-chibi.png": {
+    "bytes": 2343850,
+    "sha256": "b5c19b8f606f0c0176e33b6ef1efae3a9854e58269a4f6c46bcef9d237f78aeb"
+  },
+  "assets/new-greeks/demeter-hologram.png": {
+    "bytes": 2653266,
+    "sha256": "82874c50a112f9d5923d36ef470f59c765888aa8f69a90f406a85af62792ea0e"
+  },
+  "assets/new-greeks/demeter-illustration.png": {
+    "bytes": 3295130,
+    "sha256": "a73321a59ccde17b8a1f05699da0bbd8137df255d8ab9021767639bc7a771a23"
+  },
+  "assets/new-greeks/hera-banner.png": {
+    "bytes": 3114017,
+    "sha256": "6be169190293f44d04db7b5f9d6ef89c56de83060b849d5a5b7f7749e60d1855"
+  },
+  "assets/new-greeks/hera-chibi.png": {
+    "bytes": 2546646,
+    "sha256": "514300d7b2e44bcd8cc8b1a5d3a644e2aa522e0adb13a0b60f1df52926fade8a"
+  },
+  "assets/new-greeks/hera-hologram.png": {
+    "bytes": 2441163,
+    "sha256": "6191965ebb13d50187b4a1629bd1b77786a23c678df8847c13ea082a606517be"
+  },
+  "assets/new-greeks/hera-illustration.png": {
+    "bytes": 2998792,
+    "sha256": "91cdf219ad713d6d990a272ef273c73cb5f28a9e70ec47518efe43718aaf0362"
+  },
+  "assets/new-greeks/hestia-banner.png": {
+    "bytes": 2607536,
+    "sha256": "7763dd03794f0cbbc7cef965cfc4b43dc50b73cc769df72b421bf3ec2cfccd80"
+  },
+  "assets/new-greeks/hestia-chibi.png": {
+    "bytes": 2121274,
+    "sha256": "7902948f4fbb23ced258a1ec4d0dca179d609f673394f7d8f390e5e3418d1ddd"
+  },
+  "assets/new-greeks/hestia-hologram.png": {
+    "bytes": 2129805,
+    "sha256": "f6b54221dadefd3b2e0211765d45430518a29f95d40a020a34f932a5497c9c2f"
+  },
+  "assets/new-greeks/hestia-illustration.png": {
+    "bytes": 2549140,
+    "sha256": "32ef45df3f893f10eb5fd262345104e7ba96249c39806a8a645de6028bd24185"
+  },
+  "assets/new-greeks/perseu-banner.png": {
+    "bytes": 3035223,
+    "sha256": "e5e6ca1804afa6aa994bb4eca12d9468dc26abf7c49a7570fa58cbb6846703b8"
+  },
+  "assets/new-greeks/perseu-chibi.png": {
+    "bytes": 2398692,
+    "sha256": "08cf28f6201be9ee70d39e67890b1c4184890ae7d610a5d2be990c5b2e490d6e"
+  },
+  "assets/new-greeks/perseu-hologram.png": {
+    "bytes": 2215570,
+    "sha256": "78eee90f865cc0f91521c6086f3f1076007fbaac85fe4240af06510aae797a92"
+  },
+  "assets/new-greeks/perseu-illustration.png": {
+    "bytes": 2952603,
+    "sha256": "50541af490c0829ec3e4d79ba1abe1846d71274d3747c1e7d5cf99997d05b44b"
   },
   "assets/onboarding/egyptian-realm.webp": {
     "bytes": 203548,
@@ -4331,6 +4483,18 @@
     "bytes": 425764,
     "sha256": "70812e19c1ca8693175b5ab1c9ef9b1a6e9bf67904de46470b854e71fb05396e"
   },
+  "assets/universe/characters/demeter.webp": {
+    "bytes": 855678,
+    "sha256": "47ac2fc1829faaf82430a0d0c0c851549684ba952dd85bd3ec5a412cbee1281e"
+  },
+  "assets/universe/characters/hera.webp": {
+    "bytes": 810052,
+    "sha256": "765bae636add2b8328959b4f1719b8108e7e5769494becf4146450a1f8dfdce9"
+  },
+  "assets/universe/characters/hestia.webp": {
+    "bytes": 636620,
+    "sha256": "d38516f6beb6169caf565b1b487ffa247a2f822d9577f14e3272063263f30e4f"
+  },
   "assets/universe/characters/hindu-durga.webp": {
     "bytes": 402446,
     "sha256": "5e4b1304861e39da3c140fa3b54929267ece23592e20aef17a208f44ef723a95"
@@ -4451,6 +4615,10 @@
     "bytes": 414044,
     "sha256": "dad77a5c087864c2711241fdf8c54dc0d16eb6ff81a106647fca69f213f9486a"
   },
+  "assets/universe/characters/perseu.webp": {
+    "bytes": 770684,
+    "sha256": "627fa1af44f8c1f597cc2ce45d01f3bbdd06d66b1500af32a11e9dbeacefdf38"
+  },
   "assets/universe/characters/rei-arthur.webp": {
     "bytes": 389238,
     "sha256": "832a98d780c31cca53f451c2437a6bb58bd926a2193ec86ff5975487536207cb"
@@ -4519,6 +4687,10 @@
     "bytes": 1694,
     "sha256": "f676df70eb7d26491c240e50bfa73df8fc28f466af806f4724c16e248645ea2f"
   },
+  "ATLAS-SEM-REPETICOES.md": {
+    "bytes": 1994,
+    "sha256": "d83ac18c458a6dbbd051eeec81c6404187126e0dd445a0adb208c3a97568f007"
+  },
   "ATUALIZACAO-ANIMACOES-COMBATE.md": {
     "bytes": 1989,
     "sha256": "a64a948971f13c7301ddc2006038d55c98c168de485c8d1730629ee7096fd8e6"
@@ -4583,6 +4755,10 @@
     "bytes": 5267,
     "sha256": "b58a9e22755642305b01cfe072909bad00ceac141f1140e28d41bb93e3172bd1"
   },
+  "ATUALIZACAO-WEBAPP-E-NOVOS-GREGOS.md": {
+    "bytes": 5718,
+    "sha256": "04eb72fe1301892f7a0b10081da96fda3b8f85e203688626c6ddfa0027bb9fba"
+  },
   "AUDITORIA-SEGURANCA-DESEMPENHO.md": {
     "bytes": 14009,
     "sha256": "52f2e5032c7e070a8fa4a7669cee3902451a95b2b8ec4ba7f466d64dd6f1a3a2"
@@ -4596,8 +4772,8 @@
     "sha256": "9647e3ca3989d016bcd9a6bf4c8596ec814d64860f3d9707b4945c34878125af"
   },
   "avatars-chibi.js": {
-    "bytes": 15867,
-    "sha256": "04ac9cb0370c1cf5bc7bb8169b03592765667672eb5ed24573f4165132c698ad"
+    "bytes": 16337,
+    "sha256": "18a116b67d22b3593e1d32886038086744cd8e2eaf03487294748eb986cb7b4d"
   },
   "avatars-chibi.json": {
     "bytes": 22358,
@@ -4624,16 +4800,16 @@
     "sha256": "f5e9e8eaa27bcb5267d9a1faca8066896562949fcbcefabd4d04f540b292f859"
   },
   "card-expansion.js": {
-    "bytes": 114889,
-    "sha256": "b22d4a1445cafaadb6128f63c4e423b9c5cee0e9e10fa0f38220d107222d31a8"
+    "bytes": 92056,
+    "sha256": "705ebfd5542e8c74f0d27235442c4dc8e507da64eceda2751782cbdb70cf1a23"
   },
   "card-hologram-map.json": {
-    "bytes": 114524,
-    "sha256": "dadb900e624d86a998ecf08148a21d2a2cecc076572abc3e8b1576f5f5ea996f"
+    "bytes": 118501,
+    "sha256": "5c90bd443bb0e05e9009ed48f3f68d48b14f6eb21786e35cdc4bab25d6a6b4eb"
   },
   "cards-remake.json": {
-    "bytes": 114436,
-    "sha256": "286d5f7dd08614cbfc30b7992dc65b7da1f82d025bd0630df0347f1d07eca01a"
+    "bytes": 118411,
+    "sha256": "8230d4a9bd38ddb5de34f81841f63c9f71859a0398eed1557e1b9d3f27a5f60c"
   },
   "CARREGAMENTO-E-DESEMPENHO.md": {
     "bytes": 6423,
@@ -4652,12 +4828,12 @@
     "sha256": "8920d3c52402266cf3f9478b0caed59d381e5041f0d052a529251a917e7d3485"
   },
   "combat-fx.js": {
-    "bytes": 14829,
-    "sha256": "7d6f2686c598639189bbc86eab2f7a688e91ee31ca0670fa18079a1860eb8f07"
+    "bytes": 16159,
+    "sha256": "7b9c2135635f45a0823818067acad425f8f558ca669820e5fafac9c2fc6197cf"
   },
   "COMECE-AQUI.txt": {
-    "bytes": 7042,
-    "sha256": "98bd33ee1f56d472a8b3920e031a26532f8f5b9abb6e6ecf7fc365d963e7d0d3"
+    "bytes": 7446,
+    "sha256": "3739eb91395773bffd5d1228d894ea36155572ea4953548135deb5f33e170808"
   },
   "CONCEPT-ART-ASSETS.json": {
     "bytes": 5044,
@@ -4764,8 +4940,8 @@
     "sha256": "01b3a9fa92cd5d857d8cd3364fab4ee637942aeb237ff6b5dc6011c80ae40083"
   },
   "deck-picker.js": {
-    "bytes": 3322,
-    "sha256": "39d187153f49197012ea62d44203e491759ac2dc2709c578ea75d52d42354dd8"
+    "bytes": 3711,
+    "sha256": "d6e8ab8d7d1f65995d81a402291fec98bd71b5b727ae654c6b83040a7245381d"
   },
   "deck-tools.css": {
     "bytes": 10130,
@@ -4805,7 +4981,7 @@
   },
   "entry-bootstrap.js": {
     "bytes": 10873,
-    "sha256": "de622ce504062ddbabdf4ffd428b4d5e3bb95c7c6e02d5aa04a83b70d73b3b2b"
+    "sha256": "827d38fb984bfa0a9528933e5f18d51d82ca46b51f7db15668eb3cb42e64ea2f"
   },
   "entry-critical.css": {
     "bytes": 9109,
@@ -4848,24 +5024,28 @@
     "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
   },
   "game-interface.css": {
-    "bytes": 651345,
-    "sha256": "c31bb2d75462f823d2a84ee5ef423be322f483caffebf2d6f2ee8f0a67813287"
+    "bytes": 653901,
+    "sha256": "a2262bbde20e3932b042c34e73a5978ae0d644c2bd99dc965ad29bd2f9398c78"
   },
   "game-runtime.js": {
-    "bytes": 1369177,
-    "sha256": "57aaba70a329e53498f4188131467ffde23fe87b81610cd9ebe33fc9ce633863"
+    "bytes": 1335873,
+    "sha256": "43dadab9760a40b365c1dcd9e4a4ee8ef62feb9d1566476eadebb130a51c778b"
+  },
+  "gamepad-controls.js": {
+    "bytes": 4231,
+    "sha256": "1e3eee0396538bf13cdcf7d78c94e10f7f70ab893542b969cc41ccd59ce607fa"
   },
   "guardian-campaign-data.js": {
-    "bytes": 62062,
-    "sha256": "e8a2ba000112a28600be877a95c5c53bc22791e3f3c34363ac74ababc432ad43"
+    "bytes": 33735,
+    "sha256": "2b5e5cf2699e0343795ecd65489b934c36a0fc50f55bc765ffc66434f5852392"
   },
   "guardian-campaign.css": {
     "bytes": 22023,
     "sha256": "1885e8d5b70ad5751a64e333bf6323528d58a9d704b6b37552c8cad9b3045f4e"
   },
   "guardian-campaign.js": {
-    "bytes": 31843,
-    "sha256": "6a75d174b4da20559a4279cd41446177e297be6286ab57ac99ea5dfcf77870e8"
+    "bytes": 32768,
+    "sha256": "8881b719957e0acabc0a9eb40fdf81246b741433747be8e5782360b03aa960a2"
   },
   "GUARDIAO-CAMPANHA.md": {
     "bytes": 5627,
@@ -4924,8 +5104,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 77504,
-    "sha256": "7204284968266ca9096c046a7a32e85e32b21030829ff9e5c3fbb2c5356eedd1"
+    "bytes": 77510,
+    "sha256": "92201baabfeab9faee75ba4e7a2df93c805486ad25daabd550778263066842c4"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -5019,6 +5199,30 @@
     "bytes": 2750,
     "sha256": "d9bebe7043727148a2858b21cebc8bb2d717fd0940d3093657bee7402fe0f5a4"
   },
+  "novos-personagens/cartas/demeter.png": {
+    "bytes": 2489818,
+    "sha256": "6fc0f7f25ce05f19bf96203cb2647bb88a7cbe5bb53755921b0c422371740212"
+  },
+  "novos-personagens/cartas/hera.png": {
+    "bytes": 2316294,
+    "sha256": "d5ba085f42e8648566df243b07891b2d68a04a0bbfbed87c020a114244d386cb"
+  },
+  "novos-personagens/cartas/hestia.png": {
+    "bytes": 2066823,
+    "sha256": "e2559dbe638b1be4aa84c28e11208e51322317945350d618b75c58235837a6c6"
+  },
+  "novos-personagens/cartas/perseu.png": {
+    "bytes": 2057659,
+    "sha256": "6b92291a0ecac3b699737924354cc18f8477e50a5ef74fa8717dd5e500b0bf50"
+  },
+  "novos-personagens/previa-banners.jpg": {
+    "bytes": 823290,
+    "sha256": "428a252297e4980b874edf0ef8ba60e825b9e490d897f3723c2d2adf43bad509"
+  },
+  "novos-personagens/previa-cartas.jpg": {
+    "bytes": 431144,
+    "sha256": "b53b26eb0f07cf6a550c7de06813e4c31a22f9d7eff819e28424784aac43183c"
+  },
   "ONBOARDING-IMAGE-PROMPT.txt": {
     "bytes": 1620,
     "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
@@ -5036,12 +5240,12 @@
     "sha256": "fa5c7bd75afe99a8a2828fa2695f5cf53b0d5987acc80455070d556a51ff9f32"
   },
   "portal-upgrade.css": {
-    "bytes": 19955,
-    "sha256": "302d8db7b766b26d6d94c540d2736be41ed9d802d50df496a55ce2443a091ed2"
+    "bytes": 19832,
+    "sha256": "8494505c71ac013086592351cb53b5052ec4e0dd3bf4336fcd2f942b0ca93595"
   },
   "portal-upgrade.js": {
-    "bytes": 31223,
-    "sha256": "e71aa381eb85926ec845ac08d7f9b5cc52c011fea3dcab74fcc34eb6fba61ff4"
+    "bytes": 29505,
+    "sha256": "be0f6645220c825fd19db3fc1ddd7a71481965da3b7f8771a58eca0d864ad38d"
   },
   "practice-mode.css": {
     "bytes": 2082,
@@ -5068,8 +5272,8 @@
     "sha256": "95262b15ee32ad83213907eb7c8fa516607dd3841caa050e01736094d00d2921"
   },
   "quality-updates.css": {
-    "bytes": 15042,
-    "sha256": "d8beab28657617ec21c2130f6f8def325a588e5f0c7a127c77e2753165f9380f"
+    "bytes": 14940,
+    "sha256": "958ffea14ed46fd7bfe7e6a71dd6bc05e425984595c06571554e83020dfb687b"
   },
   "quality-updates.js": {
     "bytes": 10638,
@@ -5101,11 +5305,11 @@
   },
   "release-stamp.js": {
     "bytes": 86,
-    "sha256": "74df64206f3d4e447870d34e3ee582fed6689a788688bd2b3e62c3ec15204da1"
+    "sha256": "716c8ebae6c19671b6ee8a56474e73404dd7f6605346b5005217159e62d31690"
   },
   "release.json": {
     "bytes": 52,
-    "sha256": "9a27130024e5388c12ce3f8507be62e8b3eec8dd0657d352ddbb68694cd524be"
+    "sha256": "ef3d8def52919519ce77290ae5d0acf27637e3219af3e12377ad3507913b6117"
   },
   "remake-gallery.css": {
     "bytes": 1513,
@@ -5116,12 +5320,16 @@
     "sha256": "9b1a2b8d7575d8c3688bb6ade2d33be17b1f417d8a04ed9bd1509c64aa6de796"
   },
   "remake-rules.js": {
-    "bytes": 4082,
-    "sha256": "598a88926cabaac2d36bf1dccfa80ac7a604a1e5f6f8f52bf3d3ebd4e113c01c"
+    "bytes": 4312,
+    "sha256": "5aa7657759857307c10e5aa6b1c83569d4bbba56346841c1bc8e040e073e354c"
   },
   "remake-rules.json": {
-    "bytes": 5949,
-    "sha256": "9bdb567813052db41c227b933e566daff9b0e4840a2e92cacfdfa3bf6e82db3e"
+    "bytes": 6297,
+    "sha256": "9b7107f9ef62a5bef423aacaa999d00537c00c7395d546a0ece060a1c13ee341"
+  },
+  "resource-download.js": {
+    "bytes": 5589,
+    "sha256": "743cd5facaa0cb9b2e1c257e0fa52172266c296a162353641c272766e231d47f"
   },
   "responsive-layout.css": {
     "bytes": 19485,
@@ -5144,8 +5352,8 @@
     "sha256": "d5482a231a09465c6a8011b3d81208dca74069ba3c6071a909c610e67d918a8b"
   },
   "rewards-tournaments.js": {
-    "bytes": 21098,
-    "sha256": "8cb73e7b855eab39d77d6c6f4f8d22cce6d9dca70e406121b2a30759136692cd"
+    "bytes": 21207,
+    "sha256": "1c9cfb2096316ab43a658602034550bcc3c83ffe8c0745b7d3149d83152372b8"
   },
   "rework.css": {
     "bytes": 59751,
@@ -5487,6 +5695,14 @@
     "bytes": 19127,
     "sha256": "24c11351f7f9fc6ddad1d09e9c26287dd4fd3d684fb094f6071930bfd798168a"
   },
+  "supabase/migrations/202610220055_unique_atlas_and_greek_characters.sql": {
+    "bytes": 228833,
+    "sha256": "982733faa8714743c81eee14ef7fd19396e15b80b5bb0f8c14b4eb581e678ef6"
+  },
+  "supabase/migrations/202610220056_store_code_redemption.sql": {
+    "bytes": 3424,
+    "sha256": "6498a2929d925da63077522dcd590ca6b14478e034e0cc6e9332717e394b08dd"
+  },
   "supabase/README.md": {
     "bytes": 2053,
     "sha256": "317190d2e911059045588edd73f6f78cecbcbf1f4df1c13dfff9aa4f8594c24e"
@@ -5496,8 +5712,8 @@
     "sha256": "9b6a1a6c0d7deb0d97e5daa0ef0d1d3262096d20a9b5f4ece74afa9169fa7b02"
   },
   "sw.js": {
-    "bytes": 4187,
-    "sha256": "9de6998072e07a6092b231a641572dd7888ad0bddbad3ab5a1fa630560b5e5ed"
+    "bytes": 4241,
+    "sha256": "4ef432e86ccca03ec06616fb61f843f9854a28d2dbe62f6fa2d1932883dc022e"
   },
   "terrain-cards.js": {
     "bytes": 15141,
@@ -5532,8 +5748,8 @@
     "sha256": "b289f0a3355cfd66921bd1fb1fc6303f68985396508ba5341277994b17b32c56"
   },
   "universe-banners.js": {
-    "bytes": 10802,
-    "sha256": "f6d1e106ac0ba5ee6c468dc74a4e947fdea006f2f449811cb4db3587df112dd4"
+    "bytes": 11266,
+    "sha256": "90a0fe940853059f0b88337dedea693b477e0745d2cd1216af498cb563ac270c"
   },
   "universe-banners.json": {
     "bytes": 3565,
@@ -5548,8 +5764,8 @@
     "sha256": "d77452533bd358ee56e7c3b5de09cdd6dab706c5ed87807402c1c7b0561769be"
   },
   "version.json": {
-    "bytes": 73,
-    "sha256": "6fbd6ae8bdb899c49fb9478cafcd0389cc1554c52cb1fd93782012ef9e844c02"
+    "bytes": 88,
+    "sha256": "4daccdaa7c539ec6bad73b57088cfe163c4a99d85e35c936e02a54911906963b"
   },
   "VERSO-OFICIAL-E-MOEDA.md": {
     "bytes": 933,
@@ -5567,6 +5783,14 @@
     "bytes": 1394,
     "sha256": "2f3be5ad76a2592837fc85b8812b4a97f2b081e1da29a3721141c0850eab1eb1"
   },
+  "webapp-upgrade.css": {
+    "bytes": 2755,
+    "sha256": "7a034e6f7e2d73227868c8373964a593a9ec174e2e7f20e1ddf92fc897935023"
+  },
+  "webapp-upgrade.js": {
+    "bytes": 1674,
+    "sha256": "f4cec00043ea655b9876ccc658d8e0e7e363e7b4ca42d655fffeac4b51f2793e"
+  },
   "welcome.css": {
     "bytes": 12222,
     "sha256": "f8f48f32638609d12c2af3fda614e437026aede9effc39d9e1cb71564845d72f"
@@ -5576,8 +5800,8 @@
     "sha256": "dd84701f0a342d9fd27da10ec052cf13c1fd48fe1d278effb1e9ef76047eba07"
   },
   "world-lore.js": {
-    "bytes": 22706,
-    "sha256": "84f19aa54bab3f95d3e19caa68470a3c29f308ab9c5b9d5dbb3a5a7432e4dcfe"
+    "bytes": 23564,
+    "sha256": "6d815b3f44db2a73df8171c8c56a4f0766e10a58aa62277747c39b7950eaee1c"
   },
   "world-lore.json": {
     "bytes": 25854,

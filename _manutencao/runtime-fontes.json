@@ -2,6 +2,7 @@
   "assets/vendor/supabase-2.118.0.js",
   "entry-media.js",
   "security.js",
+  "resource-download.js",
   "supabase-config.js",
   "card-expansion.js",
   "terrain-cards.js",
@@ -57,5 +58,7 @@
   "site-updates.js",
   "quality-updates.js",
   "video-replay.js",
-  "atlas-lessons.js"
+  "atlas-lessons.js",
+  "webapp-upgrade.js",
+  "gamepad-controls.js"
 ]

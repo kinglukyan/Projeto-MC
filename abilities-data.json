@@ -3387,6 +3387,118 @@
       ],
       "art": "assets/cards-remake/clone-macaco.webp",
       "hologram": "assets/holograms/chinesa-sun-wukong-hologram.webp"
+    },
+    {
+      "id": "hera",
+      "name": "Hera",
+      "kind": "unit",
+      "type": "Personagem",
+      "subtype": "Deusa",
+      "characterClass": "Deusa",
+      "faction": "Grécia",
+      "badgeKey": "greece",
+      "power": 6,
+      "cost": 4,
+      "abilityTitle": "SOBERANIA DO OLIMPO",
+      "ability": "Enquanto Hera estiver em campo, as outras unidades gregas aliadas na sua fileira recebem +1 de poder. Esta aura não se acumula com outra Hera.",
+      "art": "assets/cards-remake/hera.webp",
+      "hologram": "assets/holograms/hera-hologram.webp",
+      "tags": [
+        "grego",
+        "deus"
+      ],
+      "glow": "rgba(83,53,128,.42)",
+      "previewOnly": false,
+      "specialOnly": false,
+      "abilityPending": false,
+      "sourceEdition": "greeks-20261022",
+      "story": [
+        "Rainha do Olimpo, Hera sustenta sua autoridade entre juramentos, coroas e alianças. Na Convergência, sua presença reúne os gregos em uma única frente."
+      ]
+    },
+    {
+      "id": "demeter",
+      "name": "Deméter",
+      "kind": "unit",
+      "type": "Personagem",
+      "subtype": "Deusa",
+      "characterClass": "Deusa",
+      "faction": "Grécia",
+      "badgeKey": "greece",
+      "power": 4,
+      "cost": 3,
+      "abilityTitle": "COLHEITA ABUNDANTE",
+      "ability": "Ao entrar, compre 1 carta. Depois, escolha outra unidade grega aliada na mesma fileira para receber +2 de poder.",
+      "art": "assets/cards-remake/demeter.webp",
+      "hologram": "assets/holograms/demeter-hologram.webp",
+      "tags": [
+        "grego",
+        "deus"
+      ],
+      "glow": "rgba(83,53,128,.42)",
+      "previewOnly": false,
+      "specialOnly": false,
+      "abilityPending": false,
+      "sourceEdition": "greeks-20261022",
+      "story": [
+        "Deméter guarda os ciclos da terra. Quando a Convergência alcança seus campos, a deusa transforma a abundância das colheitas em força para seus aliados."
+      ]
+    },
+    {
+      "id": "hestia",
+      "name": "Héstia",
+      "kind": "unit",
+      "type": "Personagem",
+      "subtype": "Deusa",
+      "characterClass": "Deusa",
+      "faction": "Grécia",
+      "badgeKey": "greece",
+      "power": 4,
+      "cost": 3,
+      "abilityTitle": "CHAMA DO LAR",
+      "ability": "Enquanto Héstia estiver em campo, as outras unidades gregas aliadas na sua fileira ficam protegidas contra reduções de poder causadas por habilidades.",
+      "art": "assets/cards-remake/hestia.webp",
+      "hologram": "assets/holograms/hestia-hologram.webp",
+      "tags": [
+        "grego",
+        "deus"
+      ],
+      "glow": "rgba(83,53,128,.42)",
+      "previewOnly": false,
+      "specialOnly": false,
+      "abilityPending": false,
+      "sourceEdition": "greeks-20261022",
+      "story": [
+        "No centro de cada lar, Héstia preserva uma chama. Mesmo diante da Convergência, oferece abrigo e firmeza àqueles que lutam ao seu lado."
+      ]
+    },
+    {
+      "id": "perseu",
+      "name": "Perseu",
+      "kind": "unit",
+      "type": "Personagem",
+      "subtype": "Herói",
+      "characterClass": "Herói",
+      "faction": "Grécia",
+      "badgeKey": "greece",
+      "power": 5,
+      "cost": 4,
+      "abilityTitle": "GOLPE DO ESPELHO",
+      "ability": "Ao entrar, escolha e destrua uma unidade inimiga de até 4 de poder atual na fileira oposta.",
+      "art": "assets/cards-remake/perseu.webp",
+      "hologram": "assets/holograms/perseu-hologram.webp",
+      "tags": [
+        "grego",
+        "heroi"
+      ],
+      "glow": "rgba(83,53,128,.42)",
+      "previewOnly": false,
+      "specialOnly": false,
+      "abilityPending": false,
+      "sourceEdition": "greeks-20261022",
+      "story": [
+        "Com a espada curva e o escudo espelhado, Perseu enfrenta o desconhecido. Na Convergência, o herói confia na observação e na precisão antes do golpe decisivo."
+      ]
     }
   ],
   "entries": {
@@ -4110,6 +4222,26 @@
       "faction": "Brasil",
       "count": 2,
       "amount": 3
+    },
+    "hera": {
+      "op": "aura",
+      "faction": "Grécia",
+      "amount": 1,
+      "unique": true
+    },
+    "demeter": {
+      "op": "drawBuff",
+      "faction": "Grécia",
+      "amount": 2
+    },
+    "hestia": {
+      "op": "protectReduction",
+      "faction": "Grécia"
+    },
+    "perseu": {
+      "op": "destroy",
+      "opposite": true,
+      "max": 4
     }
   },
   "release": "20261020-remake"

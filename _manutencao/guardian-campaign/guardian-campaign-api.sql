@@ -36,7 +36,7 @@ begin
  if (region->>'order')::integer>1 then
   select value into previous_region from jsonb_array_elements(public._gc_data()->'regions') where (value->>'order')::integer=(region->>'order')::integer-1;
   select coalesce(max(p.cleared),0) into previous_cleared from public.guardian_campaign_progress p where p.player_id=uid and p.region_id=previous_region->>'id';
-  if previous_cleared<20 then raise exception 'Conclua a trilha anterior para desbloquear esta mitologia.';end if;
+  if previous_cleared<jsonb_array_length(previous_region->'nodeIds') then raise exception 'Conclua a trilha anterior para desbloquear esta mitologia.';end if;
  end if;
  perform public._assert_owned_deck(uid,p_cards);
  if (select coalesce(sum((value::text)::integer),0) from jsonb_each(p_cards)) not between 14 and 35 then raise exception 'Selecione um baralho de 14 a 35 cartas.';end if;

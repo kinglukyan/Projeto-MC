@@ -36,7 +36,7 @@ alter table public.guardian_campaign_rewards enable row level security;
 revoke all on public.guardian_campaign_progress,public.guardian_campaign_runs,public.guardian_campaign_requests,public.guardian_campaign_rewards from public,anon,authenticated;
 
 create or replace function public._gc_node(nid text) returns jsonb language sql immutable set search_path='' as $$
- select public._gc_data()#>array['nodes',nid] $$;
+ select coalesce(public._gc_data()#>array['nodes',nid],public._gc_data()#>array['legacyNodes',nid]) $$;
 create or replace function public._gc_region(rid text) returns jsonb language sql immutable set search_path='' as $$
  select value from jsonb_array_elements(public._gc_data()->'regions') where value->>'id'=rid limit 1 $$;
 create or replace function public._gc_shuffle(pool jsonb) returns jsonb language sql volatile set search_path='' as $$

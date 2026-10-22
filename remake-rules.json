@@ -318,5 +318,25 @@
     "faction": "Brasil",
     "count": 2,
     "amount": 3
+  },
+  "hera": {
+    "op": "aura",
+    "faction": "Grécia",
+    "amount": 1,
+    "unique": true
+  },
+  "demeter": {
+    "op": "drawBuff",
+    "faction": "Grécia",
+    "amount": 2
+  },
+  "hestia": {
+    "op": "protectReduction",
+    "faction": "Grécia"
+  },
+  "perseu": {
+    "op": "destroy",
+    "opposite": true,
+    "max": 4
   }
 }

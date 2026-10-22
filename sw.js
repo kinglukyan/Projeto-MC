@@ -1,5 +1,5 @@
 // Content revisions preserve warm image caches across releases.
-const BUILD_ID='e045bae3dc83a2aff8bc';
+const BUILD_ID='b0055ef1bab3e0d31702';
 const CACHE='mythic-clash-fast-shell-v1',MEDIA='mythic-clash-fast-media-v1';
 const MANIFEST=new URL('asset-manifest.json',self.registration.scope).href;
 let revisions={},optimized={},localManifest=null,manifestUpdate=null;
@@ -16,7 +16,7 @@ self.addEventListener('fetch',event=>{const request=event.request,url=new URL(re
  if(url.pathname.endsWith('/release.json')){event.respondWith(fetch(request,{cache:'no-store'}));return;}
  if(request.mode==='navigate'){event.waitUntil(updateManifest());event.respondWith(networkFirst(request,event));return;}
  if(/\.(js|css)$/i.test(url.pathname)&&url.searchParams.has('v')){event.respondWith((async()=>{const cache=await caches.open(CACHE);return(await cache.match(request))||networkFirst(request,event);})());return;}
- const media=['image','font','audio','video'].includes(request.destination)||/\.(png|jpe?g|webp|avif|gif|svg|woff2?|ttf|otf|mp3|ogg|wav|mp4|webm)$/i.test(url.pathname);
+ const media=url.pathname.includes('/assets/')||['image','font','audio','video'].includes(request.destination)||/\.(png|jpe?g|webp|avif|gif|svg|woff2?|ttf|otf|mp3|ogg|wav|mp4|webm)$/i.test(url.pathname);
  if(!media){event.respondWith(networkFirst(request,event));return;}
- event.respondWith((async()=>{await readManifest();let relative=url.pathname.slice(new URL(self.registration.scope).pathname.length);try{relative=decodeURIComponent(relative);}catch{}const mapped=optimized[relative];const target=mapped&&/^assets\/[a-z0-9_./-]+$/i.test(mapped)?new URL(mapped,self.registration.scope):new URL(request.url),revision=revisions[mapped||relative];if(revision)target.searchParams.set('__mythic_rev',revision);const cache=await caches.open(MEDIA),saved=await cache.match(target.href);if(saved)return saved;try{const response=await fetch(target.href,{cache:'default'});if(response.ok)event.waitUntil(save(cache,target.href,response.clone()));return response;}catch{return Response.error();}})());
+ event.respondWith((async()=>{await readManifest();let relative=url.pathname.slice(new URL(self.registration.scope).pathname.length);try{relative=decodeURIComponent(relative);}catch{}const mapped=optimized[relative];const target=mapped&&/^assets\/[a-z0-9_./-]+$/i.test(mapped)?new URL(mapped,self.registration.scope):new URL(request.url),revision=revisions[mapped||relative];if(revision){target.search='';target.searchParams.set('__mythic_rev',revision);}const cache=await caches.open(MEDIA),saved=await cache.match(target.href);if(saved)return saved;try{const response=await fetch(target.href,{cache:'default'});if(response.ok)event.waitUntil(save(cache,target.href,response.clone()));return response;}catch{return Response.error();}})());
 });

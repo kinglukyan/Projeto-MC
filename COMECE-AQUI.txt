@@ -1,3 +1,8 @@
+ATUALIZAÇÃO 2026.10.22 — WEBAPP, ATLAS E NOVOS GREGOS
+Leia ATUALIZACAO-WEBAPP-E-NOVOS-GREGOS.md. Aplique 055 e 056 após 054 e publique o projeto atualizado.
+108 desafios sem adversários repetidos, quatro novos gregos com cartas/chibis/hologramas/banners, download de recursos, gamepads e área segura do iPhone.
+SQL, partidas online e dispositivos físicos não foram testados nesta entrega.
+
 ATUALIZAÇÃO — ÍCONES DE DECKS E CONQUISTAS DO PERFIL
 12 emblemas de estratégias para decks e 4 medalhas próprias no perfil. Leia ICONES-DECKS-E-CONQUISTAS.md.
 Prévia das artes: EMBLEMAS-DECKS-E-CONQUISTAS.svg. Publique os arquivos atualizados; esta alteração não exige SQL.

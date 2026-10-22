@@ -54,7 +54,6 @@ body.concept-ui #view-lore .lore-story-copy button{pointer-events:auto}
 .gc-node.is-mystery.is-locked{filter:none;opacity:.7}
 .gc-mystery-note{padding:12px;border:1px solid #b28a49;border-radius:8px;background:#22132f;color:#e8c98b;font-size:13px}
 .gc-bot-retry{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9000;display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid #d6b56c;border-radius:9px;background:#23172ff5;color:#f0e2c7;max-width:calc(100vw - 24px);font-size:12px}.gc-bot-retry[hidden]{display:none!important}.gc-bot-retry button{flex:none;font-size:12px}
-.ability-cinematic,.ability-cinematic-hero,.ability-cinematic-copy{animation-duration:.6s!important}
 .gc-lesson,.gc-match-reward{padding:12px;border:1px solid #bd964a6b;border-radius:8px;background:#32203b;color:#f6e6b3}
 .gc-match-reward{font-size:13px}
 .video-replay-settings{margin-top:20px;padding:22px;display:grid;gap:14px}

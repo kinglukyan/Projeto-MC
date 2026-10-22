@@ -52,12 +52,11 @@ body.concept-ui #view-decks #deck-builder-entry{
 .public-universe figcaption{font-size:12px;line-height:1.7;color:#bbaaC8;text-align:center;margin-top:16px}
 body.concept-ui #view-admin .admin-operations{grid-column:1/-1;width:100%;min-width:0}
 body.concept-ui #view-admin .admin-operations[hidden],.admin-operations [data-admin-section][hidden]{display:none!important}
-.admin-role-create,.admin-code-activation form{display:flex;align-items:end;gap:16px;flex-wrap:wrap;margin:24px 0}
-.admin-role-create label,.admin-code-activation label{display:grid;gap:12px;flex:1;min-width:min(100%,240px)}
+.admin-role-create{display:flex;align-items:end;gap:16px;flex-wrap:wrap;margin:24px 0}
+.admin-role-create label{display:grid;gap:12px;flex:1;min-width:min(100%,240px)}
 .admin-role-result label{display:grid;gap:12px;margin-top:20px}
 .admin-role-result input{font-family:monospace;font-size:14px;letter-spacing:.05em;width:100%}
-.admin-role-result p,.admin-code-activation p{line-height:1.8;overflow-wrap:anywhere}
-.admin-code-activation{margin-top:24px}
+.admin-role-result p{line-height:1.8;overflow-wrap:anywhere}
 @media(max-width:700px){
  body.mythic-rework.arcane-sidebar .main-content>.topbar{min-height:96px!important;padding:18px!important;gap:14px!important}
  body.mythic-rework.arcane-sidebar .main-content>.topbar .topbar-right{gap:9px;max-width:100%;justify-content:flex-end;flex:1 0 100%}

@@ -39,6 +39,7 @@
     "rewards-tournaments.css",
     "loading-ui.css",
     "quality-updates.css",
-    "atlas-dialogue.css"
+    "atlas-dialogue.css",
+    "webapp-upgrade.css"
   ]
 }
