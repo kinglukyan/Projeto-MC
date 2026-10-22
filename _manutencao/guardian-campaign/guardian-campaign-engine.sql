@@ -8,6 +8,11 @@ begin
   p:=x#>'{s,pendingEffect}';
   if p is not null then
    if p->>'actor'<>'guardian-bot' then return x;end if;
+   if x#>>'{s,campaignBotStep}' is distinct from ('choice:'||(p->>'id')) then
+    return jsonb_set(jsonb_set(x,'{s,campaignBotStep}',to_jsonb('choice:'||(p->>'id')),true),'{s,campaignBotDueAt}',to_jsonb(clock_timestamp()+interval '1 second'),true);
+   end if;
+   if clock_timestamp()<(x#>>'{s,campaignBotDueAt}')::timestamptz then return x;end if;
+   x:=x#-'{s,campaignBotDueAt}'#-'{s,campaignBotStep}';
    a:=jsonb_build_object('type','resolve_effect','choice_id',p->>'id','choice_value',public._gc_pick_choice(x,p,level));
    x:=public._r_action(x->'s',x->'r','guardian-bot',a);x:=public._gc_stats(x,'guardian-bot',a);continue;
   end if;
@@ -29,6 +34,11 @@ begin
   elsif phase='action' then
    if coalesce((r->>'passed')::boolean,false) then x:=jsonb_set(x,'{s,campaignPhase}','"end"');continue;end if;
    if actor=uid then return x;end if;
+   if x#>>'{s,campaignBotStep}' is distinct from 'play' then
+    return jsonb_set(jsonb_set(x,'{s,campaignBotStep}','"play"',true),'{s,campaignBotDueAt}',to_jsonb(clock_timestamp()+interval '2 seconds'),true);
+   end if;
+   if clock_timestamp()<(x#>>'{s,campaignBotDueAt}')::timestamptz then return x;end if;
+   x:=x#-'{s,campaignBotDueAt}'#-'{s,campaignBotStep}';
    a:=public._gc_pick_play(x,actor,level);if a->>'type'='pass' then x:=jsonb_set(x,array['r',actor,'passed'],'true');else x:=public._r_action(x->'s',x->'r',actor,a);end if;x:=public._gc_stats(x,actor,a);
    if a->>'type'='play' then x:=public._gc_note(x,(public._r_card(a->>'card_id')->>'name')||' entrou pelo adversário.');else x:=public._gc_note(x,'O adversário passou neste Round.');end if;
    x:=jsonb_set(x,'{s,campaignPhase}','"end"');continue;
@@ -145,9 +155,9 @@ create or replace function public._gc_snapshot(run public.guardian_campaign_runs
 declare s jsonb:=run.context->'s';r jsonb:=run.context->'r';uid text:=run.player_id::text;n jsonb:=public._gc_node(run.node_id);one jsonb;two jsonb;winner text;
 begin
  one:=(s->'player_one')||(r->uid);two:=(s->'player_two')||(r->'guardian-bot');s:=jsonb_set(jsonb_set(s,'{player_one}',one),'{player_two}',two);
- s:=s-'campaignRegion'-'campaignStage'-'campaignDecks'-'campaignStats'-'campaignActor'-'campaignPhase'-'campaignPlayer';
+ s:=s-'campaignBotDueAt'-'campaignBotStep'-'campaignRegion'-'campaignStage'-'campaignDecks'-'campaignStats'-'campaignActor'-'campaignPhase'-'campaignPlayer';
  s:=public._audit_public_state(s,'player_one',run.player_id);
- s:=s||jsonb_build_object('guardianCampaign',jsonb_build_object('runId',run.id,'nodeId',run.node_id,'region',n->>'region','stage',n->'stage','version',run.version,'opponent',n->>'opponent','result',run.context#>'{s,campaignResult}'));
+ s:=s||jsonb_build_object('guardianCampaign',jsonb_build_object('runId',run.id,'nodeId',run.node_id,'region',n->>'region','stage',n->'stage','version',run.version,'opponent',n->>'opponent','result',run.context#>'{s,campaignResult}','botThinking',run.context#>>'{s,campaignBotDueAt}' is not null,'botWaitMs',case when run.context#>>'{s,campaignBotDueAt}' is null then 0 else greatest(0,ceil(extract(epoch from((run.context#>>'{s,campaignBotDueAt}')::timestamptz-clock_timestamp()))*1000))::integer end,'botStep',case when run.context#>>'{s,campaignBotStep}' like 'choice:%' then 'choice' else 'play' end));
  winner:=case when run.status='completed' then case when run.context#>>'{s,campaignWinner}'='player_one' then uid else 'guardian-bot' end end;
  return jsonb_build_object('version',run.version,'node',n-'deck','match',jsonb_build_object('id',run.id,'mode','guardian','status',run.status,'player_one',uid,'player_two','guardian-bot','created_at',run.created_at,'finished_at',run.finished_at,'turn_user',case when run.context#>'{s,pendingEffect}' is not null then run.context#>>'{s,pendingEffect,actor}' else run.context#>>'{s,campaignActor}' end,'turn_deadline',run.deadline,'winner_id',winner,'state',s));
 end $$;

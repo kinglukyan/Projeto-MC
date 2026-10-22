@@ -1,3 +1,16 @@
+CORREÇÃO — SINTAXE DO SQL 052
+Leia CORRECAO-SQL-052.md. Execute novamente o SQL 052 completo e depois prossiga com 053 e 054.
+Corrigida a expressão CASE na condição do bot. Correção não executada no banco online.
+
+ATUALIZAÇÃO — ESCOLHAS DE HABILIDADES E RITMO DO BOT
+Leia CORRECAO-ESCOLHAS-E-RITMO-DO-BOT.md. Aplique a migração 054 após a 053 e publique os arquivos do jogo.
+Opções com arte e descrição, sem Desistir na escolha. Bot do Atlas com 2 segundos para jogar e 1 segundo por escolha.
+121 testes locais passaram; SQL e partidas online não foram executados nesta entrega.
+
+ATUALIZAÇÃO — ELENCO GREGO DO ATLAS
+Leia ATLAS-ELENCO-GREGO.md. Soldado de Esparta no nível 5; níveis 8, 9, 13 e 14 com silhueta chibi e interrogação dourada.
+Aplique a migração 053 após a 052 e publique os arquivos atualizados. O progresso existente é preservado.
+
 ATUALIZAÇÃO — DIÁLOGO INTERATIVO DE AQUILES NO ATLAS
 Leia ATLAS-DIALOGO-AQUILES.md. Inclui conversa com escolhas, animação de fala e reações de bravo e risada.
 Esta parte não exige SQL novo. Publique os arquivos atualizados; as artes estão dentro da pasta do jogo.

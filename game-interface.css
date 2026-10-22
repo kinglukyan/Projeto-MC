@@ -1634,6 +1634,7 @@ body.mythic-rework.arcane-sidebar.duel-fullscreen :is(.sidebar,.arcane-menu-butt
 .ability-choices button:hover{background:#433052;border-color:#e0bfef}.ability-choices button:focus-visible,.ability-choice-done:focus-visible{outline:3px solid #ead191;outline-offset:2px}
 .ability-choices button:disabled{opacity:.55;cursor:wait}.ability-choices img{width:100%;max-height:220px;object-fit:contain;border-radius:8px}.ability-choice-done{margin-top:16px;padding:12px 22px;min-height:44px;border:1px solid #c6a77a;border-radius:25px;background:#45334a;color:#fff2d9;cursor:pointer}
 .ability-peek{display:grid;justify-items:center;gap:8px;margin:14px auto 20px}.ability-peek img{max-height:220px;max-width:75%;border-radius:12px}.ability-peek strong{font-size:14px}
+.ability-choice-source{color:#e6c783!important;font-weight:600;margin:0 0 8px}.ability-choice-instruction{font-size:14px!important}.ability-choice-option strong{font-size:14px}.ability-option-meta,.ability-option-location{color:#dfc78e}.ability-option-title{color:#e6caee;font-weight:600}.ability-option-ability{color:#cec3dc;font-size:11px;line-height:1.45}.ability-choice-dialog{max-height:calc(var(--mythic-vh,1vh) * 92);max-height:92dvh}.ability-choices{align-items:stretch}.ability-choices button{justify-content:flex-start}.ability-choices img{height:190px;max-height:calc(var(--mythic-vh,1vh) * 30);max-height:30dvh}.ability-choice-instruction{position:sticky;top:-26px;background:#211a2def;padding:8px 0;z-index:1}
 @media(max-width:600px){.ability-choices{grid-template-columns:repeat(2,minmax(0,1fr))}.ability-choices img{max-height:180px}.ability-choice-dialog{max-height:calc(var(--mythic-vh,1vh) * 84);max-height:84dvh}.ability-choices button{font-size:12px;padding:10px}}
 @media(max-height:500px){.ability-choices img,.ability-peek img{max-height:115px}.ability-choice-dialog{max-height:calc(var(--mythic-vh,1vh) * 94);max-height:94dvh}}
 @media(prefers-reduced-motion:reduce){.ability-choice-dialog::backdrop{-webkit-backdrop-filter:none;backdrop-filter:none}}
@@ -3343,6 +3344,12 @@ body.concept-ui #view-lore .lore-story-copy button{pointer-events:auto}
 .visual-deck-trigger .deck-emblem,.visual-deck-options .deck-emblem{flex:0 0 34px;width:34px;height:34px;margin:0;padding:3px}
 .gc-deck .visual-deck-picker{grid-column:1;grid-row:2;min-width:0}
 .gc-deck{padding-left:0}.gc-deck::before{display:none}
+.gc-mystery-portrait{background:radial-gradient(circle,#291934,#0c0813);overflow:hidden}
+.gc-mystery-portrait img{width:100%;height:100%;object-fit:contain!important;padding:3px;box-sizing:border-box}
+.gc-node.is-mystery.is-locked{filter:none;opacity:.7}
+.gc-mystery-note{padding:12px;border:1px solid #b28a49;border-radius:8px;background:#22132f;color:#e8c98b;font-size:13px}
+.gc-bot-retry{position:fixed;left:50%;bottom:16px;transform:translateX(-50%);z-index:9000;display:flex;align-items:center;gap:12px;padding:12px 16px;border:1px solid #d6b56c;border-radius:9px;background:#23172ff5;color:#f0e2c7;max-width:calc(100vw - 24px);font-size:12px}.gc-bot-retry[hidden]{display:none!important}.gc-bot-retry button{flex:none;font-size:12px}
+.ability-cinematic,.ability-cinematic-hero,.ability-cinematic-copy{animation-duration:.6s!important}
 .gc-lesson,.gc-match-reward{padding:12px;border:1px solid #bd964a6b;border-radius:8px;background:#32203b;color:#f6e6b3}
 .gc-match-reward{font-size:13px}
 .video-replay-settings{margin-top:20px;padding:22px;display:grid;gap:14px}

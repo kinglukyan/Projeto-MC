@@ -1,0 +1,493 @@
+{
+  "at": "2026-10-22T03:16:37.845Z",
+  "engine": "JavaScript local",
+  "passed": 121,
+  "failed": 0,
+  "serverSQL": "Não executado; requer aplicação da migração 054 e validação no Supabase.",
+  "cases": [
+    {
+      "name": "Ganesha compra sem alvos silenciados (equipe um)",
+      "result": "ok"
+    },
+    {
+      "name": "Ganesha remove silêncio somente do aliado escolhido (equipe um)",
+      "result": "ok"
+    },
+    {
+      "name": "Merlin revela três cartas, põe a escolhida na mão e ordena o fundo (equipe um)",
+      "result": "ok"
+    },
+    {
+      "name": "Tiamat sem aliado não sacrifica ninguém (equipe um)",
+      "result": "ok"
+    },
+    {
+      "name": "Tiamat sacrifica somente aliado da mesma fileira e recebe metade do poder (equipe um)",
+      "result": "ok"
+    },
+    {
+      "name": "Roubo aponta visualmente para a equipe adversária (equipe um)",
+      "result": "ok"
+    },
+    {
+      "name": "Poseidon reduz somente fileira zero do adversário (equipe um)",
+      "result": "ok"
+    },
+    {
+      "name": "Ganesha compra sem alvos silenciados (equipe dois)",
+      "result": "ok"
+    },
+    {
+      "name": "Ganesha remove silêncio somente do aliado escolhido (equipe dois)",
+      "result": "ok"
+    },
+    {
+      "name": "Merlin revela três cartas, põe a escolhida na mão e ordena o fundo (equipe dois)",
+      "result": "ok"
+    },
+    {
+      "name": "Tiamat sem aliado não sacrifica ninguém (equipe dois)",
+      "result": "ok"
+    },
+    {
+      "name": "Tiamat sacrifica somente aliado da mesma fileira e recebe metade do poder (equipe dois)",
+      "result": "ok"
+    },
+    {
+      "name": "Roubo aponta visualmente para a equipe adversária (equipe dois)",
+      "result": "ok"
+    },
+    {
+      "name": "Poseidon reduz somente fileira zero do adversário (equipe dois)",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: soldado-esparta",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: athena",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: lobo-alfa",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: guardiao-nordico",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: medusa",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: poseidon",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: zeus",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: hades",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: lobo-omega",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: lukyan",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: anubis",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: odin",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: minotauro",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: apolo",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: ra",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: ragnar",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: afrodite",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: aquiles",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: seth",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: osiris",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: thor",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: artemis",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: sobek",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: ares",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: beowulf",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: heimdall",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: dionisio",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: butter",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: hefesto",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: hercules",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: hermes",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: horus",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: lobo-beta",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: isis",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: mulher",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: homem",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: loki",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: japonesa-amaterasu",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: chinesa-ao-guang",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: brasil-boitata",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: brasil-boto",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: celtas-brigid",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: brasil-caipora",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: asteca-chalchiuhtlicue",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: chinesa-change",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: asteca-coatlicue",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: brasil-cuca",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: brasil-curupira",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: celtas-cu-chulainn",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: celtas-dagda",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: celtas-dama-do-lago",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: hindu-durga",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: mesopotamica-enki",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: mesopotamica-enlil",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: mesopotamica-ereshkigal",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: chinesa-erlang-shen",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: chinesa-fuxi",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: japonesa-fujin",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: hindu-ganesha",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: chinesa-guanyin",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: japonesa-hachiman",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: hindu-hanuman",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: chinesa-hou-yi",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: asteca-huitzilopochtli",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: brasil-iara",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: chinesa-imperador-jade",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: japonesa-inari",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: hindu-indra",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: mesopotamica-ishtar",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: japonesa-izanagi",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: japonesa-izanami",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: hindu-kali",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: hindu-krishna",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: hindu-lakshmi",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: brasil-lampiao",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: celtas-lancelot",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: celtas-lugh",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: brasil-mapinguari",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: mesopotamica-marduk",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: celtas-merlin",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: asteca-mictecacihuatl",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: asteca-mictlantecuhtli",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: celtas-morgana",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: celtas-morrigan",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: brasil-mula-sem-cabeca",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: mesopotamica-nanna-sin",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: mesopotamica-nergal",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: chinesa-nezha",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: mesopotamica-ninurta",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: chinesa-nuwa",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: asteca-quetzalcoatl",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: japonesa-raijin",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: rei-arthur",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: japonesa-ryujin",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: brasil-saci",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: hindu-saraswati",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: hindu-shiva",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: chinesa-sun-wukong",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: japonesa-susanoo",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: asteca-tezcatlipoca",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: mesopotamica-tiamat",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: asteca-tlaloc",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: japonesa-tsukuyomi",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: mesopotamica-utu-shamash",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: hindu-vishnu",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: asteca-xipe-totec",
+      "result": "ok"
+    },
+    {
+      "name": "Entrada e escolhas: asteca-xochiquetzal",
+      "result": "ok"
+    }
+  ]
+}

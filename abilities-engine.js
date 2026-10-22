@@ -119,7 +119,7 @@ function remakeResolve(x,e){if(e.phase==='finish')return;const t=e.team,en=other
  case 'moveAlly':case 'moveSelf':case 'moveEnemy':{const v=op==='moveEnemy'?enemy:ally;if(v&&!remakeBlocked(x,op==='moveEnemy'?en:t,v,t,'move'))follow({phase:'lane',targetTeam:op==='moveEnemy'?en:t,targetUid:v.uid});break;}
  case 'rally':if(ally&&ally.lane!==e.lane&&room(x,t,e.lane)){ally.lane=e.lane;change(x,t,ally,t,r.amount);}break;
  case 'bounce':if(ally){x.s[t].field=x.s[t].field.filter(v=>v!==ally);if(!ally.token)res.hand.push(origin(ally));for(const id of ally.equipment||[])x.s[t].grave.push({uid:uid(),cardId:id,owner:ally.equipmentOwners?.[id]||ally.playedBy,progress:0});syncGrave(x.s[t]);change(x,t,u,t,r.amount);}break;
- case 'steal':if(enemy&&!remakeBlocked(x,en,enemy,t,'steal')&&room(x,t,e.lane)){x.s[en].field=x.s[en].field.filter(v=>v!==enemy);enemy.lane=e.lane;enemy.playedBy=e.owner;x.s[t].field.push(enemy);visual(x,'hearts',t,[enemy.uid]);}break;
+ case 'steal':if(enemy&&!remakeBlocked(x,en,enemy,t,'steal')&&room(x,t,e.lane)){x.s[en].field=x.s[en].field.filter(v=>v!==enemy);enemy.lane=e.lane;enemy.playedBy=e.owner;x.s[t].field.push(enemy);visual(x,'hearts',en,[enemy.uid]);}break;
  case 'reduce':case 'drainGrave':if(enemy){const n=op==='drainGrave'?x.s[en].grave.filter(g=>g.owner===enemy.playedBy&&C[g.cardId]?.kind==='unit').length:r.amount;change(x,en,enemy,t,-n);if(op==='reduce'&&(e.chosen||[]).length+1<(r.count||1))follow({chosen:[...(e.chosen||[]),selected]});}break;
  case 'wave':for(const v of rowUnits(x,en,r.fixedLane??e.lane))change(x,en,v,t,-r.amount);break;
  case 'waveBoth':for(const team of [t,en])for(const v of rowUnits(x,team,e.lane))if(v!==u)change(x,team,v,t,-r.amount);break;

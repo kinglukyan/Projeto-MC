@@ -53,7 +53,7 @@ end $$;
 create or replace function public._gc_deck(nid text) returns jsonb language plpgsql stable set search_path='' as $$
 declare n jsonb:=public._gc_node(nid);f text:=public._gc_region(n->>'region')->>'faction';result jsonb:='[]';entry record;c jsonb;target integer:=(n->>'deckSize')::integer;i integer;pool text[];
 begin
- if not public._card_enabled(n->>'opponent') then raise exception 'Este guardião está temporariamente em manutenção.';end if;
+ if not coalesce((n->>'placeholder')::boolean,false) and not public._card_enabled(n->>'opponent') then raise exception 'Este guardião está temporariamente em manutenção.';end if;
  for entry in select key,value from jsonb_each_text(n->'deck') loop
   if public._card_enabled(entry.key) then for i in 1..entry.value::integer loop result:=result||jsonb_build_array(entry.key);end loop;end if;
  end loop;
@@ -117,7 +117,7 @@ end $$;
 create or replace function public._gc_pick_play(x jsonb,actor text,level integer) returns jsonb language plpgsql stable set search_path='' as $$
 declare t text:=x#>>array['r',actor,'team'];enemy text:=public._r_other(t);cid text;c jsonb;l integer;score numeric;best numeric:=-1e30;result jsonb;zone text;own numeric;opp numeric;
 begin
- if (x#>>'{s,guardianCampaign,region}'='greece' or x#>>'{s,campaignRegion}'='greece') and actor='guardian-bot' and coalesce((x#>>array['r',actor,'turnsTaken'])::integer,0)>case when coalesce((x#>>'{s,campaignStage}')::integer,1)<=5 then 3 when (x#>>'{s,campaignStage}')::integer<=10 then 4 when (x#>>'{s,campaignStage}')::integer<=15 then 5 else 6 end then return jsonb_build_object('type','pass');end if;
+ if (x#>>'{s,guardianCampaign,region}'='greece' or x#>>'{s,campaignRegion}'='greece') and actor='guardian-bot' and coalesce((x#>>array['r',actor,'turnsTaken'])::integer,0)> (case when coalesce((x#>>'{s,campaignStage}')::integer,1)<=5 then 3 when (x#>>'{s,campaignStage}')::integer<=10 then 4 when (x#>>'{s,campaignStage}')::integer<=15 then 5 else 6 end) then return jsonb_build_object('type','pass');end if;
  own:=public._r_score(x->'s',t);opp:=public._r_score(x->'s',enemy);
  if (x#>>array['r',case when actor='guardian-bot' then x#>>'{s,campaignPlayer}' else 'guardian-bot' end,'passed'])::boolean and own>opp then return jsonb_build_object('type','pass');end if;
  if level>=3 and coalesce((x#>>'{s,round}')::integer,1)<3 and own>opp+12 and jsonb_array_length(x#>array['r',actor,'hand'])<=3 then return jsonb_build_object('type','pass');end if;

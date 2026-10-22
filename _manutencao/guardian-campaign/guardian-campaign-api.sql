@@ -60,7 +60,7 @@ begin
  perform public._security_rpc_gate('guardian_campaign_action',90);
  perform pg_advisory_xact_lock(hashtextextended('guardian:'||uid::text,0));
  if p_request_id is null or p_version is null or jsonb_typeof(p_action) is distinct from 'object'
-  or kind is null or kind not in('play','pass','resolve_effect','expire','surrender')
+  or kind is null or kind not in('play','pass','resolve_effect','expire','surrender','bot_tick')
   or exists(select 1 from jsonb_object_keys(p_action) k where k not in('type','card_id','lane','choice_id','choice_value'))
   or length(coalesce(p_action->>'card_id',''))>100 or length(coalesce(p_action->>'choice_id',''))>120 or length(coalesce(p_action->>'choice_value',''))>512
  then raise exception 'Ação inválida.';end if;
@@ -75,8 +75,11 @@ begin
  if run.status<>'active' then return public._gc_snapshot(run);end if;
  if run.version<>p_version then raise exception 'A batalha foi atualizada em outra aba. Aguarde a sincronização.';end if;
  x:=run.context;pending:=x#>'{s,pendingEffect}';n:=public._gc_node(run.node_id);
- if kind not in('expire','surrender') and clock_timestamp()>=run.deadline then kind:='expire';end if;
- if kind='surrender' then
+ if kind not in('expire','surrender','bot_tick') and clock_timestamp()>=run.deadline then kind:='expire';end if;
+ if kind='bot_tick' then
+  if (pending is not null and pending->>'actor' is distinct from 'guardian-bot') or (pending is null and x#>>'{s,campaignActor}' is distinct from 'guardian-bot') then raise exception 'Aguarde a vez do adversário.';end if;
+  if x#>>'{s,campaignBotDueAt}' is not null and clock_timestamp()<(x#>>'{s,campaignBotDueAt}')::timestamptz then return public._gc_snapshot(run);end if;
+ elsif kind='surrender' then
   x:=jsonb_set(x,'{s,finished}','true');x:=jsonb_set(x,'{s,campaignWinner}','"player_two"');x:=public._gc_note(x,'Você encerrou este desafio. Seu avanço anterior foi preservado.');
  elsif kind='expire' then
   if clock_timestamp()<run.deadline then raise exception 'O tempo desta jogada ainda não acabou.';end if;

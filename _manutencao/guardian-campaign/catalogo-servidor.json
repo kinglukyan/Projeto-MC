@@ -719,9 +719,9 @@
       "id": "greece-05",
       "region": "greece",
       "stage": 5,
-      "opponent": "athena",
-      "name": "Athena",
-      "icon": "chibi-athena",
+      "opponent": "soldado-esparta",
+      "name": "Soldado de Esparta",
+      "icon": "chibi-soldado-esparta",
       "difficulty": 1,
       "chapter": 0,
       "boss": true,
@@ -810,9 +810,9 @@
       "id": "greece-08",
       "region": "greece",
       "stage": 8,
-      "opponent": "artemis",
-      "name": "Ártemis",
-      "icon": "chibi-artemis",
+      "opponent": null,
+      "name": "Personagem misterioso",
+      "icon": "atlas-mystery",
       "difficulty": 1,
       "chapter": 1,
       "boss": false,
@@ -836,15 +836,16 @@
       },
       "deckSize": 16,
       "style": "Treino de sinergias",
-      "lesson": "Passar encerra sua participação neste Round. Faça isso quando tiver vantagem ou quiser economizar cartas."
+      "lesson": "Passar encerra sua participação neste Round. Faça isso quando tiver vantagem ou quiser economizar cartas.",
+      "placeholder": true
     },
     "greece-09": {
       "id": "greece-09",
       "region": "greece",
       "stage": 9,
-      "opponent": "ares",
-      "name": "Ares",
-      "icon": "chibi-ares",
+      "opponent": null,
+      "name": "Personagem misterioso",
+      "icon": "atlas-mystery",
       "difficulty": 1,
       "chapter": 1,
       "boss": false,
@@ -868,7 +869,8 @@
       },
       "deckSize": 16,
       "style": "Treino de sinergias",
-      "lesson": "Cartas que compram ou recuperam aliados ajudam a manter opções para os próximos turnos."
+      "lesson": "Cartas que compram ou recuperam aliados ajudam a manter opções para os próximos turnos.",
+      "placeholder": true
     },
     "greece-10": {
       "id": "greece-10",
@@ -974,9 +976,9 @@
       "id": "greece-13",
       "region": "greece",
       "stage": 13,
-      "opponent": "hades",
-      "name": "Hades",
-      "icon": "chibi-hades",
+      "opponent": null,
+      "name": "Personagem misterioso",
+      "icon": "atlas-mystery",
       "difficulty": 2,
       "chapter": 2,
       "boss": false,
@@ -1002,15 +1004,16 @@
       },
       "deckSize": 18,
       "style": "Prática de efeitos",
-      "lesson": "Proteções podem impedir uma destruição ou redução de poder. Confira os efeitos antes de atacar."
+      "lesson": "Proteções podem impedir uma destruição ou redução de poder. Confira os efeitos antes de atacar.",
+      "placeholder": true
     },
     "greece-14": {
       "id": "greece-14",
       "region": "greece",
       "stage": 14,
-      "opponent": "poseidon",
-      "name": "Poseidon",
-      "icon": "chibi-poseidon",
+      "opponent": null,
+      "name": "Personagem misterioso",
+      "icon": "atlas-mystery",
       "difficulty": 2,
       "chapter": 2,
       "boss": false,
@@ -1036,7 +1039,8 @@
       },
       "deckSize": 18,
       "style": "Prática de efeitos",
-      "lesson": "O Submundo reúne cartas removidas. Uma recuperação só funciona se houver um alvo permitido."
+      "lesson": "O Submundo reúne cartas removidas. Uma recuperação só funciona se houver um alvo permitido.",
+      "placeholder": true
     },
     "greece-15": {
       "id": "greece-15",
@@ -6264,7 +6268,7 @@
     "chibi-asteca-xipe-totec",
     "chibi-asteca-xochiquetzal"
   ],
-  "version": 2,
+  "version": 3,
   "impact": {
     "zeus": 10,
     "medusa": 7,
