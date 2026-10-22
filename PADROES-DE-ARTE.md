@@ -1,5 +1,9 @@
 # Padrões visuais de Mythic Clash
 
+## Prompts de produção
+
+Antes de criar artes, ler `prompts-de-arte/LEIA-ME.txt` e usar o arquivo correspondente: `01-CHIBIS.txt`, `02-BANNERS.txt` ou `03-PERSONAGENS-CARTAS.txt`. Esses modelos orientam as próximas gerações; os prompts antigos de grades servem como histórico de produção. Nos chibis, manter o tratamento visual constante e variar somente a cor da aura conforme a paleta do personagem, preservando sua identidade aprovada.
+
 ## Referências de identidade
 
 - Carta: Afrodite, original em `assets/cards-20261017/afrodite.png`; versão de jogo em `assets/cards-remake/afrodite.webp`.

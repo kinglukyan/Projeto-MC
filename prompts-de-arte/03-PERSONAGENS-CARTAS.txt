@@ -1,0 +1,54 @@
+MYTHIC CLASH — PROMPT PADRÃO DE ILUSTRAÇÃO DE PERSONAGENS
+Versão: 1.0 — 22/10/2026
+
+FINALIDADE
+Criar a ILUSTRAÇÃO do personagem que será usada na carta. A moldura e os atributos serão aplicados pelo TCG. Este prompt não gera a carta completa e não define habilidade, poder ou balanceamento.
+
+COMO USAR
+Anexar a ilustração da carta de Afrodite como referência de traço e acabamento. Se for anexada a carta inteira, considerar somente a pintura dentro da área de ilustração.
+Para um personagem que já existe, anexar também sua arte final aprovada como referência de identidade. Para um personagem novo, preencher uma ficha visual antes de gerar.
+
+FICHA VISUAL
+Nome: [NOME]
+Mitologia/facção: [MITOLOGIA OU FACÇÃO DEFINIDA]
+Tipo e aparência: [HUMANO, DIVINDADE, HERÓI OU CRIATURA; ESPÉCIE E FAIXA ETÁRIA VISUAL]
+Rosto e olhos: [FORMATO, EXPRESSÃO E COR DOS OLHOS]
+Cabelo: [COR, CORTE E TEXTURA]
+Roupas/armadura: [PEÇAS, MATERIAIS E CORES]
+Acessórios obrigatórios: [COROA, ELMO, JOIAS, ARMAS OU OBJETOS]
+Paleta aprovada: [CORES]
+Pose: [POSE E DIREÇÃO DO OLHAR]
+Cenário: [LOCAL RELACIONADO AO PERSONAGEM]
+Iluminação: [DIREÇÃO, HORÁRIO E ATMOSFERA]
+Restrições de identidade: [O QUE NÃO PODE SER MODIFICADO]
+
+PROMPT PARA COPIAR
+
+Crie uma ilustração individual de [NOME] para uma carta de Mythic Clash, seguindo o padrão artístico da pintura da carta de Afrodite fornecida como referência.
+
+ESTILO FIXO:
+Fantasia cinematográfica com pintura digital detalhada de aparência realista. Anatomia natural e convincente, rosto expressivo, pele com tratamento natural, cabelos definidos, tecidos trabalhados, joias e metais com materiais reconhecíveis. Cenário rico, profundidade e iluminação dramática, sem perder a leitura do personagem. Manter o nível de acabamento da ilustração de Afrodite. Não transformar o personagem em chibi, caricatura, desenho infantil, anime plano ou boneco plástico.
+
+PERSONAGEM E IDENTIDADE:
+Nome: [NOME]. Mitologia/facção: [MITOLOGIA OU FACÇÃO]. Aparência: [TIPO E APARÊNCIA]. Rosto e olhos: [ROSTO E OLHOS]. Cabelo: [CABELO]. Figurino: [ROUPAS/ARMADURA]. Acessórios: [ACESSÓRIOS OBRIGATÓRIOS]. Preservar [RESTRIÇÕES DE IDENTIDADE]. Usar [PALETA APROVADA] nos materiais e elementos apropriados, sem aplicar um filtro que recolora toda a imagem.
+
+Se houver arte aprovada de [NOME], ela governa sua identidade. Afrodite governa somente o estilo de pintura: não copiar seu rosto, suas roupas, suas rosas, sua pose ou seus acessórios para outro personagem.
+
+POSE E CENÁRIO:
+Representar [POSE], com [DIREÇÃO DO OLHAR]. Inserir o personagem em [CENÁRIO], sob [ILUMINAÇÃO]. Personagem e ambiente compartilham perspectiva, escala, luz e sombras. O cenário deve reforçar sua identidade e sua história. Não adicionar outros protagonistas ou multidões que confundam a leitura.
+
+COMPOSIÇÃO PARA A CARTA:
+Ilustração vertical, preferencialmente 2:3, com corpo inteiro e todos os elementos importantes dentro do quadro. O personagem é o foco principal. Manter rosto, cabeça, coroa/elmo, mãos e objetos de identidade na área central de leitura, com margem de segurança. Evitar cabeça excessivamente pequena, pose afastada ou elementos essenciais encostados nas bordas. A composição também deve permitir um enquadramento posterior de busto ou de três quartos sem perder a identidade. Caso a pose não comporte corpo inteiro com boa leitura, ajustar o enquadramento conscientemente sem cortar partes importantes por acidente.
+
+SAÍDA:
+Uma ilustração por arquivo, preferencialmente 1024 × 1536 pixels ou maior em resolução nativa, na proporção vertical escolhida. Cenário completo e opaco. Sem moldura de carta, borda, papel/papiro, símbolo de facção sobreposto, círculo de poder, números, nome, textos de habilidade, botão, logotipo, marca-d'água ou interface.
+
+REGRAS DE PRODUÇÃO
+- O TCG monta a carta final, normalmente na proporção 5:7; a ilustração não precisa conter essa moldura.
+- Enquadrar a arte proporcionalmente na janela do TCG. Nunca esticar a imagem para fazê-la caber.
+- Guardar o original aprovado. Chibi, banner e holograma devem preservar a identidade dessa arte.
+- Não substituir a carta final de um personagem quando o pedido for somente criar uma ilustração, um banner ou um chibi.
+- Para arte sem fundo/holograma, usar um pedido específico de recorte ou geração transparente; este prompt produz a ilustração com cenário.
+
+ANTES DE APROVAR
+Conferir o padrão de pintura de Afrodite, a ficha visual, anatomia, mãos, acessórios, cores, coerência do cenário, leitura do rosto e possíveis cortes no enquadramento da carta. Se houver falha, corrigir antes de declarar a arte final.

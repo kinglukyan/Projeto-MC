@@ -1,0 +1,48 @@
+MYTHIC CLASH — PROMPT PADRÃO DE BANNERS DO UNIVERSO
+Versão: 1.0 — 22/10/2026
+
+COMO USAR
+Anexar a arte final aprovada do personagem como referência de identidade e o banner aprovado de Afrodite como referência de acabamento e composição.
+Gerar uma cena individual por arquivo, sem folhas compartilhadas ou grades.
+
+DADOS DO BANNER
+Personagem: [NOME]
+Referência de identidade: [ARQUIVO DA ARTE APROVADA]
+Características obrigatórias: [ROSTO, ESPÉCIE, CABELO, OLHOS, ROUPAS E ACESSÓRIOS]
+Local/cenário: [LOCAL COERENTE COM A HISTÓRIA DO PERSONAGEM]
+Ação ou pose: [AÇÃO OU POSE]
+Paleta do personagem: [CORES DA REFERÊNCIA]
+Atmosfera e iluminação: [HORÁRIO, CLIMA E LUZ COERENTES COM A CENA]
+
+PROMPT PARA COPIAR
+
+Crie UM único banner cinematográfico horizontal de [NOME] para a seção Universo de Mythic Clash.
+
+REFERÊNCIAS:
+A arte aprovada de [NOME] fornece sua identidade. O banner de Afrodite fornece somente o padrão de pintura, riqueza de detalhes e composição. Não copiar o rosto, figurino, rosas ou cenário de Afrodite para outro personagem.
+
+ESTILO:
+Fantasia cinematográfica detalhada, com pintura digital de aparência realista e acabamento consistente com o banner de Afrodite. Anatomia convincente, rosto expressivo, materiais ricos e reconhecíveis, tecidos, metais, cabelos e cenário cuidadosamente definidos. Iluminação dramática coerente com o ambiente. Não usar estilo chibi, anime plano, desenho simplificado ou render plástico.
+
+IDENTIDADE:
+Representar [NOME] mantendo [CARACTERÍSTICAS OBRIGATÓRIAS]. Preservar rosto, espécie, cabelo, olhos, roupas, armas, acessórios e cores aprovadas. Nenhuma troca de identidade ou adição de acessórios sem solicitação.
+
+CENA:
+[NOME] está em [LOCAL/CENÁRIO], realizando [AÇÃO OU POSE]. A atmosfera é [ATMOSFERA E ILUMINAÇÃO]. Integrar o personagem naturalmente ao lugar, com luz, sombras, escala e perspectiva compartilhadas. O cenário deve pertencer a esse personagem e à sua história. Usar [PALETA DO PERSONAGEM] de forma coerente, preservando cores naturais e contraste.
+
+COMPOSIÇÃO:
+Cena horizontal contínua em proporção 2:1. Posicionar o personagem principalmente na metade direita, mantendo o rosto e os elementos de identidade longe das bordas. Reservar a metade esquerda relativamente calma e com contraste adequado para o título que será aplicado pela interface. Não escrever esse título na imagem. A parte esquerda também deve conter cenário bem acabado, sem parecer um espaço vazio artificial. Evitar detalhes essenciais nas margens externas. Não ampliar o rosto a ponto de cortar coroa, cabeça ou arma importante.
+
+SAÍDA:
+Um banner individual por arquivo, preferencialmente 2048 × 1024 pixels ou maior em resolução nativa com proporção 2:1. Sem texto, letras, números, nomes, logotipo, marca-d'água, botões, molduras, interface, quadrantes, montagem ou grade. Não criar várias cenas no mesmo arquivo.
+
+REGRAS DE INTEGRAÇÃO — NÃO ENVIAR COMO PARTE DA CENA
+- Guardar o original em PNG; preparar o arquivo público a partir desse original.
+- Não esticar nem mudar a proporção para preencher um componente.
+- O banner principal e sua miniatura devem usar a MESMA arte aprovada. A miniatura é uma versão menor ou uma exibição proporcional da mesma imagem.
+- Não gerar uma segunda arte diferente para a miniatura.
+- Não ampliar uma fonte pequena e apresentar o resultado como se tivesse detalhes nativos de alta resolução.
+- Evitar compressão repetida; preferir WebP sem perdas quando for necessário preservar integralmente o original.
+
+ANTES DE APROVAR
+Conferir identidade, anatomia, cenário, proporção 2:1, espaço de título, margens de segurança e nitidez na resolução nativa. Conferir também o enquadramento reduzido da miniatura. Corrigir qualquer falha antes da integração.

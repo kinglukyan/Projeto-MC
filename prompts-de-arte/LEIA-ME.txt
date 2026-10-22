@@ -1,0 +1,27 @@
+MYTHIC CLASH — PROMPTS OFICIAIS DE PRODUÇÃO DE ARTE
+
+Usar estes arquivos antes de gerar ou revisar novas artes deste projeto:
+
+01-CHIBIS.txt — ícones de perfil, padrão Afrodite. Manter o tratamento fixo e variar a cor da aura segundo a paleta do personagem.
+02-BANNERS.txt — banners individuais do Universo e regra da mesma arte para miniaturas.
+03-PERSONAGENS-CARTAS.txt — ilustração dos personagens com cenário, separada da moldura e dos atributos do TCG.
+
+Os campos de identidade mudam conforme o personagem. A regra de variar somente a cor da aura se refere ao tratamento visual dos CHIBIS; não permite trocar rosto, roupa ou cores naturais da identidade aprovada.
+
+REFERÊNCIAS NO PROJETO
+Carta de Afrodite: assets/cards-20261017/afrodite.png
+Carta atual do jogo: assets/cards-remake/afrodite.webp
+Chibi de Afrodite: assets/avatars-chibi/portraits-04.png — retrato central da primeira linha
+Banner individual de Afrodite: assets/universe/restaurados/afrodite.webp
+Documentação complementar: PADROES-DE-ARTE.md
+
+ORDEM DE TRABALHO
+1. Ler o prompt adequado.
+2. Abrir a referência de estilo e a referência de identidade.
+3. Preencher todos os campos. Não enviar colchetes em branco para a geração.
+4. Gerar somente o tipo de arte solicitado.
+5. Comparar o resultado com as referências e os critérios ao final do prompt.
+6. Corrigir diferenças antes de integrar. O texto do prompt orienta a geração, mas a aprovação depende da comparação visual.
+7. Preservar o original e exportar uma versão pública sem distorcer proporções.
+
+Para personagens já aprovados, uma solicitação explícita do proprietário pode alterar a identidade. Sem essa solicitação, preservar a identidade existente. Não inventar substituições por falta de referência.

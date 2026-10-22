@@ -1,0 +1,49 @@
+MYTHIC CLASH — PROMPT PADRÃO DE CHIBIS
+Versão: 1.0 — 22/10/2026
+
+COMO USAR
+Anexar sempre duas referências, identificadas separadamente:
+1. ESTILO: o chibi aprovado de Afrodite. Na folha portraits-04.png, é o retrato central da primeira linha. Usar somente esse retrato como referência de estilo.
+2. IDENTIDADE: a arte final aprovada do personagem solicitado.
+Substituir os campos entre colchetes antes da geração. Se faltar a referência de identidade, solicitar a referência antes de inventar rosto, roupa ou acessórios.
+
+DADOS DO PERSONAGEM
+Nome: [NOME]
+Referência de identidade: [ARQUIVO DA ARTE APROVADA]
+Características que devem permanecer: [ROSTO, ESPÉCIE, CABELO, OLHOS, ROUPA, COROA/ELMO E ACESSÓRIOS]
+Cor da aura: [COR DERIVADA DA PALETA DO PERSONAGEM, COM HEX SE DISPONÍVEL]
+
+PROMPT PARA COPIAR
+
+Crie UM único ícone chibi quadrado de [NOME] para Mythic Clash.
+
+REFERÊNCIAS OBRIGATÓRIAS:
+A primeira imagem fornece SOMENTE o estilo do chibi aprovado de Afrodite. Se for uma folha com vários retratos, considerar exclusivamente Afrodite, no centro da primeira linha. A segunda imagem fornece a identidade de [NOME]. Não transferir para [NOME] o rosto, a coroa, o cabelo, as rosas, as roupas ou os acessórios de Afrodite.
+
+ESTILO FIXO:
+Reproduzir o mesmo traço, acabamento e proporções do chibi de Afrodite: cabeça grande, busto pequeno, olhos grandes e expressivos, expressão com personalidade, pintura de fantasia com volume e acabamento minucioso, fios de cabelo definidos, joias e metais detalhados. Conservar a mesma relação entre cabeça, olhos e ombros. Não mudar o estilo para anime plano, desenho infantil simplificado, pixel art, fotografia, boneco plástico ou personagem adulto de proporções normais.
+
+IDENTIDADE:
+Representar [NOME] preservando exatamente [CARACTERÍSTICAS QUE DEVEM PERMANECER]. Adaptar a identidade aprovada às proporções chibi. Conservar a espécie e a anatomia característica quando não for humano. Não inventar armas, coroas, asas, cores de cabelo, joias ou símbolos diferentes dos aprovados.
+
+COMPOSIÇÃO FIXA:
+Um único retrato de cabeça e ombros, centralizado, com enquadramento consistente com Afrodite. A cabeça domina a imagem; mostrar somente um pequeno busto. Manter todo o cabelo, elmo, coroa, chifres, orelhas e asas dentro da imagem. Reservar margem de segurança aproximada de 8% em volta dos elementos mais externos; reduzir o personagem dentro do quadro se necessário. Não cortar o topo de coroas ou elmos para aumentar o rosto.
+
+FUNDO E AURA:
+Manter o mesmo fundo roxo muito escuro, com vinheta suave, em todos os ícones. Manter a direção da luz e o acabamento constantes. A ÚNICA variação de tratamento entre os chibis será a COR da aura: [COR DA AURA]. Aplicar essa cor como brilho suave atrás da silhueta e luz de contorno discreta, com a mesma intensidade, extensão e suavidade do padrão. A aura não deve cobrir o rosto, clarear o fundo inteiro ou tingir pele, cabelo, roupas e metais. As cores naturais do personagem permanecem iguais à referência. Reflexos dourados pertencem aos materiais dourados, não obrigatoriamente à aura.
+
+SAÍDA:
+Imagem quadrada 1:1, preferencialmente 1024 × 1024 pixels ou maior em resolução nativa. Fundo opaco roxo escuro. Um personagem por arquivo. Sem texto, nome, letras, números, logotipo, marca-d'água, moldura, medalhão, interface ou grade de personagens.
+
+ANTES DE APROVAR
+- O traço e as proporções correspondem ao chibi de Afrodite?
+- A identidade corresponde à carta final do personagem?
+- A aura usa a cor escolhida sem recolorir o personagem?
+- Todos os elementos importantes cabem no quadro?
+- A imagem continua legível em tamanho de ícone de perfil?
+Se algum item falhar, corrigir esse ponto antes de integrar ao jogo.
+
+EXEMPLOS DE ESCOLHA DA AURA
+Usar a cor tema aprovada, quando existir. Caso contrário, escolher uma cor predominante da referência, sem declarar uma nova cor oficial:
+Héstia: âmbar/fogo; Perseu: azul da capa; Hera: violeta do manto; Deméter: verde do manto.
+Esses exemplos alteram a aura; não alteram o fundo ou as cores das roupas.
