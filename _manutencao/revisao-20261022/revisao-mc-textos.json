@@ -1,0 +1,2047 @@
+[
+  {
+    "path": "_manutencao/auditoria-habilidades/ability-allied-identity.sql",
+    "chars": 607,
+    "head": " -- Faction/tag checks must use copied identities, just like Locations and auras do. do $allied_identity$ declare d text; begin  d:=pg_get_functiondef"
+  },
+  {
+    "path": "_manutencao/auditoria-habilidades/ability-audit-zones.sql",
+    "chars": 2318,
+    "head": "-- Preserve the exact owner's shared cards, so Enki and Isis can recover them later. do $zone_backups$ declare sig text;n text;d text; begin  foreach "
+  },
+  {
+    "path": "_manutencao/auditoria-habilidades/ability-exact-power.sql",
+    "chars": 2330,
+    "head": " -- Keep the un-clamped total available for exact copy/swap/rebirth assignments. do $exact_power$ declare d text;raw_d text; begin  d:=pg_get_function"
+  },
+  {
+    "path": "_manutencao/auditoria-habilidades/ability-grave-kind.sql",
+    "chars": 640,
+    "head": "-- Ereshkigal forbids unit resurrection, not recovering/equipping non-unit cards. create or replace function public._x_grave_ok(x jsonb,e jsonb,g json"
+  },
+  {
+    "path": "_manutencao/auditoria-habilidades/ability-power-ledger.sql",
+    "chars": 6105,
+    "head": "-- Preserve buffs and reductions separately even when their numeric sum cancels out. create or replace function public._x_part(u jsonb,k text) returns"
+  },
+  {
+    "path": "_manutencao/auditoria-habilidades/ability-revival-audit.sql",
+    "chars": 2463,
+    "head": "-- Complete the exact assignments against the current approved legacy dispatcher. do $revival_audit$ declare d text;a text;b text; begin  d:=pg_get_fu"
+  },
+  {
+    "path": "_manutencao/auditoria-habilidades/ability-round-snapshot.sql",
+    "chars": 1244,
+    "head": "-- Round cleanup is simultaneous: record every final power before removing any aura. create or replace function public._r_clear_round(s jsonb) returns"
+  },
+  {
+    "path": "_manutencao/auditoria-habilidades/choice-guard-compatible.sql",
+    "chars": 1697,
+    "head": "-- Validate choices through the stable function interface, independently of its source formatting. do $choice_guard$ declare definition text;arguments"
+  },
+  {
+    "path": "_manutencao/auditoria-habilidades/LEIA-ME.md",
+    "chars": 594,
+    "head": "# Fontes da revisão  Os arquivos de aplicação já estão corrigidos. Os scripts desta pasta registram a edição realizada; não os execute novamente em se"
+  },
+  {
+    "path": "_manutencao/auditoria-habilidades/RESULTADO-ESCOLHAS-054.json",
+    "chars": 10901,
+    "head": "{   \"at\": \"2026-10-22T03:16:37.845Z\",   \"engine\": \"JavaScript local\",   \"passed\": 121,   \"failed\": 0,   \"serverSQL\": \"Não executado; requer aplicação "
+  },
+  {
+    "path": "_manutencao/auditoria-habilidades/revival-compatible.sql",
+    "chars": 2184,
+    "head": "-- Stable resurrection handler; it does not depend on variable names in older dispatchers. create or replace function public._x_legacy_revive(x jsonb,"
+  },
+  {
+    "path": "_manutencao/auditoria-habilidades/verificar-escolhas-054.cjs",
+    "chars": 7009,
+    "head": "/* Offline fixtures: no account, server, network or rewards. */ const fs=require('fs'),path=require('path'),vm=require('vm'),assert=require('node:asse"
+  },
+  {
+    "path": "_manutencao/banners-universo/prompts.json",
+    "chars": 137365,
+    "head": "{   \"mode\": \"built-in-imagegen\",   \"records\": [     {       \"id\": \"japonesa-amaterasu\",       \"name\": \"Amaterasu\",       \"faction\": \"Japonesa\",       "
+  },
+  {
+    "path": "_manutencao/cartas-recebidas-20261022.json",
+    "chars": 895,
+    "head": "[   {     \"id\": \"hestia\",     \"source\": \"Hestia.png\",     \"width\": 1500,     \"height\": 2100,     \"path\": \"assets/cards-remake/hestia.webp\",     \"sha25"
+  },
+  {
+    "path": "_manutencao/decks-x1/README.md",
+    "chars": 279,
+    "head": "Scripts de preparação desta atualização. Os arquivos finais utilizáveis estão na raiz do jogo; os scripts registram a integração no workspace original"
+  },
+  {
+    "path": "_manutencao/gerar-interface.cjs",
+    "chars": 3189,
+    "head": "/* Build the CSS bundle and public HTML without downloading dependencies. */ const fs=require('fs'),path=require('path'),crypto=require('crypto'); con"
+  },
+  {
+    "path": "_manutencao/gerar-runtime.cjs",
+    "chars": 4782,
+    "head": "/* Deterministic runtime, resource revisions and release marker, without npm. */ const fs=require('fs'),path=require('path'),crypto=require('crypto');"
+  },
+  {
+    "path": "_manutencao/guardian-atlas/personagem-misterioso-prompt.json",
+    "chars": 1060,
+    "head": "{   \"mode\": \"built-in image_gen\",   \"prompt\": \"Game UI placeholder icon for Mythic Clash mythology adventure atlas. ONE anonymous chibi warrior bust s"
+  },
+  {
+    "path": "_manutencao/guardian-atlas/prompts.json",
+    "chars": 17874,
+    "head": "{   \"tool\": \"image_gen.imagegen (built-in)\",   \"assets\": [     {       \"id\": \"world\",       \"prompt\": \"Create a premium game background asset ONLY for"
+  },
+  {
+    "path": "_manutencao/guardian-campaign/ATUALIZACAO-052.txt",
+    "chars": 370,
+    "head": "O catálogo servidor versão 2 contém o balanceamento e as lições da Grécia. A migração 052 é a atualização para bancos já existentes; mantenha a ordem "
+  },
+  {
+    "path": "_manutencao/guardian-campaign/catalogo-servidor.json",
+    "chars": 283310,
+    "head": "{   \"regions\": [     {       \"id\": \"greece\",       \"name\": \"Grécia\",       \"faction\": \"Grécia\",       \"order\": 1,       \"longitude\": 23.7,       \"lati"
+  },
+  {
+    "path": "_manutencao/guardian-campaign/guardian-campaign-api.sql",
+    "chars": 14693,
+    "head": "create or replace function public.get_guardian_campaign() returns jsonb language plpgsql volatile security definer set search_path='' as $$ declare ui"
+  },
+  {
+    "path": "_manutencao/guardian-campaign/guardian-campaign-engine.sql",
+    "chars": 14243,
+    "head": "-- State machine shared with the existing card engine. Bot actions never come from the browser. create or replace function public._gc_drive(x jsonb,ui"
+  },
+  {
+    "path": "_manutencao/guardian-campaign/guardian-campaign-schema.sql",
+    "chars": 16437,
+    "head": "-- 045: Guardian campaign. Apply after the corrected migration 044. begin; do $prerequisites$ begin  if to_regprocedure('public._r_action_before_audit"
+  },
+  {
+    "path": "_manutencao/interface-fontes.json",
+    "chars": 1052,
+    "head": "{   \"styles\": [     \"styles.css\",     \"rework.css\",     \"missions-menu.css\",     \"profile-redesign.css\",     \"honors.css\",     \"concept-theme.css\",   "
+  },
+  {
+    "path": "_manutencao/INVENTARIO-SHA256.json",
+    "chars": 223470,
+    "head": "{   \"_headers\": {     \"bytes\": 1322,     \"sha256\": \"bcdaa7c2698dc2ca4d98ab3170fca4e545a0df0af3755923dd6e1fc46bfceeb2\"   },   \"_manutencao/atualizar-me"
+  },
+  {
+    "path": "_manutencao/krishna-revisao.txt",
+    "chars": 136,
+    "head": "Arte atualizada com image_gen integrada. Substituição somente do texto da habilidade; versão: assets/cards-remake/hindu-krishna-v2.png. "
+  },
+  {
+    "path": "_manutencao/novos-gregos-prompts.json",
+    "chars": 16430,
+    "head": "{   \"tool\": \"image_gen built-in\",   \"assets\": [     {       \"id\": \"hera\",       \"kind\": \"illustration\",       \"prompt\": \"Create one production charact"
+  },
+  {
+    "path": "_manutencao/novos-gregos.json",
+    "chars": 4237,
+    "head": "{   \"cards\": [     {       \"id\": \"hera\",       \"name\": \"Hera\",       \"kind\": \"unit\",       \"type\": \"Personagem\",       \"subtype\": \"Deusa\",       \"char"
+  },
+  {
+    "path": "_manutencao/ORDEM-DAS-MIGRACOES.txt",
+    "chars": 2933,
+    "head": "ORDEM DOS SCRIPTS DO BANCO  Instalação nova: aplicar os arquivos abaixo nesta ordem. Banco existente: verificar primeiro quais scripts já foram aplica"
+  },
+  {
+    "path": "_manutencao/otimizacao-entrada.json",
+    "chars": 4624,
+    "head": "{   \"originalBytes\": 161125651,   \"optimizedBytes\": 15636470,   \"assets\": {     \"assets/equipment/mjolnir.png\": \"assets/entry/mjolnir-full.webp\",     "
+  },
+  {
+    "path": "_manutencao/preparar-publicacao.cjs",
+    "chars": 1603,
+    "head": "const fs=require('fs'),path=require('path'); require('./gerar-interface.cjs'); const root=path.resolve(__dirname,'..'),out=path.join(root,'site-public"
+  },
+  {
+    "path": "_manutencao/primeiro-acesso/README.md",
+    "chars": 200,
+    "head": "Registro dos scripts de preparação, que utilizam o workspace e Pillow. A publicação usa apenas Node e o gerador de interface da pasta _manutencao. Os "
+  },
+  {
+    "path": "_manutencao/prompt-krishna-revisao.txt",
+    "chars": 975,
+    "head": "Ferramenta: image_gen integrada, edição de imagem com preservação do fundo transparente.  Precise text edit of this existing Mythic Clash Krishna card"
+  },
+  {
+    "path": "_manutencao/RELATORIO-COMPATIBILIDADE.json",
+    "chars": 4260,
+    "head": "{   \"date\": \"2026-10-21\",   \"release\": \"ac5be2c1ded57fbfe3f0\",   \"scope\": \"Servidor local; autenticação, conta, inventário e RPCs simulados, sem criar"
+  },
+  {
+    "path": "_manutencao/RELATORIO-IMAGENS.json",
+    "chars": 23216,
+    "head": "{   \"images\": 100,   \"original_bytes\": 222761051,   \"optimized_bytes\": 38678410,   \"files\": [     {       \"original\": \"assets/battlefield-forest.png\","
+  },
+  {
+    "path": "_manutencao/remake/cartas-recebidas.json",
+    "chars": 37525,
+    "head": "{   \"archive\": \"Cartas.zip\",   \"cards\": [     {       \"id\": \"afrodite\",       \"file\": \"Afrodite.png\",       \"new\": false,       \"name\": \"Afrodite\",   "
+  },
+  {
+    "path": "_manutencao/remake/CATALOGO-REMAKE.md",
+    "chars": 19067,
+    "head": "# Cartas importadas de Cartas.zip  ## Alyns  ### Lukyan — Rei da Festa  **Poder:** 3 · **REI DA FESTA**  Enquanto houver outro aliado na mesma fileira"
+  },
+  {
+    "path": "_manutencao/remake/fragmentos-log-geracao.json",
+    "chars": 485,
+    "head": "[   \"\\\"}\",   \"art of this character. Avoid broad opaque glow or smoke; tiny local magical details allowed.\\\",\\\"path\\\":\\\"C:/Users/Santo/Documents/Codex"
+  },
+  {
+    "path": "_manutencao/remake/prompts-selecionados.json",
+    "chars": 281738,
+    "head": "{   \"mode\": \"built-in image_gen\",   \"assets\": [     {       \"id\": \"japonesa-amaterasu\",       \"kind\": \"hologram\",       \"variant\": \"framing-fix\",     "
+  },
+  {
+    "path": "_manutencao/remake/README.md",
+    "chars": 271,
+    "head": "Catálogo e prompts da importação de Cartas.zip.  O compilador `compilar-sql-remake.py` desta pasta pode ser executado com Python 3 para recompor a mig"
+  },
+  {
+    "path": "_manutencao/remake/remake-choice-timeout.sql",
+    "chars": 1655,
+    "head": "-- A timed-out opponent choice cannot hold the original turn indefinitely. do $action_backup$ declare d text; begin if to_regprocedure('public._r_acti"
+  },
+  {
+    "path": "_manutencao/remake/remake-engine-fragment.js",
+    "chars": 15875,
+    "head": "// Character expansion: all choices use the normal authoritative effect queue. const remakeRules=window.MythicRemakeRules||D.remakeRules||{}; const ru"
+  },
+  {
+    "path": "_manutencao/remake/remake-foreign-choices.sql",
+    "chars": 4808,
+    "head": "-- An opponent may resolve only a pending choice explicitly assigned to them. -- The original turn owner confirms the completed chain, so turn advance"
+  },
+  {
+    "path": "_manutencao/remake/remake-legacy-protections.sql",
+    "chars": 3963,
+    "head": "-- Existing area attacks choose eligible units before applying their effects. create or replace function public._r_resolve(x jsonb,e jsonb) returns js"
+  },
+  {
+    "path": "_manutencao/remake/remake-local-silence.sql",
+    "chars": 4396,
+    "head": "-- A lock on one unit disables its own ability, not its equipment or allied auras. -- Dionysus continues to suspend all effects according to the appro"
+  },
+  {
+    "path": "_manutencao/remake/remake-round-memory.sql",
+    "chars": 1126,
+    "head": "-- Once-per-Round abilities keep their spent state through resurrection. create or replace function public._x_memory(s jsonb,u jsonb,g jsonb) returns "
+  },
+  {
+    "path": "_manutencao/remake/remake-server-hooks.sql",
+    "chars": 13854,
+    "head": "-- Keep the previous effect dispatcher so old cards retain their rules. do $backup_functions$ declare signature text;definition text;original_name tex"
+  },
+  {
+    "path": "_manutencao/remake/remake-server.sql",
+    "chars": 31121,
+    "head": "-- 040: Character collection imported from the owner's finished card exports. -- Runs after migration 039. Does not change existing decks or reset inv"
+  },
+  {
+    "path": "_manutencao/rewards-tournaments/prompt-icone.json",
+    "chars": 851,
+    "head": "{   \"prompt\": \"Create a premium fantasy trading card game TOURNAMENT MODE EMBLEM for Mythic Clash. One centered isolated icon on truly transparent bac"
+  },
+  {
+    "path": "_manutencao/runtime-fontes.json",
+    "chars": 1385,
+    "head": "[   \"assets/vendor/supabase-2.118.0.js\",   \"entry-media.js\",   \"security.js\",   \"resource-download.js\",   \"supabase-config.js\",   \"card-expansion.js\","
+  },
+  {
+    "path": "_manutencao/seguranca/escopo.json",
+    "chars": 598,
+    "head": "{   \"audit_date\": \"2026-10-19\",   \"source_review\": true,   \"migration\": \"202610190037_security_and_fair_play.sql\",   \"database_migration_executed\": fa"
+  },
+  {
+    "path": "_manutencao/seguranca/resultado-csp-local.json",
+    "chars": 241,
+    "head": "{   \"scope\": \"Renderização local com headers CSP; recursos externos abortados; sem login, sem produção e sem execução SQL.\",   \"errors\": [],   \"home\":"
+  },
+  {
+    "path": "_manutencao/seguranca/resultado-estatico.json",
+    "chars": 1014,
+    "head": "{   \"scope\": \"Verificação estática local. Não executa a migração nem autentica contra o servidor.\",   \"date\": \"2026-10-19T16:48:42.087Z\",   \"checks\": "
+  },
+  {
+    "path": "_manutencao/seguranca/verificar-banco.sql",
+    "chars": 1867,
+    "head": "-- Executar no SQL Editor de homologação após a 037. Apenas leitura. begin read only; select 'acoes_anon_bloqueadas' check_name,not has_function_privi"
+  },
+  {
+    "path": "_manutencao/seguranca/verificar-estatico.cjs",
+    "chars": 3134,
+    "head": "const fs=require('fs'),path=require('path'),cp=require('child_process'),assert=require('assert'); const root=path.resolve(__dirname,'../..'),checks=[]"
+  },
+  {
+    "path": "_manutencao/verificar-atualizacoes.cjs",
+    "chars": 14508,
+    "head": "const fs=require('fs'),path=require('path'),http=require('http'),assert=require('assert'); const pw=require('playwright'); const root=path.resolve(__d"
+  },
+  {
+    "path": "_manutencao/verificar-navegadores.cjs",
+    "chars": 11589,
+    "head": "const fs=require('fs'),path=require('path'),http=require('http'),assert=require('assert'); const pw=require('playwright'); const root=path.resolve(__d"
+  },
+  {
+    "path": "_manutencao/video-preview/LEIA-ME.txt",
+    "chars": 367,
+    "head": "Os vídeos já estão prontos em assets/portal. Estes geradores são opcionais para futuras edições da composição ilustrativa. Usam Node.js, o pacote play"
+  },
+  {
+    "path": "_manutencao/video-preview/render-preview-mp4.cjs",
+    "chars": 5859,
+    "head": "const fs=require('fs'),path=require('path'); const {chromium}=require('playwright'); const root=path.resolve(__dirname,'../..'); const paths={bg:'asse"
+  },
+  {
+    "path": "_manutencao/video-preview/render-preview.cjs",
+    "chars": 5880,
+    "head": "const fs=require('fs'),path=require('path'); const {chromium}=require('playwright'); const root=path.resolve(__dirname,'../..'); const paths={bg:'asse"
+  },
+  {
+    "path": "abilities-data.js",
+    "chars": 111773,
+    "head": "window.MythicAbilitiesData={\"version\":1,\"cards\":[{\"id\":\"soldado-esparta\",\"name\":\"Soldado de Esparta\",\"power\":3,\"faction\":\"Grécia\",\"tags\":[\"espartano\","
+  },
+  {
+    "path": "abilities-data.json",
+    "chars": 144085,
+    "head": "{   \"version\": 1,   \"cards\": [     {       \"id\": \"soldado-esparta\",       \"name\": \"Soldado de Esparta\",       \"power\": 3,       \"faction\": \"Grécia\",  "
+  },
+  {
+    "path": "abilities-engine.js",
+    "chars": 42877,
+    "head": "(() => { 'use strict'; const D=window.MythicAbilitiesData,C=Object.fromEntries(D.cards.map(c=>[c.id,c])); const teams=['player_one','player_two'],othe"
+  },
+  {
+    "path": "abilities-ui.js",
+    "chars": 5840,
+    "head": "(() => {  'use strict';let openId=null,revealId=null,submitting=null;  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.classNam"
+  },
+  {
+    "path": "abilities.css",
+    "chars": 2670,
+    "head": ".ability-choice-dialog{width:min(94vw,760px);max-height:88dvh;overflow:auto;box-sizing:border-box;border:1px solid #ba9cdd;border-radius:18px;padding:"
+  },
+  {
+    "path": "ADAPTACAO-CELULARES-TABLETS.md",
+    "chars": 2846,
+    "head": "# Adaptação para celulares e tablets  ## Correções  - Menu lateral: uma opção por linha, largura completa, ícones alinhados, textos legíveis e rolagem"
+  },
+  {
+    "path": "AJUSTES-HALL-E-DECKS.md",
+    "chars": 1682,
+    "head": "# Seletor nas salas e ajustes do hall  ## Baralhos  As salas normal/ranqueada e a sala personalizada possuem um seletor direto de decks. Cada opção mo"
+  },
+  {
+    "path": "app.js",
+    "chars": 132772,
+    "head": "(() => {   const safeUrl=window.MythicSecurity.assetUrl;   const DECK_MIN=14,DECK_MAX=35,DECK_SLOTS=7;window.MythicDeckLimits=Object.freeze({min:DECK_"
+  },
+  {
+    "path": "arcane-palette.css",
+    "chars": 37233,
+    "head": "/* Sidebar palette applied to existing blue interface colors. */ :root{--navy:#1e1725;--panel:#261e2e;--panel2:#31263b} body{background:radial-gradien"
+  },
+  {
+    "path": "arcane-upgrade.css",
+    "chars": 26272,
+    "head": "/* Site palette follows the arcane sidebar. Loaded after all earlier themes. */ body.mythic-rework{--surface:#13111f;--panel:#191625;--line:#b8a5d043;"
+  },
+  {
+    "path": "arcane-upgrade.js",
+    "chars": 6474,
+    "head": "(() => {  'use strict';  const $=s=>document.querySelector(s),img=(src,alt='')=>{const n=document.createElement('img');n.src=src;n.alt=alt;return n;};"
+  },
+  {
+    "path": "asset-manifest.json",
+    "chars": 118536,
+    "head": "{\"version\":3,\"assets\":{\"assets/app-icon.svg\":\"63b27314038fed475847\",\"assets/ares-helm.svg\":\"b027e61e6b46728cfff3\",\"assets/atlas-dialogue/aquiles-bravo"
+  },
+  {
+    "path": "assets/app-icon.svg",
+    "chars": 531,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\">   <rect width=\"512\" height=\"512\" rx=\"112\" fill=\"#101725\"/>   <circle cx=\"256\" cy=\"256\" "
+  },
+  {
+    "path": "assets/ares-helm.svg",
+    "chars": 621,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\"><defs><linearGradient id=\"g\" x2=\"0\" y2=\"1\"><stop stop-color=\"#f8db91\"/><stop offset=\"1\" "
+  },
+  {
+    "path": "assets/avatars-chibi/PROMPTS.json",
+    "chars": 13773,
+    "head": "[   {     \"sheet\": 1,     \"prompt\": \"Use case: stylized-concept. Asset type: production chibi profile avatar sprite sheet for Mythic Clash. Create ONE"
+  },
+  {
+    "path": "assets/card-back.svg",
+    "chars": 3412,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"750\" height=\"1050\" viewBox=\"0 0 750 1050\" role=\"img\" aria-labelledby=\"t d\"> <title id=\"t\">Verso de cart"
+  },
+  {
+    "path": "assets/card-badges/alyans.svg",
+    "chars": 266,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g fill=\"none\" stroke=\"#fff\" stroke-width=\"6\" stroke-linecap=\"round\" stroke-linejoin=\"ro"
+  },
+  {
+    "path": "assets/card-badges/celtic.svg",
+    "chars": 272,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path fill=\"none\" stroke=\"#fff\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin="
+  },
+  {
+    "path": "assets/card-badges/egypt.svg",
+    "chars": 198,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><path fill=\"#fff\" d=\"M15 78 50 22l35 56H15Zm35-47v47h29L50 31Z\"/><path fill=\"none\" strok"
+  },
+  {
+    "path": "assets/card-badges/greece.svg",
+    "chars": 287,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g fill=\"none\" stroke=\"#fff\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"ro"
+  },
+  {
+    "path": "assets/card-badges/monster.svg",
+    "chars": 218,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g fill=\"none\" stroke=\"#fff\" stroke-width=\"8\" stroke-linecap=\"round\" stroke-linejoin=\"ro"
+  },
+  {
+    "path": "assets/card-badges/norse.svg",
+    "chars": 295,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><g fill=\"none\" stroke=\"#fff\" stroke-width=\"5\" stroke-linecap=\"round\" stroke-linejoin=\"ro"
+  },
+  {
+    "path": "assets/cards-v3/manifest.json",
+    "chars": 3526,
+    "head": "{   \"soldado-esparta\": {     \"art\": \"assets/cards-v3/soldado-esparta.webp\",     \"characterClass\": \"Humano\"   },   \"athena\": {     \"art\": \"assets/cards"
+  },
+  {
+    "path": "assets/character-emblems/demeter.svg",
+    "chars": 703,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\"><title>Emblema de Deméter</title><defs><linearGradient id=\"gold\" x1=\"10\" y1=\"9\" x2=\"80\" y2"
+  },
+  {
+    "path": "assets/character-emblems/hera.svg",
+    "chars": 805,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\"><title>Emblema de Hera</title><defs><linearGradient id=\"gold\" x1=\"10\" y1=\"9\" x2=\"80\" y2=\"8"
+  },
+  {
+    "path": "assets/character-emblems/hestia.svg",
+    "chars": 718,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\"><title>Emblema de Héstia</title><defs><linearGradient id=\"gold\" x1=\"10\" y1=\"9\" x2=\"80\" y2="
+  },
+  {
+    "path": "assets/character-emblems/perseu.svg",
+    "chars": 741,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\"><title>Emblema de Perseu</title><defs><linearGradient id=\"gold\" x1=\"10\" y1=\"9\" x2=\"80\" y2="
+  },
+  {
+    "path": "assets/concept-ui/convergence-star.svg",
+    "chars": 1977,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 480 480\" fill=\"none\">  <defs>   <linearGradient id=\"gold\" x1=\"100\" y1=\"50\" x2=\"380\" y2=\"430\" grad"
+  },
+  {
+    "path": "assets/concept-ui/panel-frame.svg",
+    "chars": 784,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"120\" height=\"120\" viewBox=\"0 0 120 120\"><defs><linearGradient id=\"g\" x2=\".8\" y2=\"1\"><stop stop-color=\"#"
+  },
+  {
+    "path": "assets/currency/clash-bit.svg",
+    "chars": 678,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\"><defs><linearGradient id=\"a\" x2=\".8\" y2=\"1\"><stop stop-color=\"#f3dfff\"/><stop offset=\".4"
+  },
+  {
+    "path": "assets/currency/mythic-coins.svg",
+    "chars": 1077,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 128 128\"><defs><radialGradient id=\"a\" cx=\"35%\" cy=\"25%\"><stop stop-color=\"#fff5c3\"/><stop offset="
+  },
+  {
+    "path": "assets/deck-icons/arsenal.svg",
+    "chars": 1108,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Arsenal</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1=\"12\" x2=\"72\" "
+  },
+  {
+    "path": "assets/deck-icons/caos.svg",
+    "chars": 907,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Caos</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1=\"12\" x2=\"72\" y2="
+  },
+  {
+    "path": "assets/deck-icons/combos.svg",
+    "chars": 1051,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Combos</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1=\"12\" x2=\"72\" y"
+  },
+  {
+    "path": "assets/deck-icons/convergencia.svg",
+    "chars": 1277,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Convergência</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1=\"12\" x2="
+  },
+  {
+    "path": "assets/deck-icons/eclipse.svg",
+    "chars": 1106,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Eclipse</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1=\"12\" x2=\"72\" "
+  },
+  {
+    "path": "assets/deck-icons/lunar.svg",
+    "chars": 1193,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Lunar</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1=\"12\" x2=\"72\" y2"
+  },
+  {
+    "path": "assets/deck-icons/matilha.svg",
+    "chars": 1105,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Matilha</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1=\"12\" x2=\"72\" "
+  },
+  {
+    "path": "assets/deck-icons/ofensiva.svg",
+    "chars": 1122,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Ofensiva</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1=\"12\" x2=\"72\""
+  },
+  {
+    "path": "assets/deck-icons/pelotao.svg",
+    "chars": 1230,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Pelotão</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1=\"12\" x2=\"72\" "
+  },
+  {
+    "path": "assets/deck-icons/protecao.svg",
+    "chars": 1092,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Proteção</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1=\"12\" x2=\"72\""
+  },
+  {
+    "path": "assets/deck-icons/realeza.svg",
+    "chars": 1186,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Realeza</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1=\"12\" x2=\"72\" "
+  },
+  {
+    "path": "assets/deck-icons/submundo.svg",
+    "chars": 1059,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Submundo</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1=\"12\" x2=\"72\""
+  },
+  {
+    "path": "assets/friends-icon.svg",
+    "chars": 491,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 64 64\" fill=\"none\">   <rect x=\"7\" y=\"7\" width=\"50\" height=\"50\" rx=\"11\" stroke=\"#d8b76e\" stroke-wi"
+  },
+  {
+    "path": "assets/guardian-campaign/world.svg",
+    "chars": 2814,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1000 500\"><defs><radialGradient id=\"o\"><stop stop-color=\"#29314b\"/><stop offset=\"1\" stop-color=\"#"
+  },
+  {
+    "path": "assets/holograms/CINEMATIC-PROMPTS.json",
+    "chars": 1823,
+    "head": "[   {     \"id\": \"guardiao-nordico\",     \"source\": \"C:\\\\Users\\\\Santo\\\\.codex\\\\generated_images\\\\01a0e14f-988c-7260-b67d-230cb9520c68\\\\exec-69361b09-02a"
+  },
+  {
+    "path": "assets/identity-v2/generation-prompts.json",
+    "chars": 8034,
+    "head": "{   \"mode\": \"built-in image_gen\",   \"assets\": [     {       \"id\": \"coin\",       \"asset\": \"coin.webp\",       \"prompt\": \"Use case: stylized-concept. Pro"
+  },
+  {
+    "path": "assets/identity-v2/trixx.svg",
+    "chars": 960,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"106 17 48 48\" fill=\"none\"><defs>   <linearGradient id=\"silver\" x1=\"15\" y1=\"8\" x2=\"237\" y2=\"76\" gradie"
+  },
+  {
+    "path": "assets/logo.svg",
+    "chars": 1180,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"672\" height=\"780\" viewBox=\"0 0 336 390\" role=\"img\" aria-labelledby=\"title desc\"> <title id=\"title\">Myth"
+  },
+  {
+    "path": "assets/profile-achievements/first-victory.svg",
+    "chars": 1327,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Primeira vitória</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1=\"12\""
+  },
+  {
+    "path": "assets/profile-achievements/five-streak.svg",
+    "chars": 1594,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Cinco vitórias seguidas</title> <defs><linearGradient id=\"gold\" x1=\"15\" "
+  },
+  {
+    "path": "assets/profile-achievements/ten-victories.svg",
+    "chars": 1433,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Dez vitórias</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1=\"12\" x2="
+  },
+  {
+    "path": "assets/profile-achievements/twenty-five-duels.svg",
+    "chars": 1359,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 96 96\" role=\"img\"><title>Vinte e cinco duelos</title> <defs><linearGradient id=\"gold\" x1=\"15\" y1="
+  },
+  {
+    "path": "assets/ranks/aprendiz-de-heroi.svg",
+    "chars": 3310,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" fill=\"none\" role=\"img\" aria-labelledby=\"title\"> <title id=\"title\">Insígnia Aprendiz de H"
+  },
+  {
+    "path": "assets/ranks/convergente.svg",
+    "chars": 3468,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" fill=\"none\" role=\"img\" aria-labelledby=\"title\"> <title id=\"title\">Insígnia Convergente</"
+  },
+  {
+    "path": "assets/ranks/deus.svg",
+    "chars": 3349,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" fill=\"none\" role=\"img\" aria-labelledby=\"title\"> <title id=\"title\">Insígnia Deus</title> "
+  },
+  {
+    "path": "assets/ranks/escudeiro.svg",
+    "chars": 3390,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" fill=\"none\" role=\"img\" aria-labelledby=\"title\"> <title id=\"title\">Insígnia Escudeiro</ti"
+  },
+  {
+    "path": "assets/ranks/heroi.svg",
+    "chars": 3317,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" fill=\"none\" role=\"img\" aria-labelledby=\"title\"> <title id=\"title\">Insígnia Herói</title>"
+  },
+  {
+    "path": "assets/ranks/lenda.svg",
+    "chars": 3398,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" fill=\"none\" role=\"img\" aria-labelledby=\"title\"> <title id=\"title\">Insígnia Lenda</title>"
+  },
+  {
+    "path": "assets/ranks/semideus.svg",
+    "chars": 3282,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" fill=\"none\" role=\"img\" aria-labelledby=\"title\"> <title id=\"title\">Insígnia Semideus</tit"
+  },
+  {
+    "path": "assets/rework/OFL.txt",
+    "chars": 4377,
+    "head": "Copyright 2018 The Noto Project Authors (github.com/googlei18n/noto-fonts)  This Font Software is licensed under the SIL Open Font License, Version 1."
+  },
+  {
+    "path": "assets/sidebar-arcane/arcane-crest.svg",
+    "chars": 1589,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"260\" height=\"82\" viewBox=\"0 0 260 82\" fill=\"none\">  <defs>   <linearGradient id=\"silver\" x1=\"15\" y1=\"8\""
+  },
+  {
+    "path": "assets/sidebar-arcane/texture-prompt.json",
+    "chars": 1163,
+    "head": "{   \"method\": \"built-in image_gen\",   \"file\": \"crystal-texture.png\",   \"prompt\": \"Use case: stylized-concept. Asset type: decorative background textur"
+  },
+  {
+    "path": "assets/spartan-chibi.svg",
+    "chars": 3428,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 512 512\" fill=\"none\">   <defs>     <linearGradient id=\"bg\" x1=\"74\" y1=\"38\" x2=\"434\" y2=\"478\" grad"
+  },
+  {
+    "path": "assets/vendor/supabase-2.118.0.js",
+    "chars": 218246,
+    "head": "var supabase=(function(e){function t(e,t){var n={};for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&t.indexOf(r)<0&&(n[r]=e[r]);if(e!=null&&t"
+  },
+  {
+    "path": "assets/vendor/SUPABASE-LICENSE.txt",
+    "chars": 1065,
+    "head": "MIT License  Copyright (c) 2020 Supabase  Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated"
+  },
+  {
+    "path": "ATLAS-DIALOGO-AQUILES.md",
+    "chars": 3446,
+    "head": "# Aquiles — encontro interativo antes do duelo  ## O que entra nesta atualização  Ao escolher **Enfrentar Aquiles** no Atlas, o encontro abre com o ce"
+  },
+  {
+    "path": "atlas-dialogue-data.js",
+    "chars": 1117,
+    "head": "/* Atlas stories are local presentation data. A duel starts only after the last choice. */ window.MythicAtlasDialogueData={  fps:30,  frameHold:7,  te"
+  },
+  {
+    "path": "atlas-dialogue.css",
+    "chars": 6732,
+    "head": ".atlas-conversation{--atlas-talk-frame:233.333ms;position:fixed;inset:0;margin:auto;width:min(1240px,calc(100vw - 40px));height:min(820px,calc(100dvh "
+  },
+  {
+    "path": "atlas-dialogue.js",
+    "chars": 8537,
+    "head": "(() => {  'use strict';  const data=window.MythicAtlasDialogueData;if(!data)return;  const el=(tag,cls,text)=>{const n=document.createElement(tag);if("
+  },
+  {
+    "path": "ATLAS-ELENCO-GREGO.md",
+    "chars": 1993,
+    "head": "# Elenco grego do Atlas  ## Ordem atual  | Nível | Adversário | | --- | --- | | 1 | Aquiles | | 2 | Hércules | | 3 | Hermes | | 4 | Minotauro | | 5 | "
+  },
+  {
+    "path": "atlas-lessons.js",
+    "chars": 1686,
+    "head": "(() => {  'use strict';  const box=document.createElement('aside');box.className='atlas-lesson-panel';box.hidden=true;box.setAttribute('aria-label','G"
+  },
+  {
+    "path": "ATLAS-SEM-REPETICOES.md",
+    "chars": 1810,
+    "head": "# Ordem atual do Atlas  ## 1. Grécia · 20 desafios  1. Aquiles 2. Hércules 3. Hermes 4. Minotauro 5. Soldado de Esparta 6. Afrodite 7. Dionísio 8. Per"
+  },
+  {
+    "path": "ATUALIZACAO-ANIMACOES-COMBATE.md",
+    "chars": 1931,
+    "head": "# Animações e navegação do combate  ## Ajustes  - Eclipse: compatibilidade com partidas que só registram o clima, sem `eclipseReveal`; resultado visua"
+  },
+  {
+    "path": "ATUALIZACAO-CABECALHO-UNIVERSO-ADMIN.md",
+    "chars": 2291,
+    "head": "# Cabeçalho, Universo e administração — 18/10/2026  ## Alterações  - Cabeçalho roxo com 30 px de espaço nas laterais e 22 px na vertical, com adaptaçã"
+  },
+  {
+    "path": "ATUALIZACAO-CARREGAMENTO-E-CONTINUIDADE.md",
+    "chars": 6115,
+    "head": "# Carregamento e continuidade — 20/10/2026  ## Publicar  1. Aplicar `supabase/migrations/202610200043_resume_my_game.sql`, após o SQL 042. Se ainda nã"
+  },
+  {
+    "path": "ATUALIZACAO-CARTAS-REMAKE.md",
+    "chars": 3084,
+    "head": "# Cartas Remake — 20/10/2026  ## Conteúdo desta entrega  - 108 cartas recebidas: 70 novas e 38 atualizadas, com os poderes e textos lidos das imagens."
+  },
+  {
+    "path": "ATUALIZACAO-CENARIOS-BOAS-VINDAS.md",
+    "chars": 2068,
+    "head": "# Cenários das boas-vindas e página pública  ## O que muda  - Escolha de mitologia com os símbolos de Grécia, Nórdicos, Egípcios e Alyn. - Cenários en"
+  },
+  {
+    "path": "ATUALIZACAO-CINEMATICA.md",
+    "chars": 3089,
+    "head": "# Atualização visual e de combate  ## Universo e perfil  - Os 37 personagens têm banners com sua imagem, cenário, cor, símbolo e frase próprios. A Con"
+  },
+  {
+    "path": "ATUALIZACAO-COLECAO-ICONES.md",
+    "chars": 1158,
+    "head": "# Coleção e ícones iniciais  1. Execute no Supabase a migração `202610170014_owned_collection_icons.sql`, depois da 013. 2. Publique os arquivos atual"
+  },
+  {
+    "path": "ATUALIZACAO-DECKS-E-X1.md",
+    "chars": 4557,
+    "head": "> A tela X1 foi reunida à Personalizada na atualização seguinte. Consulte `ATUALIZACAO-CARREGAMENTO-E-CONTINUIDADE.md` para a interface atual e o SQL "
+  },
+  {
+    "path": "ATUALIZACAO-DESEMPENHO-DECKS.md",
+    "chars": 1366,
+    "head": "# Carregamento mais leve e cartas lado a lado  Publique os arquivos deste pacote na raiz do site, incluindo `asset-manifest.json`. Não há SQL novo. Pr"
+  },
+  {
+    "path": "ATUALIZACAO-HABILIDADES-E-UNIVERSO.md",
+    "chars": 3075,
+    "head": "# Atualização — habilidades e Universo  ## O que foi entregue  - Revisão das 128 cartas/formas do catálogo em `REVISAO-HABILIDADES.md`. - Correções lo"
+  },
+  {
+    "path": "ATUALIZACAO-ICONES-DESEMPATE.md",
+    "chars": 2761,
+    "head": "# Ícones e desempate pelo Eclipse  ## Instalação  1. Aplicar o SQL `supabase/migrations/202610180030_random_eclipse_tiebreak.sql`, depois do 029. 2. P"
+  },
+  {
+    "path": "ATUALIZACAO-INVENTARIO-LOJA.md",
+    "chars": 1814,
+    "head": "# Inventário, loja e acesso à Arena  ## Aplicação  1. No SQL Editor do Supabase, execute `supabase/migrations/202610170013_inventory_shop_onboarding.s"
+  },
+  {
+    "path": "ATUALIZACAO-LOJA-CACHE.md",
+    "chars": 1217,
+    "head": "# Loja, ampliação de cartas e atualizações com F5  Publique todos os arquivos deste pacote na raiz do site. Não há SQL novo.  - Imagens de campos e mã"
+  },
+  {
+    "path": "ATUALIZACAO-PORTAL-ADMINISTRACAO.md",
+    "chars": 5872,
+    "head": "# Portal, Alyn e administração — 18/10/2026  ## Instalar  1. O banco deve estar atualizado até o SQL 026. 2. Executar `supabase/migrations/20261018002"
+  },
+  {
+    "path": "ATUALIZACAO-QUATRO-CARTAS.md",
+    "chars": 810,
+    "head": "# Artes finais — Héstia, Perseu, Hera e Deméter  As quatro cartas foram substituídas pelos PNGs enviados em 22/10/2026. As versões do site usam WebP s"
+  },
+  {
+    "path": "ATUALIZACAO-REGRAS-APROVADAS.md",
+    "chars": 3676,
+    "head": "# Atualização das regras aprovadas — 18/10/2026  ## Conteúdo  Regras alinhadas no motor local e em uma nova migração online: Guardiões exponenciais po"
+  },
+  {
+    "path": "ATUALIZACAO-UNIVERSO-EFEITOS.md",
+    "chars": 5107,
+    "head": "# Universo, efeitos e presença dos amigos  ## Instalação  1. Publique os arquivos do pacote atualizado no mesmo diretório do site. 2. No Supabase, dep"
+  },
+  {
+    "path": "ATUALIZACAO-WEBAPP-E-NOVOS-GREGOS.md",
+    "chars": 5551,
+    "head": "# Atualização 2026.10.22  ## Publicação  1. Aplique a migração 055 completa após a 054. 2. Aplique a migração 056 completa. 3. Publique a pasta atuali"
+  },
+  {
+    "path": "AUDITORIA-SEGURANCA-DESEMPENHO.md",
+    "chars": 13567,
+    "head": "# Auditoria do Mythic Clash — 17/10/2026  ## Entrega e alcance  Revisão dos arquivos locais do projeto: interface, scripts, cache, imagens, configuraç"
+  },
+  {
+    "path": "auth-entry.css",
+    "chars": 7403,
+    "head": "/* Login and registration share the same scenic entrance. */ body.mythic-rework.public-auth-open #account-gate{display:grid!important;grid-template-co"
+  },
+  {
+    "path": "auto-deck.js",
+    "chars": 7340,
+    "head": "(() => {  'use strict';  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;r"
+  },
+  {
+    "path": "avatars-chibi.js",
+    "chars": 16306,
+    "head": "window.MythicChibiAvatars={\"version\":1,\"columns\":3,\"rows\":2,\"avatars\":[{\"id\":\"chibi-soldado-esparta\",\"characterId\":\"soldado-esparta\",\"name\":\"Soldado d"
+  },
+  {
+    "path": "avatars-chibi.json",
+    "chars": 21530,
+    "head": "{   \"version\": 1,   \"columns\": 3,   \"rows\": 2,   \"avatars\": [     {       \"id\": \"chibi-soldado-esparta\",       \"characterId\": \"soldado-esparta\",      "
+  },
+  {
+    "path": "banners-universo.css",
+    "chars": 494,
+    "head": "body{margin:0;background:#120e1d;color:#eee4d1;font:16px/1.6 system-ui;padding:clamp(16px,4vw,60px)}a{color:#d0b0fc}h1,h2{font-family:Georgia,serif;co"
+  },
+  {
+    "path": "banners-universo.html",
+    "chars": 18791,
+    "head": "<!doctype html><html lang=\"pt-BR\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Banners do Uni"
+  },
+  {
+    "path": "BOAS-VINDAS-PACOTE-INICIAL.md",
+    "chars": 5307,
+    "head": "# Boas-vindas e primeiro pacotinho — 18/10/2026  ## Experiência  1. Após autenticar uma conta nova, abrir uma apresentação de boas-vindas sem a barra "
+  },
+  {
+    "path": "BONUS-FILEIRAS-HOLOGRAMAS.md",
+    "chars": 1475,
+    "head": "# Bônus por fileira, Apolo e hologramas  - Soldados de Esparta, Alfa/Betas, Homem/Mulher, Guardião Nórdico e Rei de Todos consideram somente aliados d"
+  },
+  {
+    "path": "browser-compat.js",
+    "chars": 3671,
+    "head": "/* Capability based fallbacks; no browser-name sniffing. */ (() => {  'use strict';  const root=document.documentElement;  if(!Array.prototype.at)Obje"
+  },
+  {
+    "path": "card-expansion.js",
+    "chars": 90774,
+    "head": "window.MythicCardExpansion={\"version\":\"20261020\",\"cards\":[{\"id\":\"soldado-esparta\",\"name\":\"Soldado de Esparta\",\"power\":3,\"faction\":\"Grécia\",\"tags\":[\"es"
+  },
+  {
+    "path": "card-hologram-map.json",
+    "chars": 114181,
+    "head": "{   \"version\": \"20261020\",   \"cards\": [     {       \"id\": \"soldado-esparta\",       \"name\": \"Soldado de Esparta\",       \"power\": 3,       \"faction\": \"G"
+  },
+  {
+    "path": "cards-remake.json",
+    "chars": 114095,
+    "head": "{   \"version\": \"20261020\",   \"cards\": [     {       \"id\": \"soldado-esparta\",       \"name\": \"Soldado de Esparta\",       \"power\": 3,       \"faction\": \"G"
+  },
+  {
+    "path": "CARREGAMENTO-E-DESEMPENHO.md",
+    "chars": 6224,
+    "head": "# Carregamento, atualizações e desempenho — 21/10/2026  ## O que mudou  - O primeiro acesso ao hall, o login, a criação de conta e a recuperação da úl"
+  },
+  {
+    "path": "cartas-hologramas.html",
+    "chars": 85084,
+    "head": "<!doctype html><html lang=\"pt-BR\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Cartas, hologramas e"
+  },
+  {
+    "path": "CARTAS-HOLOGRAMAS.md",
+    "chars": 3898,
+    "head": "# Cartas e hologramas — edição 17/10/2026  ## Entregue no projeto principal  - 31 PNGs originais das cartas, sem recorte ou alteração dos textos impre"
+  },
+  {
+    "path": "combat-cinematics.css",
+    "chars": 5174,
+    "head": "/* Interactive neighbours and horizontal swipe in the duel gallery. */ #card-detail-modal.duel-card-expanded{touch-action:pan-y;user-select:none;-webk"
+  },
+  {
+    "path": "combat-fx.js",
+    "chars": 17196,
+    "head": "(() => {  'use strict';  const $=s=>document.querySelector(s),reduce=()=>matchMedia('(prefers-reduced-motion:reduce)').matches;  let rects=new Map(),p"
+  },
+  {
+    "path": "COMECE-AQUI.txt",
+    "chars": 7093,
+    "head": "ATUALIZAÇÃO 2026.10.22 — WEBAPP, ATLAS E NOVOS GREGOS Leia ATUALIZACAO-WEBAPP-E-NOVOS-GREGOS.md. Aplique 055 e 056 após 054 e publique o projeto atual"
+  },
+  {
+    "path": "CONCEPT-ART-ASSETS.json",
+    "chars": 5043,
+    "head": "{   \"purpose\": \"Recursos visuais criados para aproximar a interface das artes aprovadas. Sidebar e combate preservados.\",   \"directory\": \"assets/conce"
+  },
+  {
+    "path": "CONCEPT-REWORK.md",
+    "chars": 3484,
+    "head": "# Interface inspirada nas concept arts aprovadas  Aplicada à versão principal em `outputs/mythic-clash`.  ## Recursos e telas  - Citadela luminosa com"
+  },
+  {
+    "path": "concept-theme.css",
+    "chars": 43463,
+    "head": "/* Concept art presentation. All selectors exclude sidebar and combat. */ body.concept-ui.duel-fullscreen .concept-account-bar{display:none!important}"
+  },
+  {
+    "path": "concept-theme.js",
+    "chars": 42159,
+    "head": "(() => {  'use strict';  const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];  const make=(tag,cls,text)=>{const n=document.c"
+  },
+  {
+    "path": "CONSTRUTOR-DE-DECKS.md",
+    "chars": 4082,
+    "head": "# Construtor de decks  ## Publicação  1. Execute `supabase/migrations/202610170015_deck_builder_14_35.sql` no SQL Editor do Supabase, depois dos SQLs "
+  },
+  {
+    "path": "convergence-lobby.css",
+    "chars": 7071,
+    "head": "/* Sala de convergência: formação automática pela presença do segundo jogador. */ .convergence-lobby-heading{display:flex;align-items:center;justify-c"
+  },
+  {
+    "path": "convergence-lobby.js",
+    "chars": 11594,
+    "head": "(() => {  'use strict';  const $=s=>document.querySelector(s),api=()=>window.MythicOnline;  const dialog=$('#lobby-friends-dialog'),popup=$('#lobby-in"
+  },
+  {
+    "path": "CORRECAO-AFRODITE-FILEIRAS.md",
+    "chars": 1116,
+    "head": "# Afrodite e posição das fileiras  - Ao escolher o alvo da Afrodite, a apresentação do campo é mantida até os corações terminarem sobre a posição orig"
+  },
+  {
+    "path": "CORRECAO-CARREGAMENTO-INVENTARIO.md",
+    "chars": 1066,
+    "head": "# Correção do carregamento do inventário  O SQL 013 terminou com sucesso e o catálogo público já contém 54 cartas e 39 ícones. Foi encontrado um erro "
+  },
+  {
+    "path": "CORRECAO-CONVITES-SESSOES.md",
+    "chars": 1883,
+    "head": "# Convite bloqueado por fila ou partida antiga  ## Causa encontrada no código  A migração 035 recusava convites se qualquer participante tivesse qualq"
+  },
+  {
+    "path": "CORRECAO-DESEMPATE-BARRA.md",
+    "chars": 1271,
+    "head": "# Desempate e barra superior mobile  ## Desempate  O erro `column u.wins does not exist` vinha de `_tb_award`: o histórico de baralhos usa `victories`"
+  },
+  {
+    "path": "CORRECAO-DESISTENCIA-BONUS.md",
+    "chars": 1444,
+    "head": "# Correção do erro ao desistir  Mensagem exibida: `column reference \"v\" is ambiguous`.  A função `_x_bonus`, usada no cálculo de poder, declarava uma "
+  },
+  {
+    "path": "CORRECAO-ECLIPSE-FORMAS.md",
+    "chars": 2171,
+    "head": "# Eclipse: formas humanas e lobisomens  ## Regras aplicadas  - Solar: Alfa vira Mulher; Beta e Omega viram Homem. - Lunar: lobisomens que foram transf"
+  },
+  {
+    "path": "CORRECAO-ENTRADA-E-RETOMADA.md",
+    "chars": 2992,
+    "head": "# Entrada e retomada de partidas  ## Boas-vindas aparecendo em contas antigas  A janela das boas-vindas era aberta com “Consultando sua jornada…” ante"
+  },
+  {
+    "path": "CORRECAO-ENTRADA-HOLOGRAMA.md",
+    "chars": 1339,
+    "head": "# Sincronização da entrada dos hologramas  O holograma do campo ficava visível assim que a carta era jogada. Depois da apresentação ampliada, uma segu"
+  },
+  {
+    "path": "CORRECAO-ESCOLHAS-E-RITMO-DO-BOT.md",
+    "chars": 4771,
+    "head": "# Escolhas de habilidades, cartas e ritmo do bot  ## Publicação  1. Após a **053**, aplique `supabase/migrations/202610220054_ability_choices_and_bot_"
+  },
+  {
+    "path": "CORRECAO-FILA-SEGUNDO-JOGADOR.md",
+    "chars": 1387,
+    "head": "# Correção da entrada do segundo jogador na fila  ## Causa  A entrada do segundo jogador é o momento em que o servidor cria a partida e distribui os d"
+  },
+  {
+    "path": "CORRECAO-FLASH-DO-HALL.md",
+    "chars": 1183,
+    "head": "# Atualizar a página sem exibir o hall  A abertura agora consulta, antes da primeira exibição, se a conta tinha uma tela interna salva. Nesse caso, ma"
+  },
+  {
+    "path": "CORRECAO-REGRESSAO-CARREGAMENTO.md",
+    "chars": 1148,
+    "head": "# Correção da regressão de carregamento  Publique todos os arquivos deste pacote e pressione F5. Não há SQL novo. O layout compacto do construtor de d"
+  },
+  {
+    "path": "CORRECAO-SQL-052.md",
+    "chars": 596,
+    "head": "# Correção do SQL 052  O erro 42601 na função `_gc_pick_play` era causado por uma expressão CASE sem parênteses dentro de uma condição IF. O CASE foi "
+  },
+  {
+    "path": "CORRECAO-VITORIA-ESTRELAS.md",
+    "chars": 3120,
+    "head": "# Vitória por Rounds e correção das estrelas  ## Problemas encontrados  1. No online 1×1 e 2×2, a finalização do Round descontava uma estrela da equip"
+  },
+  {
+    "path": "custom-lobby.css",
+    "chars": 4008,
+    "head": "body.concept-ui #view-custom .custom-room-panel{display:block;padding:clamp(18px,3vw,32px)} #view-custom [hidden]{display:none!important} #custom-entr"
+  },
+  {
+    "path": "custom-lobby.js",
+    "chars": 11758,
+    "head": "(() => {  'use strict';  const $=s=>document.querySelector(s),api=()=>window.MythicOnline;  let room=null,busy=false,requesting=false,inboxBusy=false,"
+  },
+  {
+    "path": "deck-builder.css",
+    "chars": 19457,
+    "head": "/* Fullscreen deck table. Uses the existing cards and cached site textures. */ body.concept-ui #view-decks .concept-deck-editor[hidden]{display:none!i"
+  },
+  {
+    "path": "deck-builder.js",
+    "chars": 26102,
+    "head": "(() => {   'use strict';   const MIN=14,MAX=35,$=s=>document.querySelector(s);   const escape=value=>String(value??'').replace(/[&<>\"']/g,c=>({'&':'&a"
+  },
+  {
+    "path": "deck-evaluator.js",
+    "chars": 15349,
+    "head": "(() => {  'use strict';  const clamp=(v,a=0,b=1)=>Math.min(b,Math.max(a,v)),total=c=>Object.values(c).reduce((n,v)=>n+v,0);  const gear={mjolnir:['tho"
+  },
+  {
+    "path": "deck-identity.js",
+    "chars": 7270,
+    "head": "(() => {  'use strict';  const fac=[['greece','Grécia','gregos-v3'],['norse','Nórdicos','nordicos-v3'],['egypt','Egípcios','egipcios-v3'],['celtic','C"
+  },
+  {
+    "path": "deck-picker.js",
+    "chars": 3686,
+    "head": "(() => {  'use strict';  let popup=null,anchor=null;  function close(){popup?.remove();popup=null;if(anchor)anchor.setAttribute('aria-expanded','false"
+  },
+  {
+    "path": "deck-tools.css",
+    "chars": 10083,
+    "head": "/* Shared, responsive deck identity, evaluation and direct challenge room. */ .deck-emblem{--deck-color:#44305e;display:inline-grid;place-items:center"
+  },
+  {
+    "path": "DESISTENCIA-DE-PARTIDA.md",
+    "chars": 1970,
+    "head": "# Desistir da partida  O botão “Sair do duelo” foi substituído por **Desistir** nas partidas normal, ranqueada, personalizada e contra o Guardião, inc"
+  },
+  {
+    "path": "direct-lobby.js",
+    "chars": 7798,
+    "head": "(() => {  'use strict';  const $=s=>document.querySelector(s),view=$('#view-direct'),panel=$('#challenge-panel');if(!view||!panel)return;  const api=("
+  },
+  {
+    "path": "eclipse-cards.json",
+    "chars": 3377,
+    "head": "{   \"cards\": [     {       \"id\": \"eclipse\",       \"name\": \"Eclipse\",       \"type\": \"Clima\",       \"kind\": \"event\",       \"faction\": \"Universal\",      "
+  },
+  {
+    "path": "ECLIPSE-SEM-SPOILER.md",
+    "chars": 1173,
+    "head": "# Cartas horizontais e revelação do Eclipse  - A imagem completa da carta de Local, Terreno ou Clima é girada **90 graus**, preservando a proporção. N"
+  },
+  {
+    "path": "eclipse.css",
+    "chars": 8050,
+    "head": ".mythic-rework .battle-board[data-eclipse]{--eclipse-accent:#fa8a8a;transition:border-color .8s,box-shadow .8s;border-color:var(--eclipse-accent);box-"
+  },
+  {
+    "path": "eclipse.js",
+    "chars": 10042,
+    "head": "(() => { 'use strict'; const data={\"cards\": [{\"id\": \"eclipse\", \"name\": \"Eclipse\", \"type\": \"Clima\", \"kind\": \"event\", \"faction\": \"Universal\", \"symbol\": "
+  },
+  {
+    "path": "ECLIPSE.md",
+    "chars": 2700,
+    "head": "# Eclipse: sorteio, regras e apresentação  ## Cartas  Eclipse (arte cósmica com Sol e Lua) continua usando o identificador eclipse, disponível no deck"
+  },
+  {
+    "path": "EMBLEMAS-DECKS-E-CONQUISTAS.svg",
+    "chars": 23480,
+    "head": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"870\" height=\"750\" viewBox=\"0 0 870 750\"><rect width=\"870\" height=\"750\" fill=\"#15101f\"/><text x=\"40\" y=\""
+  },
+  {
+    "path": "entry-bootstrap.js",
+    "chars": 10805,
+    "head": "/* release-stamp.js */ window.MythicRelease=Object.freeze({id:\"8ab475cb9e7f5f1893df\",version:\"2026.10.22\"});  ; /* browser-compat.js */ /* Capability "
+  },
+  {
+    "path": "entry-critical.css",
+    "chars": 9093,
+    "head": "html{background:#100b18;color-scheme:dark}body{margin:0;color:#eee7f5;background:#100b18;font-family:Segoe UI,Arial,sans-serif}body.public-home-open>."
+  },
+  {
+    "path": "entry-media.js",
+    "chars": 32182,
+    "head": "window.MythicEntryMedia={\"version\":1,\"cards\":{\"soldado-esparta\":\"assets/entry/soldado-esparta-preview.webp\",\"athena\":\"assets/entry/athena-preview.webp"
+  },
+  {
+    "path": "entry-optimized.css",
+    "chars": 9132,
+    "head": "html{background:#100b18;color-scheme:dark}body{margin:0;color:#eee7f5;background:#100b18;font-family:Segoe UI,Arial,sans-serif}body.public-home-open>."
+  },
+  {
+    "path": "entry-startup.js",
+    "chars": 2939,
+    "head": "(() => {  'use strict';  let queued=null,ready=false,noticeTimer=0,fontsLoaded=false;  function loadFonts(){if(fontsLoaded||!document.body||document.b"
+  },
+  {
+    "path": "EQUIPAMENTOS.md",
+    "chars": 1509,
+    "head": "# Equipamentos  Artes originais incluídas sem alterações em assets/equipment. Mjölnir (mjolnir) e Runa Uruz (runas-nordicas) mantêm os identificadores"
+  },
+  {
+    "path": "equipment-cards.js",
+    "chars": 9254,
+    "head": "(() => { 'use strict'; const data={\"cards\": [{\"id\": \"mjolnir\", \"name\": \"Mjölnir\", \"type\": \"Equipamento\", \"kind\": \"equipment\", \"faction\": \"Nórdicos\", \""
+  },
+  {
+    "path": "equipment-cards.json",
+    "chars": 7758,
+    "head": "{   \"cards\": [     {       \"id\": \"mjolnir\",       \"name\": \"Mjölnir\",       \"type\": \"Equipamento\",       \"kind\": \"equipment\",       \"faction\": \"Nórdico"
+  },
+  {
+    "path": "floating-queue.css",
+    "chars": 2118,
+    "head": ".floating-queue{position:fixed;z-index:1050;width:276px;max-width:calc(100vw - 24px);box-sizing:border-box;padding:0 14px 14px;border:1px solid #caa86"
+  },
+  {
+    "path": "floating-queue.js",
+    "chars": 5703,
+    "head": "(() => {  'use strict';  const node=(tag,cls,text)=>{const n=document.createElement(tag);n.className=cls;if(text!==undefined)n.textContent=text;return"
+  },
+  {
+    "path": "game-fonts.css",
+    "chars": 402,
+    "head": "@font-face{font-family:Mythic UI;src:url('assets/rework/NotoSans-Regular.ttf') format('truetype');font-weight:400;font-display:swap} @font-face{font-f"
+  },
+  {
+    "path": "game-interface.css",
+    "chars": 650650,
+    "head": "/* styles.css */ :root{color-scheme:dark;--navy:#101725;--panel:#151f2e;--panel2:#1b293b;--gold:#d4ad64;--bright:#f0d18a;--cream:#f1e7d0;--muted:#9ca8"
+  },
+  {
+    "path": "game-runtime.js",
+    "chars": 1325797,
+    "head": "/* assets/vendor/supabase-2.118.0.js */ var supabase=(function(e){function t(e,t){var n={};for(var r in e)Object.prototype.hasOwnProperty.call(e,r)&&t"
+  },
+  {
+    "path": "gamepad-controls.js",
+    "chars": 4219,
+    "head": "(() => {  'use strict';  let active=false,last=0,previous=[],hold='',repeat=0,frame=0;  const visible=n=>!n.disabled&&!n.closest('[hidden],[inert]')&&"
+  },
+  {
+    "path": "guardian-campaign-data.js",
+    "chars": 33563,
+    "head": "window.MythicGuardianCampaignData={\"regions\":[{\"id\":\"greece\",\"name\":\"Grécia\",\"faction\":\"Grécia\",\"order\":1,\"longitude\":23.7,\"latitude\":38,\"labelX\":52.0"
+  },
+  {
+    "path": "guardian-campaign.css",
+    "chars": 22002,
+    "head": ".gc-shell{--gold:#dfbd70;--cream:#ffe9ac;max-width:1800px;margin:auto;color:#f5ead8;min-width:0}.gc-shell *{box-sizing:border-box}.gc-shell button{fon"
+  },
+  {
+    "path": "guardian-campaign.js",
+    "chars": 32493,
+    "head": "(() => {  'use strict';  const data=window.MythicGuardianCampaignData,root=document.querySelector('#view-guardian');if(!data||!root)return;  const api"
+  },
+  {
+    "path": "GUARDIAO-CAMPANHA.md",
+    "chars": 5429,
+    "head": "# Guardião — Jornada das Mitologias  ## O que foi preparado  - Atlas do mundo real com símbolos das facções e posições aproximadas. Há zoom, arraste e"
+  },
+  {
+    "path": "GUARDIAO-NORDICO-ATUALIZACAO.md",
+    "chars": 4310,
+    "head": "# Guardião Nórdico — corpo inteiro e sinergia  ## Regra atual  **Vontade do Norte:** Se houver outro Guardião Nórdico aliado na mesma fileira, o poder"
+  },
+  {
+    "path": "guardiao-nordico-card.json",
+    "chars": 966,
+    "head": "{   \"id\": \"guardiao-nordico\",   \"name\": \"Guardião Nórdico\",   \"abilityTitle\": \"Vontade do Norte\",   \"type\": \"Companheiro\",   \"subtype\": \"Companheiro\","
+  },
+  {
+    "path": "GUARDIAO-NORDICO.md",
+    "chars": 2234,
+    "head": "# Guardião Nórdico  Carta criada com o gerador de imagens integrado e incluída na facção Nórdicos.  - Poder: 2. - Custo: 1. - Tipo: Companheiro. - Hab"
+  },
+  {
+    "path": "HABILIDADES.md",
+    "chars": 2334,
+    "head": "# Atualização das habilidades — 17/10/2026  O motor de habilidades está integrado ao Guardião local e às ações online de 1 × 1 e 2 × 2. Os diálogos de"
+  },
+  {
+    "path": "HALL-DE-ENTRADA.md",
+    "chars": 2531,
+    "head": "# Hall de entrada  ## Conteúdo  - Logo com o emblema existente e a frase “Mitologias se encontram. Lendas entram em combate.” sobre o cenário com movi"
+  },
+  {
+    "path": "honors.css",
+    "chars": 2515,
+    "head": "#view-profile .equipped-honor-title{margin:12px 0 8px;color:#f2d486;font:700 15px 'Mythic Display',Georgia,serif} .featured-medals{display:flex;gap:9p"
+  },
+  {
+    "path": "honors.js",
+    "chars": 5455,
+    "head": "(() => {  const make=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text)n.textContent=text;return n;};  const grid=do"
+  },
+  {
+    "path": "icones-chibi.html",
+    "chars": 18803,
+    "head": "<!doctype html><html lang=\"pt-BR\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Ícones chibi · Mythi"
+  },
+  {
+    "path": "ICONES-DECKS-E-CONQUISTAS.md",
+    "chars": 1431,
+    "head": "# Ícones de decks e conquistas do perfil  ## Decks  Doze emblemas próprios substituem os desenhos simples de Eclipse, Matilha, Pelotão, Submundo, Conv"
+  },
+  {
+    "path": "identity-art.css",
+    "chars": 2959,
+    "head": "body .painted-honor{display:inline-block;width:76px;height:76px;min-width:0;border:0;background-color:transparent;background-repeat:no-repeat;border-r"
+  },
+  {
+    "path": "identity-art.js",
+    "chars": 2385,
+    "head": "(() => {  'use strict';  const medals=['first-step','first-victory','ten-wins','fifty-wins','hundred-wins','twenty-five','hundred-games','ranked-ten',"
+  },
+  {
+    "path": "identity-upgrade.css",
+    "chars": 2553,
+    "head": "/* Keep sprite atlas corners square; round only the visible avatar cell. */ body .chibi-frame>img{border-radius:0!important;border:0!important;padding"
+  },
+  {
+    "path": "image-generation-prompts.json",
+    "chars": 22209,
+    "head": "{   \"mode\": \"Built-in image_gen generation with reference images; transparent_background true for VFX\",   \"assets\": [     {       \"asset\": \"assets/uni"
+  },
+  {
+    "path": "index.html",
+    "chars": 76582,
+    "head": "<!doctype html> <html lang=\"pt-BR\"> <head>   <meta charset=\"utf-8\">   <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, viewport-fit"
+  },
+  {
+    "path": "JANELA-FLUTUANTE-FILA.md",
+    "chars": 1575,
+    "head": "# Janela flutuante da fila  - Aparece ao entrar na fila de partida normal ou ranqueada, solo ou em dupla. - Acompanha a navegação pelas telas do site "
+  },
+  {
+    "path": "journey-tools.css",
+    "chars": 3300,
+    "head": ".shop-filters{display:grid;grid-template-columns:minmax(180px,1.5fr) repeat(4,minmax(110px,1fr));gap:12px;padding:18px;border:1px solid #ad8fcc55;bord"
+  },
+  {
+    "path": "landscape-zones.css",
+    "chars": 2686,
+    "head": "/* Landscape presentation inside the existing Local / Terrain / Climate slots. */ body.mythic-rework #view-duel #shared-zones>.battle-zone.occupied{  "
+  },
+  {
+    "path": "LEIA-ME.txt",
+    "chars": 5286,
+    "head": "MYTHIC CLASH — PROTÓTIPO  ABRIR NO COMPUTADOR Abra index.html no navegador.  ABRIR NO CELULAR O layout se adapta a telas pequenas. Para abrir pelo cel"
+  },
+  {
+    "path": "loading-ui.css",
+    "chars": 3665,
+    "head": "/* Shared by initial access, login, signup, resume and match entry. */ .loading-screen{position:fixed;inset:0;z-index:2147483000;display:grid;align-co"
+  },
+  {
+    "path": "LOBBY-CONVERGENCIA.md",
+    "chars": 2053,
+    "head": "# Sala de convergência e convites  ## Fluxo  - A sala abre com o jogador e uma vaga quadrada com **+**. A escolha manual de 1×1/2×2, os campos de códi"
+  },
+  {
+    "path": "locais.html",
+    "chars": 1441,
+    "head": "<!doctype html><html lang=\"pt-BR\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Locais — Mythic Clas"
+  },
+  {
+    "path": "LOCAIS.md",
+    "chars": 748,
+    "head": "# Cartas de Local  - Asgard: +2 a todos os nórdicos, inclusive Loki quando disponível. - Egito: +2 a todos os egípcios. - Grécia: +2 a todos os gregos"
+  },
+  {
+    "path": "location-cards.js",
+    "chars": 3366,
+    "head": "(() => { 'use strict'; const data={\"cards\": [{\"id\": \"asgard\", \"name\": \"Asgard\", \"type\": \"Local\", \"kind\": \"location\", \"faction\": \"Nórdicos\", \"symbol\": "
+  },
+  {
+    "path": "location-cards.json",
+    "chars": 3763,
+    "head": "{   \"cards\": [     {       \"id\": \"asgard\",       \"name\": \"Asgard\",       \"type\": \"Local\",       \"kind\": \"location\",       \"faction\": \"Nórdicos\",      "
+  },
+  {
+    "path": "loki-card.js",
+    "chars": 793,
+    "head": "window.MythicLokiCards=[{\"id\": \"loki\", \"name\": \"Loki\", \"power\": 3, \"faction\": \"Nórdicos\", \"type\": \"Personagem\", \"subtype\": \"Deus\", \"kind\": \"unit\", \"sy"
+  },
+  {
+    "path": "loki-card.json",
+    "chars": 816,
+    "head": "{   \"id\": \"loki\",   \"name\": \"Loki\",   \"power\": 3,   \"faction\": \"Nórdicos\",   \"type\": \"Personagem\",   \"subtype\": \"Deus\",   \"kind\": \"unit\",   \"symbol\": "
+  },
+  {
+    "path": "LOKI.md",
+    "chars": 916,
+    "head": "# Loki — carta corrigida  Arte original recebida com cabeçalho LOKI, copiada sem alterações para assets/cards-20261017/loki.png. Carta cadastrada com "
+  },
+  {
+    "path": "match-report.css",
+    "chars": 4095,
+    "head": "#view-match-report{max-width:1360px;margin:auto;padding-bottom:32px}#view-match-report .report-header{display:flex;justify-content:space-between;align"
+  },
+  {
+    "path": "match-report.js",
+    "chars": 11801,
+    "head": "(() => {  'use strict';  const root=document.querySelector('#view-match-report');if(!root)return;  const el=(tag,cls,text)=>{const n=document.createEl"
+  },
+  {
+    "path": "match-surrender.css",
+    "chars": 951,
+    "head": ".surrender-dialog{position:fixed;inset:0;margin:auto;width:min(460px,calc(100vw - 32px));max-height:calc(100dvh - 40px);overflow:auto;padding:28px;bor"
+  },
+  {
+    "path": "missions-menu.css",
+    "chars": 2774,
+    "head": ".missions-nav-entry{width:100%;min-width:0} .missions-nav-entry>.nav-item{width:100%} .missions-nav-chevron{margin-left:auto} #missions-menu-toggle[ar"
+  },
+  {
+    "path": "missions-menu.js",
+    "chars": 3165,
+    "head": "(() => {   const toggle = document.getElementById('missions-menu-toggle');   const submenu = document.getElementById('missions-submenu');   const prev"
+  },
+  {
+    "path": "mobile-redirect.js",
+    "chars": 64,
+    "head": "location.replace(\"./index.html\"+location.search+location.hash); "
+  },
+  {
+    "path": "mobile.html",
+    "chars": 1069,
+    "head": "<!doctype html> <html lang=\"pt-BR\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1,viewport-fit=cover\"><"
+  },
+  {
+    "path": "MODO-TESTE.md",
+    "chars": 2587,
+    "head": "# Modo teste em Meu Baralho  Selecione um baralho e clique em **Testar baralho**. As cartas desse baralho começam na mão para facilitar a montagem de "
+  },
+  {
+    "path": "NOVO-ATLAS-DAS-LENDAS.md",
+    "chars": 2655,
+    "head": "# Novo Atlas das Lendas  ## Interface  - Mapa mundial ilustrado, com emblemas selecionáveis, zoom e arraste. As posições foram ajustadas à geografia d"
+  },
+  {
+    "path": "ONBOARDING-IMAGE-PROMPT.txt",
+    "chars": 1616,
+    "head": "Modo: ImageGen integrado, geração de asset com referência e fundo transparente. Referência: concept-pacote-mythic-clash/pacotinho-mythic-clash-concept"
+  },
+  {
+    "path": "online.js",
+    "chars": 146359,
+    "head": "(() => {   const $ = selector => document.querySelector(selector);   const safeUrl=window.MythicSecurity.assetUrl;   const config = window.MYTHIC_SUPA"
+  },
+  {
+    "path": "PELOTOES-DE-COMPANHEIROS.md",
+    "chars": 856,
+    "head": "# Pelotões de companheiros  - Hologramas agrupados usam o mesmo tamanho de uma unidade isolada, tanto no desktop quanto no celular. - A quantidade de "
+  },
+  {
+    "path": "player-progression.js",
+    "chars": 339,
+    "head": "(() => {  'use strict';  function from(value){   const xp=Math.max(0,Math.floor(Number(value)||0));   const level=xp<100?1:2+Math.floor((xp-100)/150);"
+  },
+  {
+    "path": "portal-upgrade.css",
+    "chars": 19764,
+    "head": "/* Additional spacing and destinations; existing Universe composition is retained. */ .main-content>.topbar{min-height:84px!important;height:auto!impo"
+  },
+  {
+    "path": "portal-upgrade.js",
+    "chars": 29246,
+    "head": "(() => {  'use strict';  const $=s=>document.querySelector(s), el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!"
+  },
+  {
+    "path": "practice-mode.css",
+    "chars": 2070,
+    "head": "body.mythic-rework #practice-start{margin-left:auto;min-height:48px;padding:12px 24px;font-weight:700;border-color:#d6b4ff;box-shadow:0 0 18px #a36bd3"
+  },
+  {
+    "path": "practice-mode.js",
+    "chars": 4296,
+    "head": "(() => {  'use strict';  const make=(tag,text,cls)=>{const node=document.createElement(tag);if(text)node.textContent=text;if(cls)node.className=cls;re"
+  },
+  {
+    "path": "profile-redesign.css",
+    "chars": 12991,
+    "head": "/* Profile presentation inspired by the approved concept, with live account data. */ body.mythic-rework #view-profile{max-width:1640px;padding-top:14p"
+  },
+  {
+    "path": "profile-redesign.js",
+    "chars": 8361,
+    "head": "(() => {   const view=document.getElementById('view-profile');   if(!view)return;   const el=(tag,cls,text)=>{const n=document.createElement(tag);if(c"
+  },
+  {
+    "path": "public-hall.css",
+    "chars": 15600,
+    "head": "/* Hall público: conteúdo legível, movimento opcional e controles por toque. */ .mythic-public-home{--hall-gold:#f1d99a;--hall-muted:#c4b6d0;scroll-be"
+  },
+  {
+    "path": "public-hall.js",
+    "chars": 17906,
+    "head": "(() => {  'use strict';  const home=document.querySelector('#mythic-public-home');if(!home)return;  const $=s=>home.querySelector(s),el=(tag,cls,text)"
+  },
+  {
+    "path": "quality-updates.css",
+    "chars": 14845,
+    "head": "/* Revision from the browser audit. Map zoom and deck-selector sizing preserved. */ .gc-atlas-heading{position:relative;inset:auto;min-height:100px;ba"
+  },
+  {
+    "path": "quality-updates.js",
+    "chars": 10544,
+    "head": "(() => {  'use strict';  const $=s=>document.querySelector(s),el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!="
+  },
+  {
+    "path": "queue-room-layout.css",
+    "chars": 2992,
+    "head": "/* Sala de partida: configuração e baralho dividem toda a largura disponível. */ body.concept-ui #view-queue .queue-room-layout{  display:grid;grid-te"
+  },
+  {
+    "path": "RANK-ESTRELAS-STRIX.md",
+    "chars": 2789,
+    "head": "# Ranqueada: estrelas Strix e pontos  ## Regra aprovada  - Aprendiz de Herói, Escudeiro, Herói e Lenda usam cinco estrelas Strix por rank. - Vitória r"
+  },
+  {
+    "path": "rank-progression.css",
+    "chars": 3721,
+    "head": ".ranked-journey{box-sizing:border-box;margin:0 0 24px;padding:24px;border:1px solid #c7a96070;border-radius:14px;background:linear-gradient(125deg,#2a"
+  },
+  {
+    "path": "rank-progression.js",
+    "chars": 6059,
+    "head": "(() => {  'use strict';  const tiers=[   {name:'Aprendiz de Herói',slug:'aprendiz-de-heroi',base:1000,step:20},   {name:'Escudeiro',slug:'escudeiro',b"
+  },
+  {
+    "path": "RECOMPENSAS-E-TORNEIOS.md",
+    "chars": 4547,
+    "head": "# Recompensas, torneios e entrada na Arena  ## Publicar esta atualização  1. Após as migrações anteriores, execute no editor SQL do Supabase o arquivo"
+  },
+  {
+    "path": "REGRAS-CARTAS-DECISOES.md",
+    "chars": 20339,
+    "head": "# Regras das cartas — decisões consolidadas  Versão de estudo de 18/10/2026. Este documento registra as decisões do criador após a análise das 57 cart"
+  },
+  {
+    "path": "release-stamp.js",
+    "chars": 86,
+    "head": "window.MythicRelease=Object.freeze({id:\"8ab475cb9e7f5f1893df\",version:\"2026.10.22\"}); "
+  },
+  {
+    "path": "release.json",
+    "chars": 52,
+    "head": "{\"id\":\"8ab475cb9e7f5f1893df\",\"version\":\"2026.10.22\"}"
+  },
+  {
+    "path": "remake-gallery.css",
+    "chars": 1513,
+    "head": "*{box-sizing:border-box}body{margin:0;background:#100c1c;color:#f3dfaa;font:16px system-ui,sans-serif}header{padding:28px;position:sticky;top:0;backgr"
+  },
+  {
+    "path": "remake-gallery.js",
+    "chars": 373,
+    "head": "const s=document.querySelector('#search'),f=document.querySelector('#faction'),norm=v=>v.normalize('NFD').replace(/[\\u0300-\\u036f]/g,'').toLocaleLower"
+  },
+  {
+    "path": "remake-rules.js",
+    "chars": 4306,
+    "head": "window.MythicRemakeRules={\"rei-arthur\":{\"op\":\"aura\",\"faction\":\"Celtas\",\"amount\":1},\"celtas-merlin\":{\"op\":\"draft\",\"count\":3},\"celtas-morgana\":{\"op\":\"si"
+  },
+  {
+    "path": "remake-rules.json",
+    "chars": 5951,
+    "head": "{   \"rei-arthur\": {     \"op\": \"aura\",     \"faction\": \"Celtas\",     \"amount\": 1   },   \"celtas-merlin\": {     \"op\": \"draft\",     \"count\": 3   },   \"cel"
+  },
+  {
+    "path": "resource-download.js",
+    "chars": 5578,
+    "head": "/* Downloads are verified against the exact media revisions consumed by the worker. */ (() => {  'use strict';  let job=null,controller=null,completed"
+  },
+  {
+    "path": "responsive-layout.css",
+    "chars": 19255,
+    "head": "/* Final responsive layer: page layouts and the navigation drawer share one width budget. */ @media(max-width:1100px){  body.mythic-rework #view-duel "
+  },
+  {
+    "path": "RESUMO-DA-PARTIDA.md",
+    "chars": 2676,
+    "head": "# Resumo depois da partida  ## Experiência  Após a animação de vitória ou derrota, o jogo abre uma tela de relatório. O jogador permanece nela até pre"
+  },
+  {
+    "path": "REVISAO-ATLAS-E-ARENA.md",
+    "chars": 11617,
+    "head": "# Revisão do Atlas e da Arena · versão 2026.10.21  ## Entrega  Esta é a mesma pasta principal do jogo. O arquivo ao lado, **Mythic-Clash-Completo.zip*"
+  },
+  {
+    "path": "REVISAO-HABILIDADES.md",
+    "chars": 31391,
+    "head": "# Revisão das habilidades — 20/10/2026  ## Alcance e limites  Revisão do código e do catálogo completo, incluindo unidades, equipamentos, Locais, Terr"
+  },
+  {
+    "path": "rewards-tournaments.css",
+    "chars": 10378,
+    "head": "/* Rewards show the granted products; tournament availability controls the grid. */ .reward-product-picker{display:grid;grid-template-columns:repeat(4"
+  },
+  {
+    "path": "rewards-tournaments.js",
+    "chars": 21078,
+    "head": "(() => {  'use strict';  const $=s=>document.querySelector(s),api=()=>window.MythicOnline,uid=()=>api()?.userId?.(),rpc=(n,p={})=>api().portalRequest("
+  },
+  {
+    "path": "rework.css",
+    "chars": 59286,
+    "head": "/* MYTHIC CLASH · CITADELA    Presentation only. Loaded after the original stylesheet, on the main index.html entry.    Game rules, IDs, events, authe"
+  },
+  {
+    "path": "row-holograms.css",
+    "chars": 2720,
+    "head": "/* O tamanho de cada unidade é o mesmo dentro e fora de um pelotão. */ body.mythic-rework.duel-fullscreen #view-duel{--battle-hologram-width:89.0625px"
+  },
+  {
+    "path": "SALA-BARALHO-LATERAL.md",
+    "chars": 939,
+    "head": "# Sala de partida — baralho lateral  A configuração de equipes e o baralho ativo agora ocupam duas colunas na sala de partida, aproveitando o espaço a"
+  },
+  {
+    "path": "SALA-PERSONALIZADA.md",
+    "chars": 2170,
+    "head": "# Sala personalizada  ## Fluxo atualizado  - A entrada mostra somente as regras de criação e um campo de código. - O código abre uma janela com **Joga"
+  },
+  {
+    "path": "security-center.css",
+    "chars": 2669,
+    "head": ".security-center>header p{max-width:900px;font-size:13px;line-height:1.8;color:#c7b9d2}.security-center h2{color:#f0d496;font:30px Georgia,serif}.secu"
+  },
+  {
+    "path": "security-center.js",
+    "chars": 8713,
+    "head": "(() => {  'use strict';  const $=s=>document.querySelector(s),el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!="
+  },
+  {
+    "path": "security.js",
+    "chars": 1363,
+    "head": "(() => {   'use strict';   const escapeHTML=value=>String(value??'').replace(/[&<>\"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',\"'\":'&#39;"
+  },
+  {
+    "path": "SEGURANCA-E-JOGO-JUSTO.md",
+    "chars": 8950,
+    "head": "# Segurança e jogo justo — auditoria de 19/10/2026  ## Alcance real  Revisão do código local do site, da configuração de publicação e das migrações SQ"
+  },
+  {
+    "path": "session-resume.js",
+    "chars": 7200,
+    "head": "(() => {  'use strict';  const api=()=>window.MythicOnline,game=()=>window.MythicGame?.current?.()||{},key=id=>'mythic-last-screen:'+id;  const allowe"
+  },
+  {
+    "path": "session-startup.js",
+    "chars": 4003,
+    "head": "/* Same loading presentation as match entry. Holds are tied to actual data work. */ (() => {  'use strict';  const tasks=new Map([['boot','PREPARANDO "
+  },
+  {
+    "path": "shop-filters.js",
+    "chars": 4836,
+    "head": "(() => {  'use strict';  const $=s=>document.querySelector(s),el=(t,c,text)=>{const n=document.createElement(t);if(c)n.className=c;if(text!==undefined"
+  },
+  {
+    "path": "SIDEBAR-ARCANA.md",
+    "chars": 2626,
+    "head": "# Barra lateral — Convergência Arcana  Implementação do conceito 3 escolhido pelo usuário.  ## Visual  - Cristal escuro com textura original criada pe"
+  },
+  {
+    "path": "sidebar-arcane.css",
+    "chars": 16051,
+    "head": "/* Convergência Arcana: sidebar only, with a mobile navigation drawer. */ body.mythic-rework.arcane-sidebar{--arcane-rail:286px;--arcane-ink:#f1ecff;-"
+  },
+  {
+    "path": "sidebar-arcane.js",
+    "chars": 8111,
+    "head": "(() => {  'use strict';  const sidebar=document.querySelector('.app-shell>.sidebar');  const main=document.querySelector('.app-shell>.main-content'); "
+  },
+  {
+    "path": "SIMBOLOS-E-CARTAS-V3.md",
+    "chars": 829,
+    "head": "# Símbolos e apresentação das cartas  - Novos emblemas para Grécia, Nórdicos, Egípcios, Celtas, Alyns e Monstros. - Símbolos atualizados nas boas-vind"
+  },
+  {
+    "path": "site-updates.js",
+    "chars": 2832,
+    "head": "/* Release detection does not wait for window.load, video or background media. */ (() => {  'use strict';  const installed=window.MythicRelease?.id;le"
+  },
+  {
+    "path": "styles.css",
+    "chars": 203635,
+    "head": ":root{color-scheme:dark;--navy:#101725;--panel:#151f2e;--panel2:#1b293b;--gold:#d4ad64;--bright:#f0d18a;--cream:#f1e7d0;--muted:#9ca8b8;--line:rgba(21"
+  },
+  {
+    "path": "supabase/migrations/202609270001_online_game.sql",
+    "chars": 37206,
+    "head": "-- Mythic Clash: auth-linked profiles, friends, private chat, invitations and queues. -- Apply in the Supabase SQL editor or with `supabase db push`. "
+  },
+  {
+    "path": "supabase/migrations/202609270002_progression_store.sql",
+    "chars": 36931,
+    "head": "-- Mythic Clash expansion: player details, progression, history, saved decks and store. begin;  alter table public.profiles add column if not exists n"
+  },
+  {
+    "path": "supabase/migrations/202609270003_admin_console.sql",
+    "chars": 5364,
+    "head": "-- Mythic Clash: protected administration, public announcements and editable lore. begin;  create or replace function public.is_site_admin() returns b"
+  },
+  {
+    "path": "supabase/migrations/202609270004_profile_icons_and_intro.sql",
+    "chars": 1213,
+    "head": "-- Mythic Clash: purchasable profile icons and opponent badge for the pre-match reveal. begin;  insert into public.shop_catalog(item_id,title,descript"
+  },
+  {
+    "path": "supabase/migrations/202609270005_card_customizer.sql",
+    "chars": 2220,
+    "head": "-- Editor visual de cartas: arte pública, edição restrita ao administrador. begin;  alter table public.card_lore   add column if not exists card_name "
+  },
+  {
+    "path": "supabase/migrations/202609270006_tutorial_level_two.sql",
+    "chars": 1338,
+    "head": "-- Finishing the first Guardian match always grants enough XP for level 2. -- Bring accounts that already completed the tutorial before this change up"
+  },
+  {
+    "path": "supabase/migrations/202609270007_fix_admin_player_list.sql",
+    "chars": 863,
+    "head": "-- Corrige o tipo do e-mail retornado e mantém a listagem protegida para administradores. begin;  create or replace function public.admin_list_players"
+  },
+  {
+    "path": "supabase/migrations/202609270008_medusa_rank_history.sql",
+    "chars": 18871,
+    "head": "-- Add Medusa as a server-authoritative card and include her in future default decks. begin;  alter table public.player_decks alter column card_counts"
+  },
+  {
+    "path": "supabase/migrations/202610130001_live_features.sql",
+    "chars": 28179,
+    "head": "-- Foundation for live Mythic Clash systems. Apply after 202609270008_medusa_rank_history.sql. begin;  create table if not exists public.missions (   "
+  },
+  {
+    "path": "supabase/migrations/202610160001_game_systems.sql",
+    "chars": 41012,
+    "head": "-- Server-side rules for tie-breaks, mission chapters, guild activity, -- tournament brackets, sandbox invitations and card gifting. begin;  create ta"
+  },
+  {
+    "path": "supabase/migrations/202610160002_admin_tournament_creation.sql",
+    "chars": 8425,
+    "head": "begin;  -- Tournament creation is an administrative action, including direct RPC calls. create or replace function public.create_player_tournament(p_t"
+  },
+  {
+    "path": "supabase/migrations/202610160002_greek_gods_cards.sql",
+    "chars": 3958,
+    "head": "begin;  -- Add the three Greek gods to server validation, game rules, gifts and tie-breaks. do $$ declare   routine record;   definition text; begin  "
+  },
+  {
+    "path": "supabase/migrations/202610160003_player_profiles.sql",
+    "chars": 9435,
+    "head": "-- Registra cartas jogadas e decks utilizados em partidas online; libera o resumo apenas ao jogador e a amigos aceitos. begin;  create table if not ex"
+  },
+  {
+    "path": "supabase/migrations/202610160004_duo_matchmaking.sql",
+    "chars": 42094,
+    "head": "-- Duo queue and 2v2 matches: two shared team fields, private hands per player. begin;  alter table public.game_matches add column if not exists playe"
+  },
+  {
+    "path": "supabase/migrations/202610170001_titles_medals.sql",
+    "chars": 6771,
+    "head": "-- Permanent cosmetic honors, calculated from server records. Run after prior migrations. begin; create table if not exists public.honor_catalog (  id"
+  },
+  {
+    "path": "supabase/migrations/202610170002_card_art_holograms.sql",
+    "chars": 9563,
+    "head": "-- Apply after the earlier Mythic Clash migrations, before publishing this edition. -- Adds visual catalog entries. The 29 preview cards stay unavaila"
+  },
+  {
+    "path": "supabase/migrations/202610170003_corrected_cards.sql",
+    "chars": 941,
+    "head": "-- Corrected cards supplied by the user. Apply after 202610170002. begin; update public.card_lore set card_name='Ragnar',ability_title='Invasores de K"
+  },
+  {
+    "path": "supabase/migrations/202610170004_human_cards.sql",
+    "chars": 1423,
+    "head": "-- Human character cards supplied by the user. Apply after 202610170003. begin; alter table public.card_lore drop constraint if exists card_lore_card_"
+  },
+  {
+    "path": "supabase/migrations/202610170005_terrain_cards.sql",
+    "chars": 13274,
+    "head": "-- Terrain effects supplied by the user. Apply after 202610170004. -- Changes the shared terrain slot in Guardian, 1v1 and 2v2. -- No preview characte"
+  },
+  {
+    "path": "supabase/migrations/202610170006_location_cards.sql",
+    "chars": 6002,
+    "head": "-- Apply after 202610170005_terrain_cards.sql. Local bonuses affect both sides. begin; alter table public.card_lore drop constraint if exists card_lor"
+  },
+  {
+    "path": "supabase/migrations/202610170007_equipment_cards.sql",
+    "chars": 11893,
+    "head": "-- Apply after 202610170006_location_cards.sql. -- Equipment target selection is validated by the server in 1v1 and 2v2. begin; alter table public.car"
+  },
+  {
+    "path": "supabase/migrations/202610170008_eclipse_event.sql",
+    "chars": 9172,
+    "head": "-- Apply after 202610170007_equipment_cards.sql. -- The server draws one outcome at play time and persists it for all clients. begin; alter table publ"
+  },
+  {
+    "path": "supabase/migrations/202610170009_loki_card.sql",
+    "chars": 5768,
+    "head": "-- Register the corrected Loki card without unlocking its pending copy engine. -- Apply after 202610170008_eclipse_event.sql. begin; alter table publi"
+  },
+  {
+    "path": "supabase/migrations/202610170010_all_character_abilities.sql",
+    "chars": 142582,
+    "head": "-- Apply after 202610170009_loki_card.sql. -- Full character engine. Choices are validated and resolved on the server. begin; alter table public.card_"
+  },
+  {
+    "path": "supabase/migrations/202610170011_norse_guardian_card.sql",
+    "chars": 631,
+    "head": "-- Apply after 202610170010_all_character_abilities.sql. begin; insert into public.card_lore(card_id,card_name,ability_title,ability_text,art_url,fact"
+  },
+  {
+    "path": "supabase/migrations/202610170012_cinematic_arcane_update.sql",
+    "chars": 133583,
+    "head": "-- Apply after 202610170011_norse_guardian_card.sql. No payment UI is enabled. begin; create or replace function public._r_card(cid text) returns json"
+  },
+  {
+    "path": "supabase/migrations/202610170013_inventory_shop_onboarding.sql",
+    "chars": 31875,
+    "head": "-- Apply after migration 012. Safe to reapply; starter grants are recorded once. begin; drop trigger if exists grant_chibi_avatars on public.profiles;"
+  },
+  {
+    "path": "supabase/migrations/202610170014_owned_collection_icons.sql",
+    "chars": 9885,
+    "head": "-- Apply after 013. Reconciles old free avatar grants without resetting cards. begin; create table if not exists public.inventory_icon_repair_backup( "
+  },
+  {
+    "path": "supabase/migrations/202610170015_deck_builder_14_35.sql",
+    "chars": 5704,
+    "head": "-- 015: construtor de baralhos. Aplicar depois das migrações 013 e 014. begin;  create or replace function public._assert_owned_deck(uid uuid,counts j"
+  },
+  {
+    "path": "supabase/migrations/202610170016_delete_builder_deck.sql",
+    "chars": 2823,
+    "head": "-- 016: exclusão de baralhos e reorganização dos cinco slots. Aplicar após 015. begin; create or replace function public.delete_builder_deck(p_slot in"
+  },
+  {
+    "path": "supabase/migrations/202610170017_player_icons_seven_decks.sql",
+    "chars": 2872,
+    "head": "-- Aplicar após o SQL 016. Os sete slots estão disponíveis sem compra nesta versão. begin; alter table public.player_saved_decks drop constraint if ex"
+  },
+  {
+    "path": "supabase/migrations/202610170018_audit_hardening.sql",
+    "chars": 42671,
+    "head": "-- Auditoria: aplicar após 017, junto com a atualização do site. -- Não altera poderes, sorteios ou regras das cartas. begin; do $prerequisite$ begin "
+  },
+  {
+    "path": "supabase/migrations/202610170019_norse_guardian_synergy.sql",
+    "chars": 2160,
+    "head": "-- Guardião Nórdico: nova sinergia. Aplicar após as migrações anteriores (018). begin; do $patch$ declare signature text;definition text; old_return t"
+  },
+  {
+    "path": "supabase/migrations/202610170020_replace_zones.sql",
+    "chars": 4925,
+    "head": "-- Aplicar após 019. Substituição de zonas e retorno de lobisomens. begin; create or replace function public._zone_is_event(c jsonb) returns boolean l"
+  },
+  {
+    "path": "supabase/migrations/202610170021_friend_presence.sql",
+    "chars": 2518,
+    "head": "-- Aplicar após 020. Presença visível somente para amigos aceitos. begin; create table if not exists public.player_presence(  player_id uuid not null "
+  },
+  {
+    "path": "supabase/migrations/202610180022_round_zone_cleanup.sql",
+    "chars": 1012,
+    "head": "-- Apply after 021. Clear shared zones together with all round effects. begin; do $patch$ declare definition text;anchor text; begin  definition:=pg_g"
+  },
+  {
+    "path": "supabase/migrations/202610180023_eclipse_monster_forms.sql",
+    "chars": 4412,
+    "head": "-- Apply after 022. Stable origins for Solar/Lunar transformations. begin; create or replace function public._eclipse_form_for(original text,climate t"
+  },
+  {
+    "path": "supabase/migrations/202610180024_lane_buffs_apollo_aura.sql",
+    "chars": 9419,
+    "head": "-- Aplicar após 023. Bônus de grupo por fileira e aura contínua de Apolo. begin; create or replace function public._r_power(s jsonb,t text,u jsonb,dep"
+  },
+  {
+    "path": "supabase/migrations/202610180025_approved_card_rules.sql",
+    "chars": 129121,
+    "head": "-- Regras aprovadas. Aplicar após 202610180024_lane_buffs_apollo_aura.sql. begin;  create or replace function public._r_card(cid text) returns jsonb l"
+  },
+  {
+    "path": "supabase/migrations/202610180026_welcome_starter_pack.sql",
+    "chars": 11563,
+    "head": "-- Aplicar após 025, antes de publicar as boas-vindas. begin; do $prerequisite$ begin  if to_regprocedure('public._r_gear_compatible(text,jsonb)') is "
+  },
+  {
+    "path": "supabase/migrations/202610180027_alyn_starter_pack.sql",
+    "chars": 6214,
+    "head": "-- 027: símbolos e Reino de Alyn. Aplicar após SQL 026. begin; do $$begin if to_regprocedure('public.open_starter_pack(text)') is null then raise exce"
+  },
+  {
+    "path": "supabase/migrations/202610180028_admin_portal_controls.sql",
+    "chars": 21821,
+    "head": "-- 028: administração, telemetria e pausa de cartas. Aplicar depois do SQL 027. begin; do $$begin if to_regprocedure('public.open_starter_pack(text)')"
+  },
+  {
+    "path": "supabase/migrations/202610180029_admin_role_codes.sql",
+    "chars": 7922,
+    "head": "-- 029: acesso administrativo por código. Aplicar depois do SQL 028. begin; do $$begin if to_regprocedure('public.admin_game_telemetry()') is null the"
+  },
+  {
+    "path": "supabase/migrations/202610180030_random_eclipse_tiebreak.sql",
+    "chars": 12208,
+    "head": "-- 030: sorteio de unidades e decisão pelo Eclipse. Aplicar após 029. begin; do $$begin if to_regprocedure('public.admin_role_overview()') is null the"
+  },
+  {
+    "path": "supabase/migrations/202610180031_match_deck_catalog_fix.sql",
+    "chars": 5135,
+    "head": "-- 031: corrige a criação da partida disparada pelo segundo jogador da fila. -- Aplicar depois da 030. Não modifica partidas em andamento nem os baral"
+  },
+  {
+    "path": "supabase/migrations/202610180032_round_stars_and_result.sql",
+    "chars": 10375,
+    "head": "-- 032: Rounds independentes; quem perde o Round perde uma Trixx. -- Aplicar depois da 031. begin;  do $round_stars$ declare f record;definition text;"
+  },
+  {
+    "path": "supabase/migrations/202610180033_tiebreak_deck_counters.sql",
+    "chars": 2505,
+    "head": "-- 033: corrige column u.wins does not exist ao resolver um empate online. -- Aplicar após a 032. A tabela de baralhos usa victories/defeats/draws. be"
+  },
+  {
+    "path": "supabase/migrations/202610190034_rank_strix_stars.sql",
+    "chars": 3312,
+    "head": "-- 034: cinco estrelas Strix por rank até Lenda; pontos a partir de Semideus. -- Aplicar depois da 033. Aprendiz é o único piso protegido nos ranks de"
+  },
+  {
+    "path": "supabase/migrations/202610190035_convergence_lobby.sql",
+    "chars": 8842,
+    "head": "-- 035: aceitar convite forma o lobby; somente Convergir inicia a fila. -- Aplicar depois de 202610190034_rank_strix_stars.sql. begin; alter table pub"
+  },
+  {
+    "path": "supabase/migrations/202610190036_invite_session_recovery.sql",
+    "chars": 7680,
+    "head": "-- 036: sessões de fila/partida, recuperação e bloqueios precisos de convite. -- Aplicar após 035. Não altera pontos, estrelas ou resultados concluído"
+  },
+  {
+    "path": "supabase/migrations/202610190037_security_and_fair_play.sql",
+    "chars": 21236,
+    "head": "-- 037: proteção de ações, limites e auditoria. Aplicar após 036. -- Publicar também online.js e security-center.js desta entrega. begin; do $$begin  "
+  },
+  {
+    "path": "supabase/migrations/202610190038_custom_room_lobby.sql",
+    "chars": 15827,
+    "head": "begin;  -- Slots ímpares pertencem ao lado 1; pares ao lado 2. Observadores não ocupam equipes. alter table public.sandbox_room_members add column if "
+  },
+  {
+    "path": "supabase/migrations/202610190039_match_report.sql",
+    "chars": 10324,
+    "head": "begin;  -- O relatório contém somente jogadas aceitas. Mãos/baralhos privados não são copiados. create table public.match_report_actions(  match_id uu"
+  },
+  {
+    "path": "supabase/migrations/202610200040_remake_character_collection.sql",
+    "chars": 325084,
+    "head": "-- 040: Character collection imported from the owner's finished card exports. -- Runs after migration 039. Does not change existing decks or reset inv"
+  },
+  {
+    "path": "supabase/migrations/202610200041_remake_chibi_icons.sql",
+    "chars": 9503,
+    "head": "-- 041: ícones chibi das novas cartas. Aplicar depois de 040. begin; insert into public.shop_catalog(item_id,title,description,kind,price,asset_path,a"
+  },
+  {
+    "path": "supabase/migrations/202610200042_deck_identity_direct_room.sql",
+    "chars": 5141,
+    "head": "-- 042: Deck identity and the direct X1 room. Apply after 041. begin; alter table public.player_saved_decks add column if not exists icon_key text not"
+  },
+  {
+    "path": "supabase/migrations/202610200043_resume_my_game.sql",
+    "chars": 980,
+    "head": "-- 043: Locate only the caller's own match. Never accept client-supplied state. begin; create or replace function public.resume_my_game(p_match_id uui"
+  },
+  {
+    "path": "supabase/migrations/202610200044_ability_interaction_audit.sql",
+    "chars": 49311,
+    "head": "-- 044: Reviewed choices, guard duration, movement, and shared-zone ownership. -- Compatibility revision: stable action wrapper and explicit revival d"
+  },
+  {
+    "path": "supabase/migrations/202610200045_guardian_world_campaign.sql",
+    "chars": 243655,
+    "head": "-- 045: Guardian campaign. Apply after the corrected migration 044. begin; do $prerequisites$ begin  if to_regprocedure('public._r_action_before_audit"
+  },
+  {
+    "path": "supabase/migrations/202610200046_match_surrender.sql",
+    "chars": 5534,
+    "head": "-- 046: desistência confirmada. Aplicar após 045. begin; create or replace function public.surrender_game_match(p_match_id uuid) returns jsonb languag"
+  },
+  {
+    "path": "supabase/migrations/202610200047_card_bonus_alias_fix.sql",
+    "chars": 2659,
+    "head": "-- 047: corrige \"column reference v is ambiguous\" no cálculo de bônus. -- Para a instalação existente, execute este arquivo após a 046. -- Não altera "
+  },
+  {
+    "path": "supabase/migrations/202610210048_resume_active_matches_only.sql",
+    "chars": 1054,
+    "head": "-- 048: partidas encerradas não são retomadas como uma batalha atual. -- Mantém histórico, relatórios, placares e recompensas existentes. begin; creat"
+  },
+  {
+    "path": "supabase/migrations/202610210049_rewards_and_tournament_hub.sql",
+    "chars": 18024,
+    "head": "begin;  alter table public.redeem_codes add column if not exists rewards jsonb not null default '[]'::jsonb; alter table public.redeem_codes drop cons"
+  },
+  {
+    "path": "supabase/migrations/202610210050_audit_rules_and_mode_guards.sql",
+    "chars": 3960,
+    "head": "-- Após 049. Regras iguais no laboratório e nos modos online. -- Correção: o catálogo existente se chama public.shop_catalog. begin; create or replace"
+  },
+  {
+    "path": "supabase/migrations/202610210051_post_match_effect_details.sql",
+    "chars": 8802,
+    "head": "-- Após 050. Os detalhes ficam acessíveis somente pelo relatório encerrado. begin; create table if not exists public.match_effect_details(  id bigint "
+  },
+  {
+    "path": "supabase/migrations/202610210052_progression_rewards_atlas.sql",
+    "chars": 235460,
+    "head": "-- Apply after 051. Authoritative rewards, XP ranges and introductory Atlas. begin; do $prerequisite$ begin  if to_regprocedure('public._get_guardian_"
+  },
+  {
+    "path": "supabase/migrations/202610210053_greek_roster_placeholders.sql",
+    "chars": 206812,
+    "head": "-- 053: Greek roster. Apply after 052. No progress, histories or reward claims are reset. begin; do $prerequisite$ begin  if to_regprocedure('public._"
+  },
+  {
+    "path": "supabase/migrations/202610220054_ability_choices_and_bot_pacing.sql",
+    "chars": 18898,
+    "head": "-- 054: ability choices, public option metadata and paced authoritative Atlas bot. -- Apply after 053. No inventories, progression, printed powers or "
+  },
+  {
+    "path": "supabase/migrations/202610220055_unique_atlas_and_greek_characters.sql",
+    "chars": 226785,
+    "head": "-- 055: Apply after 054. Unique opponents, variable trail sizes, four new Greek cards. begin; do $pre$ begin  if to_regprocedure('public._gc_drive(jso"
+  },
+  {
+    "path": "supabase/migrations/202610220056_store_code_redemption.sql",
+    "chars": 3360,
+    "head": "-- 056: A single redemption endpoint. Eligibility and privileged checks remain server-side. begin; do $rename$ begin  if to_regprocedure('public._clai"
+  },
+  {
+    "path": "supabase/README.md",
+    "chars": 2005,
+    "head": "# Conexão online do Mythic Clash  O projeto continua sendo uma página estática e usa Supabase para contas e recursos sociais. A migração `migrations/2"
+  },
+  {
+    "path": "supabase-config.js",
+    "chars": 447,
+    "head": "/* Chave anon/public do Supabase: segura para uso no cliente web com RLS ativo.    Nunca coloque a service_role neste arquivo. */ window.MYTHIC_SUPABA"
+  },
+  {
+    "path": "sw.js",
+    "chars": 4218,
+    "head": "// Content revisions preserve warm image caches across releases. const BUILD_ID='8ab475cb9e7f5f1893df'; const CACHE='mythic-clash-fast-shell-v1',MEDIA"
+  },
+  {
+    "path": "terrain-cards.js",
+    "chars": 14355,
+    "head": "(() => {  'use strict';  const data={   \"version\": \"terrain-1\",   \"cards\": [     {       \"id\": \"yggdrasil\",       \"name\": \"Yggdrasil\",       \"type\": \""
+  },
+  {
+    "path": "terrain-cards.json",
+    "chars": 13802,
+    "head": "{   \"version\": \"terrain-1\",   \"cards\": [     {       \"id\": \"yggdrasil\",       \"name\": \"Yggdrasil\",       \"type\": \"Terreno\",       \"faction\": \"Nórdicos"
+  },
+  {
+    "path": "terrenos.html",
+    "chars": 2286,
+    "head": "<!doctype html><html lang=\"pt-BR\"><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><title>Terrenos — Mythic Cl"
+  },
+  {
+    "path": "TERRENOS.md",
+    "chars": 3223,
+    "head": "# Cartas de terreno  As oito artes originais foram copiadas sem alteração para `assets/terrains/`. Troia conserva o ID anterior `campo-troia` para man"
+  },
+  {
+    "path": "tiebreak-cinematic.css",
+    "chars": 7599,
+    "head": "body.tiebreak-open{overflow:hidden} .tb-cinematic{inset:0;width:100vw;max-width:none;height:100dvh;max-height:none;margin:0;padding:0;border:0;color:#"
+  },
+  {
+    "path": "tiebreak-cinematic.js",
+    "chars": 9577,
+    "head": "(() => {  'use strict';  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;r"
+  },
+  {
+    "path": "TITULOS-E-MEDALHAS.md",
+    "chars": 2646,
+    "head": "# Títulos, medalhas e sair da conta  ## Ativação  1. No SQL Editor do seu projeto Supabase, execute **supabase/migrations/202610170001_titles_medals.s"
+  },
+  {
+    "path": "unified-custom.js",
+    "chars": 978,
+    "head": "(() => {  'use strict';document.body.classList.add('unified-custom');const root=document.querySelector('#view-custom');if(!root)return;  const heading"
+  },
+  {
+    "path": "universe-banners.js",
+    "chars": 11264,
+    "head": "window.MythicUniverseBanners={\"zeus\":{\"atlas\":\"assets/entry/banner-01.webp\",\"x\":0,\"y\":0},\"poseidon\":{\"atlas\":\"assets/entry/banner-01.webp\",\"x\":1,\"y\":0"
+  },
+  {
+    "path": "universe-banners.json",
+    "chars": 3374,
+    "head": "{   \"zeus\": {     \"atlas\": \"assets/universe/banner-01.png\",     \"x\": 0,     \"y\": 0   },   \"poseidon\": {     \"atlas\": \"assets/universe/banner-01.png\", "
+  },
+  {
+    "path": "universe-upgrade.css",
+    "chars": 8893,
+    "head": "/* Layout fixes isolated from the historical styles. */ body.mythic-rework .topbar .breadcrumb{display:flex;flex-wrap:wrap;align-items:center;gap:12px"
+  },
+  {
+    "path": "vercel.json",
+    "chars": 2940,
+    "head": "{   \"$schema\": \"https://openapi.vercel.sh/vercel.json\",   \"framework\": null,   \"buildCommand\": \"node _manutencao/preparar-publicacao.cjs\",   \"outputDi"
+  },
+  {
+    "path": "version.json",
+    "chars": 84,
+    "head": "{   \"version\": \"2026.10.22\",   \"name\": \"Novos gregos, Atlas e recursos do webapp\" } "
+  },
+  {
+    "path": "VERSO-OFICIAL-E-MOEDA.md",
+    "chars": 923,
+    "head": "# Verso oficial das cartas e moeda da loja  A arte enviada foi mantida em sua forma original SVG e passou a ocupar `assets/card-back.svg`, o recurso c"
+  },
+  {
+    "path": "vfx-runtime.js",
+    "chars": 2410,
+    "head": "(() => {  'use strict';  const atlases={water:'tsunami',lightning:'lightning',hearts:'hearts',lunar:'lunar-morph',solar:'solar-morph'};  const cache=n"
+  },
+  {
+    "path": "video-replay.js",
+    "chars": 10895,
+    "head": "(() => {  'use strict';  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;r"
+  },
+  {
+    "path": "VISUAL-TELA-DE-ACESSO.md",
+    "chars": 1341,
+    "head": "# Apresentação da tela de acesso  A tela de login e cadastro ganhou uma composição visual para ocupar a área que estava vazia:  - Cidadela do jogo ao "
+  },
+  {
+    "path": "webapp-upgrade.css",
+    "chars": 2921,
+    "head": ".resource-download{width:min(420px,calc(100vw - 48px));display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;color:#f6df9e}.resource"
+  },
+  {
+    "path": "webapp-upgrade.js",
+    "chars": 1663,
+    "head": "(() => {  'use strict';  const top=document.querySelector('.topbar-right');if(top&&!document.querySelector('#topbar-replay')){const b=document.createE"
+  },
+  {
+    "path": "welcome.css",
+    "chars": 12210,
+    "head": ".welcome-dialog{position:fixed;inset:0;width:100vw;height:100dvh;max-width:none;max-height:none;margin:0;padding:0;border:0;color:#f9f0db;background:r"
+  },
+  {
+    "path": "welcome.js",
+    "chars": 20455,
+    "head": "(() => {  'use strict';  const PACK=window.MythicEntryMedia?.optimized?.['assets/onboarding/starter-pack.png']||'assets/onboarding/starter-pack.png',B"
+  },
+  {
+    "path": "world-lore.js",
+    "chars": 22937,
+    "head": "window.MythicWorldLore={\"zeus\":{\"origin\":\"MITOLOGIA GREGA · RECONTO\",\"story\":[\"Escondido ainda criança para escapar de Cronos, Zeus cresceu longe do t"
+  },
+  {
+    "path": "world-lore.json",
+    "chars": 24811,
+    "head": "{   \"zeus\": {     \"origin\": \"MITOLOGIA GREGA · RECONTO\",     \"story\": [       \"Escondido ainda criança para escapar de Cronos, Zeus cresceu longe do t"
+  },
+  {
+    "path": "world-rules.js",
+    "chars": 984,
+    "head": "(() => {  'use strict';  const eventCard=c=>Boolean(c&&(c.climateClass==='event'||c.isClimateEvent||/^eclipse(?:-|$)/.test(c.id)||/evento/i.test(c.sub"
+  }
+]

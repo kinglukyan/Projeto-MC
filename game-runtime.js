@@ -1182,7 +1182,7 @@ window.MythicAbilities={C,D,init,reconcile,power,score,action,drain,turnStart,tu
 
 ;
 /* avatars-chibi.js */
-window.MythicChibiAvatars={"version":1,"columns":3,"rows":2,"avatars":[{"id":"chibi-soldado-esparta","characterId":"soldado-esparta","name":"Soldado de Esparta","asset":"assets/avatars-chibi/portraits-01.png#chibi-0-0","col":0,"row":0},{"id":"chibi-athena","characterId":"athena","name":"Athena","asset":"assets/avatars-chibi/portraits-01.png#chibi-1-0","col":1,"row":0},{"id":"chibi-lobo-alfa","characterId":"lobo-alfa","name":"Lobisomem Alfa","asset":"assets/avatars-chibi/portraits-01.png#chibi-2-0","col":2,"row":0},{"id":"chibi-guardiao-nordico","characterId":"guardiao-nordico","name":"Guardião Nórdico","asset":"assets/avatars-chibi/portraits-01.png#chibi-0-1","col":0,"row":1},{"id":"chibi-medusa","characterId":"medusa","name":"Medusa","asset":"assets/avatars-chibi/portraits-01.png#chibi-1-1","col":1,"row":1},{"id":"chibi-poseidon","characterId":"poseidon","name":"Poseidon","asset":"assets/avatars-chibi/portraits-02.png#chibi-0-0","col":0,"row":0},{"id":"chibi-zeus","characterId":"zeus","name":"Zeus","asset":"assets/avatars-chibi/portraits-02.png#chibi-1-0","col":1,"row":0},{"id":"chibi-hades","characterId":"hades","name":"Hades","asset":"assets/avatars-chibi/portraits-02.png#chibi-2-0","col":2,"row":0},{"id":"chibi-lobo-omega","characterId":"lobo-omega","name":"Lobisomem Omega","asset":"assets/avatars-chibi/portraits-02.png#chibi-0-1","col":0,"row":1},{"id":"chibi-lukyan","characterId":"lukyan","name":"Lukyan — Rei da Festa","asset":"assets/avatars-chibi/portraits-02.png#chibi-1-1","col":1,"row":1},{"id":"chibi-anubis","characterId":"anubis","name":"Anúbis","asset":"assets/avatars-chibi/portraits-03.png#chibi-0-0","col":0,"row":0},{"id":"chibi-odin","characterId":"odin","name":"Odin","asset":"assets/avatars-chibi/portraits-03.png#chibi-1-0","col":1,"row":0},{"id":"chibi-minotauro","characterId":"minotauro","name":"Minotauro","asset":"assets/avatars-chibi/portraits-03.png#chibi-2-0","col":2,"row":0},{"id":"chibi-apolo","characterId":"apolo","name":"Apolo","asset":"assets/avatars-chibi/portraits-03.png#chibi-0-1","col":0,"row":1},{"id":"chibi-ra","characterId":"ra","name":"Rá","asset":"assets/avatars-chibi/portraits-03.png#chibi-1-1","col":1,"row":1},{"id":"chibi-ragnar","characterId":"ragnar","name":"Ragnar","asset":"assets/avatars-chibi/portraits-04.png#chibi-0-0","col":0,"row":0},{"id":"chibi-afrodite","characterId":"afrodite","name":"Afrodite","asset":"assets/avatars-chibi/portraits-04.png#chibi-1-0","col":1,"row":0},{"id":"chibi-aquiles","characterId":"aquiles","name":"Aquiles","asset":"assets/avatars-chibi/portraits-04.png#chibi-2-0","col":2,"row":0},{"id":"chibi-seth","characterId":"seth","name":"Seth","asset":"assets/avatars-chibi/portraits-04.png#chibi-0-1","col":0,"row":1},{"id":"chibi-osiris","characterId":"osiris","name":"Osíris","asset":"assets/avatars-chibi/portraits-04.png#chibi-1-1","col":1,"row":1},{"id":"chibi-thor","characterId":"thor","name":"Thor","asset":"assets/avatars-chibi/portraits-05.png#chibi-0-0","col":0,"row":0},{"id":"chibi-artemis","characterId":"artemis","name":"Ártemis","asset":"assets/avatars-chibi/portraits-05.png#chibi-1-0","col":1,"row":0},{"id":"chibi-sobek","characterId":"sobek","name":"Sobek","asset":"assets/avatars-chibi/portraits-05.png#chibi-2-0","col":2,"row":0},{"id":"chibi-ares","characterId":"ares","name":"Ares","asset":"assets/avatars-chibi/portraits-05.png#chibi-0-1","col":0,"row":1},{"id":"chibi-beowulf","characterId":"beowulf","name":"Beowulf","asset":"assets/avatars-chibi/portraits-05.png#chibi-1-1","col":1,"row":1},{"id":"chibi-heimdall","characterId":"heimdall","name":"Heimdall","asset":"assets/avatars-chibi/portraits-06.png#chibi-0-0","col":0,"row":0},{"id":"chibi-dionisio","characterId":"dionisio","name":"Dionísio","asset":"assets/avatars-chibi/portraits-06.png#chibi-1-0","col":1,"row":0},{"id":"chibi-butter","characterId":"butter","name":"Butter","asset":"assets/avatars-chibi/portraits-06.png#chibi-2-0","col":2,"row":0},{"id":"chibi-hefesto","characterId":"hefesto","name":"Hefestos","asset":"assets/avatars-chibi/portraits-06.png#chibi-0-1","col":0,"row":1},{"id":"chibi-hercules","characterId":"hercules","name":"Hércules","asset":"assets/avatars-chibi/portraits-06.png#chibi-1-1","col":1,"row":1},{"id":"chibi-hermes","characterId":"hermes","name":"Hermes","asset":"assets/avatars-chibi/portraits-07.png#chibi-0-0","col":0,"row":0},{"id":"chibi-horus","characterId":"horus","name":"Hórus","asset":"assets/avatars-chibi/portraits-07.png#chibi-1-0","col":1,"row":0},{"id":"chibi-lobo-beta","characterId":"lobo-beta","name":"Lobisomem Beta","asset":"assets/avatars-chibi/portraits-07.png#chibi-2-0","col":2,"row":0},{"id":"chibi-isis","characterId":"isis","name":"Ísis","asset":"assets/avatars-chibi/portraits-07.png#chibi-0-1","col":0,"row":1},{"id":"chibi-mulher","characterId":"mulher","name":"Mulher","asset":"assets/avatars-chibi/portraits-07.png#chibi-1-1","col":1,"row":1},{"id":"chibi-homem","characterId":"homem","name":"Homem","asset":"assets/avatars-chibi/portraits-08.png#chibi-0-0","col":0,"row":0},{"id":"chibi-loki","characterId":"loki","name":"Loki","asset":"assets/avatars-chibi/portraits-08.png#chibi-1-0","col":1,"row":0},{"id":"chibi-japonesa-amaterasu","characterId":"japonesa-amaterasu","name":"Amaterasu","asset":"assets/avatars-chibi/japonesa-amaterasu.webp","single":true},{"id":"chibi-chinesa-ao-guang","characterId":"chinesa-ao-guang","name":"Ao Guang","asset":"assets/avatars-chibi/chinesa-ao-guang.webp","single":true},{"id":"chibi-brasil-boitata","characterId":"brasil-boitata","name":"Boitatá","asset":"assets/avatars-chibi/brasil-boitata.webp","single":true},{"id":"chibi-brasil-boto","characterId":"brasil-boto","name":"Boto Encantado","asset":"assets/avatars-chibi/brasil-boto.webp","single":true},{"id":"chibi-celtas-brigid","characterId":"celtas-brigid","name":"Brigid","asset":"assets/avatars-chibi/celtas-brigid.webp","single":true},{"id":"chibi-brasil-caipora","characterId":"brasil-caipora","name":"Caipora","asset":"assets/avatars-chibi/brasil-caipora.webp","single":true},{"id":"chibi-asteca-chalchiuhtlicue","characterId":"asteca-chalchiuhtlicue","name":"Chalchiuhtlicue","asset":"assets/avatars-chibi/asteca-chalchiuhtlicue.webp","single":true},{"id":"chibi-chinesa-change","characterId":"chinesa-change","name":"Chang'e","asset":"assets/avatars-chibi/chinesa-change.webp","single":true},{"id":"chibi-asteca-coatlicue","characterId":"asteca-coatlicue","name":"Coatlicue","asset":"assets/avatars-chibi/asteca-coatlicue.webp","single":true},{"id":"chibi-brasil-cuca","characterId":"brasil-cuca","name":"Cuca","asset":"assets/avatars-chibi/brasil-cuca.webp","single":true},{"id":"chibi-brasil-curupira","characterId":"brasil-curupira","name":"Curupira","asset":"assets/avatars-chibi/brasil-curupira.webp","single":true},{"id":"chibi-celtas-cu-chulainn","characterId":"celtas-cu-chulainn","name":"Cú Chulainn","asset":"assets/avatars-chibi/celtas-cu-chulainn.webp","single":true},{"id":"chibi-celtas-dagda","characterId":"celtas-dagda","name":"Dagda","asset":"assets/avatars-chibi/celtas-dagda.webp","single":true},{"id":"chibi-celtas-dama-do-lago","characterId":"celtas-dama-do-lago","name":"Dama do Lago","asset":"assets/avatars-chibi/celtas-dama-do-lago.webp","single":true},{"id":"chibi-hindu-durga","characterId":"hindu-durga","name":"Durga","asset":"assets/avatars-chibi/hindu-durga.webp","single":true},{"id":"chibi-mesopotamica-enki","characterId":"mesopotamica-enki","name":"Enki","asset":"assets/avatars-chibi/mesopotamica-enki.webp","single":true},{"id":"chibi-mesopotamica-enlil","characterId":"mesopotamica-enlil","name":"Enlil","asset":"assets/avatars-chibi/mesopotamica-enlil.webp","single":true},{"id":"chibi-mesopotamica-ereshkigal","characterId":"mesopotamica-ereshkigal","name":"Ereshkigal","asset":"assets/avatars-chibi/mesopotamica-ereshkigal.webp","single":true},{"id":"chibi-chinesa-erlang-shen","characterId":"chinesa-erlang-shen","name":"Erlang Shen","asset":"assets/avatars-chibi/chinesa-erlang-shen.webp","single":true},{"id":"chibi-chinesa-fuxi","characterId":"chinesa-fuxi","name":"Fuxi","asset":"assets/avatars-chibi/chinesa-fuxi.webp","single":true},{"id":"chibi-japonesa-fujin","characterId":"japonesa-fujin","name":"Fūjin","asset":"assets/avatars-chibi/japonesa-fujin.webp","single":true},{"id":"chibi-hindu-ganesha","characterId":"hindu-ganesha","name":"Ganesha","asset":"assets/avatars-chibi/hindu-ganesha.webp","single":true},{"id":"chibi-chinesa-guanyin","characterId":"chinesa-guanyin","name":"Guanyin","asset":"assets/avatars-chibi/chinesa-guanyin.webp","single":true},{"id":"chibi-japonesa-hachiman","characterId":"japonesa-hachiman","name":"Hachiman","asset":"assets/avatars-chibi/japonesa-hachiman.webp","single":true},{"id":"chibi-hindu-hanuman","characterId":"hindu-hanuman","name":"Hanuman","asset":"assets/avatars-chibi/hindu-hanuman.webp","single":true},{"id":"chibi-chinesa-hou-yi","characterId":"chinesa-hou-yi","name":"Hou Yi","asset":"assets/avatars-chibi/chinesa-hou-yi.webp","single":true},{"id":"chibi-asteca-huitzilopochtli","characterId":"asteca-huitzilopochtli","name":"Huitzilopochtli","asset":"assets/avatars-chibi/asteca-huitzilopochtli.webp","single":true},{"id":"chibi-brasil-iara","characterId":"brasil-iara","name":"Iara","asset":"assets/avatars-chibi/brasil-iara.webp","single":true},{"id":"chibi-chinesa-imperador-jade","characterId":"chinesa-imperador-jade","name":"Imperador de Jade","asset":"assets/avatars-chibi/chinesa-imperador-jade.webp","single":true},{"id":"chibi-japonesa-inari","characterId":"japonesa-inari","name":"Inari","asset":"assets/avatars-chibi/japonesa-inari.webp","single":true},{"id":"chibi-hindu-indra","characterId":"hindu-indra","name":"Indra","asset":"assets/avatars-chibi/hindu-indra.webp","single":true},{"id":"chibi-mesopotamica-ishtar","characterId":"mesopotamica-ishtar","name":"Ishtar","asset":"assets/avatars-chibi/mesopotamica-ishtar.webp","single":true},{"id":"chibi-japonesa-izanagi","characterId":"japonesa-izanagi","name":"Izanagi","asset":"assets/avatars-chibi/japonesa-izanagi.webp","single":true},{"id":"chibi-japonesa-izanami","characterId":"japonesa-izanami","name":"Izanami","asset":"assets/avatars-chibi/japonesa-izanami.webp","single":true},{"id":"chibi-hindu-kali","characterId":"hindu-kali","name":"Kali","asset":"assets/avatars-chibi/hindu-kali.webp","single":true},{"id":"chibi-hindu-krishna","characterId":"hindu-krishna","name":"Krishna","asset":"assets/avatars-chibi/hindu-krishna.webp","single":true},{"id":"chibi-hindu-lakshmi","characterId":"hindu-lakshmi","name":"Lakshmi","asset":"assets/avatars-chibi/hindu-lakshmi.webp","single":true},{"id":"chibi-brasil-lampiao","characterId":"brasil-lampiao","name":"Lampião","asset":"assets/avatars-chibi/brasil-lampiao.webp","single":true},{"id":"chibi-celtas-lancelot","characterId":"celtas-lancelot","name":"Lancelot","asset":"assets/avatars-chibi/celtas-lancelot.webp","single":true},{"id":"chibi-celtas-lugh","characterId":"celtas-lugh","name":"Lugh","asset":"assets/avatars-chibi/celtas-lugh.webp","single":true},{"id":"chibi-brasil-mapinguari","characterId":"brasil-mapinguari","name":"Mapinguari","asset":"assets/avatars-chibi/brasil-mapinguari.webp","single":true},{"id":"chibi-mesopotamica-marduk","characterId":"mesopotamica-marduk","name":"Marduk","asset":"assets/avatars-chibi/mesopotamica-marduk.webp","single":true},{"id":"chibi-celtas-merlin","characterId":"celtas-merlin","name":"Merlin","asset":"assets/avatars-chibi/celtas-merlin.webp","single":true},{"id":"chibi-asteca-mictecacihuatl","characterId":"asteca-mictecacihuatl","name":"Mictecacíhuatl","asset":"assets/avatars-chibi/asteca-mictecacihuatl.webp","single":true},{"id":"chibi-asteca-mictlantecuhtli","characterId":"asteca-mictlantecuhtli","name":"Mictlantecuhtli","asset":"assets/avatars-chibi/asteca-mictlantecuhtli.webp","single":true},{"id":"chibi-celtas-morgana","characterId":"celtas-morgana","name":"Morgana","asset":"assets/avatars-chibi/celtas-morgana.webp","single":true},{"id":"chibi-celtas-morrigan","characterId":"celtas-morrigan","name":"Morrigan","asset":"assets/avatars-chibi/celtas-morrigan.webp","single":true},{"id":"chibi-brasil-mula-sem-cabeca","characterId":"brasil-mula-sem-cabeca","name":"Mula sem Cabeça","asset":"assets/avatars-chibi/brasil-mula-sem-cabeca.webp","single":true},{"id":"chibi-mesopotamica-nanna-sin","characterId":"mesopotamica-nanna-sin","name":"Nanna - Sîn","asset":"assets/avatars-chibi/mesopotamica-nanna-sin.webp","single":true},{"id":"chibi-mesopotamica-nergal","characterId":"mesopotamica-nergal","name":"Nergal","asset":"assets/avatars-chibi/mesopotamica-nergal.webp","single":true},{"id":"chibi-chinesa-nezha","characterId":"chinesa-nezha","name":"Nezha","asset":"assets/avatars-chibi/chinesa-nezha.webp","single":true},{"id":"chibi-mesopotamica-ninurta","characterId":"mesopotamica-ninurta","name":"Ninurta","asset":"assets/avatars-chibi/mesopotamica-ninurta.webp","single":true},{"id":"chibi-chinesa-nuwa","characterId":"chinesa-nuwa","name":"Nüwa","asset":"assets/avatars-chibi/chinesa-nuwa.webp","single":true},{"id":"chibi-asteca-quetzalcoatl","characterId":"asteca-quetzalcoatl","name":"Quetzalcóatl","asset":"assets/avatars-chibi/asteca-quetzalcoatl.webp","single":true},{"id":"chibi-japonesa-raijin","characterId":"japonesa-raijin","name":"Raijin","asset":"assets/avatars-chibi/japonesa-raijin.webp","single":true},{"id":"chibi-rei-arthur","characterId":"rei-arthur","name":"Rei Arthur","asset":"assets/avatars-chibi/rei-arthur.webp","single":true},{"id":"chibi-japonesa-ryujin","characterId":"japonesa-ryujin","name":"Ryūjin","asset":"assets/avatars-chibi/japonesa-ryujin.webp","single":true},{"id":"chibi-brasil-saci","characterId":"brasil-saci","name":"Saci-Pererê","asset":"assets/avatars-chibi/brasil-saci.webp","single":true},{"id":"chibi-hindu-saraswati","characterId":"hindu-saraswati","name":"Saraswati","asset":"assets/avatars-chibi/hindu-saraswati.webp","single":true},{"id":"chibi-hindu-shiva","characterId":"hindu-shiva","name":"Shiva","asset":"assets/avatars-chibi/hindu-shiva.webp","single":true},{"id":"chibi-chinesa-sun-wukong","characterId":"chinesa-sun-wukong","name":"Sun Wukong","asset":"assets/avatars-chibi/chinesa-sun-wukong.webp","single":true},{"id":"chibi-japonesa-susanoo","characterId":"japonesa-susanoo","name":"Susanoo","asset":"assets/avatars-chibi/japonesa-susanoo.webp","single":true},{"id":"chibi-asteca-tezcatlipoca","characterId":"asteca-tezcatlipoca","name":"Tezcatlipoca","asset":"assets/avatars-chibi/asteca-tezcatlipoca.webp","single":true},{"id":"chibi-mesopotamica-tiamat","characterId":"mesopotamica-tiamat","name":"Tiamat","asset":"assets/avatars-chibi/mesopotamica-tiamat.webp","single":true},{"id":"chibi-asteca-tlaloc","characterId":"asteca-tlaloc","name":"Tláloc","asset":"assets/avatars-chibi/asteca-tlaloc.webp","single":true},{"id":"chibi-japonesa-tsukuyomi","characterId":"japonesa-tsukuyomi","name":"Tsukuyomi","asset":"assets/avatars-chibi/japonesa-tsukuyomi.webp","single":true},{"id":"chibi-mesopotamica-utu-shamash","characterId":"mesopotamica-utu-shamash","name":"Utu - Shamash","asset":"assets/avatars-chibi/mesopotamica-utu-shamash.webp","single":true},{"id":"chibi-hindu-vishnu","characterId":"hindu-vishnu","name":"Vishnu","asset":"assets/avatars-chibi/hindu-vishnu.webp","single":true},{"id":"chibi-asteca-xipe-totec","characterId":"asteca-xipe-totec","name":"Xipe Tótec","asset":"assets/avatars-chibi/asteca-xipe-totec.webp","single":true},{"id":"chibi-asteca-xochiquetzal","characterId":"asteca-xochiquetzal","name":"Xochiquétzal","asset":"assets/avatars-chibi/asteca-xochiquetzal.webp","single":true},{"id":"chibi-lukyan-rei-de-todos","characterId":"lukyan-rei-de-todos","name":"Lukyan — Rei de Todos","asset":"assets/avatars-chibi/lukyan-rei-de-todos.webp","single":true},{"id":"chibi-hera","characterId":"hera","name":"Hera","asset":"assets/avatars-chibi/hera.webp","single":true},{"id":"chibi-demeter","characterId":"demeter","name":"Deméter","asset":"assets/avatars-chibi/demeter.webp","single":true},{"id":"chibi-hestia","characterId":"hestia","name":"Héstia","asset":"assets/avatars-chibi/hestia.webp","single":true},{"id":"chibi-perseu","characterId":"perseu","name":"Perseu","asset":"assets/avatars-chibi/perseu.webp","single":true}],"release":"20261020-remake"};
+window.MythicChibiAvatars={"version":1,"columns":3,"rows":2,"avatars":[{"id":"chibi-soldado-esparta","characterId":"soldado-esparta","name":"Soldado de Esparta","asset":"assets/avatars-chibi/portraits-01.png#chibi-0-0","col":0,"row":0},{"id":"chibi-athena","characterId":"athena","name":"Athena","asset":"assets/avatars-chibi/portraits-01.png#chibi-1-0","col":1,"row":0},{"id":"chibi-lobo-alfa","characterId":"lobo-alfa","name":"Lobisomem Alfa","asset":"assets/avatars-chibi/portraits-01.png#chibi-2-0","col":2,"row":0},{"id":"chibi-guardiao-nordico","characterId":"guardiao-nordico","name":"Guardião Nórdico","asset":"assets/avatars-chibi/portraits-01.png#chibi-0-1","col":0,"row":1},{"id":"chibi-medusa","characterId":"medusa","name":"Medusa","asset":"assets/avatars-chibi/portraits-01.png#chibi-1-1","col":1,"row":1},{"id":"chibi-poseidon","characterId":"poseidon","name":"Poseidon","asset":"assets/avatars-chibi/portraits-02.png#chibi-0-0","col":0,"row":0},{"id":"chibi-zeus","characterId":"zeus","name":"Zeus","asset":"assets/avatars-chibi/portraits-02.png#chibi-1-0","col":1,"row":0},{"id":"chibi-hades","characterId":"hades","name":"Hades","asset":"assets/avatars-chibi/portraits-02.png#chibi-2-0","col":2,"row":0},{"id":"chibi-lobo-omega","characterId":"lobo-omega","name":"Lobisomem Omega","asset":"assets/avatars-chibi/portraits-02.png#chibi-0-1","col":0,"row":1},{"id":"chibi-lukyan","characterId":"lukyan","name":"Lukyan — Rei da Festa","asset":"assets/avatars-chibi/portraits-02.png#chibi-1-1","col":1,"row":1},{"id":"chibi-anubis","characterId":"anubis","name":"Anúbis","asset":"assets/avatars-chibi/portraits-03.png#chibi-0-0","col":0,"row":0},{"id":"chibi-odin","characterId":"odin","name":"Odin","asset":"assets/avatars-chibi/portraits-03.png#chibi-1-0","col":1,"row":0},{"id":"chibi-minotauro","characterId":"minotauro","name":"Minotauro","asset":"assets/avatars-chibi/portraits-03.png#chibi-2-0","col":2,"row":0},{"id":"chibi-apolo","characterId":"apolo","name":"Apolo","asset":"assets/avatars-chibi/portraits-03.png#chibi-0-1","col":0,"row":1},{"id":"chibi-ra","characterId":"ra","name":"Rá","asset":"assets/avatars-chibi/portraits-03.png#chibi-1-1","col":1,"row":1},{"id":"chibi-ragnar","characterId":"ragnar","name":"Ragnar","asset":"assets/avatars-chibi/portraits-04.png#chibi-0-0","col":0,"row":0},{"id":"chibi-afrodite","characterId":"afrodite","name":"Afrodite","asset":"assets/avatars-chibi/portraits-04.png#chibi-1-0","col":1,"row":0},{"id":"chibi-aquiles","characterId":"aquiles","name":"Aquiles","asset":"assets/avatars-chibi/portraits-04.png#chibi-2-0","col":2,"row":0},{"id":"chibi-seth","characterId":"seth","name":"Seth","asset":"assets/avatars-chibi/portraits-04.png#chibi-0-1","col":0,"row":1},{"id":"chibi-osiris","characterId":"osiris","name":"Osíris","asset":"assets/avatars-chibi/portraits-04.png#chibi-1-1","col":1,"row":1},{"id":"chibi-thor","characterId":"thor","name":"Thor","asset":"assets/avatars-chibi/portraits-05.png#chibi-0-0","col":0,"row":0},{"id":"chibi-artemis","characterId":"artemis","name":"Ártemis","asset":"assets/avatars-chibi/portraits-05.png#chibi-1-0","col":1,"row":0},{"id":"chibi-sobek","characterId":"sobek","name":"Sobek","asset":"assets/avatars-chibi/portraits-05.png#chibi-2-0","col":2,"row":0},{"id":"chibi-ares","characterId":"ares","name":"Ares","asset":"assets/avatars-chibi/portraits-05.png#chibi-0-1","col":0,"row":1},{"id":"chibi-beowulf","characterId":"beowulf","name":"Beowulf","asset":"assets/avatars-chibi/portraits-05.png#chibi-1-1","col":1,"row":1},{"id":"chibi-heimdall","characterId":"heimdall","name":"Heimdall","asset":"assets/avatars-chibi/portraits-06.png#chibi-0-0","col":0,"row":0},{"id":"chibi-dionisio","characterId":"dionisio","name":"Dionísio","asset":"assets/avatars-chibi/portraits-06.png#chibi-1-0","col":1,"row":0},{"id":"chibi-butter","characterId":"butter","name":"Butter","asset":"assets/avatars-chibi/portraits-06.png#chibi-2-0","col":2,"row":0},{"id":"chibi-hefesto","characterId":"hefesto","name":"Hefestos","asset":"assets/avatars-chibi/portraits-06.png#chibi-0-1","col":0,"row":1},{"id":"chibi-hercules","characterId":"hercules","name":"Hércules","asset":"assets/avatars-chibi/portraits-06.png#chibi-1-1","col":1,"row":1},{"id":"chibi-hermes","characterId":"hermes","name":"Hermes","asset":"assets/avatars-chibi/portraits-07.png#chibi-0-0","col":0,"row":0},{"id":"chibi-horus","characterId":"horus","name":"Hórus","asset":"assets/avatars-chibi/portraits-07.png#chibi-1-0","col":1,"row":0},{"id":"chibi-lobo-beta","characterId":"lobo-beta","name":"Lobisomem Beta","asset":"assets/avatars-chibi/portraits-07.png#chibi-2-0","col":2,"row":0},{"id":"chibi-isis","characterId":"isis","name":"Ísis","asset":"assets/avatars-chibi/portraits-07.png#chibi-0-1","col":0,"row":1},{"id":"chibi-mulher","characterId":"mulher","name":"Mulher","asset":"assets/avatars-chibi/portraits-07.png#chibi-1-1","col":1,"row":1},{"id":"chibi-homem","characterId":"homem","name":"Homem","asset":"assets/avatars-chibi/portraits-08.png#chibi-0-0","col":0,"row":0},{"id":"chibi-loki","characterId":"loki","name":"Loki","asset":"assets/avatars-chibi/portraits-08.png#chibi-1-0","col":1,"row":0},{"id":"chibi-japonesa-amaterasu","characterId":"japonesa-amaterasu","name":"Amaterasu","asset":"assets/avatars-chibi/japonesa-amaterasu.webp","single":true},{"id":"chibi-chinesa-ao-guang","characterId":"chinesa-ao-guang","name":"Ao Guang","asset":"assets/avatars-chibi/chinesa-ao-guang.webp","single":true},{"id":"chibi-brasil-boitata","characterId":"brasil-boitata","name":"Boitatá","asset":"assets/avatars-chibi/brasil-boitata.webp","single":true},{"id":"chibi-brasil-boto","characterId":"brasil-boto","name":"Boto Encantado","asset":"assets/avatars-chibi/brasil-boto.webp","single":true},{"id":"chibi-celtas-brigid","characterId":"celtas-brigid","name":"Brigid","asset":"assets/avatars-chibi/celtas-brigid.webp","single":true},{"id":"chibi-brasil-caipora","characterId":"brasil-caipora","name":"Caipora","asset":"assets/avatars-chibi/brasil-caipora.webp","single":true},{"id":"chibi-asteca-chalchiuhtlicue","characterId":"asteca-chalchiuhtlicue","name":"Chalchiuhtlicue","asset":"assets/avatars-chibi/asteca-chalchiuhtlicue.webp","single":true},{"id":"chibi-chinesa-change","characterId":"chinesa-change","name":"Chang'e","asset":"assets/avatars-chibi/chinesa-change.webp","single":true},{"id":"chibi-asteca-coatlicue","characterId":"asteca-coatlicue","name":"Coatlicue","asset":"assets/avatars-chibi/asteca-coatlicue.webp","single":true},{"id":"chibi-brasil-cuca","characterId":"brasil-cuca","name":"Cuca","asset":"assets/avatars-chibi/brasil-cuca.webp","single":true},{"id":"chibi-brasil-curupira","characterId":"brasil-curupira","name":"Curupira","asset":"assets/avatars-chibi/brasil-curupira.webp","single":true},{"id":"chibi-celtas-cu-chulainn","characterId":"celtas-cu-chulainn","name":"Cú Chulainn","asset":"assets/avatars-chibi/celtas-cu-chulainn.webp","single":true},{"id":"chibi-celtas-dagda","characterId":"celtas-dagda","name":"Dagda","asset":"assets/avatars-chibi/celtas-dagda.webp","single":true},{"id":"chibi-celtas-dama-do-lago","characterId":"celtas-dama-do-lago","name":"Dama do Lago","asset":"assets/avatars-chibi/celtas-dama-do-lago.webp","single":true},{"id":"chibi-hindu-durga","characterId":"hindu-durga","name":"Durga","asset":"assets/avatars-chibi/hindu-durga.webp","single":true},{"id":"chibi-mesopotamica-enki","characterId":"mesopotamica-enki","name":"Enki","asset":"assets/avatars-chibi/mesopotamica-enki.webp","single":true},{"id":"chibi-mesopotamica-enlil","characterId":"mesopotamica-enlil","name":"Enlil","asset":"assets/avatars-chibi/mesopotamica-enlil.webp","single":true},{"id":"chibi-mesopotamica-ereshkigal","characterId":"mesopotamica-ereshkigal","name":"Ereshkigal","asset":"assets/avatars-chibi/mesopotamica-ereshkigal.webp","single":true},{"id":"chibi-chinesa-erlang-shen","characterId":"chinesa-erlang-shen","name":"Erlang Shen","asset":"assets/avatars-chibi/chinesa-erlang-shen.webp","single":true},{"id":"chibi-chinesa-fuxi","characterId":"chinesa-fuxi","name":"Fuxi","asset":"assets/avatars-chibi/chinesa-fuxi.webp","single":true},{"id":"chibi-japonesa-fujin","characterId":"japonesa-fujin","name":"Fūjin","asset":"assets/avatars-chibi/japonesa-fujin.webp","single":true},{"id":"chibi-hindu-ganesha","characterId":"hindu-ganesha","name":"Ganesha","asset":"assets/avatars-chibi/hindu-ganesha.webp","single":true},{"id":"chibi-chinesa-guanyin","characterId":"chinesa-guanyin","name":"Guanyin","asset":"assets/avatars-chibi/chinesa-guanyin.webp","single":true},{"id":"chibi-japonesa-hachiman","characterId":"japonesa-hachiman","name":"Hachiman","asset":"assets/avatars-chibi/japonesa-hachiman.webp","single":true},{"id":"chibi-hindu-hanuman","characterId":"hindu-hanuman","name":"Hanuman","asset":"assets/avatars-chibi/hindu-hanuman.webp","single":true},{"id":"chibi-chinesa-hou-yi","characterId":"chinesa-hou-yi","name":"Hou Yi","asset":"assets/avatars-chibi/chinesa-hou-yi.webp","single":true},{"id":"chibi-asteca-huitzilopochtli","characterId":"asteca-huitzilopochtli","name":"Huitzilopochtli","asset":"assets/avatars-chibi/asteca-huitzilopochtli.webp","single":true},{"id":"chibi-brasil-iara","characterId":"brasil-iara","name":"Iara","asset":"assets/avatars-chibi/brasil-iara.webp","single":true},{"id":"chibi-chinesa-imperador-jade","characterId":"chinesa-imperador-jade","name":"Imperador de Jade","asset":"assets/avatars-chibi/chinesa-imperador-jade.webp","single":true},{"id":"chibi-japonesa-inari","characterId":"japonesa-inari","name":"Inari","asset":"assets/avatars-chibi/japonesa-inari.webp","single":true},{"id":"chibi-hindu-indra","characterId":"hindu-indra","name":"Indra","asset":"assets/avatars-chibi/hindu-indra.webp","single":true},{"id":"chibi-mesopotamica-ishtar","characterId":"mesopotamica-ishtar","name":"Ishtar","asset":"assets/avatars-chibi/mesopotamica-ishtar.webp","single":true},{"id":"chibi-japonesa-izanagi","characterId":"japonesa-izanagi","name":"Izanagi","asset":"assets/avatars-chibi/japonesa-izanagi.webp","single":true},{"id":"chibi-japonesa-izanami","characterId":"japonesa-izanami","name":"Izanami","asset":"assets/avatars-chibi/japonesa-izanami.webp","single":true},{"id":"chibi-hindu-kali","characterId":"hindu-kali","name":"Kali","asset":"assets/avatars-chibi/hindu-kali.webp","single":true},{"id":"chibi-hindu-krishna","characterId":"hindu-krishna","name":"Krishna","asset":"assets/avatars-chibi/hindu-krishna.webp","single":true},{"id":"chibi-hindu-lakshmi","characterId":"hindu-lakshmi","name":"Lakshmi","asset":"assets/avatars-chibi/hindu-lakshmi.webp","single":true},{"id":"chibi-brasil-lampiao","characterId":"brasil-lampiao","name":"Lampião","asset":"assets/avatars-chibi/brasil-lampiao.webp","single":true},{"id":"chibi-celtas-lancelot","characterId":"celtas-lancelot","name":"Lancelot","asset":"assets/avatars-chibi/celtas-lancelot.webp","single":true},{"id":"chibi-celtas-lugh","characterId":"celtas-lugh","name":"Lugh","asset":"assets/avatars-chibi/celtas-lugh.webp","single":true},{"id":"chibi-brasil-mapinguari","characterId":"brasil-mapinguari","name":"Mapinguari","asset":"assets/avatars-chibi/brasil-mapinguari.webp","single":true},{"id":"chibi-mesopotamica-marduk","characterId":"mesopotamica-marduk","name":"Marduk","asset":"assets/avatars-chibi/mesopotamica-marduk.webp","single":true},{"id":"chibi-celtas-merlin","characterId":"celtas-merlin","name":"Merlin","asset":"assets/avatars-chibi/celtas-merlin.webp","single":true},{"id":"chibi-asteca-mictecacihuatl","characterId":"asteca-mictecacihuatl","name":"Mictecacíhuatl","asset":"assets/avatars-chibi/asteca-mictecacihuatl.webp","single":true},{"id":"chibi-asteca-mictlantecuhtli","characterId":"asteca-mictlantecuhtli","name":"Mictlantecuhtli","asset":"assets/avatars-chibi/asteca-mictlantecuhtli.webp","single":true},{"id":"chibi-celtas-morgana","characterId":"celtas-morgana","name":"Morgana","asset":"assets/avatars-chibi/celtas-morgana.webp","single":true},{"id":"chibi-celtas-morrigan","characterId":"celtas-morrigan","name":"Morrigan","asset":"assets/avatars-chibi/celtas-morrigan.webp","single":true},{"id":"chibi-brasil-mula-sem-cabeca","characterId":"brasil-mula-sem-cabeca","name":"Mula sem Cabeça","asset":"assets/avatars-chibi/brasil-mula-sem-cabeca.webp","single":true},{"id":"chibi-mesopotamica-nanna-sin","characterId":"mesopotamica-nanna-sin","name":"Nanna - Sîn","asset":"assets/avatars-chibi/mesopotamica-nanna-sin.webp","single":true},{"id":"chibi-mesopotamica-nergal","characterId":"mesopotamica-nergal","name":"Nergal","asset":"assets/avatars-chibi/mesopotamica-nergal.webp","single":true},{"id":"chibi-chinesa-nezha","characterId":"chinesa-nezha","name":"Nezha","asset":"assets/avatars-chibi/chinesa-nezha.webp","single":true},{"id":"chibi-mesopotamica-ninurta","characterId":"mesopotamica-ninurta","name":"Ninurta","asset":"assets/avatars-chibi/mesopotamica-ninurta.webp","single":true},{"id":"chibi-chinesa-nuwa","characterId":"chinesa-nuwa","name":"Nüwa","asset":"assets/avatars-chibi/chinesa-nuwa.webp","single":true},{"id":"chibi-asteca-quetzalcoatl","characterId":"asteca-quetzalcoatl","name":"Quetzalcóatl","asset":"assets/avatars-chibi/asteca-quetzalcoatl.webp","single":true},{"id":"chibi-japonesa-raijin","characterId":"japonesa-raijin","name":"Raijin","asset":"assets/avatars-chibi/japonesa-raijin.webp","single":true},{"id":"chibi-rei-arthur","characterId":"rei-arthur","name":"Rei Arthur","asset":"assets/avatars-chibi/rei-arthur.webp","single":true},{"id":"chibi-japonesa-ryujin","characterId":"japonesa-ryujin","name":"Ryūjin","asset":"assets/avatars-chibi/japonesa-ryujin.webp","single":true},{"id":"chibi-brasil-saci","characterId":"brasil-saci","name":"Saci-Pererê","asset":"assets/avatars-chibi/brasil-saci.webp","single":true},{"id":"chibi-hindu-saraswati","characterId":"hindu-saraswati","name":"Saraswati","asset":"assets/avatars-chibi/hindu-saraswati.webp","single":true},{"id":"chibi-hindu-shiva","characterId":"hindu-shiva","name":"Shiva","asset":"assets/avatars-chibi/hindu-shiva.webp","single":true},{"id":"chibi-chinesa-sun-wukong","characterId":"chinesa-sun-wukong","name":"Sun Wukong","asset":"assets/avatars-chibi/chinesa-sun-wukong.webp","single":true},{"id":"chibi-japonesa-susanoo","characterId":"japonesa-susanoo","name":"Susanoo","asset":"assets/avatars-chibi/japonesa-susanoo.webp","single":true},{"id":"chibi-asteca-tezcatlipoca","characterId":"asteca-tezcatlipoca","name":"Tezcatlipoca","asset":"assets/avatars-chibi/asteca-tezcatlipoca.webp","single":true},{"id":"chibi-mesopotamica-tiamat","characterId":"mesopotamica-tiamat","name":"Tiamat","asset":"assets/avatars-chibi/mesopotamica-tiamat.webp","single":true},{"id":"chibi-asteca-tlaloc","characterId":"asteca-tlaloc","name":"Tláloc","asset":"assets/avatars-chibi/asteca-tlaloc.webp","single":true},{"id":"chibi-japonesa-tsukuyomi","characterId":"japonesa-tsukuyomi","name":"Tsukuyomi","asset":"assets/avatars-chibi/japonesa-tsukuyomi.webp","single":true},{"id":"chibi-mesopotamica-utu-shamash","characterId":"mesopotamica-utu-shamash","name":"Utu - Shamash","asset":"assets/avatars-chibi/mesopotamica-utu-shamash.webp","single":true},{"id":"chibi-hindu-vishnu","characterId":"hindu-vishnu","name":"Vishnu","asset":"assets/avatars-chibi/hindu-vishnu.webp","single":true},{"id":"chibi-asteca-xipe-totec","characterId":"asteca-xipe-totec","name":"Xipe Tótec","asset":"assets/avatars-chibi/asteca-xipe-totec.webp","single":true},{"id":"chibi-asteca-xochiquetzal","characterId":"asteca-xochiquetzal","name":"Xochiquétzal","asset":"assets/avatars-chibi/asteca-xochiquetzal.webp","single":true},{"id":"chibi-lukyan-rei-de-todos","characterId":"lukyan-rei-de-todos","name":"Lukyan — Rei de Todos","asset":"assets/avatars-chibi/lukyan-rei-de-todos.webp","single":true},{"id":"chibi-hera","characterId":"hera","name":"Hera","asset":"assets/avatars-chibi/hera.webp","single":true},{"id":"chibi-demeter","characterId":"demeter","name":"Deméter","asset":"assets/avatars-chibi/demeter.webp","single":true},{"id":"chibi-hestia","characterId":"hestia","name":"Héstia","asset":"assets/avatars-chibi/hestia.webp","single":true},{"id":"chibi-perseu","characterId":"perseu","name":"Perseu","asset":"assets/avatars-chibi/perseu.webp","single":true}],"release":"20261022-revisao"};
 
 ;
 /* vfx-runtime.js */
@@ -1340,7 +1340,7 @@ window.MythicWorldLore={"zeus":{"origin":"MITOLOGIA GREGA · RECONTO","story":["
 
 ;
 /* universe-banners.js */
-window.MythicUniverseBanners={"zeus":{"atlas":"assets/entry/banner-01.webp","x":0,"y":0},"poseidon":{"atlas":"assets/entry/banner-01.webp","x":1,"y":0},"hades":{"atlas":"assets/entry/banner-01.webp","x":0,"y":1},"medusa":{"atlas":"assets/entry/banner-01.webp","x":1,"y":1},"athena":{"atlas":"assets/entry/banner-02.webp","x":0,"y":0},"ares":{"atlas":"assets/entry/banner-02.webp","x":1,"y":0},"apolo":{"atlas":"assets/entry/banner-02.webp","x":0,"y":1},"artemis":{"atlas":"assets/entry/banner-02.webp","x":1,"y":1},"afrodite":{"atlas":"assets/entry/banner-03.webp","x":0,"y":0},"dionisio":{"atlas":"assets/entry/banner-03.webp","x":1,"y":0},"hefesto":{"atlas":"assets/entry/banner-03.webp","x":0,"y":1},"hermes":{"atlas":"assets/entry/banner-03.webp","x":1,"y":1},"odin":{"atlas":"assets/entry/banner-04.webp","x":0,"y":0},"thor":{"atlas":"assets/entry/banner-04.webp","x":1,"y":0},"loki":{"atlas":"assets/entry/banner-04.webp","x":0,"y":1},"heimdall":{"atlas":"assets/entry/banner-04.webp","x":1,"y":1},"ragnar":{"atlas":"assets/entry/banner-05.webp","x":0,"y":0},"beowulf":{"atlas":"assets/entry/banner-05.webp","x":1,"y":0},"guardiao-nordico":{"atlas":"assets/entry/banner-05.webp","x":0,"y":1},"soldado-esparta":{"atlas":"assets/entry/banner-05.webp","x":1,"y":1},"anubis":{"atlas":"assets/entry/banner-06.webp","x":0,"y":0},"ra":{"atlas":"assets/entry/banner-06.webp","x":1,"y":0},"horus":{"atlas":"assets/entry/banner-06.webp","x":0,"y":1},"isis":{"atlas":"assets/entry/banner-06.webp","x":1,"y":1},"osiris":{"atlas":"assets/entry/banner-07.webp","x":0,"y":0},"seth":{"atlas":"assets/entry/banner-07.webp","x":1,"y":0},"sobek":{"atlas":"assets/entry/banner-07.webp","x":0,"y":1},"minotauro":{"atlas":"assets/entry/banner-07.webp","x":1,"y":1},"aquiles":{"atlas":"assets/entry/banner-08.webp","x":0,"y":0},"hercules":{"atlas":"assets/entry/banner-08.webp","x":1,"y":0},"lukyan":{"atlas":"assets/entry/banner-08.webp","x":0,"y":1},"butter":{"atlas":"assets/entry/banner-08.webp","x":1,"y":1},"lobo-alfa":{"atlas":"assets/entry/banner-09.webp","x":0,"y":0},"lobo-beta":{"atlas":"assets/entry/banner-09.webp","x":1,"y":0},"lobo-omega":{"atlas":"assets/entry/banner-09.webp","x":0,"y":1},"mulher":{"atlas":"assets/entry/banner-09.webp","x":1,"y":1},"homem":{"atlas":"assets/entry/banner-10.webp","x":0,"y":0},"convergence":{"atlas":"assets/entry/banner-10.webp","x":1,"y":0},"japonesa-amaterasu":{"atlas":"assets/universe/characters/japonesa-amaterasu.webp","format":"wide","x":0,"y":0},"chinesa-ao-guang":{"atlas":"assets/universe/characters/chinesa-ao-guang.webp","format":"wide","x":0,"y":0},"brasil-boitata":{"atlas":"assets/universe/characters/brasil-boitata.webp","format":"wide","x":0,"y":0},"brasil-boto":{"atlas":"assets/universe/characters/brasil-boto.webp","format":"wide","x":0,"y":0},"celtas-brigid":{"atlas":"assets/universe/characters/celtas-brigid.webp","format":"wide","x":0,"y":0},"brasil-caipora":{"atlas":"assets/universe/characters/brasil-caipora.webp","format":"wide","x":0,"y":0},"asteca-chalchiuhtlicue":{"atlas":"assets/universe/characters/asteca-chalchiuhtlicue.webp","format":"wide","x":0,"y":0},"chinesa-change":{"atlas":"assets/universe/characters/chinesa-change.webp","format":"wide","x":0,"y":0},"asteca-coatlicue":{"atlas":"assets/universe/characters/asteca-coatlicue.webp","format":"wide","x":0,"y":0},"brasil-cuca":{"atlas":"assets/universe/characters/brasil-cuca.webp","format":"wide","x":0,"y":0},"brasil-curupira":{"atlas":"assets/universe/characters/brasil-curupira.webp","format":"wide","x":0,"y":0},"celtas-cu-chulainn":{"atlas":"assets/universe/characters/celtas-cu-chulainn.webp","format":"wide","x":0,"y":0},"celtas-dagda":{"atlas":"assets/universe/characters/celtas-dagda.webp","format":"wide","x":0,"y":0},"celtas-dama-do-lago":{"atlas":"assets/universe/characters/celtas-dama-do-lago.webp","format":"wide","x":0,"y":0},"hindu-durga":{"atlas":"assets/universe/characters/hindu-durga.webp","format":"wide","x":0,"y":0},"mesopotamica-enki":{"atlas":"assets/universe/characters/mesopotamica-enki.webp","format":"wide","x":0,"y":0},"mesopotamica-enlil":{"atlas":"assets/universe/characters/mesopotamica-enlil.webp","format":"wide","x":0,"y":0},"mesopotamica-ereshkigal":{"atlas":"assets/universe/characters/mesopotamica-ereshkigal.webp","format":"wide","x":0,"y":0},"chinesa-erlang-shen":{"atlas":"assets/universe/characters/chinesa-erlang-shen.webp","format":"wide","x":0,"y":0},"chinesa-fuxi":{"atlas":"assets/universe/characters/chinesa-fuxi.webp","format":"wide","x":0,"y":0},"japonesa-fujin":{"atlas":"assets/universe/characters/japonesa-fujin.webp","format":"wide","x":0,"y":0},"hindu-ganesha":{"atlas":"assets/universe/characters/hindu-ganesha.webp","format":"wide","x":0,"y":0},"chinesa-guanyin":{"atlas":"assets/universe/characters/chinesa-guanyin.webp","format":"wide","x":0,"y":0},"japonesa-hachiman":{"atlas":"assets/universe/characters/japonesa-hachiman.webp","format":"wide","x":0,"y":0},"hindu-hanuman":{"atlas":"assets/universe/characters/hindu-hanuman.webp","format":"wide","x":0,"y":0},"chinesa-hou-yi":{"atlas":"assets/universe/characters/chinesa-hou-yi.webp","format":"wide","x":0,"y":0},"asteca-huitzilopochtli":{"atlas":"assets/universe/characters/asteca-huitzilopochtli.webp","format":"wide","x":0,"y":0},"brasil-iara":{"atlas":"assets/universe/characters/brasil-iara.webp","format":"wide","x":0,"y":0},"chinesa-imperador-jade":{"atlas":"assets/universe/characters/chinesa-imperador-jade.webp","format":"wide","x":0,"y":0},"japonesa-inari":{"atlas":"assets/universe/characters/japonesa-inari.webp","format":"wide","x":0,"y":0},"hindu-indra":{"atlas":"assets/universe/characters/hindu-indra.webp","format":"wide","x":0,"y":0},"mesopotamica-ishtar":{"atlas":"assets/universe/characters/mesopotamica-ishtar.webp","format":"wide","x":0,"y":0},"japonesa-izanagi":{"atlas":"assets/universe/characters/japonesa-izanagi.webp","format":"wide","x":0,"y":0},"japonesa-izanami":{"atlas":"assets/universe/characters/japonesa-izanami.webp","format":"wide","x":0,"y":0},"hindu-kali":{"atlas":"assets/universe/characters/hindu-kali.webp","format":"wide","x":0,"y":0},"hindu-krishna":{"atlas":"assets/universe/characters/hindu-krishna.webp","format":"wide","x":0,"y":0},"hindu-lakshmi":{"atlas":"assets/universe/characters/hindu-lakshmi.webp","format":"wide","x":0,"y":0},"brasil-lampiao":{"atlas":"assets/universe/characters/brasil-lampiao.webp","format":"wide","x":0,"y":0},"celtas-lancelot":{"atlas":"assets/universe/characters/celtas-lancelot.webp","format":"wide","x":0,"y":0},"celtas-lugh":{"atlas":"assets/universe/characters/celtas-lugh.webp","format":"wide","x":0,"y":0},"brasil-mapinguari":{"atlas":"assets/universe/characters/brasil-mapinguari.webp","format":"wide","x":0,"y":0},"mesopotamica-marduk":{"atlas":"assets/universe/characters/mesopotamica-marduk.webp","format":"wide","x":0,"y":0},"celtas-merlin":{"atlas":"assets/universe/characters/celtas-merlin.webp","format":"wide","x":0,"y":0},"asteca-mictecacihuatl":{"atlas":"assets/universe/characters/asteca-mictecacihuatl.webp","format":"wide","x":0,"y":0},"asteca-mictlantecuhtli":{"atlas":"assets/universe/characters/asteca-mictlantecuhtli.webp","format":"wide","x":0,"y":0},"celtas-morgana":{"atlas":"assets/universe/characters/celtas-morgana.webp","format":"wide","x":0,"y":0},"celtas-morrigan":{"atlas":"assets/universe/characters/celtas-morrigan.webp","format":"wide","x":0,"y":0},"brasil-mula-sem-cabeca":{"atlas":"assets/universe/characters/brasil-mula-sem-cabeca.webp","format":"wide","x":0,"y":0},"mesopotamica-nanna-sin":{"atlas":"assets/universe/characters/mesopotamica-nanna-sin.webp","format":"wide","x":0,"y":0},"mesopotamica-nergal":{"atlas":"assets/universe/characters/mesopotamica-nergal.webp","format":"wide","x":0,"y":0},"chinesa-nezha":{"atlas":"assets/universe/characters/chinesa-nezha.webp","format":"wide","x":0,"y":0},"mesopotamica-ninurta":{"atlas":"assets/universe/characters/mesopotamica-ninurta.webp","format":"wide","x":0,"y":0},"chinesa-nuwa":{"atlas":"assets/universe/characters/chinesa-nuwa.webp","format":"wide","x":0,"y":0},"asteca-quetzalcoatl":{"atlas":"assets/universe/characters/asteca-quetzalcoatl.webp","format":"wide","x":0,"y":0},"rei-arthur":{"atlas":"assets/universe/characters/rei-arthur.webp","format":"wide","x":0,"y":0},"japonesa-raijin":{"atlas":"assets/universe/characters/japonesa-raijin.webp","format":"wide","x":0,"y":0},"japonesa-ryujin":{"atlas":"assets/universe/characters/japonesa-ryujin.webp","format":"wide","x":0,"y":0},"brasil-saci":{"atlas":"assets/universe/characters/brasil-saci.webp","format":"wide","x":0,"y":0},"hindu-saraswati":{"atlas":"assets/universe/characters/hindu-saraswati.webp","format":"wide","x":0,"y":0},"hindu-shiva":{"atlas":"assets/universe/characters/hindu-shiva.webp","format":"wide","x":0,"y":0},"chinesa-sun-wukong":{"atlas":"assets/universe/characters/chinesa-sun-wukong.webp","format":"wide","x":0,"y":0},"japonesa-susanoo":{"atlas":"assets/universe/characters/japonesa-susanoo.webp","format":"wide","x":0,"y":0},"asteca-tezcatlipoca":{"atlas":"assets/universe/characters/asteca-tezcatlipoca.webp","format":"wide","x":0,"y":0},"mesopotamica-tiamat":{"atlas":"assets/universe/characters/mesopotamica-tiamat.webp","format":"wide","x":0,"y":0},"asteca-tlaloc":{"atlas":"assets/universe/characters/asteca-tlaloc.webp","format":"wide","x":0,"y":0},"japonesa-tsukuyomi":{"atlas":"assets/universe/characters/japonesa-tsukuyomi.webp","format":"wide","x":0,"y":0},"mesopotamica-utu-shamash":{"atlas":"assets/universe/characters/mesopotamica-utu-shamash.webp","format":"wide","x":0,"y":0},"hindu-vishnu":{"atlas":"assets/universe/characters/hindu-vishnu.webp","format":"wide","x":0,"y":0},"asteca-xipe-totec":{"atlas":"assets/universe/characters/asteca-xipe-totec.webp","format":"wide","x":0,"y":0},"asteca-xochiquetzal":{"atlas":"assets/universe/characters/asteca-xochiquetzal.webp","format":"wide","x":0,"y":0},"hera":{"atlas":"assets/universe/characters/hera.webp","format":"wide","x":0,"y":0,"position":"center top"},"demeter":{"atlas":"assets/universe/characters/demeter.webp","format":"wide","x":0,"y":0,"position":"center top"},"hestia":{"atlas":"assets/universe/characters/hestia.webp","format":"wide","x":0,"y":0,"position":"center top"},"perseu":{"atlas":"assets/universe/characters/perseu.webp","format":"wide","x":0,"y":0,"position":"center top"}};
+window.MythicUniverseBanners={"zeus":{"atlas":"assets/universe/restaurados/zeus.webp","format":"wide","position":"center","width":887,"height":443},"poseidon":{"atlas":"assets/universe/restaurados/poseidon.webp","format":"wide","position":"center","width":887,"height":443},"hades":{"atlas":"assets/universe/restaurados/hades.webp","format":"wide","position":"center","width":887,"height":443},"medusa":{"atlas":"assets/universe/restaurados/medusa.webp","format":"wide","position":"center","width":887,"height":443},"athena":{"atlas":"assets/universe/restaurados/athena.webp","format":"wide","position":"center","width":887,"height":443},"ares":{"atlas":"assets/universe/restaurados/ares.webp","format":"wide","position":"center","width":887,"height":443},"apolo":{"atlas":"assets/universe/restaurados/apolo.webp","format":"wide","position":"center","width":887,"height":443},"artemis":{"atlas":"assets/universe/restaurados/artemis.webp","format":"wide","position":"center","width":887,"height":443},"afrodite":{"atlas":"assets/universe/restaurados/afrodite.webp","format":"wide","position":"center","width":887,"height":443},"dionisio":{"atlas":"assets/universe/restaurados/dionisio.webp","format":"wide","position":"center","width":887,"height":443},"hefesto":{"atlas":"assets/universe/restaurados/hefesto.webp","format":"wide","position":"center","width":887,"height":443},"hermes":{"atlas":"assets/universe/restaurados/hermes.webp","format":"wide","position":"center","width":887,"height":443},"odin":{"atlas":"assets/universe/restaurados/odin.webp","format":"wide","position":"center","width":887,"height":443},"thor":{"atlas":"assets/universe/restaurados/thor.webp","format":"wide","position":"center","width":887,"height":443},"loki":{"atlas":"assets/universe/restaurados/loki.webp","format":"wide","position":"center","width":887,"height":443},"heimdall":{"atlas":"assets/universe/restaurados/heimdall.webp","format":"wide","position":"center","width":887,"height":443},"ragnar":{"atlas":"assets/universe/restaurados/ragnar.webp","format":"wide","position":"center","width":887,"height":443},"beowulf":{"atlas":"assets/universe/restaurados/beowulf.webp","format":"wide","position":"center","width":887,"height":443},"guardiao-nordico":{"atlas":"assets/universe/restaurados/guardiao-nordico.webp","format":"wide","position":"center","width":887,"height":443},"soldado-esparta":{"atlas":"assets/universe/restaurados/soldado-esparta.webp","format":"wide","position":"center","width":887,"height":443},"anubis":{"atlas":"assets/universe/restaurados/anubis.webp","format":"wide","position":"center","width":887,"height":443},"ra":{"atlas":"assets/universe/restaurados/ra.webp","format":"wide","position":"center","width":887,"height":443},"horus":{"atlas":"assets/universe/restaurados/horus.webp","format":"wide","position":"center","width":887,"height":443},"isis":{"atlas":"assets/universe/restaurados/isis.webp","format":"wide","position":"center","width":887,"height":443},"osiris":{"atlas":"assets/universe/restaurados/osiris.webp","format":"wide","position":"center","width":887,"height":443},"seth":{"atlas":"assets/universe/restaurados/seth.webp","format":"wide","position":"center","width":887,"height":443},"sobek":{"atlas":"assets/universe/restaurados/sobek.webp","format":"wide","position":"center","width":887,"height":443},"minotauro":{"atlas":"assets/universe/restaurados/minotauro.webp","format":"wide","position":"center","width":887,"height":443},"aquiles":{"atlas":"assets/universe/restaurados/aquiles.webp","format":"wide","position":"center","width":887,"height":443},"hercules":{"atlas":"assets/universe/restaurados/hercules.webp","format":"wide","position":"center","width":887,"height":443},"lukyan":{"atlas":"assets/universe/restaurados/lukyan.webp","format":"wide","position":"center","width":887,"height":443},"butter":{"atlas":"assets/universe/restaurados/butter.webp","format":"wide","position":"center","width":887,"height":443},"lobo-alfa":{"atlas":"assets/universe/restaurados/lobo-alfa.webp","format":"wide","position":"center","width":887,"height":443},"lobo-beta":{"atlas":"assets/universe/restaurados/lobo-beta.webp","format":"wide","position":"center","width":887,"height":443},"lobo-omega":{"atlas":"assets/universe/restaurados/lobo-omega.webp","format":"wide","position":"center","width":887,"height":443},"mulher":{"atlas":"assets/universe/restaurados/mulher.webp","format":"wide","position":"center","width":887,"height":443},"homem":{"atlas":"assets/universe/restaurados/homem.webp","format":"wide","position":"center","width":887,"height":443},"convergence":{"atlas":"assets/universe/restaurados/convergence.webp","format":"wide","position":"center","width":887,"height":443},"japonesa-amaterasu":{"atlas":"assets/universe/characters/japonesa-amaterasu.webp","format":"wide","x":0,"y":0},"chinesa-ao-guang":{"atlas":"assets/universe/characters/chinesa-ao-guang.webp","format":"wide","x":0,"y":0},"brasil-boitata":{"atlas":"assets/universe/characters/brasil-boitata.webp","format":"wide","x":0,"y":0},"brasil-boto":{"atlas":"assets/universe/characters/brasil-boto.webp","format":"wide","x":0,"y":0},"celtas-brigid":{"atlas":"assets/universe/characters/celtas-brigid.webp","format":"wide","x":0,"y":0},"brasil-caipora":{"atlas":"assets/universe/characters/brasil-caipora.webp","format":"wide","x":0,"y":0},"asteca-chalchiuhtlicue":{"atlas":"assets/universe/characters/asteca-chalchiuhtlicue.webp","format":"wide","x":0,"y":0},"chinesa-change":{"atlas":"assets/universe/characters/chinesa-change.webp","format":"wide","x":0,"y":0},"asteca-coatlicue":{"atlas":"assets/universe/characters/asteca-coatlicue.webp","format":"wide","x":0,"y":0},"brasil-cuca":{"atlas":"assets/universe/characters/brasil-cuca.webp","format":"wide","x":0,"y":0},"brasil-curupira":{"atlas":"assets/universe/characters/brasil-curupira.webp","format":"wide","x":0,"y":0},"celtas-cu-chulainn":{"atlas":"assets/universe/characters/celtas-cu-chulainn.webp","format":"wide","x":0,"y":0},"celtas-dagda":{"atlas":"assets/universe/characters/celtas-dagda.webp","format":"wide","x":0,"y":0},"celtas-dama-do-lago":{"atlas":"assets/universe/characters/celtas-dama-do-lago.webp","format":"wide","x":0,"y":0},"hindu-durga":{"atlas":"assets/universe/characters/hindu-durga.webp","format":"wide","x":0,"y":0},"mesopotamica-enki":{"atlas":"assets/universe/characters/mesopotamica-enki.webp","format":"wide","x":0,"y":0},"mesopotamica-enlil":{"atlas":"assets/universe/characters/mesopotamica-enlil.webp","format":"wide","x":0,"y":0},"mesopotamica-ereshkigal":{"atlas":"assets/universe/characters/mesopotamica-ereshkigal.webp","format":"wide","x":0,"y":0},"chinesa-erlang-shen":{"atlas":"assets/universe/characters/chinesa-erlang-shen.webp","format":"wide","x":0,"y":0},"chinesa-fuxi":{"atlas":"assets/universe/characters/chinesa-fuxi.webp","format":"wide","x":0,"y":0},"japonesa-fujin":{"atlas":"assets/universe/characters/japonesa-fujin.webp","format":"wide","x":0,"y":0},"hindu-ganesha":{"atlas":"assets/universe/characters/hindu-ganesha.webp","format":"wide","x":0,"y":0},"chinesa-guanyin":{"atlas":"assets/universe/characters/chinesa-guanyin.webp","format":"wide","x":0,"y":0},"japonesa-hachiman":{"atlas":"assets/universe/characters/japonesa-hachiman.webp","format":"wide","x":0,"y":0},"hindu-hanuman":{"atlas":"assets/universe/characters/hindu-hanuman.webp","format":"wide","x":0,"y":0},"chinesa-hou-yi":{"atlas":"assets/universe/characters/chinesa-hou-yi.webp","format":"wide","x":0,"y":0},"asteca-huitzilopochtli":{"atlas":"assets/universe/characters/asteca-huitzilopochtli.webp","format":"wide","x":0,"y":0},"brasil-iara":{"atlas":"assets/universe/characters/brasil-iara.webp","format":"wide","x":0,"y":0},"chinesa-imperador-jade":{"atlas":"assets/universe/characters/chinesa-imperador-jade.webp","format":"wide","x":0,"y":0},"japonesa-inari":{"atlas":"assets/universe/characters/japonesa-inari.webp","format":"wide","x":0,"y":0},"hindu-indra":{"atlas":"assets/universe/characters/hindu-indra.webp","format":"wide","x":0,"y":0},"mesopotamica-ishtar":{"atlas":"assets/universe/characters/mesopotamica-ishtar.webp","format":"wide","x":0,"y":0},"japonesa-izanagi":{"atlas":"assets/universe/characters/japonesa-izanagi.webp","format":"wide","x":0,"y":0},"japonesa-izanami":{"atlas":"assets/universe/characters/japonesa-izanami.webp","format":"wide","x":0,"y":0},"hindu-kali":{"atlas":"assets/universe/characters/hindu-kali.webp","format":"wide","x":0,"y":0},"hindu-krishna":{"atlas":"assets/universe/characters/hindu-krishna.webp","format":"wide","x":0,"y":0},"hindu-lakshmi":{"atlas":"assets/universe/characters/hindu-lakshmi.webp","format":"wide","x":0,"y":0},"brasil-lampiao":{"atlas":"assets/universe/characters/brasil-lampiao.webp","format":"wide","x":0,"y":0},"celtas-lancelot":{"atlas":"assets/universe/characters/celtas-lancelot.webp","format":"wide","x":0,"y":0},"celtas-lugh":{"atlas":"assets/universe/characters/celtas-lugh.webp","format":"wide","x":0,"y":0},"brasil-mapinguari":{"atlas":"assets/universe/characters/brasil-mapinguari.webp","format":"wide","x":0,"y":0},"mesopotamica-marduk":{"atlas":"assets/universe/characters/mesopotamica-marduk.webp","format":"wide","x":0,"y":0},"celtas-merlin":{"atlas":"assets/universe/characters/celtas-merlin.webp","format":"wide","x":0,"y":0},"asteca-mictecacihuatl":{"atlas":"assets/universe/characters/asteca-mictecacihuatl.webp","format":"wide","x":0,"y":0},"asteca-mictlantecuhtli":{"atlas":"assets/universe/characters/asteca-mictlantecuhtli.webp","format":"wide","x":0,"y":0},"celtas-morgana":{"atlas":"assets/universe/characters/celtas-morgana.webp","format":"wide","x":0,"y":0},"celtas-morrigan":{"atlas":"assets/universe/characters/celtas-morrigan.webp","format":"wide","x":0,"y":0},"brasil-mula-sem-cabeca":{"atlas":"assets/universe/characters/brasil-mula-sem-cabeca.webp","format":"wide","x":0,"y":0},"mesopotamica-nanna-sin":{"atlas":"assets/universe/characters/mesopotamica-nanna-sin.webp","format":"wide","x":0,"y":0},"mesopotamica-nergal":{"atlas":"assets/universe/characters/mesopotamica-nergal.webp","format":"wide","x":0,"y":0},"chinesa-nezha":{"atlas":"assets/universe/characters/chinesa-nezha.webp","format":"wide","x":0,"y":0},"mesopotamica-ninurta":{"atlas":"assets/universe/characters/mesopotamica-ninurta.webp","format":"wide","x":0,"y":0},"chinesa-nuwa":{"atlas":"assets/universe/characters/chinesa-nuwa.webp","format":"wide","x":0,"y":0},"asteca-quetzalcoatl":{"atlas":"assets/universe/characters/asteca-quetzalcoatl.webp","format":"wide","x":0,"y":0},"rei-arthur":{"atlas":"assets/universe/characters/rei-arthur.webp","format":"wide","x":0,"y":0},"japonesa-raijin":{"atlas":"assets/universe/characters/japonesa-raijin.webp","format":"wide","x":0,"y":0},"japonesa-ryujin":{"atlas":"assets/universe/characters/japonesa-ryujin.webp","format":"wide","x":0,"y":0},"brasil-saci":{"atlas":"assets/universe/characters/brasil-saci.webp","format":"wide","x":0,"y":0},"hindu-saraswati":{"atlas":"assets/universe/characters/hindu-saraswati.webp","format":"wide","x":0,"y":0},"hindu-shiva":{"atlas":"assets/universe/characters/hindu-shiva.webp","format":"wide","x":0,"y":0},"chinesa-sun-wukong":{"atlas":"assets/universe/characters/chinesa-sun-wukong.webp","format":"wide","x":0,"y":0},"japonesa-susanoo":{"atlas":"assets/universe/characters/japonesa-susanoo.webp","format":"wide","x":0,"y":0},"asteca-tezcatlipoca":{"atlas":"assets/universe/characters/asteca-tezcatlipoca.webp","format":"wide","x":0,"y":0},"mesopotamica-tiamat":{"atlas":"assets/universe/characters/mesopotamica-tiamat.webp","format":"wide","x":0,"y":0},"asteca-tlaloc":{"atlas":"assets/universe/characters/asteca-tlaloc.webp","format":"wide","x":0,"y":0},"japonesa-tsukuyomi":{"atlas":"assets/universe/characters/japonesa-tsukuyomi.webp","format":"wide","x":0,"y":0},"mesopotamica-utu-shamash":{"atlas":"assets/universe/characters/mesopotamica-utu-shamash.webp","format":"wide","x":0,"y":0},"hindu-vishnu":{"atlas":"assets/universe/characters/hindu-vishnu.webp","format":"wide","x":0,"y":0},"asteca-xipe-totec":{"atlas":"assets/universe/characters/asteca-xipe-totec.webp","format":"wide","x":0,"y":0},"asteca-xochiquetzal":{"atlas":"assets/universe/characters/asteca-xochiquetzal.webp","format":"wide","x":0,"y":0},"hera":{"atlas":"assets/universe/characters/hera.webp","format":"wide","x":0,"y":0,"position":"center top"},"demeter":{"atlas":"assets/universe/characters/demeter.webp","format":"wide","x":0,"y":0,"position":"center top"},"hestia":{"atlas":"assets/universe/characters/hestia.webp","format":"wide","x":0,"y":0,"position":"center top"},"perseu":{"atlas":"assets/universe/characters/perseu.webp","format":"wide","x":0,"y":0,"position":"center top"}};
 window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?.().find(c=>c.id===id),asset=window.MythicUniverseBanners[id]||(card?.hologram||card?.art?{atlas:card.hologram||card.art,format:'portrait'}:null);let node=banner.querySelector('.universe-banner-art');if(!asset){delete banner.dataset.customBanner;delete banner.dataset.bannerFormat;if(node)node.remove();return;}if(!node){node=document.createElement('div');node.className='universe-banner-art';node.setAttribute('aria-hidden','true');banner.prepend(node);}banner.dataset.customBanner=id;banner.dataset.bannerFormat=asset.format||'atlas';node.style.backgroundImage=`url('${asset.atlas}')`;node.style.backgroundSize=asset.format==='portrait'?'contain':asset.format==='wide'?'cover':'200% 200%';node.style.backgroundPosition=asset.position||(['wide','portrait'].includes(asset.format)?'center':`${asset.x*100}% ${asset.y*100}%`);};
 
 ;
@@ -1362,7 +1362,7 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
   skip=button('Reduzir animações',()=>{fast=true;dialog.classList.add('tb-reduced');flush();});skip.className='tb-skip';
   shell.append(skip,top,history,stage,actions);dialog.append(shell);document.body.append(dialog);dialog.addEventListener('cancel',e=>e.preventDefault());
  }
- function finalAction(){actions.replaceChildren(button('Ver resumo da partida',()=>{close();document.querySelector('#tie-break-continue')?.click();}));}
+ function finalAction(data){actions.replaceChildren(button(data?.standalone?'Voltar à Arena':'Ver resumo da partida',()=>{close();if(data?.standalone)window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'arena'}}));else document.querySelector('#tie-break-continue')?.click();}));}
  function nextAction(text){return new Promise(resolve=>{continueStep=resolve;actions.replaceChildren(button(text,()=>{continueStep=null;actions.replaceChildren();resolve();}));});}
  function setHeading(head,copy){title.textContent=head;subtitle.textContent=copy;}
  function side(name,cardId,sideKey){
@@ -1398,7 +1398,7 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
    setHeading(data.eclipse==='eclipse-lunar'?'ECLIPSE LUNAR':'ECLIPSE SOLAR','A face revelada decide a partida');await pause(1000);if(token!==generation)return;
    const label=el('div','tb-assigned-labels');for(const key of ['player_one','player_two'])label.append(el('span',key===data.winner_side?'tb-victor-label':'',names[key]+' · '+(key===data.lunar_side?'LUNAR':'SOLAR')));stage.append(label);
   }
-  const won=data.winner_side===own;dialog.dataset.result=won?'victory':'defeat';subtitle.textContent=names[data.winner_side]+' VENCEU A PARTIDA';subtitle.classList.add('tb-victory-text');chime(won);skip.hidden=true;window.dispatchEvent(new CustomEvent("mythic-tiebreak-resolved",{detail:{...data,my_side:own}}));finalAction();window.MythicOnline?.refreshProfile?.();
+  const won=data.winner_side===own;dialog.dataset.result=won?'victory':'defeat';subtitle.textContent=names[data.winner_side]+' VENCEU A PARTIDA';subtitle.classList.add('tb-victory-text');chime(won);skip.hidden=true;if(!data.standalone){window.dispatchEvent(new CustomEvent("mythic-tiebreak-resolved",{detail:{...data,my_side:own}}));window.MythicOnline?.refreshProfile?.();}finalAction(data);
  }
  async function open(key,request){
   if(activeKey===key&&dialog?.open)return;close();ensure();activeKey=key;fast=matchMedia('(prefers-reduced-motion: reduce)').matches;const token=generation;
@@ -1407,7 +1407,7 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
   try{const data=await request();if(token!==generation)return;if(data?.version!==2||!data.winner_side)throw Error('Aplique o SQL 030 para ativar o novo desempate.');await present(data,token);}
   catch(e){if(token!==generation)return;setHeading('NÃO FOI POSSÍVEL CARREGAR',e.message);actions.replaceChildren(button('Tentar novamente',()=>{activeKey=null;open(key,request);}),button('Ver resumo da partida',()=>{close();document.querySelector('#tie-break-continue')?.click();}));skip.hidden=true;}
  }
- window.MythicTieBreak={openCampaign:data=>open('campaign:'+data.match_id,()=>Promise.resolve(data)),openOnline:id=>open('online:'+id,()=>window.MythicOnline.portalRequest('get_tiebreak_state',{p_match_id:id})),openGuardian:({id,points,cards})=>open('guardian:'+id,()=>window.MythicOnline.portalRequest('resolve_guardian_tiebreak',{p_match_id:id,p_points:points,p_cards:cards})),close};
+ window.MythicTieBreak={openSolo:data=>open("solo:"+data.match_id,()=>Promise.resolve(data)),openCampaign:data=>open('campaign:'+data.match_id,()=>Promise.resolve(data)),openOnline:id=>open('online:'+id,()=>window.MythicOnline.portalRequest('get_tiebreak_state',{p_match_id:id})),openGuardian:({id,points,cards})=>open('guardian:'+id,()=>window.MythicOnline.portalRequest('resolve_guardian_tiebreak',{p_match_id:id,p_points:points,p_cards:cards})),close};
  window.addEventListener('mythic-account-signed-out',close);window.addEventListener('mythic-session-changed',close);
 })();
 
@@ -2941,7 +2941,7 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
   $("#guild-war-form").addEventListener("submit",async event=>{event.preventDefault();if(!requireLogin())return;const {error}=await supabase.rpc("create_guild_war",{p_opponent_guild:$("#guild-war-opponent").value});if(error)notify(displayError(error));else{event.target.reset();await loadCommunityHub();notify("Guerra de guildas iniciada por sete dias.");}});
   $("#tournament-create-form").addEventListener("submit",event=>{event.preventDefault();if(!adminGuard())return;if(window.MythicRewards)return window.MythicRewards.submitTournament(event);notify("Aguarde a interface de torneios carregar.");});
   $("#expedition-form").addEventListener("submit",async event=>{event.preventDefault();if(!requireLogin())return;const {error}=await supabase.rpc("start_player_expedition",{p_card_id:$("#expedition-card-id").value.trim(),p_duration:Number($("#expedition-duration").value)});if(error)notify(displayError(error));else{event.target.reset();await loadProfile();await loadCommunityHub();notify("Expedição iniciada. Volte quando o tempo acabar para resgatar as MC.");}});
-  $("#community-deck-form").addEventListener("submit",async event=>{event.preventDefault();if(!requireLogin())return;if(!window.MythicQuality?.preparePublish?.())return;const {error}=await supabase.rpc("publish_community_deck",{p_title:$("#community-deck-title").value.trim(),p_deck_code:$("#community-deck-code").value.trim(),p_description:$("#community-deck-description").value.trim()});if(error)notify(displayError(error));else{event.target.reset();await loadCommunityHub();notify("Deck publicado na comunidade.");}});
+  $("#community-deck-form").addEventListener("submit",async event=>{event.preventDefault();if(!requireLogin())return;if(!window.MythicQuality?.preparePublish?.())return;const {error}=await supabase.rpc("publish_community_deck",{p_title:$("#community-deck-title").value.trim(),p_deck_code:$("#community-deck-code").value.trim(),p_description:$("#community-deck-description").value.trim()});if(error)notify(displayError(error));else{event.target.reset();await loadCommunityHub();notify("Deck publicado na comunidade.");window.dispatchEvent(new CustomEvent("mythic-community-published"));}});
   $("#replay-save-form").addEventListener("submit",async event=>{event.preventDefault();if(!requireLogin())return;const matchId=$("#replay-match-select").value,{error}=await supabase.rpc("save_match_replay",{p_match_id:matchId,p_title:$("#replay-title").value.trim(),p_events:[],p_public:false});if(error)notify(displayError(error));else{notify("Replay salvo. Abra-o para avançar pelos momentos registrados.");await loadCommunityHub();}});
   $("#replay-timeline").addEventListener("input",event=>renderReplayFrame(Number(event.target.value)));
   $("#replay-play").addEventListener("click",()=>{if(replayTicker){clearInterval(replayTicker);replayTicker=null;$("#replay-play").textContent="▶ Reproduzir";return;}$("#replay-play").textContent="Ⅱ Pausar";replayTicker=setInterval(()=>{const slider=$("#replay-timeline"),next=Number(slider.value)+1;if(next>Number(slider.max)){clearInterval(replayTicker);replayTicker=null;$("#replay-play").textContent="▶ Reproduzir";return;}renderReplayFrame(next);},1000);});
@@ -2975,7 +2975,11 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
   async function welcomeRequest(name,args={}){if(!session||!supabase)throw Error("Entre na conta para continuar.");const uid=session.user.id;const {data,error}=await supabase.rpc(name,args);if(session?.user?.id!==uid)throw Error("A conta mudou. Entre novamente.");if(error)throw Error(/PGRST202|42883/.test(String(error.code))?"As boas-vindas estão temporariamente indisponíveis. Tente novamente em instantes.":displayError(error));return data;}
   async function openStarterPack(mythology){const data=await welcomeRequest("open_starter_pack",{p_mythology:mythology});deckLoadedFor=null;return data;}
   async function portalRequest(name,args={}){if(!supabase)throw Error('A conexão não está disponível.');const uid=session?.user?.id;const {data,error}=await supabase.rpc(name,args);if(uid!==session?.user?.id)throw Error('A conta foi alterada.');if(error)throw Error(displayError(error));return data;}
-  window.MythicOnline={retryConnection:async()=>{if(activeMatchId){await refreshOnlineMatch(activeMatchId);return;}await loadProfile();await loadCommunityHub();if(!document.querySelector('#view-guardian')?.hidden)await window.MythicGuardianCampaign?.refresh?.();},watchCustomMatch:async id=>{document.querySelector('[data-view="friends"]')?.click();$("#friends-spectator-panel").hidden=false;await watchFriendMatch(id);},refreshAdminAccess:loadAdminAccess,rewardProducts:()=>adminAuthorized?adminCatalog:storeItems,portalRequest,account:()=>session?.user||null,getWelcomeState:()=>welcomeRequest("get_welcome_state"),openStarterPack,completeWelcome:()=>welcomeRequest("complete_welcome"),refreshPresentation:()=>{emitConceptProfile();if(session){loadProfileAnalytics(session.user.id,"profile");loadCommunityHub().catch(()=>{});}},loadHonors:loadPlayerHonors,equipHonors:equipPlayerHonors,signOut:signOutAccount,saveDeckCounts,saveNamedDeck,saveBuilderDeck,deleteBuilderDeck,saveDeckPersonalization,createDirectInvite,resumeSavedQueue,repaintStore:renderStore,storeOwned:item=>ownedItems.has(item.item_id)||(item.kind==="card"&&Number(window.MythicCollectionCopies?.[item.card_id])>0),isConnected:()=>Boolean(session),showLogin,requireLogin,userId:()=>session?.user?.id||null,activeMatchId:()=>activeMatchId,openMatch:loadOnlineMatch,isAdmin:()=>adminAuthorized,openAdmin,submitAction,expireTurn,loadTieBreak,surrenderMatch,matchIsActive,leaveMatch,startQueue,startDuoQueue,respondDuoInvite,cancelQueue,convergeLobby,leaveLobby,openQueueLobby,refreshLobby,lobbyFriends,loadLobbyFriends:async()=>{await loadFriends();await syncPresence();return lobbyFriends();},getLobbyState:()=>({party:lobbyParty,busy:lobbyBusy,userId:session?.user?.id||null}),getQueueState:()=>({...floatingQueueState}),rankProgress:()=>profile&&session?window.MythicRank.from(profile.rating_points):null,findFriendByCode,profileReady:()=>accountReady,pvpUnlocked:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),tutorialCompleted:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),isTutorialComplete:()=>Boolean(profile?.tutorial_completed),completeTutorial:async()=>{if(!session)return false;const {data,error}=await supabase.rpc("complete_tutorial_once");if(!error){await loadProfile();if(profile?.tutorial_completed||Number(profile?.xp||0)>=100){try{localStorage.setItem("mythic-clash-tutorial-complete","true");localStorage.setItem("mythic-clash-level","2");}catch{}return true;}notify("Tutorial registrado, mas o perfil ainda não recebeu o nível 2. Atualize a migração de progressão no Supabase.");return false;}notify("Não foi possível registrar o tutorial. Tente novamente após verificar a atualização do banco.");return false;},recordGuardianMatch:async(matchId,outcome,playerPoints,opponentPoints)=>{if(!session)return;const {error}=await supabase.rpc("record_guardian_match",{p_match_id:matchId,p_outcome:outcome,p_player_points:playerPoints,p_opponent_points:opponentPoints});if(error)notify(displayError(error));else{await loadProfile();}},refreshProfile:loadProfile,whenProfileReady};
+  window.MythicOnline={
+    publicAvatar:resolveAvatarAsset,
+    deviceLogin:async args=>{const response=await fetch('/api/device-login',{method:'POST',headers:{'Content-Type':'application/json',...(session?.access_token?{Authorization:'Bearer '+session.access_token}:{})},body:JSON.stringify(args),cache:'no-store'});let data;try{data=await response.json();}catch{throw Error('A entrada por QR Code ainda não foi configurada neste servidor.');}if(!response.ok)throw Error(data.error||'Não foi possível conectar os aparelhos.');return data;},
+    finishDeviceLogin:async hash=>{const {error}=await supabase.auth.verifyOtp({token_hash:hash,type:'magiclink'});if(error)throw Error('O QR Code expirou ou já foi usado. Gere outro.');},
+retryConnection:async()=>{if(activeMatchId){await refreshOnlineMatch(activeMatchId);return;}await loadProfile();await loadCommunityHub();if(!document.querySelector('#view-guardian')?.hidden)await window.MythicGuardianCampaign?.refresh?.();},watchCustomMatch:async id=>{document.querySelector('[data-view="friends"]')?.click();$("#friends-spectator-panel").hidden=false;await watchFriendMatch(id);},refreshAdminAccess:loadAdminAccess,rewardProducts:()=>adminAuthorized?adminCatalog:storeItems,portalRequest,account:()=>session?.user||null,getWelcomeState:()=>welcomeRequest("get_welcome_state"),openStarterPack,completeWelcome:()=>welcomeRequest("complete_welcome"),refreshPresentation:()=>{emitConceptProfile();if(session){loadProfileAnalytics(session.user.id,"profile");loadCommunityHub().catch(()=>{});}},loadHonors:loadPlayerHonors,equipHonors:equipPlayerHonors,signOut:signOutAccount,saveDeckCounts,saveNamedDeck,saveBuilderDeck,deleteBuilderDeck,saveDeckPersonalization,createDirectInvite,resumeSavedQueue,repaintStore:renderStore,storeOwned:item=>ownedItems.has(item.item_id)||(item.kind==="card"&&Number(window.MythicCollectionCopies?.[item.card_id])>0),isConnected:()=>Boolean(session),showLogin,requireLogin,userId:()=>session?.user?.id||null,activeMatchId:()=>activeMatchId,openMatch:loadOnlineMatch,isAdmin:()=>adminAuthorized,openAdmin,submitAction,expireTurn,loadTieBreak,surrenderMatch,matchIsActive,leaveMatch,startQueue,startDuoQueue,respondDuoInvite,cancelQueue,convergeLobby,leaveLobby,openQueueLobby,refreshLobby,lobbyFriends,loadLobbyFriends:async()=>{await loadFriends();await syncPresence();return lobbyFriends();},getLobbyState:()=>({party:lobbyParty,busy:lobbyBusy,userId:session?.user?.id||null}),getQueueState:()=>({...floatingQueueState}),rankProgress:()=>profile&&session?window.MythicRank.from(profile.rating_points):null,findFriendByCode,profileReady:()=>accountReady,pvpUnlocked:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),tutorialCompleted:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),isTutorialComplete:()=>Boolean(profile?.tutorial_completed),completeTutorial:async()=>{if(!session)return false;const {data,error}=await supabase.rpc("complete_tutorial_once");if(!error){await loadProfile();if(profile?.tutorial_completed||Number(profile?.xp||0)>=100){try{localStorage.setItem("mythic-clash-tutorial-complete","true");localStorage.setItem("mythic-clash-level","2");}catch{}return true;}notify("Tutorial registrado, mas o perfil ainda não recebeu o nível 2. Atualize a migração de progressão no Supabase.");return false;}notify("Não foi possível registrar o tutorial. Tente novamente após verificar a atualização do banco.");return false;},recordGuardianMatch:async(matchId,outcome,playerPoints,opponentPoints)=>{if(!session)return;const {error}=await supabase.rpc("record_guardian_match",{p_match_id:matchId,p_outcome:outcome,p_player_points:playerPoints,p_opponent_points:opponentPoints});if(error)notify(displayError(error));else{await loadProfile();}},refreshProfile:loadProfile,whenProfileReady};
   window.addEventListener("mythic-availability-updated",()=>{if(storeItems.length)renderStore();});
   window.MythicOnline.loadPublicNews=loadPublicAnnouncement;window.MythicOnline.avatarAsset=resolveAvatarAsset;window.MythicOnline.playerName=()=>profile?.nickname||profile?.display_name||"Você";window.MythicOnline.playerIcon=()=>profile?.equipped_avatar||"default";window.MythicOnline.playerRating=()=>profile?.rating_points||1000;
 })();
@@ -4127,6 +4131,11 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
   sidebar.inert=compact.matches;
   if(compact.matches)sidebar.setAttribute('aria-hidden','true');else sidebar.removeAttribute('aria-hidden');
  }
+ // Edge swipe leaves normal page scrolling untouched until horizontal intent is clear.
+ let swipe=null;
+ document.addEventListener('touchstart',e=>{if(!compact.matches||e.touches.length!==1||document.querySelector('dialog[open]')||document.body.classList.contains('duel-fullscreen'))return;const t=e.touches[0];if(opened||t.clientX<=28)swipe={x:t.clientX,y:t.clientY,open:opened,horizontal:false};},{passive:true});
+ document.addEventListener('touchmove',e=>{if(!swipe||e.touches.length!==1)return;const t=e.touches[0],dx=t.clientX-swipe.x,dy=t.clientY-swipe.y;if(!swipe.horizontal&&Math.abs(dy)>18&&Math.abs(dy)>Math.abs(dx)){swipe=null;return;}if(Math.abs(dx)>20&&Math.abs(dx)>Math.abs(dy)*1.4){swipe.horizontal=true;if(e.cancelable)e.preventDefault();if(!swipe.open&&dx>65){setOpen(true);swipe=null;}else if(swipe.open&&dx< -65){setOpen(false);swipe=null;}}},{passive:false});
+ document.addEventListener('touchend',()=>{swipe=null;},{passive:true});document.addEventListener('touchcancel',()=>{swipe=null;},{passive:true});
  toggle.addEventListener('click',()=>setOpen(!opened));
  close.addEventListener('click',()=>setOpen(false));
  backdrop.addEventListener('click',()=>setOpen(false));
@@ -5095,7 +5104,8 @@ window.MythicAtlasDialogueData={
  const toggle=el('input');toggle.type='checkbox';toggle.disabled=!supported;label.append(copy,toggle);settings.append(label);
  const authorize=el('button','button button-secondary','Autorizar captura desta aba');authorize.type='button';
  settings.append(authorize,status,el('small','','O navegador pede autorização novamente quando a captura termina. Atualizar ou fechar a página interrompe o vídeo. O áudio depende do navegador e da opção escolhida na autorização.'));
- document.querySelector('#view-settings')?.append(settings);
+ const settingsForm=document.querySelector('#settings-form');settings.classList.add('concept-settings-group');settingsForm?.querySelector('.concept-settings-group')?.after(settings);
+ const libraryButton=el('button','button button-secondary','Abrir meus replays');libraryButton.type='button';libraryButton.onclick=()=>{window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'profile'}}));requestAnimationFrame(()=>[...document.querySelectorAll('.legend-tabs button')].find(b=>b.textContent==='Replays')?.click());};settings.append(libraryButton);
  const bar=el('div','video-replay-bar'),recordButton=el('button','button button-secondary','Autorizar gravação'),stop=el('button','button button-secondary','Parar e salvar vídeo'),indicator=el('span','','● Gravando replay');recordButton.type=stop.type='button';bar.append(indicator,recordButton,stop);bar.hidden=true;document.body.append(bar);
  const legacy=document.querySelector('.profile-replays');if(legacy)for(const child of legacy.children)child.hidden=true;
  const library=el('section','video-replay-library');library.append(el('h2','','Replays em vídeo'),el('p','','Gravações desta conta salvas neste navegador. Baixe os vídeos para guardar uma cópia.'));
@@ -5162,7 +5172,7 @@ window.MythicAtlasDialogueData={
 /* webapp-upgrade.js */
 (() => {
  'use strict';
- const top=document.querySelector('.topbar-right');if(top&&!document.querySelector('#topbar-replay')){const b=document.createElement('button');b.type='button';b.id='topbar-replay';b.className='icon-button';b.title='Meus replays';b.setAttribute('aria-label','Abrir meus replays');b.textContent='▷';b.onclick=()=>{window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'profile'}}));requestAnimationFrame(()=>{const tab=[...document.querySelectorAll('.legend-tabs button')].find(b=>b.textContent==='Replays');tab?.click();});};top.prepend(b);}
+
  const known=new WeakSet();let scheduled=false;
  function enhance(){scheduled=false;for(const select of document.querySelectorAll('select')){if(known.has(select)||select.closest('.visual-deck-picker')||select.multiple)continue;if(!/deck|baralho/i.test(select.id+' '+select.name+' '+select.className+' '+(select.closest('label')?.textContent||'')))continue;const decks=window.MythicPresentation?.read?.().decks||[];if(!select.options.length||![...select.options].every(o=>o.disabled||o.value===''||/^\d+$/.test(o.value)&&Number(o.value)<decks.length))continue;known.add(select);const parent=select.parentNode,after=select.nextSibling;if(parent)parent.insertBefore(window.MythicDeckPicker.create(select),after);}}
  // The picker moves the original select; preserve its form, id and change handlers.
@@ -5190,6 +5200,958 @@ window.MythicAtlasDialogueData={
  }
  window.addEventListener('gamepadconnected',()=>{if(!frame)frame=requestAnimationFrame(tick);});window.addEventListener('gamepaddisconnected',()=>{previous=[];});window.addEventListener('focus',()=>{if(!frame)frame=requestAnimationFrame(tick);});document.addEventListener('pointerdown',()=>{document.body.classList.remove('gamepad-active');});
  const settings=document.querySelector('#view-settings');if(settings){const help=document.createElement('section');help.className='panel';help.innerHTML='<h2>Controle de videogame</h2><p>Conecte um controle compatível e pressione um botão. Direcional ou analógico: navegar · A / ✕: selecionar · B / ○: voltar · LB / RB: controle anterior ou próximo.</p><small>Para escrever nomes, códigos ou mensagens, use o teclado do dispositivo. O reconhecimento do controle depende do navegador.</small>';settings.append(help);}if(navigator.getGamepads)frame=requestAnimationFrame(tick);
+})();
+
+;
+/* assets/vendor/qrcodegen.js */
+/*
+ * QR Code generator library (compiled from TypeScript)
+ *
+ * Copyright (c) Project Nayuki. (MIT License)
+ * https://www.nayuki.io/page/qr-code-generator-library
+ *
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in
+ * the Software without restriction, including without limitation the rights to
+ * use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
+ * the Software, and to permit persons to whom the Software is furnished to do so,
+ * subject to the following conditions:
+ * - The above copyright notice and this permission notice shall be included in
+ *   all copies or substantial portions of the Software.
+ * - The Software is provided "as is", without warranty of any kind, express or
+ *   implied, including but not limited to the warranties of merchantability,
+ *   fitness for a particular purpose and noninfringement. In no event shall the
+ *   authors or copyright holders be liable for any claim, damages or other
+ *   liability, whether in an action of contract, tort or otherwise, arising from,
+ *   out of or in connection with the Software or the use or other dealings in the
+ *   Software.
+ */
+"use strict";
+var qrcodegen;
+(function (qrcodegen) {
+    /*---- QR Code symbol class ----*/
+    /*
+     * A QR Code symbol, which is a type of two-dimension barcode.
+     * Invented by Denso Wave and described in the ISO/IEC 18004 standard.
+     * Instances of this class represent an immutable square grid of dark and light cells.
+     * The class provides static factory functions to create a QR Code from text or binary data.
+     * The class covers the QR Code Model 2 specification, supporting all versions (sizes)
+     * from 1 to 40, all 4 error correction levels, and 4 character encoding modes.
+     *
+     * Ways to create a QR Code object:
+     * - High level: Take the payload data and call QrCode.encodeText() or QrCode.encodeBinary().
+     * - Mid level: Custom-make the list of segments and call QrCode.encodeSegments().
+     * - Low level: Custom-make the array of data codeword bytes (including
+     *   segment headers and final padding, excluding error correction codewords),
+     *   supply the appropriate version number, and call the QrCode() constructor.
+     * (Note that all ways require supplying the desired error correction level.)
+     */
+    class QrCode {
+        /*-- Constructor (low level) and fields --*/
+        // Creates a new QR Code with the given version number,
+        // error correction level, data codeword bytes, and mask number.
+        // This is a low-level API that most users should not use directly.
+        // A mid-level API is the encodeSegments() function.
+        constructor(
+        // The version number of this QR Code, which is between 1 and 40 (inclusive).
+        // This determines the size of this barcode.
+        version, 
+        // The error correction level used in this QR Code.
+        errorCorrectionLevel, dataCodewords, msk) {
+            this.version = version;
+            this.errorCorrectionLevel = errorCorrectionLevel;
+            // The modules of this QR Code (false = light, true = dark).
+            // Immutable after constructor finishes. Accessed through getModule().
+            this.modules = [];
+            // Indicates function modules that are not subjected to masking. Discarded when constructor finishes.
+            this.isFunction = [];
+            // Check scalar arguments
+            if (version < QrCode.MIN_VERSION || version > QrCode.MAX_VERSION)
+                throw new RangeError("Version value out of range");
+            if (msk < -1 || msk > 7)
+                throw new RangeError("Mask value out of range");
+            this.size = version * 4 + 17;
+            // Initialize both grids to be size*size arrays of Boolean false
+            let row = [];
+            for (let i = 0; i < this.size; i++)
+                row.push(false);
+            for (let i = 0; i < this.size; i++) {
+                this.modules.push(row.slice()); // Initially all light
+                this.isFunction.push(row.slice());
+            }
+            // Compute ECC, draw modules
+            this.drawFunctionPatterns();
+            const allCodewords = this.addEccAndInterleave(dataCodewords);
+            this.drawCodewords(allCodewords);
+            // Do masking
+            if (msk == -1) { // Automatically choose best mask
+                let minPenalty = 1000000000;
+                for (let i = 0; i < 8; i++) {
+                    this.applyMask(i);
+                    this.drawFormatBits(i);
+                    const penalty = this.getPenaltyScore();
+                    if (penalty < minPenalty) {
+                        msk = i;
+                        minPenalty = penalty;
+                    }
+                    this.applyMask(i); // Undoes the mask due to XOR
+                }
+            }
+            assert(0 <= msk && msk <= 7);
+            this.mask = msk;
+            this.applyMask(msk); // Apply the final choice of mask
+            this.drawFormatBits(msk); // Overwrite old format bits
+            this.isFunction = [];
+        }
+        /*-- Static factory functions (high level) --*/
+        // Returns a QR Code representing the given Unicode text string at the given error correction level.
+        // As a conservative upper bound, this function is guaranteed to succeed for strings that have 738 or fewer
+        // Unicode code points (not UTF-16 code units) if the low error correction level is used. The smallest possible
+        // QR Code version is automatically chosen for the output. The ECC level of the result may be higher than the
+        // ecl argument if it can be done without increasing the version.
+        static encodeText(text, ecl) {
+            const segs = qrcodegen.QrSegment.makeSegments(text);
+            return QrCode.encodeSegments(segs, ecl);
+        }
+        // Returns a QR Code representing the given binary data at the given error correction level.
+        // This function always encodes using the binary segment mode, not any text mode. The maximum number of
+        // bytes allowed is 2953. The smallest possible QR Code version is automatically chosen for the output.
+        // The ECC level of the result may be higher than the ecl argument if it can be done without increasing the version.
+        static encodeBinary(data, ecl) {
+            const seg = qrcodegen.QrSegment.makeBytes(data);
+            return QrCode.encodeSegments([seg], ecl);
+        }
+        /*-- Static factory functions (mid level) --*/
+        // Returns a QR Code representing the given segments with the given encoding parameters.
+        // The smallest possible QR Code version within the given range is automatically
+        // chosen for the output. Iff boostEcl is true, then the ECC level of the result
+        // may be higher than the ecl argument if it can be done without increasing the
+        // version. The mask number is either between 0 to 7 (inclusive) to force that
+        // mask, or -1 to automatically choose an appropriate mask (which may be slow).
+        // This function allows the user to create a custom sequence of segments that switches
+        // between modes (such as alphanumeric and byte) to encode text in less space.
+        // This is a mid-level API; the high-level API is encodeText() and encodeBinary().
+        static encodeSegments(segs, ecl, minVersion = 1, maxVersion = 40, mask = -1, boostEcl = true) {
+            if (!(QrCode.MIN_VERSION <= minVersion && minVersion <= maxVersion && maxVersion <= QrCode.MAX_VERSION)
+                || mask < -1 || mask > 7)
+                throw new RangeError("Invalid value");
+            // Find the minimal version number to use
+            let version;
+            let dataUsedBits;
+            for (version = minVersion;; version++) {
+                const dataCapacityBits = QrCode.getNumDataCodewords(version, ecl) * 8; // Number of data bits available
+                const usedBits = QrSegment.getTotalBits(segs, version);
+                if (usedBits <= dataCapacityBits) {
+                    dataUsedBits = usedBits;
+                    break; // This version number is found to be suitable
+                }
+                if (version >= maxVersion) // All versions in the range could not fit the given data
+                    throw new RangeError("Data too long");
+            }
+            // Increase the error correction level while the data still fits in the current version number
+            for (const newEcl of [QrCode.Ecc.MEDIUM, QrCode.Ecc.QUARTILE, QrCode.Ecc.HIGH]) { // From low to high
+                if (boostEcl && dataUsedBits <= QrCode.getNumDataCodewords(version, newEcl) * 8)
+                    ecl = newEcl;
+            }
+            // Concatenate all segments to create the data bit string
+            let bb = [];
+            for (const seg of segs) {
+                appendBits(seg.mode.modeBits, 4, bb);
+                appendBits(seg.numChars, seg.mode.numCharCountBits(version), bb);
+                for (const b of seg.getData())
+                    bb.push(b);
+            }
+            assert(bb.length == dataUsedBits);
+            // Add terminator and pad up to a byte if applicable
+            const dataCapacityBits = QrCode.getNumDataCodewords(version, ecl) * 8;
+            assert(bb.length <= dataCapacityBits);
+            appendBits(0, Math.min(4, dataCapacityBits - bb.length), bb);
+            appendBits(0, (8 - bb.length % 8) % 8, bb);
+            assert(bb.length % 8 == 0);
+            // Pad with alternating bytes until data capacity is reached
+            for (let padByte = 0xEC; bb.length < dataCapacityBits; padByte ^= 0xEC ^ 0x11)
+                appendBits(padByte, 8, bb);
+            // Pack bits into bytes in big endian
+            let dataCodewords = [];
+            while (dataCodewords.length * 8 < bb.length)
+                dataCodewords.push(0);
+            bb.forEach((b, i) => dataCodewords[i >>> 3] |= b << (7 - (i & 7)));
+            // Create the QR Code object
+            return new QrCode(version, ecl, dataCodewords, mask);
+        }
+        /*-- Accessor methods --*/
+        // Returns the color of the module (pixel) at the given coordinates, which is false
+        // for light or true for dark. The top left corner has the coordinates (x=0, y=0).
+        // If the given coordinates are out of bounds, then false (light) is returned.
+        getModule(x, y) {
+            return 0 <= x && x < this.size && 0 <= y && y < this.size && this.modules[y][x];
+        }
+        /*-- Private helper methods for constructor: Drawing function modules --*/
+        // Reads this object's version field, and draws and marks all function modules.
+        drawFunctionPatterns() {
+            // Draw horizontal and vertical timing patterns
+            for (let i = 0; i < this.size; i++) {
+                this.setFunctionModule(6, i, i % 2 == 0);
+                this.setFunctionModule(i, 6, i % 2 == 0);
+            }
+            // Draw 3 finder patterns (all corners except bottom right; overwrites some timing modules)
+            this.drawFinderPattern(3, 3);
+            this.drawFinderPattern(this.size - 4, 3);
+            this.drawFinderPattern(3, this.size - 4);
+            // Draw numerous alignment patterns
+            const alignPatPos = this.getAlignmentPatternPositions();
+            const numAlign = alignPatPos.length;
+            for (let i = 0; i < numAlign; i++) {
+                for (let j = 0; j < numAlign; j++) {
+                    // Don't draw on the three finder corners
+                    if (!(i == 0 && j == 0 || i == 0 && j == numAlign - 1 || i == numAlign - 1 && j == 0))
+                        this.drawAlignmentPattern(alignPatPos[i], alignPatPos[j]);
+                }
+            }
+            // Draw configuration data
+            this.drawFormatBits(0); // Dummy mask value; overwritten later in the constructor
+            this.drawVersion();
+        }
+        // Draws two copies of the format bits (with its own error correction code)
+        // based on the given mask and this object's error correction level field.
+        drawFormatBits(mask) {
+            // Calculate error correction code and pack bits
+            const data = this.errorCorrectionLevel.formatBits << 3 | mask; // errCorrLvl is uint2, mask is uint3
+            let rem = data;
+            for (let i = 0; i < 10; i++)
+                rem = (rem << 1) ^ ((rem >>> 9) * 0x537);
+            const bits = (data << 10 | rem) ^ 0x5412; // uint15
+            assert(bits >>> 15 == 0);
+            // Draw first copy
+            for (let i = 0; i <= 5; i++)
+                this.setFunctionModule(8, i, getBit(bits, i));
+            this.setFunctionModule(8, 7, getBit(bits, 6));
+            this.setFunctionModule(8, 8, getBit(bits, 7));
+            this.setFunctionModule(7, 8, getBit(bits, 8));
+            for (let i = 9; i < 15; i++)
+                this.setFunctionModule(14 - i, 8, getBit(bits, i));
+            // Draw second copy
+            for (let i = 0; i < 8; i++)
+                this.setFunctionModule(this.size - 1 - i, 8, getBit(bits, i));
+            for (let i = 8; i < 15; i++)
+                this.setFunctionModule(8, this.size - 15 + i, getBit(bits, i));
+            this.setFunctionModule(8, this.size - 8, true); // Always dark
+        }
+        // Draws two copies of the version bits (with its own error correction code),
+        // based on this object's version field, iff 7 <= version <= 40.
+        drawVersion() {
+            if (this.version < 7)
+                return;
+            // Calculate error correction code and pack bits
+            let rem = this.version; // version is uint6, in the range [7, 40]
+            for (let i = 0; i < 12; i++)
+                rem = (rem << 1) ^ ((rem >>> 11) * 0x1F25);
+            const bits = this.version << 12 | rem; // uint18
+            assert(bits >>> 18 == 0);
+            // Draw two copies
+            for (let i = 0; i < 18; i++) {
+                const color = getBit(bits, i);
+                const a = this.size - 11 + i % 3;
+                const b = Math.floor(i / 3);
+                this.setFunctionModule(a, b, color);
+                this.setFunctionModule(b, a, color);
+            }
+        }
+        // Draws a 9*9 finder pattern including the border separator,
+        // with the center module at (x, y). Modules can be out of bounds.
+        drawFinderPattern(x, y) {
+            for (let dy = -4; dy <= 4; dy++) {
+                for (let dx = -4; dx <= 4; dx++) {
+                    const dist = Math.max(Math.abs(dx), Math.abs(dy)); // Chebyshev/infinity norm
+                    const xx = x + dx;
+                    const yy = y + dy;
+                    if (0 <= xx && xx < this.size && 0 <= yy && yy < this.size)
+                        this.setFunctionModule(xx, yy, dist != 2 && dist != 4);
+                }
+            }
+        }
+        // Draws a 5*5 alignment pattern, with the center module
+        // at (x, y). All modules must be in bounds.
+        drawAlignmentPattern(x, y) {
+            for (let dy = -2; dy <= 2; dy++) {
+                for (let dx = -2; dx <= 2; dx++)
+                    this.setFunctionModule(x + dx, y + dy, Math.max(Math.abs(dx), Math.abs(dy)) != 1);
+            }
+        }
+        // Sets the color of a module and marks it as a function module.
+        // Only used by the constructor. Coordinates must be in bounds.
+        setFunctionModule(x, y, isDark) {
+            this.modules[y][x] = isDark;
+            this.isFunction[y][x] = true;
+        }
+        /*-- Private helper methods for constructor: Codewords and masking --*/
+        // Returns a new byte string representing the given data with the appropriate error correction
+        // codewords appended to it, based on this object's version and error correction level.
+        addEccAndInterleave(data) {
+            const ver = this.version;
+            const ecl = this.errorCorrectionLevel;
+            if (data.length != QrCode.getNumDataCodewords(ver, ecl))
+                throw new RangeError("Invalid argument");
+            // Calculate parameter numbers
+            const numBlocks = QrCode.NUM_ERROR_CORRECTION_BLOCKS[ecl.ordinal][ver];
+            const blockEccLen = QrCode.ECC_CODEWORDS_PER_BLOCK[ecl.ordinal][ver];
+            const rawCodewords = Math.floor(QrCode.getNumRawDataModules(ver) / 8);
+            const numShortBlocks = numBlocks - rawCodewords % numBlocks;
+            const shortBlockLen = Math.floor(rawCodewords / numBlocks);
+            // Split data into blocks and append ECC to each block
+            let blocks = [];
+            const rsDiv = QrCode.reedSolomonComputeDivisor(blockEccLen);
+            for (let i = 0, k = 0; i < numBlocks; i++) {
+                let dat = data.slice(k, k + shortBlockLen - blockEccLen + (i < numShortBlocks ? 0 : 1));
+                k += dat.length;
+                const ecc = QrCode.reedSolomonComputeRemainder(dat, rsDiv);
+                if (i < numShortBlocks)
+                    dat.push(0);
+                blocks.push(dat.concat(ecc));
+            }
+            // Interleave (not concatenate) the bytes from every block into a single sequence
+            let result = [];
+            for (let i = 0; i < blocks[0].length; i++) {
+                blocks.forEach((block, j) => {
+                    // Skip the padding byte in short blocks
+                    if (i != shortBlockLen - blockEccLen || j >= numShortBlocks)
+                        result.push(block[i]);
+                });
+            }
+            assert(result.length == rawCodewords);
+            return result;
+        }
+        // Draws the given sequence of 8-bit codewords (data and error correction) onto the entire
+        // data area of this QR Code. Function modules need to be marked off before this is called.
+        drawCodewords(data) {
+            if (data.length != Math.floor(QrCode.getNumRawDataModules(this.version) / 8))
+                throw new RangeError("Invalid argument");
+            let i = 0; // Bit index into the data
+            // Do the funny zigzag scan
+            for (let right = this.size - 1; right >= 1; right -= 2) { // Index of right column in each column pair
+                if (right == 6)
+                    right = 5;
+                for (let vert = 0; vert < this.size; vert++) { // Vertical counter
+                    for (let j = 0; j < 2; j++) {
+                        const x = right - j; // Actual x coordinate
+                        const upward = ((right + 1) & 2) == 0;
+                        const y = upward ? this.size - 1 - vert : vert; // Actual y coordinate
+                        if (!this.isFunction[y][x] && i < data.length * 8) {
+                            this.modules[y][x] = getBit(data[i >>> 3], 7 - (i & 7));
+                            i++;
+                        }
+                        // If this QR Code has any remainder bits (0 to 7), they were assigned as
+                        // 0/false/light by the constructor and are left unchanged by this method
+                    }
+                }
+            }
+            assert(i == data.length * 8);
+        }
+        // XORs the codeword modules in this QR Code with the given mask pattern.
+        // The function modules must be marked and the codeword bits must be drawn
+        // before masking. Due to the arithmetic of XOR, calling applyMask() with
+        // the same mask value a second time will undo the mask. A final well-formed
+        // QR Code needs exactly one (not zero, two, etc.) mask applied.
+        applyMask(mask) {
+            if (mask < 0 || mask > 7)
+                throw new RangeError("Mask value out of range");
+            for (let y = 0; y < this.size; y++) {
+                for (let x = 0; x < this.size; x++) {
+                    let invert;
+                    switch (mask) {
+                        case 0:
+                            invert = (x + y) % 2 == 0;
+                            break;
+                        case 1:
+                            invert = y % 2 == 0;
+                            break;
+                        case 2:
+                            invert = x % 3 == 0;
+                            break;
+                        case 3:
+                            invert = (x + y) % 3 == 0;
+                            break;
+                        case 4:
+                            invert = (Math.floor(x / 3) + Math.floor(y / 2)) % 2 == 0;
+                            break;
+                        case 5:
+                            invert = x * y % 2 + x * y % 3 == 0;
+                            break;
+                        case 6:
+                            invert = (x * y % 2 + x * y % 3) % 2 == 0;
+                            break;
+                        case 7:
+                            invert = ((x + y) % 2 + x * y % 3) % 2 == 0;
+                            break;
+                        default: throw new Error("Unreachable");
+                    }
+                    if (!this.isFunction[y][x] && invert)
+                        this.modules[y][x] = !this.modules[y][x];
+                }
+            }
+        }
+        // Calculates and returns the penalty score based on state of this QR Code's current modules.
+        // This is used by the automatic mask choice algorithm to find the mask pattern that yields the lowest score.
+        getPenaltyScore() {
+            let result = 0;
+            // Adjacent modules in row having same color, and finder-like patterns
+            for (let y = 0; y < this.size; y++) {
+                let runColor = false;
+                let runX = 0;
+                let runHistory = [0, 0, 0, 0, 0, 0, 0];
+                for (let x = 0; x < this.size; x++) {
+                    if (this.modules[y][x] == runColor) {
+                        runX++;
+                        if (runX == 5)
+                            result += QrCode.PENALTY_N1;
+                        else if (runX > 5)
+                            result++;
+                    }
+                    else {
+                        this.finderPenaltyAddHistory(runX, runHistory);
+                        if (!runColor)
+                            result += this.finderPenaltyCountPatterns(runHistory) * QrCode.PENALTY_N3;
+                        runColor = this.modules[y][x];
+                        runX = 1;
+                    }
+                }
+                result += this.finderPenaltyTerminateAndCount(runColor, runX, runHistory) * QrCode.PENALTY_N3;
+            }
+            // Adjacent modules in column having same color, and finder-like patterns
+            for (let x = 0; x < this.size; x++) {
+                let runColor = false;
+                let runY = 0;
+                let runHistory = [0, 0, 0, 0, 0, 0, 0];
+                for (let y = 0; y < this.size; y++) {
+                    if (this.modules[y][x] == runColor) {
+                        runY++;
+                        if (runY == 5)
+                            result += QrCode.PENALTY_N1;
+                        else if (runY > 5)
+                            result++;
+                    }
+                    else {
+                        this.finderPenaltyAddHistory(runY, runHistory);
+                        if (!runColor)
+                            result += this.finderPenaltyCountPatterns(runHistory) * QrCode.PENALTY_N3;
+                        runColor = this.modules[y][x];
+                        runY = 1;
+                    }
+                }
+                result += this.finderPenaltyTerminateAndCount(runColor, runY, runHistory) * QrCode.PENALTY_N3;
+            }
+            // 2*2 blocks of modules having same color
+            for (let y = 0; y < this.size - 1; y++) {
+                for (let x = 0; x < this.size - 1; x++) {
+                    const color = this.modules[y][x];
+                    if (color == this.modules[y][x + 1] &&
+                        color == this.modules[y + 1][x] &&
+                        color == this.modules[y + 1][x + 1])
+                        result += QrCode.PENALTY_N2;
+                }
+            }
+            // Balance of dark and light modules
+            let dark = 0;
+            for (const row of this.modules)
+                dark = row.reduce((sum, color) => sum + (color ? 1 : 0), dark);
+            const total = this.size * this.size; // Note that size is odd, so dark/total != 1/2
+            // Compute the smallest integer k >= 0 such that (45-5k)% <= dark/total <= (55+5k)%
+            const k = Math.ceil(Math.abs(dark * 20 - total * 10) / total) - 1;
+            assert(0 <= k && k <= 9);
+            result += k * QrCode.PENALTY_N4;
+            assert(0 <= result && result <= 2568888); // Non-tight upper bound based on default values of PENALTY_N1, ..., N4
+            return result;
+        }
+        /*-- Private helper functions --*/
+        // Returns an ascending list of positions of alignment patterns for this version number.
+        // Each position is in the range [0,177), and are used on both the x and y axes.
+        // This could be implemented as lookup table of 40 variable-length lists of integers.
+        getAlignmentPatternPositions() {
+            if (this.version == 1)
+                return [];
+            else {
+                const numAlign = Math.floor(this.version / 7) + 2;
+                const step = (this.version == 32) ? 26 :
+                    Math.ceil((this.version * 4 + 4) / (numAlign * 2 - 2)) * 2;
+                let result = [6];
+                for (let pos = this.size - 7; result.length < numAlign; pos -= step)
+                    result.splice(1, 0, pos);
+                return result;
+            }
+        }
+        // Returns the number of data bits that can be stored in a QR Code of the given version number, after
+        // all function modules are excluded. This includes remainder bits, so it might not be a multiple of 8.
+        // The result is in the range [208, 29648]. This could be implemented as a 40-entry lookup table.
+        static getNumRawDataModules(ver) {
+            if (ver < QrCode.MIN_VERSION || ver > QrCode.MAX_VERSION)
+                throw new RangeError("Version number out of range");
+            let result = (16 * ver + 128) * ver + 64;
+            if (ver >= 2) {
+                const numAlign = Math.floor(ver / 7) + 2;
+                result -= (25 * numAlign - 10) * numAlign - 55;
+                if (ver >= 7)
+                    result -= 36;
+            }
+            assert(208 <= result && result <= 29648);
+            return result;
+        }
+        // Returns the number of 8-bit data (i.e. not error correction) codewords contained in any
+        // QR Code of the given version number and error correction level, with remainder bits discarded.
+        // This stateless pure function could be implemented as a (40*4)-cell lookup table.
+        static getNumDataCodewords(ver, ecl) {
+            return Math.floor(QrCode.getNumRawDataModules(ver) / 8) -
+                QrCode.ECC_CODEWORDS_PER_BLOCK[ecl.ordinal][ver] *
+                    QrCode.NUM_ERROR_CORRECTION_BLOCKS[ecl.ordinal][ver];
+        }
+        // Returns a Reed-Solomon ECC generator polynomial for the given degree. This could be
+        // implemented as a lookup table over all possible parameter values, instead of as an algorithm.
+        static reedSolomonComputeDivisor(degree) {
+            if (degree < 1 || degree > 255)
+                throw new RangeError("Degree out of range");
+            // Polynomial coefficients are stored from highest to lowest power, excluding the leading term which is always 1.
+            // For example the polynomial x^3 + 255x^2 + 8x + 93 is stored as the uint8 array [255, 8, 93].
+            let result = [];
+            for (let i = 0; i < degree - 1; i++)
+                result.push(0);
+            result.push(1); // Start off with the monomial x^0
+            // Compute the product polynomial (x - r^0) * (x - r^1) * (x - r^2) * ... * (x - r^{degree-1}),
+            // and drop the highest monomial term which is always 1x^degree.
+            // Note that r = 0x02, which is a generator element of this field GF(2^8/0x11D).
+            let root = 1;
+            for (let i = 0; i < degree; i++) {
+                // Multiply the current product by (x - r^i)
+                for (let j = 0; j < result.length; j++) {
+                    result[j] = QrCode.reedSolomonMultiply(result[j], root);
+                    if (j + 1 < result.length)
+                        result[j] ^= result[j + 1];
+                }
+                root = QrCode.reedSolomonMultiply(root, 0x02);
+            }
+            return result;
+        }
+        // Returns the Reed-Solomon error correction codeword for the given data and divisor polynomials.
+        static reedSolomonComputeRemainder(data, divisor) {
+            let result = divisor.map(_ => 0);
+            for (const b of data) { // Polynomial division
+                const factor = b ^ result.shift();
+                result.push(0);
+                divisor.forEach((coef, i) => result[i] ^= QrCode.reedSolomonMultiply(coef, factor));
+            }
+            return result;
+        }
+        // Returns the product of the two given field elements modulo GF(2^8/0x11D). The arguments and result
+        // are unsigned 8-bit integers. This could be implemented as a lookup table of 256*256 entries of uint8.
+        static reedSolomonMultiply(x, y) {
+            if (x >>> 8 != 0 || y >>> 8 != 0)
+                throw new RangeError("Byte out of range");
+            // Russian peasant multiplication
+            let z = 0;
+            for (let i = 7; i >= 0; i--) {
+                z = (z << 1) ^ ((z >>> 7) * 0x11D);
+                z ^= ((y >>> i) & 1) * x;
+            }
+            assert(z >>> 8 == 0);
+            return z;
+        }
+        // Can only be called immediately after a light run is added, and
+        // returns either 0, 1, or 2. A helper function for getPenaltyScore().
+        finderPenaltyCountPatterns(runHistory) {
+            const n = runHistory[1];
+            assert(n <= this.size * 3);
+            const core = n > 0 && runHistory[2] == n && runHistory[3] == n * 3 && runHistory[4] == n && runHistory[5] == n;
+            return (core && runHistory[0] >= n * 4 && runHistory[6] >= n ? 1 : 0)
+                + (core && runHistory[6] >= n * 4 && runHistory[0] >= n ? 1 : 0);
+        }
+        // Must be called at the end of a line (row or column) of modules. A helper function for getPenaltyScore().
+        finderPenaltyTerminateAndCount(currentRunColor, currentRunLength, runHistory) {
+            if (currentRunColor) { // Terminate dark run
+                this.finderPenaltyAddHistory(currentRunLength, runHistory);
+                currentRunLength = 0;
+            }
+            currentRunLength += this.size; // Add light border to final run
+            this.finderPenaltyAddHistory(currentRunLength, runHistory);
+            return this.finderPenaltyCountPatterns(runHistory);
+        }
+        // Pushes the given value to the front and drops the last value. A helper function for getPenaltyScore().
+        finderPenaltyAddHistory(currentRunLength, runHistory) {
+            if (runHistory[0] == 0)
+                currentRunLength += this.size; // Add light border to initial run
+            runHistory.pop();
+            runHistory.unshift(currentRunLength);
+        }
+    }
+    /*-- Constants and tables --*/
+    // The minimum version number supported in the QR Code Model 2 standard.
+    QrCode.MIN_VERSION = 1;
+    // The maximum version number supported in the QR Code Model 2 standard.
+    QrCode.MAX_VERSION = 40;
+    // For use in getPenaltyScore(), when evaluating which mask is best.
+    QrCode.PENALTY_N1 = 3;
+    QrCode.PENALTY_N2 = 3;
+    QrCode.PENALTY_N3 = 40;
+    QrCode.PENALTY_N4 = 10;
+    QrCode.ECC_CODEWORDS_PER_BLOCK = [
+        // Version: (note that index 0 is for padding, and is set to an illegal value)
+        //0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40    Error correction level
+        [-1, 7, 10, 15, 20, 26, 18, 20, 24, 30, 18, 20, 24, 26, 30, 22, 24, 28, 30, 28, 28, 28, 28, 30, 30, 26, 28, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
+        [-1, 10, 16, 26, 18, 24, 16, 18, 22, 22, 26, 30, 22, 22, 24, 24, 28, 28, 26, 26, 26, 26, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28, 28],
+        [-1, 13, 22, 18, 26, 18, 24, 18, 22, 20, 24, 28, 26, 24, 20, 30, 24, 28, 28, 26, 30, 28, 30, 30, 30, 30, 28, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30],
+        [-1, 17, 28, 22, 16, 22, 28, 26, 26, 24, 28, 24, 28, 22, 24, 24, 30, 28, 28, 26, 28, 30, 24, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30, 30], // High
+    ];
+    QrCode.NUM_ERROR_CORRECTION_BLOCKS = [
+        // Version: (note that index 0 is for padding, and is set to an illegal value)
+        //0, 1, 2, 3, 4, 5, 6, 7, 8, 9,10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40    Error correction level
+        [-1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 4, 4, 4, 4, 4, 6, 6, 6, 6, 7, 8, 8, 9, 9, 10, 12, 12, 12, 13, 14, 15, 16, 17, 18, 19, 19, 20, 21, 22, 24, 25],
+        [-1, 1, 1, 1, 2, 2, 4, 4, 4, 5, 5, 5, 8, 9, 9, 10, 10, 11, 13, 14, 16, 17, 17, 18, 20, 21, 23, 25, 26, 28, 29, 31, 33, 35, 37, 38, 40, 43, 45, 47, 49],
+        [-1, 1, 1, 2, 2, 4, 4, 6, 6, 8, 8, 8, 10, 12, 16, 12, 17, 16, 18, 21, 20, 23, 23, 25, 27, 29, 34, 34, 35, 38, 40, 43, 45, 48, 51, 53, 56, 59, 62, 65, 68],
+        [-1, 1, 1, 2, 4, 4, 4, 5, 6, 8, 8, 11, 11, 16, 16, 18, 16, 19, 21, 25, 25, 25, 34, 30, 32, 35, 37, 40, 42, 45, 48, 51, 54, 57, 60, 63, 66, 70, 74, 77, 81], // High
+    ];
+    qrcodegen.QrCode = QrCode;
+    // Appends the given number of low-order bits of the given value
+    // to the given buffer. Requires 0 <= len <= 31 and 0 <= val < 2^len.
+    function appendBits(val, len, bb) {
+        if (len < 0 || len > 31 || val >>> len != 0)
+            throw new RangeError("Value out of range");
+        for (let i = len - 1; i >= 0; i--) // Append bit by bit
+            bb.push((val >>> i) & 1);
+    }
+    // Returns true iff the i'th bit of x is set to 1.
+    function getBit(x, i) {
+        return ((x >>> i) & 1) != 0;
+    }
+    // Throws an exception if the given condition is false.
+    function assert(cond) {
+        if (!cond)
+            throw new Error("Assertion error");
+    }
+    /*---- Data segment class ----*/
+    /*
+     * A segment of character/binary/control data in a QR Code symbol.
+     * Instances of this class are immutable.
+     * The mid-level way to create a segment is to take the payload data
+     * and call a static factory function such as QrSegment.makeNumeric().
+     * The low-level way to create a segment is to custom-make the bit buffer
+     * and call the QrSegment() constructor with appropriate values.
+     * This segment class imposes no length restrictions, but QR Codes have restrictions.
+     * Even in the most favorable conditions, a QR Code can only hold 7089 characters of data.
+     * Any segment longer than this is meaningless for the purpose of generating QR Codes.
+     */
+    class QrSegment {
+        /*-- Constructor (low level) and fields --*/
+        // Creates a new QR Code segment with the given attributes and data.
+        // The character count (numChars) must agree with the mode and the bit buffer length,
+        // but the constraint isn't checked. The given bit buffer is cloned and stored.
+        constructor(
+        // The mode indicator of this segment.
+        mode, 
+        // The length of this segment's unencoded data. Measured in characters for
+        // numeric/alphanumeric/kanji mode, bytes for byte mode, and 0 for ECI mode.
+        // Always zero or positive. Not the same as the data's bit length.
+        numChars, 
+        // The data bits of this segment. Accessed through getData().
+        bitData) {
+            this.mode = mode;
+            this.numChars = numChars;
+            this.bitData = bitData;
+            if (numChars < 0)
+                throw new RangeError("Invalid argument");
+            this.bitData = bitData.slice(); // Make defensive copy
+        }
+        /*-- Static factory functions (mid level) --*/
+        // Returns a segment representing the given binary data encoded in
+        // byte mode. All input byte arrays are acceptable. Any text string
+        // can be converted to UTF-8 bytes and encoded as a byte mode segment.
+        static makeBytes(data) {
+            let bb = [];
+            for (const b of data)
+                appendBits(b, 8, bb);
+            return new QrSegment(QrSegment.Mode.BYTE, data.length, bb);
+        }
+        // Returns a segment representing the given string of decimal digits encoded in numeric mode.
+        static makeNumeric(digits) {
+            if (!QrSegment.isNumeric(digits))
+                throw new RangeError("String contains non-numeric characters");
+            let bb = [];
+            for (let i = 0; i < digits.length;) { // Consume up to 3 digits per iteration
+                const n = Math.min(digits.length - i, 3);
+                appendBits(parseInt(digits.substring(i, i + n), 10), n * 3 + 1, bb);
+                i += n;
+            }
+            return new QrSegment(QrSegment.Mode.NUMERIC, digits.length, bb);
+        }
+        // Returns a segment representing the given text string encoded in alphanumeric mode.
+        // The characters allowed are: 0 to 9, A to Z (uppercase only), space,
+        // dollar, percent, asterisk, plus, hyphen, period, slash, colon.
+        static makeAlphanumeric(text) {
+            if (!QrSegment.isAlphanumeric(text))
+                throw new RangeError("String contains unencodable characters in alphanumeric mode");
+            let bb = [];
+            let i;
+            for (i = 0; i + 2 <= text.length; i += 2) { // Process groups of 2
+                let temp = QrSegment.ALPHANUMERIC_CHARSET.indexOf(text.charAt(i)) * 45;
+                temp += QrSegment.ALPHANUMERIC_CHARSET.indexOf(text.charAt(i + 1));
+                appendBits(temp, 11, bb);
+            }
+            if (i < text.length) // 1 character remaining
+                appendBits(QrSegment.ALPHANUMERIC_CHARSET.indexOf(text.charAt(i)), 6, bb);
+            return new QrSegment(QrSegment.Mode.ALPHANUMERIC, text.length, bb);
+        }
+        // Returns a new mutable list of zero or more segments to represent the given Unicode text string.
+        // The result may use various segment modes and switch modes to optimize the length of the bit stream.
+        static makeSegments(text) {
+            // Select the most efficient segment encoding automatically
+            if (text == "")
+                return [];
+            else if (QrSegment.isNumeric(text))
+                return [QrSegment.makeNumeric(text)];
+            else if (QrSegment.isAlphanumeric(text))
+                return [QrSegment.makeAlphanumeric(text)];
+            else
+                return [QrSegment.makeBytes(QrSegment.toUtf8ByteArray(text))];
+        }
+        // Returns a segment representing an Extended Channel Interpretation
+        // (ECI) designator with the given assignment value.
+        static makeEci(assignVal) {
+            let bb = [];
+            if (assignVal < 0)
+                throw new RangeError("ECI assignment value out of range");
+            else if (assignVal < (1 << 7))
+                appendBits(assignVal, 8, bb);
+            else if (assignVal < (1 << 14)) {
+                appendBits(0b10, 2, bb);
+                appendBits(assignVal, 14, bb);
+            }
+            else if (assignVal < 1000000) {
+                appendBits(0b110, 3, bb);
+                appendBits(assignVal, 21, bb);
+            }
+            else
+                throw new RangeError("ECI assignment value out of range");
+            return new QrSegment(QrSegment.Mode.ECI, 0, bb);
+        }
+        // Tests whether the given string can be encoded as a segment in numeric mode.
+        // A string is encodable iff each character is in the range 0 to 9.
+        static isNumeric(text) {
+            return QrSegment.NUMERIC_REGEX.test(text);
+        }
+        // Tests whether the given string can be encoded as a segment in alphanumeric mode.
+        // A string is encodable iff each character is in the following set: 0 to 9, A to Z
+        // (uppercase only), space, dollar, percent, asterisk, plus, hyphen, period, slash, colon.
+        static isAlphanumeric(text) {
+            return QrSegment.ALPHANUMERIC_REGEX.test(text);
+        }
+        /*-- Methods --*/
+        // Returns a new copy of the data bits of this segment.
+        getData() {
+            return this.bitData.slice(); // Make defensive copy
+        }
+        // (Package-private) Calculates and returns the number of bits needed to encode the given segments at
+        // the given version. The result is infinity if a segment has too many characters to fit its length field.
+        static getTotalBits(segs, version) {
+            let result = 0;
+            for (const seg of segs) {
+                const ccbits = seg.mode.numCharCountBits(version);
+                if (seg.numChars >= (1 << ccbits))
+                    return Infinity; // The segment's length doesn't fit the field's bit width
+                result += 4 + ccbits + seg.bitData.length;
+            }
+            return result;
+        }
+        // Returns a new array of bytes representing the given string encoded in UTF-8.
+        static toUtf8ByteArray(str) {
+            str = encodeURI(str);
+            let result = [];
+            for (let i = 0; i < str.length; i++) {
+                if (str.charAt(i) != "%")
+                    result.push(str.charCodeAt(i));
+                else {
+                    result.push(parseInt(str.substring(i + 1, i + 3), 16));
+                    i += 2;
+                }
+            }
+            return result;
+        }
+    }
+    /*-- Constants --*/
+    // Describes precisely all strings that are encodable in numeric mode.
+    QrSegment.NUMERIC_REGEX = /^[0-9]*$/;
+    // Describes precisely all strings that are encodable in alphanumeric mode.
+    QrSegment.ALPHANUMERIC_REGEX = /^[A-Z0-9 $%*+.\/:-]*$/;
+    // The set of all legal characters in alphanumeric mode,
+    // where each character value maps to the index in the string.
+    QrSegment.ALPHANUMERIC_CHARSET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ $%*+-./:";
+    qrcodegen.QrSegment = QrSegment;
+})(qrcodegen || (qrcodegen = {}));
+/*---- Public helper enumeration ----*/
+(function (qrcodegen) {
+    var QrCode;
+    (function (QrCode) {
+        /*
+         * The error correction level in a QR Code symbol. Immutable.
+         */
+        class Ecc {
+            /*-- Constructor and fields --*/
+            constructor(
+            // In the range 0 to 3 (unsigned 2-bit integer).
+            ordinal, 
+            // (Package-private) In the range 0 to 3 (unsigned 2-bit integer).
+            formatBits) {
+                this.ordinal = ordinal;
+                this.formatBits = formatBits;
+            }
+        }
+        /*-- Constants --*/
+        Ecc.LOW = new Ecc(0, 1); // The QR Code can tolerate about  7% erroneous codewords
+        Ecc.MEDIUM = new Ecc(1, 0); // The QR Code can tolerate about 15% erroneous codewords
+        Ecc.QUARTILE = new Ecc(2, 3); // The QR Code can tolerate about 25% erroneous codewords
+        Ecc.HIGH = new Ecc(3, 2); // The QR Code can tolerate about 30% erroneous codewords
+        QrCode.Ecc = Ecc;
+    })(QrCode = qrcodegen.QrCode || (qrcodegen.QrCode = {}));
+})(qrcodegen || (qrcodegen = {}));
+/*---- Public helper enumeration ----*/
+(function (qrcodegen) {
+    var QrSegment;
+    (function (QrSegment) {
+        /*
+         * Describes how a segment's data bits are interpreted. Immutable.
+         */
+        class Mode {
+            /*-- Constructor and fields --*/
+            constructor(
+            // The mode indicator bits, which is a uint4 value (range 0 to 15).
+            modeBits, 
+            // Number of character count bits for three different version ranges.
+            numBitsCharCount) {
+                this.modeBits = modeBits;
+                this.numBitsCharCount = numBitsCharCount;
+            }
+            /*-- Method --*/
+            // (Package-private) Returns the bit width of the character count field for a segment in
+            // this mode in a QR Code at the given version number. The result is in the range [0, 16].
+            numCharCountBits(ver) {
+                return this.numBitsCharCount[Math.floor((ver + 7) / 17)];
+            }
+        }
+        /*-- Constants --*/
+        Mode.NUMERIC = new Mode(0x1, [10, 12, 14]);
+        Mode.ALPHANUMERIC = new Mode(0x2, [9, 11, 13]);
+        Mode.BYTE = new Mode(0x4, [8, 16, 16]);
+        Mode.KANJI = new Mode(0x8, [8, 10, 12]);
+        Mode.ECI = new Mode(0x7, [0, 0, 0]);
+        QrSegment.Mode = Mode;
+    })(QrSegment = qrcodegen.QrSegment || (qrcodegen.QrSegment = {}));
+})(qrcodegen || (qrcodegen = {}));
+
+;
+/* social-hub.js */
+(() => {
+ 'use strict';
+ const $=s=>document.querySelector(s),el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
+ const api=()=>window.MythicOnline,uid=()=>api()?.userId?.(),rpc=(n,a={})=>api().portalRequest(n,a),cards=()=>window.MythicPresentation.read().cards;
+ const btn=(text,fn,primary=false)=>{const n=el('button','button '+(primary?'button-primary':'button-secondary'),text);n.type='button';n.onclick=()=>run(n,fn);return n;};
+ async function run(control,fn){if(control.disabled)return;control.disabled=true;try{await fn();}catch(e){api()?.isConnected()&&window.MythicPresentation.notify(e.message||'Não foi possível concluir. Tente novamente.');}finally{if(control.isConnected)control.disabled=false;}}
+ const avatar=id=>api().publicAvatar(id)||'assets/app-icon.svg';
+ function img(src,alt=''){const n=el('img');n.src=window.MythicSecurity.assetUrl(src);n.alt=alt;n.loading='lazy';n.decoding='async';return n;}
+ function formField(form,name,label,options={}){const wrap=el('label','',label),input=el(options.tag||'input');input.name=name;Object.assign(input,options);if(options.tag)input.removeAttribute('tag');wrap.append(input);form.append(wrap);return input;}
+ function statusBox(){const n=el('p','social-status');n.setAttribute('role','status');return n;}
+ let guildEpoch=0,communityEpoch=0,communityPage=0,guildData=null;
+ const guildView=$('#view-guilds'),communityView=$('#view-community-decks');
+ const guildRoot=el('div','social-guild-root'),guildState=statusBox(),guildContent=el('div'),activityHome=el('div'),activityNodes=['guild-weekly-list','guild-war-list','guild-war-form'].map(id=>$('#'+id)).filter(Boolean);activityHome.hidden=true;activityNodes.forEach(n=>activityHome.append(n));guildRoot.append(guildState,guildContent,activityHome);
+ for(const n of [...guildView.children])if(!n.classList.contains('page-heading')){n.hidden=true;n.dataset.socialLegacy='true';}guildView.append(guildRoot);
+ const communityRoot=el('div','social-community-root'),communityStatus=statusBox(),communityList=el('div','social-deck-grid'),tools=el('form','social-toolbar'),search=el('input'),sort=el('select'),favorites=el('input'),favLabel=el('label','social-check'),pager=el('div','social-pager');
+ search.type='search';search.placeholder='Buscar por deck, estratégia ou jogador';search.setAttribute('aria-label','Buscar decks da comunidade');sort.append(new Option('Mais recentes','recent'),new Option('Mais votados','votes'));sort.setAttribute('aria-label','Ordenação');favorites.type='checkbox';favLabel.append(favorites,el('span','','Meus favoritos'));tools.append(search,sort,favLabel,btn('Buscar',()=>loadCommunity(true)));
+ const publish=$('#community-deck-form').closest('details');
+ for(const n of [...communityView.children])if(!n.classList.contains('page-heading')){n.hidden=true;n.dataset.socialLegacy='true';}
+ communityRoot.append(publish,tools,communityStatus,communityList,pager);communityView.append(communityRoot);
+ tools.onsubmit=e=>{e.preventDefault();loadCommunity(true);};sort.onchange=favorites.onchange=()=>loadCommunity(true);
+ function panel(title){const n=el('section','panel social-panel');if(title)n.append(el('h2','',title));return n;}
+ async function action(args){await rpc('guild_social_action',args);await loadGuild();api().refreshPresentation();}
+ function requestRow(q,member){const row=el('article','social-row'),copy=el('div');copy.append(el('b','',q.kind==='invitation'?'Convite de '+q.guild:q.player),el('small','',q.kind==='invitation'?'Você foi convidado para esta guilda.':'Candidatura para '+q.guild));row.append(copy);if(q.kind==='invitation'&&!member||q.kind==='application'&&member){row.append(btn('Aceitar',()=>action({p_action:'respond',p_request_id:q.id,p_accept:true}),true),btn('Recusar',()=>action({p_action:'respond',p_request_id:q.id,p_accept:false})));}else if(q.kind==='application'&&!member)row.append(btn('Cancelar candidatura',()=>action({p_action:'cancel',p_request_id:q.id})));return row;}
+ function drawGuild(d){
+  activityNodes.forEach(n=>activityHome.append(n));guildContent.replaceChildren();guildData=d;const g=d.guild;
+  if(g){
+   const head=panel(),crest=img('assets/concept-ui/mode-ranked.png');crest.className='social-guild-crest';head.append(crest,el('h2','',g.name),el('p','',g.description||'A sua aliança na Arena.'),el('p','',`${d.members.length} membros · Código de convite: ${g.invite_code}`));guildContent.append(head);
+   const columns=el('div','social-guild-columns'),roster=panel('Membros');for(const m of d.members){const row=el('article','social-row'),text=el('span');text.append(el('b','',m.name),el('small','',({leader:'Líder',officer:'Oficial',member:'Membro'})[m.role]));row.append(img(avatar(m.avatar)),text);roster.append(row);}columns.append(roster);
+   if(['leader','officer'].includes(g.role)){
+    const manage=panel('Convites e candidaturas'),f=el('form','social-form');formField(f,'code','Código de amigo do jogador',{required:true,maxLength:32,placeholder:'Código do perfil'});const send=btn('Convidar jogador',async()=>{if(!f.reportValidity())return;await action({p_action:'invite',p_code:f.elements.code.value.trim()});window.MythicPresentation.notify('Convite enviado ao jogador.');},true);f.append(send);f.onsubmit=e=>{e.preventDefault();send.click();};manage.append(f);const requests=d.requests.filter(q=>q.kind==='application');for(const q of requests)manage.append(requestRow(q,true));if(!requests.length)manage.append(el('p','','Nenhuma candidatura pendente.'));
+    if(g.role==='leader'){const label=el('label','social-check'),check=el('input');check.type='checkbox';check.checked=g.discoverable;check.onchange=()=>run(check,()=>action({p_action:'visibility',p_accept:check.checked}));label.append(check,el('span','','Mostrar a guilda na busca de jogadores'));manage.append(label);}columns.append(manage);
+   }
+   const progress=panel('Atividades da guilda');activityNodes.forEach(node=>progress.append(node));columns.append(progress);guildContent.append(columns);
+   const leave=btn(g.role==='leader'&&d.members.length===1?'Dissolver guilda':'Sair da guilda',()=>confirmAction('Sair desta guilda?',g.role==='leader'?'Uma guilda com outros membros precisa manter seu líder.':'Você poderá entrar em outra guilda depois.',()=>action({p_action:'leave'})));guildContent.append(leave);return;
+  }
+  const entry=el('div','social-guild-columns'),create=panel('Criar uma guilda'),cf=el('form','social-form');formField(cf,'name','Nome',{required:true,minLength:3,maxLength:32});formField(cf,'description','Descrição',{maxLength:240});const cb=btn('Criar guilda',async()=>{if(!cf.reportValidity())return;await rpc('create_guild',{p_name:cf.elements.name.value.trim(),p_description:cf.elements.description.value.trim()});await loadGuild();api().refreshPresentation();},true);cf.append(cb);cf.onsubmit=e=>{e.preventDefault();cb.click();};create.append(cf);
+  const join=panel('Entrar por código'),jf=el('form','social-form');formField(jf,'code','Código de convite',{required:true,maxLength:8,minLength:8});const jb=btn('Entrar na guilda',async()=>{if(!jf.reportValidity())return;await rpc('join_guild',{p_invite_code:jf.elements.code.value.trim()});await loadGuild();api().refreshPresentation();},true);jf.append(jb);jf.onsubmit=e=>{e.preventDefault();jb.click();};join.append(jf);entry.append(create,join);guildContent.append(entry);
+  if(d.requests.length){const invites=panel('Convites e candidaturas');d.requests.forEach(q=>invites.append(requestRow(q,false)));guildContent.append(invites);}
+  const browse=panel('Encontre sua guilda'),sf=el('form','social-toolbar'),query=el('input');query.type='search';query.value=guildSearch;query.placeholder='Buscar guildas';query.setAttribute('aria-label','Buscar guildas');sf.append(query,btn('Buscar',()=>{guildSearch=query.value.trim();return loadGuild();}));sf.onsubmit=e=>{e.preventDefault();guildSearch=query.value.trim();loadGuild();};browse.append(sf);
+  for(const row of d.directory){const item=el('article','social-row'),text=el('div');text.append(el('h3','',row.name),el('p','',row.description||'Uma aliança esperando por novas lendas.'),el('small','',row.members+' membros'));const apply=btn(row.applied?'Candidatura enviada':'Candidatar-se',()=>action({p_action:'apply',p_guild_id:row.id}),true);apply.disabled=row.applied;item.append(text,apply);browse.append(item);}if(!d.directory.length)browse.append(el('p','','Nenhuma guilda encontrada.'));guildContent.append(browse);
+ }
+ let guildSearch='';
+ async function loadGuild(){const epoch=++guildEpoch,owner=uid();guildState.textContent='Carregando sua guilda…';if(!owner){activityNodes.forEach(n=>activityHome.append(n));guildContent.replaceChildren();guildState.textContent='Entre na conta para acessar as guildas.';return;}try{const d=await rpc('guild_social_hub',{p_search:guildSearch});if(epoch!==guildEpoch||owner!==uid())return;drawGuild(d);guildState.textContent='';}catch(e){if(epoch===guildEpoch){guildState.textContent=e.message;activityNodes.forEach(n=>activityHome.append(n));guildContent.replaceChildren(btn('Tentar novamente',loadGuild));}}}
+ function deckCounts(row){try{const v=JSON.parse(row.deck_code);return Object.fromEntries(Object.entries(v.cards||v).filter(([id,n])=>Number.isInteger(n)&&n>0&&cards().some(c=>c.id===id)));}catch{return {};}}
+ function author(row){const b=btn(row.author.name,()=>showDeck(row,true));b.classList.add('social-author');b.prepend(img(avatar(row.author.avatar)));return b;}
+ function showDialog(title){const d=el('dialog','social-dialog'),close=btn('Fechar',()=>d.close()),heading=el('h2','',title);d.setAttribute('aria-label',title);d.append(close,heading);d.addEventListener('close',()=>d.remove());document.body.append(d);d.showModal();return d;}
+ function confirmAction(title,copy,fn){const d=showDialog(title);d.append(el('p','',copy),btn('Confirmar',async()=>{await fn();d.close();},true));}
+ function showDeck(row,profileOnly=false){const d=showDialog(profileOnly?'Perfil de '+row.author.name:row.title),identity=el('div','social-row');identity.append(img(avatar(row.author.avatar)),el('b','',row.author.name),el('small','',`Pontuação: ${row.author.rating||0}`));d.append(identity);if(profileOnly){d.append(el('p','',`${row.author.wins||0} vitórias · ${row.author.losses||0} derrotas`),el('small','','Perfil público do autor deste deck.'),btn('Ver decks deste jogador',()=>{search.value=row.author.name;d.close();return loadCommunity(true);}));return;}
+  d.append(el('p','',row.description||''));const list=el('div','social-card-grid');for(const [id,n] of Object.entries(deckCounts(row))){const c=cards().find(c=>c.id===id),b=btn(`${n}× ${c.name}`,()=>showCard(c));b.prepend(img(c.art,c.name));list.append(b);}d.append(list,btn('Copiar para meus baralhos',()=>copyDeck(row),true));
+ }
+ function showCard(c){const d=showDialog(c.name),art=img(c.art,c.name);art.className='social-card-full';d.append(art,el('p','',c.faction+(c.kind==='unit'?' · Poder '+c.power:'')),el('h3','',c.abilityTitle||'Habilidade'),el('p','',c.ability||''));}
+ function copyDeck(row){const d=showDialog('Copiar '+row.title),counts=deckCounts(row),state=window.MythicPresentation.read(),missing=Object.entries(counts).filter(([id,n])=>n>(cards().find(c=>c.id===id)?.owned||0));if(missing.length){d.append(el('p','','Faltam cartas na sua coleção para usar este deck completo. Favorite a estratégia para consultá-la enquanto reúne as cartas.'),el('p','',missing.map(([id,n])=>`${cards().find(c=>c.id===id).name}: faltam ${n-(cards().find(c=>c.id===id)?.owned||0)}`).join(' · ')),btn('Salvar nos favoritos',async()=>{await rpc('community_deck_react',{p_deck_id:row.id,p_kind:'favorite',p_enabled:true});d.close();loadCommunity();},true));return;}
+  const label=el('label','','Destino'),select=el('select');select.setAttribute('aria-label','Baralho de destino');state.decks.forEach((deck,i)=>select.append(new Option(`${i+1}. ${deck.name}`,String(i))));label.append(select);d.append(el('p','','Escolha o baralho que receberá a cópia. As cartas desse espaço serão substituídas.'),label,btn('Confirmar cópia',async()=>{const owner=uid();await window.MythicDeckEditor.commit({slot:Number(select.value),name:row.title,counts,userId:owner});d.close();window.MythicPresentation.notify('Deck copiado para seus baralhos.');},true));
+ }
+ async function loadCommunity(reset=false){if(reset)communityPage=0;const epoch=++communityEpoch,owner=uid();communityStatus.textContent='Carregando estratégias…';if(!owner){communityList.replaceChildren();communityStatus.textContent='Entre na conta para ver os decks da comunidade.';return;}try{const rows=await rpc('community_deck_hub',{p_search:search.value.trim(),p_favorites:favorites.checked,p_sort:sort.value,p_offset:communityPage*24});if(epoch!==communityEpoch||owner!==uid())return;communityList.replaceChildren();for(const row of rows){const item=el('article','panel social-deck'),counts=deckCounts(row),first=cards().find(c=>counts[c.id]>0),head=el('div','social-deck-heading');if(first)head.append(img(first.art,first.name));head.append(el('h2','',row.title));item.append(head,author(row),el('p','',row.description||'Estratégia compartilhada pela comunidade.'),el('small','',`${Object.values(counts).reduce((a,n)=>a+n,0)} cartas`));const actions=el('div','social-actions'),vote=btn(`${row.voted?'✓':'✦'} ${row.votes} votos`,async()=>{await rpc('community_deck_react',{p_deck_id:row.id,p_kind:'vote',p_enabled:!row.voted});await loadCommunity();}),favorite=btn(row.favorite?'★ Favoritado':'☆ Favoritar',async()=>{await rpc('community_deck_react',{p_deck_id:row.id,p_kind:'favorite',p_enabled:!row.favorite});await loadCommunity();});vote.setAttribute('aria-pressed',String(row.voted));favorite.setAttribute('aria-pressed',String(row.favorite));actions.append(btn('Ver deck',()=>showDeck(row)),btn('Copiar deck',()=>copyDeck(row),true),vote,favorite);item.append(actions);communityList.append(item);}communityStatus.textContent=rows.length?'':'Nenhum deck encontrado neste filtro.';pager.replaceChildren();const prev=btn('Anterior',()=>{communityPage--;return loadCommunity();}),next=btn('Próxima',()=>{communityPage++;return loadCommunity();});prev.disabled=!communityPage;next.disabled=rows.length<24;pager.append(prev,el('span','',`Página ${communityPage+1}`),next);}catch(e){if(epoch===communityEpoch){communityStatus.textContent=e.message;communityList.replaceChildren(btn('Tentar novamente',()=>loadCommunity()));}}}
+ window.addEventListener('mythic-view-changed',e=>{if(e.detail?.view==='guilds')loadGuild();if(e.detail?.view==='community-decks')loadCommunity();});
+ window.addEventListener('mythic-community-published',()=>loadCommunity(true));
+ window.addEventListener('mythic-account-signed-out',()=>{guildEpoch++;communityEpoch++;guildData=null;activityNodes.forEach(n=>activityHome.append(n));guildContent.replaceChildren();communityList.replaceChildren();pager.replaceChildren();document.querySelectorAll('.social-dialog').forEach(d=>d.close());});
+ if(!guildView.hidden)loadGuild();if(!communityView.hidden)loadCommunity();
+})();
+
+;
+/* device-login.js */
+(() => {
+ 'use strict';
+ const api=()=>window.MythicOnline,el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
+ const button=(text,fn)=>{const b=el('button','button button-secondary',text);b.type='button';b.onclick=async()=>{if(b.disabled)return;b.disabled=true;try{await fn();}catch(e){status.textContent=e.message;}finally{b.disabled=false;}};return b;};
+ let modal=null,status=null,request=null,timer=null,polling=false,approving=false,pendingApproval=null,epoch=0;
+ function clear(){epoch++;clearTimeout(timer);timer=null;if(request){const r=request;request=null;api().deviceLogin({action:'cancel',id:r.id,requestSecret:r.requestSecret}).catch(()=>{});}modal?.close();modal?.remove();modal=null;}
+ function dialog(title){clear();modal=el('dialog','device-login-dialog');modal.setAttribute('aria-label',title);status=el('p','device-login-status');status.setAttribute('role','status');modal.append(button('Fechar',clear),el('h2','',title));modal.addEventListener('cancel',e=>{e.preventDefault();clear();});document.body.append(modal);modal.showModal();return modal;}
+ function drawCode(url){const qr=qrcodegen.QrCode.encodeText(url,qrcodegen.QrCode.Ecc.MEDIUM),canvas=el('canvas','device-qr');const scale=6,border=4;canvas.width=canvas.height=(qr.size+border*2)*scale;canvas.setAttribute('role','img');canvas.setAttribute('aria-label','QR Code temporário para autorizar a entrada neste aparelho');const ctx=canvas.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,canvas.width,canvas.height);ctx.fillStyle='#140d22';for(let y=0;y<qr.size;y++)for(let x=0;x<qr.size;x++)if(qr.getModule(x,y))ctx.fillRect((x+border)*scale,(y+border)*scale,scale,scale);return canvas;}
+ async function generate(){
+  if(api().isConnected())return;const d=dialog('Entrar com outro aparelho');d.append(el('p','','No aparelho que já está conectado à sua conta, leia este QR Code pela câmera e confirme a entrada.'),status);status.textContent='Preparando QR Code…';const token=epoch;
+  try{const device=/iPhone|iPad/.test(navigator.userAgent)?'iPhone / iPad':/Android/.test(navigator.userAgent)?'Celular Android':'Computador',r=await api().deviceLogin({action:'create',device});if(token!==epoch){api().deviceLogin({action:'cancel',id:r.id,requestSecret:r.requestSecret}).catch(()=>{});return;}request=r;const url=new URL(location.pathname,location.origin);url.hash='conectar='+r.id+'.'+r.approvalSecret;d.insertBefore(drawCode(url.href),status);const code=el('b','device-pair-code',r.pairingCode);d.insertBefore(code,status);d.insertBefore(el('p','','Confira este mesmo número nos dois aparelhos antes de confirmar.'),status);status.textContent='Aguardando confirmação · válido por 3 minutos';poll(token);}
+  catch(e){if(token===epoch){status.textContent=e.message;d.append(button('Gerar outro código',generate));}}
+ }
+ async function poll(token){if(token!==epoch||!request||polling)return;if(Date.now()>=Date.parse(request.expiresAt)){status.textContent='O QR Code expirou. Gere outro para continuar.';modal.append(button('Gerar outro código',generate));return;}if(document.hidden){timer=setTimeout(()=>poll(token),2000);return;}polling=true;const r=request;
+  try{const result=await api().deviceLogin({action:'poll',id:r.id,requestSecret:r.requestSecret});if(token!==epoch)return;if(result.status==='ready'){status.textContent='Entrada confirmada. Carregando sua conta…';await api().finishDeviceLogin(result.tokenHash);await api().deviceLogin({action:'complete',id:r.id,requestSecret:r.requestSecret}).catch(()=>{});request=null;clear();return;}status.textContent=result.status==='pending'?'Aguardando confirmação no outro aparelho…':'Confirmado. Preparando sua conta…';}
+  catch(e){if(token===epoch)status.textContent=e.message;}
+  finally{polling=false;if(token===epoch&&request)timer=setTimeout(()=>poll(token),2000);}
+ }
+ function captureLink(){const value=new URLSearchParams(location.hash.slice(1)).get('conectar');if(!value)return;const m=value.match(/^([\da-f-]{36})\.([A-Za-z0-9_-]{43})$/i);history.replaceState(null,'',location.pathname+location.search);if(!m)return;pendingApproval={id:m[1],approvalSecret:m[2]};try{sessionStorage.setItem('mythic-device-approval',JSON.stringify(pendingApproval));}catch{};approve();}
+ async function approve(){if(!pendingApproval||approving)return;approving=true;const input={...pendingApproval},d=dialog('Conectar outro aparelho');d.append(status);const token=epoch;status.textContent='Conferindo solicitação…';
+  try{const data=await api().deviceLogin({action:'preview',...input});if(token!==epoch)return;d.insertBefore(el('p','',`Solicitação de entrada: ${data.device}`),status);d.insertBefore(el('b','device-pair-code',data.pairingCode),status);d.insertBefore(el('p','','Confirme somente se você acabou de solicitar a entrada e o número é igual ao que aparece no outro aparelho.'),status);
+   if(!api().isConnected()){status.textContent='Entre na sua conta neste aparelho para confirmar.';d.append(button('Entrar na minha conta',()=>{clear();api().showLogin();}));}
+   else{status.textContent='A conta conectada neste aparelho será usada no outro.';d.append(button('Confirmar entrada',async()=>{await api().deviceLogin({action:'approve',...input});pendingApproval=null;try{sessionStorage.removeItem('mythic-device-approval');}catch{};d.replaceChildren(el('h2','','Entrada autorizada'),el('p','','O outro aparelho já pode acessar a sua conta.'),button('Concluir',clear));}),button('Não fui eu',async()=>{await api().deviceLogin({action:'reject',...input});pendingApproval=null;try{sessionStorage.removeItem('mythic-device-approval');}catch{};clear();}));}
+  }catch(e){if(token===epoch){status.textContent=e.message;pendingApproval=null;try{sessionStorage.removeItem('mythic-device-approval');}catch{}}}finally{approving=false;}
+ }
+ const entry=button('Entrar por QR Code',generate);entry.id='sign-in-qr';document.querySelector('#sign-in-form')?.append(entry);
+ const settings=el('section','panel concept-settings-group device-login-settings');settings.append(el('h2','','Conectar aparelhos'),el('p','','Para entrar em um PC ou celular, abra a tela de login nele e escolha “Entrar por QR Code”. Leia o código com a câmera do aparelho conectado e confirme o número. Nenhuma senha é compartilhada.'));document.querySelector('#settings-form .concept-settings-footer')?.before(settings);
+ try{pendingApproval=JSON.parse(sessionStorage.getItem('mythic-device-approval')||'null');}catch{}captureLink();if(pendingApproval&&!modal)approve();window.addEventListener('hashchange',captureLink);
+ window.addEventListener('mythic-profile-loaded',()=>{if(pendingApproval&&api().isConnected()&&!approving)approve();});window.addEventListener('mythic-account-signed-out',clear);window.addEventListener('pagehide',()=>{clearTimeout(timer);});
+})();
+
+;
+/* solo-tiebreak.js */
+(() => {
+ 'use strict';
+ const api=()=>window.MythicOnline,el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
+ const rpc=(n,a={})=>api().portalRequest(n,a);let enabled=false,generation=0,pending=false,lastFocusAt=0;
+ const grid=document.querySelector('.arena-mode-grid'),card=el('button','arena-mode-card solo-tiebreak-card');card.type='button';card.hidden=true;const icon=el('img');icon.src='assets/eclipse/eclipse.png';icon.alt='';card.append(icon,el('b','','Desempate'),el('small','','Enfrente o Guardião do Destino em uma puxada de cartas.'),el('i','','MODO SOLO · MENOR PODER VENCE'));grid?.append(card);
+ async function refresh(){const owner=api().userId(),token=++generation;if(!owner){card.hidden=true;enabled=false;return;}try{const data=await rpc('get_solo_modes');if(token!==generation||owner!==api().userId())return;enabled=!!data.tiebreak;card.hidden=!enabled;setting.checked=enabled;grid?.classList.toggle('has-solo-tiebreak',enabled);}catch{if(token===generation){card.hidden=true;enabled=false;}}admin.hidden=!api().isAdmin();}
+ function open(){if(!enabled||!api().requireLogin())return;const d=el('dialog','solo-tiebreak-dialog'),select=el('select'),label=el('label','','Seu baralho'),status=el('p');d.setAttribute('aria-label','Modo Desempate');status.setAttribute('role','status');window.MythicPresentation.read().decks.forEach((deck,i)=>select.append(new Option(deck.name,String(i))));label.append(select);const close=el('button','button button-secondary','Voltar'),start=el('button','button button-primary','Iniciar puxada');close.type=start.type='button';close.onclick=()=>d.close();start.onclick=async()=>{if(pending||!enabled)return;pending=true;start.disabled=true;const owner=api().userId(),id=crypto.randomUUID();status.textContent='Confirmando a puxada…';try{const data=await rpc('start_solo_tiebreak',{p_slot:Number(select.value)+1,p_request_id:id});if(owner!==api().userId())return;d.close();window.MythicTieBreak.openSolo(data);}catch(e){status.textContent=e.message;start.disabled=false;}finally{pending=false;}};d.append(el('h2','','Desempate'),el('p','','Uma partida independente contra o Guardião do Destino. O menor poder base vence. Se as cinco puxadas empatarem, o Eclipse decide. Habilidades não alteram a puxada.'),label,status,start,close);d.addEventListener('close',()=>d.remove());document.body.append(d);d.showModal();}
+ card.onclick=open;
+ const admin=el('section','panel solo-mode-admin'),setting=el('input'),label=el('label','setting-row'),save=el('button','button button-primary','Salvar disponibilidade'),feedback=el('p');setting.type='checkbox';label.append(el('b','','Liberar o modo Desempate solo'),setting);save.type='button';feedback.setAttribute('role','status');admin.hidden=true;admin.append(el('h2','','Modos temporários'),label,save,feedback);document.querySelector('#view-admin .admin-grid')?.append(admin);
+ setInterval(()=>{if(!document.hidden&&!document.querySelector('#view-arena')?.hidden&&api().isConnected())refresh();},30000);
+ save.onclick=async()=>{if(!api().isAdmin()||save.disabled)return;save.disabled=true;try{await rpc('admin_set_solo_tiebreak',{p_enabled:setting.checked});feedback.textContent='Disponibilidade atualizada.';await refresh();}catch(e){feedback.textContent=e.message;}finally{save.disabled=false;}};
+ window.addEventListener('mythic-profile-loaded',refresh);window.addEventListener('mythic-view-changed',e=>{if(e.detail?.view==='arena')refresh();});window.addEventListener('focus',()=>{if(Date.now()-lastFocusAt>15000){lastFocusAt=Date.now();refresh();}});window.addEventListener('mythic-account-signed-out',()=>{generation++;enabled=false;card.hidden=true;admin.hidden=true;document.querySelectorAll('.solo-tiebreak-dialog').forEach(d=>d.close());});refresh();
 })();
 
 ;

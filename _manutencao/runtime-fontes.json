@@ -60,5 +60,9 @@
   "video-replay.js",
   "atlas-lessons.js",
   "webapp-upgrade.js",
-  "gamepad-controls.js"
+  "gamepad-controls.js",
+  "assets/vendor/qrcodegen.js",
+  "social-hub.js",
+  "device-login.js",
+  "solo-tiebreak.js"
 ]

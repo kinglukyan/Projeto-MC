@@ -86,6 +86,11 @@
   sidebar.inert=compact.matches;
   if(compact.matches)sidebar.setAttribute('aria-hidden','true');else sidebar.removeAttribute('aria-hidden');
  }
+ // Edge swipe leaves normal page scrolling untouched until horizontal intent is clear.
+ let swipe=null;
+ document.addEventListener('touchstart',e=>{if(!compact.matches||e.touches.length!==1||document.querySelector('dialog[open]')||document.body.classList.contains('duel-fullscreen'))return;const t=e.touches[0];if(opened||t.clientX<=28)swipe={x:t.clientX,y:t.clientY,open:opened,horizontal:false};},{passive:true});
+ document.addEventListener('touchmove',e=>{if(!swipe||e.touches.length!==1)return;const t=e.touches[0],dx=t.clientX-swipe.x,dy=t.clientY-swipe.y;if(!swipe.horizontal&&Math.abs(dy)>18&&Math.abs(dy)>Math.abs(dx)){swipe=null;return;}if(Math.abs(dx)>20&&Math.abs(dx)>Math.abs(dy)*1.4){swipe.horizontal=true;if(e.cancelable)e.preventDefault();if(!swipe.open&&dx>65){setOpen(true);swipe=null;}else if(swipe.open&&dx< -65){setOpen(false);swipe=null;}}},{passive:false});
+ document.addEventListener('touchend',()=>{swipe=null;},{passive:true});document.addEventListener('touchcancel',()=>{swipe=null;},{passive:true});
  toggle.addEventListener('click',()=>setOpen(!opened));
  close.addEventListener('click',()=>setOpen(false));
  backdrop.addEventListener('click',()=>setOpen(false));

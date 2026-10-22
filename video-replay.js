@@ -14,7 +14,8 @@
  const toggle=el('input');toggle.type='checkbox';toggle.disabled=!supported;label.append(copy,toggle);settings.append(label);
  const authorize=el('button','button button-secondary','Autorizar captura desta aba');authorize.type='button';
  settings.append(authorize,status,el('small','','O navegador pede autorização novamente quando a captura termina. Atualizar ou fechar a página interrompe o vídeo. O áudio depende do navegador e da opção escolhida na autorização.'));
- document.querySelector('#view-settings')?.append(settings);
+ const settingsForm=document.querySelector('#settings-form');settings.classList.add('concept-settings-group');settingsForm?.querySelector('.concept-settings-group')?.after(settings);
+ const libraryButton=el('button','button button-secondary','Abrir meus replays');libraryButton.type='button';libraryButton.onclick=()=>{window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'profile'}}));requestAnimationFrame(()=>[...document.querySelectorAll('.legend-tabs button')].find(b=>b.textContent==='Replays')?.click());};settings.append(libraryButton);
  const bar=el('div','video-replay-bar'),recordButton=el('button','button button-secondary','Autorizar gravação'),stop=el('button','button button-secondary','Parar e salvar vídeo'),indicator=el('span','','● Gravando replay');recordButton.type=stop.type='button';bar.append(indicator,recordButton,stop);bar.hidden=true;document.body.append(bar);
  const legacy=document.querySelector('.profile-replays');if(legacy)for(const child of legacy.children)child.hidden=true;
  const library=el('section','video-replay-library');library.append(el('h2','','Replays em vídeo'),el('p','','Gravações desta conta salvas neste navegador. Baixe os vídeos para guardar uma cópia.'));

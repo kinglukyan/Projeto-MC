@@ -1,0 +1,7978 @@
+[
+  {
+    "path": "_manutencao/guardian-atlas/01-atlas-das-lendas.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 457754
+  },
+  {
+    "path": "_manutencao/guardian-atlas/02-regiao-grega-navegacao-lateral.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 400130
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/afrodite.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1640414
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/anubis.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1481122
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/apolo.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1671618
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/aquiles.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1612612
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/ares.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1084478
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/artemis.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1608434
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/asteca-chalchiuhtlicue.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2092364
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/asteca-coatlicue.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1820492
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/asteca-huitzilopochtli.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1905466
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/asteca-mictecacihuatl.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1760082
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/asteca-mictlantecuhtli.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1831102
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/asteca-quetzalcoatl.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1854572
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/asteca-tezcatlipoca.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1802014
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/asteca-tlaloc.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1959266
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/asteca-xipe-totec.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1958344
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/asteca-xochiquetzal.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1923774
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/athena.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1599544
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/beowulf.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1649264
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/brasil-boitata.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1813558
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/brasil-boto.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1523732
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/brasil-caipora.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1803650
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/brasil-cuca.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1616552
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/brasil-curupira.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1731966
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/brasil-iara.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1716308
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/brasil-lampiao.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1606600
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/brasil-mapinguari.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1738542
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/brasil-mula-sem-cabeca.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1591584
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/brasil-saci.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1853492
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/butter.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1164098
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/celtas-brigid.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1851118
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/celtas-cu-chulainn.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1885890
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/celtas-dagda.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1865122
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/celtas-dama-do-lago.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1743580
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/celtas-lancelot.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1805504
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/celtas-lugh.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1857940
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/celtas-merlin.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1828342
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/celtas-morgana.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1754540
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/celtas-morrigan.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1697034
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/chinesa-ao-guang.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1958440
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/chinesa-change.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1784936
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/chinesa-erlang-shen.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1971330
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/chinesa-fuxi.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1730184
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/chinesa-guanyin.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1647876
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/chinesa-hou-yi.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1806170
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/chinesa-imperador-jade.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1785408
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/chinesa-nezha.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1767068
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/chinesa-nuwa.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1883116
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/chinesa-sun-wukong.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1806796
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/clone-macaco.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1765070
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/dionisio.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1762874
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/guardiao-nordico.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1829838
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/hades.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1157932
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/hefesto.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1673166
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/heimdall.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1595008
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/hercules.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1060680
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/hermes.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1592098
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/hindu-durga.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1903472
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/hindu-ganesha.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1876362
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/hindu-hanuman.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1758398
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/hindu-indra.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1844788
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/hindu-kali.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1978086
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/hindu-krishna.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1904238
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/hindu-lakshmi.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1855178
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/hindu-saraswati.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1845144
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/hindu-shiva.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1834456
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/hindu-vishnu.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1977760
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/homem.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1576436
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/horus.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1620360
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/isis.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1668796
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/japonesa-amaterasu.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1899786
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/japonesa-fujin.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1727700
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/japonesa-hachiman.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1849546
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/japonesa-inari.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1863082
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/japonesa-izanagi.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1879938
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/japonesa-izanami.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1802648
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/japonesa-raijin.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1832046
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/japonesa-ryujin.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1953864
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/japonesa-susanoo.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1900000
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/japonesa-tsukuyomi.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1759368
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/lobo-alfa.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1255580
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/lobo-beta.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1202210
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/lobo-omega.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1171954
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/loki.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1518250
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/lukyan-rei-de-todos.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1302950
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/lukyan.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1292146
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/medusa.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1139242
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-enki.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1975286
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-enlil.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1724502
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-ereshkigal.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1681702
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-ishtar.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1809978
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-marduk.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2000090
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-nanna-sin.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1879692
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-nergal.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1795676
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-ninurta.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1931284
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-tiamat.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1973568
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/mesopotamica-utu-shamash.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1802900
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/minotauro.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1150344
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/mulher.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1617030
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/odin.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1656174
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/osiris.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1640844
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/poseidon.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1283204
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/ra.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1702482
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/ragnar.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1618486
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/rei-arthur.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1824818
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/seth.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1566844
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/sobek.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1734466
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/soldado-esparta.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 729752
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/thor.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1626682
+  },
+  {
+    "path": "_manutencao/remake/cartas-resolucao-recebida/zeus.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1166212
+  },
+  {
+    "path": "assets/atlas-dialogue/aquiles-bravo.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2174599
+  },
+  {
+    "path": "assets/atlas-dialogue/aquiles-falando.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2554805
+  },
+  {
+    "path": "assets/atlas-dialogue/aquiles-normal.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2565726
+  },
+  {
+    "path": "assets/atlas-dialogue/aquiles-rindo.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2199031
+  },
+  {
+    "path": "assets/avatars-chibi/asteca-chalchiuhtlicue.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 145552
+  },
+  {
+    "path": "assets/avatars-chibi/asteca-coatlicue.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 157612
+  },
+  {
+    "path": "assets/avatars-chibi/asteca-huitzilopochtli.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 140244
+  },
+  {
+    "path": "assets/avatars-chibi/asteca-mictecacihuatl.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 152212
+  },
+  {
+    "path": "assets/avatars-chibi/asteca-mictlantecuhtli.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 167210
+  },
+  {
+    "path": "assets/avatars-chibi/asteca-quetzalcoatl.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 153724
+  },
+  {
+    "path": "assets/avatars-chibi/asteca-tezcatlipoca.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 157826
+  },
+  {
+    "path": "assets/avatars-chibi/asteca-tlaloc.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 157984
+  },
+  {
+    "path": "assets/avatars-chibi/asteca-xipe-totec.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 159804
+  },
+  {
+    "path": "assets/avatars-chibi/asteca-xochiquetzal.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 154348
+  },
+  {
+    "path": "assets/avatars-chibi/brasil-boitata.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 143924
+  },
+  {
+    "path": "assets/avatars-chibi/brasil-boto.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 103672
+  },
+  {
+    "path": "assets/avatars-chibi/brasil-caipora.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 157312
+  },
+  {
+    "path": "assets/avatars-chibi/brasil-cuca.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 137948
+  },
+  {
+    "path": "assets/avatars-chibi/brasil-curupira.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 147292
+  },
+  {
+    "path": "assets/avatars-chibi/brasil-iara.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 128434
+  },
+  {
+    "path": "assets/avatars-chibi/brasil-lampiao.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 130276
+  },
+  {
+    "path": "assets/avatars-chibi/brasil-mapinguari.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 159124
+  },
+  {
+    "path": "assets/avatars-chibi/brasil-mula-sem-cabeca.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 126374
+  },
+  {
+    "path": "assets/avatars-chibi/brasil-saci.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 81928
+  },
+  {
+    "path": "assets/avatars-chibi/celtas-brigid.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 130628
+  },
+  {
+    "path": "assets/avatars-chibi/celtas-cu-chulainn.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 140266
+  },
+  {
+    "path": "assets/avatars-chibi/celtas-dagda.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 146682
+  },
+  {
+    "path": "assets/avatars-chibi/celtas-dama-do-lago.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 146354
+  },
+  {
+    "path": "assets/avatars-chibi/celtas-lancelot.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 129900
+  },
+  {
+    "path": "assets/avatars-chibi/celtas-lugh.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 139364
+  },
+  {
+    "path": "assets/avatars-chibi/celtas-merlin.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 161628
+  },
+  {
+    "path": "assets/avatars-chibi/celtas-morgana.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 135006
+  },
+  {
+    "path": "assets/avatars-chibi/celtas-morrigan.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 141994
+  },
+  {
+    "path": "assets/avatars-chibi/chinesa-ao-guang.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 155654
+  },
+  {
+    "path": "assets/avatars-chibi/chinesa-change.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 147276
+  },
+  {
+    "path": "assets/avatars-chibi/chinesa-erlang-shen.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 132342
+  },
+  {
+    "path": "assets/avatars-chibi/chinesa-fuxi.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 138144
+  },
+  {
+    "path": "assets/avatars-chibi/chinesa-guanyin.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 126984
+  },
+  {
+    "path": "assets/avatars-chibi/chinesa-hou-yi.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 128140
+  },
+  {
+    "path": "assets/avatars-chibi/chinesa-imperador-jade.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 156526
+  },
+  {
+    "path": "assets/avatars-chibi/chinesa-nezha.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 142480
+  },
+  {
+    "path": "assets/avatars-chibi/chinesa-nuwa.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 142702
+  },
+  {
+    "path": "assets/avatars-chibi/chinesa-sun-wukong.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 152546
+  },
+  {
+    "path": "assets/avatars-chibi/demeter.webp",
+    "size": [
+      768,
+      768
+    ],
+    "bytes": 317362
+  },
+  {
+    "path": "assets/avatars-chibi/hera.webp",
+    "size": [
+      768,
+      768
+    ],
+    "bytes": 333748
+  },
+  {
+    "path": "assets/avatars-chibi/hestia.webp",
+    "size": [
+      768,
+      768
+    ],
+    "bytes": 264698
+  },
+  {
+    "path": "assets/avatars-chibi/hindu-durga.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 139746
+  },
+  {
+    "path": "assets/avatars-chibi/hindu-ganesha.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 124214
+  },
+  {
+    "path": "assets/avatars-chibi/hindu-hanuman.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 137912
+  },
+  {
+    "path": "assets/avatars-chibi/hindu-indra.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 137564
+  },
+  {
+    "path": "assets/avatars-chibi/hindu-kali.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 142632
+  },
+  {
+    "path": "assets/avatars-chibi/hindu-krishna.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 139188
+  },
+  {
+    "path": "assets/avatars-chibi/hindu-lakshmi.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 148598
+  },
+  {
+    "path": "assets/avatars-chibi/hindu-saraswati.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 130478
+  },
+  {
+    "path": "assets/avatars-chibi/hindu-shiva.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 138578
+  },
+  {
+    "path": "assets/avatars-chibi/hindu-vishnu.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 133620
+  },
+  {
+    "path": "assets/avatars-chibi/japonesa-amaterasu.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 163808
+  },
+  {
+    "path": "assets/avatars-chibi/japonesa-fujin.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 142058
+  },
+  {
+    "path": "assets/avatars-chibi/japonesa-hachiman.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 160314
+  },
+  {
+    "path": "assets/avatars-chibi/japonesa-inari.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 151016
+  },
+  {
+    "path": "assets/avatars-chibi/japonesa-izanagi.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 139272
+  },
+  {
+    "path": "assets/avatars-chibi/japonesa-izanami.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 160734
+  },
+  {
+    "path": "assets/avatars-chibi/japonesa-raijin.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 159282
+  },
+  {
+    "path": "assets/avatars-chibi/japonesa-ryujin.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 165700
+  },
+  {
+    "path": "assets/avatars-chibi/japonesa-susanoo.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 166436
+  },
+  {
+    "path": "assets/avatars-chibi/japonesa-tsukuyomi.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 165532
+  },
+  {
+    "path": "assets/avatars-chibi/lukyan-rei-de-todos.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 92648
+  },
+  {
+    "path": "assets/avatars-chibi/mesopotamica-enki.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 133178
+  },
+  {
+    "path": "assets/avatars-chibi/mesopotamica-enlil.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 143520
+  },
+  {
+    "path": "assets/avatars-chibi/mesopotamica-ereshkigal.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 143482
+  },
+  {
+    "path": "assets/avatars-chibi/mesopotamica-ishtar.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 145922
+  },
+  {
+    "path": "assets/avatars-chibi/mesopotamica-marduk.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 135864
+  },
+  {
+    "path": "assets/avatars-chibi/mesopotamica-nanna-sin.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 138982
+  },
+  {
+    "path": "assets/avatars-chibi/mesopotamica-nergal.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 136876
+  },
+  {
+    "path": "assets/avatars-chibi/mesopotamica-ninurta.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 126702
+  },
+  {
+    "path": "assets/avatars-chibi/mesopotamica-tiamat.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 155952
+  },
+  {
+    "path": "assets/avatars-chibi/mesopotamica-utu-shamash.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 144068
+  },
+  {
+    "path": "assets/avatars-chibi/perseu.webp",
+    "size": [
+      768,
+      768
+    ],
+    "bytes": 298628
+  },
+  {
+    "path": "assets/avatars-chibi/portraits-01.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 2472764
+  },
+  {
+    "path": "assets/avatars-chibi/portraits-02.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 2408285
+  },
+  {
+    "path": "assets/avatars-chibi/portraits-03.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 2495679
+  },
+  {
+    "path": "assets/avatars-chibi/portraits-04.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 2664836
+  },
+  {
+    "path": "assets/avatars-chibi/portraits-05.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 2637443
+  },
+  {
+    "path": "assets/avatars-chibi/portraits-06.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 2503530
+  },
+  {
+    "path": "assets/avatars-chibi/portraits-07.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 2480502
+  },
+  {
+    "path": "assets/avatars-chibi/portraits-08.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 1614654
+  },
+  {
+    "path": "assets/avatars-chibi/rei-arthur.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 147140
+  },
+  {
+    "path": "assets/backgrounds/citadela-paisagem.png",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 3040106
+  },
+  {
+    "path": "assets/battlefield-forest.png",
+    "size": [
+      768,
+      1376
+    ],
+    "bytes": 1814300
+  },
+  {
+    "path": "assets/battlefield-mud.png",
+    "size": [
+      1408,
+      768
+    ],
+    "bytes": 1572502
+  },
+  {
+    "path": "assets/card-badges/alyans.png",
+    "size": [
+      600,
+      600
+    ],
+    "bytes": 111234
+  },
+  {
+    "path": "assets/card-badges/alyns-v3.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 861363
+  },
+  {
+    "path": "assets/card-badges/celtas-v3.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 1339830
+  },
+  {
+    "path": "assets/card-badges/egipcios-v3.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 1524427
+  },
+  {
+    "path": "assets/card-badges/gregos-v3.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 1881772
+  },
+  {
+    "path": "assets/card-badges/monster.png",
+    "size": [
+      600,
+      600
+    ],
+    "bytes": 53628
+  },
+  {
+    "path": "assets/card-badges/monstros-v3.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 1568069
+  },
+  {
+    "path": "assets/card-badges/nordicos-v3.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 1303993
+  },
+  {
+    "path": "assets/card-badges/norse-viking.png",
+    "size": [
+      721,
+      568
+    ],
+    "bytes": 24586
+  },
+  {
+    "path": "assets/card-badges/remake-aztec.png",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 293485
+  },
+  {
+    "path": "assets/card-badges/remake-brasil.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 1610633
+  },
+  {
+    "path": "assets/card-badges/remake-chinese.png",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 383993
+  },
+  {
+    "path": "assets/card-badges/remake-hindu.png",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 308946
+  },
+  {
+    "path": "assets/card-badges/remake-japanese.png",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 216508
+  },
+  {
+    "path": "assets/card-badges/remake-mesopotamian.png",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 293431
+  },
+  {
+    "path": "assets/cards-20261017/afrodite.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2444986
+  },
+  {
+    "path": "assets/cards-20261017/anubis.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2224010
+  },
+  {
+    "path": "assets/cards-20261017/apolo.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2429369
+  },
+  {
+    "path": "assets/cards-20261017/aquiles.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2418751
+  },
+  {
+    "path": "assets/cards-20261017/ares.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1648687
+  },
+  {
+    "path": "assets/cards-20261017/artemis.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2448702
+  },
+  {
+    "path": "assets/cards-20261017/athena.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2415015
+  },
+  {
+    "path": "assets/cards-20261017/beowulf.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2488990
+  },
+  {
+    "path": "assets/cards-20261017/butter.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1770005
+  },
+  {
+    "path": "assets/cards-20261017/dionisio.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2516066
+  },
+  {
+    "path": "assets/cards-20261017/guardiao-nordico.png",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 2181928
+  },
+  {
+    "path": "assets/cards-20261017/hefesto.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2403419
+  },
+  {
+    "path": "assets/cards-20261017/heimdall.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2377826
+  },
+  {
+    "path": "assets/cards-20261017/hercules.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1550922
+  },
+  {
+    "path": "assets/cards-20261017/hermes.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2346494
+  },
+  {
+    "path": "assets/cards-20261017/homem.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2391795
+  },
+  {
+    "path": "assets/cards-20261017/horus.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2412747
+  },
+  {
+    "path": "assets/cards-20261017/isis.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2445026
+  },
+  {
+    "path": "assets/cards-20261017/lobo-alfa.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1951222
+  },
+  {
+    "path": "assets/cards-20261017/lobo-beta.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1841959
+  },
+  {
+    "path": "assets/cards-20261017/lobo-omega.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1756845
+  },
+  {
+    "path": "assets/cards-20261017/loki.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2275839
+  },
+  {
+    "path": "assets/cards-20261017/lukyan-rei-de-todos.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2036309
+  },
+  {
+    "path": "assets/cards-20261017/lukyan.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1993131
+  },
+  {
+    "path": "assets/cards-20261017/minotauro.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1754417
+  },
+  {
+    "path": "assets/cards-20261017/mulher.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2402069
+  },
+  {
+    "path": "assets/cards-20261017/odin.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2465336
+  },
+  {
+    "path": "assets/cards-20261017/osiris.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2408018
+  },
+  {
+    "path": "assets/cards-20261017/ra.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2491186
+  },
+  {
+    "path": "assets/cards-20261017/ragnar.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2471921
+  },
+  {
+    "path": "assets/cards-20261017/seth.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2348429
+  },
+  {
+    "path": "assets/cards-20261017/sobek.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2582493
+  },
+  {
+    "path": "assets/cards-20261017/thor.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2451577
+  },
+  {
+    "path": "assets/cards-remake/afrodite.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 339174
+  },
+  {
+    "path": "assets/cards-remake/anubis.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 293978
+  },
+  {
+    "path": "assets/cards-remake/apolo.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 334688
+  },
+  {
+    "path": "assets/cards-remake/aquiles.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 329996
+  },
+  {
+    "path": "assets/cards-remake/ares.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 197198
+  },
+  {
+    "path": "assets/cards-remake/artemis.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 321032
+  },
+  {
+    "path": "assets/cards-remake/asteca-chalchiuhtlicue.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 428718
+  },
+  {
+    "path": "assets/cards-remake/asteca-coatlicue.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 393398
+  },
+  {
+    "path": "assets/cards-remake/asteca-huitzilopochtli.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 381888
+  },
+  {
+    "path": "assets/cards-remake/asteca-mictecacihuatl.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 369104
+  },
+  {
+    "path": "assets/cards-remake/asteca-mictlantecuhtli.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 394656
+  },
+  {
+    "path": "assets/cards-remake/asteca-quetzalcoatl.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 381320
+  },
+  {
+    "path": "assets/cards-remake/asteca-tezcatlipoca.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 387606
+  },
+  {
+    "path": "assets/cards-remake/asteca-tlaloc.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 414832
+  },
+  {
+    "path": "assets/cards-remake/asteca-xipe-totec.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 412708
+  },
+  {
+    "path": "assets/cards-remake/asteca-xochiquetzal.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 390800
+  },
+  {
+    "path": "assets/cards-remake/athena.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 334106
+  },
+  {
+    "path": "assets/cards-remake/beowulf.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 334028
+  },
+  {
+    "path": "assets/cards-remake/brasil-boitata.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 381978
+  },
+  {
+    "path": "assets/cards-remake/brasil-boto.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 331400
+  },
+  {
+    "path": "assets/cards-remake/brasil-caipora.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 406536
+  },
+  {
+    "path": "assets/cards-remake/brasil-cuca.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 355912
+  },
+  {
+    "path": "assets/cards-remake/brasil-curupira.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 386836
+  },
+  {
+    "path": "assets/cards-remake/brasil-iara.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 367876
+  },
+  {
+    "path": "assets/cards-remake/brasil-lampiao.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 364858
+  },
+  {
+    "path": "assets/cards-remake/brasil-mapinguari.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 375046
+  },
+  {
+    "path": "assets/cards-remake/brasil-mula-sem-cabeca.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 340646
+  },
+  {
+    "path": "assets/cards-remake/brasil-saci.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 402176
+  },
+  {
+    "path": "assets/cards-remake/butter.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 190220
+  },
+  {
+    "path": "assets/cards-remake/celtas-brigid.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 378052
+  },
+  {
+    "path": "assets/cards-remake/celtas-cu-chulainn.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 394144
+  },
+  {
+    "path": "assets/cards-remake/celtas-dagda.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 408716
+  },
+  {
+    "path": "assets/cards-remake/celtas-dama-do-lago.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 357904
+  },
+  {
+    "path": "assets/cards-remake/celtas-lancelot.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 389028
+  },
+  {
+    "path": "assets/cards-remake/celtas-lugh.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 375788
+  },
+  {
+    "path": "assets/cards-remake/celtas-merlin.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 386846
+  },
+  {
+    "path": "assets/cards-remake/celtas-morgana.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 368416
+  },
+  {
+    "path": "assets/cards-remake/celtas-morrigan.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 347582
+  },
+  {
+    "path": "assets/cards-remake/chinesa-ao-guang.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 408344
+  },
+  {
+    "path": "assets/cards-remake/chinesa-change.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 369670
+  },
+  {
+    "path": "assets/cards-remake/chinesa-erlang-shen.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 406238
+  },
+  {
+    "path": "assets/cards-remake/chinesa-fuxi.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 355788
+  },
+  {
+    "path": "assets/cards-remake/chinesa-guanyin.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 333352
+  },
+  {
+    "path": "assets/cards-remake/chinesa-hou-yi.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 377244
+  },
+  {
+    "path": "assets/cards-remake/chinesa-imperador-jade.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 375152
+  },
+  {
+    "path": "assets/cards-remake/chinesa-nezha.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 364142
+  },
+  {
+    "path": "assets/cards-remake/chinesa-nuwa.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 388848
+  },
+  {
+    "path": "assets/cards-remake/chinesa-sun-wukong.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 374526
+  },
+  {
+    "path": "assets/cards-remake/clone-macaco.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 361688
+  },
+  {
+    "path": "assets/cards-remake/demeter.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1546956
+  },
+  {
+    "path": "assets/cards-remake/dionisio.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 356084
+  },
+  {
+    "path": "assets/cards-remake/guardiao-nordico.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 361252
+  },
+  {
+    "path": "assets/cards-remake/hades.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 222696
+  },
+  {
+    "path": "assets/cards-remake/hefesto.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 343918
+  },
+  {
+    "path": "assets/cards-remake/heimdall.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 328044
+  },
+  {
+    "path": "assets/cards-remake/hera.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1421792
+  },
+  {
+    "path": "assets/cards-remake/hercules.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 177872
+  },
+  {
+    "path": "assets/cards-remake/hermes.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 316064
+  },
+  {
+    "path": "assets/cards-remake/hestia.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1187566
+  },
+  {
+    "path": "assets/cards-remake/hindu-durga.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 391894
+  },
+  {
+    "path": "assets/cards-remake/hindu-ganesha.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 385364
+  },
+  {
+    "path": "assets/cards-remake/hindu-hanuman.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 364906
+  },
+  {
+    "path": "assets/cards-remake/hindu-indra.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 371840
+  },
+  {
+    "path": "assets/cards-remake/hindu-kali.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 399396
+  },
+  {
+    "path": "assets/cards-remake/hindu-krishna-v2.png",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 2355893
+  },
+  {
+    "path": "assets/cards-remake/hindu-krishna.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 384856
+  },
+  {
+    "path": "assets/cards-remake/hindu-lakshmi.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 384384
+  },
+  {
+    "path": "assets/cards-remake/hindu-saraswati.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 383324
+  },
+  {
+    "path": "assets/cards-remake/hindu-shiva.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 386724
+  },
+  {
+    "path": "assets/cards-remake/hindu-vishnu.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 402488
+  },
+  {
+    "path": "assets/cards-remake/homem.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 347390
+  },
+  {
+    "path": "assets/cards-remake/horus.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 312190
+  },
+  {
+    "path": "assets/cards-remake/isis.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 331700
+  },
+  {
+    "path": "assets/cards-remake/japonesa-amaterasu.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 384722
+  },
+  {
+    "path": "assets/cards-remake/japonesa-fujin.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 355634
+  },
+  {
+    "path": "assets/cards-remake/japonesa-hachiman.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 382570
+  },
+  {
+    "path": "assets/cards-remake/japonesa-inari.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 381604
+  },
+  {
+    "path": "assets/cards-remake/japonesa-izanagi.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 403442
+  },
+  {
+    "path": "assets/cards-remake/japonesa-izanami.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 374560
+  },
+  {
+    "path": "assets/cards-remake/japonesa-raijin.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 380494
+  },
+  {
+    "path": "assets/cards-remake/japonesa-ryujin.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 414976
+  },
+  {
+    "path": "assets/cards-remake/japonesa-susanoo.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 397812
+  },
+  {
+    "path": "assets/cards-remake/japonesa-tsukuyomi.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 380722
+  },
+  {
+    "path": "assets/cards-remake/lobo-alfa.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 240002
+  },
+  {
+    "path": "assets/cards-remake/lobo-beta.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 233786
+  },
+  {
+    "path": "assets/cards-remake/lobo-omega.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 220500
+  },
+  {
+    "path": "assets/cards-remake/loki.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 311804
+  },
+  {
+    "path": "assets/cards-remake/lukyan-rei-de-todos.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 225004
+  },
+  {
+    "path": "assets/cards-remake/lukyan.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 235144
+  },
+  {
+    "path": "assets/cards-remake/medusa.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 209016
+  },
+  {
+    "path": "assets/cards-remake/mesopotamica-enki.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 402674
+  },
+  {
+    "path": "assets/cards-remake/mesopotamica-enlil.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 369476
+  },
+  {
+    "path": "assets/cards-remake/mesopotamica-ereshkigal.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 353622
+  },
+  {
+    "path": "assets/cards-remake/mesopotamica-ishtar.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 375776
+  },
+  {
+    "path": "assets/cards-remake/mesopotamica-marduk.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 404596
+  },
+  {
+    "path": "assets/cards-remake/mesopotamica-nanna-sin.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 399084
+  },
+  {
+    "path": "assets/cards-remake/mesopotamica-nergal.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 391114
+  },
+  {
+    "path": "assets/cards-remake/mesopotamica-ninurta.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 397852
+  },
+  {
+    "path": "assets/cards-remake/mesopotamica-tiamat.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 431196
+  },
+  {
+    "path": "assets/cards-remake/mesopotamica-utu-shamash.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 378970
+  },
+  {
+    "path": "assets/cards-remake/minotauro.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 217396
+  },
+  {
+    "path": "assets/cards-remake/mulher.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 343856
+  },
+  {
+    "path": "assets/cards-remake/odin.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 334438
+  },
+  {
+    "path": "assets/cards-remake/osiris.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 317146
+  },
+  {
+    "path": "assets/cards-remake/perseu.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1155398
+  },
+  {
+    "path": "assets/cards-remake/poseidon.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 263760
+  },
+  {
+    "path": "assets/cards-remake/ra.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 335450
+  },
+  {
+    "path": "assets/cards-remake/ragnar.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 333720
+  },
+  {
+    "path": "assets/cards-remake/rei-arthur.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 382058
+  },
+  {
+    "path": "assets/cards-remake/seth.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 314938
+  },
+  {
+    "path": "assets/cards-remake/sobek.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 347826
+  },
+  {
+    "path": "assets/cards-remake/soldado-esparta.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 184032
+  },
+  {
+    "path": "assets/cards-remake/thor.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 332126
+  },
+  {
+    "path": "assets/cards-remake/zeus.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 225886
+  },
+  {
+    "path": "assets/cards-v3/afrodite.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 301270
+  },
+  {
+    "path": "assets/cards-v3/anubis.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 253706
+  },
+  {
+    "path": "assets/cards-v3/apolo.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 298290
+  },
+  {
+    "path": "assets/cards-v3/aquiles.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 291314
+  },
+  {
+    "path": "assets/cards-v3/ares.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 166330
+  },
+  {
+    "path": "assets/cards-v3/artemis.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 285534
+  },
+  {
+    "path": "assets/cards-v3/athena.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 296556
+  },
+  {
+    "path": "assets/cards-v3/beowulf.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 293492
+  },
+  {
+    "path": "assets/cards-v3/butter.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 160966
+  },
+  {
+    "path": "assets/cards-v3/dionisio.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 318966
+  },
+  {
+    "path": "assets/cards-v3/guardiao-nordico.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 319102
+  },
+  {
+    "path": "assets/cards-v3/hades.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 192816
+  },
+  {
+    "path": "assets/cards-v3/hefesto.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 306350
+  },
+  {
+    "path": "assets/cards-v3/heimdall.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 289430
+  },
+  {
+    "path": "assets/cards-v3/hercules.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 152500
+  },
+  {
+    "path": "assets/cards-v3/hermes.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 280074
+  },
+  {
+    "path": "assets/cards-v3/homem.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 303778
+  },
+  {
+    "path": "assets/cards-v3/horus.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 275868
+  },
+  {
+    "path": "assets/cards-v3/isis.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 290966
+  },
+  {
+    "path": "assets/cards-v3/lobo-alfa.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 203658
+  },
+  {
+    "path": "assets/cards-v3/lobo-beta.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 197870
+  },
+  {
+    "path": "assets/cards-v3/lobo-omega.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 190362
+  },
+  {
+    "path": "assets/cards-v3/loki.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 270196
+  },
+  {
+    "path": "assets/cards-v3/lukyan-rei-de-todos.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 192388
+  },
+  {
+    "path": "assets/cards-v3/lukyan.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 202156
+  },
+  {
+    "path": "assets/cards-v3/medusa.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 180472
+  },
+  {
+    "path": "assets/cards-v3/minotauro.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 186078
+  },
+  {
+    "path": "assets/cards-v3/mulher.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 302974
+  },
+  {
+    "path": "assets/cards-v3/odin.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 299946
+  },
+  {
+    "path": "assets/cards-v3/osiris.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 280634
+  },
+  {
+    "path": "assets/cards-v3/poseidon.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 230500
+  },
+  {
+    "path": "assets/cards-v3/ra.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 298308
+  },
+  {
+    "path": "assets/cards-v3/ragnar.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 295068
+  },
+  {
+    "path": "assets/cards-v3/seth.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 275612
+  },
+  {
+    "path": "assets/cards-v3/sobek.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 310742
+  },
+  {
+    "path": "assets/cards-v3/soldado-esparta.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 160110
+  },
+  {
+    "path": "assets/cards-v3/thor.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 293486
+  },
+  {
+    "path": "assets/cards-v3/zeus.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 195638
+  },
+  {
+    "path": "assets/concept-ui/citadela-luminosa.png",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 2944419
+  },
+  {
+    "path": "assets/concept-ui/mode-custom.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2400902
+  },
+  {
+    "path": "assets/concept-ui/mode-guardian.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2857697
+  },
+  {
+    "path": "assets/concept-ui/mode-normal.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2760997
+  },
+  {
+    "path": "assets/concept-ui/mode-ranked.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2512585
+  },
+  {
+    "path": "assets/concept-ui/mode-x1.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2061674
+  },
+  {
+    "path": "assets/defeat-emblem.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 1482081
+  },
+  {
+    "path": "assets/eclipse/eclipse-lunar.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 3833123
+  },
+  {
+    "path": "assets/eclipse/eclipse-solar.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 3559679
+  },
+  {
+    "path": "assets/eclipse/eclipse.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 3941644
+  },
+  {
+    "path": "assets/entry/afrodite-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 61998
+  },
+  {
+    "path": "assets/entry/alto-egito-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 388374
+  },
+  {
+    "path": "assets/entry/alto-egito-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 76346
+  },
+  {
+    "path": "assets/entry/anubis-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 52592
+  },
+  {
+    "path": "assets/entry/apolo-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 59614
+  },
+  {
+    "path": "assets/entry/aquiles-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 57528
+  },
+  {
+    "path": "assets/entry/ares-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 37856
+  },
+  {
+    "path": "assets/entry/artemis-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 57152
+  },
+  {
+    "path": "assets/entry/asgard-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 379646
+  },
+  {
+    "path": "assets/entry/asgard-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 78552
+  },
+  {
+    "path": "assets/entry/asteca-chalchiuhtlicue-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 78432
+  },
+  {
+    "path": "assets/entry/asteca-coatlicue-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 70308
+  },
+  {
+    "path": "assets/entry/asteca-huitzilopochtli-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 71964
+  },
+  {
+    "path": "assets/entry/asteca-mictecacihuatl-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69202
+  },
+  {
+    "path": "assets/entry/asteca-mictlantecuhtli-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 71426
+  },
+  {
+    "path": "assets/entry/asteca-quetzalcoatl-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 70058
+  },
+  {
+    "path": "assets/entry/asteca-tezcatlipoca-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 70440
+  },
+  {
+    "path": "assets/entry/asteca-tlaloc-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 75476
+  },
+  {
+    "path": "assets/entry/asteca-xipe-totec-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 74190
+  },
+  {
+    "path": "assets/entry/asteca-xochiquetzal-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 72330
+  },
+  {
+    "path": "assets/entry/athena-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 59532
+  },
+  {
+    "path": "assets/entry/avatars-chibi-portraits-01.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 316520
+  },
+  {
+    "path": "assets/entry/avatars-chibi-portraits-02.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 305804
+  },
+  {
+    "path": "assets/entry/avatars-chibi-portraits-03.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 326534
+  },
+  {
+    "path": "assets/entry/avatars-chibi-portraits-04.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 413584
+  },
+  {
+    "path": "assets/entry/avatars-chibi-portraits-05.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 397384
+  },
+  {
+    "path": "assets/entry/avatars-chibi-portraits-06.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 364516
+  },
+  {
+    "path": "assets/entry/avatars-chibi-portraits-07.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 330760
+  },
+  {
+    "path": "assets/entry/avatars-chibi-portraits-08.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 138800
+  },
+  {
+    "path": "assets/entry/baixo-egito-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 404290
+  },
+  {
+    "path": "assets/entry/baixo-egito-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 72130
+  },
+  {
+    "path": "assets/entry/banner-01.webp",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 556816
+  },
+  {
+    "path": "assets/entry/banner-02.webp",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 548756
+  },
+  {
+    "path": "assets/entry/banner-03.webp",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 587654
+  },
+  {
+    "path": "assets/entry/banner-04.webp",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 600112
+  },
+  {
+    "path": "assets/entry/banner-05.webp",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 594734
+  },
+  {
+    "path": "assets/entry/banner-06.webp",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 508532
+  },
+  {
+    "path": "assets/entry/banner-07.webp",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 508416
+  },
+  {
+    "path": "assets/entry/banner-08.webp",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 502434
+  },
+  {
+    "path": "assets/entry/banner-09.webp",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 425862
+  },
+  {
+    "path": "assets/entry/banner-10.webp",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 356044
+  },
+  {
+    "path": "assets/entry/beowulf-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 58564
+  },
+  {
+    "path": "assets/entry/bifrost-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 328824
+  },
+  {
+    "path": "assets/entry/bifrost-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 71060
+  },
+  {
+    "path": "assets/entry/brasil-boitata-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 68988
+  },
+  {
+    "path": "assets/entry/brasil-boto-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 61310
+  },
+  {
+    "path": "assets/entry/brasil-caipora-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 72586
+  },
+  {
+    "path": "assets/entry/brasil-cuca-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 64286
+  },
+  {
+    "path": "assets/entry/brasil-curupira-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69572
+  },
+  {
+    "path": "assets/entry/brasil-iara-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 67974
+  },
+  {
+    "path": "assets/entry/brasil-lampiao-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 66500
+  },
+  {
+    "path": "assets/entry/brasil-mapinguari-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 66506
+  },
+  {
+    "path": "assets/entry/brasil-mula-sem-cabeca-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 61520
+  },
+  {
+    "path": "assets/entry/brasil-saci-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 73470
+  },
+  {
+    "path": "assets/entry/butter-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 38258
+  },
+  {
+    "path": "assets/entry/campo-troia-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 438714
+  },
+  {
+    "path": "assets/entry/campo-troia-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 83012
+  },
+  {
+    "path": "assets/entry/card-badges-alyans.webp",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 19670
+  },
+  {
+    "path": "assets/entry/card-badges-alyns-v3.webp",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 18764
+  },
+  {
+    "path": "assets/entry/card-badges-celtas-v3.webp",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 20538
+  },
+  {
+    "path": "assets/entry/card-badges-egipcios-v3.webp",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 23864
+  },
+  {
+    "path": "assets/entry/card-badges-gregos-v3.webp",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 26592
+  },
+  {
+    "path": "assets/entry/card-badges-monster.webp",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 9018
+  },
+  {
+    "path": "assets/entry/card-badges-monstros-v3.webp",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 23852
+  },
+  {
+    "path": "assets/entry/card-badges-nordicos-v3.webp",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 21564
+  },
+  {
+    "path": "assets/entry/card-badges-norse-viking.webp",
+    "size": [
+      256,
+      202
+    ],
+    "bytes": 6716
+  },
+  {
+    "path": "assets/entry/card-badges-remake-aztec.webp",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 29132
+  },
+  {
+    "path": "assets/entry/card-badges-remake-brasil.webp",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 31658
+  },
+  {
+    "path": "assets/entry/card-badges-remake-chinese.webp",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 35356
+  },
+  {
+    "path": "assets/entry/card-badges-remake-hindu.webp",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 28822
+  },
+  {
+    "path": "assets/entry/card-badges-remake-japanese.webp",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 17412
+  },
+  {
+    "path": "assets/entry/card-badges-remake-mesopotamian.webp",
+    "size": [
+      256,
+      256
+    ],
+    "bytes": 25994
+  },
+  {
+    "path": "assets/entry/celtas-brigid-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 70000
+  },
+  {
+    "path": "assets/entry/celtas-cu-chulainn-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69814
+  },
+  {
+    "path": "assets/entry/celtas-dagda-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 72390
+  },
+  {
+    "path": "assets/entry/celtas-dama-do-lago-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 64108
+  },
+  {
+    "path": "assets/entry/celtas-lancelot-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69276
+  },
+  {
+    "path": "assets/entry/celtas-lugh-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 68900
+  },
+  {
+    "path": "assets/entry/celtas-merlin-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69892
+  },
+  {
+    "path": "assets/entry/celtas-morgana-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 67230
+  },
+  {
+    "path": "assets/entry/celtas-morrigan-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 62994
+  },
+  {
+    "path": "assets/entry/chinesa-ao-guang-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 71520
+  },
+  {
+    "path": "assets/entry/chinesa-change-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 66440
+  },
+  {
+    "path": "assets/entry/chinesa-erlang-shen-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 73978
+  },
+  {
+    "path": "assets/entry/chinesa-fuxi-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 65238
+  },
+  {
+    "path": "assets/entry/chinesa-guanyin-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 61944
+  },
+  {
+    "path": "assets/entry/chinesa-hou-yi-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 67738
+  },
+  {
+    "path": "assets/entry/chinesa-imperador-jade-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 67980
+  },
+  {
+    "path": "assets/entry/chinesa-nezha-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69326
+  },
+  {
+    "path": "assets/entry/chinesa-nuwa-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69222
+  },
+  {
+    "path": "assets/entry/chinesa-sun-wukong-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69320
+  },
+  {
+    "path": "assets/entry/citadela-luminosa.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 412864
+  },
+  {
+    "path": "assets/entry/citadela-paisagem.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 412864
+  },
+  {
+    "path": "assets/entry/clone-macaco-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 64520
+  },
+  {
+    "path": "assets/entry/crystal-texture.webp",
+    "size": [
+      640,
+      960
+    ],
+    "bytes": 75820
+  },
+  {
+    "path": "assets/entry/dionisio-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 64632
+  },
+  {
+    "path": "assets/entry/eclipse-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 421866
+  },
+  {
+    "path": "assets/entry/eclipse-lunar-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 279002
+  },
+  {
+    "path": "assets/entry/eclipse-lunar-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 53344
+  },
+  {
+    "path": "assets/entry/eclipse-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 86562
+  },
+  {
+    "path": "assets/entry/eclipse-solar-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 244360
+  },
+  {
+    "path": "assets/entry/eclipse-solar-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 51654
+  },
+  {
+    "path": "assets/entry/egito-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 362106
+  },
+  {
+    "path": "assets/entry/egito-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 67460
+  },
+  {
+    "path": "assets/entry/esparta-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 393222
+  },
+  {
+    "path": "assets/entry/esparta-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 74650
+  },
+  {
+    "path": "assets/entry/excalibur-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 235176
+  },
+  {
+    "path": "assets/entry/excalibur-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 49590
+  },
+  {
+    "path": "assets/entry/grecia-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 345008
+  },
+  {
+    "path": "assets/entry/grecia-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 66920
+  },
+  {
+    "path": "assets/entry/guardiao-nordico-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69890
+  },
+  {
+    "path": "assets/entry/hades-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 41938
+  },
+  {
+    "path": "assets/entry/hefesto-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 61624
+  },
+  {
+    "path": "assets/entry/heimdall-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 60082
+  },
+  {
+    "path": "assets/entry/hercules-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 37088
+  },
+  {
+    "path": "assets/entry/hermes-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 58274
+  },
+  {
+    "path": "assets/entry/hindu-durga-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 70212
+  },
+  {
+    "path": "assets/entry/hindu-ganesha-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69908
+  },
+  {
+    "path": "assets/entry/hindu-hanuman-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 64676
+  },
+  {
+    "path": "assets/entry/hindu-indra-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 68288
+  },
+  {
+    "path": "assets/entry/hindu-kali-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 71354
+  },
+  {
+    "path": "assets/entry/hindu-krishna-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69622
+  },
+  {
+    "path": "assets/entry/hindu-lakshmi-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 67532
+  },
+  {
+    "path": "assets/entry/hindu-saraswati-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 66710
+  },
+  {
+    "path": "assets/entry/hindu-shiva-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 70352
+  },
+  {
+    "path": "assets/entry/hindu-vishnu-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 71460
+  },
+  {
+    "path": "assets/entry/homem-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 62174
+  },
+  {
+    "path": "assets/entry/horus-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 55414
+  },
+  {
+    "path": "assets/entry/isis-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 59626
+  },
+  {
+    "path": "assets/entry/japonesa-amaterasu-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69914
+  },
+  {
+    "path": "assets/entry/japonesa-fujin-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 65496
+  },
+  {
+    "path": "assets/entry/japonesa-hachiman-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 70244
+  },
+  {
+    "path": "assets/entry/japonesa-inari-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69064
+  },
+  {
+    "path": "assets/entry/japonesa-izanagi-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 72328
+  },
+  {
+    "path": "assets/entry/japonesa-izanami-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 68322
+  },
+  {
+    "path": "assets/entry/japonesa-raijin-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69122
+  },
+  {
+    "path": "assets/entry/japonesa-ryujin-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 73754
+  },
+  {
+    "path": "assets/entry/japonesa-susanoo-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 70454
+  },
+  {
+    "path": "assets/entry/japonesa-tsukuyomi-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 66818
+  },
+  {
+    "path": "assets/entry/labirinto-dedalos-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 347556
+  },
+  {
+    "path": "assets/entry/labirinto-dedalos-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 67824
+  },
+  {
+    "path": "assets/entry/lobo-alfa-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 42980
+  },
+  {
+    "path": "assets/entry/lobo-beta-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 42210
+  },
+  {
+    "path": "assets/entry/lobo-omega-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 42220
+  },
+  {
+    "path": "assets/entry/loki-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 57176
+  },
+  {
+    "path": "assets/entry/lukyan-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 46966
+  },
+  {
+    "path": "assets/entry/lukyan-rei-de-todos-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 45886
+  },
+  {
+    "path": "assets/entry/medusa-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 40876
+  },
+  {
+    "path": "assets/entry/mesopotamica-enki-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 71816
+  },
+  {
+    "path": "assets/entry/mesopotamica-enlil-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 65600
+  },
+  {
+    "path": "assets/entry/mesopotamica-ereshkigal-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 64646
+  },
+  {
+    "path": "assets/entry/mesopotamica-ishtar-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69124
+  },
+  {
+    "path": "assets/entry/mesopotamica-marduk-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 73704
+  },
+  {
+    "path": "assets/entry/mesopotamica-nanna-sin-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 70390
+  },
+  {
+    "path": "assets/entry/mesopotamica-nergal-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 69732
+  },
+  {
+    "path": "assets/entry/mesopotamica-ninurta-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 71584
+  },
+  {
+    "path": "assets/entry/mesopotamica-tiamat-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 74536
+  },
+  {
+    "path": "assets/entry/mesopotamica-utu-shamash-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 66924
+  },
+  {
+    "path": "assets/entry/minotauro-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 42694
+  },
+  {
+    "path": "assets/entry/mjolnir-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 337810
+  },
+  {
+    "path": "assets/entry/mjolnir-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 72252
+  },
+  {
+    "path": "assets/entry/mulher-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 64670
+  },
+  {
+    "path": "assets/entry/nilfheim-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 267438
+  },
+  {
+    "path": "assets/entry/nilfheim-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 54710
+  },
+  {
+    "path": "assets/entry/odin-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 58598
+  },
+  {
+    "path": "assets/entry/olho-que-tudo-ve-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 312104
+  },
+  {
+    "path": "assets/entry/olho-que-tudo-ve-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 66314
+  },
+  {
+    "path": "assets/entry/osiris-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 57114
+  },
+  {
+    "path": "assets/entry/poseidon-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 49880
+  },
+  {
+    "path": "assets/entry/ra-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 58762
+  },
+  {
+    "path": "assets/entry/ragnar-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 57870
+  },
+  {
+    "path": "assets/entry/raio-de-zeus-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 264682
+  },
+  {
+    "path": "assets/entry/raio-de-zeus-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 55444
+  },
+  {
+    "path": "assets/entry/rei-arthur-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 68666
+  },
+  {
+    "path": "assets/entry/runas-nordicas-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 301504
+  },
+  {
+    "path": "assets/entry/runas-nordicas-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 62620
+  },
+  {
+    "path": "assets/entry/seth-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 55356
+  },
+  {
+    "path": "assets/entry/sobek-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 61474
+  },
+  {
+    "path": "assets/entry/soldado-esparta-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 40474
+  },
+  {
+    "path": "assets/entry/starter-pack.webp",
+    "size": [
+      640,
+      960
+    ],
+    "bytes": 165646
+  },
+  {
+    "path": "assets/entry/thor-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 58180
+  },
+  {
+    "path": "assets/entry/yggdrasil-full.webp",
+    "size": [
+      1100,
+      1540
+    ],
+    "bytes": 395380
+  },
+  {
+    "path": "assets/entry/yggdrasil-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 84934
+  },
+  {
+    "path": "assets/entry/zeus-preview.webp",
+    "size": [
+      480,
+      672
+    ],
+    "bytes": 44570
+  },
+  {
+    "path": "assets/equipment/excalibur.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 3587760
+  },
+  {
+    "path": "assets/equipment/mjolnir.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 4205552
+  },
+  {
+    "path": "assets/equipment/olho-que-tudo-ve.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 3921677
+  },
+  {
+    "path": "assets/equipment/raio-de-zeus.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 3711843
+  },
+  {
+    "path": "assets/equipment/runas-nordicas.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 3851416
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/aztec.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 507614
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/brasil.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 562892
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/celtic.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 594614
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/chinese.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 550662
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/egypt-1.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 447384
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/egypt-2.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 563866
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/egypt-3.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 453932
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/egypt.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 530930
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/greece-0.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 526254
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/greece-1.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 534388
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/greece-2.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 534398
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/greece-3.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 571868
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/hindu.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 531884
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/japanese.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 530798
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/mesopotamian.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 539360
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/monster.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 474094
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/mystery-chibi.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 941592
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/norse-1.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 442432
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/norse-2.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 554286
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/norse-3.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 523050
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/norse.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 581540
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/tesouro-atlas.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2580680
+  },
+  {
+    "path": "assets/guardian-campaign/atlas/world.webp",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 570008
+  },
+  {
+    "path": "assets/hades-full.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1787977
+  },
+  {
+    "path": "assets/hand-heaven.png",
+    "size": [
+      1024,
+      559
+    ],
+    "bytes": 856958
+  },
+  {
+    "path": "assets/holograms/afrodite-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2950439
+  },
+  {
+    "path": "assets/holograms/anubis-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2635697
+  },
+  {
+    "path": "assets/holograms/apolo-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2694779
+  },
+  {
+    "path": "assets/holograms/aquiles-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2794813
+  },
+  {
+    "path": "assets/holograms/ares-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2423218
+  },
+  {
+    "path": "assets/holograms/artemis-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2769078
+  },
+  {
+    "path": "assets/holograms/asteca-chalchiuhtlicue-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 900828
+  },
+  {
+    "path": "assets/holograms/asteca-coatlicue-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 714522
+  },
+  {
+    "path": "assets/holograms/asteca-huitzilopochtli-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 673638
+  },
+  {
+    "path": "assets/holograms/asteca-mictecacihuatl-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 720074
+  },
+  {
+    "path": "assets/holograms/asteca-mictlantecuhtli-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 723960
+  },
+  {
+    "path": "assets/holograms/asteca-quetzalcoatl-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 891348
+  },
+  {
+    "path": "assets/holograms/asteca-tezcatlipoca-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 697386
+  },
+  {
+    "path": "assets/holograms/asteca-tlaloc-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 898618
+  },
+  {
+    "path": "assets/holograms/asteca-xipe-totec-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 710504
+  },
+  {
+    "path": "assets/holograms/asteca-xochiquetzal-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 749424
+  },
+  {
+    "path": "assets/holograms/athena-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2990641
+  },
+  {
+    "path": "assets/holograms/beowulf-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2796844
+  },
+  {
+    "path": "assets/holograms/brasil-boitata-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 708048
+  },
+  {
+    "path": "assets/holograms/brasil-boto-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 469060
+  },
+  {
+    "path": "assets/holograms/brasil-caipora-hologram.webp",
+    "size": [
+      1173,
+      1341
+    ],
+    "bytes": 595776
+  },
+  {
+    "path": "assets/holograms/brasil-cuca-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 723062
+  },
+  {
+    "path": "assets/holograms/brasil-curupira-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 500298
+  },
+  {
+    "path": "assets/holograms/brasil-iara-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 631632
+  },
+  {
+    "path": "assets/holograms/brasil-lampiao-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 347760
+  },
+  {
+    "path": "assets/holograms/brasil-mapinguari-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 837618
+  },
+  {
+    "path": "assets/holograms/brasil-mula-sem-cabeca-hologram.webp",
+    "size": [
+      1223,
+      1286
+    ],
+    "bytes": 587650
+  },
+  {
+    "path": "assets/holograms/brasil-saci-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 662762
+  },
+  {
+    "path": "assets/holograms/butter-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2159319
+  },
+  {
+    "path": "assets/holograms/celtas-brigid-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 611124
+  },
+  {
+    "path": "assets/holograms/celtas-cu-chulainn-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 639534
+  },
+  {
+    "path": "assets/holograms/celtas-dagda-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 626180
+  },
+  {
+    "path": "assets/holograms/celtas-dama-do-lago-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 775694
+  },
+  {
+    "path": "assets/holograms/celtas-lancelot-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 550080
+  },
+  {
+    "path": "assets/holograms/celtas-lugh-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 693540
+  },
+  {
+    "path": "assets/holograms/celtas-merlin-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 714928
+  },
+  {
+    "path": "assets/holograms/celtas-morgana-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 731494
+  },
+  {
+    "path": "assets/holograms/celtas-morrigan-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 748444
+  },
+  {
+    "path": "assets/holograms/chinesa-ao-guang-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 749584
+  },
+  {
+    "path": "assets/holograms/chinesa-change-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 791974
+  },
+  {
+    "path": "assets/holograms/chinesa-erlang-shen-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 732354
+  },
+  {
+    "path": "assets/holograms/chinesa-fuxi-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 729734
+  },
+  {
+    "path": "assets/holograms/chinesa-guanyin-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 674582
+  },
+  {
+    "path": "assets/holograms/chinesa-hou-yi-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 590212
+  },
+  {
+    "path": "assets/holograms/chinesa-imperador-jade-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 646362
+  },
+  {
+    "path": "assets/holograms/chinesa-nezha-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 695284
+  },
+  {
+    "path": "assets/holograms/chinesa-nuwa-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 789940
+  },
+  {
+    "path": "assets/holograms/chinesa-sun-wukong-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 597030
+  },
+  {
+    "path": "assets/holograms/demeter-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 617988
+  },
+  {
+    "path": "assets/holograms/dionisio-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2827074
+  },
+  {
+    "path": "assets/holograms/feiticeira-serpentes-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 3122822
+  },
+  {
+    "path": "assets/holograms/guardiao-nordico-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 3173276
+  },
+  {
+    "path": "assets/holograms/hades-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2792858
+  },
+  {
+    "path": "assets/holograms/hefesto-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2590147
+  },
+  {
+    "path": "assets/holograms/heimdall-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2860590
+  },
+  {
+    "path": "assets/holograms/hera-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 508888
+  },
+  {
+    "path": "assets/holograms/hercules-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2414228
+  },
+  {
+    "path": "assets/holograms/hermes-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2724672
+  },
+  {
+    "path": "assets/holograms/hestia-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 398584
+  },
+  {
+    "path": "assets/holograms/hindu-durga-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 734980
+  },
+  {
+    "path": "assets/holograms/hindu-ganesha-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 704698
+  },
+  {
+    "path": "assets/holograms/hindu-hanuman-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 619090
+  },
+  {
+    "path": "assets/holograms/hindu-indra-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 675032
+  },
+  {
+    "path": "assets/holograms/hindu-kali-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 734298
+  },
+  {
+    "path": "assets/holograms/hindu-krishna-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 562108
+  },
+  {
+    "path": "assets/holograms/hindu-lakshmi-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 652694
+  },
+  {
+    "path": "assets/holograms/hindu-saraswati-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 612376
+  },
+  {
+    "path": "assets/holograms/hindu-shiva-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 689370
+  },
+  {
+    "path": "assets/holograms/hindu-vishnu-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 649374
+  },
+  {
+    "path": "assets/holograms/homem-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2112711
+  },
+  {
+    "path": "assets/holograms/horus-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2955341
+  },
+  {
+    "path": "assets/holograms/isis-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2914996
+  },
+  {
+    "path": "assets/holograms/japonesa-amaterasu-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 636342
+  },
+  {
+    "path": "assets/holograms/japonesa-fujin-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 737758
+  },
+  {
+    "path": "assets/holograms/japonesa-hachiman-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 644728
+  },
+  {
+    "path": "assets/holograms/japonesa-inari-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 726238
+  },
+  {
+    "path": "assets/holograms/japonesa-izanagi-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 818530
+  },
+  {
+    "path": "assets/holograms/japonesa-izanami-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 801396
+  },
+  {
+    "path": "assets/holograms/japonesa-raijin-hologram.webp",
+    "size": [
+      1025,
+      1535
+    ],
+    "bytes": 696360
+  },
+  {
+    "path": "assets/holograms/japonesa-ryujin-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 753182
+  },
+  {
+    "path": "assets/holograms/japonesa-susanoo-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 741428
+  },
+  {
+    "path": "assets/holograms/japonesa-tsukuyomi-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 797676
+  },
+  {
+    "path": "assets/holograms/lobo-alfa-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2497676
+  },
+  {
+    "path": "assets/holograms/lobo-beta-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2474158
+  },
+  {
+    "path": "assets/holograms/lobo-omega-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2514124
+  },
+  {
+    "path": "assets/holograms/loki-hologram.png",
+    "size": [
+      1199,
+      1312
+    ],
+    "bytes": 2961981
+  },
+  {
+    "path": "assets/holograms/lukyan-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2214866
+  },
+  {
+    "path": "assets/holograms/lukyan-rei-de-todos-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2132998
+  },
+  {
+    "path": "assets/holograms/medusa-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2341235
+  },
+  {
+    "path": "assets/holograms/mesopotamica-enki-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 747174
+  },
+  {
+    "path": "assets/holograms/mesopotamica-enlil-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 689482
+  },
+  {
+    "path": "assets/holograms/mesopotamica-ereshkigal-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 650364
+  },
+  {
+    "path": "assets/holograms/mesopotamica-ishtar-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 633244
+  },
+  {
+    "path": "assets/holograms/mesopotamica-marduk-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 709768
+  },
+  {
+    "path": "assets/holograms/mesopotamica-nanna-sin-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 703318
+  },
+  {
+    "path": "assets/holograms/mesopotamica-nergal-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 635622
+  },
+  {
+    "path": "assets/holograms/mesopotamica-ninurta-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 698046
+  },
+  {
+    "path": "assets/holograms/mesopotamica-tiamat-hologram.webp",
+    "size": [
+      1236,
+      1273
+    ],
+    "bytes": 969562
+  },
+  {
+    "path": "assets/holograms/mesopotamica-utu-shamash-hologram.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 672788
+  },
+  {
+    "path": "assets/holograms/minotauro-hologram.png",
+    "size": [
+      1199,
+      1312
+    ],
+    "bytes": 2170636
+  },
+  {
+    "path": "assets/holograms/mulher-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2346515
+  },
+  {
+    "path": "assets/holograms/odin-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2974119
+  },
+  {
+    "path": "assets/holograms/osiris-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2571606
+  },
+  {
+    "path": "assets/holograms/perseu-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 428386
+  },
+  {
+    "path": "assets/holograms/poseidon-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2625169
+  },
+  {
+    "path": "assets/holograms/ra-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2941357
+  },
+  {
+    "path": "assets/holograms/ragnar-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2755778
+  },
+  {
+    "path": "assets/holograms/rei-arthur-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 571048
+  },
+  {
+    "path": "assets/holograms/seth-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2680506
+  },
+  {
+    "path": "assets/holograms/sobek-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2934218
+  },
+  {
+    "path": "assets/holograms/soldado-esparta-hologram.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 417970
+  },
+  {
+    "path": "assets/holograms/spartan-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2057674
+  },
+  {
+    "path": "assets/holograms/thor-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2974562
+  },
+  {
+    "path": "assets/holograms/zeus-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2309210
+  },
+  {
+    "path": "assets/identity-v2/aprendiz-de-heroi.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 94836
+  },
+  {
+    "path": "assets/identity-v2/coin.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 82464
+  },
+  {
+    "path": "assets/identity-v2/convergente.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 151988
+  },
+  {
+    "path": "assets/identity-v2/deus.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 108780
+  },
+  {
+    "path": "assets/identity-v2/eclipse-vortex.webp",
+    "size": [
+      1000,
+      1000
+    ],
+    "bytes": 530090
+  },
+  {
+    "path": "assets/identity-v2/escudeiro.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 93578
+  },
+  {
+    "path": "assets/identity-v2/heroi.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 95554
+  },
+  {
+    "path": "assets/identity-v2/lenda.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 115800
+  },
+  {
+    "path": "assets/identity-v2/medal-atlas.webp",
+    "size": [
+      1800,
+      720
+    ],
+    "bytes": 426592
+  },
+  {
+    "path": "assets/identity-v2/semideus.webp",
+    "size": [
+      512,
+      512
+    ],
+    "bytes": 119772
+  },
+  {
+    "path": "assets/identity-v2/title-atlas.webp",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 684326
+  },
+  {
+    "path": "assets/locations/asgard.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 4307873
+  },
+  {
+    "path": "assets/locations/egito.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 4230740
+  },
+  {
+    "path": "assets/locations/grecia.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 4125136
+  },
+  {
+    "path": "assets/medusa-full.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1723111
+  },
+  {
+    "path": "assets/medusa-illustration.png",
+    "size": [
+      1180,
+      916
+    ],
+    "bytes": 1492671
+  },
+  {
+    "path": "assets/mode-custom.png",
+    "size": [
+      1024,
+      559
+    ],
+    "bytes": 241294
+  },
+  {
+    "path": "assets/mode-guardian.png",
+    "size": [
+      1408,
+      768
+    ],
+    "bytes": 337672
+  },
+  {
+    "path": "assets/mode-normal.png",
+    "size": [
+      1408,
+      768
+    ],
+    "bytes": 336251
+  },
+  {
+    "path": "assets/mode-ranked.png",
+    "size": [
+      1408,
+      768
+    ],
+    "bytes": 294807
+  },
+  {
+    "path": "assets/mode-tournament.webp",
+    "size": [
+      600,
+      600
+    ],
+    "bytes": 127318
+  },
+  {
+    "path": "assets/mode-x1.png",
+    "size": [
+      1408,
+      768
+    ],
+    "bytes": 362596
+  },
+  {
+    "path": "assets/new-greeks/demeter-banner.png",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 3251245
+  },
+  {
+    "path": "assets/new-greeks/demeter-chibi.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2343850
+  },
+  {
+    "path": "assets/new-greeks/demeter-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2653266
+  },
+  {
+    "path": "assets/new-greeks/demeter-illustration.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 3295130
+  },
+  {
+    "path": "assets/new-greeks/hera-banner.png",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 3114017
+  },
+  {
+    "path": "assets/new-greeks/hera-chibi.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2546646
+  },
+  {
+    "path": "assets/new-greeks/hera-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2441163
+  },
+  {
+    "path": "assets/new-greeks/hera-illustration.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2998792
+  },
+  {
+    "path": "assets/new-greeks/hestia-banner.png",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 2607536
+  },
+  {
+    "path": "assets/new-greeks/hestia-chibi.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2121274
+  },
+  {
+    "path": "assets/new-greeks/hestia-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2129805
+  },
+  {
+    "path": "assets/new-greeks/hestia-illustration.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2549140
+  },
+  {
+    "path": "assets/new-greeks/perseu-banner.png",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 3035223
+  },
+  {
+    "path": "assets/new-greeks/perseu-chibi.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2398692
+  },
+  {
+    "path": "assets/new-greeks/perseu-hologram.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2215570
+  },
+  {
+    "path": "assets/new-greeks/perseu-illustration.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2952603
+  },
+  {
+    "path": "assets/onboarding/egyptian-realm.webp",
+    "size": [
+      900,
+      1325
+    ],
+    "bytes": 203548
+  },
+  {
+    "path": "assets/onboarding/greek-realm.webp",
+    "size": [
+      900,
+      1325
+    ],
+    "bytes": 192816
+  },
+  {
+    "path": "assets/onboarding/norse-realm.webp",
+    "size": [
+      900,
+      1325
+    ],
+    "bytes": 219998
+  },
+  {
+    "path": "assets/onboarding/public-citadel.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 384916
+  },
+  {
+    "path": "assets/onboarding/starter-pack.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2517668
+  },
+  {
+    "path": "assets/optimized/afrodite-0c1bcf5a5aa72b36.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 380174
+  },
+  {
+    "path": "assets/optimized/afrodite-hologram-b40e81ac553d3e95.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 594080
+  },
+  {
+    "path": "assets/optimized/anubis-6ed205d41b790020.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 316232
+  },
+  {
+    "path": "assets/optimized/anubis-hologram-06f41a27a0e25486.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 422218
+  },
+  {
+    "path": "assets/optimized/apolo-117e239c44b1bff1.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 371670
+  },
+  {
+    "path": "assets/optimized/apolo-hologram-15a0dc8aac1b54f1.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 490508
+  },
+  {
+    "path": "assets/optimized/aquiles-63625b19f7b1a4c0.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 377464
+  },
+  {
+    "path": "assets/optimized/aquiles-hologram-4e0b6a9806926a1b.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 503394
+  },
+  {
+    "path": "assets/optimized/ares-59ee143eae327c7d.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 187224
+  },
+  {
+    "path": "assets/optimized/ares-hologram-368b15594b123af2.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 376290
+  },
+  {
+    "path": "assets/optimized/artemis-f0bb42bb96fb68c9.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 366034
+  },
+  {
+    "path": "assets/optimized/artemis-hologram-1dae085ba83ad25b.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 488042
+  },
+  {
+    "path": "assets/optimized/athena-ee8e5372b7a5863c.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 367456
+  },
+  {
+    "path": "assets/optimized/athena-hologram-c0b55ba81e15dbd8.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 573502
+  },
+  {
+    "path": "assets/optimized/battlefield-forest-a7f446d693a79a7e.webp",
+    "size": [
+      768,
+      1376
+    ],
+    "bytes": 391512
+  },
+  {
+    "path": "assets/optimized/battlefield-mud-8d6e0b5d7acdef6f.webp",
+    "size": [
+      1408,
+      768
+    ],
+    "bytes": 378152
+  },
+  {
+    "path": "assets/optimized/beowulf-9988ec0a1d4b64ee.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 394618
+  },
+  {
+    "path": "assets/optimized/beowulf-hologram-981b17704dfaee34.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 517336
+  },
+  {
+    "path": "assets/optimized/butter-f9238075ef348b85.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 192698
+  },
+  {
+    "path": "assets/optimized/butter-hologram-55c5e04d4e5c2cf4.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 318412
+  },
+  {
+    "path": "assets/optimized/defeat-emblem-006356ac3df8b2e8.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 140620
+  },
+  {
+    "path": "assets/optimized/dionisio-96c308bf301bd3c8.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 392010
+  },
+  {
+    "path": "assets/optimized/dionisio-hologram-d8ee181d799f16f1.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 539346
+  },
+  {
+    "path": "assets/optimized/feiticeira-serpentes-hologram-e7e6748ee467a23e.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 659346
+  },
+  {
+    "path": "assets/optimized/guardiao-nordico-57879f5ca8bb80b6.webp",
+    "size": [
+      1060,
+      1484
+    ],
+    "bytes": 266028
+  },
+  {
+    "path": "assets/optimized/guardiao-nordico-hologram-35cd2c08b3b4830f.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 636018
+  },
+  {
+    "path": "assets/optimized/hades-full-1b6c6bd0e4b61d24.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 206606
+  },
+  {
+    "path": "assets/optimized/hades-hologram-a562f39f3504c51a.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 516092
+  },
+  {
+    "path": "assets/optimized/hand-heaven-498523c5d1cc5ab2.webp",
+    "size": [
+      1024,
+      559
+    ],
+    "bytes": 115786
+  },
+  {
+    "path": "assets/optimized/hearts-29d77bd34a3b1e16.webp",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 757472
+  },
+  {
+    "path": "assets/optimized/hefesto-3b7514ac75020d82.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 387584
+  },
+  {
+    "path": "assets/optimized/hefesto-hologram-19883fd2ed166166.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 447776
+  },
+  {
+    "path": "assets/optimized/heimdall-c20b489e3940c3b3.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 362270
+  },
+  {
+    "path": "assets/optimized/heimdall-hologram-7235d93a3a72ddbb.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 506596
+  },
+  {
+    "path": "assets/optimized/hercules-26fb222941766c1a.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 181956
+  },
+  {
+    "path": "assets/optimized/hercules-hologram-256a836efc82c61f.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 351980
+  },
+  {
+    "path": "assets/optimized/hermes-92a182d9b8021d95.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 354824
+  },
+  {
+    "path": "assets/optimized/hermes-hologram-6868cdd7e61e42b6.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 515450
+  },
+  {
+    "path": "assets/optimized/homem-b13da54b68c5d71f.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 367266
+  },
+  {
+    "path": "assets/optimized/homem-hologram-ff957a26e63d2edb.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 288154
+  },
+  {
+    "path": "assets/optimized/horus-d1bda7a44789f401.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 346612
+  },
+  {
+    "path": "assets/optimized/horus-hologram-cb2f449358883df3.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 569650
+  },
+  {
+    "path": "assets/optimized/isis-c01739e8fb8a8a13.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 365806
+  },
+  {
+    "path": "assets/optimized/isis-hologram-610193b66af82709.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 527518
+  },
+  {
+    "path": "assets/optimized/lightning-9c48e9092429de6a.webp",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 672796
+  },
+  {
+    "path": "assets/optimized/lobo-alfa-e5b750658d4459c0.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 237544
+  },
+  {
+    "path": "assets/optimized/lobo-alfa-hologram-901d06214e3be32e.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 407798
+  },
+  {
+    "path": "assets/optimized/lobo-beta-5fa3a267b8c65921.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 229764
+  },
+  {
+    "path": "assets/optimized/lobo-beta-hologram-abb0b12b7fd580bc.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 393510
+  },
+  {
+    "path": "assets/optimized/lobo-omega-ede041f35e9ab6a0.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 216256
+  },
+  {
+    "path": "assets/optimized/lobo-omega-hologram-4ee118414d86eba6.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 405054
+  },
+  {
+    "path": "assets/optimized/loki-cc2f2cede29c5607.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 335952
+  },
+  {
+    "path": "assets/optimized/loki-hologram-2aec5de8e7fd4e6a.webp",
+    "size": [
+      1199,
+      1312
+    ],
+    "bytes": 682500
+  },
+  {
+    "path": "assets/optimized/lukyan-1ee737e5a1ed6794.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 251056
+  },
+  {
+    "path": "assets/optimized/lukyan-hologram-fd857f2180cc2d2b.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 312876
+  },
+  {
+    "path": "assets/optimized/lukyan-rei-de-todos-d9a82bdcc2e60370.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 253634
+  },
+  {
+    "path": "assets/optimized/lukyan-rei-de-todos-hologram-c3acb17ebde91e5c.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 304140
+  },
+  {
+    "path": "assets/optimized/lunar-morph-f5230c5c0f9d3f98.webp",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 708948
+  },
+  {
+    "path": "assets/optimized/medusa-full-16934264e4aa1a94.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 202038
+  },
+  {
+    "path": "assets/optimized/medusa-hologram-adf915f01d38eaff.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 342926
+  },
+  {
+    "path": "assets/optimized/medusa-illustration-2042bd3eb76ec8f0.webp",
+    "size": [
+      1180,
+      916
+    ],
+    "bytes": 126924
+  },
+  {
+    "path": "assets/optimized/minotauro-9b1ff93254014552.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 219556
+  },
+  {
+    "path": "assets/optimized/minotauro-hologram-a8996c4bf5076047.webp",
+    "size": [
+      1199,
+      1312
+    ],
+    "bytes": 497228
+  },
+  {
+    "path": "assets/optimized/mode-custom-482aab37983dbc14.webp",
+    "size": [
+      1024,
+      559
+    ],
+    "bytes": 35446
+  },
+  {
+    "path": "assets/optimized/mode-custom-9dcf80506d943407.webp",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 492860
+  },
+  {
+    "path": "assets/optimized/mode-guardian-61ed6d1013e159c6.webp",
+    "size": [
+      1408,
+      768
+    ],
+    "bytes": 44780
+  },
+  {
+    "path": "assets/optimized/mode-guardian-d8c0f3537321ae8c.webp",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 595130
+  },
+  {
+    "path": "assets/optimized/mode-normal-09935e96c125ae04.webp",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 596766
+  },
+  {
+    "path": "assets/optimized/mode-normal-b25046d295e78bf2.webp",
+    "size": [
+      1408,
+      768
+    ],
+    "bytes": 42522
+  },
+  {
+    "path": "assets/optimized/mode-ranked-971aa37a45565e39.webp",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 563934
+  },
+  {
+    "path": "assets/optimized/mode-ranked-a491c0996cdfcb00.webp",
+    "size": [
+      1408,
+      768
+    ],
+    "bytes": 36798
+  },
+  {
+    "path": "assets/optimized/mode-x1-592fb54587729736.webp",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 499440
+  },
+  {
+    "path": "assets/optimized/mode-x1-b36841ffa54ad9b4.webp",
+    "size": [
+      1408,
+      768
+    ],
+    "bytes": 48528
+  },
+  {
+    "path": "assets/optimized/mulher-ff3deb5a8e21260e.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 371852
+  },
+  {
+    "path": "assets/optimized/mulher-hologram-807a772a5d845cf7.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 355098
+  },
+  {
+    "path": "assets/optimized/odin-f00be8918d289fbd.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 376782
+  },
+  {
+    "path": "assets/optimized/odin-hologram-39a49f986be060e2.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 551804
+  },
+  {
+    "path": "assets/optimized/osiris-de07dc2be00b3db4.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 353486
+  },
+  {
+    "path": "assets/optimized/osiris-hologram-168be08729f714a2.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 439382
+  },
+  {
+    "path": "assets/optimized/poseidon-full-25616da396696f7f.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 255524
+  },
+  {
+    "path": "assets/optimized/poseidon-hologram-cf2a744682dc46d8.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 481966
+  },
+  {
+    "path": "assets/optimized/ra-3d95464dccf4b160.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 381334
+  },
+  {
+    "path": "assets/optimized/ra-hologram-f0cb8f4e15e151c1.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 574798
+  },
+  {
+    "path": "assets/optimized/ragnar-e20889badc994574.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 378878
+  },
+  {
+    "path": "assets/optimized/ragnar-hologram-1309086c244941cf.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 479958
+  },
+  {
+    "path": "assets/optimized/seth-c22476ccf4777557.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 356496
+  },
+  {
+    "path": "assets/optimized/seth-hologram-25624ed75e150b7b.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 496878
+  },
+  {
+    "path": "assets/optimized/sobek-3839adb6dacfb318.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 417336
+  },
+  {
+    "path": "assets/optimized/sobek-hologram-8c9ca14fe844fe7f.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 548280
+  },
+  {
+    "path": "assets/optimized/solar-morph-9a7bd4058fcd1b8e.webp",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 834918
+  },
+  {
+    "path": "assets/optimized/soldado-esparta-486c15f3fed2fc50.webp",
+    "size": [
+      750,
+      1050
+    ],
+    "bytes": 82636
+  },
+  {
+    "path": "assets/optimized/soldado-esparta-sem-pontas-azuis-be844d9bab4182b0.webp",
+    "size": [
+      750,
+      1050
+    ],
+    "bytes": 82424
+  },
+  {
+    "path": "assets/optimized/spartan-hologram-3bd06b6950aeecc4.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 518612
+  },
+  {
+    "path": "assets/optimized/thor-6bd10a622938d2a3.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 372486
+  },
+  {
+    "path": "assets/optimized/thor-hologram-ec3e39d852765ae8.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 564244
+  },
+  {
+    "path": "assets/optimized/tsunami-8ecb95d87853dc1f.webp",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 622246
+  },
+  {
+    "path": "assets/optimized/victory-emblem-89c770fe9da717d6.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 105394
+  },
+  {
+    "path": "assets/optimized/vs-emblem-bc8e8991eb6f1b8b.webp",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 542012
+  },
+  {
+    "path": "assets/optimized/zeus-full-763e2eb7a200170b.webp",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 218014
+  },
+  {
+    "path": "assets/optimized/zeus-hologram-f656cd7f134ba04e.webp",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 349086
+  },
+  {
+    "path": "assets/portal/duel-preview-poster.jpg",
+    "size": [
+      960,
+      540
+    ],
+    "bytes": 81671
+  },
+  {
+    "path": "assets/portal/lukyan.webp",
+    "size": [
+      560,
+      784
+    ],
+    "bytes": 52158
+  },
+  {
+    "path": "assets/portal/poseidon.webp",
+    "size": [
+      560,
+      784
+    ],
+    "bytes": 54674
+  },
+  {
+    "path": "assets/portal/zeus.webp",
+    "size": [
+      560,
+      784
+    ],
+    "bytes": 49882
+  },
+  {
+    "path": "assets/poseidon-full.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 2024964
+  },
+  {
+    "path": "assets/rework/citadela.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 355082
+  },
+  {
+    "path": "assets/sidebar-arcane/crystal-texture.png",
+    "size": [
+      1024,
+      1536
+    ],
+    "bytes": 2121668
+  },
+  {
+    "path": "assets/soldado-esparta-sem-pontas-azuis.png",
+    "size": [
+      750,
+      1050
+    ],
+    "bytes": 643152
+  },
+  {
+    "path": "assets/soldado-esparta.png",
+    "size": [
+      750,
+      1050
+    ],
+    "bytes": 643193
+  },
+  {
+    "path": "assets/terrains/alto-egito.jpg",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 12622415
+  },
+  {
+    "path": "assets/terrains/baixo-egito.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 4420482
+  },
+  {
+    "path": "assets/terrains/bifrost.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 4079643
+  },
+  {
+    "path": "assets/terrains/campo-troia.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 4612531
+  },
+  {
+    "path": "assets/terrains/esparta.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 4472529
+  },
+  {
+    "path": "assets/terrains/labirinto-dedalos.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 4078895
+  },
+  {
+    "path": "assets/terrains/nilfheim.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 3733569
+  },
+  {
+    "path": "assets/terrains/yggdrasil.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 4393027
+  },
+  {
+    "path": "assets/universe/banner-01.png",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 3599254
+  },
+  {
+    "path": "assets/universe/banner-02.png",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 3461055
+  },
+  {
+    "path": "assets/universe/banner-03.png",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 3576562
+  },
+  {
+    "path": "assets/universe/banner-04.png",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 3757056
+  },
+  {
+    "path": "assets/universe/banner-05.png",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 3693230
+  },
+  {
+    "path": "assets/universe/banner-06.png",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 3284609
+  },
+  {
+    "path": "assets/universe/banner-07.png",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 3270719
+  },
+  {
+    "path": "assets/universe/banner-08.png",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 3270679
+  },
+  {
+    "path": "assets/universe/banner-09.png",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 3076752
+  },
+  {
+    "path": "assets/universe/banner-10.png",
+    "size": [
+      1774,
+      887
+    ],
+    "bytes": 2768749
+  },
+  {
+    "path": "assets/universe/characters/asteca-chalchiuhtlicue.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 515620
+  },
+  {
+    "path": "assets/universe/characters/asteca-coatlicue.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 410610
+  },
+  {
+    "path": "assets/universe/characters/asteca-huitzilopochtli.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 431082
+  },
+  {
+    "path": "assets/universe/characters/asteca-mictecacihuatl.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 395334
+  },
+  {
+    "path": "assets/universe/characters/asteca-mictlantecuhtli.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 412380
+  },
+  {
+    "path": "assets/universe/characters/asteca-quetzalcoatl.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 461578
+  },
+  {
+    "path": "assets/universe/characters/asteca-tezcatlipoca.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 389314
+  },
+  {
+    "path": "assets/universe/characters/asteca-tlaloc.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 479690
+  },
+  {
+    "path": "assets/universe/characters/asteca-xipe-totec.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 433726
+  },
+  {
+    "path": "assets/universe/characters/asteca-xochiquetzal.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 444518
+  },
+  {
+    "path": "assets/universe/characters/brasil-boitata.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 402054
+  },
+  {
+    "path": "assets/universe/characters/brasil-boto.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 374236
+  },
+  {
+    "path": "assets/universe/characters/brasil-caipora.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 447160
+  },
+  {
+    "path": "assets/universe/characters/brasil-cuca.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 444492
+  },
+  {
+    "path": "assets/universe/characters/brasil-curupira.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 435004
+  },
+  {
+    "path": "assets/universe/characters/brasil-iara.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 410562
+  },
+  {
+    "path": "assets/universe/characters/brasil-lampiao.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 382390
+  },
+  {
+    "path": "assets/universe/characters/brasil-mapinguari.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 488118
+  },
+  {
+    "path": "assets/universe/characters/brasil-mula-sem-cabeca.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 378972
+  },
+  {
+    "path": "assets/universe/characters/brasil-saci.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 401368
+  },
+  {
+    "path": "assets/universe/characters/celtas-brigid.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 424554
+  },
+  {
+    "path": "assets/universe/characters/celtas-cu-chulainn.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 372858
+  },
+  {
+    "path": "assets/universe/characters/celtas-dagda.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 473216
+  },
+  {
+    "path": "assets/universe/characters/celtas-dama-do-lago.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 397100
+  },
+  {
+    "path": "assets/universe/characters/celtas-lancelot.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 408030
+  },
+  {
+    "path": "assets/universe/characters/celtas-lugh.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 420328
+  },
+  {
+    "path": "assets/universe/characters/celtas-merlin.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 456120
+  },
+  {
+    "path": "assets/universe/characters/celtas-morgana.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 403248
+  },
+  {
+    "path": "assets/universe/characters/celtas-morrigan.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 377274
+  },
+  {
+    "path": "assets/universe/characters/chinesa-ao-guang.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 470136
+  },
+  {
+    "path": "assets/universe/characters/chinesa-change.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 411320
+  },
+  {
+    "path": "assets/universe/characters/chinesa-erlang-shen.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 402672
+  },
+  {
+    "path": "assets/universe/characters/chinesa-fuxi.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 446422
+  },
+  {
+    "path": "assets/universe/characters/chinesa-guanyin.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 429838
+  },
+  {
+    "path": "assets/universe/characters/chinesa-hou-yi.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 402364
+  },
+  {
+    "path": "assets/universe/characters/chinesa-imperador-jade.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 397124
+  },
+  {
+    "path": "assets/universe/characters/chinesa-nezha.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 379460
+  },
+  {
+    "path": "assets/universe/characters/chinesa-nuwa.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 431490
+  },
+  {
+    "path": "assets/universe/characters/chinesa-sun-wukong.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 425764
+  },
+  {
+    "path": "assets/universe/characters/demeter.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 855678
+  },
+  {
+    "path": "assets/universe/characters/hera.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 810052
+  },
+  {
+    "path": "assets/universe/characters/hestia.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 636620
+  },
+  {
+    "path": "assets/universe/characters/hindu-durga.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 402446
+  },
+  {
+    "path": "assets/universe/characters/hindu-ganesha.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 391944
+  },
+  {
+    "path": "assets/universe/characters/hindu-hanuman.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 393828
+  },
+  {
+    "path": "assets/universe/characters/hindu-indra.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 409030
+  },
+  {
+    "path": "assets/universe/characters/hindu-kali.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 409964
+  },
+  {
+    "path": "assets/universe/characters/hindu-krishna.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 414578
+  },
+  {
+    "path": "assets/universe/characters/hindu-lakshmi.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 438524
+  },
+  {
+    "path": "assets/universe/characters/hindu-saraswati.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 450112
+  },
+  {
+    "path": "assets/universe/characters/hindu-shiva.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 385986
+  },
+  {
+    "path": "assets/universe/characters/hindu-vishnu.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 397694
+  },
+  {
+    "path": "assets/universe/characters/japonesa-amaterasu.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 408126
+  },
+  {
+    "path": "assets/universe/characters/japonesa-fujin.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 440644
+  },
+  {
+    "path": "assets/universe/characters/japonesa-hachiman.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 386184
+  },
+  {
+    "path": "assets/universe/characters/japonesa-inari.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 441938
+  },
+  {
+    "path": "assets/universe/characters/japonesa-izanagi.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 411974
+  },
+  {
+    "path": "assets/universe/characters/japonesa-izanami.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 419806
+  },
+  {
+    "path": "assets/universe/characters/japonesa-raijin.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 418298
+  },
+  {
+    "path": "assets/universe/characters/japonesa-ryujin.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 529148
+  },
+  {
+    "path": "assets/universe/characters/japonesa-susanoo.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 423344
+  },
+  {
+    "path": "assets/universe/characters/japonesa-tsukuyomi.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 454294
+  },
+  {
+    "path": "assets/universe/characters/mesopotamica-enki.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 442272
+  },
+  {
+    "path": "assets/universe/characters/mesopotamica-enlil.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 377724
+  },
+  {
+    "path": "assets/universe/characters/mesopotamica-ereshkigal.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 325198
+  },
+  {
+    "path": "assets/universe/characters/mesopotamica-ishtar.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 406594
+  },
+  {
+    "path": "assets/universe/characters/mesopotamica-marduk.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 419360
+  },
+  {
+    "path": "assets/universe/characters/mesopotamica-nanna-sin.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 407902
+  },
+  {
+    "path": "assets/universe/characters/mesopotamica-nergal.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 369226
+  },
+  {
+    "path": "assets/universe/characters/mesopotamica-ninurta.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 379516
+  },
+  {
+    "path": "assets/universe/characters/mesopotamica-tiamat.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 431488
+  },
+  {
+    "path": "assets/universe/characters/mesopotamica-utu-shamash.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 414044
+  },
+  {
+    "path": "assets/universe/characters/perseu.webp",
+    "size": [
+      1672,
+      941
+    ],
+    "bytes": 770684
+  },
+  {
+    "path": "assets/universe/characters/rei-arthur.webp",
+    "size": [
+      1920,
+      640
+    ],
+    "bytes": 389238
+  },
+  {
+    "path": "assets/vfx/hearts.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2178412
+  },
+  {
+    "path": "assets/vfx/lightning.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2061213
+  },
+  {
+    "path": "assets/vfx/lunar-morph.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2271772
+  },
+  {
+    "path": "assets/vfx/solar-morph.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2704493
+  },
+  {
+    "path": "assets/vfx/tsunami.png",
+    "size": [
+      1254,
+      1254
+    ],
+    "bytes": 2003620
+  },
+  {
+    "path": "assets/victory-emblem.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 1469229
+  },
+  {
+    "path": "assets/vs-emblem.png",
+    "size": [
+      1536,
+      1024
+    ],
+    "bytes": 2691464
+  },
+  {
+    "path": "assets/zeus-full.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 1846044
+  },
+  {
+    "path": "novos-personagens/cartas/demeter.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 12622415
+  },
+  {
+    "path": "novos-personagens/cartas/hera.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 12622415
+  },
+  {
+    "path": "novos-personagens/cartas/hestia.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 12622415
+  },
+  {
+    "path": "novos-personagens/cartas/perseu.png",
+    "size": [
+      1500,
+      2100
+    ],
+    "bytes": 12622415
+  },
+  {
+    "path": "novos-personagens/previa-banners.jpg",
+    "size": [
+      1440,
+      900
+    ],
+    "bytes": 823290
+  },
+  {
+    "path": "novos-personagens/previa-cartas.jpg",
+    "size": [
+      1640,
+      620
+    ],
+    "bytes": 431144
+  }
+]

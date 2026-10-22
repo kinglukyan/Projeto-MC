@@ -795,7 +795,35 @@
       "name": "Lukyan — Rei de Todos",
       "asset": "assets/avatars-chibi/lukyan-rei-de-todos.webp",
       "single": true
+    },
+    {
+      "id": "chibi-hera",
+      "characterId": "hera",
+      "name": "Hera",
+      "asset": "assets/avatars-chibi/hera.webp",
+      "single": true
+    },
+    {
+      "id": "chibi-demeter",
+      "characterId": "demeter",
+      "name": "Deméter",
+      "asset": "assets/avatars-chibi/demeter.webp",
+      "single": true
+    },
+    {
+      "id": "chibi-hestia",
+      "characterId": "hestia",
+      "name": "Héstia",
+      "asset": "assets/avatars-chibi/hestia.webp",
+      "single": true
+    },
+    {
+      "id": "chibi-perseu",
+      "characterId": "perseu",
+      "name": "Perseu",
+      "asset": "assets/avatars-chibi/perseu.webp",
+      "single": true
     }
   ],
-  "release": "20261020-remake"
+  "release": "20261022-revisao"
 }

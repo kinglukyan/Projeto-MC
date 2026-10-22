@@ -1,0 +1,230 @@
+[
+  {
+    "id": "zeus",
+    "source": "assets\\entry\\banner-01.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "poseidon",
+    "source": "assets\\entry\\banner-01.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "hades",
+    "source": "assets\\entry\\banner-01.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "medusa",
+    "source": "assets\\entry\\banner-01.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "athena",
+    "source": "assets\\entry\\banner-02.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "ares",
+    "source": "assets\\entry\\banner-02.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "apolo",
+    "source": "assets\\entry\\banner-02.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "artemis",
+    "source": "assets\\entry\\banner-02.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "afrodite",
+    "source": "assets\\entry\\banner-03.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "dionisio",
+    "source": "assets\\entry\\banner-03.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "hefesto",
+    "source": "assets\\entry\\banner-03.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "hermes",
+    "source": "assets\\entry\\banner-03.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "odin",
+    "source": "assets\\entry\\banner-04.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "thor",
+    "source": "assets\\entry\\banner-04.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "loki",
+    "source": "assets\\entry\\banner-04.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "heimdall",
+    "source": "assets\\entry\\banner-04.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "ragnar",
+    "source": "assets\\entry\\banner-05.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "beowulf",
+    "source": "assets\\entry\\banner-05.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "guardiao-nordico",
+    "source": "assets\\entry\\banner-05.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "soldado-esparta",
+    "source": "assets\\entry\\banner-05.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "anubis",
+    "source": "assets\\entry\\banner-06.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "ra",
+    "source": "assets\\entry\\banner-06.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "horus",
+    "source": "assets\\entry\\banner-06.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "isis",
+    "source": "assets\\entry\\banner-06.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "osiris",
+    "source": "assets\\entry\\banner-07.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "seth",
+    "source": "assets\\entry\\banner-07.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "sobek",
+    "source": "assets\\entry\\banner-07.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "minotauro",
+    "source": "assets\\entry\\banner-07.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "aquiles",
+    "source": "assets\\entry\\banner-08.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "hercules",
+    "source": "assets\\entry\\banner-08.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "lukyan",
+    "source": "assets\\entry\\banner-08.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "butter",
+    "source": "assets\\entry\\banner-08.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "lobo-alfa",
+    "source": "assets\\entry\\banner-09.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "lobo-beta",
+    "source": "assets\\entry\\banner-09.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "lobo-omega",
+    "source": "assets\\entry\\banner-09.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "mulher",
+    "source": "assets\\entry\\banner-09.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "homem",
+    "source": "assets\\entry\\banner-10.webp",
+    "width": 887,
+    "height": 443
+  },
+  {
+    "id": "convergence",
+    "source": "assets\\entry\\banner-10.webp",
+    "width": 887,
+    "height": 443
+  }
+]

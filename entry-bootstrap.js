@@ -1,5 +1,5 @@
 /* release-stamp.js */
-window.MythicRelease=Object.freeze({id:"8ab475cb9e7f5f1893df",version:"2026.10.22"});
+window.MythicRelease=Object.freeze({id:"f19332fe62ca5c93df31",version:"2026.10.22.2"});
 
 ;
 /* browser-compat.js */
