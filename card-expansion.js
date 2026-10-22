@@ -569,7 +569,7 @@ window.MythicCardExpansion={
       "type": "Personagem",
       "subtype": "Deus",
       "abilityTitle": "JUSTIÇA CÍCLICA",
-      "ability": "Ao ser destruído e enviado para o cemitério, dobra o poder de outra carta aliada aleatória em campo.",
+      "ability": "Ao ser destruído e enviado para o Submundo, dobra o poder de outra carta aliada aleatória em campo.",
       "kind": "unit",
       "symbol": "△",
       "glow": "rgba(211,165,42,.42)",
@@ -580,7 +580,7 @@ window.MythicCardExpansion={
       "abilityPending": false,
       "story": [
         "Osíris · Deus · Facção Egípcios.",
-        "Habilidade — JUSTIÇA CÍCLICA: Ao ser destruído e enviado para o cemitério, dobra o poder de outra carta aliada aleatória em campo."
+        "Habilidade — JUSTIÇA CÍCLICA: Ao ser destruído e enviado para o Submundo, dobra o poder de outra carta aliada aleatória em campo."
       ],
       "sourceCard": "codex-clipboard-c147b6b0-f4bc-42b4-a2df-607a17e5fbe5.png",
       "sourceHologram": "40-osiris.png",
@@ -2020,7 +2020,7 @@ window.MythicCardExpansion={
       "abilityTitle": "CANÇÃO DO DEVER",
       "ability": "Enquanto Krishna estiver em campo, as outras unidades Hindus aliadas em sua fileira recebem +1 de poder por equipamento nelas, até +3 por unidade.",
       "badgeKey": "hindu",
-      "art": "assets/cards-remake/hindu-krishna.webp",
+      "art": "assets/cards-remake/hindu-krishna-v2.png",
       "previewOnly": false,
       "abilityPending": false,
       "tags": [],

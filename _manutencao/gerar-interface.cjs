@@ -15,6 +15,7 @@ const actions='<a href="#login" class="button button-secondary" data-entry-auth=
 const mediaSource=fs.readFileSync(path.join(root,'entry-media.js'),'utf8').replace(/^\uFEFF/,'');const media=JSON.parse(mediaSource.slice(mediaSource.indexOf('=')+1).trim().replace(/;$/,''));
 let hall=match[1].replace(/<div class="(public-account-actions|public-hero-actions|public-final-actions)"><\/div>/g,(_,name)=>`<div class="${name}">${actions}</div>`).replace(/<img (?=[^>]*src="assets\/portal\/)/g,'<img loading="lazy" fetchpriority="low" ');
 hall=hall.replace(/assets\/portal\/(zeus|poseidon|lukyan)\.webp/g,(src,id)=>media.cards[id]||src);
+hall+='<footer class="hall-version">Mythic Clash · Versão '+JSON.parse(fs.readFileSync(path.join(root,'version.json'),'utf8')).version+'</footer>';
 hall='<section class="mythic-public-home" id="mythic-public-home" aria-label="Conheça Mythic Clash">'+hall+'</section>\n<noscript><p class="startup-status">Ative o JavaScript do navegador para entrar ou criar sua conta.</p></noscript>';
 const fontVersion=hash(fs.readFileSync(path.join(root,'game-fonts.css')));
 const index=path.join(root,'index.html');let html=fs.readFileSync(index,'utf8');

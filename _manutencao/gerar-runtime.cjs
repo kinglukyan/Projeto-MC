@@ -13,8 +13,8 @@ const skip=new Set(['release.json','release-stamp.js','entry-bootstrap.js','sw.j
 const htmlInputs=fs.readdirSync(root).filter(n=>n.endsWith('.html')).sort().map(n=>n+':'+hash(read(n).replace(/\?v=[a-f0-9]+/g,'?v=HASH').replace(/\s+/g,' ')));
 const workerSource=read('sw.js').replace(/const BUILD_ID\s*=\s*['"][a-f0-9]+['"];?/,"const BUILD_ID='BUILD';");
 const id=hash([...inputs.map(n=>n+':'+hash(fs.readFileSync(path.join(root,n)))),...htmlInputs,'sw.js:'+hash(workerSource)].join('\n'));
-write('release-stamp.js',`window.MythicRelease=Object.freeze({id:${JSON.stringify(id)}});\n`);
-write('release.json',JSON.stringify({id}));
+const version=JSON.parse(read('version.json')).version;write('release-stamp.js',`window.MythicRelease=Object.freeze({id:${JSON.stringify(id)},version:${JSON.stringify(version)}});\n`);
+write('release.json',JSON.stringify({id,version}));
 write('entry-bootstrap.js',['release-stamp.js','browser-compat.js','session-startup.js','entry-startup.js'].map(n=>`/* ${n} */\n`+read(n)+'\n;').join('\n'));
 let worker=read('sw.js');worker=worker.replace(/const BUILD_ID\s*=\s*['"][a-f0-9]+['"];?/,`const BUILD_ID='${id}';`);write('sw.js',worker);
 for(const filename of fs.readdirSync(root).filter(n=>n.endsWith('.html'))){let html=read(filename);if(filename==='index.html'){

@@ -4,8 +4,8 @@
     "sha256": "bcdaa7c2698dc2ca4d98ab3170fca4e545a0df0af3755923dd6e1fc46bfceeb2"
   },
   "_manutencao/atualizar-mesmo-zip.py": {
-    "bytes": 869,
-    "sha256": "3691e263b84403eb2c1a5c8e1fae527121a4c5d2da08297a108b4eb48ed1b3f2"
+    "bytes": 948,
+    "sha256": "820d4c6a2a86aad3561f5c3fb07f037e1484f4935bde0ee65226d1fbd145abdb"
   },
   "_manutencao/auditoria-habilidades/ability-allied-identity.sql": {
     "bytes": 618,
@@ -116,12 +116,12 @@
     "sha256": "f8afe61f026e5c780e94275ee1181b94a2892b57b9c839c798274befe5f0d40a"
   },
   "_manutencao/gerar-interface.cjs": {
-    "bytes": 3073,
-    "sha256": "6a80376c0223ba8a022030fa0f610d6ff261c1bb2482df378db92ebac9e1da81"
+    "bytes": 3224,
+    "sha256": "aae387281c0848bdd70818ebb44706c12ed7664289efb74cd4b7c4dae4d1b5eb"
   },
   "_manutencao/gerar-runtime.cjs": {
-    "bytes": 4611,
-    "sha256": "96d1a449a5d5260bd381a1bcacbaf0e346eebe47230d553013c86a3a1c4b31cd"
+    "bytes": 4709,
+    "sha256": "99e0012c31696554f9c0c634c33d3781314d974b4087b8ae1671b12aa05971b5"
   },
   "_manutencao/guardian-atlas/01-atlas-das-lendas.webp": {
     "bytes": 457754,
@@ -160,12 +160,16 @@
     "sha256": "83b55af70174e8177ae628288161458f50a11370fc5f2ecf5ce4130827f58a7c"
   },
   "_manutencao/interface-fontes.json": {
-    "bytes": 1013,
-    "sha256": "248c7c16d7e0d5c1c9b8e7af5bf34e622e94d5eba286a4ff0b0ea941ba307a4a"
+    "bytes": 1043,
+    "sha256": "31cf95d3d1fde940b6949515ec512a762edda3e76eee62b11f05d52284e42df2"
+  },
+  "_manutencao/krishna-revisao.txt": {
+    "bytes": 140,
+    "sha256": "885c68be12e90a76cfb3309c8cb970dcbd1a8b24ae3af80da1214b0931ceb9ff"
   },
   "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
-    "bytes": 2911,
-    "sha256": "689cadfcb6fce794e4857e815df463ac45a810279177ba873de77d6810e4239e"
+    "bytes": 3019,
+    "sha256": "29ea83c3353c5ddb342c5b3ee5ab710f0d9a1ad1b3e6ef7d1882cb4d367001d1"
   },
   "_manutencao/otimizacao-entrada.json": {
     "bytes": 4687,
@@ -198,6 +202,10 @@
   "_manutencao/primeiro-acesso/README.md": {
     "bytes": 206,
     "sha256": "4aa6f5b0cd4e15c447019bd526b9ee2590a661999430e2fdcca7af20140cbf7f"
+  },
+  "_manutencao/prompt-krishna-revisao.txt": {
+    "bytes": 986,
+    "sha256": "0c5a9b4e10b5d0c184f7795ec9c82d425dbbfb7b9fa249857991f3d1e5b86d05"
   },
   "_manutencao/RELATORIO-COMPATIBILIDADE.json": {
     "bytes": 4411,
@@ -752,8 +760,8 @@
     "sha256": "31411f1174384aa92e61852a44cd0da2a4c19be537e5a6e20dc79b005a1e1177"
   },
   "_manutencao/runtime-fontes.json": {
-    "bytes": 1146,
-    "sha256": "6e451bf21e517f35434b36aaebfd7bbe873d55ece7962e14a23560be8f2754ad"
+    "bytes": 1170,
+    "sha256": "0edb3c7fc7db9251d13d1350197965e1e225f8cfa0ece5b82dd1d53a70b9d963"
   },
   "_manutencao/seguranca/escopo.json": {
     "bytes": 615,
@@ -796,12 +804,12 @@
     "sha256": "2e5cccce3781f22c44ede8a662c6db83c00a3f6c98aa0936807ec64b72bc7d5f"
   },
   "abilities-data.js": {
-    "bytes": 110135,
-    "sha256": "ac470a3d5f232b4758a6cf105203cddc7fadca4b955cbb553c0b78787c7932f0"
+    "bytes": 110053,
+    "sha256": "c13cd5ac3ff51454507ef115ab2b3fc68a5a486feb9e2ba60c27ebd852cebdc1"
   },
   "abilities-data.json": {
-    "bytes": 145536,
-    "sha256": "783546d5e73e154ab161e6f63b3aff204a5c3c49c89475e515957015e6d9d718"
+    "bytes": 145465,
+    "sha256": "98c46af74b5b597afacc52307aea5d6112c0f828b0decbfeb3747664ce381afe"
   },
   "abilities-engine.js": {
     "bytes": 43194,
@@ -824,8 +832,8 @@
     "sha256": "4ac19c29405481b9da492304052472cdf8bb699e2e7218a9dad6d2384e4af25a"
   },
   "app.js": {
-    "bytes": 130455,
-    "sha256": "efda0a05d4355ca3b39e44171b18fef8708443b645207ed44154ca8f4aca4cba"
+    "bytes": 131320,
+    "sha256": "7da6fee38ae8b6cedbb89f3eb8af4103b04efe8d8a82396f5b8228b6ab52d845"
   },
   "arcane-palette.css": {
     "bytes": 37675,
@@ -840,8 +848,8 @@
     "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
   },
   "asset-manifest.json": {
-    "bytes": 71269,
-    "sha256": "2f15e653c4c77184ea964ac4d7d418eafaa9d8619e28df9b351a34d32d5d15bd"
+    "bytes": 71409,
+    "sha256": "c764d660b41b94077b40122ab99306d51a541a9f32d57a0e3c2b08c1137eb5f3"
   },
   "assets/app-icon.svg": {
     "bytes": 531,
@@ -1650,6 +1658,10 @@
   "assets/cards-remake/hindu-kali.webp": {
     "bytes": 399396,
     "sha256": "0df4a4cc3be604a49f1442aed00f5975a15ad2673ea7a85a30377d383768757f"
+  },
+  "assets/cards-remake/hindu-krishna-v2.png": {
+    "bytes": 2355893,
+    "sha256": "ab467a182e1c7013ede7a9e7b59e8e90c52e1a398f020c4e8728678170a46b6c"
   },
   "assets/cards-remake/hindu-krishna.webp": {
     "bytes": 384856,
@@ -2942,6 +2954,10 @@
   "assets/guardian-campaign/atlas/norse.webp": {
     "bytes": 581540,
     "sha256": "995151a160417e86756ca06a19313d32c46eb27be049cf703fd74cd8499aef57"
+  },
+  "assets/guardian-campaign/atlas/tesouro-atlas.png": {
+    "bytes": 2580680,
+    "sha256": "f57988f8e3fc72aa9648793b166d62bb10f67e9dd91c6878f76b48739be338f5"
   },
   "assets/guardian-campaign/atlas/world.webp": {
     "bytes": 570008,
@@ -4516,16 +4532,16 @@
     "sha256": "f5e9e8eaa27bcb5267d9a1faca8066896562949fcbcefabd4d04f540b292f859"
   },
   "card-expansion.js": {
-    "bytes": 114891,
-    "sha256": "45e5a3bd586a91c52dbda27e7a2af1bdbc981f95f68f5be569a1d247dba94894"
+    "bytes": 114889,
+    "sha256": "b22d4a1445cafaadb6128f63c4e423b9c5cee0e9e10fa0f38220d107222d31a8"
   },
   "card-hologram-map.json": {
     "bytes": 114524,
     "sha256": "dadb900e624d86a998ecf08148a21d2a2cecc076572abc3e8b1576f5f5ea996f"
   },
   "cards-remake.json": {
-    "bytes": 114524,
-    "sha256": "dadb900e624d86a998ecf08148a21d2a2cecc076572abc3e8b1576f5f5ea996f"
+    "bytes": 114436,
+    "sha256": "286d5f7dd08614cbfc30b7992dc65b7da1f82d025bd0630df0347f1d07eca01a"
   },
   "CARREGAMENTO-E-DESEMPENHO.md": {
     "bytes": 6423,
@@ -4548,8 +4564,8 @@
     "sha256": "0586bc538dd79bc95029cb1fea5e5474752b2ab9375f616ac02adf15776afdf6"
   },
   "COMECE-AQUI.txt": {
-    "bytes": 5158,
-    "sha256": "a2925de428048183377d36fad90362df08767f34d387c5d09e23f5b3c5d08557"
+    "bytes": 5428,
+    "sha256": "2f856a51f3daea2770f5d670847aab885b998a1eaf3557acc0fa1d784cb9a56e"
   },
   "CONCEPT-ART-ASSETS.json": {
     "bytes": 5044,
@@ -4564,8 +4580,8 @@
     "sha256": "cfc0013b47aa70721b269587924560c3927df2c300b63d81169beea4684d1e75"
   },
   "concept-theme.js": {
-    "bytes": 42125,
-    "sha256": "778782fdca2b6ed1dfa3aaf81a6d1cb728279e278bb1b1398774c8198529bb7f"
+    "bytes": 42832,
+    "sha256": "b99af83ca16e42a8ee943cc407712297d6699007dc2d10ea085f65f8661f9c39"
   },
   "CONSTRUTOR-DE-DECKS.md": {
     "bytes": 4200,
@@ -4576,8 +4592,8 @@
     "sha256": "732d5551364ae8ca421d1dc1fc04a0c6917fe080b019ccc0be101c8e7aebf6d3"
   },
   "convergence-lobby.js": {
-    "bytes": 11724,
-    "sha256": "bf5ecfa58fda1ffd3c54a611a91a6c921af5cd6bf0781886bafef8eb34756a6d"
+    "bytes": 11731,
+    "sha256": "5f53de059c9ffb1a5abbbff9f10124dbc5e01139ef72a04f442d88508f5989fa"
   },
   "CORRECAO-AFRODITE-FILEIRAS.md": {
     "bytes": 1148,
@@ -4680,8 +4696,8 @@
     "sha256": "a742a1944df285cd110ed9ca387455f3730deeee89a6ac162bd8f9b680566d79"
   },
   "entry-bootstrap.js": {
-    "bytes": 10852,
-    "sha256": "4fca4b3cafca79de7b9a66aa7e37d919be9929a3d9575f500dfdfdf6bb8381b0"
+    "bytes": 10873,
+    "sha256": "3818baa8b6a2a0177ec456c3cafb28829d59475ccaddd96f7f265dfcd6fc58f7"
   },
   "entry-critical.css": {
     "bytes": 9109,
@@ -4724,12 +4740,12 @@
     "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
   },
   "game-interface.css": {
-    "bytes": 628244,
-    "sha256": "e503a7675bd31619d3ad6b807e3764a47d6a765b84843f0ed7e646a04f3ba632"
+    "bytes": 635213,
+    "sha256": "d6647bd30748582c1d6e7b366e3c4efbb8470147a3c54633c8b7d92eac5d4218"
   },
   "game-runtime.js": {
-    "bytes": 1315853,
-    "sha256": "b191058d3742c573b05f54120a068b45b5271a6e97bfed49fdae6eb75f940a49"
+    "bytes": 1331212,
+    "sha256": "aa1c737ddab6590db005bcd9f717203a85a284108a577209b47c1e75ec48e90e"
   },
   "guardian-campaign-data.js": {
     "bytes": 59773,
@@ -4740,8 +4756,8 @@
     "sha256": "1885e8d5b70ad5751a64e333bf6323528d58a9d704b6b37552c8cad9b3045f4e"
   },
   "guardian-campaign.js": {
-    "bytes": 28788,
-    "sha256": "e39f339a96e227222fd8bc713a21257496aa9f21673c03d2bf3e974d9f55ff4e"
+    "bytes": 28517,
+    "sha256": "dd52934cd8b8435232a8ab463d5b6e0104df859de1e0c069ae30fecb52523cbd"
   },
   "GUARDIAO-CAMPANHA.md": {
     "bytes": 5627,
@@ -4796,8 +4812,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 77366,
-    "sha256": "05ec2d575ed49794a0342b1d7ceecd8422cbfd1bef96c8a5fb882c82c7ec185f"
+    "bytes": 77720,
+    "sha256": "1defb7bdbfff1fe7953ee223c90c6459af20edde0e3ffbf32497c860d11d6aa1"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -4860,8 +4876,8 @@
     "sha256": "a0742fcb060cc42e44d1467a28715682415468f5e1beb0004bb4fc1322b5d95b"
   },
   "match-report.js": {
-    "bytes": 11246,
-    "sha256": "124cb88bd357468df390e1cd812c1cf162a3db334b295272da2b184fc387cc5f"
+    "bytes": 11943,
+    "sha256": "d96f38c58ad52e780aae0b30d8813498277d765923cf9a4fb7836ff698d9e2f8"
   },
   "match-surrender.css": {
     "bytes": 951,
@@ -4896,8 +4912,8 @@
     "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
   },
   "online.js": {
-    "bytes": 146434,
-    "sha256": "39dc6206219b13d64a3cf4f7ff8ad06ffdb97b3c1adc2965c268e54605fdf62d"
+    "bytes": 148778,
+    "sha256": "c2520a9f96e7e5c3de7ead7b06a1d451ec58ef0a8a3dac2b338b2f409da18e57"
   },
   "PELOTOES-DE-COMPANHEIROS.md": {
     "bytes": 884,
@@ -4935,6 +4951,14 @@
     "bytes": 18127,
     "sha256": "95262b15ee32ad83213907eb7c8fa516607dd3841caa050e01736094d00d2921"
   },
+  "quality-updates.css": {
+    "bytes": 6654,
+    "sha256": "de1ddbd0f7beaeb3e1882adab478680c2936cf93790587191ada8a443a7ff098"
+  },
+  "quality-updates.js": {
+    "bytes": 10638,
+    "sha256": "4fbad7d7bc9785b210abc0210647857658c601474f82b59eabfa3d7742815893"
+  },
   "queue-room-layout.css": {
     "bytes": 3034,
     "sha256": "41d40f5b781669f93a4ee9afbb42421454cf8fd57d19aa9e28587128068aeb28"
@@ -4948,8 +4972,8 @@
     "sha256": "f0a7db3dbae9fab2a74d1d510a0548581cc972f26b4e30ce35742fb9a3371f16"
   },
   "rank-progression.js": {
-    "bytes": 5928,
-    "sha256": "5dba1c847732cb1b9805d9cda10cb983431b4c6a5976f0d04e164bcd91dcff95"
+    "bytes": 6135,
+    "sha256": "1db3e199c7a9ea79dc8290fbe9b8e176c2ce48958d553f9e325f1cf27927f7bc"
   },
   "RECOMPENSAS-E-TORNEIOS.md": {
     "bytes": 4702,
@@ -4960,12 +4984,12 @@
     "sha256": "3d478dcd0bab988f4565934e05badd74eda430c241bf5b35f14cf2563dd65282"
   },
   "release-stamp.js": {
-    "bytes": 65,
-    "sha256": "7a96b3e91d3bd2c8c8eaf8e6b39618f8f2270ea068c128c2a32be50a5ea55cdd"
+    "bytes": 86,
+    "sha256": "cb16419497a937ee080dddf1013880f40b9bcb4c4f5d739c2472040ac1dd438d"
   },
   "release.json": {
-    "bytes": 29,
-    "sha256": "20ffa887120ee8cac06e03326ccd7dbb89ccc9203857f753ecdd5dafbeaf1d69"
+    "bytes": 52,
+    "sha256": "498bbd235587c923354e70d5f08a46482cfb9decb3f74225cc9d876888a83b07"
   },
   "remake-gallery.css": {
     "bytes": 1513,
@@ -4976,12 +5000,12 @@
     "sha256": "9b1a2b8d7575d8c3688bb6ade2d33be17b1f417d8a04ed9bd1509c64aa6de796"
   },
   "remake-rules.js": {
-    "bytes": 4074,
-    "sha256": "408562c4995a2cd0d206ef4a05e000b0a945fec3a23060cbf1a5a6dba0732b25"
+    "bytes": 4082,
+    "sha256": "598a88926cabaac2d36bf1dccfa80ac7a604a1e5f6f8f52bf3d3ebd4e113c01c"
   },
   "remake-rules.json": {
-    "bytes": 5932,
-    "sha256": "0acf56725211187ca3b7e41a79010f076e77d735cf8f0fadcbc8636cee044ad1"
+    "bytes": 5949,
+    "sha256": "9bdb567813052db41c227b933e566daff9b0e4840a2e92cacfdfa3bf6e82db3e"
   },
   "responsive-layout.css": {
     "bytes": 19485,
@@ -4990,6 +5014,10 @@
   "RESUMO-DA-PARTIDA.md": {
     "bytes": 2775,
     "sha256": "fd235b8cc43b2936b2ee8949604c9d77870242efd732fb9946fc1e24cd1edea3"
+  },
+  "REVISAO-ATLAS-E-ARENA.md": {
+    "bytes": 7184,
+    "sha256": "d86c574b193f5c56bc3205a2abd1fcdd0bb507b2484fd6ca31e45f7e73dc648c"
   },
   "REVISAO-HABILIDADES.md": {
     "bytes": 33129,
@@ -5323,6 +5351,14 @@
     "bytes": 18283,
     "sha256": "c86fc606cb9564922cabfa888d641e652449da38178e8c19954f139df99a4b19"
   },
+  "supabase/migrations/202610210050_audit_rules_and_mode_guards.sql": {
+    "bytes": 3981,
+    "sha256": "198b6f6ba3fe6a95a45ea693351cd2409065e106c59079cfcc051a44dd1ff1ad"
+  },
+  "supabase/migrations/202610210051_post_match_effect_details.sql": {
+    "bytes": 8826,
+    "sha256": "b105229f4409fa6541aea4e359b07a4ead91bbe8d61198eedf5d846d668bdc7c"
+  },
   "supabase/README.md": {
     "bytes": 2053,
     "sha256": "317190d2e911059045588edd73f6f78cecbcbf1f4df1c13dfff9aa4f8594c24e"
@@ -5333,7 +5369,7 @@
   },
   "sw.js": {
     "bytes": 4187,
-    "sha256": "89fa5d8b3e70d16215e885ea5733bdf5a1ed4988969089e5ab2bd592a95a8631"
+    "sha256": "35fdb3bcf4b8ff870e4481d46d3b01506d80d20dd9928807f211797efdcf2b93"
   },
   "terrain-cards.js": {
     "bytes": 15141,
@@ -5364,12 +5400,12 @@
     "sha256": "453bd29ed95e5df9a04453d734a43625103e6c38d04ab09dc83735340115c647"
   },
   "unified-custom.js": {
-    "bytes": 970,
-    "sha256": "c4d9ff7125e1d4c257a68a029c8fdc5d06f03d464db97c812a51265c1e904c10"
+    "bytes": 992,
+    "sha256": "b289f0a3355cfd66921bd1fb1fc6303f68985396508ba5341277994b17b32c56"
   },
   "universe-banners.js": {
-    "bytes": 10611,
-    "sha256": "b70016d4917fb859c57af000eb5426dfbafc698a7b4e443820b3a7424e9df3df"
+    "bytes": 10802,
+    "sha256": "f6d1e106ac0ba5ee6c468dc74a4e947fdea006f2f449811cb4db3587df112dd4"
   },
   "universe-banners.json": {
     "bytes": 3565,
@@ -5382,6 +5418,10 @@
   "vercel.json": {
     "bytes": 3051,
     "sha256": "d77452533bd358ee56e7c3b5de09cdd6dab706c5ed87807402c1c7b0561769be"
+  },
+  "version.json": {
+    "bytes": 73,
+    "sha256": "6fbd6ae8bdb899c49fb9478cafcd0389cc1554c52cb1fd93782012ef9e844c02"
   },
   "VERSO-OFICIAL-E-MOEDA.md": {
     "bytes": 933,

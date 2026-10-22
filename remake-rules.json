@@ -125,9 +125,10 @@
     "optional": true
   },
   "hindu-krishna": {
-    "op": "equipmentAura",
+    "op": "aura",
     "faction": "Hindu",
-    "max": 3
+    "amount": 1,
+    "unique": true
   },
   "hindu-indra": {
     "op": "equipmentDestroy",

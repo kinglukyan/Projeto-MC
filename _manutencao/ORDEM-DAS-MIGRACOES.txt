@@ -69,3 +69,6 @@ Não reaplicar todos os scripts no banco de produção.
 202610200046_match_surrender.sql
 202610200047_card_bonus_alias_fix.sql
 202610210048_resume_active_matches_only.sql
+
+050 — 202610210050_audit_rules_and_mode_guards.sql
+051 — 202610210051_post_match_effect_details.sql

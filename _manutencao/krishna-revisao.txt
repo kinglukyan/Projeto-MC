@@ -1,0 +1,1 @@
+Arte atualizada com image_gen integrada. Substituição somente do texto da habilidade; versão: assets/cards-remake/hindu-krishna-v2.png.

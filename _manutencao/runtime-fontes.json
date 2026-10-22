@@ -50,5 +50,6 @@
   "guardian-campaign.js",
   "rewards-tournaments.js",
   "session-resume.js",
-  "site-updates.js"
+  "site-updates.js",
+  "quality-updates.js"
 ]

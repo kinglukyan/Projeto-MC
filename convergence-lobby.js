@@ -67,7 +67,7 @@
  async function openFriends(event){
   pickerContext=['custom','direct'].includes(event?.detail?.context)?event.detail.context:'queue';pickerSlot=event?.detail?.slot||null;
   if(!api()?.requireLogin?.())return;if(pickerContext==='queue'&&(queue.active||state.party||state.busy))return;
-  $('#lobby-friends-heading').textContent=pickerContext==='direct'?'Escolha seu adversário':'Seus aliados';dialog.querySelector('header small').textContent=pickerContext==='direct'?'DESAFIO DIRETO X1':'CONVIDAR PARA A SALA';
+  $('#lobby-friends-heading').textContent=pickerContext==='direct'?'Escolha seu adversário':'Seus aliados';dialog.querySelector('header small').textContent=pickerContext==='direct'?'DESAFIO DIRETO · 1 × 1':'CONVIDAR PARA A SALA';
   returnFocus=document.activeElement;$('#lobby-friends-search').value='';$('#lobby-friends-status').textContent='Carregando amigos…';
   friends=api().lobbyFriends();drawFriends();if(!dialog.open)dialog.showModal();
   try{friends=await api().loadLobbyFriends();$('#lobby-friends-status').textContent='Online primeiro. Você também pode convidar amigos offline.';drawFriends();}

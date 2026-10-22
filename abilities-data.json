@@ -684,7 +684,7 @@
       "type": "Personagem",
       "subtype": "Deus",
       "abilityTitle": "JUSTIÇA CÍCLICA",
-      "ability": "Ao ser destruído e enviado para o cemitério, dobra o poder de outra carta aliada aleatória em campo.",
+      "ability": "Ao ser destruído e enviado para o Submundo, dobra o poder de outra carta aliada aleatória em campo.",
       "kind": "unit",
       "symbol": "△",
       "glow": "rgba(211,165,42,.42)",
@@ -695,7 +695,7 @@
       "abilityPending": false,
       "story": [
         "Osíris · Deus · Facção Egípcios.",
-        "Habilidade — JUSTIÇA CÍCLICA: Ao ser destruído e enviado para o cemitério, dobra o poder de outra carta aliada aleatória em campo."
+        "Habilidade — JUSTIÇA CÍCLICA: Ao ser destruído e enviado para o Submundo, dobra o poder de outra carta aliada aleatória em campo."
       ],
       "sourceCard": "codex-clipboard-c147b6b0-f4bc-42b4-a2df-607a17e5fbe5.png",
       "sourceHologram": "40-osiris.png",
@@ -2462,9 +2462,9 @@
       "faction": "Hindu",
       "power": 5,
       "abilityTitle": "CANÇÃO DO DEVER",
-      "ability": "Enquanto Krishna estiver em campo, as outras unidades Hindus aliadas em sua fileira recebem +1 de poder por equipamento nelas, até +3 por unidade.",
+      "ability": "Enquanto Krishna estiver em campo, as outras unidades Hindus aliadas em sua fileira recebem +1 de poder.",
       "badgeKey": "hindu",
-      "art": "assets/cards-remake/hindu-krishna.webp",
+      "art": "assets/cards-remake/hindu-krishna-v2.png",
       "previewOnly": false,
       "abilityPending": false,
       "tags": [],
@@ -2474,7 +2474,7 @@
       "glow": "#B96308",
       "story": [
         "Krishna · Deus · Hindu.",
-        "Habilidade — CANÇÃO DO DEVER: Enquanto Krishna estiver em campo, as outras unidades Hindus aliadas em sua fileira recebem +1 de poder por equipamento nelas, até +3 por unidade."
+        "Habilidade — CANÇÃO DO DEVER: Enquanto Krishna estiver em campo, as outras unidades Hindus aliadas em sua fileira recebem +1 de poder."
       ],
       "cost": null
     },
@@ -2693,8 +2693,8 @@
       "name": "Mictlantecuhtli",
       "kind": "unit",
       "type": "Personagem",
-      "subtype": "Poder",
-      "characterClass": "Poder",
+      "subtype": "Deus",
+      "characterClass": "Deus",
       "faction": "Asteca",
       "power": 5,
       "abilityTitle": "SENHOR DE MICTLAN",
@@ -3917,9 +3917,10 @@
       "optional": true
     },
     "hindu-krishna": {
-      "op": "equipmentAura",
+      "op": "aura",
       "faction": "Hindu",
-      "max": 3
+      "amount": 1,
+      "unique": true
     },
     "hindu-indra": {
       "op": "equipmentDestroy",
