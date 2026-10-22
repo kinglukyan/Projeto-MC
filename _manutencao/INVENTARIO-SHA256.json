@@ -5016,8 +5016,8 @@
     "sha256": "fd235b8cc43b2936b2ee8949604c9d77870242efd732fb9946fc1e24cd1edea3"
   },
   "REVISAO-ATLAS-E-ARENA.md": {
-    "bytes": 7184,
-    "sha256": "d86c574b193f5c56bc3205a2abd1fcdd0bb507b2484fd6ca31e45f7e73dc648c"
+    "bytes": 7832,
+    "sha256": "e010f7f734a7fa969a9f092f5a30e9a88f785984281b212a489f5222efcb9ee2"
   },
   "REVISAO-HABILIDADES.md": {
     "bytes": 33129,
@@ -5352,8 +5352,8 @@
     "sha256": "c86fc606cb9564922cabfa888d641e652449da38178e8c19954f139df99a4b19"
   },
   "supabase/migrations/202610210050_audit_rules_and_mode_guards.sql": {
-    "bytes": 3981,
-    "sha256": "198b6f6ba3fe6a95a45ea693351cd2409065e106c59079cfcc051a44dd1ff1ad"
+    "bytes": 4053,
+    "sha256": "ce5abb42441c14a7da5b37f348f104c26465c1e11ae92994e3e0887709fc64c2"
   },
   "supabase/migrations/202610210051_post_match_effect_details.sql": {
     "bytes": 8826,

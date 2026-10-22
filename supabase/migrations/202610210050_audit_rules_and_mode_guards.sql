@@ -1,4 +1,5 @@
 -- Após 049. Regras iguais no laboratório e nos modos online.
+-- Correção: o catálogo existente se chama public.shop_catalog.
 begin;
 create or replace function public._x_rule(u jsonb) returns jsonb
 language sql stable set search_path='' as $$
@@ -7,8 +8,8 @@ language sql stable set search_path='' as $$
   else coalesce(public._r_data()#>array['remakeRules',public._r_id(u)],'{}'::jsonb) end
 $$;
 update public.card_lore set ability_text='Enquanto Krishna estiver em campo, as outras unidades Hindus aliadas em sua fileira recebem +1 de poder.',art_url='assets/cards-remake/hindu-krishna-v2.png' where card_id='hindu-krishna';
-update public.shop_items set description='Enquanto Krishna estiver em campo, as outras unidades Hindus aliadas em sua fileira recebem +1 de poder.',asset_path='assets/cards-remake/hindu-krishna-v2.png' where card_id='hindu-krishna';
-update public.shop_items set title=regexp_replace(regexp_replace(title,'^Chibi[ ·—-]+','','i'),'[ ·—-]+Chibi$','','i') where item_id like 'chibi-%';
+update public.shop_catalog set description='Enquanto Krishna estiver em campo, as outras unidades Hindus aliadas em sua fileira recebem +1 de poder.',asset_path='assets/cards-remake/hindu-krishna-v2.png' where card_id='hindu-krishna';
+update public.shop_catalog set title=regexp_replace(regexp_replace(title,'^Chibi[ ·—-]+','','i'),'[ ·—-]+Chibi$','','i') where item_id like 'chibi-%';
 
 -- Preserva todos os outros dados do catálogo oficial.
 do $$ begin

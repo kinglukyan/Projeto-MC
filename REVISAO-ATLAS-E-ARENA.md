@@ -15,6 +15,12 @@ Esta é a mesma pasta principal do jogo. O arquivo ao lado, **Mythic-Clash-Compl
 
 Não execute novamente todas as migrações antigas. Os dados das contas continuam no Supabase, não dentro deste ZIP.
 
+### Correção do erro 42P01 na migração 050
+
+A primeira entrega da 050 usava incorretamente `public.shop_items`. O nome correto é `public.shop_catalog`, conforme a estrutura original da loja. As duas referências foram corrigidas neste mesmo arquivo e ZIP.
+
+Se a execução anterior falhou com esse erro, execute **o arquivo 050 corrigido inteiro**, depois a 051. O arquivo usa uma transação (`begin`/`commit`): a execução que falhou não foi concluída. Se o editor mostrar que a transação ainda está abortada, execute `rollback;` antes de repetir a 050 completa. Não é necessário criar outra tabela ou repetir migrações antigas.
+
 ## Alterações
 
 ### Guardião
