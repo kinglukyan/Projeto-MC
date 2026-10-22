@@ -832,8 +832,8 @@
     "sha256": "4ac19c29405481b9da492304052472cdf8bb699e2e7218a9dad6d2384e4af25a"
   },
   "app.js": {
-    "bytes": 131320,
-    "sha256": "7da6fee38ae8b6cedbb89f3eb8af4103b04efe8d8a82396f5b8228b6ab52d845"
+    "bytes": 131739,
+    "sha256": "04ff2bd6902d81b654b2324c5d3ca5cd6882d312d351374b8e531720f8665a34"
   },
   "arcane-palette.css": {
     "bytes": 37675,
@@ -4580,8 +4580,8 @@
     "sha256": "cfc0013b47aa70721b269587924560c3927df2c300b63d81169beea4684d1e75"
   },
   "concept-theme.js": {
-    "bytes": 42832,
-    "sha256": "b99af83ca16e42a8ee943cc407712297d6699007dc2d10ea085f65f8661f9c39"
+    "bytes": 42362,
+    "sha256": "643a079e6716a7b96f1b9ba02ccab80a7cd778842ba0a6314cd66bcd60bb2267"
   },
   "CONSTRUTOR-DE-DECKS.md": {
     "bytes": 4200,
@@ -4652,16 +4652,16 @@
     "sha256": "92e18b1650be73d51c9cbec7a7ae13531e8d7c8adbc2c9b8218bde4758fabbf4"
   },
   "deck-builder.js": {
-    "bytes": 25339,
-    "sha256": "f3c3b4718792587f58712de53454ffd9f6689541d5082946230d082f842148da"
+    "bytes": 26371,
+    "sha256": "7cef4ce8d2442083ab0c4bb26ba2cf98dabd124f33c0a5abebd8a517592a64ce"
   },
   "deck-evaluator.js": {
     "bytes": 15575,
     "sha256": "bdc5198643776d67901c393af0f8b57f2db9110db3750da309be5d493232cd9e"
   },
   "deck-identity.js": {
-    "bytes": 6625,
-    "sha256": "518ca7fad927cd2e6f995b1dade68f53df3c9cf95d310361079b1822f9892740"
+    "bytes": 7322,
+    "sha256": "b2580e577c775d4fc8dd6a518a2ee1473573b7a9df86ce477d9c2896f3577641"
   },
   "deck-tools.css": {
     "bytes": 10130,
@@ -4697,7 +4697,7 @@
   },
   "entry-bootstrap.js": {
     "bytes": 10873,
-    "sha256": "3818baa8b6a2a0177ec456c3cafb28829d59475ccaddd96f7f265dfcd6fc58f7"
+    "sha256": "971bbf94a84b882e0590c07775ac75b5409b3ddd9494c83a61b9bb896fcc950f"
   },
   "entry-critical.css": {
     "bytes": 9109,
@@ -4740,12 +4740,12 @@
     "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
   },
   "game-interface.css": {
-    "bytes": 635213,
-    "sha256": "d6647bd30748582c1d6e7b366e3c4efbb8470147a3c54633c8b7d92eac5d4218"
+    "bytes": 637599,
+    "sha256": "741a21782ce3a7da7caf62c0a823c217ea87e20e74b9d2d92d72766ed89eb088"
   },
   "game-runtime.js": {
-    "bytes": 1331212,
-    "sha256": "aa1c737ddab6590db005bcd9f717203a85a284108a577209b47c1e75ec48e90e"
+    "bytes": 1333277,
+    "sha256": "3150aa8fef08aa76be57a8625c32237d3143a6d32f1ce0cc8c140d884f2d23cd"
   },
   "guardian-campaign-data.js": {
     "bytes": 59773,
@@ -4756,8 +4756,8 @@
     "sha256": "1885e8d5b70ad5751a64e333bf6323528d58a9d704b6b37552c8cad9b3045f4e"
   },
   "guardian-campaign.js": {
-    "bytes": 28517,
-    "sha256": "dd52934cd8b8435232a8ab463d5b6e0104df859de1e0c069ae30fecb52523cbd"
+    "bytes": 28904,
+    "sha256": "3be2b3e075c17edc9540a59533b2fd69afcc1e764d848399e9ff67b0192f1b1c"
   },
   "GUARDIAO-CAMPANHA.md": {
     "bytes": 5627,
@@ -4812,8 +4812,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 77720,
-    "sha256": "1defb7bdbfff1fe7953ee223c90c6459af20edde0e3ffbf32497c860d11d6aa1"
+    "bytes": 77718,
+    "sha256": "c5ddbe811c70e780f8c59c578b8d41484e15451f753864bea76a628c11d08a96"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -4952,8 +4952,8 @@
     "sha256": "95262b15ee32ad83213907eb7c8fa516607dd3841caa050e01736094d00d2921"
   },
   "quality-updates.css": {
-    "bytes": 6654,
-    "sha256": "de1ddbd0f7beaeb3e1882adab478680c2936cf93790587191ada8a443a7ff098"
+    "bytes": 8982,
+    "sha256": "dc7b5ee2a96f65b1aec7ff195d1bd9f1c7af0017bdb7d99d510819aa6d0202ca"
   },
   "quality-updates.js": {
     "bytes": 10638,
@@ -4985,11 +4985,11 @@
   },
   "release-stamp.js": {
     "bytes": 86,
-    "sha256": "cb16419497a937ee080dddf1013880f40b9bcb4c4f5d739c2472040ac1dd438d"
+    "sha256": "bdf81e78445d823a978a15e57b95518fdec4283826904c210a7a5a2805e9d70a"
   },
   "release.json": {
     "bytes": 52,
-    "sha256": "498bbd235587c923354e70d5f08a46482cfb9decb3f74225cc9d876888a83b07"
+    "sha256": "4d248a6c6b44c3f9ced628b5d64c1d658dd23820d0758b72533765b02f61dfe2"
   },
   "remake-gallery.css": {
     "bytes": 1513,
@@ -5016,8 +5016,8 @@
     "sha256": "fd235b8cc43b2936b2ee8949604c9d77870242efd732fb9946fc1e24cd1edea3"
   },
   "REVISAO-ATLAS-E-ARENA.md": {
-    "bytes": 7832,
-    "sha256": "e010f7f734a7fa969a9f092f5a30e9a88f785984281b212a489f5222efcb9ee2"
+    "bytes": 8731,
+    "sha256": "f2c8a133ee84a089bfdaf6f28e7d55734a0625d75db688ce3abfc2a0eabc472d"
   },
   "REVISAO-HABILIDADES.md": {
     "bytes": 33129,
@@ -5369,7 +5369,7 @@
   },
   "sw.js": {
     "bytes": 4187,
-    "sha256": "35fdb3bcf4b8ff870e4481d46d3b01506d80d20dd9928807f211797efdcf2b93"
+    "sha256": "c4a08bd5264d784c1171c5b8d2c1f88b101d21258f71211d715afcabc958ffd7"
   },
   "terrain-cards.js": {
     "bytes": 15141,

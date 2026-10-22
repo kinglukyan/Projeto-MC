@@ -87,7 +87,7 @@
       try{await window.MythicDeckEditor.commit({slot,name:selected.name,counts:{...selected.cards},userId});}
       finally{lobbyDeckSelecting=false;window.dispatchEvent(new CustomEvent('mythic-deck-selection-state',{detail:{busy:false}}));}
     },
-    read:()=>({slot:activeDeckSlot,name:deckSlots[activeDeckSlot].name,counts:{...deckCounts},userId:window.MythicOnline?.userId?.()||null,cards:cards.map(card=>({...card,owned:ownedCopies(card)}))}),
+    read:()=>({slot:activeDeckSlot,name:deckSlots[activeDeckSlot].name,iconKey:deckSlots[activeDeckSlot].iconKey||"convergencia",iconColor:deckSlots[activeDeckSlot].iconColor||"#44305E",counts:{...deckCounts},userId:window.MythicOnline?.userId?.()||null,cards:cards.map(card=>({...card,owned:ownedCopies(card)}))}),
     remove:async slot=>{
       const viewer=window.MythicOnline?.userId?.();
       if(!viewer||!Number.isInteger(slot)||!deckSlots[slot])throw new Error("Abra sua conta e selecione um baralho válido.");
@@ -100,7 +100,7 @@
       persistDeckSlots();renderDeck();renderDeckSlots();
       window.dispatchEvent(new CustomEvent("mythic-deck-deleted",{detail:{slot}}));
     },
-    commit:async({slot,name,counts,userId})=>{
+    commit:async({slot,name,counts,userId,iconKey,iconColor})=>{
       const viewer=window.MythicOnline?.userId?.()||null;
       if(userId!==viewer||!deckSlots[slot])throw new Error("A conta ou o baralho mudou. Abra o construtor novamente.");
       const clean={};let total=0;
@@ -113,9 +113,10 @@
       const title=String(name||"").trim().slice(0,24)||`Deck ${slot+1}`;
       if(!window.MythicOnline?.saveBuilderDeck)throw new Error("Entre na conta para salvar o baralho.");
       await window.MythicOnline.saveBuilderDeck(slot,title,clean);
+      let identity=null;if(iconKey&&iconColor&&(iconKey!==deckSlots[slot].iconKey||iconColor!==deckSlots[slot].iconColor))identity=await window.MythicOnline.saveDeckPersonalization(slot,title,iconKey,iconColor);
       if((window.MythicOnline?.userId?.()||null)!==viewer)throw new Error("A conta mudou durante o salvamento.");
       activeDeckSlot=slot;deckCounts=Object.fromEntries(cards.map(card=>[card.id,clean[card.id]||0]));
-      deckSlots[slot]={...deckSlots[slot],name:title,cards:{...deckCounts}};persistDeckSlots();renderDeck();renderDeckSlots();
+      deckSlots[slot]={...deckSlots[slot],...(identity?{iconKey:identity.iconKey,iconColor:identity.iconColor}:{}),name:title,cards:{...deckCounts}};persistDeckSlots();renderDeck();renderDeckSlots();
       $("#deck-save-status").textContent="Baralho salvo na sua conta.";
       window.dispatchEvent(new CustomEvent("mythic-deck-saved",{detail:{slot,name:title}}));
     }

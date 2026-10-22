@@ -4411,7 +4411,7 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
       try{await window.MythicDeckEditor.commit({slot,name:selected.name,counts:{...selected.cards},userId});}
       finally{lobbyDeckSelecting=false;window.dispatchEvent(new CustomEvent('mythic-deck-selection-state',{detail:{busy:false}}));}
     },
-    read:()=>({slot:activeDeckSlot,name:deckSlots[activeDeckSlot].name,counts:{...deckCounts},userId:window.MythicOnline?.userId?.()||null,cards:cards.map(card=>({...card,owned:ownedCopies(card)}))}),
+    read:()=>({slot:activeDeckSlot,name:deckSlots[activeDeckSlot].name,iconKey:deckSlots[activeDeckSlot].iconKey||"convergencia",iconColor:deckSlots[activeDeckSlot].iconColor||"#44305E",counts:{...deckCounts},userId:window.MythicOnline?.userId?.()||null,cards:cards.map(card=>({...card,owned:ownedCopies(card)}))}),
     remove:async slot=>{
       const viewer=window.MythicOnline?.userId?.();
       if(!viewer||!Number.isInteger(slot)||!deckSlots[slot])throw new Error("Abra sua conta e selecione um baralho válido.");
@@ -4424,7 +4424,7 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
       persistDeckSlots();renderDeck();renderDeckSlots();
       window.dispatchEvent(new CustomEvent("mythic-deck-deleted",{detail:{slot}}));
     },
-    commit:async({slot,name,counts,userId})=>{
+    commit:async({slot,name,counts,userId,iconKey,iconColor})=>{
       const viewer=window.MythicOnline?.userId?.()||null;
       if(userId!==viewer||!deckSlots[slot])throw new Error("A conta ou o baralho mudou. Abra o construtor novamente.");
       const clean={};let total=0;
@@ -4437,9 +4437,10 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
       const title=String(name||"").trim().slice(0,24)||`Deck ${slot+1}`;
       if(!window.MythicOnline?.saveBuilderDeck)throw new Error("Entre na conta para salvar o baralho.");
       await window.MythicOnline.saveBuilderDeck(slot,title,clean);
+      let identity=null;if(iconKey&&iconColor&&(iconKey!==deckSlots[slot].iconKey||iconColor!==deckSlots[slot].iconColor))identity=await window.MythicOnline.saveDeckPersonalization(slot,title,iconKey,iconColor);
       if((window.MythicOnline?.userId?.()||null)!==viewer)throw new Error("A conta mudou durante o salvamento.");
       activeDeckSlot=slot;deckCounts=Object.fromEntries(cards.map(card=>[card.id,clean[card.id]||0]));
-      deckSlots[slot]={...deckSlots[slot],name:title,cards:{...deckCounts}};persistDeckSlots();renderDeck();renderDeckSlots();
+      deckSlots[slot]={...deckSlots[slot],...(identity?{iconKey:identity.iconKey,iconColor:identity.iconColor}:{}),name:title,cards:{...deckCounts}};persistDeckSlots();renderDeck();renderDeckSlots();
       $("#deck-save-status").textContent="Baralho salvo na sua conta.";
       window.dispatchEvent(new CustomEvent("mythic-deck-saved",{detail:{slot,name:title}}));
     }
@@ -6325,14 +6326,15 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
   dialog.querySelector('[name=name]').oninput=e=>{if(current){current.name=e.target.value;paintPreview();}};
   dialog.querySelector('[name=color]').oninput=e=>{if(current){current.iconColor=e.target.value;paintColors();paintPreview();}};
   for(const b of dialog.querySelectorAll('[data-group]'))b.onclick=()=>{if(!busy)paintIcons(b.dataset.group);};
-  dialog.querySelector('form').onsubmit=async e=>{e.preventDefault();if(busy||!current)return;const status=dialog.querySelector('[role=status]');busy=true;lock();status.textContent='Salvando na sua conta…';try{await window.MythicDeckEditor.personalize({...current});dialog.close();window.MythicPresentation?.notify('Identidade do baralho salva.');}catch(error){status.textContent=error.message||'Não foi possível salvar.';}finally{busy=false;lock();}};
+  dialog.querySelector('form').onsubmit=async e=>{e.preventDefault();if(busy||!current)return;const status=dialog.querySelector('[role=status]');busy=true;lock();status.textContent='Salvando na sua conta…';try{if(current.onApply){current.onApply({name:current.name.trim().slice(0,24),iconKey:current.iconKey,iconColor:current.iconColor});dialog.close();}else{await window.MythicDeckEditor.personalize({...current});dialog.close();window.MythicPresentation?.notify('Identidade do baralho salva.');}}catch(error){status.textContent=error.message||'Não foi possível salvar.';}finally{busy=false;lock();}};
  }
  function lock(){for(const el of dialog.querySelectorAll('button,input'))el.disabled=busy;}
  function paintPreview(){if(!current)return;dialog.querySelector('.deck-identity-preview').replaceChildren(badge(current,'deck-emblem-large'),node('strong','',current.name.trim()||'Seu baralho'));}
  function paintIcons(group='Facções'){for(const b of dialog.querySelectorAll('[data-group]'))b.setAttribute('aria-pressed',String(b.dataset.group===group));const list=dialog.querySelector('.deck-icon-picker');list.replaceChildren();for(const icon of icons.filter(i=>i.group===group)){const b=node('button','deck-icon-option');b.type='button';b.setAttribute('aria-label',icon.name);b.setAttribute('aria-pressed',String(current.iconKey===icon.key));b.append(badge({...current,iconKey:icon.key}),node('span','',icon.name));b.onclick=()=>{current.iconKey=icon.key;paintIcons(group);paintPreview();};list.append(b);}}
  function paintColors(){const list=dialog.querySelector('.deck-color-picker');list.replaceChildren();for(const color of palette){const b=node('button');b.type='button';b.style.backgroundColor=color;b.setAttribute('aria-label','Cor '+palette.indexOf(color));b.setAttribute('aria-pressed',String(current.iconColor.toLowerCase()===color.toLowerCase()));b.onclick=()=>{current.iconColor=color;dialog.querySelector('[name=color]').value=color;paintColors();paintPreview();};list.append(b);}}
  function open(slot){const state=window.MythicPresentation?.read(),deck=state?.decks[slot];if(!deck)return;if(!window.MythicOnline?.requireLogin?.())return;if(window.MythicDeckBuilder?.isOpen?.()){window.MythicPresentation.notify('Feche o construtor antes de personalizar.');return;}ensure();returnFocus=document.activeElement;current={slot,userId:window.MythicOnline.userId(),name:deck.name,iconKey:find(deck.iconKey).key,iconColor:valid(deck.iconColor)?deck.iconColor:'#44305E'};dialog.querySelector('[name=name]').value=current.name;dialog.querySelector('[name=color]').value=current.iconColor;dialog.querySelector('[role=status]').textContent='';paintIcons(find(current.iconKey).group);paintColors();paintPreview();dialog.showModal();}
- window.MythicDeckIdentity={badge,open,icons,valid,find};
+ function editDraft(draft,onApply){if(busy||dialog?.open)return;ensure();returnFocus=document.activeElement;current={...draft,iconKey:find(draft.iconKey).key,iconColor:valid(draft.iconColor)?draft.iconColor:'#44305E',onApply};dialog.querySelector('[name=name]').value=current.name;dialog.querySelector('[name=color]').value=current.iconColor;dialog.querySelector('[role=status]').textContent='A personalização será salva junto com o baralho.';paintIcons(find(current.iconKey).group);paintColors();paintPreview();dialog.showModal();}
+ window.MythicDeckIdentity={badge,open,editDraft,icons,valid,find};
  window.addEventListener('mythic-account-signed-out',()=>dialog?.close());
  window.addEventListener('mythic-profile-loaded',()=>{if(current&&current.userId!==window.MythicOnline?.userId?.())dialog.close();});
 })();
@@ -6497,10 +6499,9 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
   if(!rows.length&&query)empty(deckGallery,'Nenhum baralho com esse nome.');
   const selected=state.decks[model.previewSlot],entries=state.cards.filter(c=>selected.cards[c.id]>0),units=entries.filter(c=>c.kind==='unit').reduce((s,c)=>s+Number(selected.cards[c.id]),0),all=total(selected);
   deckDetail.replaceChildren(window.MythicDeckIdentity.badge(selected,'deck-emblem-large'),make('h2','',selected.name),make('p','concept-hero-subtitle','Seu próximo duelo começa com uma boa estratégia.'),fan(selected.cards));
-  const emblemButton=button('',()=>window.MythicDeckIdentity.open(model.previewSlot),'deck-emblem-edit');emblemButton.setAttribute('aria-label','Personalizar ícone e cor de '+selected.name);const emblem=deckDetail.querySelector(':scope>.deck-emblem');if(emblem){emblem.replaceWith(emblemButton);emblemButton.append(emblem);}
-  const metrics=make('div','concept-deck-metrics');for(const [n,label]of [[all,'cartas'],[units,'personagens'],[all-units,'especiais']]){const box=make('span');box.append(make('b','',String(n)),make('small','',label));metrics.append(box);}deckDetail.append(metrics,button('Personalizar deck',()=>window.MythicDeckIdentity.open(model.previewSlot)),button('Avaliar baralho',()=>window.MythicDeckEvaluator.open(selected.cards,state.cards,selected.name),'button button-primary'));
+  const metrics=make('div','concept-deck-metrics');for(const [n,label]of [[all,'cartas'],[units,'personagens'],[all-units,'especiais']]){const box=make('span');box.append(make('b','',String(n)),make('small','',label));metrics.append(box);}deckDetail.append(metrics,button('Avaliar baralho',()=>window.MythicDeckEvaluator.open(selected.cards,state.cards,selected.name),'button button-primary'));
   const stats=model.deckStats.find(d=>d.name===selected.name);if(stats)deckDetail.append(make('p','concept-deck-stat',`${stats.win_rate||0}% de vitórias · ${stats.games||0} partidas registradas`));
-  deckDetail.append(button(model.previewSlot===state.activeSlot?'Baralho ativo':'Usar este baralho',()=>{const select=$('#deck-slot-select');select.value=String(model.previewSlot);select.dispatchEvent(new Event('change',{bubbles:true}));drawDecks();},'button button-primary'),button('Editar baralho',()=>{const select=$('#deck-slot-select');select.value=String(model.previewSlot);select.dispatchEvent(new Event('change',{bubbles:true}));window.MythicDeckBuilder?.open();}),button('Copiar código',()=>copyCode(JSON.stringify({name:selected.name,cards:selected.cards}))),button('Excluir baralho',()=>requestDeleteDeck(model.previewSlot),'button concept-deck-delete'));
+  deckDetail.append(button(model.previewSlot===state.activeSlot?'Baralho ativo':'Usar este baralho',()=>{const select=$('#deck-slot-select');select.value=String(model.previewSlot);select.dispatchEvent(new Event('change',{bubbles:true}));drawDecks();},'button button-primary'),button('Editar baralho',()=>{const select=$('#deck-slot-select');select.value=String(model.previewSlot);select.dispatchEvent(new Event('change',{bubbles:true}));window.MythicDeckBuilder?.open();}),button('Excluir baralho',()=>requestDeleteDeck(model.previewSlot),'button concept-deck-delete'));
   const mini=$('#concept-arena-decks');if(mini){mini.replaceChildren();state.decks.slice(0,3).forEach((deck,i)=>{const n=button('',()=>{const select=$('#arena-deck-select');select.value=String(i);select.dispatchEvent(new Event('change',{bubbles:true}));},'concept-mini-deck');n.setAttribute('aria-pressed',String(i===state.activeSlot));n.append(window.MythicDeckIdentity.badge(deck),fan(deck.cards),make('b','',deck.name),make('small','',`${total(deck)} cartas`));mini.append(n);});}
   $$('.concept-queue-deck').forEach(root=>{
    const active=state.decks[state.activeSlot],change=make('div','queue-deck-picker'),label=make('label'),select=make('select');
@@ -6565,7 +6566,7 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
   convergenceEntry.setAttribute('aria-current',String(id==='convergence'));$$('#lore-story-list .lore-story-card').forEach(row=>row.classList.toggle('selected',row.dataset.storyId===id));if(matchMedia('(max-width:900px)').matches)storyPreview.scrollIntoView({behavior:'smooth',block:'start'});
  }
  storyPreview.addEventListener('click',event=>{if(!event.target.closest('a,audio,button,.universe-story-text')&&reader.dataset.mode!=='reading')openLore(previewStory);});
- function decorateStories(){for(const row of $$('#lore-story-list .lore-story-card')){const id=row.querySelector('[data-story-card]')?.dataset.storyCard,card=data().cards.find(c=>c.id===id);if(!card)continue;row.dataset.storyId=id;const art=row.querySelector('.lore-story-art');if(art){art.replaceChildren(picture(storyCharacter(card),'',card.name));art.removeAttribute('aria-hidden');}if(row.dataset.bannerReady)continue;row.dataset.bannerReady='true';}}
+ function decorateStories(){for(const row of $$('#lore-story-list .lore-story-card')){const id=row.querySelector('[data-story-card]')?.dataset.storyCard,card=data().cards.find(c=>c.id===id);if(!card)continue;row.dataset.storyId=id;const art=row.querySelector('.lore-story-art');if(art){if(art.dataset.customBanner!==id){art.replaceChildren();window.MythicPaintUniverseBanner?.(art,id);}art.removeAttribute('aria-hidden');}if(row.dataset.bannerReady)continue;row.dataset.bannerReady='true';}}
 
  $('#lore-story-list').addEventListener('click',event=>{const row=event.target.closest('.lore-story-card');if(!row?.dataset.storyId)return;event.preventDefault();event.stopImmediatePropagation();openLore(row.dataset.storyId);},true);
 
@@ -6683,7 +6684,7 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
   const image=card=>/^(assets\/|https:\/\/)/.test(card?.art||'')?card.art:'assets/card-back.svg';
   const sum=counts=>Object.values(counts).reduce((n,v)=>n+Number(v||0),0);
   const clean=counts=>Object.fromEntries(Object.entries(counts||{}).filter(([,n])=>Number(n)>0).map(([id,n])=>[id,Number(n)]));
-  const signature=deck=>JSON.stringify({name:deck.name.trim(),counts:Object.entries(clean(deck.counts)).sort(([a],[b])=>a.localeCompare(b))});
+  const signature=deck=>JSON.stringify({name:deck.name.trim(),iconKey:deck.iconKey,iconColor:deck.iconColor,counts:Object.entries(clean(deck.counts)).sort(([a],[b])=>a.localeCompare(b))});
   const icons={back:'<path d="m14 5-7 7 7 7M7 12h14"/>',close:'<path d="m6 6 12 12M18 6 6 18"/>',save:'<path d="M5 3h12l4 4v14H3V3h2Zm2 0v6h10V3M7 21v-8h10v8"/>',undo:'<path d="m8 5-5 5 5 5M3 10h10a7 7 0 0 1 7 7"/>',trash:'<path d="M3 6h18M9 6V3h6v3M6 6l1 15h10l1-15M10 10v7M14 10v7"/>',search:'<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/>',grip:'<path d="M9 5h.01M15 5h.01M9 12h.01M15 12h.01M9 19h.01M15 19h.01"/>'};
   const icon=name=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name]||''}</svg>`;
   let root=null,zoom=null,exitDialog=null,state=null,selectedId=null,faction='all',kind='all',query='',undo=[],busy=false,previousFocus=null,drag=null,ghost=null,messageTimer=0,pendingDrag=null,holdTimer=0,suppressClickUntil=0;
@@ -6693,9 +6694,9 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
   const owned=card=>card&&!card.specialOnly&&!card.previewOnly?Math.max(0,Number(card.owned)||0):0;
   const dirty=()=>state&&signature(state)!==state.baseline;
   const draftKey=()=>state?`mythic-builder-draft:${state.userId}:${state.slot}`:null;
-  function remember(){try{if(state&&dirty())sessionStorage.setItem(draftKey(),JSON.stringify({name:state.name,counts:state.counts,baseline:state.baseline}));else if(state)sessionStorage.removeItem(draftKey());}catch{}}
+  function remember(){try{if(state&&dirty())sessionStorage.setItem(draftKey(),JSON.stringify({name:state.name,iconKey:state.iconKey,iconColor:state.iconColor,counts:state.counts,baseline:state.baseline}));else if(state)sessionStorage.removeItem(draftKey());}catch{}}
   function message(text='',sticky=false){clearTimeout(messageTimer);if(!root)return;root.querySelector('#db-message').textContent=text;if(text&&!sticky)messageTimer=setTimeout(()=>{if(root)root.querySelector('#db-message').textContent='';},3800);}
-  function checkpoint(){undo.push({name:state.name,counts:{...state.counts}});if(undo.length>50)undo.shift();}
+  function checkpoint(){undo.push({name:state.name,iconKey:state.iconKey,iconColor:state.iconColor,counts:{...state.counts}});if(undo.length>50)undo.shift();}
   function ensure(){
     if(root)return;
     root=document.createElement('dialog');root.id='deck-builder';root.className='db-dialog';root.setAttribute('aria-labelledby','db-title');
@@ -6704,7 +6705,7 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
       <main class="db-workspace"><section class="db-preview" aria-label="Carta selecionada"><button type="button" class="db-preview-art" data-action="zoom" aria-label="Ampliar carta selecionada"><img id="db-preview-image" alt="" decoding="async" draggable="false"></button><div class="db-preview-copy"><strong id="db-preview-name"></strong><p id="db-preview-meta"></p><p id="db-preview-ability"></p><button type="button" class="db-button db-add-selected" data-action="add-selected">Adicionar à mesa <b>+</b></button></div></section>
       <section class="db-table" data-db-drop="table" aria-labelledby="db-table-title"><header class="db-table-header"><div><h2 id="db-table-title">SEU BARALHO</h2><p id="db-composition"></p></div><div class="db-size"><strong id="db-total">0 / 35 <small>CARTAS</small></strong><span id="db-validity"></span></div><p class="db-limits">Mínimo 14 · Máximo 35</p></header><div id="db-progress" class="db-progress" role="progressbar" aria-valuemin="0" aria-valuemax="35" aria-label="Cartas na mesa"></div><div class="db-table-scroll"><div id="db-table-grid" class="db-table-grid"></div></div><p id="db-message" class="db-message" aria-live="polite"></p></section></main>
       <section class="db-collection" data-db-drop="collection" aria-labelledby="db-collection-title"><header class="db-collection-toolbar"><h2 id="db-collection-title">SUA COLEÇÃO</h2><label class="db-search">${icon('search')}<input id="db-search" type="search" placeholder="Buscar carta…" aria-label="Buscar carta na coleção"></label><div id="db-factions" class="db-factions" aria-label="Filtrar por facção"></div><select id="db-kind" aria-label="Filtrar tipo"><option value="all">Todos os tipos</option><option value="unit">Personagens</option><option value="special">Especiais</option></select><button type="button" class="db-plain db-mobile-preview" data-action="zoom">Ampliar selecionada</button></header><div id="db-collection-belt" class="db-collection-belt"></div><p class="db-help">Segure uma carta para arrastar até a mesa ou use +. Para retirar, use − ou arraste de volta à coleção.</p></section>
-      <footer class="db-footer"><button type="button" class="db-button db-secondary" data-action="clear">${icon('trash')}<span>Limpar mesa</span></button><button type="button" class="db-button db-secondary" data-action="undo">${icon('undo')}<span>Desfazer</span></button><button type="button" class="db-button db-secondary" data-action="suggest">Sugerir deck</button><button type="button" class="db-button db-secondary" data-action="evaluate">Avaliar deck</button><span id="db-save-note" class="db-save-note">Selecione de 14 a 35 cartas.</span><button type="button" class="db-button db-primary" data-action="save">${icon('save')}<span>Salvar baralho</span></button></footer>
+      <footer class="db-footer"><button type="button" class="db-button db-secondary" data-action="clear">${icon('trash')}<span>Limpar mesa</span></button><button type="button" class="db-button db-secondary" data-action="undo">${icon('undo')}<span>Desfazer</span></button><button type="button" class="db-button db-secondary" data-action="suggest">Sugerir deck</button><button type="button" class="db-button db-secondary" data-action="evaluate">Avaliar deck</button><button type="button" class="db-button db-secondary" data-action="personalize">Personalizar deck</button><span id="db-save-note" class="db-save-note">Selecione de 14 a 35 cartas.</span><button type="button" class="db-button db-primary" data-action="save">${icon('save')}<span>Salvar baralho</span></button></footer>
     </div>`;
     document.body.append(root);
     zoom=document.createElement('dialog');zoom.className='db-zoom';zoom.setAttribute('aria-label','Carta ampliada');zoom.innerHTML=`<button type="button" class="db-plain db-zoom-close" aria-label="Fechar carta ampliada">${icon('close')}</button><img alt="" decoding="async"><div><h2></h2><p class="db-zoom-meta"></p><h3></h3><p class="db-zoom-ability"></p></div>`;document.body.append(zoom);
@@ -6791,7 +6792,7 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
     const progress=root.querySelector('#db-progress');progress.setAttribute('aria-valuenow',String(total));progress.innerHTML=Array.from({length:MAX},(_,i)=>`<i class="${i<total?'is-filled':''} ${i===MIN-1?'db-minimum':''}"></i>`).join('');
     root.querySelector('[data-action="save"]').disabled=busy||!valid;root.querySelector('[data-action="save"] span').textContent=busy?'Salvando…':'Salvar baralho';
     root.querySelector('[data-action="undo"]').disabled=busy||!undo.length;root.querySelector('[data-action="clear"]').disabled=busy||!total;
-    root.querySelector('#db-name').disabled=busy;root.querySelector('.db-dirty').hidden=!dirty();
+    root.querySelector('[data-action="personalize"]').disabled=busy;root.querySelector('#db-name').disabled=busy;root.querySelector('.db-dirty').hidden=!dirty();
     root.querySelector('#db-save-note').textContent=busy?'Aguarde a confirmação da sua conta.':valid?'Pronto para salvar na sua conta.':`Use de ${MIN} a ${MAX} cartas da sua coleção.`;
   }
   function render(){
@@ -6807,10 +6808,11 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
     if(!card||next<0||next>owned(card)){message('Você já usou todas as cópias disponíveis dessa carta.');return;}
     checkpoint();if(next)state.counts[id]=next;else delete state.counts[id];selectedId=id;remember();render();
   }
-  function undoChange(){if(!busy&&undo.length){const prior=undo.pop();state.name=prior.name;state.counts={...prior.counts};root.querySelector('#db-name').value=state.name;remember();render();}}
+  function undoChange(){if(!busy&&undo.length){const prior=undo.pop();state.name=prior.name;state.iconKey=prior.iconKey;state.iconColor=prior.iconColor;state.counts={...prior.counts};root.querySelector('#db-name').value=state.name;remember();render();}}
   function enlarge(){if(!root?.open||!state||exitDialog?.open||zoom?.open)return;const card=cardFor(selectedId);if(!card)return;zoom.querySelector('img').src=image(card);zoom.querySelector('img').alt=card.name;zoom.querySelector('h2').textContent=card.name;zoom.querySelector('.db-zoom-meta').textContent=`${card.subtype||card.type} · ${card.faction} · ${card.power||0} poder`;zoom.querySelector('h3').textContent=card.abilityTitle||'Habilidade';zoom.querySelector('.db-zoom-ability').textContent=card.ability||'';zoom.showModal();}
   function onClick(event){
     event.stopPropagation();
+    if(event.target.closest('[data-action="personalize"]')){if(!busy&&state)window.MythicDeckIdentity?.editDraft({...state},identity=>{if(!state||state.userId!==window.MythicOnline?.userId?.())return;checkpoint();Object.assign(state,identity);root.querySelector('#db-name').value=state.name;remember();render();message('Personalização pronta. Clique em Salvar baralho para confirmar.');});return;}
     if(event.target.closest('[data-action="suggest"]')){if(!busy)window.MythicAutoDeck?.open();return;}
     if(event.target.closest('[data-action="evaluate"]')){if(state)window.MythicDeckEvaluator?.open(state.counts,catalog(),state.name||'Edição atual');return;}
     if(event.target.closest('[data-action="exit"]')){event.preventDefault();requestClose();return;}
@@ -6829,7 +6831,7 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
     if(!validate()||sum(state.counts)<MIN||sum(state.counts)>MAX){message('Revise o baralho: são necessárias de 14 a 35 cartas válidas.',true);return;}
     busy=true;clearDrag();render();message('Salvando o baralho na sua conta…',true);
     try{
-      await window.MythicDeckEditor.commit({slot:state.slot,name:state.name,counts:{...state.counts},userId:state.userId});
+      await window.MythicDeckEditor.commit({slot:state.slot,name:state.name,counts:{...state.counts},userId:state.userId,iconKey:state.iconKey,iconColor:state.iconColor});
       if(!state)return;try{sessionStorage.removeItem(draftKey());}catch{}
       busy=false;close(false);window.MythicPresentation?.notify('Baralho salvo na sua conta.');
     }catch(error){busy=false;if(state){message(error.message||'Não foi possível salvar. Suas alterações continuam na mesa.',true);render();}}
@@ -6845,8 +6847,8 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
     if(!window.MythicOnline?.isConnected?.()){window.MythicOnline?.requireLogin?.();return;}
     if(!window.MythicOnline.profileReady?.()){window.MythicPresentation?.notify('Aguarde o carregamento da sua coleção.');return;}
     const source=read();if(!source)return;ensure();previousFocus=document.activeElement;
-    state={slot:source.slot,name:source.name,counts:clean(source.counts),userId:source.userId};state.baseline=signature(state);undo=[];busy=false;query='';faction='all';kind='all';
-    let recovered=false;try{const saved=JSON.parse(sessionStorage.getItem(draftKey())||'null');if(saved?.baseline===state.baseline){state.name=String(saved.name||source.name).slice(0,24);state.counts=clean(saved.counts);recovered=true;}}catch{}
+    state={slot:source.slot,name:source.name,iconKey:source.iconKey,iconColor:source.iconColor,counts:clean(source.counts),userId:source.userId};state.baseline=signature(state);undo=[];busy=false;query='';faction='all';kind='all';
+    let recovered=false;try{const saved=JSON.parse(sessionStorage.getItem(draftKey())||'null');if(saved?.baseline===state.baseline){state.name=String(saved.name||source.name).slice(0,24);state.counts=clean(saved.counts);state.iconKey=window.MythicDeckIdentity.find(saved.iconKey).key;state.iconColor=window.MythicDeckIdentity.valid(saved.iconColor)?saved.iconColor:source.iconColor;recovered=true;}}catch{}
     selectedId=Object.keys(state.counts).find(id=>cardFor(id))||source.cards.find(c=>owned(c)>0)?.id||null;
     root.querySelector('#db-name').value=state.name;root.querySelector('#db-search').value='';root.querySelector('#db-kind').value='all';
     const factions=[...new Set(source.cards.filter(c=>owned(c)>0).map(c=>c.faction))];root.querySelector('#db-factions').innerHTML=[['all','Todas'],...factions.map(f=>[f,f])].map(([value,label])=>`<button type="button" data-faction="${escape(value)}" aria-pressed="${value==='all'}">${escape(label)}</button>`).join('');
@@ -7496,7 +7498,7 @@ window.MythicGuardianCampaignData={"regions":[{"id":"greece","name":"Grécia","f
   const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');svg.setAttribute('viewBox','0 0 1000 500');svg.setAttribute('preserveAspectRatio','none');svg.classList.add('gc-trail-lines');const points=[{x:140,y:285},{x:320,y:335},{x:500,y:350},{x:680,y:335},{x:860,y:285}];
   for(let i=1;i<5;i++){const p=points[i-1],q=points[i],path=document.createElementNS(svg.namespaceURI,'path');path.setAttribute('d',`M ${p.x} ${p.y} C ${(p.x+q.x)/2} ${p.y} ${(p.x+q.x)/2} ${q.y} ${q.x} ${q.y}`);if(cleared(r)>=index*5+i)path.classList.add('is-cleared');svg.append(path);}stage.append(svg);
   for(let i=0;i<5;i++){const n=data.nodes[r.nodeIds[index*5+i]],done=n.stage<=cleared(r),available=n.stage<=cleared(r)+1,node=button('',()=>openNode(n),'gc-node'+(done?' is-cleared':available?' is-current':' is-locked')+(n.boss?' is-boss':''));node.disabled=!available||busy;node.style.left=points[i].x/10+'%';node.style.top=points[i].y/5+'%';node.setAttribute('aria-label',`${n.stage}. ${n.name}. ${done?'Concluído. Reenfrentar':available?'Próximo desafio':'Bloqueado'}`);node.append(portrait(n.icon),el('span','gc-stage',String(n.stage)),el('span','gc-node-name',n.name));if(done)node.append(el('span','gc-check','✓'));if(n.boss)node.append(el('span','gc-treasure',done?'Área concluída':'✦ Tesouro'));stage.append(node);}
-  const previous=button('‹',()=>changeArea(r,index-1),'gc-area-arrow is-previous'),next=button('›',()=>changeArea(r,index+1),'gc-area-arrow is-next');previous.disabled=index===0;next.disabled=index===3;previous.setAttribute('aria-label','Área anterior');next.setAttribute('aria-label','Próxima área');stage.append(previous,next);
+  const previous=button('‹',()=>changeArea(r,index-1),'gc-area-arrow is-previous'),next=button('›',()=>changeArea(r,index+1),'gc-area-arrow is-next');previous.disabled=index===0;next.disabled=index===3;previous.setAttribute('aria-label','Área anterior');next.setAttribute('aria-label','Próxima área');for(const [arrow,path] of [[previous,'m14 5-7 7 7 7'],[next,'m10 5 7 7-7 7']]){arrow.textContent='';const mark=document.createElementNS('http://www.w3.org/2000/svg','svg');mark.setAttribute('viewBox','0 0 24 24');mark.setAttribute('aria-hidden','true');const stroke=document.createElementNS(mark.namespaceURI,'path');stroke.setAttribute('d',path);mark.append(stroke);arrow.append(mark);}stage.append(previous,next);
   const caption=el('div','gc-next-caption');caption.setAttribute('aria-hidden','true');if(index<3)caption.style.backgroundImage=`linear-gradient(90deg,#1b102b,#1b102b88),url("${asset(scene(r,index+1))}")`;caption.append(el('small','',index<3?'PRÓXIMA ÁREA':'ÚLTIMA ÁREA'),el('strong','',index<3?chapterName(r,index+1):'Jornada de '+a.title));stage.append(caption);
   if(cleared(r)<index*5)stage.append(el('p','gc-area-locked','Conclua os cinco desafios da área anterior para abrir esta trilha.'));
   const pagination=el('div','gc-pagination');for(let i=0;i<4;i++){const dot=button('',()=>changeArea(r,i),'gc-page-dot'+(i===index?' is-active':''));dot.setAttribute('aria-label','Ver área '+(i+1));dot.setAttribute('aria-current',i===index?'step':'false');pagination.append(dot);}pagination.append(el('small','',`${index+1} / 4`));stage.append(pagination);

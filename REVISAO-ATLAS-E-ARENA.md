@@ -6,6 +6,17 @@ Esta é a mesma pasta principal do jogo. O arquivo ao lado, **Mythic-Clash-Compl
 
 ## Publicação
 
+### Ajustes visuais adicionais — 21/10
+
+- Baú alinhado com o texto e a trilha de recompensas; setas centralizadas com desenho vetorial.
+- Cenário regional ocupa toda a largura disponível, sem a faixa vazia lateral.
+- Cabeçalho do Atlas com cenário a 70% de opacidade e divisória dourada acima do mapa.
+- Miniaturas do Universo usam a mesma arte e o mesmo recorte dos banners principais.
+- “Copiar código” removido dos detalhes dos próprios baralhos.
+- “Personalizar deck” fica dentro do construtor. Nome, ícone e cor entram no rascunho, podem ser desfeitos e são confirmados ao salvar o baralho. Se a confirmação falhar, o rascunho permanece aberto para tentar novamente.
+
+Esta revisão visual não exige SQL adicional. As migrações 050 e 051 acima continuam necessárias para as alterações anteriores. A interação no navegador e as partidas ficam para sua validação.
+
 1. Guarde a pasta e o ZIP completos.
 2. No Supabase, após confirmar que a 049 já foi aplicada, execute em ordem:
    - `supabase/migrations/202610210050_audit_rules_and_mode_guards.sql`

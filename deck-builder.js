@@ -6,7 +6,7 @@
   const image=card=>/^(assets\/|https:\/\/)/.test(card?.art||'')?card.art:'assets/card-back.svg';
   const sum=counts=>Object.values(counts).reduce((n,v)=>n+Number(v||0),0);
   const clean=counts=>Object.fromEntries(Object.entries(counts||{}).filter(([,n])=>Number(n)>0).map(([id,n])=>[id,Number(n)]));
-  const signature=deck=>JSON.stringify({name:deck.name.trim(),counts:Object.entries(clean(deck.counts)).sort(([a],[b])=>a.localeCompare(b))});
+  const signature=deck=>JSON.stringify({name:deck.name.trim(),iconKey:deck.iconKey,iconColor:deck.iconColor,counts:Object.entries(clean(deck.counts)).sort(([a],[b])=>a.localeCompare(b))});
   const icons={back:'<path d="m14 5-7 7 7 7M7 12h14"/>',close:'<path d="m6 6 12 12M18 6 6 18"/>',save:'<path d="M5 3h12l4 4v14H3V3h2Zm2 0v6h10V3M7 21v-8h10v8"/>',undo:'<path d="m8 5-5 5 5 5M3 10h10a7 7 0 0 1 7 7"/>',trash:'<path d="M3 6h18M9 6V3h6v3M6 6l1 15h10l1-15M10 10v7M14 10v7"/>',search:'<circle cx="10" cy="10" r="6"/><path d="m15 15 6 6"/>',grip:'<path d="M9 5h.01M15 5h.01M9 12h.01M15 12h.01M9 19h.01M15 19h.01"/>'};
   const icon=name=>`<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${icons[name]||''}</svg>`;
   let root=null,zoom=null,exitDialog=null,state=null,selectedId=null,faction='all',kind='all',query='',undo=[],busy=false,previousFocus=null,drag=null,ghost=null,messageTimer=0,pendingDrag=null,holdTimer=0,suppressClickUntil=0;
@@ -16,9 +16,9 @@
   const owned=card=>card&&!card.specialOnly&&!card.previewOnly?Math.max(0,Number(card.owned)||0):0;
   const dirty=()=>state&&signature(state)!==state.baseline;
   const draftKey=()=>state?`mythic-builder-draft:${state.userId}:${state.slot}`:null;
-  function remember(){try{if(state&&dirty())sessionStorage.setItem(draftKey(),JSON.stringify({name:state.name,counts:state.counts,baseline:state.baseline}));else if(state)sessionStorage.removeItem(draftKey());}catch{}}
+  function remember(){try{if(state&&dirty())sessionStorage.setItem(draftKey(),JSON.stringify({name:state.name,iconKey:state.iconKey,iconColor:state.iconColor,counts:state.counts,baseline:state.baseline}));else if(state)sessionStorage.removeItem(draftKey());}catch{}}
   function message(text='',sticky=false){clearTimeout(messageTimer);if(!root)return;root.querySelector('#db-message').textContent=text;if(text&&!sticky)messageTimer=setTimeout(()=>{if(root)root.querySelector('#db-message').textContent='';},3800);}
-  function checkpoint(){undo.push({name:state.name,counts:{...state.counts}});if(undo.length>50)undo.shift();}
+  function checkpoint(){undo.push({name:state.name,iconKey:state.iconKey,iconColor:state.iconColor,counts:{...state.counts}});if(undo.length>50)undo.shift();}
   function ensure(){
     if(root)return;
     root=document.createElement('dialog');root.id='deck-builder';root.className='db-dialog';root.setAttribute('aria-labelledby','db-title');
@@ -27,7 +27,7 @@
       <main class="db-workspace"><section class="db-preview" aria-label="Carta selecionada"><button type="button" class="db-preview-art" data-action="zoom" aria-label="Ampliar carta selecionada"><img id="db-preview-image" alt="" decoding="async" draggable="false"></button><div class="db-preview-copy"><strong id="db-preview-name"></strong><p id="db-preview-meta"></p><p id="db-preview-ability"></p><button type="button" class="db-button db-add-selected" data-action="add-selected">Adicionar à mesa <b>+</b></button></div></section>
       <section class="db-table" data-db-drop="table" aria-labelledby="db-table-title"><header class="db-table-header"><div><h2 id="db-table-title">SEU BARALHO</h2><p id="db-composition"></p></div><div class="db-size"><strong id="db-total">0 / 35 <small>CARTAS</small></strong><span id="db-validity"></span></div><p class="db-limits">Mínimo 14 · Máximo 35</p></header><div id="db-progress" class="db-progress" role="progressbar" aria-valuemin="0" aria-valuemax="35" aria-label="Cartas na mesa"></div><div class="db-table-scroll"><div id="db-table-grid" class="db-table-grid"></div></div><p id="db-message" class="db-message" aria-live="polite"></p></section></main>
       <section class="db-collection" data-db-drop="collection" aria-labelledby="db-collection-title"><header class="db-collection-toolbar"><h2 id="db-collection-title">SUA COLEÇÃO</h2><label class="db-search">${icon('search')}<input id="db-search" type="search" placeholder="Buscar carta…" aria-label="Buscar carta na coleção"></label><div id="db-factions" class="db-factions" aria-label="Filtrar por facção"></div><select id="db-kind" aria-label="Filtrar tipo"><option value="all">Todos os tipos</option><option value="unit">Personagens</option><option value="special">Especiais</option></select><button type="button" class="db-plain db-mobile-preview" data-action="zoom">Ampliar selecionada</button></header><div id="db-collection-belt" class="db-collection-belt"></div><p class="db-help">Segure uma carta para arrastar até a mesa ou use +. Para retirar, use − ou arraste de volta à coleção.</p></section>
-      <footer class="db-footer"><button type="button" class="db-button db-secondary" data-action="clear">${icon('trash')}<span>Limpar mesa</span></button><button type="button" class="db-button db-secondary" data-action="undo">${icon('undo')}<span>Desfazer</span></button><button type="button" class="db-button db-secondary" data-action="suggest">Sugerir deck</button><button type="button" class="db-button db-secondary" data-action="evaluate">Avaliar deck</button><span id="db-save-note" class="db-save-note">Selecione de 14 a 35 cartas.</span><button type="button" class="db-button db-primary" data-action="save">${icon('save')}<span>Salvar baralho</span></button></footer>
+      <footer class="db-footer"><button type="button" class="db-button db-secondary" data-action="clear">${icon('trash')}<span>Limpar mesa</span></button><button type="button" class="db-button db-secondary" data-action="undo">${icon('undo')}<span>Desfazer</span></button><button type="button" class="db-button db-secondary" data-action="suggest">Sugerir deck</button><button type="button" class="db-button db-secondary" data-action="evaluate">Avaliar deck</button><button type="button" class="db-button db-secondary" data-action="personalize">Personalizar deck</button><span id="db-save-note" class="db-save-note">Selecione de 14 a 35 cartas.</span><button type="button" class="db-button db-primary" data-action="save">${icon('save')}<span>Salvar baralho</span></button></footer>
     </div>`;
     document.body.append(root);
     zoom=document.createElement('dialog');zoom.className='db-zoom';zoom.setAttribute('aria-label','Carta ampliada');zoom.innerHTML=`<button type="button" class="db-plain db-zoom-close" aria-label="Fechar carta ampliada">${icon('close')}</button><img alt="" decoding="async"><div><h2></h2><p class="db-zoom-meta"></p><h3></h3><p class="db-zoom-ability"></p></div>`;document.body.append(zoom);
@@ -114,7 +114,7 @@
     const progress=root.querySelector('#db-progress');progress.setAttribute('aria-valuenow',String(total));progress.innerHTML=Array.from({length:MAX},(_,i)=>`<i class="${i<total?'is-filled':''} ${i===MIN-1?'db-minimum':''}"></i>`).join('');
     root.querySelector('[data-action="save"]').disabled=busy||!valid;root.querySelector('[data-action="save"] span').textContent=busy?'Salvando…':'Salvar baralho';
     root.querySelector('[data-action="undo"]').disabled=busy||!undo.length;root.querySelector('[data-action="clear"]').disabled=busy||!total;
-    root.querySelector('#db-name').disabled=busy;root.querySelector('.db-dirty').hidden=!dirty();
+    root.querySelector('[data-action="personalize"]').disabled=busy;root.querySelector('#db-name').disabled=busy;root.querySelector('.db-dirty').hidden=!dirty();
     root.querySelector('#db-save-note').textContent=busy?'Aguarde a confirmação da sua conta.':valid?'Pronto para salvar na sua conta.':`Use de ${MIN} a ${MAX} cartas da sua coleção.`;
   }
   function render(){
@@ -130,10 +130,11 @@
     if(!card||next<0||next>owned(card)){message('Você já usou todas as cópias disponíveis dessa carta.');return;}
     checkpoint();if(next)state.counts[id]=next;else delete state.counts[id];selectedId=id;remember();render();
   }
-  function undoChange(){if(!busy&&undo.length){const prior=undo.pop();state.name=prior.name;state.counts={...prior.counts};root.querySelector('#db-name').value=state.name;remember();render();}}
+  function undoChange(){if(!busy&&undo.length){const prior=undo.pop();state.name=prior.name;state.iconKey=prior.iconKey;state.iconColor=prior.iconColor;state.counts={...prior.counts};root.querySelector('#db-name').value=state.name;remember();render();}}
   function enlarge(){if(!root?.open||!state||exitDialog?.open||zoom?.open)return;const card=cardFor(selectedId);if(!card)return;zoom.querySelector('img').src=image(card);zoom.querySelector('img').alt=card.name;zoom.querySelector('h2').textContent=card.name;zoom.querySelector('.db-zoom-meta').textContent=`${card.subtype||card.type} · ${card.faction} · ${card.power||0} poder`;zoom.querySelector('h3').textContent=card.abilityTitle||'Habilidade';zoom.querySelector('.db-zoom-ability').textContent=card.ability||'';zoom.showModal();}
   function onClick(event){
     event.stopPropagation();
+    if(event.target.closest('[data-action="personalize"]')){if(!busy&&state)window.MythicDeckIdentity?.editDraft({...state},identity=>{if(!state||state.userId!==window.MythicOnline?.userId?.())return;checkpoint();Object.assign(state,identity);root.querySelector('#db-name').value=state.name;remember();render();message('Personalização pronta. Clique em Salvar baralho para confirmar.');});return;}
     if(event.target.closest('[data-action="suggest"]')){if(!busy)window.MythicAutoDeck?.open();return;}
     if(event.target.closest('[data-action="evaluate"]')){if(state)window.MythicDeckEvaluator?.open(state.counts,catalog(),state.name||'Edição atual');return;}
     if(event.target.closest('[data-action="exit"]')){event.preventDefault();requestClose();return;}
@@ -152,7 +153,7 @@
     if(!validate()||sum(state.counts)<MIN||sum(state.counts)>MAX){message('Revise o baralho: são necessárias de 14 a 35 cartas válidas.',true);return;}
     busy=true;clearDrag();render();message('Salvando o baralho na sua conta…',true);
     try{
-      await window.MythicDeckEditor.commit({slot:state.slot,name:state.name,counts:{...state.counts},userId:state.userId});
+      await window.MythicDeckEditor.commit({slot:state.slot,name:state.name,counts:{...state.counts},userId:state.userId,iconKey:state.iconKey,iconColor:state.iconColor});
       if(!state)return;try{sessionStorage.removeItem(draftKey());}catch{}
       busy=false;close(false);window.MythicPresentation?.notify('Baralho salvo na sua conta.');
     }catch(error){busy=false;if(state){message(error.message||'Não foi possível salvar. Suas alterações continuam na mesa.',true);render();}}
@@ -168,8 +169,8 @@
     if(!window.MythicOnline?.isConnected?.()){window.MythicOnline?.requireLogin?.();return;}
     if(!window.MythicOnline.profileReady?.()){window.MythicPresentation?.notify('Aguarde o carregamento da sua coleção.');return;}
     const source=read();if(!source)return;ensure();previousFocus=document.activeElement;
-    state={slot:source.slot,name:source.name,counts:clean(source.counts),userId:source.userId};state.baseline=signature(state);undo=[];busy=false;query='';faction='all';kind='all';
-    let recovered=false;try{const saved=JSON.parse(sessionStorage.getItem(draftKey())||'null');if(saved?.baseline===state.baseline){state.name=String(saved.name||source.name).slice(0,24);state.counts=clean(saved.counts);recovered=true;}}catch{}
+    state={slot:source.slot,name:source.name,iconKey:source.iconKey,iconColor:source.iconColor,counts:clean(source.counts),userId:source.userId};state.baseline=signature(state);undo=[];busy=false;query='';faction='all';kind='all';
+    let recovered=false;try{const saved=JSON.parse(sessionStorage.getItem(draftKey())||'null');if(saved?.baseline===state.baseline){state.name=String(saved.name||source.name).slice(0,24);state.counts=clean(saved.counts);state.iconKey=window.MythicDeckIdentity.find(saved.iconKey).key;state.iconColor=window.MythicDeckIdentity.valid(saved.iconColor)?saved.iconColor:source.iconColor;recovered=true;}}catch{}
     selectedId=Object.keys(state.counts).find(id=>cardFor(id))||source.cards.find(c=>owned(c)>0)?.id||null;
     root.querySelector('#db-name').value=state.name;root.querySelector('#db-search').value='';root.querySelector('#db-kind').value='all';
     const factions=[...new Set(source.cards.filter(c=>owned(c)>0).map(c=>c.faction))];root.querySelector('#db-factions').innerHTML=[['all','Todas'],...factions.map(f=>[f,f])].map(([value,label])=>`<button type="button" data-faction="${escape(value)}" aria-pressed="${value==='all'}">${escape(label)}</button>`).join('');

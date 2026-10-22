@@ -19,3 +19,22 @@ body.concept-ui #view-lore .concept-story-banner[data-banner-format="wide"] .uni
 body.concept-ui #view-lore .concept-story-banner[data-banner-format="portrait"] .universe-banner-art{background-size:contain!important;background-position:right center!important;background-repeat:no-repeat}
 .gc-trail-lines{z-index:0}
 .toast-retry{margin-left:12px;min-height:36px;padding:6px 12px;border:1px solid #bd9ce5;border-radius:6px;color:#fff;background:#472d60;cursor:pointer}
+
+/* Atlas: full scene, centered controls and illustrated heading. */
+.gc-scene{box-sizing:border-box;width:100%;max-width:none;aspect-ratio:auto;height:clamp(430px,46vw,760px)}
+.gc-area-arrow{padding:0!important;display:grid;place-items:center;line-height:1!important}
+.gc-area-arrow svg{display:block;width:28px;height:28px;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.gc-treasure-progress{grid-template-columns:38px minmax(0,1fr);grid-template-rows:auto auto;align-items:center;gap:5px 10px}
+.gc-treasure-progress>.gc-chest{grid-column:1;grid-row:1 / 3;width:38px;height:38px;border:0;border-radius:0;background:none;display:grid;place-items:center;align-self:center}
+.gc-treasure-progress>span:nth-child(2){grid-column:2;grid-row:1;align-self:end}
+.gc-treasure-progress>.gc-reward-dots{grid-column:2;grid-row:2;align-self:start;width:100%;margin:0}
+.gc-chest .gc-treasure-icon{display:block;width:100%!important;height:100%!important;max-width:100%;object-fit:contain!important;margin:0;align-self:center}
+.gc-atlas-heading{position:relative;isolation:isolate;overflow:hidden;border-bottom:1px solid #d5ac50;background:#13101f}
+.gc-atlas-heading::before{content:"";position:absolute;inset:0;z-index:-2;background:url('assets/guardian-campaign/atlas/greece-0.webp') center 38%/cover no-repeat;opacity:.7;pointer-events:none}
+.gc-atlas-heading::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#100c20c9,transparent);pointer-events:none}
+body.concept-ui #view-lore .lore-story-art[data-custom-banner]{inset:0;width:100%;height:100%;overflow:hidden;opacity:1}
+body.concept-ui #view-lore .lore-story-art[data-custom-banner] .universe-banner-art{position:absolute;inset:0;width:100%;height:100%;aspect-ratio:auto;opacity:1;filter:none;transform:none}
+body.concept-ui #view-lore .lore-story-copy{position:relative;z-index:1;background:linear-gradient(90deg,#100c20b8,transparent);pointer-events:none}
+body.concept-ui #view-lore .lore-story-copy button{pointer-events:auto}
+@media(max-width:760px){.gc-scene{height:clamp(330px,52dvh,440px);min-height:330px}.gc-area-arrow svg{width:23px;height:23px}}
+@media(max-height:600px) and (min-width:761px){.gc-scene{height:clamp(330px,66vh,430px);min-height:330px}}
