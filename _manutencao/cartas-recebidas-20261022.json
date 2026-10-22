@@ -1,0 +1,34 @@
+[
+  {
+    "id": "hestia",
+    "source": "Hestia.png",
+    "width": 1500,
+    "height": 2100,
+    "path": "assets/cards-remake/hestia.webp",
+    "sha256": "a18e2519be66fd6f77721a76741477396893542664e2f43ee429b5345f7c2ace"
+  },
+  {
+    "id": "perseu",
+    "source": "Perseu.png",
+    "width": 1500,
+    "height": 2100,
+    "path": "assets/cards-remake/perseu.webp",
+    "sha256": "3ea7b7aeda928f73ef001ef8365f3d276dd0570bb3229ced8b00f0a345cc049a"
+  },
+  {
+    "id": "hera",
+    "source": "Hera.png",
+    "width": 1500,
+    "height": 2100,
+    "path": "assets/cards-remake/hera.webp",
+    "sha256": "56a47718d7263e5ad8ff3eacbb419d9865c8a94cd57917f06b4350b92552b85e"
+  },
+  {
+    "id": "demeter",
+    "source": "Demeter.png",
+    "width": 1500,
+    "height": 2100,
+    "path": "assets/cards-remake/demeter.webp",
+    "sha256": "cfac1922ff4e410ebc291a6e96704f53418937ba3333e9dac4905f122ec4d8bc"
+  }
+]
