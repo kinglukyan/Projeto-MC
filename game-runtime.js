@@ -6224,7 +6224,7 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
   const cardPanel=document.getElementById('profile-top-cards').closest('section');cardPanel.classList.add('legend-card-panel');cardPanel.querySelector('header').replaceChildren(el('h3','','CARTAS MAIS USADAS'));grid.append(cardPanel);
   const deckPanel=document.getElementById('profile-top-decks').closest('section');deckPanel.classList.add('legend-deck-panel');deckPanel.querySelector('header').replaceChildren(el('h3','','DECKS MAIS USADOS'));grid.append(deckPanel);
   history.classList.add('legend-history');history.querySelector('h2').textContent='Últimas partidas';grid.append(history);
-  const milestones=el('section','panel legend-milestones');milestones.append(el('h3','','MARCOS DA JORNADA'));const milestoneList=el('div','legend-milestone-list');milestones.append(milestoneList);grid.append(milestones);
+  const milestones=el('section','panel legend-milestones');milestones.append(el('h3','','CONQUISTAS NO PERÍODO'),el('p','legend-milestone-description','Seu progresso nas partidas do período selecionado.'));const milestoneList=el('div','legend-milestone-list');milestones.append(milestoneList);grid.append(milestones);
   const modes=document.getElementById('profile-mode-stats').closest('section');modes.classList.add('legend-modes');grid.append(modes);
   analytics.remove();
   const replayPage=el('div','legend-replay-page');replayPage.hidden=true;replayPage.append(replays);view.append(replayPage);
@@ -6233,7 +6233,7 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
   function renderHistory(rows=[]){
     const ordered=[...rows].sort((a,b)=>new Date(a.completed_at)-new Date(b.completed_at));
     plot.replaceChildren();
-    if(!ordered.length){plot.append(el('p','legend-empty','Jogue partidas para acompanhar sua evolução.'));milestoneList.replaceChildren(el('p','legend-empty','Seus marcos aparecerão conforme você jogar.'));return;}
+    if(!ordered.length){plot.append(el('p','legend-empty','Jogue partidas para acompanhar sua evolução.'));renderMilestones(0,0,0);return;}
     const ns='http://www.w3.org/2000/svg',svg=document.createElementNS(ns,'svg');svg.setAttribute('viewBox','0 0 620 220');svg.setAttribute('role','img');svg.setAttribute('aria-label','Taxa de vitórias acumulada nas partidas do período selecionado');
     function node(tag,attrs,text){const n=document.createElementNS(ns,tag);for(const [k,v]of Object.entries(attrs))n.setAttribute(k,String(v));if(text!==undefined)n.textContent=text;svg.append(n);return n;}
     for(let i=0;i<=4;i++){const y=20+i*40;node('line',{x1:48,x2:602,y1:y,y2:y,stroke:'#a7cce222','stroke-width':1});node('text',{x:38,y:y+4,fill:'#9fb4c4','font-size':11,'text-anchor':'end'},`${100-i*25}%`);}
@@ -6242,9 +6242,23 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
     node('polyline',{points:points.map(p=>p.join(',')).join(' '),fill:'none',stroke:'#68ceff','stroke-width':2.5,'stroke-linejoin':'round'});
     for(const[x,y]of points)node('circle',{cx:x,cy:y,r:2.5,fill:'#c3efff'});
     const date=r=>new Date(r.completed_at).toLocaleDateString('pt-BR',{day:'2-digit',month:'short'});node('text',{x:48,y:209,fill:'#9fb4c4','font-size':11},date(ordered[0]));node('text',{x:602,y:209,fill:'#9fb4c4','font-size':11,'text-anchor':'end'},date(ordered.at(-1)));plot.append(svg);
+    renderMilestones(victories,ordered.length,best);
+  }
+  function renderMilestones(victories,duels,best){
     milestoneList.replaceChildren();
-    for(const [icon,title,value,target]of [['⚔','Primeira vitória',victories,1],['♜','Dez vitórias',victories,10],['✦','Vinte e cinco duelos',ordered.length,25],['♛','Cinco vitórias seguidas',best,5]]){const item=el('article',value>=target?'earned':'');item.append(el('span','legend-medal',icon),el('b','',title));const bar=el('progress');bar.max=target;bar.value=Math.min(value,target);bar.setAttribute('aria-label',title);item.append(bar,el('small','',`${Math.min(value,target)} / ${target}`));milestoneList.append(item);}
-    milestones.querySelector('h3').textContent='MARCOS NO PERÍODO';
+    const definitions=[['first-victory','Primeira vitória',victories,1],['ten-victories','Dez vitórias',victories,10],['twenty-five-duels','Vinte e cinco duelos',duels,25],['five-streak','Cinco vitórias seguidas',best,5]];
+    let earned=0;
+    for(const [icon,title,value,target]of definitions){
+      const complete=value>=target;if(complete)earned++;
+      const item=el('article',complete?'earned':'');
+      const medal=el('span','legend-medal'),art=el('img');
+      art.src=window.MythicSecurity.assetUrl(`assets/profile-achievements/${icon}.svg`);art.alt='';art.width=80;art.height=80;art.loading='lazy';medal.append(art);
+      item.append(medal,el('b','',title));
+      const bar=el('progress');bar.max=target;bar.value=Math.min(value,target);bar.setAttribute('aria-label',title);
+      item.append(bar,el('small','',`${Math.min(value,target)} / ${target}`),el('span','legend-achievement-state',complete?'Concluída':'Em progresso'));
+      milestoneList.append(item);
+    }
+    milestones.querySelector('h3').textContent=`CONQUISTAS NO PERÍODO · ${earned} / ${definitions.length}`;
   }
   window.addEventListener('mythic-profile-history',event=>renderHistory(event.detail?.rows||[]));renderHistory();
 })();
@@ -6346,7 +6360,7 @@ window.MythicPaintUniverseBanner=(banner,id)=>{const card=window.MythicCardData?
 
  const icons=fac.map(([key,name,asset])=>({key:'faction-'+key,name,group:'Facções',asset:'assets/card-badges/'+asset+'.png'}));
  const labels={eclipse:'Eclipse',matilha:'Matilha',pelotao:'Pelotão',submundo:'Submundo',convergencia:'Convergência',realeza:'Realeza',caos:'Caos',arsenal:'Arsenal',lunar:'Lunar',protecao:'Proteção',ofensiva:'Ofensiva',combos:'Combos'};
- for(const [key,name] of Object.entries(labels))icons.push({key,name,group:'Estratégias',asset:`assets/deck-icons/${key}.svg`});
+ for(const [key,name] of Object.entries(labels))icons.push({key,name,group:'Estratégias',asset:`assets/deck-icons/${key}.svg?v=20261022`});
  const palette=['#44305E','#204E69','#1C6555','#7F293E','#86502C','#727031','#343C59','#20222D','#684D92','#A17C32'];
  const valid=value=>/^#[a-f0-9]{6}$/i.test(value||'');
  const find=key=>icons.find(i=>i.key===key)||icons.find(i=>i.key==='convergencia');

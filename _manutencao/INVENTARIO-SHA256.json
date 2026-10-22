@@ -127,6 +127,10 @@
     "bytes": 294,
     "sha256": "f8afe61f026e5c780e94275ee1181b94a2892b57b9c839c798274befe5f0d40a"
   },
+  "_manutencao/gerar-emblemas.py": {
+    "bytes": 7343,
+    "sha256": "cb1469e0641d6a0b0745776e6117721e45711fbe57b6f66265dc66508526aab0"
+  },
   "_manutencao/gerar-interface.cjs": {
     "bytes": 3224,
     "sha256": "aae387281c0848bdd70818ebb44706c12ed7664289efb74cd4b7c4dae4d1b5eb"
@@ -872,8 +876,8 @@
     "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
   },
   "asset-manifest.json": {
-    "bytes": 71800,
-    "sha256": "9f9a1680fc49cc49e36a2993e092a00bd6596bf8489cab0bd6cff2d43241fd7e"
+    "bytes": 72086,
+    "sha256": "e5fe362ba872723a9714580cce737a9ff7f87320862c9977977a14b508242abd"
   },
   "assets/app-icon.svg": {
     "bytes": 531,
@@ -2092,52 +2096,52 @@
     "sha256": "e1527eda9deb91c416acb9b85a1bb21a7edbb56a91b18a9361ea1c08f9d63954"
   },
   "assets/deck-icons/arsenal.svg": {
-    "bytes": 295,
-    "sha256": "73d788accb3543ddf63dfd0cdee3a15ac6ff6dabd3139f366d360c32aba743d4"
+    "bytes": 1111,
+    "sha256": "552896d8b1a9f9eff7a0d0ca2698e4e65a66ef64c3fee33018fcd46960c26199"
   },
   "assets/deck-icons/caos.svg": {
-    "bytes": 309,
-    "sha256": "617ff91f9baec6c5a38b337a2f5893b82c72d695ddd14bff400bb4c689d73222"
+    "bytes": 910,
+    "sha256": "31312899966a1dd41ec4310aff1f7388bb1afa82a349a8aef7e7d279efc1c5cb"
   },
   "assets/deck-icons/combos.svg": {
-    "bytes": 375,
-    "sha256": "e6af575a6101174e7746ff394b5f30d3fc33855282c5d8e9b4073fdfc1f4ad05"
+    "bytes": 1054,
+    "sha256": "7bd7905856098d600b00b9ab308dfac13a373550b8846585dc1f18c6b4cea0ab"
   },
   "assets/deck-icons/convergencia.svg": {
-    "bytes": 305,
-    "sha256": "1b9ddce0c3bd9aa7a4013515d58a29490313a635e18e94127ea4ad68d87821fc"
+    "bytes": 1281,
+    "sha256": "21edd88f53fc7cd1a92dd96aee334be4ded207e387dcac8750c8dcc201df4164"
   },
   "assets/deck-icons/eclipse.svg": {
-    "bytes": 288,
-    "sha256": "21d24d9e74cbbca4f1096f3a9bc039f900641b00ed6781a3f810f5a12754af41"
+    "bytes": 1109,
+    "sha256": "a649622556ea2de8b7deaf6865bda365c1d5907a121131ff53c1d9af17d1abce"
   },
   "assets/deck-icons/lunar.svg": {
-    "bytes": 303,
-    "sha256": "24ceb44abed48bf9cffa98286ac2a1855c7fffde07199ba1bbfe51de5ad61099"
+    "bytes": 1196,
+    "sha256": "29727dcb5ac092044db97b27fdc16031a2f240ed05e94ed9018bc8d91ea13a91"
   },
   "assets/deck-icons/matilha.svg": {
-    "bytes": 251,
-    "sha256": "d85b1878ba7969d120a795317c9517b8c8f2def695bcecdd991c66d12bb0b698"
+    "bytes": 1108,
+    "sha256": "9c95b580697dfc76a6e9de961ea2ac5cb809a9fc9e116941259a0622499d8b9c"
   },
   "assets/deck-icons/ofensiva.svg": {
-    "bytes": 253,
-    "sha256": "732d3250341d1ca3fec689768b72d40455dd9129b944add5b70061eda3455821"
+    "bytes": 1125,
+    "sha256": "edc28af3be49c3011afe73d1bf42af7e25ec462f3a579bced8f438698e5e91f1"
   },
   "assets/deck-icons/pelotao.svg": {
-    "bytes": 319,
-    "sha256": "6671b9b1e0bf11746b6922137a762e5699554b2bac7f200a256801f1ef5b11ee"
+    "bytes": 1234,
+    "sha256": "c0b7473bca053d3824db062c8ec075eb11e2fa47a2c61883902fd88898219ec0"
   },
   "assets/deck-icons/protecao.svg": {
-    "bytes": 291,
-    "sha256": "06493e2b8d6f0dea4808329f633a0c737e4aa4dc5f61a9350cab806f90202af9"
+    "bytes": 1097,
+    "sha256": "b8fa7e372930b0337859cea41620a1d990c8f901658c48cd56502ab6d2d8a84e"
   },
   "assets/deck-icons/realeza.svg": {
-    "bytes": 268,
-    "sha256": "e445531c8a3bace9635c28b514673d7b91a659ae6d0e5d13d0f5286d5e8c1665"
+    "bytes": 1189,
+    "sha256": "548582b9350cd2b4bfd113b7cb66434dfed85ca1a091942886b096db6d5ad4db"
   },
   "assets/deck-icons/submundo.svg": {
-    "bytes": 325,
-    "sha256": "ec8fbdf13e87bf57b6f0e91cbc90198442e75035d24f27ba129917257024d4e8"
+    "bytes": 1062,
+    "sha256": "8bea684970cbd0f6bc4417f4c3488c3289e4bdd020f05a7243bd3c15ecc8716c"
   },
   "assets/defeat-emblem.png": {
     "bytes": 1482081,
@@ -4011,6 +4015,22 @@
     "bytes": 2024964,
     "sha256": "25616da396696f7f214579dd068280a69e38d660d72cf2aebd6171a9ca7dfdb7"
   },
+  "assets/profile-achievements/first-victory.svg": {
+    "bytes": 1331,
+    "sha256": "85c642d271e03c3bd241e38dd34058c338831e4ad9606ab5d22f2e7b4ba185e3"
+  },
+  "assets/profile-achievements/five-streak.svg": {
+    "bytes": 1598,
+    "sha256": "1290345d0c6ebe51cecd272caa28c2012a0dbfef555efe572cda7841db7b7a57"
+  },
+  "assets/profile-achievements/ten-victories.svg": {
+    "bytes": 1437,
+    "sha256": "1a8fefe8bb72576dcd5756784c9c397262bec8dea056727e66f6eb4462c5c768"
+  },
+  "assets/profile-achievements/twenty-five-duels.svg": {
+    "bytes": 1362,
+    "sha256": "700b54540355e437199b3430bc9adedaa35e36068561a3abade4c5e49c7eed94"
+  },
   "assets/ranks/aprendiz-de-heroi.svg": {
     "bytes": 3328,
     "sha256": "8f248caac127f51d8a017fb3930d53ceddcdfc859e06bb9d39f28a4fdd5a352a"
@@ -4636,8 +4656,8 @@
     "sha256": "7d6f2686c598639189bbc86eab2f7a688e91ee31ca0670fa18079a1860eb8f07"
   },
   "COMECE-AQUI.txt": {
-    "bytes": 6752,
-    "sha256": "1556d6e7ad9d87b1f9bf2145a91a38eec12a85517326c0c36aa24bf26975508e"
+    "bytes": 7042,
+    "sha256": "98bd33ee1f56d472a8b3920e031a26532f8f5b9abb6e6ecf7fc365d963e7d0d3"
   },
   "CONCEPT-ART-ASSETS.json": {
     "bytes": 5044,
@@ -4740,8 +4760,8 @@
     "sha256": "bdc5198643776d67901c393af0f8b57f2db9110db3750da309be5d493232cd9e"
   },
   "deck-identity.js": {
-    "bytes": 7322,
-    "sha256": "b2580e577c775d4fc8dd6a518a2ee1473573b7a9df86ce477d9c2896f3577641"
+    "bytes": 7333,
+    "sha256": "01b3a9fa92cd5d857d8cd3364fab4ee637942aeb237ff6b5dc6011c80ae40083"
   },
   "deck-picker.js": {
     "bytes": 3322,
@@ -4779,9 +4799,13 @@
     "bytes": 2813,
     "sha256": "a742a1944df285cd110ed9ca387455f3730deeee89a6ac162bd8f9b680566d79"
   },
+  "EMBLEMAS-DECKS-E-CONQUISTAS.svg": {
+    "bytes": 23543,
+    "sha256": "570b89406980107f143e66f99e7c78b5a6a0f38fb4b0e229e14ce60f481defe7"
+  },
   "entry-bootstrap.js": {
     "bytes": 10873,
-    "sha256": "1a01139def1cd2f8ace5191b89ab91a76a7655c5b1774d9f7f8e38d758c46769"
+    "sha256": "de622ce504062ddbabdf4ffd428b4d5e3bb95c7c6e02d5aa04a83b70d73b3b2b"
   },
   "entry-critical.css": {
     "bytes": 9109,
@@ -4824,12 +4848,12 @@
     "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
   },
   "game-interface.css": {
-    "bytes": 649119,
-    "sha256": "10181b6625763a1eba88c3399cd719adf9cc20548115ccab6fd0c3c9aa35bb20"
+    "bytes": 651345,
+    "sha256": "c31bb2d75462f823d2a84ee5ef423be322f483caffebf2d6f2ee8f0a67813287"
   },
   "game-runtime.js": {
-    "bytes": 1368546,
-    "sha256": "1413b75542101a474145f02519b2c50f048e5dd26ece35eba951f06dc068585a"
+    "bytes": 1369177,
+    "sha256": "57aaba70a329e53498f4188131467ffde23fe87b81610cd9ebe33fc9ce633863"
   },
   "guardian-campaign-data.js": {
     "bytes": 62062,
@@ -4879,6 +4903,10 @@
     "bytes": 18943,
     "sha256": "983a2b2316d65642ca47ef737cff96f94ef2e171eee0e900e2d0fc0af3ceebcb"
   },
+  "ICONES-DECKS-E-CONQUISTAS.md": {
+    "bytes": 1463,
+    "sha256": "4ea4a6e1005e7a5c1f87182151c8c83df526c71ab5b169edc9ec1acd510522e1"
+  },
   "identity-art.css": {
     "bytes": 2977,
     "sha256": "886f804b290edf82a768d20994c7efe0a4b4d01c0a7c17e1aaece6a90e3c31e0"
@@ -4897,7 +4925,7 @@
   },
   "index.html": {
     "bytes": 77504,
-    "sha256": "52966edad99b1a01b1711de1f4332dc238081b8d3a11da084d3be8171e65d069"
+    "sha256": "7204284968266ca9096c046a7a32e85e32b21030829ff9e5c3fbb2c5356eedd1"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -5028,8 +5056,8 @@
     "sha256": "2f6ce61d1a963cd1df60bfa2280618d122d7723a161ee69b8ccf810dbe3adf84"
   },
   "profile-redesign.js": {
-    "bytes": 7767,
-    "sha256": "64083f51b3a99bfe99b4babb87ac31dc24d664ea1e9b72072a9eaa6432eb1843"
+    "bytes": 8387,
+    "sha256": "32f229cd0a3b797789c31643091c1a78e76fc3767bc4aeb81fde14b7bf5dadbb"
   },
   "public-hall.css": {
     "bytes": 15646,
@@ -5040,8 +5068,8 @@
     "sha256": "95262b15ee32ad83213907eb7c8fa516607dd3841caa050e01736094d00d2921"
   },
   "quality-updates.css": {
-    "bytes": 12816,
-    "sha256": "73263feab32b9e544555157ff1226e9a80b71c7e026a0648447ffead5e01cc0d"
+    "bytes": 15042,
+    "sha256": "d8beab28657617ec21c2130f6f8def325a588e5f0c7a127c77e2753165f9380f"
   },
   "quality-updates.js": {
     "bytes": 10638,
@@ -5073,11 +5101,11 @@
   },
   "release-stamp.js": {
     "bytes": 86,
-    "sha256": "fc129c11057eeb07a45cb81ba95569a41e42f92704916eedd3554bf2153c22a5"
+    "sha256": "74df64206f3d4e447870d34e3ee582fed6689a788688bd2b3e62c3ec15204da1"
   },
   "release.json": {
     "bytes": 52,
-    "sha256": "e81f60a167faed5815e77a7a52e1495287e6106397a228ad02683ca46380c626"
+    "sha256": "9a27130024e5388c12ce3f8507be62e8b3eec8dd0657d352ddbb68694cd524be"
   },
   "remake-gallery.css": {
     "bytes": 1513,
@@ -5469,7 +5497,7 @@
   },
   "sw.js": {
     "bytes": 4187,
-    "sha256": "08427982352eed981a5668e467767bd9419409134d84b576fd1df1c0c6732a84"
+    "sha256": "9de6998072e07a6092b231a641572dd7888ad0bddbad3ab5a1fa630560b5e5ed"
   },
   "terrain-cards.js": {
     "bytes": 15141,

@@ -1,3 +1,7 @@
+ATUALIZAÇÃO — ÍCONES DE DECKS E CONQUISTAS DO PERFIL
+12 emblemas de estratégias para decks e 4 medalhas próprias no perfil. Leia ICONES-DECKS-E-CONQUISTAS.md.
+Prévia das artes: EMBLEMAS-DECKS-E-CONQUISTAS.svg. Publique os arquivos atualizados; esta alteração não exige SQL.
+
 CORREÇÃO — SINTAXE DO SQL 052
 Leia CORRECAO-SQL-052.md. Execute novamente o SQL 052 completo e depois prossiga com 053 e 054.
 Corrigida a expressão CASE na condição do bot. Correção não executada no banco online.
