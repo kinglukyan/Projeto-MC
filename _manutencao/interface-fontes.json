@@ -44,6 +44,7 @@
     "project-revision.css",
     "universe-online-update.css",
     "guild-progression.css",
-    "basic-packs-store.css"
+    "basic-packs-store.css",
+    "store-control.css"
   ]
 }

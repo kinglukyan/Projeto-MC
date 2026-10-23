@@ -1,0 +1,20 @@
+#view-store>.store-balance-card{display:none!important}
+.account-currencies{display:flex;align-items:center;margin-left:auto;max-width:100%;gap:18px}
+.account-currencies .concept-account-coins{margin-left:0}
+.account-trixx{display:inline-flex;align-items:center;gap:8px;white-space:nowrap;color:var(--gold,#f2d580)}
+.account-trixx>img{width:30px;height:30px;object-fit:contain}
+.account-recharge.button{min-width:32px;min-height:32px;padding:0;font-size:22px;border-radius:50%;line-height:1}
+.store-test-notice{padding:12px 16px;border:1px solid #e9bd55;border-radius:8px;background:#38244c;color:#ffdf91}
+.store-test-notice[hidden]{display:none}
+.store-test-toggle{display:flex;align-items:center;gap:12px;cursor:pointer}
+.store-test-toggle input{width:22px;height:22px;flex:none}
+.store-accounting{grid-column:1/-1}
+.store-accounting-filters{display:flex;flex-wrap:wrap;gap:14px;align-items:end;margin-block:20px}
+.store-accounting-filters label{display:grid;gap:6px}
+.store-accounting-totals{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin-block:16px}
+.store-accounting-totals>section{padding:16px;background:#171121;border:1px solid #6c557b;border-radius:8px}
+.store-accounting-pager{display:flex;gap:16px;align-items:center;justify-content:center;margin:18px 0}
+.store-test-art{display:block;object-fit:contain;max-width:90%;max-height:65vh;margin:20px auto;animation:store-test-reveal .7s ease-out both}
+@keyframes store-test-reveal{from{opacity:0;transform:translateY(55px) scale(.8) rotate(-5deg)}to{opacity:1;transform:none}}
+@media(max-width:600px){.concept-account-bar{flex-wrap:wrap}.account-trixx{margin-left:8px;gap:5px}.account-trixx>img{width:24px;height:24px}.store-accounting-filters>*{flex:1;min-width:120px}.store-accounting-pager{gap:8px}}
+@media(prefers-reduced-motion:reduce){.store-test-art{animation:none}}

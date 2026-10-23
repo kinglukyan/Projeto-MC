@@ -1,6 +1,8 @@
-ATUALIZAÇÃO 2026.10.23.1 — PACOTINHOS E TRIXX COINS
+ATUALIZAÇÃO 2026.10.23.2 — LOJA, CONTABILIDADE E MODO TESTE
 
-Leia PACOTINHOS-E-TRIXX-COINS.md.
-Aplicar SQL 063 depois do 062 e publicar pelo GitHub/Vercel.
-Preço: 1.000 Trixx Coins por pacote.
-Recargas desativadas; motor de pagamentos será escolhido futuramente.
+Leia LOJA-CONTABILIDADE-E-MODO-TESTE.md.
+Aplique SQL 064 depois do 063 e publique o pacote pelo GitHub/Vercel.
+Saldos juntos na barra do jogador; botão + de recarga (em breve).
+Administração → Jogadores/Recompensas: entregar Trixx Coins.
+Administração → Loja: contabilidade das duas moedas e teste individual sem cobrança ou entrega.
+Pacote incremental: requer a atualização anterior de pacotinhos e Trixx Coins.

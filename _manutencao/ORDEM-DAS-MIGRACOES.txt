@@ -77,3 +77,4 @@ APLICAR EM ORDEM. Para esta atualização, somente 063 se até 062 já foi aplic
 202610220061_guild_levels_unique_nicknames.sql
 202610220062_atlas_athena_minotaur.sql
 202610220063_basic_packs_trixx_coins.sql
+202610230064_store_accounting_and_admin_test.sql

@@ -66,5 +66,6 @@
   "device-login.js",
   "online-tiebreak.js",
   "basic-packs-data.js",
-  "basic-packs-store.js"
+  "basic-packs-store.js",
+  "store-control.js"
 ]
