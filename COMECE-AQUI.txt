@@ -1,5 +1,5 @@
-ATUALIZAÇÃO 2026.10.22.5 — TAMANHO DOS CHIBIS NAS TELAS
+ATUALIZAÇÃO 2026.10.22.6 — DIÁLOGOS DO PRIMEIRO MAPA DO ATLAS
 
-Leia CORRECAO-CHIBIS-NAS-TELAS.md.
-Aplicar sobre a versão 2026.10.22.4 e publicar pelo GitHub/Vercel.
-Esta correção não exige novo SQL.
+Leia ATLAS-DIALOGOS-PRIMEIRO-MAPA.md.
+Aplicar SQL 062 depois do 061 e publicar pelo GitHub/Vercel.
+Se houver desafio 4 ou 15 da Grécia em andamento, terminar ou desistir antes de aplicar o SQL.

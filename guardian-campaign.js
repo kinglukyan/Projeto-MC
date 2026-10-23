@@ -104,6 +104,7 @@
  api.activeMatchId=()=>attached?snapshot?.match.id:original.activeMatchId();
  api.leaveMatch=(...args)=>{if(attached){attached=false;return;}return original.leaveMatch(...args);};
  window.MythicGuardianCampaign={refresh:()=>load(true),
+  dialogueScene:campaign=>{const r=data.regions.find(r=>r.id===campaign?.region),n=data.nodes[campaign?.nodeId];if(!r||!n||campaign.opponent&&campaign.opponent!==n.opponent)return null;return {node:n,background:scene(r,n.chapter)};},
   matchIsActive:async id=>{const result=await api.portalRequest('get_guardian_campaign_run',{p_run_id:id});return result?.match?.status==='active'&&!result.match.state?.finished;},
   surrender:async id=>{if(!attached||snapshot?.match.id!==id||busy)throw Error('Aguarde a jogada ser confirmada e tente novamente.');busy=true;const who=uid(),token=epoch;try{const result=await api.portalRequest('surrender_game_match',{p_match_id:id});if(who===uid()&&token===epoch){apply(result.campaign);await api.refreshProfile();}}finally{busy=false;}},
   returnToMap:async(r,result)=>{attached=false;region=r;snapshot=null;delete areas[r];focusNextRegion=r;save();nav('guardian');await load(true);delete areas[r];draw();if(result?.reward){const k=`gc-reward-seen:${uid()}:${result.reward.milestone}`;if(!sessionStorage.getItem(k)){sessionStorage.setItem(k,'1');showReward(result.reward);}}},

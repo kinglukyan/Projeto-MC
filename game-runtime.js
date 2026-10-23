@@ -1835,9 +1835,24 @@ window.MythicPaintUniverseBanner=(banner,id)=>{
     if(action.type==='pass')stats.passes++;
     if(action.type==='play')stats.plays.push({actor_id:actor,card_id:action.card_id,round:duel.round,at:Date.now()});
   }
+  const atlasOutcomePending=new WeakSet();
   function showCompletedReport(){
     if(!duel||(!duel.finished&&!duel.practice)||duel.reportSummaryShown)return;
-    const ended=duel;ended.reportSummaryShown=true;ended.finishedAt=ended.finishedAt||Date.now();saveDuel();
+    const ended=duel;
+    if(atlasOutcomePending.has(ended))return;
+    if(ended.guardianCampaign&&!ended.atlasOutcomeDialogueHandled&&window.MythicAtlasDialogue?.outcome){
+      const context=window.MythicGuardianCampaign?.dialogueScene?.(ended.guardianCampaign);
+      if(context&&window.MythicAtlasDialogue.has(context.node)){
+        const ownerId=window.MythicOnline?.userId?.(),outcome=ended.serverOutcome||(ended.roundWins.player>ended.roundWins.enemy?'victory':ended.roundWins.enemy>ended.roundWins.player?'defeat':'draw');
+        atlasOutcomePending.add(ended);$('#match-result-banner').hidden=true;
+        Promise.resolve().then(()=>window.MythicAtlasDialogue.outcome(context.node,outcome,{background:context.background,isValid:()=>duel===ended&&activeView==='duel'&&ownerId===window.MythicOnline?.userId?.()})).catch(()=>{}).finally(()=>{
+          atlasOutcomePending.delete(ended);ended.atlasOutcomeDialogueHandled=true;
+          if(duel===ended&&activeView==='duel'&&ownerId===window.MythicOnline?.userId?.())showCompletedReport();
+        });return;
+      }
+      ended.atlasOutcomeDialogueHandled=true;
+    }
+    ended.reportSummaryShown=true;ended.finishedAt=ended.finishedAt||Date.now();saveDuel();
     $('#match-result-banner').hidden=true;$('#duel-loading-screen').hidden=true;$('#duel-loading-screen').setAttribute('aria-hidden','true');closeCardDetail();
     window.MythicTieBreak?.close?.();window.MythicAbilitiesUI?.close();window.MythicCombatFX?.clear();window.MythicEclipseUI?.close();
     if(ended.online)window.MythicOnline?.leaveMatch();
@@ -4649,7 +4664,7 @@ retryConnection:async()=>{if(activeMatchId){await refreshOnlineMatch(activeMatch
 
 ;
 /* guardian-campaign-data.js */
-window.MythicGuardianCampaignData={"regions":[{"id":"greece","name":"Grécia","faction":"Grécia","order":1,"longitude":23.7,"latitude":38,"labelX":52.0,"labelY":38.0,"badge":"assets/card-badges/gregos-v3.png","chapters":[{"name":"Grécia","sourceCard":"grecia","art":"assets/onboarding/greek-realm.webp"},{"name":"Esparta","sourceCard":"esparta","art":"assets/terrains/esparta.png"},{"name":"Labirinto de Dédalos","sourceCard":"labirinto-dedalos","art":"assets/terrains/labirinto-dedalos.png"},{"name":"Troia","sourceCard":"campo-troia","art":"assets/terrains/campo-troia.png"}],"nodeIds":["greece-01","greece-02","greece-03","greece-04","greece-05","greece-06","greece-07","greece-08","greece-09","greece-10","greece-11","greece-12","greece-13","greece-14","greece-15","greece-16","greece-17","greece-18","greece-19","greece-20"]},{"id":"egypt","name":"Egito","faction":"Egípcios","order":2,"longitude":31,"latitude":26,"labelX":58.5,"labelY":48.4,"badge":"assets/card-badges/egipcios-v3.png","chapters":[{"name":"Egito","sourceCard":"egito","art":"assets/onboarding/egyptian-realm.webp"},{"name":"Alto Egito","sourceCard":"alto-egito","art":"assets/terrains/alto-egito.jpg"}],"nodeIds":["egypt-01","egypt-02","egypt-03","egypt-04","egypt-05","egypt-06","egypt-08"]},{"id":"norse","name":"Nove Reinos","faction":"Nórdicos","order":3,"longitude":10,"latitude":63,"labelX":48.0,"labelY":9.0,"badge":"assets/card-badges/nordicos-v3.png","chapters":[{"name":"Asgard","sourceCard":"asgard","art":"assets/onboarding/norse-realm.webp"},{"name":"Bifrost","sourceCard":"bifrost","art":"assets/terrains/bifrost.png"}],"nodeIds":["norse-01","norse-02","norse-03","norse-04","norse-05","norse-06"]},{"id":"celtic","name":"Terras Celtas","faction":"Celtas","order":4,"longitude":-6,"latitude":53,"labelX":41.0,"labelY":22.4,"badge":"assets/card-badges/celtas-v3.png","chapters":[{"name":"Camelot","sourceCard":null,"art":"assets/universe/characters/celtas-cu-chulainn.webp"},{"name":"Floresta dos Druidas","sourceCard":null,"art":"assets/universe/characters/celtas-lancelot.webp"}],"nodeIds":["celtic-01","celtic-02","celtic-03","celtic-04","celtic-05","celtic-06","celtic-07","celtic-08","celtic-09","celtic-20"]},{"id":"mesopotamian","name":"Mesopotâmia","faction":"Mesopotâmica","order":5,"longitude":44,"latitude":33,"labelX":65.7,"labelY":37.6,"badge":"assets/card-badges/remake-mesopotamian.png","chapters":[{"name":"Canais de Eridu","sourceCard":null,"art":"assets/universe/characters/mesopotamica-ishtar.webp"},{"name":"Zigurates de Ur","sourceCard":null,"art":"assets/universe/characters/mesopotamica-marduk.webp"}],"nodeIds":["mesopotamian-01","mesopotamian-02","mesopotamian-03","mesopotamian-04","mesopotamian-05","mesopotamian-06","mesopotamian-07","mesopotamian-08","mesopotamian-09","mesopotamian-10"]},{"id":"hindu","name":"Caminhos Hindus","faction":"Hindu","order":6,"longitude":78,"latitude":23,"labelX":74.4,"labelY":47.0,"badge":"assets/card-badges/remake-hindu.png","chapters":[{"name":"Jardins de Lótus","sourceCard":null,"art":"assets/universe/characters/hindu-krishna.webp"},{"name":"Vale Sagrado","sourceCard":null,"art":"assets/universe/characters/hindu-shiva.webp"}],"nodeIds":["hindu-01","hindu-02","hindu-03","hindu-04","hindu-05","hindu-06","hindu-07","hindu-08","hindu-09","hindu-10"]},{"id":"chinese","name":"Reino Celestial","faction":"Chinesa","order":7,"longitude":105,"latitude":35,"labelX":78.5,"labelY":25.0,"badge":"assets/card-badges/remake-chinese.png","chapters":[{"name":"Montanha das Flores","sourceCard":null,"art":"assets/universe/characters/chinesa-change.webp"},{"name":"Jardim da Lua","sourceCard":null,"art":"assets/universe/characters/chinesa-imperador-jade.webp"}],"nodeIds":["chinese-01","chinese-02","chinese-03","chinese-04","chinese-05","chinese-06","chinese-07","chinese-08","chinese-09","chinese-10"]},{"id":"japanese","name":"Ilhas do Sol","faction":"Japonesa","order":8,"longitude":138,"latitude":36,"labelX":90.2,"labelY":32.0,"badge":"assets/card-badges/remake-japanese.png","chapters":[{"name":"Caminho dos Torii","sourceCard":null,"art":"assets/universe/characters/japonesa-tsukuyomi.webp"},{"name":"Costa das Tempestades","sourceCard":null,"art":"assets/universe/characters/japonesa-amaterasu.webp"}],"nodeIds":["japanese-01","japanese-02","japanese-03","japanese-04","japanese-05","japanese-06","japanese-07","japanese-08","japanese-09","japanese-10"]},{"id":"aztec","name":"Terras Astecas","faction":"Asteca","order":9,"longitude":-99,"latitude":19,"labelX":21.0,"labelY":43.0,"badge":"assets/card-badges/remake-aztec.png","chapters":[{"name":"Jardins Sagrados","sourceCard":null,"art":"assets/universe/characters/asteca-xipe-totec.webp"},{"name":"Escadarias de Pedra","sourceCard":null,"art":"assets/universe/characters/asteca-quetzalcoatl.webp"}],"nodeIds":["aztec-01","aztec-02","aztec-03","aztec-04","aztec-05","aztec-06","aztec-07","aztec-08","aztec-09","aztec-10"]},{"id":"brasil","name":"Lendas do Brasil","faction":"Brasil","order":10,"longitude":-55,"latitude":-10,"labelX":36.5,"labelY":64.0,"badge":"assets/card-badges/remake-brasil.png","chapters":[{"name":"Veredas da Mata","sourceCard":null,"art":"assets/universe/characters/brasil-curupira.webp"},{"name":"Margens do Rio","sourceCard":null,"art":"assets/universe/characters/brasil-lampiao.webp"}],"nodeIds":["brasil-01","brasil-02","brasil-03","brasil-04","brasil-05","brasil-06","brasil-07","brasil-08","brasil-09","brasil-10"]},{"id":"monster","name":"Lendas Europeias","faction":"Monstros","order":11,"longitude":24,"latitude":47,"labelX":59.2,"labelY":17.6,"badge":"assets/card-badges/monstros-v3.png","chapters":[{"name":"Aldeia ao Crepúsculo","sourceCard":null,"art":"assets/universe/characters/lobo-alfa.webp"}],"nodeIds":["monster-01","monster-02","monster-03","monster-04","monster-05"]}],"nodes":{"greece-01":{"id":"greece-01","region":"greece","stage":1,"opponent":"aquiles","name":"Aquiles","icon":"chibi-aquiles","difficulty":1,"chapter":0,"boss":false,"deckSize":14,"style":"Aprendizado guiado","lesson":"Jogue um personagem na sua metade da mesa. O poder das suas cartas forma a pontuação do Round."},"greece-02":{"id":"greece-02","region":"greece","stage":2,"opponent":"hercules","name":"Hércules","icon":"chibi-hercules","difficulty":1,"chapter":0,"boss":false,"deckSize":14,"style":"Aprendizado guiado","lesson":"Cada turno permite jogar uma carta. Compare seu poder com o adversário antes de encerrar o turno."},"greece-03":{"id":"greece-03","region":"greece","stage":3,"opponent":"hermes","name":"Hermes","icon":"chibi-hermes","difficulty":1,"chapter":0,"boss":false,"deckSize":14,"style":"Aprendizado guiado","lesson":"Distribua os personagens entre as três fileiras. Leia a habilidade antes de escolher a posição."},"greece-04":{"id":"greece-04","region":"greece","stage":4,"opponent":"minotauro","name":"Minotauro","icon":"chibi-minotauro","difficulty":1,"chapter":0,"boss":false,"deckSize":14,"style":"Aprendizado guiado","lesson":"As habilidades podem alterar o poder: compare o número atual com o poder impresso na carta."},"greece-05":{"id":"greece-05","region":"greece","stage":5,"opponent":"soldado-esparta","name":"Soldado de Esparta","icon":"chibi-soldado-esparta","difficulty":1,"chapter":0,"boss":true,"deckSize":14,"style":"Aprendizado guiado","lesson":"Cada Round é independente. Quem perde o Round perde uma Trixx; conquiste duas vitórias de Round."},"greece-06":{"id":"greece-06","region":"greece","stage":6,"opponent":"afrodite","name":"Afrodite","icon":"chibi-afrodite","difficulty":1,"chapter":1,"boss":false,"deckSize":16,"style":"Treino de sinergias","lesson":"Aliados na mesma fileira podem combinar habilidades. Experimente uma sinergia descrita nas cartas."},"greece-07":{"id":"greece-07","region":"greece","stage":7,"opponent":"dionisio","name":"Dionísio","icon":"chibi-dionisio","difficulty":1,"chapter":1,"boss":false,"deckSize":16,"style":"Treino de sinergias","lesson":"Guarde cartas para os próximos Rounds. Nem sempre vale gastar toda a mão para vencer o primeiro."},"greece-08":{"id":"greece-08","region":"greece","stage":8,"opponent":"perseu","name":"Perseu","icon":"chibi-perseu","difficulty":1,"chapter":1,"boss":false,"deckSize":16,"style":"Treino de sinergias","lesson":"Passar encerra sua participação neste Round. Faça isso quando tiver vantagem ou quiser economizar cartas."},"greece-09":{"id":"greece-09","region":"greece","stage":9,"opponent":"hestia","name":"Héstia","icon":"chibi-hestia","difficulty":1,"chapter":1,"boss":false,"deckSize":16,"style":"Treino de sinergias","lesson":"Cartas que compram ou recuperam aliados ajudam a manter opções para os próximos turnos."},"greece-10":{"id":"greece-10","region":"greece","stage":10,"opponent":"apolo","name":"Apolo","icon":"chibi-apolo","difficulty":1,"chapter":1,"boss":true,"deckSize":16,"style":"Treino de sinergias","lesson":"O primeiro tesouro vem após cinco desafios inéditos vencidos. Uma derrota preserva o avanço da trilha."},"greece-11":{"id":"greece-11","region":"greece","stage":11,"opponent":"medusa","name":"Medusa","icon":"chibi-medusa","difficulty":2,"chapter":2,"boss":false,"deckSize":18,"style":"Prática de efeitos","lesson":"Locais, terrenos e climas têm espaços próprios. Leia quais lados e facções eles afetam."},"greece-12":{"id":"greece-12","region":"greece","stage":12,"opponent":"hefesto","name":"Hefestos","icon":"chibi-hefesto","difficulty":2,"chapter":2,"boss":false,"deckSize":18,"style":"Prática de efeitos","lesson":"Algumas habilidades exigem um alvo. Compare as opções e confirme o alvo indicado na janela."},"greece-13":{"id":"greece-13","region":"greece","stage":13,"opponent":"demeter","name":"Deméter","icon":"chibi-demeter","difficulty":2,"chapter":2,"boss":false,"deckSize":18,"style":"Prática de efeitos","lesson":"Proteções podem impedir uma destruição ou redução de poder. Confira os efeitos antes de atacar."},"greece-14":{"id":"greece-14","region":"greece","stage":14,"opponent":"hera","name":"Hera","icon":"chibi-hera","difficulty":2,"chapter":2,"boss":false,"deckSize":18,"style":"Prática de efeitos","lesson":"O Submundo reúne cartas removidas. Uma recuperação só funciona se houver um alvo permitido."},"greece-15":{"id":"greece-15","region":"greece","stage":15,"opponent":"athena","name":"Athena","icon":"chibi-athena","difficulty":2,"chapter":2,"boss":true,"deckSize":18,"style":"Prática de efeitos","lesson":"Depois que ambos passam, o Round termina. Os pontos zeram para a disputa seguinte."},"greece-16":{"id":"greece-16","region":"greece","stage":16,"opponent":"artemis","name":"Ártemis","icon":"chibi-artemis","difficulty":2,"chapter":3,"boss":false,"deckSize":20,"style":"Revisão da Grécia","lesson":"Combine cartas de suporte com quem recebe o benefício. A posição pode mudar o resultado do combo."},"greece-17":{"id":"greece-17","region":"greece","stage":17,"opponent":"ares","name":"Ares","icon":"chibi-ares","difficulty":2,"chapter":3,"boss":false,"deckSize":20,"style":"Revisão da Grécia","lesson":"Observe a mão restante e as vitórias de Round antes de arriscar suas melhores cartas."},"greece-18":{"id":"greece-18","region":"greece","stage":18,"opponent":"poseidon","name":"Poseidon","icon":"chibi-poseidon","difficulty":2,"chapter":3,"boss":false,"deckSize":20,"style":"Revisão da Grécia","lesson":"Se perder um Round, você ainda pode virar a partida: conserve recursos para os dois seguintes."},"greece-19":{"id":"greece-19","region":"greece","stage":19,"opponent":"hades","name":"Hades","icon":"chibi-hades","difficulty":2,"chapter":3,"boss":false,"deckSize":20,"style":"Revisão da Grécia","lesson":"Ao fim de três Rounds, vence quem ganhou mais Rounds. Igualdade em vitórias leva ao desempate."},"greece-20":{"id":"greece-20","region":"greece","stage":20,"opponent":"zeus","name":"Zeus","icon":"chibi-zeus","difficulty":2,"chapter":3,"boss":true,"deckSize":20,"style":"Revisão da Grécia","lesson":"Desafio final da Grécia: use posicionamento, habilidades e reservas para conquistar duas vitórias de Round."},"egypt-01":{"id":"egypt-01","region":"egypt","stage":1,"opponent":"sobek","name":"Sobek","icon":"chibi-sobek","difficulty":2,"chapter":0,"boss":false,"deckSize":18,"style":"Primeiros combos"},"egypt-02":{"id":"egypt-02","region":"egypt","stage":2,"opponent":"horus","name":"Hórus","icon":"chibi-horus","difficulty":2,"chapter":0,"boss":false,"deckSize":18,"style":"Primeiros combos"},"egypt-03":{"id":"egypt-03","region":"egypt","stage":3,"opponent":"isis","name":"Ísis","icon":"chibi-isis","difficulty":2,"chapter":0,"boss":false,"deckSize":18,"style":"Primeiros combos"},"egypt-04":{"id":"egypt-04","region":"egypt","stage":4,"opponent":"seth","name":"Seth","icon":"chibi-seth","difficulty":2,"chapter":0,"boss":false,"deckSize":19,"style":"Primeiros combos"},"egypt-05":{"id":"egypt-05","region":"egypt","stage":5,"opponent":"anubis","name":"Anúbis","icon":"chibi-anubis","difficulty":2,"chapter":0,"boss":true,"deckSize":19,"style":"Primeiros combos"},"egypt-06":{"id":"egypt-06","region":"egypt","stage":6,"opponent":"osiris","name":"Osíris","icon":"chibi-osiris","difficulty":2,"chapter":1,"boss":false,"deckSize":19,"style":"Sinergias da facção"},"egypt-08":{"id":"egypt-08","region":"egypt","stage":7,"opponent":"ra","name":"Rá","icon":"chibi-ra","difficulty":2,"chapter":1,"boss":true,"deckSize":20,"style":"Sinergias da facção"},"norse-01":{"id":"norse-01","region":"norse","stage":1,"opponent":"beowulf","name":"Beowulf","icon":"chibi-beowulf","difficulty":2,"chapter":0,"boss":false,"deckSize":19,"style":"Primeiros combos"},"norse-02":{"id":"norse-02","region":"norse","stage":2,"opponent":"ragnar","name":"Ragnar","icon":"chibi-ragnar","difficulty":2,"chapter":0,"boss":false,"deckSize":19,"style":"Primeiros combos"},"norse-03":{"id":"norse-03","region":"norse","stage":3,"opponent":"thor","name":"Thor","icon":"chibi-thor","difficulty":2,"chapter":0,"boss":false,"deckSize":19,"style":"Primeiros combos"},"norse-04":{"id":"norse-04","region":"norse","stage":4,"opponent":"loki","name":"Loki","icon":"chibi-loki","difficulty":2,"chapter":0,"boss":false,"deckSize":20,"style":"Primeiros combos"},"norse-05":{"id":"norse-05","region":"norse","stage":5,"opponent":"heimdall","name":"Heimdall","icon":"chibi-heimdall","difficulty":2,"chapter":0,"boss":true,"deckSize":20,"style":"Primeiros combos"},"norse-06":{"id":"norse-06","region":"norse","stage":6,"opponent":"odin","name":"Odin","icon":"chibi-odin","difficulty":2,"chapter":1,"boss":true,"deckSize":20,"style":"Sinergias da facção"},"celtic-01":{"id":"celtic-01","region":"celtic","stage":1,"opponent":"celtas-brigid","name":"Brigid","icon":"chibi-celtas-brigid","difficulty":2,"chapter":0,"boss":false,"deckSize":20,"style":"Primeiros combos"},"celtic-02":{"id":"celtic-02","region":"celtic","stage":2,"opponent":"celtas-lancelot","name":"Lancelot","icon":"chibi-celtas-lancelot","difficulty":2,"chapter":0,"boss":false,"deckSize":20,"style":"Primeiros combos"},"celtic-03":{"id":"celtic-03","region":"celtic","stage":3,"opponent":"celtas-dama-do-lago","name":"Dama do Lago","icon":"chibi-celtas-dama-do-lago","difficulty":2,"chapter":0,"boss":false,"deckSize":20,"style":"Primeiros combos"},"celtic-04":{"id":"celtic-04","region":"celtic","stage":4,"opponent":"celtas-lugh","name":"Lugh","icon":"chibi-celtas-lugh","difficulty":2,"chapter":0,"boss":false,"deckSize":21,"style":"Primeiros combos"},"celtic-05":{"id":"celtic-05","region":"celtic","stage":5,"opponent":"celtas-cu-chulainn","name":"Cú Chulainn","icon":"chibi-celtas-cu-chulainn","difficulty":2,"chapter":0,"boss":true,"deckSize":21,"style":"Primeiros combos"},"celtic-06":{"id":"celtic-06","region":"celtic","stage":6,"opponent":"celtas-dagda","name":"Dagda","icon":"chibi-celtas-dagda","difficulty":2,"chapter":1,"boss":false,"deckSize":21,"style":"Sinergias da facção"},"celtic-07":{"id":"celtic-07","region":"celtic","stage":7,"opponent":"celtas-merlin","name":"Merlin","icon":"chibi-celtas-merlin","difficulty":2,"chapter":1,"boss":false,"deckSize":22,"style":"Sinergias da facção"},"celtic-08":{"id":"celtic-08","region":"celtic","stage":8,"opponent":"celtas-morgana","name":"Morgana","icon":"chibi-celtas-morgana","difficulty":2,"chapter":1,"boss":false,"deckSize":22,"style":"Sinergias da facção"},"celtic-09":{"id":"celtic-09","region":"celtic","stage":9,"opponent":"celtas-morrigan","name":"Morrigan","icon":"chibi-celtas-morrigan","difficulty":2,"chapter":1,"boss":false,"deckSize":22,"style":"Sinergias da facção"},"celtic-20":{"id":"celtic-20","region":"celtic","stage":10,"opponent":"rei-arthur","name":"Rei Arthur","icon":"chibi-rei-arthur","difficulty":3,"chapter":1,"boss":true,"deckSize":26,"style":"Convergência de poderes"},"mesopotamian-01":{"id":"mesopotamian-01","region":"mesopotamian","stage":1,"opponent":"mesopotamica-enki","name":"Enki","icon":"chibi-mesopotamica-enki","difficulty":3,"chapter":0,"boss":false,"deckSize":21,"style":"Primeiros combos"},"mesopotamian-02":{"id":"mesopotamian-02","region":"mesopotamian","stage":2,"opponent":"mesopotamica-enlil","name":"Enlil","icon":"chibi-mesopotamica-enlil","difficulty":3,"chapter":0,"boss":false,"deckSize":21,"style":"Primeiros combos"},"mesopotamian-03":{"id":"mesopotamian-03","region":"mesopotamian","stage":3,"opponent":"mesopotamica-utu-shamash","name":"Utu - Shamash","icon":"chibi-mesopotamica-utu-shamash","difficulty":3,"chapter":0,"boss":false,"deckSize":21,"style":"Primeiros combos"},"mesopotamian-04":{"id":"mesopotamian-04","region":"mesopotamian","stage":4,"opponent":"mesopotamica-nanna-sin","name":"Nanna - Sîn","icon":"chibi-mesopotamica-nanna-sin","difficulty":3,"chapter":0,"boss":false,"deckSize":22,"style":"Primeiros combos"},"mesopotamian-05":{"id":"mesopotamian-05","region":"mesopotamian","stage":5,"opponent":"mesopotamica-ishtar","name":"Ishtar","icon":"chibi-mesopotamica-ishtar","difficulty":3,"chapter":0,"boss":true,"deckSize":22,"style":"Primeiros combos"},"mesopotamian-06":{"id":"mesopotamian-06","region":"mesopotamian","stage":6,"opponent":"mesopotamica-ninurta","name":"Ninurta","icon":"chibi-mesopotamica-ninurta","difficulty":3,"chapter":1,"boss":false,"deckSize":22,"style":"Sinergias da facção"},"mesopotamian-07":{"id":"mesopotamian-07","region":"mesopotamian","stage":7,"opponent":"mesopotamica-nergal","name":"Nergal","icon":"chibi-mesopotamica-nergal","difficulty":3,"chapter":1,"boss":false,"deckSize":23,"style":"Sinergias da facção"},"mesopotamian-08":{"id":"mesopotamian-08","region":"mesopotamian","stage":8,"opponent":"mesopotamica-ereshkigal","name":"Ereshkigal","icon":"chibi-mesopotamica-ereshkigal","difficulty":3,"chapter":1,"boss":false,"deckSize":23,"style":"Sinergias da facção"},"mesopotamian-09":{"id":"mesopotamian-09","region":"mesopotamian","stage":9,"opponent":"mesopotamica-tiamat","name":"Tiamat","icon":"chibi-mesopotamica-tiamat","difficulty":3,"chapter":1,"boss":false,"deckSize":23,"style":"Sinergias da facção"},"mesopotamian-10":{"id":"mesopotamian-10","region":"mesopotamian","stage":10,"opponent":"mesopotamica-marduk","name":"Marduk","icon":"chibi-mesopotamica-marduk","difficulty":3,"chapter":1,"boss":true,"deckSize":24,"style":"Sinergias da facção"},"hindu-01":{"id":"hindu-01","region":"hindu","stage":1,"opponent":"hindu-ganesha","name":"Ganesha","icon":"chibi-hindu-ganesha","difficulty":3,"chapter":0,"boss":false,"deckSize":22,"style":"Primeiros combos"},"hindu-02":{"id":"hindu-02","region":"hindu","stage":2,"opponent":"hindu-lakshmi","name":"Lakshmi","icon":"chibi-hindu-lakshmi","difficulty":3,"chapter":0,"boss":false,"deckSize":22,"style":"Primeiros combos"},"hindu-03":{"id":"hindu-03","region":"hindu","stage":3,"opponent":"hindu-saraswati","name":"Saraswati","icon":"chibi-hindu-saraswati","difficulty":3,"chapter":0,"boss":false,"deckSize":22,"style":"Primeiros combos"},"hindu-04":{"id":"hindu-04","region":"hindu","stage":4,"opponent":"hindu-hanuman","name":"Hanuman","icon":"chibi-hindu-hanuman","difficulty":3,"chapter":0,"boss":false,"deckSize":23,"style":"Primeiros combos"},"hindu-05":{"id":"hindu-05","region":"hindu","stage":5,"opponent":"hindu-krishna","name":"Krishna","icon":"chibi-hindu-krishna","difficulty":3,"chapter":0,"boss":true,"deckSize":23,"style":"Primeiros combos"},"hindu-06":{"id":"hindu-06","region":"hindu","stage":6,"opponent":"hindu-durga","name":"Durga","icon":"chibi-hindu-durga","difficulty":3,"chapter":1,"boss":false,"deckSize":23,"style":"Sinergias da facção"},"hindu-07":{"id":"hindu-07","region":"hindu","stage":7,"opponent":"hindu-indra","name":"Indra","icon":"chibi-hindu-indra","difficulty":3,"chapter":1,"boss":false,"deckSize":24,"style":"Sinergias da facção"},"hindu-08":{"id":"hindu-08","region":"hindu","stage":8,"opponent":"hindu-vishnu","name":"Vishnu","icon":"chibi-hindu-vishnu","difficulty":3,"chapter":1,"boss":false,"deckSize":24,"style":"Sinergias da facção"},"hindu-09":{"id":"hindu-09","region":"hindu","stage":9,"opponent":"hindu-kali","name":"Kali","icon":"chibi-hindu-kali","difficulty":3,"chapter":1,"boss":false,"deckSize":24,"style":"Sinergias da facção"},"hindu-10":{"id":"hindu-10","region":"hindu","stage":10,"opponent":"hindu-shiva","name":"Shiva","icon":"chibi-hindu-shiva","difficulty":3,"chapter":1,"boss":true,"deckSize":25,"style":"Sinergias da facção"},"chinese-01":{"id":"chinese-01","region":"chinese","stage":1,"opponent":"chinesa-fuxi","name":"Fuxi","icon":"chibi-chinesa-fuxi","difficulty":3,"chapter":0,"boss":false,"deckSize":23,"style":"Primeiros combos"},"chinese-02":{"id":"chinese-02","region":"chinese","stage":2,"opponent":"chinesa-hou-yi","name":"Hou Yi","icon":"chibi-chinesa-hou-yi","difficulty":3,"chapter":0,"boss":false,"deckSize":23,"style":"Primeiros combos"},"chinese-03":{"id":"chinese-03","region":"chinese","stage":3,"opponent":"chinesa-nezha","name":"Nezha","icon":"chibi-chinesa-nezha","difficulty":3,"chapter":0,"boss":false,"deckSize":23,"style":"Primeiros combos"},"chinese-04":{"id":"chinese-04","region":"chinese","stage":4,"opponent":"chinesa-guanyin","name":"Guanyin","icon":"chibi-chinesa-guanyin","difficulty":3,"chapter":0,"boss":false,"deckSize":24,"style":"Primeiros combos"},"chinese-05":{"id":"chinese-05","region":"chinese","stage":5,"opponent":"chinesa-change","name":"Chang'e","icon":"chibi-chinesa-change","difficulty":3,"chapter":0,"boss":true,"deckSize":24,"style":"Primeiros combos"},"chinese-06":{"id":"chinese-06","region":"chinese","stage":6,"opponent":"chinesa-ao-guang","name":"Ao Guang","icon":"chibi-chinesa-ao-guang","difficulty":3,"chapter":1,"boss":false,"deckSize":24,"style":"Sinergias da facção"},"chinese-07":{"id":"chinese-07","region":"chinese","stage":7,"opponent":"chinesa-erlang-shen","name":"Erlang Shen","icon":"chibi-chinesa-erlang-shen","difficulty":3,"chapter":1,"boss":false,"deckSize":25,"style":"Sinergias da facção"},"chinese-08":{"id":"chinese-08","region":"chinese","stage":8,"opponent":"chinesa-sun-wukong","name":"Sun Wukong","icon":"chibi-chinesa-sun-wukong","difficulty":3,"chapter":1,"boss":false,"deckSize":25,"style":"Sinergias da facção"},"chinese-09":{"id":"chinese-09","region":"chinese","stage":9,"opponent":"chinesa-nuwa","name":"Nüwa","icon":"chibi-chinesa-nuwa","difficulty":3,"chapter":1,"boss":false,"deckSize":25,"style":"Sinergias da facção"},"chinese-10":{"id":"chinese-10","region":"chinese","stage":10,"opponent":"chinesa-imperador-jade","name":"Imperador de Jade","icon":"chibi-chinesa-imperador-jade","difficulty":3,"chapter":1,"boss":true,"deckSize":26,"style":"Sinergias da facção"},"japanese-01":{"id":"japanese-01","region":"japanese","stage":1,"opponent":"japonesa-inari","name":"Inari","icon":"chibi-japonesa-inari","difficulty":4,"chapter":0,"boss":false,"deckSize":24,"style":"Primeiros combos"},"japanese-02":{"id":"japanese-02","region":"japanese","stage":2,"opponent":"japonesa-fujin","name":"Fūjin","icon":"chibi-japonesa-fujin","difficulty":4,"chapter":0,"boss":false,"deckSize":24,"style":"Primeiros combos"},"japanese-03":{"id":"japanese-03","region":"japanese","stage":3,"opponent":"japonesa-hachiman","name":"Hachiman","icon":"chibi-japonesa-hachiman","difficulty":4,"chapter":0,"boss":false,"deckSize":24,"style":"Primeiros combos"},"japanese-04":{"id":"japanese-04","region":"japanese","stage":4,"opponent":"japonesa-raijin","name":"Raijin","icon":"chibi-japonesa-raijin","difficulty":4,"chapter":0,"boss":false,"deckSize":25,"style":"Primeiros combos"},"japanese-05":{"id":"japanese-05","region":"japanese","stage":5,"opponent":"japonesa-tsukuyomi","name":"Tsukuyomi","icon":"chibi-japonesa-tsukuyomi","difficulty":4,"chapter":0,"boss":true,"deckSize":25,"style":"Primeiros combos"},"japanese-06":{"id":"japanese-06","region":"japanese","stage":6,"opponent":"japonesa-izanagi","name":"Izanagi","icon":"chibi-japonesa-izanagi","difficulty":4,"chapter":1,"boss":false,"deckSize":25,"style":"Sinergias da facção"},"japanese-07":{"id":"japanese-07","region":"japanese","stage":7,"opponent":"japonesa-izanami","name":"Izanami","icon":"chibi-japonesa-izanami","difficulty":4,"chapter":1,"boss":false,"deckSize":26,"style":"Sinergias da facção"},"japanese-08":{"id":"japanese-08","region":"japanese","stage":8,"opponent":"japonesa-susanoo","name":"Susanoo","icon":"chibi-japonesa-susanoo","difficulty":4,"chapter":1,"boss":false,"deckSize":26,"style":"Sinergias da facção"},"japanese-09":{"id":"japanese-09","region":"japanese","stage":9,"opponent":"japonesa-ryujin","name":"Ryūjin","icon":"chibi-japonesa-ryujin","difficulty":4,"chapter":1,"boss":false,"deckSize":26,"style":"Sinergias da facção"},"japanese-10":{"id":"japanese-10","region":"japanese","stage":10,"opponent":"japonesa-amaterasu","name":"Amaterasu","icon":"chibi-japonesa-amaterasu","difficulty":4,"chapter":1,"boss":true,"deckSize":27,"style":"Sinergias da facção"},"aztec-01":{"id":"aztec-01","region":"aztec","stage":1,"opponent":"asteca-xochiquetzal","name":"Xochiquétzal","icon":"chibi-asteca-xochiquetzal","difficulty":4,"chapter":0,"boss":false,"deckSize":25,"style":"Primeiros combos"},"aztec-02":{"id":"aztec-02","region":"aztec","stage":2,"opponent":"asteca-chalchiuhtlicue","name":"Chalchiuhtlicue","icon":"chibi-asteca-chalchiuhtlicue","difficulty":4,"chapter":0,"boss":false,"deckSize":25,"style":"Primeiros combos"},"aztec-03":{"id":"aztec-03","region":"aztec","stage":3,"opponent":"asteca-mictecacihuatl","name":"Mictecacíhuatl","icon":"chibi-asteca-mictecacihuatl","difficulty":4,"chapter":0,"boss":false,"deckSize":25,"style":"Primeiros combos"},"aztec-04":{"id":"aztec-04","region":"aztec","stage":4,"opponent":"asteca-tlaloc","name":"Tláloc","icon":"chibi-asteca-tlaloc","difficulty":4,"chapter":0,"boss":false,"deckSize":26,"style":"Primeiros combos"},"aztec-05":{"id":"aztec-05","region":"aztec","stage":5,"opponent":"asteca-xipe-totec","name":"Xipe Tótec","icon":"chibi-asteca-xipe-totec","difficulty":4,"chapter":0,"boss":true,"deckSize":26,"style":"Primeiros combos"},"aztec-06":{"id":"aztec-06","region":"aztec","stage":6,"opponent":"asteca-coatlicue","name":"Coatlicue","icon":"chibi-asteca-coatlicue","difficulty":4,"chapter":1,"boss":false,"deckSize":26,"style":"Sinergias da facção"},"aztec-07":{"id":"aztec-07","region":"aztec","stage":7,"opponent":"asteca-tezcatlipoca","name":"Tezcatlipoca","icon":"chibi-asteca-tezcatlipoca","difficulty":4,"chapter":1,"boss":false,"deckSize":27,"style":"Sinergias da facção"},"aztec-08":{"id":"aztec-08","region":"aztec","stage":8,"opponent":"asteca-huitzilopochtli","name":"Huitzilopochtli","icon":"chibi-asteca-huitzilopochtli","difficulty":4,"chapter":1,"boss":false,"deckSize":27,"style":"Sinergias da facção"},"aztec-09":{"id":"aztec-09","region":"aztec","stage":9,"opponent":"asteca-mictlantecuhtli","name":"Mictlantecuhtli","icon":"chibi-asteca-mictlantecuhtli","difficulty":4,"chapter":1,"boss":false,"deckSize":27,"style":"Sinergias da facção"},"aztec-10":{"id":"aztec-10","region":"aztec","stage":10,"opponent":"asteca-quetzalcoatl","name":"Quetzalcóatl","icon":"chibi-asteca-quetzalcoatl","difficulty":4,"chapter":1,"boss":true,"deckSize":28,"style":"Sinergias da facção"},"brasil-01":{"id":"brasil-01","region":"brasil","stage":1,"opponent":"brasil-saci","name":"Saci-Pererê","icon":"chibi-brasil-saci","difficulty":4,"chapter":0,"boss":false,"deckSize":26,"style":"Primeiros combos"},"brasil-02":{"id":"brasil-02","region":"brasil","stage":2,"opponent":"brasil-boto","name":"Boto Encantado","icon":"chibi-brasil-boto","difficulty":4,"chapter":0,"boss":false,"deckSize":26,"style":"Primeiros combos"},"brasil-03":{"id":"brasil-03","region":"brasil","stage":3,"opponent":"brasil-caipora","name":"Caipora","icon":"chibi-brasil-caipora","difficulty":4,"chapter":0,"boss":false,"deckSize":26,"style":"Primeiros combos"},"brasil-04":{"id":"brasil-04","region":"brasil","stage":4,"opponent":"brasil-iara","name":"Iara","icon":"chibi-brasil-iara","difficulty":4,"chapter":0,"boss":false,"deckSize":27,"style":"Primeiros combos"},"brasil-05":{"id":"brasil-05","region":"brasil","stage":5,"opponent":"brasil-curupira","name":"Curupira","icon":"chibi-brasil-curupira","difficulty":4,"chapter":0,"boss":true,"deckSize":27,"style":"Primeiros combos"},"brasil-06":{"id":"brasil-06","region":"brasil","stage":6,"opponent":"brasil-cuca","name":"Cuca","icon":"chibi-brasil-cuca","difficulty":4,"chapter":1,"boss":false,"deckSize":27,"style":"Sinergias da facção"},"brasil-07":{"id":"brasil-07","region":"brasil","stage":7,"opponent":"brasil-mula-sem-cabeca","name":"Mula sem Cabeça","icon":"chibi-brasil-mula-sem-cabeca","difficulty":4,"chapter":1,"boss":false,"deckSize":28,"style":"Sinergias da facção"},"brasil-08":{"id":"brasil-08","region":"brasil","stage":8,"opponent":"brasil-boitata","name":"Boitatá","icon":"chibi-brasil-boitata","difficulty":4,"chapter":1,"boss":false,"deckSize":28,"style":"Sinergias da facção"},"brasil-09":{"id":"brasil-09","region":"brasil","stage":9,"opponent":"brasil-mapinguari","name":"Mapinguari","icon":"chibi-brasil-mapinguari","difficulty":4,"chapter":1,"boss":false,"deckSize":28,"style":"Sinergias da facção"},"brasil-10":{"id":"brasil-10","region":"brasil","stage":10,"opponent":"brasil-lampiao","name":"Lampião","icon":"chibi-brasil-lampiao","difficulty":4,"chapter":1,"boss":true,"deckSize":29,"style":"Sinergias da facção"},"monster-01":{"id":"monster-01","region":"monster","stage":1,"opponent":"homem","name":"Homem","icon":"chibi-homem","difficulty":5,"chapter":0,"boss":false,"deckSize":21,"style":"Primeiros combos"},"monster-02":{"id":"monster-02","region":"monster","stage":2,"opponent":"mulher","name":"Mulher","icon":"chibi-mulher","difficulty":5,"chapter":0,"boss":false,"deckSize":21,"style":"Primeiros combos"},"monster-03":{"id":"monster-03","region":"monster","stage":3,"opponent":"lobo-beta","name":"Lobisomem Beta","icon":"chibi-lobo-beta","difficulty":5,"chapter":0,"boss":false,"deckSize":21,"style":"Primeiros combos"},"monster-04":{"id":"monster-04","region":"monster","stage":4,"opponent":"lobo-omega","name":"Lobisomem Omega","icon":"chibi-lobo-omega","difficulty":5,"chapter":0,"boss":false,"deckSize":21,"style":"Primeiros combos"},"monster-05":{"id":"monster-05","region":"monster","stage":5,"opponent":"lobo-alfa","name":"Lobisomem Alfa","icon":"chibi-lobo-alfa","difficulty":5,"chapter":0,"boss":true,"deckSize":21,"style":"Primeiros combos"}},"rewardIcons":["chibi-soldado-esparta","chibi-athena","chibi-lobo-alfa","chibi-guardiao-nordico","chibi-medusa","chibi-poseidon","chibi-zeus","chibi-hades","chibi-lobo-omega","chibi-anubis","chibi-odin","chibi-minotauro","chibi-apolo","chibi-ra","chibi-ragnar","chibi-afrodite","chibi-aquiles","chibi-seth","chibi-osiris","chibi-thor","chibi-artemis","chibi-sobek","chibi-ares","chibi-beowulf","chibi-heimdall","chibi-dionisio","chibi-hefesto","chibi-hercules","chibi-hermes","chibi-horus","chibi-lobo-beta","chibi-isis","chibi-mulher","chibi-homem","chibi-loki","chibi-japonesa-amaterasu","chibi-chinesa-ao-guang","chibi-brasil-boitata","chibi-brasil-boto","chibi-celtas-brigid","chibi-brasil-caipora","chibi-asteca-chalchiuhtlicue","chibi-chinesa-change","chibi-asteca-coatlicue","chibi-brasil-cuca","chibi-brasil-curupira","chibi-celtas-cu-chulainn","chibi-celtas-dagda","chibi-celtas-dama-do-lago","chibi-hindu-durga","chibi-mesopotamica-enki","chibi-mesopotamica-enlil","chibi-mesopotamica-ereshkigal","chibi-chinesa-erlang-shen","chibi-chinesa-fuxi","chibi-japonesa-fujin","chibi-hindu-ganesha","chibi-chinesa-guanyin","chibi-japonesa-hachiman","chibi-hindu-hanuman","chibi-chinesa-hou-yi","chibi-asteca-huitzilopochtli","chibi-brasil-iara","chibi-chinesa-imperador-jade","chibi-japonesa-inari","chibi-hindu-indra","chibi-mesopotamica-ishtar","chibi-japonesa-izanagi","chibi-japonesa-izanami","chibi-hindu-kali","chibi-hindu-krishna","chibi-hindu-lakshmi","chibi-brasil-lampiao","chibi-celtas-lancelot","chibi-celtas-lugh","chibi-brasil-mapinguari","chibi-mesopotamica-marduk","chibi-celtas-merlin","chibi-asteca-mictecacihuatl","chibi-asteca-mictlantecuhtli","chibi-celtas-morgana","chibi-celtas-morrigan","chibi-brasil-mula-sem-cabeca","chibi-mesopotamica-nanna-sin","chibi-mesopotamica-nergal","chibi-chinesa-nezha","chibi-mesopotamica-ninurta","chibi-chinesa-nuwa","chibi-asteca-quetzalcoatl","chibi-japonesa-raijin","chibi-rei-arthur","chibi-japonesa-ryujin","chibi-brasil-saci","chibi-hindu-saraswati","chibi-hindu-shiva","chibi-chinesa-sun-wukong","chibi-japonesa-susanoo","chibi-asteca-tezcatlipoca","chibi-mesopotamica-tiamat","chibi-asteca-tlaloc","chibi-japonesa-tsukuyomi","chibi-mesopotamica-utu-shamash","chibi-hindu-vishnu","chibi-asteca-xipe-totec","chibi-asteca-xochiquetzal"],"version":4};
+window.MythicGuardianCampaignData={"regions": [{"id": "greece", "name": "Grécia", "faction": "Grécia", "order": 1, "longitude": 23.7, "latitude": 38, "labelX": 52.0, "labelY": 38.0, "badge": "assets/card-badges/gregos-v3.png", "chapters": [{"name": "Grécia", "sourceCard": "grecia", "art": "assets/onboarding/greek-realm.webp"}, {"name": "Esparta", "sourceCard": "esparta", "art": "assets/terrains/esparta.png"}, {"name": "Labirinto de Dédalos", "sourceCard": "labirinto-dedalos", "art": "assets/terrains/labirinto-dedalos.png"}, {"name": "Troia", "sourceCard": "campo-troia", "art": "assets/terrains/campo-troia.png"}], "nodeIds": ["greece-01", "greece-02", "greece-03", "greece-04", "greece-05", "greece-06", "greece-07", "greece-08", "greece-09", "greece-10", "greece-11", "greece-12", "greece-13", "greece-14", "greece-15", "greece-16", "greece-17", "greece-18", "greece-19", "greece-20"]}, {"id": "egypt", "name": "Egito", "faction": "Egípcios", "order": 2, "longitude": 31, "latitude": 26, "labelX": 58.5, "labelY": 48.4, "badge": "assets/card-badges/egipcios-v3.png", "chapters": [{"name": "Egito", "sourceCard": "egito", "art": "assets/onboarding/egyptian-realm.webp"}, {"name": "Alto Egito", "sourceCard": "alto-egito", "art": "assets/terrains/alto-egito.jpg"}], "nodeIds": ["egypt-01", "egypt-02", "egypt-03", "egypt-04", "egypt-05", "egypt-06", "egypt-08"]}, {"id": "norse", "name": "Nove Reinos", "faction": "Nórdicos", "order": 3, "longitude": 10, "latitude": 63, "labelX": 48.0, "labelY": 9.0, "badge": "assets/card-badges/nordicos-v3.png", "chapters": [{"name": "Asgard", "sourceCard": "asgard", "art": "assets/onboarding/norse-realm.webp"}, {"name": "Bifrost", "sourceCard": "bifrost", "art": "assets/terrains/bifrost.png"}], "nodeIds": ["norse-01", "norse-02", "norse-03", "norse-04", "norse-05", "norse-06"]}, {"id": "celtic", "name": "Terras Celtas", "faction": "Celtas", "order": 4, "longitude": -6, "latitude": 53, "labelX": 41.0, "labelY": 22.4, "badge": "assets/card-badges/celtas-v3.png", "chapters": [{"name": "Camelot", "sourceCard": null, "art": "assets/universe/characters/celtas-cu-chulainn.webp"}, {"name": "Floresta dos Druidas", "sourceCard": null, "art": "assets/universe/characters/celtas-lancelot.webp"}], "nodeIds": ["celtic-01", "celtic-02", "celtic-03", "celtic-04", "celtic-05", "celtic-06", "celtic-07", "celtic-08", "celtic-09", "celtic-20"]}, {"id": "mesopotamian", "name": "Mesopotâmia", "faction": "Mesopotâmica", "order": 5, "longitude": 44, "latitude": 33, "labelX": 65.7, "labelY": 37.6, "badge": "assets/card-badges/remake-mesopotamian.png", "chapters": [{"name": "Canais de Eridu", "sourceCard": null, "art": "assets/universe/characters/mesopotamica-ishtar.webp"}, {"name": "Zigurates de Ur", "sourceCard": null, "art": "assets/universe/characters/mesopotamica-marduk.webp"}], "nodeIds": ["mesopotamian-01", "mesopotamian-02", "mesopotamian-03", "mesopotamian-04", "mesopotamian-05", "mesopotamian-06", "mesopotamian-07", "mesopotamian-08", "mesopotamian-09", "mesopotamian-10"]}, {"id": "hindu", "name": "Caminhos Hindus", "faction": "Hindu", "order": 6, "longitude": 78, "latitude": 23, "labelX": 74.4, "labelY": 47.0, "badge": "assets/card-badges/remake-hindu.png", "chapters": [{"name": "Jardins de Lótus", "sourceCard": null, "art": "assets/universe/characters/hindu-krishna.webp"}, {"name": "Vale Sagrado", "sourceCard": null, "art": "assets/universe/characters/hindu-shiva.webp"}], "nodeIds": ["hindu-01", "hindu-02", "hindu-03", "hindu-04", "hindu-05", "hindu-06", "hindu-07", "hindu-08", "hindu-09", "hindu-10"]}, {"id": "chinese", "name": "Reino Celestial", "faction": "Chinesa", "order": 7, "longitude": 105, "latitude": 35, "labelX": 78.5, "labelY": 25.0, "badge": "assets/card-badges/remake-chinese.png", "chapters": [{"name": "Montanha das Flores", "sourceCard": null, "art": "assets/universe/characters/chinesa-change.webp"}, {"name": "Jardim da Lua", "sourceCard": null, "art": "assets/universe/characters/chinesa-imperador-jade.webp"}], "nodeIds": ["chinese-01", "chinese-02", "chinese-03", "chinese-04", "chinese-05", "chinese-06", "chinese-07", "chinese-08", "chinese-09", "chinese-10"]}, {"id": "japanese", "name": "Ilhas do Sol", "faction": "Japonesa", "order": 8, "longitude": 138, "latitude": 36, "labelX": 90.2, "labelY": 32.0, "badge": "assets/card-badges/remake-japanese.png", "chapters": [{"name": "Caminho dos Torii", "sourceCard": null, "art": "assets/universe/characters/japonesa-tsukuyomi.webp"}, {"name": "Costa das Tempestades", "sourceCard": null, "art": "assets/universe/characters/japonesa-amaterasu.webp"}], "nodeIds": ["japanese-01", "japanese-02", "japanese-03", "japanese-04", "japanese-05", "japanese-06", "japanese-07", "japanese-08", "japanese-09", "japanese-10"]}, {"id": "aztec", "name": "Terras Astecas", "faction": "Asteca", "order": 9, "longitude": -99, "latitude": 19, "labelX": 21.0, "labelY": 43.0, "badge": "assets/card-badges/remake-aztec.png", "chapters": [{"name": "Jardins Sagrados", "sourceCard": null, "art": "assets/universe/characters/asteca-xipe-totec.webp"}, {"name": "Escadarias de Pedra", "sourceCard": null, "art": "assets/universe/characters/asteca-quetzalcoatl.webp"}], "nodeIds": ["aztec-01", "aztec-02", "aztec-03", "aztec-04", "aztec-05", "aztec-06", "aztec-07", "aztec-08", "aztec-09", "aztec-10"]}, {"id": "brasil", "name": "Lendas do Brasil", "faction": "Brasil", "order": 10, "longitude": -55, "latitude": -10, "labelX": 36.5, "labelY": 64.0, "badge": "assets/card-badges/remake-brasil.png", "chapters": [{"name": "Veredas da Mata", "sourceCard": null, "art": "assets/universe/characters/brasil-curupira.webp"}, {"name": "Margens do Rio", "sourceCard": null, "art": "assets/universe/characters/brasil-lampiao.webp"}], "nodeIds": ["brasil-01", "brasil-02", "brasil-03", "brasil-04", "brasil-05", "brasil-06", "brasil-07", "brasil-08", "brasil-09", "brasil-10"]}, {"id": "monster", "name": "Lendas Europeias", "faction": "Monstros", "order": 11, "longitude": 24, "latitude": 47, "labelX": 59.2, "labelY": 17.6, "badge": "assets/card-badges/monstros-v3.png", "chapters": [{"name": "Aldeia ao Crepúsculo", "sourceCard": null, "art": "assets/universe/characters/lobo-alfa.webp"}], "nodeIds": ["monster-01", "monster-02", "monster-03", "monster-04", "monster-05"]}], "nodes": {"greece-01": {"id": "greece-01", "region": "greece", "stage": 1, "opponent": "aquiles", "name": "Aquiles", "icon": "chibi-aquiles", "difficulty": 1, "chapter": 0, "boss": false, "deckSize": 14, "style": "Aprendizado guiado", "lesson": "Jogue um personagem na sua metade da mesa. O poder das suas cartas forma a pontuação do Round."}, "greece-02": {"id": "greece-02", "region": "greece", "stage": 2, "opponent": "hercules", "name": "Hércules", "icon": "chibi-hercules", "difficulty": 1, "chapter": 0, "boss": false, "deckSize": 14, "style": "Aprendizado guiado", "lesson": "Cada turno permite jogar uma carta. Compare seu poder com o adversário antes de encerrar o turno."}, "greece-03": {"id": "greece-03", "region": "greece", "stage": 3, "opponent": "hermes", "name": "Hermes", "icon": "chibi-hermes", "difficulty": 1, "chapter": 0, "boss": false, "deckSize": 14, "style": "Aprendizado guiado", "lesson": "Distribua os personagens entre as três fileiras. Leia a habilidade antes de escolher a posição."}, "greece-04": {"id": "greece-04", "region": "greece", "stage": 4, "opponent": "athena", "name": "Athena", "icon": "chibi-athena", "difficulty": 1, "chapter": 0, "boss": false, "deckSize": 14, "style": "Aprendizado guiado", "lesson": "As habilidades podem alterar o poder: compare o número atual com o poder impresso na carta."}, "greece-05": {"id": "greece-05", "region": "greece", "stage": 5, "opponent": "soldado-esparta", "name": "Soldado de Esparta", "icon": "chibi-soldado-esparta", "difficulty": 1, "chapter": 0, "boss": true, "deckSize": 14, "style": "Aprendizado guiado", "lesson": "Cada Round é independente. Quem perde o Round perde uma Trixx; conquiste duas vitórias de Round."}, "greece-06": {"id": "greece-06", "region": "greece", "stage": 6, "opponent": "afrodite", "name": "Afrodite", "icon": "chibi-afrodite", "difficulty": 1, "chapter": 1, "boss": false, "deckSize": 16, "style": "Treino de sinergias", "lesson": "Aliados na mesma fileira podem combinar habilidades. Experimente uma sinergia descrita nas cartas."}, "greece-07": {"id": "greece-07", "region": "greece", "stage": 7, "opponent": "dionisio", "name": "Dionísio", "icon": "chibi-dionisio", "difficulty": 1, "chapter": 1, "boss": false, "deckSize": 16, "style": "Treino de sinergias", "lesson": "Guarde cartas para os próximos Rounds. Nem sempre vale gastar toda a mão para vencer o primeiro."}, "greece-08": {"id": "greece-08", "region": "greece", "stage": 8, "opponent": "perseu", "name": "Perseu", "icon": "chibi-perseu", "difficulty": 1, "chapter": 1, "boss": false, "deckSize": 16, "style": "Treino de sinergias", "lesson": "Passar encerra sua participação neste Round. Faça isso quando tiver vantagem ou quiser economizar cartas."}, "greece-09": {"id": "greece-09", "region": "greece", "stage": 9, "opponent": "hestia", "name": "Héstia", "icon": "chibi-hestia", "difficulty": 1, "chapter": 1, "boss": false, "deckSize": 16, "style": "Treino de sinergias", "lesson": "Cartas que compram ou recuperam aliados ajudam a manter opções para os próximos turnos."}, "greece-10": {"id": "greece-10", "region": "greece", "stage": 10, "opponent": "apolo", "name": "Apolo", "icon": "chibi-apolo", "difficulty": 1, "chapter": 1, "boss": true, "deckSize": 16, "style": "Treino de sinergias", "lesson": "O primeiro tesouro vem após cinco desafios inéditos vencidos. Uma derrota preserva o avanço da trilha."}, "greece-11": {"id": "greece-11", "region": "greece", "stage": 11, "opponent": "medusa", "name": "Medusa", "icon": "chibi-medusa", "difficulty": 2, "chapter": 2, "boss": false, "deckSize": 18, "style": "Prática de efeitos", "lesson": "Locais, terrenos e climas têm espaços próprios. Leia quais lados e facções eles afetam."}, "greece-12": {"id": "greece-12", "region": "greece", "stage": 12, "opponent": "hefesto", "name": "Hefestos", "icon": "chibi-hefesto", "difficulty": 2, "chapter": 2, "boss": false, "deckSize": 18, "style": "Prática de efeitos", "lesson": "Algumas habilidades exigem um alvo. Compare as opções e confirme o alvo indicado na janela."}, "greece-13": {"id": "greece-13", "region": "greece", "stage": 13, "opponent": "demeter", "name": "Deméter", "icon": "chibi-demeter", "difficulty": 2, "chapter": 2, "boss": false, "deckSize": 18, "style": "Prática de efeitos", "lesson": "Proteções podem impedir uma destruição ou redução de poder. Confira os efeitos antes de atacar."}, "greece-14": {"id": "greece-14", "region": "greece", "stage": 14, "opponent": "hera", "name": "Hera", "icon": "chibi-hera", "difficulty": 2, "chapter": 2, "boss": false, "deckSize": 18, "style": "Prática de efeitos", "lesson": "O Submundo reúne cartas removidas. Uma recuperação só funciona se houver um alvo permitido."}, "greece-15": {"id": "greece-15", "region": "greece", "stage": 15, "opponent": "minotauro", "name": "Minotauro", "icon": "chibi-minotauro", "difficulty": 2, "chapter": 2, "boss": true, "deckSize": 18, "style": "Prática de efeitos", "lesson": "Depois que ambos passam, o Round termina. Os pontos zeram para a disputa seguinte."}, "greece-16": {"id": "greece-16", "region": "greece", "stage": 16, "opponent": "artemis", "name": "Ártemis", "icon": "chibi-artemis", "difficulty": 2, "chapter": 3, "boss": false, "deckSize": 20, "style": "Revisão da Grécia", "lesson": "Combine cartas de suporte com quem recebe o benefício. A posição pode mudar o resultado do combo."}, "greece-17": {"id": "greece-17", "region": "greece", "stage": 17, "opponent": "ares", "name": "Ares", "icon": "chibi-ares", "difficulty": 2, "chapter": 3, "boss": false, "deckSize": 20, "style": "Revisão da Grécia", "lesson": "Observe a mão restante e as vitórias de Round antes de arriscar suas melhores cartas."}, "greece-18": {"id": "greece-18", "region": "greece", "stage": 18, "opponent": "poseidon", "name": "Poseidon", "icon": "chibi-poseidon", "difficulty": 2, "chapter": 3, "boss": false, "deckSize": 20, "style": "Revisão da Grécia", "lesson": "Se perder um Round, você ainda pode virar a partida: conserve recursos para os dois seguintes."}, "greece-19": {"id": "greece-19", "region": "greece", "stage": 19, "opponent": "hades", "name": "Hades", "icon": "chibi-hades", "difficulty": 2, "chapter": 3, "boss": false, "deckSize": 20, "style": "Revisão da Grécia", "lesson": "Ao fim de três Rounds, vence quem ganhou mais Rounds. Igualdade em vitórias leva ao desempate."}, "greece-20": {"id": "greece-20", "region": "greece", "stage": 20, "opponent": "zeus", "name": "Zeus", "icon": "chibi-zeus", "difficulty": 2, "chapter": 3, "boss": true, "deckSize": 20, "style": "Revisão da Grécia", "lesson": "Desafio final da Grécia: use posicionamento, habilidades e reservas para conquistar duas vitórias de Round."}, "egypt-01": {"id": "egypt-01", "region": "egypt", "stage": 1, "opponent": "sobek", "name": "Sobek", "icon": "chibi-sobek", "difficulty": 2, "chapter": 0, "boss": false, "deckSize": 18, "style": "Primeiros combos"}, "egypt-02": {"id": "egypt-02", "region": "egypt", "stage": 2, "opponent": "horus", "name": "Hórus", "icon": "chibi-horus", "difficulty": 2, "chapter": 0, "boss": false, "deckSize": 18, "style": "Primeiros combos"}, "egypt-03": {"id": "egypt-03", "region": "egypt", "stage": 3, "opponent": "isis", "name": "Ísis", "icon": "chibi-isis", "difficulty": 2, "chapter": 0, "boss": false, "deckSize": 18, "style": "Primeiros combos"}, "egypt-04": {"id": "egypt-04", "region": "egypt", "stage": 4, "opponent": "seth", "name": "Seth", "icon": "chibi-seth", "difficulty": 2, "chapter": 0, "boss": false, "deckSize": 19, "style": "Primeiros combos"}, "egypt-05": {"id": "egypt-05", "region": "egypt", "stage": 5, "opponent": "anubis", "name": "Anúbis", "icon": "chibi-anubis", "difficulty": 2, "chapter": 0, "boss": true, "deckSize": 19, "style": "Primeiros combos"}, "egypt-06": {"id": "egypt-06", "region": "egypt", "stage": 6, "opponent": "osiris", "name": "Osíris", "icon": "chibi-osiris", "difficulty": 2, "chapter": 1, "boss": false, "deckSize": 19, "style": "Sinergias da facção"}, "egypt-08": {"id": "egypt-08", "region": "egypt", "stage": 7, "opponent": "ra", "name": "Rá", "icon": "chibi-ra", "difficulty": 2, "chapter": 1, "boss": true, "deckSize": 20, "style": "Sinergias da facção"}, "norse-01": {"id": "norse-01", "region": "norse", "stage": 1, "opponent": "beowulf", "name": "Beowulf", "icon": "chibi-beowulf", "difficulty": 2, "chapter": 0, "boss": false, "deckSize": 19, "style": "Primeiros combos"}, "norse-02": {"id": "norse-02", "region": "norse", "stage": 2, "opponent": "ragnar", "name": "Ragnar", "icon": "chibi-ragnar", "difficulty": 2, "chapter": 0, "boss": false, "deckSize": 19, "style": "Primeiros combos"}, "norse-03": {"id": "norse-03", "region": "norse", "stage": 3, "opponent": "thor", "name": "Thor", "icon": "chibi-thor", "difficulty": 2, "chapter": 0, "boss": false, "deckSize": 19, "style": "Primeiros combos"}, "norse-04": {"id": "norse-04", "region": "norse", "stage": 4, "opponent": "loki", "name": "Loki", "icon": "chibi-loki", "difficulty": 2, "chapter": 0, "boss": false, "deckSize": 20, "style": "Primeiros combos"}, "norse-05": {"id": "norse-05", "region": "norse", "stage": 5, "opponent": "heimdall", "name": "Heimdall", "icon": "chibi-heimdall", "difficulty": 2, "chapter": 0, "boss": true, "deckSize": 20, "style": "Primeiros combos"}, "norse-06": {"id": "norse-06", "region": "norse", "stage": 6, "opponent": "odin", "name": "Odin", "icon": "chibi-odin", "difficulty": 2, "chapter": 1, "boss": true, "deckSize": 20, "style": "Sinergias da facção"}, "celtic-01": {"id": "celtic-01", "region": "celtic", "stage": 1, "opponent": "celtas-brigid", "name": "Brigid", "icon": "chibi-celtas-brigid", "difficulty": 2, "chapter": 0, "boss": false, "deckSize": 20, "style": "Primeiros combos"}, "celtic-02": {"id": "celtic-02", "region": "celtic", "stage": 2, "opponent": "celtas-lancelot", "name": "Lancelot", "icon": "chibi-celtas-lancelot", "difficulty": 2, "chapter": 0, "boss": false, "deckSize": 20, "style": "Primeiros combos"}, "celtic-03": {"id": "celtic-03", "region": "celtic", "stage": 3, "opponent": "celtas-dama-do-lago", "name": "Dama do Lago", "icon": "chibi-celtas-dama-do-lago", "difficulty": 2, "chapter": 0, "boss": false, "deckSize": 20, "style": "Primeiros combos"}, "celtic-04": {"id": "celtic-04", "region": "celtic", "stage": 4, "opponent": "celtas-lugh", "name": "Lugh", "icon": "chibi-celtas-lugh", "difficulty": 2, "chapter": 0, "boss": false, "deckSize": 21, "style": "Primeiros combos"}, "celtic-05": {"id": "celtic-05", "region": "celtic", "stage": 5, "opponent": "celtas-cu-chulainn", "name": "Cú Chulainn", "icon": "chibi-celtas-cu-chulainn", "difficulty": 2, "chapter": 0, "boss": true, "deckSize": 21, "style": "Primeiros combos"}, "celtic-06": {"id": "celtic-06", "region": "celtic", "stage": 6, "opponent": "celtas-dagda", "name": "Dagda", "icon": "chibi-celtas-dagda", "difficulty": 2, "chapter": 1, "boss": false, "deckSize": 21, "style": "Sinergias da facção"}, "celtic-07": {"id": "celtic-07", "region": "celtic", "stage": 7, "opponent": "celtas-merlin", "name": "Merlin", "icon": "chibi-celtas-merlin", "difficulty": 2, "chapter": 1, "boss": false, "deckSize": 22, "style": "Sinergias da facção"}, "celtic-08": {"id": "celtic-08", "region": "celtic", "stage": 8, "opponent": "celtas-morgana", "name": "Morgana", "icon": "chibi-celtas-morgana", "difficulty": 2, "chapter": 1, "boss": false, "deckSize": 22, "style": "Sinergias da facção"}, "celtic-09": {"id": "celtic-09", "region": "celtic", "stage": 9, "opponent": "celtas-morrigan", "name": "Morrigan", "icon": "chibi-celtas-morrigan", "difficulty": 2, "chapter": 1, "boss": false, "deckSize": 22, "style": "Sinergias da facção"}, "celtic-20": {"id": "celtic-20", "region": "celtic", "stage": 10, "opponent": "rei-arthur", "name": "Rei Arthur", "icon": "chibi-rei-arthur", "difficulty": 3, "chapter": 1, "boss": true, "deckSize": 26, "style": "Convergência de poderes"}, "mesopotamian-01": {"id": "mesopotamian-01", "region": "mesopotamian", "stage": 1, "opponent": "mesopotamica-enki", "name": "Enki", "icon": "chibi-mesopotamica-enki", "difficulty": 3, "chapter": 0, "boss": false, "deckSize": 21, "style": "Primeiros combos"}, "mesopotamian-02": {"id": "mesopotamian-02", "region": "mesopotamian", "stage": 2, "opponent": "mesopotamica-enlil", "name": "Enlil", "icon": "chibi-mesopotamica-enlil", "difficulty": 3, "chapter": 0, "boss": false, "deckSize": 21, "style": "Primeiros combos"}, "mesopotamian-03": {"id": "mesopotamian-03", "region": "mesopotamian", "stage": 3, "opponent": "mesopotamica-utu-shamash", "name": "Utu - Shamash", "icon": "chibi-mesopotamica-utu-shamash", "difficulty": 3, "chapter": 0, "boss": false, "deckSize": 21, "style": "Primeiros combos"}, "mesopotamian-04": {"id": "mesopotamian-04", "region": "mesopotamian", "stage": 4, "opponent": "mesopotamica-nanna-sin", "name": "Nanna - Sîn", "icon": "chibi-mesopotamica-nanna-sin", "difficulty": 3, "chapter": 0, "boss": false, "deckSize": 22, "style": "Primeiros combos"}, "mesopotamian-05": {"id": "mesopotamian-05", "region": "mesopotamian", "stage": 5, "opponent": "mesopotamica-ishtar", "name": "Ishtar", "icon": "chibi-mesopotamica-ishtar", "difficulty": 3, "chapter": 0, "boss": true, "deckSize": 22, "style": "Primeiros combos"}, "mesopotamian-06": {"id": "mesopotamian-06", "region": "mesopotamian", "stage": 6, "opponent": "mesopotamica-ninurta", "name": "Ninurta", "icon": "chibi-mesopotamica-ninurta", "difficulty": 3, "chapter": 1, "boss": false, "deckSize": 22, "style": "Sinergias da facção"}, "mesopotamian-07": {"id": "mesopotamian-07", "region": "mesopotamian", "stage": 7, "opponent": "mesopotamica-nergal", "name": "Nergal", "icon": "chibi-mesopotamica-nergal", "difficulty": 3, "chapter": 1, "boss": false, "deckSize": 23, "style": "Sinergias da facção"}, "mesopotamian-08": {"id": "mesopotamian-08", "region": "mesopotamian", "stage": 8, "opponent": "mesopotamica-ereshkigal", "name": "Ereshkigal", "icon": "chibi-mesopotamica-ereshkigal", "difficulty": 3, "chapter": 1, "boss": false, "deckSize": 23, "style": "Sinergias da facção"}, "mesopotamian-09": {"id": "mesopotamian-09", "region": "mesopotamian", "stage": 9, "opponent": "mesopotamica-tiamat", "name": "Tiamat", "icon": "chibi-mesopotamica-tiamat", "difficulty": 3, "chapter": 1, "boss": false, "deckSize": 23, "style": "Sinergias da facção"}, "mesopotamian-10": {"id": "mesopotamian-10", "region": "mesopotamian", "stage": 10, "opponent": "mesopotamica-marduk", "name": "Marduk", "icon": "chibi-mesopotamica-marduk", "difficulty": 3, "chapter": 1, "boss": true, "deckSize": 24, "style": "Sinergias da facção"}, "hindu-01": {"id": "hindu-01", "region": "hindu", "stage": 1, "opponent": "hindu-ganesha", "name": "Ganesha", "icon": "chibi-hindu-ganesha", "difficulty": 3, "chapter": 0, "boss": false, "deckSize": 22, "style": "Primeiros combos"}, "hindu-02": {"id": "hindu-02", "region": "hindu", "stage": 2, "opponent": "hindu-lakshmi", "name": "Lakshmi", "icon": "chibi-hindu-lakshmi", "difficulty": 3, "chapter": 0, "boss": false, "deckSize": 22, "style": "Primeiros combos"}, "hindu-03": {"id": "hindu-03", "region": "hindu", "stage": 3, "opponent": "hindu-saraswati", "name": "Saraswati", "icon": "chibi-hindu-saraswati", "difficulty": 3, "chapter": 0, "boss": false, "deckSize": 22, "style": "Primeiros combos"}, "hindu-04": {"id": "hindu-04", "region": "hindu", "stage": 4, "opponent": "hindu-hanuman", "name": "Hanuman", "icon": "chibi-hindu-hanuman", "difficulty": 3, "chapter": 0, "boss": false, "deckSize": 23, "style": "Primeiros combos"}, "hindu-05": {"id": "hindu-05", "region": "hindu", "stage": 5, "opponent": "hindu-krishna", "name": "Krishna", "icon": "chibi-hindu-krishna", "difficulty": 3, "chapter": 0, "boss": true, "deckSize": 23, "style": "Primeiros combos"}, "hindu-06": {"id": "hindu-06", "region": "hindu", "stage": 6, "opponent": "hindu-durga", "name": "Durga", "icon": "chibi-hindu-durga", "difficulty": 3, "chapter": 1, "boss": false, "deckSize": 23, "style": "Sinergias da facção"}, "hindu-07": {"id": "hindu-07", "region": "hindu", "stage": 7, "opponent": "hindu-indra", "name": "Indra", "icon": "chibi-hindu-indra", "difficulty": 3, "chapter": 1, "boss": false, "deckSize": 24, "style": "Sinergias da facção"}, "hindu-08": {"id": "hindu-08", "region": "hindu", "stage": 8, "opponent": "hindu-vishnu", "name": "Vishnu", "icon": "chibi-hindu-vishnu", "difficulty": 3, "chapter": 1, "boss": false, "deckSize": 24, "style": "Sinergias da facção"}, "hindu-09": {"id": "hindu-09", "region": "hindu", "stage": 9, "opponent": "hindu-kali", "name": "Kali", "icon": "chibi-hindu-kali", "difficulty": 3, "chapter": 1, "boss": false, "deckSize": 24, "style": "Sinergias da facção"}, "hindu-10": {"id": "hindu-10", "region": "hindu", "stage": 10, "opponent": "hindu-shiva", "name": "Shiva", "icon": "chibi-hindu-shiva", "difficulty": 3, "chapter": 1, "boss": true, "deckSize": 25, "style": "Sinergias da facção"}, "chinese-01": {"id": "chinese-01", "region": "chinese", "stage": 1, "opponent": "chinesa-fuxi", "name": "Fuxi", "icon": "chibi-chinesa-fuxi", "difficulty": 3, "chapter": 0, "boss": false, "deckSize": 23, "style": "Primeiros combos"}, "chinese-02": {"id": "chinese-02", "region": "chinese", "stage": 2, "opponent": "chinesa-hou-yi", "name": "Hou Yi", "icon": "chibi-chinesa-hou-yi", "difficulty": 3, "chapter": 0, "boss": false, "deckSize": 23, "style": "Primeiros combos"}, "chinese-03": {"id": "chinese-03", "region": "chinese", "stage": 3, "opponent": "chinesa-nezha", "name": "Nezha", "icon": "chibi-chinesa-nezha", "difficulty": 3, "chapter": 0, "boss": false, "deckSize": 23, "style": "Primeiros combos"}, "chinese-04": {"id": "chinese-04", "region": "chinese", "stage": 4, "opponent": "chinesa-guanyin", "name": "Guanyin", "icon": "chibi-chinesa-guanyin", "difficulty": 3, "chapter": 0, "boss": false, "deckSize": 24, "style": "Primeiros combos"}, "chinese-05": {"id": "chinese-05", "region": "chinese", "stage": 5, "opponent": "chinesa-change", "name": "Chang'e", "icon": "chibi-chinesa-change", "difficulty": 3, "chapter": 0, "boss": true, "deckSize": 24, "style": "Primeiros combos"}, "chinese-06": {"id": "chinese-06", "region": "chinese", "stage": 6, "opponent": "chinesa-ao-guang", "name": "Ao Guang", "icon": "chibi-chinesa-ao-guang", "difficulty": 3, "chapter": 1, "boss": false, "deckSize": 24, "style": "Sinergias da facção"}, "chinese-07": {"id": "chinese-07", "region": "chinese", "stage": 7, "opponent": "chinesa-erlang-shen", "name": "Erlang Shen", "icon": "chibi-chinesa-erlang-shen", "difficulty": 3, "chapter": 1, "boss": false, "deckSize": 25, "style": "Sinergias da facção"}, "chinese-08": {"id": "chinese-08", "region": "chinese", "stage": 8, "opponent": "chinesa-sun-wukong", "name": "Sun Wukong", "icon": "chibi-chinesa-sun-wukong", "difficulty": 3, "chapter": 1, "boss": false, "deckSize": 25, "style": "Sinergias da facção"}, "chinese-09": {"id": "chinese-09", "region": "chinese", "stage": 9, "opponent": "chinesa-nuwa", "name": "Nüwa", "icon": "chibi-chinesa-nuwa", "difficulty": 3, "chapter": 1, "boss": false, "deckSize": 25, "style": "Sinergias da facção"}, "chinese-10": {"id": "chinese-10", "region": "chinese", "stage": 10, "opponent": "chinesa-imperador-jade", "name": "Imperador de Jade", "icon": "chibi-chinesa-imperador-jade", "difficulty": 3, "chapter": 1, "boss": true, "deckSize": 26, "style": "Sinergias da facção"}, "japanese-01": {"id": "japanese-01", "region": "japanese", "stage": 1, "opponent": "japonesa-inari", "name": "Inari", "icon": "chibi-japonesa-inari", "difficulty": 4, "chapter": 0, "boss": false, "deckSize": 24, "style": "Primeiros combos"}, "japanese-02": {"id": "japanese-02", "region": "japanese", "stage": 2, "opponent": "japonesa-fujin", "name": "Fūjin", "icon": "chibi-japonesa-fujin", "difficulty": 4, "chapter": 0, "boss": false, "deckSize": 24, "style": "Primeiros combos"}, "japanese-03": {"id": "japanese-03", "region": "japanese", "stage": 3, "opponent": "japonesa-hachiman", "name": "Hachiman", "icon": "chibi-japonesa-hachiman", "difficulty": 4, "chapter": 0, "boss": false, "deckSize": 24, "style": "Primeiros combos"}, "japanese-04": {"id": "japanese-04", "region": "japanese", "stage": 4, "opponent": "japonesa-raijin", "name": "Raijin", "icon": "chibi-japonesa-raijin", "difficulty": 4, "chapter": 0, "boss": false, "deckSize": 25, "style": "Primeiros combos"}, "japanese-05": {"id": "japanese-05", "region": "japanese", "stage": 5, "opponent": "japonesa-tsukuyomi", "name": "Tsukuyomi", "icon": "chibi-japonesa-tsukuyomi", "difficulty": 4, "chapter": 0, "boss": true, "deckSize": 25, "style": "Primeiros combos"}, "japanese-06": {"id": "japanese-06", "region": "japanese", "stage": 6, "opponent": "japonesa-izanagi", "name": "Izanagi", "icon": "chibi-japonesa-izanagi", "difficulty": 4, "chapter": 1, "boss": false, "deckSize": 25, "style": "Sinergias da facção"}, "japanese-07": {"id": "japanese-07", "region": "japanese", "stage": 7, "opponent": "japonesa-izanami", "name": "Izanami", "icon": "chibi-japonesa-izanami", "difficulty": 4, "chapter": 1, "boss": false, "deckSize": 26, "style": "Sinergias da facção"}, "japanese-08": {"id": "japanese-08", "region": "japanese", "stage": 8, "opponent": "japonesa-susanoo", "name": "Susanoo", "icon": "chibi-japonesa-susanoo", "difficulty": 4, "chapter": 1, "boss": false, "deckSize": 26, "style": "Sinergias da facção"}, "japanese-09": {"id": "japanese-09", "region": "japanese", "stage": 9, "opponent": "japonesa-ryujin", "name": "Ryūjin", "icon": "chibi-japonesa-ryujin", "difficulty": 4, "chapter": 1, "boss": false, "deckSize": 26, "style": "Sinergias da facção"}, "japanese-10": {"id": "japanese-10", "region": "japanese", "stage": 10, "opponent": "japonesa-amaterasu", "name": "Amaterasu", "icon": "chibi-japonesa-amaterasu", "difficulty": 4, "chapter": 1, "boss": true, "deckSize": 27, "style": "Sinergias da facção"}, "aztec-01": {"id": "aztec-01", "region": "aztec", "stage": 1, "opponent": "asteca-xochiquetzal", "name": "Xochiquétzal", "icon": "chibi-asteca-xochiquetzal", "difficulty": 4, "chapter": 0, "boss": false, "deckSize": 25, "style": "Primeiros combos"}, "aztec-02": {"id": "aztec-02", "region": "aztec", "stage": 2, "opponent": "asteca-chalchiuhtlicue", "name": "Chalchiuhtlicue", "icon": "chibi-asteca-chalchiuhtlicue", "difficulty": 4, "chapter": 0, "boss": false, "deckSize": 25, "style": "Primeiros combos"}, "aztec-03": {"id": "aztec-03", "region": "aztec", "stage": 3, "opponent": "asteca-mictecacihuatl", "name": "Mictecacíhuatl", "icon": "chibi-asteca-mictecacihuatl", "difficulty": 4, "chapter": 0, "boss": false, "deckSize": 25, "style": "Primeiros combos"}, "aztec-04": {"id": "aztec-04", "region": "aztec", "stage": 4, "opponent": "asteca-tlaloc", "name": "Tláloc", "icon": "chibi-asteca-tlaloc", "difficulty": 4, "chapter": 0, "boss": false, "deckSize": 26, "style": "Primeiros combos"}, "aztec-05": {"id": "aztec-05", "region": "aztec", "stage": 5, "opponent": "asteca-xipe-totec", "name": "Xipe Tótec", "icon": "chibi-asteca-xipe-totec", "difficulty": 4, "chapter": 0, "boss": true, "deckSize": 26, "style": "Primeiros combos"}, "aztec-06": {"id": "aztec-06", "region": "aztec", "stage": 6, "opponent": "asteca-coatlicue", "name": "Coatlicue", "icon": "chibi-asteca-coatlicue", "difficulty": 4, "chapter": 1, "boss": false, "deckSize": 26, "style": "Sinergias da facção"}, "aztec-07": {"id": "aztec-07", "region": "aztec", "stage": 7, "opponent": "asteca-tezcatlipoca", "name": "Tezcatlipoca", "icon": "chibi-asteca-tezcatlipoca", "difficulty": 4, "chapter": 1, "boss": false, "deckSize": 27, "style": "Sinergias da facção"}, "aztec-08": {"id": "aztec-08", "region": "aztec", "stage": 8, "opponent": "asteca-huitzilopochtli", "name": "Huitzilopochtli", "icon": "chibi-asteca-huitzilopochtli", "difficulty": 4, "chapter": 1, "boss": false, "deckSize": 27, "style": "Sinergias da facção"}, "aztec-09": {"id": "aztec-09", "region": "aztec", "stage": 9, "opponent": "asteca-mictlantecuhtli", "name": "Mictlantecuhtli", "icon": "chibi-asteca-mictlantecuhtli", "difficulty": 4, "chapter": 1, "boss": false, "deckSize": 27, "style": "Sinergias da facção"}, "aztec-10": {"id": "aztec-10", "region": "aztec", "stage": 10, "opponent": "asteca-quetzalcoatl", "name": "Quetzalcóatl", "icon": "chibi-asteca-quetzalcoatl", "difficulty": 4, "chapter": 1, "boss": true, "deckSize": 28, "style": "Sinergias da facção"}, "brasil-01": {"id": "brasil-01", "region": "brasil", "stage": 1, "opponent": "brasil-saci", "name": "Saci-Pererê", "icon": "chibi-brasil-saci", "difficulty": 4, "chapter": 0, "boss": false, "deckSize": 26, "style": "Primeiros combos"}, "brasil-02": {"id": "brasil-02", "region": "brasil", "stage": 2, "opponent": "brasil-boto", "name": "Boto Encantado", "icon": "chibi-brasil-boto", "difficulty": 4, "chapter": 0, "boss": false, "deckSize": 26, "style": "Primeiros combos"}, "brasil-03": {"id": "brasil-03", "region": "brasil", "stage": 3, "opponent": "brasil-caipora", "name": "Caipora", "icon": "chibi-brasil-caipora", "difficulty": 4, "chapter": 0, "boss": false, "deckSize": 26, "style": "Primeiros combos"}, "brasil-04": {"id": "brasil-04", "region": "brasil", "stage": 4, "opponent": "brasil-iara", "name": "Iara", "icon": "chibi-brasil-iara", "difficulty": 4, "chapter": 0, "boss": false, "deckSize": 27, "style": "Primeiros combos"}, "brasil-05": {"id": "brasil-05", "region": "brasil", "stage": 5, "opponent": "brasil-curupira", "name": "Curupira", "icon": "chibi-brasil-curupira", "difficulty": 4, "chapter": 0, "boss": true, "deckSize": 27, "style": "Primeiros combos"}, "brasil-06": {"id": "brasil-06", "region": "brasil", "stage": 6, "opponent": "brasil-cuca", "name": "Cuca", "icon": "chibi-brasil-cuca", "difficulty": 4, "chapter": 1, "boss": false, "deckSize": 27, "style": "Sinergias da facção"}, "brasil-07": {"id": "brasil-07", "region": "brasil", "stage": 7, "opponent": "brasil-mula-sem-cabeca", "name": "Mula sem Cabeça", "icon": "chibi-brasil-mula-sem-cabeca", "difficulty": 4, "chapter": 1, "boss": false, "deckSize": 28, "style": "Sinergias da facção"}, "brasil-08": {"id": "brasil-08", "region": "brasil", "stage": 8, "opponent": "brasil-boitata", "name": "Boitatá", "icon": "chibi-brasil-boitata", "difficulty": 4, "chapter": 1, "boss": false, "deckSize": 28, "style": "Sinergias da facção"}, "brasil-09": {"id": "brasil-09", "region": "brasil", "stage": 9, "opponent": "brasil-mapinguari", "name": "Mapinguari", "icon": "chibi-brasil-mapinguari", "difficulty": 4, "chapter": 1, "boss": false, "deckSize": 28, "style": "Sinergias da facção"}, "brasil-10": {"id": "brasil-10", "region": "brasil", "stage": 10, "opponent": "brasil-lampiao", "name": "Lampião", "icon": "chibi-brasil-lampiao", "difficulty": 4, "chapter": 1, "boss": true, "deckSize": 29, "style": "Sinergias da facção"}, "monster-01": {"id": "monster-01", "region": "monster", "stage": 1, "opponent": "homem", "name": "Homem", "icon": "chibi-homem", "difficulty": 5, "chapter": 0, "boss": false, "deckSize": 21, "style": "Primeiros combos"}, "monster-02": {"id": "monster-02", "region": "monster", "stage": 2, "opponent": "mulher", "name": "Mulher", "icon": "chibi-mulher", "difficulty": 5, "chapter": 0, "boss": false, "deckSize": 21, "style": "Primeiros combos"}, "monster-03": {"id": "monster-03", "region": "monster", "stage": 3, "opponent": "lobo-beta", "name": "Lobisomem Beta", "icon": "chibi-lobo-beta", "difficulty": 5, "chapter": 0, "boss": false, "deckSize": 21, "style": "Primeiros combos"}, "monster-04": {"id": "monster-04", "region": "monster", "stage": 4, "opponent": "lobo-omega", "name": "Lobisomem Omega", "icon": "chibi-lobo-omega", "difficulty": 5, "chapter": 0, "boss": false, "deckSize": 21, "style": "Primeiros combos"}, "monster-05": {"id": "monster-05", "region": "monster", "stage": 5, "opponent": "lobo-alfa", "name": "Lobisomem Alfa", "icon": "chibi-lobo-alfa", "difficulty": 5, "chapter": 0, "boss": true, "deckSize": 21, "style": "Primeiros combos"}}, "rewardIcons": ["chibi-soldado-esparta", "chibi-athena", "chibi-lobo-alfa", "chibi-guardiao-nordico", "chibi-medusa", "chibi-poseidon", "chibi-zeus", "chibi-hades", "chibi-lobo-omega", "chibi-anubis", "chibi-odin", "chibi-minotauro", "chibi-apolo", "chibi-ra", "chibi-ragnar", "chibi-afrodite", "chibi-aquiles", "chibi-seth", "chibi-osiris", "chibi-thor", "chibi-artemis", "chibi-sobek", "chibi-ares", "chibi-beowulf", "chibi-heimdall", "chibi-dionisio", "chibi-hefesto", "chibi-hercules", "chibi-hermes", "chibi-horus", "chibi-lobo-beta", "chibi-isis", "chibi-mulher", "chibi-homem", "chibi-loki", "chibi-japonesa-amaterasu", "chibi-chinesa-ao-guang", "chibi-brasil-boitata", "chibi-brasil-boto", "chibi-celtas-brigid", "chibi-brasil-caipora", "chibi-asteca-chalchiuhtlicue", "chibi-chinesa-change", "chibi-asteca-coatlicue", "chibi-brasil-cuca", "chibi-brasil-curupira", "chibi-celtas-cu-chulainn", "chibi-celtas-dagda", "chibi-celtas-dama-do-lago", "chibi-hindu-durga", "chibi-mesopotamica-enki", "chibi-mesopotamica-enlil", "chibi-mesopotamica-ereshkigal", "chibi-chinesa-erlang-shen", "chibi-chinesa-fuxi", "chibi-japonesa-fujin", "chibi-hindu-ganesha", "chibi-chinesa-guanyin", "chibi-japonesa-hachiman", "chibi-hindu-hanuman", "chibi-chinesa-hou-yi", "chibi-asteca-huitzilopochtli", "chibi-brasil-iara", "chibi-chinesa-imperador-jade", "chibi-japonesa-inari", "chibi-hindu-indra", "chibi-mesopotamica-ishtar", "chibi-japonesa-izanagi", "chibi-japonesa-izanami", "chibi-hindu-kali", "chibi-hindu-krishna", "chibi-hindu-lakshmi", "chibi-brasil-lampiao", "chibi-celtas-lancelot", "chibi-celtas-lugh", "chibi-brasil-mapinguari", "chibi-mesopotamica-marduk", "chibi-celtas-merlin", "chibi-asteca-mictecacihuatl", "chibi-asteca-mictlantecuhtli", "chibi-celtas-morgana", "chibi-celtas-morrigan", "chibi-brasil-mula-sem-cabeca", "chibi-mesopotamica-nanna-sin", "chibi-mesopotamica-nergal", "chibi-chinesa-nezha", "chibi-mesopotamica-ninurta", "chibi-chinesa-nuwa", "chibi-asteca-quetzalcoatl", "chibi-japonesa-raijin", "chibi-rei-arthur", "chibi-japonesa-ryujin", "chibi-brasil-saci", "chibi-hindu-saraswati", "chibi-hindu-shiva", "chibi-chinesa-sun-wukong", "chibi-japonesa-susanoo", "chibi-asteca-tezcatlipoca", "chibi-mesopotamica-tiamat", "chibi-asteca-tlaloc", "chibi-japonesa-tsukuyomi", "chibi-mesopotamica-utu-shamash", "chibi-hindu-vishnu", "chibi-asteca-xipe-totec", "chibi-asteca-xochiquetzal"], "version": 5};
 
 ;
 /* deck-picker.js */
@@ -4681,38 +4696,515 @@ window.MythicGuardianCampaignData={"regions":[{"id":"greece","name":"Grécia","f
 
 ;
 /* atlas-dialogue-data.js */
-/* Atlas stories are local presentation data. A duel starts only after the last choice. */
+/* Approved first-area dialogue and outcome scenes. */
 window.MythicAtlasDialogueData={
- fps:30,
- frameHold:7,
- textCharacterMs:28,
- reactionHoldMs:1800,
- characters:{
-  aquiles:{
-   name:'Aquiles',
-   location:'Grécia · Santuário dos Heróis',
-   images:{
-    normal:'assets/atlas-dialogue/aquiles-normal.png',
-    speaking:'assets/atlas-dialogue/aquiles-falando.png',
-    angry:'assets/atlas-dialogue/aquiles-bravo.png',
-    laughing:'assets/atlas-dialogue/aquiles-rindo.png'
-   },
-   opening:{
-    text:'Olá, soldado, você também viu aquela explosão gigantesca no céu?',
-    choices:[
-     {id:'saw',text:'Sim, eu vi, você sabe o que é?'},
-     {id:'lost',text:'Não vi não, mas onde estamos?'}
-    ]
-   },
-   question:{
-    text:'Como assim, onde estamos? Peraí, você é um soldado meu ou...?',
-    choices:[
-     {id:'soldier',text:'Sou um soldado seu sim',expression:'angry',reaction:'Aquiles faz uma cara de bravo.'},
-     {id:'traveler',text:'Sou um viajante de passagem, buscando conhecimento',expression:'laughing',reaction:'Aquiles solta uma risada.'}
-    ]
-   }
+  "fps": 30,
+  "frameHold": 7,
+  "textCharacterMs": 28,
+  "reactionHoldMs": 1800,
+  "characters": {
+    "aquiles": {
+      "name": "Aquiles",
+      "location": "Grécia · Santuário dos Heróis",
+      "description": "Aquiles, guerreiro de cabelos loiros, armadura dourada e elmo de crista vermelha.",
+      "images": {
+        "normal": "assets/atlas-dialogue/aquiles-normal.png",
+        "speaking": "assets/atlas-dialogue/aquiles-falando.png",
+        "angry": "assets/atlas-dialogue/aquiles-bravo.png",
+        "laughing": "assets/atlas-dialogue/aquiles-rindo.png"
+      },
+      "script": {
+        "opening": {
+          "text": "Olá, soldado, você também viu aquela explosão gigantesca no céu?",
+          "expression": "normal",
+          "choices": [
+            {
+              "text": "Sim, eu vi. Você sabe o que é?",
+              "next": "question"
+            },
+            {
+              "text": "Não vi, não. Mas onde estamos?",
+              "next": "question"
+            }
+          ]
+        },
+        "question": {
+          "text": "Como assim, onde estamos? Peraí, você é um soldado meu ou...?",
+          "expression": "normal",
+          "choices": [
+            {
+              "text": "Sou um soldado seu, sim.",
+              "next": "soldier"
+            },
+            {
+              "text": "Sou um viajante de passagem, buscando conhecimento.",
+              "next": "traveler"
+            }
+          ]
+        },
+        "soldier": {
+          "text": "Aquiles faz uma cara de bravo.",
+          "expression": "angry",
+          "choices": [],
+          "narration": true,
+          "duel": true
+        },
+        "traveler": {
+          "text": "Aquiles solta uma risada.",
+          "expression": "laughing",
+          "choices": [],
+          "narration": true,
+          "duel": true
+        }
+      },
+      "outcomes": {
+        "victory": {
+          "text": "Você luta bem para um viajante! Se descobrir alguma coisa sobre aquela explosão, volte para me contar. Quero uma revanche quando o céu parar de cair.",
+          "expression": "laughing",
+          "choices": []
+        },
+        "defeat": {
+          "text": "Você se precipitou. Eu também já fiz isso... e geralmente havia alguém por perto para reclamar. Respire, prepare-se e tente outra vez.",
+          "expression": "normal",
+          "choices": []
+        }
+      }
+    },
+    "hercules": {
+      "name": "Hércules",
+      "description": "Hércules, herói musculoso com a pele do leão de Nemeia.",
+      "script": {
+        "opening": {
+          "text": "Você veio pelo caminho de Aquiles? E ainda está inteiro? Já gostei de você!",
+          "expression": "normal",
+          "choices": [
+            {
+              "text": "Ele parecia mais preocupado com a explosão do que comigo.",
+              "next": "sky"
+            },
+            {
+              "text": "Foi por pouco. Você também vai querer me enfrentar?",
+              "next": "fight"
+            }
+          ]
+        },
+        "sky": {
+          "text": "Eu também vi. Por um instante, pareceu que o próprio céu estava sendo rasgado.",
+          "expression": "serious",
+          "choices": [
+            {
+              "text": "Continuar",
+              "next": "question"
+            }
+          ]
+        },
+        "fight": {
+          "text": "Claro! Mas pode ficar tranquilo: hoje o trabalho difícil vai ser meu. Estou tentando pegar leve.",
+          "expression": "laughing",
+          "choices": [
+            {
+              "text": "Continuar",
+              "next": "question"
+            }
+          ]
+        },
+        "question": {
+          "text": "Desde aquela luz, tenho encontrado coisas que não pertencem a estas terras. Quero descobrir se você é uma delas.",
+          "expression": "normal",
+          "choices": [
+            {
+              "text": "Pode perguntar. Não precisa resolver tudo lutando.",
+              "next": "wise"
+            },
+            {
+              "text": "Então venha descobrir.",
+              "next": "ready"
+            }
+          ]
+        },
+        "wise": {
+          "text": "Perguntar é com os sábios. Eu aprendo melhor na prática!",
+          "expression": "smiling",
+          "choices": [],
+          "duel": true
+        },
+        "ready": {
+          "text": "Essa é a disposição!",
+          "expression": "laughing",
+          "choices": [],
+          "duel": true
+        }
+      },
+      "outcomes": {
+        "victory": {
+          "text": "Essa eu vou ter que contar! Talvez eu deixe de fora a parte em que perdi... Estou brincando! Você conquistou essa vitória.",
+          "expression": "laughing",
+          "choices": []
+        },
+        "defeat": {
+          "text": "Vamos, levante! Meus trabalhos também não se resolveram na primeira tentativa. Qual foi a parte mais difícil? É por ela que você deve começar.",
+          "expression": "smiling",
+          "choices": []
+        }
+      },
+      "location": "Grécia · Santuário dos Heróis",
+      "sheet": "assets/atlas-dialogue/hercules-expressoes.png",
+      "cells": {
+        "normal": [
+          0,
+          0
+        ],
+        "speaking": [
+          1,
+          0
+        ],
+        "smiling": [
+          2,
+          0
+        ],
+        "serious": [
+          0,
+          1
+        ],
+        "laughing": [
+          1,
+          1
+        ],
+        "surprised": [
+          2,
+          1
+        ]
+      }
+    },
+    "hermes": {
+      "name": "Hermes",
+      "description": "Hermes, mensageiro de elmo alado dourado e manto turquesa.",
+      "script": {
+        "opening": {
+          "text": "Finalmente! Estou procurando você desde... bom, desde alguns instantes atrás. Para mim, isso é bastante tempo.",
+          "expression": "normal",
+          "choices": [
+            {
+              "text": "Como você sabe quem eu sou?",
+              "next": "known"
+            },
+            {
+              "text": "Se veio entregar uma mensagem, pode falar.",
+              "next": "message"
+            }
+          ]
+        },
+        "known": {
+          "text": "Um desconhecido aparece depois de uma explosão no céu e começa a enfrentar heróis. Você não está sendo muito discreto.",
+          "expression": "smiling",
+          "choices": [
+            {
+              "text": "Continuar",
+              "next": "question"
+            }
+          ]
+        },
+        "message": {
+          "text": "Esse é o problema. Recebi ordens de levar mensagens a lugares que já não encontro onde deveriam estar.",
+          "expression": "serious",
+          "choices": [
+            {
+              "text": "Continuar",
+              "next": "question"
+            }
+          ]
+        },
+        "question": {
+          "text": "Os caminhos estão estranhos. Antes de indicar o seu, preciso saber se você consegue tomar uma decisão sem ficar parado pensando para sempre.",
+          "expression": "normal",
+          "choices": [
+            {
+              "text": "Pensar antes de agir costuma ajudar.",
+              "next": "think"
+            },
+            {
+              "text": "Você fala demais para alguém com tanta pressa.",
+              "next": "fast"
+            }
+          ]
+        },
+        "think": {
+          "text": "Ótimo! Vamos descobrir quanto tempo você precisa.",
+          "expression": "laughing",
+          "choices": [],
+          "duel": true
+        },
+        "fast": {
+          "text": "Gostei. Sua língua acompanha os seus pés?",
+          "expression": "surprised",
+          "choices": [],
+          "duel": true
+        }
+      },
+      "outcomes": {
+        "victory": {
+          "text": "Eu vi sua jogada chegando e mesmo assim caí nela. Isso vai ficar entre nós, certo? Pode seguir. Tenho algumas mensagens para entregar... bem longe daqui.",
+          "expression": "surprised",
+          "choices": []
+        },
+        "defeat": {
+          "text": "Você ficou tão ocupado acompanhando meus movimentos que esqueceu dos seus. Na próxima, faça com que eu precise acompanhar você.",
+          "expression": "smiling",
+          "choices": []
+        }
+      },
+      "location": "Grécia · Santuário dos Heróis",
+      "sheet": "assets/atlas-dialogue/hermes-expressoes.png",
+      "cells": {
+        "normal": [
+          0,
+          0
+        ],
+        "speaking": [
+          1,
+          0
+        ],
+        "smiling": [
+          2,
+          0
+        ],
+        "serious": [
+          0,
+          1
+        ],
+        "laughing": [
+          1,
+          1
+        ],
+        "surprised": [
+          2,
+          1
+        ]
+      }
+    },
+    "athena": {
+      "name": "Athena",
+      "description": "Athena, deusa de elmo com crista branca, armadura dourada e manto azul.",
+      "script": {
+        "opening": {
+          "text": "Uma luz rasga o céu e, pouco depois, um desconhecido surge enfrentando nossos heróis. Você entende por que sua presença desperta perguntas?",
+          "expression": "normal",
+          "choices": [
+            {
+              "text": "Eu também estou procurando respostas.",
+              "next": "answers"
+            },
+            {
+              "text": "Se já sabe por onde passei, talvez saiba de onde vim.",
+              "next": "origin"
+            }
+          ]
+        },
+        "answers": {
+          "text": "Então comece pelo que viu. Não pelo que imagina ter acontecido. Em momentos como este, confundir as duas coisas pode nos custar caro.",
+          "expression": "serious",
+          "choices": [
+            {
+              "text": "Continuar",
+              "next": "watch"
+            }
+          ]
+        },
+        "origin": {
+          "text": "Sei por onde você caminhou. Isso ainda não me diz o que trouxe você até aqui.",
+          "expression": "smiling",
+          "choices": [
+            {
+              "text": "Continuar",
+              "next": "watch"
+            }
+          ]
+        },
+        "watch": {
+          "text": "Desde a explosão, nossos vigias descrevem montanhas que nunca existiram e estrelas que não reconhecem. Preciso de alguém capaz de observar antes de agir.",
+          "expression": "normal",
+          "choices": [
+            {
+              "text": "E como pretende descobrir se sou essa pessoa?",
+              "next": "question"
+            }
+          ]
+        },
+        "question": {
+          "text": "Você passou por Aquiles e Hércules. Quero ver quais decisões tomou para chegar até aqui.",
+          "expression": "normal",
+          "choices": [
+            {
+              "text": "Vou mostrar o que aprendi.",
+              "next": "learn"
+            },
+            {
+              "text": "Também vai resolver isso com um duelo?",
+              "next": "pressure"
+            }
+          ]
+        },
+        "learn": {
+          "text": "Ótimo. E esteja disposto a aprender algo mais.",
+          "expression": "smiling",
+          "choices": [],
+          "duel": true
+        },
+        "pressure": {
+          "text": "Durante uma conversa, você pode escolher o que me contar. Sob pressão, suas escolhas costumam ser mais sinceras.",
+          "expression": "surprised",
+          "choices": [],
+          "duel": true
+        }
+      },
+      "outcomes": {
+        "victory": {
+          "text": "Você soube se adaptar. Continue observando o que mudou nestas terras. Se encontrar algo que pareça não pertencer a este mundo, procure-me.",
+          "expression": "smiling",
+          "choices": []
+        },
+        "defeat": {
+          "text": "Volte quando estiver pronto. Antes disso, pense na escolha que mais lhe custou nesta partida. Podemos começar por ela.",
+          "expression": "normal",
+          "choices": []
+        }
+      },
+      "location": "Grécia · Santuário dos Heróis",
+      "sheet": "assets/atlas-dialogue/athena-expressoes.png",
+      "cells": {
+        "normal": [
+          0,
+          0
+        ],
+        "speaking": [
+          1,
+          0
+        ],
+        "smiling": [
+          2,
+          0
+        ],
+        "serious": [
+          0,
+          1
+        ],
+        "laughing": [
+          1,
+          1
+        ],
+        "surprised": [
+          2,
+          1
+        ]
+      }
+    },
+    "soldado-esparta": {
+      "name": "Soldado de Esparta",
+      "description": "Soldado espartano de elmo de bronze, crista vermelha e capa vermelha.",
+      "script": {
+        "opening": {
+          "text": "Alto! Identifique-se. Esta passagem está sob proteção de Esparta.",
+          "expression": "serious",
+          "choices": [
+            {
+              "text": "Aquiles me chamou de soldado. Isso ajuda?",
+              "next": "soldier"
+            },
+            {
+              "text": "Sou um viajante. Estou tentando entender o que aconteceu.",
+              "next": "traveler"
+            }
+          ]
+        },
+        "soldier": {
+          "text": "Aquiles chama qualquer pessoa de soldado quando precisa de alguma coisa.",
+          "expression": "surprised",
+          "choices": [
+            {
+              "text": "Continuar",
+              "next": "question"
+            }
+          ]
+        },
+        "traveler": {
+          "text": "Então temos o mesmo objetivo. Minha patrulha viu aquela luz e, desde então, dois dos nossos não voltaram.",
+          "expression": "serious",
+          "choices": [
+            {
+              "text": "Continuar",
+              "next": "question"
+            }
+          ]
+        },
+        "question": {
+          "text": "Vou procurá-los. Se pretende atravessar esta passagem, preciso saber se posso contar com você quando a situação apertar.",
+          "expression": "normal",
+          "choices": [
+            {
+              "text": "Não vou abandonar ninguém.",
+              "next": "loyal"
+            },
+            {
+              "text": "Já enfrentei dois heróis, um mensageiro e uma deusa. Estou preparado.",
+              "next": "ready"
+            }
+          ]
+        },
+        "loyal": {
+          "text": "Boa resposta. Agora mostre que consegue sustentá-la.",
+          "expression": "smiling",
+          "choices": [],
+          "duel": true
+        },
+        "ready": {
+          "text": "Enfrentar alguém é uma coisa. Saber quando continuar ou recuar é outra.",
+          "expression": "serious",
+          "choices": [],
+          "duel": true
+        }
+      },
+      "outcomes": {
+        "victory": {
+          "text": "Você pode passar. Se encontrar minha patrulha... diga que ainda estamos procurando por eles. E cuidado em Esparta: depois daquela explosão, nem todos recebem viajantes de braços abertos.",
+          "expression": "smiling",
+          "choices": []
+        },
+        "defeat": {
+          "text": "Você resistiu bem, mas gastou suas forças cedo demais. Descanse. Quando voltar, quero ver você guardar o suficiente para terminar a luta.",
+          "expression": "normal",
+          "choices": []
+        }
+      },
+      "location": "Grécia · Santuário dos Heróis",
+      "sheet": "assets/atlas-dialogue/soldado-esparta-expressoes.png",
+      "cells": {
+        "normal": [
+          0,
+          0
+        ],
+        "speaking": [
+          1,
+          0
+        ],
+        "smiling": [
+          2,
+          0
+        ],
+        "serious": [
+          0,
+          1
+        ],
+        "laughing": [
+          1,
+          1
+        ],
+        "surprised": [
+          2,
+          1
+        ]
+      }
+    }
   }
- }
 };
 
 ;
@@ -4721,72 +5213,80 @@ window.MythicAtlasDialogueData={
  'use strict';
  const data=window.MythicAtlasDialogueData;if(!data)return;
  const el=(tag,cls,text)=>{const n=document.createElement(tag);if(cls)n.className=cls;if(text!==undefined)n.textContent=text;return n;};
+ const safe=path=>window.MythicSecurity?.assetUrl?.(path)||path;
  const reduced=()=>window.matchMedia('(prefers-reduced-motion: reduce)').matches;
  let active=null;
  function clearTimers(scene){clearTimeout(scene.textTimer);clearTimeout(scene.reactionTimer);scene.textTimer=scene.reactionTimer=null;}
- function finish(){
-  const scene=active;if(!scene)return;active=null;clearTimers(scene);scene.resolve?.(false);scene.resolve=null;
+ function finish(value=false){
+  const scene=active;if(!scene)return;active=null;clearTimers(scene);scene.observer?.disconnect();scene.resolve?.(value);scene.resolve=null;
   scene.dialog.close();scene.dialog.remove();
   if(scene.previous?.isConnected&&!scene.previous.disabled&&scene.previous.getClientRects().length)scene.previous.focus({preventScroll:true});
  }
+ function eligible(node){return node?.region==='greece'&&Number(node.chapter)===0&&!!data.characters[node.opponent];}
  function play(node,options={}){
-  const character=data.characters[node?.opponent];if(!character)return Promise.resolve(true);
+  const character=data.characters[node?.opponent],post=options.mode==='outcome';if(!character||!post&&!eligible(node))return Promise.resolve(true);
   if(active?.loading)return Promise.resolve(false);finish();
   return new Promise(resolve=>{
    const dialog=el('dialog','atlas-conversation');dialog.setAttribute('aria-labelledby','atlas-conversation-name');dialog.setAttribute('aria-describedby','atlas-conversation-summary');
-   const scene={dialog,resolve,previous:document.activeElement,character,options,node,loading:false,writing:false,stage:'opening',textTimer:null,reactionTimer:null,ready:false};active=scene;
-   const safe=path=>window.MythicSecurity?.assetUrl?.(path)||path;
+   const scene={dialog,resolve,previous:document.activeElement,character,options,loading:false,writing:false,textTimer:null,reactionTimer:null};active=scene;
+   const valid=()=>active===scene&&(options.isValid?.()??true);
    dialog.style.setProperty('--atlas-talk-frame',`${1000*data.frameHold/data.fps}ms`);
    if(options.background)dialog.style.setProperty('--atlas-conversation-scene',`url("${safe(options.background)}")`);
    dialog.dataset.expression='normal';dialog.dataset.speaking='false';
-   const header=el('header','atlas-conversation-header'),place=el('span','',character.location),exit=el('button','atlas-conversation-exit','×');exit.type='button';exit.setAttribute('aria-label','Voltar sem iniciar a partida');header.append(place,exit);
-   const summary=el('p','atlas-conversation-sr','Converse com Aquiles e escolha suas respostas. A partida começa após a última resposta.');summary.id='atlas-conversation-summary';
-   const figure=el('figure','atlas-conversation-portrait');figure.setAttribute('role','img');figure.setAttribute('aria-label','Aquiles, de armadura dourada, elmo de crista vermelha e cabelos loiros.');
-   const images=[];for(const [expression,path] of Object.entries(character.images)){const img=el('img','atlas-conversation-frame is-'+expression);img.src=safe(path);img.alt='';img.decoding='async';img.loading='eager';img.draggable=false;figure.append(img);images.push(img);}
-   const bubble=el('section','atlas-conversation-bubble'),eyebrow=el('small','atlas-conversation-kicker','ENCONTRO NO ATLAS'),name=el('h2','',character.name);name.id='atlas-conversation-name';
+   const header=el('header','atlas-conversation-header'),place=el('span','',character.location),exit=el('button','atlas-conversation-exit','×');exit.type='button';exit.setAttribute('aria-label',post?'Continuar para o resumo':'Voltar sem iniciar a partida');header.append(place,exit);
+   const summary=el('p','atlas-conversation-sr',post?'Ouça '+character.name+' após o duelo.':'Converse com '+character.name+' e escolha suas respostas. A partida começa após a última resposta.');summary.id='atlas-conversation-summary';
+   const figure=el('figure','atlas-conversation-portrait');figure.setAttribute('role','img');figure.setAttribute('aria-label',character.description);
+   const images=[],image=src=>{const i=new Image();i.src=safe(src);i.decoding='async';i.loading='eager';i.alt='';i.draggable=false;images.push(i);return i;};
+   if(character.sheet){
+    const sprite=el('div','atlas-conversation-sprite');figure.append(sprite);image(character.sheet);
+    for(const [expression,[col,row]] of Object.entries(character.cells)){
+     const frame=el('span','atlas-conversation-frame atlas-conversation-sheet is-'+expression);frame.style.backgroundImage=`url("${safe(character.sheet)}")`;frame.style.backgroundPosition=`${col*50}% ${row*100}%`;sprite.append(frame);
+    }
+    scene.observer=new ResizeObserver(()=>{const size=Math.max(0,Math.min(figure.clientWidth,figure.clientHeight));sprite.style.width=size+'px';sprite.style.height=size+'px';});scene.observer.observe(figure);
+   }else for(const [expression,path] of Object.entries(character.images)){const i=image(path);i.className='atlas-conversation-frame is-'+expression;figure.append(i);}
+   const bubble=el('section','atlas-conversation-bubble'),eyebrow=el('small','atlas-conversation-kicker',post?(options.outcome==='victory'?'APÓS SUA VITÓRIA':'APÓS O DUELO'):'ENCONTRO NO ATLAS'),name=el('h2','',character.name);name.id='atlas-conversation-name';
    const reply=el('p','atlas-conversation-reply');reply.hidden=true;
    const line=el('p','atlas-conversation-line');line.setAttribute('aria-hidden','true');
    const accessible=el('p','atlas-conversation-sr');accessible.setAttribute('role','status');accessible.setAttribute('aria-live','polite');accessible.setAttribute('aria-atomic','true');
    const complete=el('button','atlas-conversation-complete','Mostrar fala completa');complete.type='button';complete.hidden=true;
-   const choices=el('div','atlas-conversation-choices');choices.setAttribute('role','group');choices.setAttribute('aria-label','Escolha sua resposta');
-   const caption=el('p','atlas-conversation-caption','Sua resposta conduz este encontro.');bubble.append(eyebrow,name,reply,line,accessible,complete,choices,caption);dialog.append(header,summary,figure,bubble);document.body.append(dialog);
-   const valid=()=>active===scene&&(options.isValid?.()??true);
+   const choices=el('div','atlas-conversation-choices');choices.setAttribute('role','group');choices.setAttribute('aria-label',post?'Continuar após o duelo':'Escolha sua resposta');
+   const caption=el('p','atlas-conversation-caption');bubble.append(eyebrow,name,reply,line,accessible,complete,choices,caption);dialog.append(header,summary,figure,bubble);document.body.append(dialog);
+   function beginDuel(){
+    if(!valid()){if(active===scene)finish();return;}
+    if(document.hidden){scene.reactionTimer=setTimeout(beginDuel,200);return;}
+    scene.loading=true;clearTimers(scene);exit.disabled=true;choices.replaceChildren();complete.hidden=true;dialog.dataset.speaking='false';caption.textContent='Preparando o duelo…';caption.setAttribute('role','status');dialog.setAttribute('aria-busy','true');scene.resolve?.(true);scene.resolve=null;
+   }
    function showChoices(){
-    if(!valid()){if(active===scene)finish();return;}scene.writing=false;dialog.dataset.speaking='false';complete.hidden=true;line.textContent=scene.utterance.text;choices.replaceChildren();
-    scene.utterance.choices.forEach((choice,index)=>{const button=el('button','atlas-conversation-choice'),number=el('span','',String(index+1)),text=el('span','',choice.text);number.setAttribute('aria-hidden','true');button.type='button';button.append(number,text);button.onclick=()=>answer(choice);choices.append(button);});
+    if(!valid()){if(active===scene)finish();return;}clearTimeout(scene.textTimer);scene.writing=false;dialog.dataset.speaking='false';dialog.dataset.expression=scene.utterance.expression||'normal';complete.hidden=true;line.textContent=scene.utterance.text;choices.replaceChildren();
+    if(post){const b=el('button','atlas-conversation-choice','Ver resumo da partida');b.type='button';b.onclick=()=>finish(true);choices.append(b);caption.textContent='Sua recompensa já foi registrada.';return;}
+    if(scene.utterance.duel){caption.textContent='O duelo vai começar.';scene.reactionTimer=setTimeout(beginDuel,data.reactionHoldMs);return;}
+    for(const [index,choice] of scene.utterance.choices.entries()){
+     const b=el('button','atlas-conversation-choice'),number=el('span','',String(index+1));number.setAttribute('aria-hidden','true');b.type='button';b.append(number,el('span','',choice.text));b.onclick=()=>{if(!valid()||scene.writing||scene.loading)return;reply.hidden=false;reply.textContent=choice.text==='Continuar'?'':'Você: '+choice.text;reply.hidden=!reply.textContent;speak(character.script[choice.next]);};choices.append(b);
+    }
     caption.textContent='Escolha uma resposta para continuar.';
    }
    function speak(utterance){
-    clearTimers(scene);scene.utterance=utterance;scene.writing=true;scene.characters=Array.from(utterance.text);scene.position=0;choices.replaceChildren();complete.hidden=false;line.textContent='';accessible.textContent=utterance.text;dialog.dataset.expression='normal';dialog.dataset.speaking='true';caption.textContent='Aquiles está falando…';
+    if(!utterance){finish();return;}clearTimers(scene);scene.utterance=utterance;scene.writing=true;scene.characters=Array.from(utterance.text);scene.position=0;choices.replaceChildren();complete.hidden=false;line.textContent='';accessible.textContent=utterance.text;dialog.dataset.narration=String(!!utterance.narration);dialog.dataset.expression=utterance.narration?(utterance.expression||'normal'):'normal';dialog.dataset.speaking=String(!utterance.narration);caption.textContent=utterance.narration?'':character.name+' está falando…';
     if(reduced()){showChoices();return;}
     function tick(){if(!valid()){if(active===scene)finish();return;}if(document.hidden){scene.textTimer=setTimeout(tick,150);return;}scene.position++;line.textContent=scene.characters.slice(0,scene.position).join('');if(scene.position>=scene.characters.length)showChoices();else scene.textTimer=setTimeout(tick,data.textCharacterMs);}
     tick();
    }
-   function beginDuel(){
-    if(!valid()){if(active===scene)finish();return;}if(document.hidden){scene.ready=true;return;}scene.ready=false;scene.loading=true;clearTimers(scene);exit.disabled=true;choices.replaceChildren();complete.hidden=true;dialog.dataset.speaking='false';caption.textContent='Preparando o duelo…';caption.setAttribute('role','status');dialog.setAttribute('aria-busy','true');scene.resolve?.(true);scene.resolve=null;
-   }
-   function answer(choice){
-    if(!valid()||scene.writing||scene.loading||scene.stage==='reaction')return;
-    reply.hidden=false;reply.textContent='Você: '+choice.text;
-    if(scene.stage==='opening'){scene.stage='question';speak(character.question);return;}
-    scene.stage='reaction';clearTimers(scene);choices.replaceChildren();dialog.dataset.speaking='false';dialog.dataset.expression=choice.expression;figure.setAttribute('aria-label',choice.reaction);line.textContent=choice.reaction;accessible.textContent=choice.reaction;caption.textContent='O duelo vai começar.';scene.reactionTimer=setTimeout(beginDuel,data.reactionHoldMs);
-   }
    complete.onclick=()=>{if(scene.writing){clearTimeout(scene.textTimer);showChoices();choices.querySelector('button')?.focus();}};
-   exit.onclick=()=>{if(!scene.loading)finish();};dialog.addEventListener('cancel',e=>{e.preventDefault();if(!scene.loading)finish();});dialog.addEventListener('close',()=>{if(active===scene)finish();});
-   dialog.showModal();exit.focus({preventScroll:true});line.textContent='Aquiles se aproxima…';caption.textContent='Carregando o encontro…';dialog.setAttribute('aria-busy','true');
-   const load=img=>img.decode?img.decode():new Promise((done,fail)=>{if(img.complete)return img.naturalWidth?done():fail();img.onload=done;img.onerror=fail;});
+   exit.onclick=()=>{if(!scene.loading)finish(post);};dialog.addEventListener('cancel',e=>{e.preventDefault();if(!scene.loading)finish(post);});dialog.addEventListener('close',()=>{if(active===scene)finish(post);});
+   dialog.addEventListener('keydown',e=>{if(!scene.writing&&!scene.loading&&/^[1-9]$/.test(e.key)){const b=choices.children[Number(e.key)-1];if(b){e.preventDefault();b.click();}}});
+   const load=i=>i.decode?i.decode():new Promise((done,fail)=>{if(i.complete)return i.naturalWidth?done():fail();i.onload=done;i.onerror=fail;});
    async function prepare(){
-    dialog.setAttribute('aria-busy','true');choices.replaceChildren();line.textContent='Aquiles se aproxima…';caption.textContent='Carregando o encontro…';
-    try{await Promise.all(images.map(load));if(!valid()){if(active===scene)finish();return;}dialog.removeAttribute('aria-busy');speak(character.opening);}
-    catch{if(!valid())return;dialog.removeAttribute('aria-busy');line.textContent='Não foi possível carregar as imagens de Aquiles.';accessible.textContent=line.textContent;caption.textContent='Sua partida ainda não foi iniciada.';const retry=el('button','atlas-conversation-choice','Tentar novamente');retry.type='button';retry.onclick=()=>{for(const img of images){const src=img.src;img.removeAttribute('src');img.src=src;}prepare();};choices.append(retry);}
+    dialog.setAttribute('aria-busy','true');choices.replaceChildren();line.textContent=character.name+' se aproxima…';caption.textContent='Carregando o encontro…';
+    try{await Promise.all(images.map(load));if(!valid()){if(active===scene)finish();return;}dialog.removeAttribute('aria-busy');speak(post?character.outcomes[options.outcome]:character.script.opening);}
+    catch{if(!valid())return;dialog.removeAttribute('aria-busy');line.textContent='Não foi possível carregar as imagens de '+character.name+'.';accessible.textContent=line.textContent;caption.textContent=post?'O resultado da partida está salvo.':'Sua partida ainda não foi iniciada.';const retry=el('button','atlas-conversation-choice','Tentar novamente');retry.type='button';retry.onclick=()=>{for(const i of images){const src=i.src;i.removeAttribute('src');i.src=src;}prepare();};choices.append(retry);if(post){const skip=el('button','atlas-conversation-choice','Ir para o resumo');skip.type='button';skip.onclick=()=>finish(true);choices.append(skip);}}
    }
-   prepare();
+   dialog.showModal();exit.focus({preventScroll:true});prepare();
   });
  }
- document.addEventListener('visibilitychange',()=>{if(active?.ready&&!document.hidden){const scene=active;scene.reactionTimer=setTimeout(()=>{if(active===scene&&scene.options.isValid?.()!==false){scene.loading=true;scene.dialog.dataset.speaking='false';scene.dialog.setAttribute('aria-busy','true');scene.dialog.querySelector('.atlas-conversation-exit').disabled=true;scene.dialog.querySelector('.atlas-conversation-caption').textContent='Preparando o duelo…';scene.resolve?.(true);scene.resolve=null;scene.ready=false;}else if(active===scene)finish();},0);}});
- window.addEventListener('mythic-account-signed-out',finish);
- window.addEventListener('mythic-view-changed',e=>{if(e.detail?.view!=='guardian')finish();});
- window.MythicAtlasDialogue={play,finish,has:node=>!!data.characters[node?.opponent]};
+ function outcome(node,result,options={}){if(!eligible(node)||!data.characters[node.opponent]?.outcomes?.[result])return Promise.resolve(true);return play(node,{...options,mode:'outcome',outcome:result});}
+ window.addEventListener('mythic-account-signed-out',()=>finish());
+ window.addEventListener('mythic-view-changed',e=>{if(!active)return;const allowed=active.options.mode==='outcome'?['duel']:['guardian'];if(!allowed.includes(e.detail?.view))finish();});
+ window.MythicAtlasDialogue={play,outcome,finish:()=>finish(),has:eligible};
 })();
 
 ;
@@ -4897,6 +5397,7 @@ window.MythicAtlasDialogueData={
  api.activeMatchId=()=>attached?snapshot?.match.id:original.activeMatchId();
  api.leaveMatch=(...args)=>{if(attached){attached=false;return;}return original.leaveMatch(...args);};
  window.MythicGuardianCampaign={refresh:()=>load(true),
+  dialogueScene:campaign=>{const r=data.regions.find(r=>r.id===campaign?.region),n=data.nodes[campaign?.nodeId];if(!r||!n||campaign.opponent&&campaign.opponent!==n.opponent)return null;return {node:n,background:scene(r,n.chapter)};},
   matchIsActive:async id=>{const result=await api.portalRequest('get_guardian_campaign_run',{p_run_id:id});return result?.match?.status==='active'&&!result.match.state?.finished;},
   surrender:async id=>{if(!attached||snapshot?.match.id!==id||busy)throw Error('Aguarde a jogada ser confirmada e tente novamente.');busy=true;const who=uid(),token=epoch;try{const result=await api.portalRequest('surrender_game_match',{p_match_id:id});if(who===uid()&&token===epoch){apply(result.campaign);await api.refreshProfile();}}finally{busy=false;}},
   returnToMap:async(r,result)=>{attached=false;region=r;snapshot=null;delete areas[r];focusNextRegion=r;save();nav('guardian');await load(true);delete areas[r];draw();if(result?.reward){const k=`gc-reward-seen:${uid()}:${result.reward.milestone}`;if(!sessionStorage.getItem(k)){sessionStorage.setItem(k,'1');showReward(result.reward);}}},

@@ -315,9 +315,24 @@
     if(action.type==='pass')stats.passes++;
     if(action.type==='play')stats.plays.push({actor_id:actor,card_id:action.card_id,round:duel.round,at:Date.now()});
   }
+  const atlasOutcomePending=new WeakSet();
   function showCompletedReport(){
     if(!duel||(!duel.finished&&!duel.practice)||duel.reportSummaryShown)return;
-    const ended=duel;ended.reportSummaryShown=true;ended.finishedAt=ended.finishedAt||Date.now();saveDuel();
+    const ended=duel;
+    if(atlasOutcomePending.has(ended))return;
+    if(ended.guardianCampaign&&!ended.atlasOutcomeDialogueHandled&&window.MythicAtlasDialogue?.outcome){
+      const context=window.MythicGuardianCampaign?.dialogueScene?.(ended.guardianCampaign);
+      if(context&&window.MythicAtlasDialogue.has(context.node)){
+        const ownerId=window.MythicOnline?.userId?.(),outcome=ended.serverOutcome||(ended.roundWins.player>ended.roundWins.enemy?'victory':ended.roundWins.enemy>ended.roundWins.player?'defeat':'draw');
+        atlasOutcomePending.add(ended);$('#match-result-banner').hidden=true;
+        Promise.resolve().then(()=>window.MythicAtlasDialogue.outcome(context.node,outcome,{background:context.background,isValid:()=>duel===ended&&activeView==='duel'&&ownerId===window.MythicOnline?.userId?.()})).catch(()=>{}).finally(()=>{
+          atlasOutcomePending.delete(ended);ended.atlasOutcomeDialogueHandled=true;
+          if(duel===ended&&activeView==='duel'&&ownerId===window.MythicOnline?.userId?.())showCompletedReport();
+        });return;
+      }
+      ended.atlasOutcomeDialogueHandled=true;
+    }
+    ended.reportSummaryShown=true;ended.finishedAt=ended.finishedAt||Date.now();saveDuel();
     $('#match-result-banner').hidden=true;$('#duel-loading-screen').hidden=true;$('#duel-loading-screen').setAttribute('aria-hidden','true');closeCardDetail();
     window.MythicTieBreak?.close?.();window.MythicAbilitiesUI?.close();window.MythicCombatFX?.clear();window.MythicEclipseUI?.close();
     if(ended.online)window.MythicOnline?.leaveMatch();

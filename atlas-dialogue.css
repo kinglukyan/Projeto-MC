@@ -34,3 +34,12 @@
 @media(max-width:760px){.atlas-conversation{width:calc(100vw - 16px);height:calc(100dvh - 16px);border-radius:12px}.atlas-conversation-header{padding:12px 15px;font-size:10px}.atlas-conversation-portrait{left:-8%;bottom:28%;width:110%;height:70%;opacity:.98}.atlas-conversation-bubble{right:12px;left:12px;bottom:14px;width:auto;min-height:0;max-height:56%;overflow:auto;padding:18px 20px}.atlas-conversation-bubble::before{display:none}.atlas-conversation-bubble h2{font-size:26px;margin-bottom:12px}.atlas-conversation-line{font-size:17px;margin-bottom:13px;min-height:0}.atlas-conversation-choice{font-size:12px;min-height:44px;padding:9px}.atlas-conversation-caption{margin-top:10px}.atlas-conversation-reply{font-size:11px}}
 @media(max-height:520px) and (min-width:761px){.atlas-conversation{height:calc(100dvh - 16px)}.atlas-conversation-header{padding:8px 18px}.atlas-conversation-portrait{height:95%;width:55%;left:-3%}.atlas-conversation-bubble{bottom:16px;right:22px;width:51%;padding:16px 20px;min-height:0;max-height:calc(100% - 70px);overflow:auto}.atlas-conversation-bubble h2{font-size:25px;margin:4px 0 9px}.atlas-conversation-line{font-size:17px;min-height:0;margin-bottom:10px}.atlas-conversation-choice{min-height:38px;padding:7px 10px;font-size:12px}.atlas-conversation-caption{margin-top:9px}}
 @media(prefers-reduced-motion:reduce){.atlas-conversation *{animation:none!important}.atlas-conversation[data-expression=normal][data-speaking=true] .is-normal{opacity:1}.atlas-conversation[data-expression=normal][data-speaking=true] .is-speaking{opacity:0}}
+
+/* A square sprite viewport keeps all six expressions in exactly the same position. */
+.atlas-conversation-portrait{display:flex;align-items:flex-end;justify-content:center}
+.atlas-conversation-sprite{position:relative;flex:none;max-width:100%;max-height:100%;overflow:hidden}
+.atlas-conversation-sheet{display:block;background-repeat:no-repeat;background-size:300% 200%}
+.atlas-conversation[data-expression=smiling] .is-smiling,.atlas-conversation[data-expression=serious] .is-serious,.atlas-conversation[data-expression=surprised] .is-surprised{opacity:1}
+.atlas-conversation[data-narration=true] .atlas-conversation-line{font-style:italic}
+.atlas-conversation-header{padding-top:max(18px,env(safe-area-inset-top,0px))}
+@media(max-width:760px){.atlas-conversation-bubble{bottom:max(14px,env(safe-area-inset-bottom,0px))}.atlas-conversation-header{padding-top:max(12px,env(safe-area-inset-top,0px))}}

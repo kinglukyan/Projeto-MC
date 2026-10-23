@@ -3421,6 +3421,15 @@ body.concept-ui #view-lore .lore-story-copy button{pointer-events:auto}
 @media(max-height:520px) and (min-width:761px){.atlas-conversation{height:calc(calc(var(--mythic-vh,1vh) * 100) - 16px);height:calc(100dvh - 16px)}.atlas-conversation-header{padding:8px 18px}.atlas-conversation-portrait{height:95%;width:55%;left:-3%}.atlas-conversation-bubble{bottom:16px;right:22px;width:51%;padding:16px 20px;min-height:0;max-height:calc(100% - 70px);overflow:auto}.atlas-conversation-bubble h2{font-size:25px;margin:4px 0 9px}.atlas-conversation-line{font-size:17px;min-height:0;margin-bottom:10px}.atlas-conversation-choice{min-height:38px;padding:7px 10px;font-size:12px}.atlas-conversation-caption{margin-top:9px}}
 @media(prefers-reduced-motion:reduce){.atlas-conversation *{animation:none!important}.atlas-conversation[data-expression=normal][data-speaking=true] .is-normal{opacity:1}.atlas-conversation[data-expression=normal][data-speaking=true] .is-speaking{opacity:0}}
 
+/* A square sprite viewport keeps all six expressions in exactly the same position. */
+.atlas-conversation-portrait{display:flex;align-items:flex-end;justify-content:center}
+.atlas-conversation-sprite{position:relative;flex:none;max-width:100%;max-height:100%;overflow:hidden}
+.atlas-conversation-sheet{display:block;background-repeat:no-repeat;background-size:300% 200%}
+.atlas-conversation[data-expression=smiling] .is-smiling,.atlas-conversation[data-expression=serious] .is-serious,.atlas-conversation[data-expression=surprised] .is-surprised{opacity:1}
+.atlas-conversation[data-narration=true] .atlas-conversation-line{font-style:italic}
+.atlas-conversation-header{padding-top:max(18px,env(safe-area-inset-top,0px))}
+@media(max-width:760px){.atlas-conversation-bubble{bottom:max(14px,env(safe-area-inset-bottom,0px))}.atlas-conversation-header{padding-top:max(12px,env(safe-area-inset-top,0px))}}
+
 /* webapp-upgrade.css */
 .resource-download{width:min(420px,calc(100vw - 48px));display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;color:#f6df9e}.resource-download progress{appearance:none;width:100%;height:12px;border:1px solid #bb944a;border-radius:12px;overflow:hidden;background:#1b1226}.resource-download progress::-webkit-progress-bar{background:#1b1226}.resource-download progress::-webkit-progress-value{background:linear-gradient(90deg,#a47236,#ffe7a0)}.resource-download progress::-moz-progress-bar{background:linear-gradient(90deg,#a47236,#ffe7a0)}.resource-download small,.resource-download button{grid-column:1/-1;font-size:12px;line-height:1.6;text-align:center}.loading-screen:has(.resource-download)>.loading-track{display:none}
 html{--safe-top:env(safe-area-inset-top,0px);--safe-bottom:env(safe-area-inset-bottom,0px)}
