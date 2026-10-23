@@ -1,7 +1,7 @@
-REVISÃO 2026.10.22.2 — PROJETO MC ENVIADO PELO PROPRIETÁRIO
+ATUALIZAÇÃO 2026.10.22.3 — UNIVERSO, DESEMPATE ONLINE 1x1 E ÍCONES ÉPICOS
 
-Leia PUBLICAR-ESTA-REVISAO.md para SQLs 057–059 e configuração privada do QR na Vercel.
-Leia REVISAO-PROJETO-MC.md para o que mudou e as limitações de validação.
-Padrões de arte: PADROES-DE-ARTE.md.
-Ideias de personagens: NOVOS-MONSTROS-SUGESTOES.md.
-O site online não foi publicado automaticamente por esta entrega.
+Leia UNIVERSO-DESEMPATE-ICONES.md.
+Aplicar SQL 060 após 059 e publicar pelo GitHub/Vercel.
+Prévia das 17 artes: icones-epicos.html.
+Prompts e PNGs originais preservados em _manutencao.
+A publicação online e validação com duas contas permanecem pendentes.

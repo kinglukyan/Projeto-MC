@@ -25,3 +25,5 @@ ORDEM DE TRABALHO
 7. Preservar o original e exportar uma versão pública sem distorcer proporções.
 
 Para personagens já aprovados, uma solicitação explícita do proprietário pode alterar a identidade. Sem essa solicitação, preservar a identidade existente. Não inventar substituições por falta de referência.
+
+04-ICONES-EPICOS.txt — padrão de emblemas de modos, estratégias de baralhos e marcos.

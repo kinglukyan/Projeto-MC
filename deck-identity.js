@@ -6,7 +6,7 @@
 
  const icons=fac.map(([key,name,asset])=>({key:'faction-'+key,name,group:'Facções',asset:'assets/card-badges/'+asset+'.png'}));
  const labels={eclipse:'Eclipse',matilha:'Matilha',pelotao:'Pelotão',submundo:'Submundo',convergencia:'Convergência',realeza:'Realeza',caos:'Caos',arsenal:'Arsenal',lunar:'Lunar',protecao:'Proteção',ofensiva:'Ofensiva',combos:'Combos'};
- for(const [key,name] of Object.entries(labels))icons.push({key,name,group:'Estratégias',asset:`assets/deck-icons/${key}.svg?v=20261022`});
+ for(const [key,name] of Object.entries(labels))icons.push({key,name,group:'Estratégias',asset:`assets/deck-icons/epic/${key}.webp`});
  const palette=['#44305E','#204E69','#1C6555','#7F293E','#86502C','#727031','#343C59','#20222D','#684D92','#A17C32'];
  const valid=value=>/^#[a-f0-9]{6}$/i.test(value||'');
  const find=key=>icons.find(i=>i.key===key)||icons.find(i=>i.key==='convergencia');

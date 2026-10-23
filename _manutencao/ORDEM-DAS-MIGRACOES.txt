@@ -1,65 +1,58 @@
-ORDEM DOS SCRIPTS DO BANCO
+APLICAR EM ORDEM. Para esta atualização, somente 060 se até 059 já foi aplicado.
 
-Instalação nova: aplicar os arquivos abaixo nesta ordem.
-Banco existente: verificar primeiro quais scripts já foram aplicados e executar apenas os pendentes.
-Publicar o site não aplica os scripts automaticamente.
-Alguns arquivos têm prefixos iguais; preserve a ordem da lista completa.
-Não reaplicar todos os scripts no banco de produção.
-
-01. 202609270001_online_game.sql
-02. 202609270002_progression_store.sql
-03. 202609270003_admin_console.sql
-04. 202609270004_profile_icons_and_intro.sql
-05. 202609270005_card_customizer.sql
-06. 202609270006_tutorial_level_two.sql
-07. 202609270007_fix_admin_player_list.sql
-08. 202609270008_medusa_rank_history.sql
-09. 202610130001_live_features.sql
-10. 202610160001_game_systems.sql
-11. 202610160002_admin_tournament_creation.sql
-12. 202610160002_greek_gods_cards.sql
-13. 202610160003_player_profiles.sql
-14. 202610160004_duo_matchmaking.sql
-15. 202610170001_titles_medals.sql
-16. 202610170002_card_art_holograms.sql
-17. 202610170003_corrected_cards.sql
-18. 202610170004_human_cards.sql
-19. 202610170005_terrain_cards.sql
-20. 202610170006_location_cards.sql
-21. 202610170007_equipment_cards.sql
-22. 202610170008_eclipse_event.sql
-23. 202610170009_loki_card.sql
-24. 202610170010_all_character_abilities.sql
-25. 202610170011_norse_guardian_card.sql
-26. 202610170012_cinematic_arcane_update.sql
-27. 202610170013_inventory_shop_onboarding.sql
-28. 202610170014_owned_collection_icons.sql
-29. 202610170015_deck_builder_14_35.sql
-30. 202610170016_delete_builder_deck.sql
-31. 202610170017_player_icons_seven_decks.sql
-32. 202610170018_audit_hardening.sql
-33. 202610170019_norse_guardian_synergy.sql
-34. 202610170020_replace_zones.sql
-35. 202610170021_friend_presence.sql
-36. 202610180022_round_zone_cleanup.sql
-37. 202610180023_eclipse_monster_forms.sql
-38. 202610180024_lane_buffs_apollo_aura.sql
-39. 202610180025_approved_card_rules.sql
-40. 202610180026_welcome_starter_pack.sql
-41. 202610180027_alyn_starter_pack.sql
-42. 202610180028_admin_portal_controls.sql
-43. 202610180029_admin_role_codes.sql
-44. 202610180030_random_eclipse_tiebreak.sql
-45. 202610180031_match_deck_catalog_fix.sql
-46. 202610180032_round_stars_and_result.sql
-47. 202610180033_tiebreak_deck_counters.sql
-48. 202610190034_rank_strix_stars.sql
-49. 202610190035_convergence_lobby.sql
-50. 202610190036_invite_session_recovery.sql
-51. 202610190037_security_and_fair_play.sql
-52. 202610190038_custom_room_lobby.sql
-53. 202610190039_match_report.sql
-
+202609270001_online_game.sql
+202609270002_progression_store.sql
+202609270003_admin_console.sql
+202609270004_profile_icons_and_intro.sql
+202609270005_card_customizer.sql
+202609270006_tutorial_level_two.sql
+202609270007_fix_admin_player_list.sql
+202609270008_medusa_rank_history.sql
+202610130001_live_features.sql
+202610160001_game_systems.sql
+202610160002_admin_tournament_creation.sql
+202610160002_greek_gods_cards.sql
+202610160003_player_profiles.sql
+202610160004_duo_matchmaking.sql
+202610170001_titles_medals.sql
+202610170002_card_art_holograms.sql
+202610170003_corrected_cards.sql
+202610170004_human_cards.sql
+202610170005_terrain_cards.sql
+202610170006_location_cards.sql
+202610170007_equipment_cards.sql
+202610170008_eclipse_event.sql
+202610170009_loki_card.sql
+202610170010_all_character_abilities.sql
+202610170011_norse_guardian_card.sql
+202610170012_cinematic_arcane_update.sql
+202610170013_inventory_shop_onboarding.sql
+202610170014_owned_collection_icons.sql
+202610170015_deck_builder_14_35.sql
+202610170016_delete_builder_deck.sql
+202610170017_player_icons_seven_decks.sql
+202610170018_audit_hardening.sql
+202610170019_norse_guardian_synergy.sql
+202610170020_replace_zones.sql
+202610170021_friend_presence.sql
+202610180022_round_zone_cleanup.sql
+202610180023_eclipse_monster_forms.sql
+202610180024_lane_buffs_apollo_aura.sql
+202610180025_approved_card_rules.sql
+202610180026_welcome_starter_pack.sql
+202610180027_alyn_starter_pack.sql
+202610180028_admin_portal_controls.sql
+202610180029_admin_role_codes.sql
+202610180030_random_eclipse_tiebreak.sql
+202610180031_match_deck_catalog_fix.sql
+202610180032_round_stars_and_result.sql
+202610180033_tiebreak_deck_counters.sql
+202610190034_rank_strix_stars.sql
+202610190035_convergence_lobby.sql
+202610190036_invite_session_recovery.sql
+202610190037_security_and_fair_play.sql
+202610190038_custom_room_lobby.sql
+202610190039_match_report.sql
 202610200040_remake_character_collection.sql
 202610200041_remake_chibi_icons.sql
 202610200042_deck_identity_direct_room.sql
@@ -69,6 +62,15 @@ Não reaplicar todos os scripts no banco de produção.
 202610200046_match_surrender.sql
 202610200047_card_bonus_alias_fix.sql
 202610210048_resume_active_matches_only.sql
-
-050 — 202610210050_audit_rules_and_mode_guards.sql
-051 — 202610210051_post_match_effect_details.sql
+202610210049_rewards_and_tournament_hub.sql
+202610210050_audit_rules_and_mode_guards.sql
+202610210051_post_match_effect_details.sql
+202610210052_progression_rewards_atlas.sql
+202610210053_greek_roster_placeholders.sql
+202610220054_ability_choices_and_bot_pacing.sql
+202610220055_unique_atlas_and_greek_characters.sql
+202610220056_store_code_redemption.sql
+202610220057_social_guilds_community.sql
+202610220058_device_login_private.sql
+202610220059_solo_tiebreak.sql
+202610220060_online_tiebreak_1v1.sql

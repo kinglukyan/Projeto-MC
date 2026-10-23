@@ -1,0 +1,21 @@
+/* Image layout owns its dimensions; no empty background layer or percentage-height dependency. */
+html body.mythic-rework.concept-ui #view-lore .concept-story-banner[data-custom-banner]{display:block!important;height:auto!important;min-height:0!important;padding:0!important;overflow:hidden;background:#160f21!important}
+html body.mythic-rework.concept-ui #view-lore .concept-story-banner[data-custom-banner] .universe-banner-media{position:relative!important;display:block!important;isolation:isolate;width:100%;aspect-ratio:2/1;min-height:0!important;overflow:hidden;background:#160f21}
+html body.mythic-rework.concept-ui #view-lore .universe-banner-media>.universe-banner-image{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:none!important;object-fit:cover!important;transform:none!important;opacity:1!important;filter:none!important;z-index:0}
+html body.mythic-rework.concept-ui #view-lore .universe-banner-media>.universe-image-fallback{object-fit:contain!important}
+html body.mythic-rework.concept-ui #view-lore .universe-banner-media>.concept-story-banner-copy{position:absolute!important;inset:auto 0 0!important;display:flex!important;min-height:0!important;height:auto!important;padding:20px 26px!important;z-index:2;pointer-events:none;background:linear-gradient(0deg,#100a19f5,#100a1970,transparent)!important}
+html body.mythic-rework.concept-ui #view-lore .universe-banner-media>.concept-story-banner-copy button{pointer-events:auto}
+html body.mythic-rework.concept-ui #view-lore .concept-story-banner>.universe-story-text{position:relative;display:block;z-index:1}
+html body.mythic-rework.concept-ui #view-lore .concept-story-banner>.universe-story-text[hidden]{display:none!important}
+html body.mythic-rework.concept-ui #view-lore .lore-story-art[data-custom-banner]>.universe-banner-image{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:1;transform:none;filter:none}
+html body.mythic-rework.concept-ui #view-lore .lore-story-art[data-custom-banner]{background:#160f21;overflow:hidden}
+.tiebreak-online-dialog{width:min(640px,calc(100vw - 28px));max-height:calc(100dvh - 50px - env(safe-area-inset-top,0px));overflow:auto;background:#1b1328;color:#f1e1bb;border:1px solid #d6b46b;border-radius:18px;padding:28px;box-sizing:border-box;line-height:1.6}
+.tiebreak-online-dialog::backdrop{background:#080510df;backdrop-filter:blur(8px)}
+.tiebreak-online-dialog>img{display:block;width:140px;height:140px;object-fit:contain;margin:auto}
+.tiebreak-online-dialog h2{color:#f4d895;text-align:center}.tiebreak-online-dialog label{display:grid;gap:10px;margin:20px 0}.tiebreak-online-dialog select{max-width:100%;width:100%;font:inherit;padding:12px;color:#f1e1bb;background:#261b35;border:1px solid #a88e61;border-radius:6px}.tiebreak-online-dialog>button{margin:10px 10px 0 0}
+.tiebreak-online-status{min-height:52px;line-height:1.7;color:#dcc6ee}.tiebreak-online-status.is-waiting::before{content:'';display:inline-block;width:13px;height:13px;margin-right:10px;border:2px solid #a68ab8;border-top-color:#ffd77d;border-radius:50%;animation:tb-search 1s linear infinite}.tiebreak-online-card>img{object-fit:contain!important}.legend-medal img{object-fit:contain}.deck-emblem img[src*='/epic/']{filter:drop-shadow(0 2px 4px #0008)}
+@keyframes tb-search{to{transform:rotate(360deg)}}
+@media(max-width:600px){html body.mythic-rework.concept-ui #view-lore .concept-story-banner[data-custom-banner] .universe-banner-media{aspect-ratio:auto}html body.mythic-rework.concept-ui #view-lore .universe-banner-media>.universe-banner-image{position:relative!important;height:auto!important;aspect-ratio:2/1}html body.mythic-rework.concept-ui #view-lore .universe-banner-media>.concept-story-banner-copy{position:relative!important;inset:auto!important;padding:18px!important;background:#160f21!important}.tiebreak-online-dialog{padding:20px}}
+@media(prefers-reduced-motion:reduce){.tiebreak-online-status.is-waiting::before{animation:none}}
+
+.tiebreak-pending-result[hidden]{display:none!important}

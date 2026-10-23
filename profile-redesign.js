@@ -54,7 +54,7 @@
       const complete=value>=target;if(complete)earned++;
       const item=el('article',complete?'earned':'');
       const medal=el('span','legend-medal'),art=el('img');
-      art.src=window.MythicSecurity.assetUrl(`assets/profile-achievements/${icon}.svg`);art.alt='';art.width=80;art.height=80;art.loading='lazy';medal.append(art);
+      art.src=window.MythicSecurity.assetUrl(`assets/profile-achievements/epic/${icon}.webp`);art.alt='';art.width=80;art.height=80;art.loading='lazy';medal.append(art);
       item.append(medal,el('b','',title));
       const bar=el('progress');bar.max=target;bar.value=Math.min(value,target);bar.setAttribute('aria-label',title);
       item.append(bar,el('small','',`${Math.min(value,target)} / ${target}`),el('span','legend-achievement-state',complete?'Concluída':'Em progresso'));

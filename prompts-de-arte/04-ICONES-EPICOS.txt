@@ -1,0 +1,7 @@
+MYTHIC CLASH — PADRÃO DE EMBLEMAS ÉPICOS
+
+Referências: assets/concept-ui/mode-normal.png, assets/concept-ui/mode-ranked.png e assets/identity-v2/medal-atlas.webp.
+Prompt base: Criar UM emblema individual de [TEMA], com ouro antigo esculpido, materiais metálicos com volume, gravuras finas, esmalte safira/ametista e reflexos polidos, no mesmo acabamento dos emblemas de modo de Mythic Clash. Silhueta forte e legível em tamanho pequeno, composição compacta centralizada e todos os elementos dentro do quadro. Fundo genuinamente transparente fora do emblema. Sem texto, números, letras, marca-d'água, interface, montagem ou grade. Não usar vetor plano ou aparência de plástico. Para marcos, manter a família de medalhão circular com louros e fita violeta. Preservar quatro pontas no símbolo de Convergência. Gerar um arquivo por ícone.
+
+Prompts completos dos 17 arquivos desta coleção: _manutencao/prompts-icones-epicos.json.
+Guardar o PNG aprovado e exportar a versão pública sem distorção. Conferir tema, transparência, integridade das bordas e leitura em tamanho pequeno antes de integrar.

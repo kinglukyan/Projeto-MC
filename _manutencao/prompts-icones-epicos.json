@@ -1,0 +1,120 @@
+{
+  "generator": "image_gen (ferramenta integrada)",
+  "reference": "assets/concept-ui/mode-normal.png e assets/identity-v2/medal-atlas.webp",
+  "assets": [
+    {
+      "key": "mode-tiebreak",
+      "kind": "mode",
+      "prompt": "Use case logo-brand. ONE production game MODE EMBLEM, Mythic Clash DESEMPATE online 1v1. Style references are the provided existing Normal and Ranked mode emblems: luxurious sculpted antique gold, deep sapphire enamel, sharp engraved details, realistic dimensional metal with polished highlights, symmetrical heraldic composition. Design a unique emblem: two small matching ancient warrior helmets facing each other across a central upright balance scale; above the scale a solar disk and silver crescent fit together into a glowing eclipse. Golden laurel branches cradle the lower sides and discreet sapphire and amethyst gems unify it. Clear central silhouette readable at 140px. One centered isolated emblem in square canvas, ALL objects and laurel tips within canvas with 9 percent padding. No letters, numbers, text, banner labels, logos, watermark, no extra tiles. Genuine transparent background outside emblem, not black background. Match gold material and depth of references, keep silhouette less complex than ranked emblem."
+    },
+    {
+      "key": "eclipse",
+      "kind": "deck",
+      "subject": "An eclipsed sun: polished golden solar rays embracing a dark amethyst moon, fine silver crescent and a central blue crystal, compact circular silhouette.",
+      "prompt": "Use case logo-brand. Single production epic deck icon for Mythic Clash. Match the reference emblem's luxurious dimensional engraved antique gold, polished highlights, dark sapphire enamel and meticulously painted sculpted metal. An eclipsed sun: polished golden solar rays embracing a dark amethyst moon, fine silver crescent and a central blue crystal, compact circular silhouette. Centered strong silhouette readable at 48px, thick distinct forms, all parts inside square with 10 percent padding. No text, lettering, numbers, watermark, interface, grid or other icons. Genuine transparent background outside this single isolated emblem. No flat vector style or plastic render."
+    },
+    {
+      "key": "matilha",
+      "kind": "deck",
+      "subject": "A majestic silver wolf head in frontal view, alert ears and sapphire eyes, supported by a small golden laurel crescent. Powerful noble pack leader, not cartoon.",
+      "prompt": "Use case logo-brand. Single epic deck emblem for Mythic Clash matching reference antique sculpted gold, meticulous dimensional fantasy metal, polished highlights and sapphire enamel. A majestic silver wolf head in frontal view, alert ears and sapphire eyes, supported by a small golden laurel crescent. Powerful noble pack leader, not cartoon. Readable at 48px. Center one compact emblem on square, 10% transparent padding, no cropped ears or tips. No text, numbers, labels, logos, UI, grid, flat vector art or plastic. Genuine transparent background outside emblem."
+    },
+    {
+      "key": "pelotao",
+      "kind": "deck",
+      "subject": "Three ancient Greek warrior helmets arranged in a triangular formation, larger central gold helmet with deep sapphire crest and two smaller helmets, compact golden laurel below.",
+      "prompt": "Use case logo-brand. Single epic deck emblem for Mythic Clash matching reference antique sculpted gold, meticulous dimensional fantasy metal, polished highlights and sapphire enamel. Three ancient Greek warrior helmets arranged in a triangular formation, larger central gold helmet with deep sapphire crest and two smaller helmets, compact golden laurel below. Readable at 48px. Center one compact emblem on square, 10% transparent padding, no cropped tips. No text, numbers, labels, logos, UI, grid, flat vector art or plastic. Genuine transparent background outside emblem."
+    },
+    {
+      "key": "submundo",
+      "kind": "deck",
+      "subject": "A monumental black obsidian Underworld gate with ornate gold trim, two gold skull finials and a luminous deep violet portal, compact gate emblem, no lettering.",
+      "prompt": "Use case logo-brand. ONE production epic deck emblem matching the reference's luxurious antique engraved gold, dimensional painted metal, polished highlights and dark sapphire enamel. A monumental black obsidian Underworld gate with ornate gold trim, two gold skull finials and a luminous deep violet portal, compact gate emblem, no lettering. Bold compact silhouette readable at 48px. Square canvas with transparent margin, all tips entirely visible. No text, letters, numbers, watermark, interface, grid or other icons. Genuine transparent background around the isolated emblem. No flat vector style or plastic render.",
+      "source": "C:\\Users\\Santo\\.codex\\generated_images\\01a0e14f-988c-7260-b67d-230cb9520c68\\exec-3cedcd97-7a1b-48bb-b2c3-1f7b869e748f.png"
+    },
+    {
+      "key": "convergencia",
+      "kind": "deck",
+      "subject": "ONE radiant FOUR-POINT golden diamond star, four long cardinal points with deep sapphire diamond crystal at exact center, a thin violet circular energy halo. Exactly four main points, NOT an eight-point compass. Symmetric elegant Mythic Clash convergence motif.",
+      "prompt": "Use case logo-brand. ONE production epic deck emblem matching the reference's luxurious antique engraved gold, dimensional painted metal, polished highlights and dark sapphire enamel. ONE radiant FOUR-POINT golden diamond star, four long cardinal points with deep sapphire diamond crystal at exact center, a thin violet circular energy halo. Exactly four main points, NOT an eight-point compass. Symmetric elegant Mythic Clash convergence motif. Bold compact silhouette readable at 48px. Square canvas with transparent margin, all tips entirely visible. No text, letters, numbers, watermark, interface, grid or other icons. Genuine transparent background around the isolated emblem. No flat vector style or plastic render.",
+      "source": "C:\\Users\\Santo\\.codex\\generated_images\\01a0e14f-988c-7260-b67d-230cb9520c68\\exec-084583b1-9a57-48b2-983a-5539222e6998.png"
+    },
+    {
+      "key": "realeza",
+      "kind": "deck",
+      "subject": "A regal antique gold crown with five pointed tips, amethyst and ruby gemstones and sapphire enamel inner cushion, small golden laurel at its base.",
+      "prompt": "Use case logo-brand. ONE production epic deck emblem matching the reference's luxurious antique engraved gold, dimensional painted metal, polished highlights and dark sapphire enamel. A regal antique gold crown with five pointed tips, amethyst and ruby gemstones and sapphire enamel inner cushion, small golden laurel at its base. Bold compact silhouette readable at 48px. Square canvas with transparent margin, all tips entirely visible. No text, letters, numbers, watermark, interface, grid or other icons. Genuine transparent background around the isolated emblem. No flat vector style or plastic render.",
+      "source": "C:\\Users\\Santo\\.codex\\generated_images\\01a0e14f-988c-7260-b67d-230cb9520c68\\exec-f6edc208-dab1-482c-b794-d3045df1a5f7.png"
+    },
+    {
+      "key": "caos",
+      "kind": "deck",
+      "subject": "A shattered dark crimson crystal with large sculpted gold fragments spiraling around it, violet energy visible between three bold fragments, compact asymmetric but legible chaos emblem.",
+      "prompt": "Use case logo-brand. ONE epic production deck emblem for Mythic Clash, matching reference luxurious sculpted antique gold, detailed dimensional fantasy metal, polished highlights and sapphire enamel. A shattered dark crimson crystal with large sculpted gold fragments spiraling around it, violet energy visible between three bold fragments, compact asymmetric but legible chaos emblem. Compact bold silhouette readable at 48px, square canvas, entire emblem visible with transparent margin. No text, letters, numbers, grid, interface, watermark or additional icons. Genuine transparent background outside emblem. No flat vector or plastic.",
+      "source": "C:\\Users\\Santo\\.codex\\generated_images\\01a0e14f-988c-7260-b67d-230cb9520c68\\exec-5f397466-791d-462c-a003-06477ffeb6ae.png"
+    },
+    {
+      "key": "arsenal",
+      "kind": "deck",
+      "subject": "One ornate silver broadsword crossed with a gilded battle axe in front of a compact round sapphire shield, decorated gold handles and small bronze rivets.",
+      "prompt": "Use case logo-brand. ONE epic production deck emblem for Mythic Clash, matching reference luxurious sculpted antique gold, detailed dimensional fantasy metal, polished highlights and sapphire enamel. One ornate silver broadsword crossed with a gilded battle axe in front of a compact round sapphire shield, decorated gold handles and small bronze rivets. Compact bold silhouette readable at 48px, square canvas, entire emblem visible with transparent margin. No text, letters, numbers, grid, interface, watermark or additional icons. Genuine transparent background outside emblem. No flat vector or plastic.",
+      "source": "C:\\Users\\Santo\\.codex\\generated_images\\01a0e14f-988c-7260-b67d-230cb9520c68\\exec-8cc6b383-b605-4fe8-bf18-6c749cf5668d.png"
+    },
+    {
+      "key": "lunar",
+      "kind": "deck",
+      "subject": "A large elegant silver crescent moon holding a suspended sapphire-blue spherical moonstone, framed by a thin golden engraved orbit and two small star-shaped gold accents.",
+      "prompt": "Use case logo-brand. ONE epic production deck emblem for Mythic Clash, matching reference luxurious sculpted antique gold, detailed dimensional fantasy metal, polished highlights and sapphire enamel. A large elegant silver crescent moon holding a suspended sapphire-blue spherical moonstone, framed by a thin golden engraved orbit and two small star-shaped gold accents. Compact bold silhouette readable at 48px, square canvas, entire emblem visible with transparent margin. No text, letters, numbers, grid, interface, watermark or additional icons. Genuine transparent background outside emblem. No flat vector or plastic.",
+      "source": "C:\\Users\\Santo\\.codex\\generated_images\\01a0e14f-988c-7260-b67d-230cb9520c68\\exec-22b926f4-4516-4171-b653-14c03c2b0115.png"
+    },
+    {
+      "key": "protecao",
+      "kind": "deck",
+      "subject": "A massive heraldic emerald shield with polished sculpted gold edging and a central raised gold lion, two short golden laurel branches underneath. Defensive protection emblem.",
+      "prompt": "Use case logo-brand. ONE epic production deck emblem for Mythic Clash, matching reference luxurious sculpted antique gold, detailed dimensional fantasy metal, polished highlights and sapphire enamel. A massive heraldic emerald shield with polished sculpted gold edging and a central raised gold lion, two short golden laurel branches underneath. Defensive protection emblem. Compact bold silhouette readable at 48px, square canvas, entire emblem visible with transparent margin. No text, letters, numbers, grid, interface, watermark or additional icons. Genuine transparent background outside emblem. No flat vector or plastic.",
+      "source": "C:\\Users\\Santo\\.codex\\generated_images\\01a0e14f-988c-7260-b67d-230cb9520c68\\exec-995de175-a8b9-4388-b6a9-8be684d9ffe7.png"
+    },
+    {
+      "key": "ofensiva",
+      "kind": "deck",
+      "subject": "A powerful upright gold and silver spearhead above two short crossed swords, contained crimson flame-shaped enamel accents at the base. Compact aggressive offensive emblem.",
+      "prompt": "Use case logo-brand. ONE epic production deck icon for Mythic Clash, match the provided reference's sculpted antique gold, detailed dimensional fantasy metal, polished highlights, sapphire and amethyst enamel. A powerful upright gold and silver spearhead above two short crossed swords, contained crimson flame-shaped enamel accents at the base. Compact aggressive offensive emblem. Strong compact silhouette readable at 64px. Square canvas, all tips visible with margin. No text, letters, numbers, grid, interface, watermark or additional icons. Genuine transparent background outside emblem. No flat vector or plastic.",
+      "source": "C:\\Users\\Santo\\.codex\\generated_images\\01a0e14f-988c-7260-b67d-230cb9520c68\\exec-0b2e3507-b314-4a11-8487-33b4fcac24e7.png"
+    },
+    {
+      "key": "combos",
+      "kind": "deck",
+      "subject": "Three large interlocking ornate golden chain links forming a compact triangular knot, three sapphire and amethyst gems at the intersections. Clear linked-combination symbol.",
+      "prompt": "Use case logo-brand. ONE epic production deck icon for Mythic Clash, match the provided reference's sculpted antique gold, detailed dimensional fantasy metal, polished highlights, sapphire and amethyst enamel. Three large interlocking ornate golden chain links forming a compact triangular knot, three sapphire and amethyst gems at the intersections. Clear linked-combination symbol. Strong compact silhouette readable at 64px. Square canvas, all tips visible with margin. No text, letters, numbers, grid, interface, watermark or additional icons. Genuine transparent background outside emblem. No flat vector or plastic.",
+      "source": "C:\\Users\\Santo\\.codex\\generated_images\\01a0e14f-988c-7260-b67d-230cb9520c68\\exec-baaf3433-fa51-45a7-879f-9e9f187d58bf.png"
+    },
+    {
+      "key": "first-victory",
+      "kind": "milestone",
+      "subject": "FIRST VICTORY achievement: a pair of large polished golden crossed swords on a sapphire blue enamel medallion, elegant golden laurel rim, small purple ribbon above.",
+      "prompt": "Use case logo-brand. ONE epic production seasonal milestone medal for Mythic Clash, match the provided reference's sculpted antique gold, detailed dimensional fantasy metal, polished highlights, sapphire and amethyst enamel. FIRST VICTORY achievement: a pair of large polished golden crossed swords on a sapphire blue enamel medallion, elegant golden laurel rim, small purple ribbon above. Strong compact silhouette readable at 64px. Square canvas, all tips visible with margin. No text, letters, numbers, grid, interface, watermark or additional icons. Genuine transparent background outside emblem. No flat vector or plastic.",
+      "source": "C:\\Users\\Santo\\.codex\\generated_images\\01a0e14f-988c-7260-b67d-230cb9520c68\\exec-be6a6bd3-e947-43de-9ead-6ba929ab5cc9.png"
+    },
+    {
+      "key": "ten-victories",
+      "kind": "milestone",
+      "subject": "TEN VICTORIES achievement: a grand upright silver castle rook with three battlements, standing on a sapphire and gold shield-medallion, golden laurel rim, small purple ribbon above.",
+      "prompt": "Use case logo-brand. ONE production seasonal milestone achievement medal for Mythic Clash, match the reference's sculpted antique gold, deep violet and sapphire enamel, intricate dimensional fantasy metal and polished highlights. TEN VICTORIES achievement: a grand upright silver castle rook with three battlements, standing on a sapphire and gold shield-medallion, golden laurel rim, small purple ribbon above. Same consistent circular medal family as reference, strong central symbol readable at 80px. Exactly one medal on square canvas with transparent margin. No text, letters, numbers, labels, other medals, grid, watermark or interface. Genuine transparent background outside the medal. No flat vector or plastic.",
+      "source": "C:\\Users\\Santo\\.codex\\generated_images\\01a0e14f-988c-7260-b67d-230cb9520c68\\exec-983834e8-dcc2-45ab-be62-8066669043bd.png"
+    },
+    {
+      "key": "twenty-five-duels",
+      "kind": "milestone",
+      "subject": "TWENTY-FIVE DUELS achievement: three ornate gold-edged purple playing cards fanned behind a large radiant FOUR-POINT golden diamond star with sapphire center, gold circular laurel rim and small purple ribbon above. Exactly four star points, not compass.",
+      "prompt": "Use case logo-brand. ONE production seasonal milestone achievement medal for Mythic Clash, match the reference's sculpted antique gold, deep violet and sapphire enamel, intricate dimensional fantasy metal and polished highlights. TWENTY-FIVE DUELS achievement: three ornate gold-edged purple playing cards fanned behind a large radiant FOUR-POINT golden diamond star with sapphire center, gold circular laurel rim and small purple ribbon above. Exactly four star points, not compass. Same consistent circular medal family as reference, strong central symbol readable at 80px. Exactly one medal on square canvas with transparent margin. No text, letters, numbers, labels, other medals, grid, watermark or interface. Genuine transparent background outside the medal. No flat vector or plastic.",
+      "source": "C:\\Users\\Santo\\.codex\\generated_images\\01a0e14f-988c-7260-b67d-230cb9520c68\\exec-c92852cf-3273-4646-94d7-9d394ae53ad4.png"
+    },
+    {
+      "key": "five-streak",
+      "kind": "milestone",
+      "subject": "FIVE CONSECUTIVE VICTORIES achievement: a magnificent five-pointed gold royal crown with exactly five bright amethyst jewels, above a compact blue enamel medallion with upward swept golden laurels, small purple ribbon above.",
+      "prompt": "Use case logo-brand. ONE production seasonal milestone achievement medal for Mythic Clash, match the reference's sculpted antique gold, deep violet and sapphire enamel, intricate dimensional fantasy metal and polished highlights. FIVE CONSECUTIVE VICTORIES achievement: a magnificent five-pointed gold royal crown with exactly five bright amethyst jewels, above a compact blue enamel medallion with upward swept golden laurels, small purple ribbon above. Same consistent circular medal family as reference, strong central symbol readable at 80px. Exactly one medal on square canvas with transparent margin. No text, letters, numbers, labels, other medals, grid, watermark or interface. Genuine transparent background outside the medal. No flat vector or plastic.",
+      "source": "C:\\Users\\Santo\\.codex\\generated_images\\01a0e14f-988c-7260-b67d-230cb9520c68\\exec-be704e55-8549-431d-bec5-e9dfee1ab6d7.png"
+    }
+  ]
+}

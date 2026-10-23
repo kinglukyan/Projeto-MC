@@ -15,7 +15,7 @@
   skip=button('Reduzir animações',()=>{fast=true;dialog.classList.add('tb-reduced');flush();});skip.className='tb-skip';
   shell.append(skip,top,history,stage,actions);dialog.append(shell);document.body.append(dialog);dialog.addEventListener('cancel',e=>e.preventDefault());
  }
- function finalAction(data){actions.replaceChildren(button(data?.standalone?'Voltar à Arena':'Ver resumo da partida',()=>{close();if(data?.standalone)window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'arena'}}));else document.querySelector('#tie-break-continue')?.click();}));}
+ function finalAction(data){const done=button(data?.standalone?'Voltar à Arena':'Ver resumo da partida',async()=>{if(done.disabled)return;done.disabled=true;try{if(data?.online_tiebreak)await window.MythicTiebreakOnline.complete(data.match_id);close();if(data?.standalone)window.dispatchEvent(new CustomEvent('mythic-open-view',{detail:{view:'arena'}}));else document.querySelector('#tie-break-continue')?.click();}catch(e){subtitle.textContent=e.message;done.disabled=false;}});actions.replaceChildren(done);}
  function nextAction(text){return new Promise(resolve=>{continueStep=resolve;actions.replaceChildren(button(text,()=>{continueStep=null;actions.replaceChildren();resolve();}));});}
  function setHeading(head,copy){title.textContent=head;subtitle.textContent=copy;}
  function side(name,cardId,sideKey){

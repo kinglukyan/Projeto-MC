@@ -1,0 +1,223 @@
+[
+  {
+    "kind": "mode",
+    "key": "mode-tiebreak",
+    "source": "_manutencao/artes-originais/epicos/mode-tiebreak.png",
+    "asset": "assets/mode-tiebreak.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1713716
+  },
+  {
+    "kind": "deck",
+    "key": "eclipse",
+    "source": "_manutencao/artes-originais/epicos/deck-eclipse.png",
+    "asset": "assets/deck-icons/epic/eclipse.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1756754
+  },
+  {
+    "kind": "deck",
+    "key": "matilha",
+    "source": "_manutencao/artes-originais/epicos/deck-matilha.png",
+    "asset": "assets/deck-icons/epic/matilha.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 2044704
+  },
+  {
+    "kind": "deck",
+    "key": "pelotao",
+    "source": "_manutencao/artes-originais/epicos/deck-pelotao.png",
+    "asset": "assets/deck-icons/epic/pelotao.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1810782
+  },
+  {
+    "kind": "deck",
+    "key": "submundo",
+    "source": "_manutencao/artes-originais/epicos/deck-submundo.png",
+    "asset": "assets/deck-icons/epic/submundo.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1835648
+  },
+  {
+    "kind": "deck",
+    "key": "convergencia",
+    "source": "_manutencao/artes-originais/epicos/deck-convergencia.png",
+    "asset": "assets/deck-icons/epic/convergencia.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1295434
+  },
+  {
+    "kind": "deck",
+    "key": "realeza",
+    "source": "_manutencao/artes-originais/epicos/deck-realeza.png",
+    "asset": "assets/deck-icons/epic/realeza.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1744046
+  },
+  {
+    "kind": "deck",
+    "key": "caos",
+    "source": "_manutencao/artes-originais/epicos/deck-caos.png",
+    "asset": "assets/deck-icons/epic/caos.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1835390
+  },
+  {
+    "kind": "deck",
+    "key": "arsenal",
+    "source": "_manutencao/artes-originais/epicos/deck-arsenal.png",
+    "asset": "assets/deck-icons/epic/arsenal.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 2064086
+  },
+  {
+    "kind": "deck",
+    "key": "lunar",
+    "source": "_manutencao/artes-originais/epicos/deck-lunar.png",
+    "asset": "assets/deck-icons/epic/lunar.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1468394
+  },
+  {
+    "kind": "deck",
+    "key": "protecao",
+    "source": "_manutencao/artes-originais/epicos/deck-protecao.png",
+    "asset": "assets/deck-icons/epic/protecao.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1907160
+  },
+  {
+    "kind": "deck",
+    "key": "ofensiva",
+    "source": "_manutencao/artes-originais/epicos/deck-ofensiva.png",
+    "asset": "assets/deck-icons/epic/ofensiva.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1251504
+  },
+  {
+    "kind": "deck",
+    "key": "combos",
+    "source": "_manutencao/artes-originais/epicos/deck-combos.png",
+    "asset": "assets/deck-icons/epic/combos.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1746784
+  },
+  {
+    "kind": "milestone",
+    "key": "first-victory",
+    "source": "_manutencao/artes-originais/epicos/milestone-first-victory.png",
+    "asset": "assets/profile-achievements/epic/first-victory.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1500792
+  },
+  {
+    "kind": "milestone",
+    "key": "ten-victories",
+    "source": "_manutencao/artes-originais/epicos/milestone-ten-victories.png",
+    "asset": "assets/profile-achievements/epic/ten-victories.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1601812
+  },
+  {
+    "kind": "milestone",
+    "key": "twenty-five-duels",
+    "source": "_manutencao/artes-originais/epicos/milestone-twenty-five-duels.png",
+    "asset": "assets/profile-achievements/epic/twenty-five-duels.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1670512
+  },
+  {
+    "kind": "milestone",
+    "key": "five-streak",
+    "source": "_manutencao/artes-originais/epicos/milestone-five-streak.png",
+    "asset": "assets/profile-achievements/epic/five-streak.webp",
+    "width": 1254,
+    "height": 1254,
+    "alpha_range": [
+      0,
+      255
+    ],
+    "bytes": 1639926
+  }
+]

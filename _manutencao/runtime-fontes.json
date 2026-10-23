@@ -64,5 +64,5 @@
   "assets/vendor/qrcodegen.js",
   "social-hub.js",
   "device-login.js",
-  "solo-tiebreak.js"
+  "online-tiebreak.js"
 ]
