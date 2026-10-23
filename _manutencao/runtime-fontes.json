@@ -70,5 +70,7 @@
   "online-tiebreak.js",
   "basic-packs-data.js",
   "basic-packs-store.js",
-  "store-control.js"
+  "store-control.js",
+  "admin-card-studio.js",
+  "admin-game-modes.js"
 ]

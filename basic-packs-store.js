@@ -51,8 +51,8 @@
  }
  function openPack(receipt){
   if(viewer?.dialog.open||!uid()||!receipt?.cards?.length)return;const who=uid(),d=dialog(receipt.name+' · Abrir pacote','basic-pack-opening');d.dataset.packOwner=who;
-  d.querySelector('header button').textContent='Continuar depois';const stage=el('div','basic-pack-opening-stage'),packet=el('div','basic-pack-large'),foil=img(receipt.front,receipt.name,false),strip=img(receipt.front,'',false);foil.className='basic-pack-large-body';strip.className='basic-pack-tear';packet.append(foil,strip);stage.append(packet);
-  const reveal=el('div','basic-pack-reveal'),art=img(receipt.cards[Math.min(receipt.revealed_count,receipt.cards.length-1)].art,'',false),cardName=el('h3'),counter=el('p'),hint=el('p','basic-pack-open-hint',receipt.revealed_count?'Continue revelando suas cartas.':'Toque em “Abrir pacote” para romper o selo.'),controls=el('div','basic-pack-opening-controls'),feedback=el('p');feedback.setAttribute('role','status');counter.setAttribute('aria-live','polite');reveal.append(art,cardName,counter);reveal.hidden=true;stage.append(reveal);d.append(stage,hint,feedback,controls);
+  d.querySelector('header button').textContent='Continuar depois';const stage=el('div','basic-pack-opening-stage'),packet=el('button','basic-pack-large'),foil=img(receipt.front,receipt.name,false),strip=img(receipt.front,'',false);foil.className='basic-pack-large-body';strip.className='basic-pack-tear';packet.type='button';packet.setAttribute('aria-label','Abrir pacote de '+receipt.name);packet.append(foil,strip);stage.append(packet);
+  const reveal=el('div','basic-pack-reveal'),art=img(receipt.cards[Math.min(receipt.revealed_count,receipt.cards.length-1)].art,'',false),cardName=el('h3'),counter=el('p'),hint=el('p','basic-pack-open-hint',receipt.revealed_count?'Continue revelando suas cartas.':'Toque ou clique no pacote para romper o selo.'),controls=el('div','basic-pack-opening-controls'),feedback=el('p');feedback.setAttribute('role','status');counter.setAttribute('aria-live','polite');reveal.append(art,cardName,counter);reveal.hidden=true;stage.append(reveal);d.append(stage,hint,feedback,controls);
   const scene={dialog:d,owner:who,purchase:receipt,timer:null,busy:false};viewer=scene;const valid=()=>viewer===scene&&d.open&&who===uid();
   function showCard(){
    if(!valid())return;packet.hidden=true;reveal.hidden=false;controls.replaceChildren();hint.textContent=receipt.test_mode?'Simulação: esta carta não será adicionada à coleção.':'Uma cópia desta carta já está disponível na sua coleção.';
@@ -67,13 +67,14 @@
    },true);controls.append(next);
   }
   async function tear(){
-   if(!valid()||scene.busy)return;scene.busy=true;controls.replaceChildren();hint.textContent='Abrindo seu pacote…';
+   if(!valid()||scene.busy)return;scene.busy=true;packet.disabled=true;controls.replaceChildren();hint.textContent='Abrindo seu pacote…';
    try{await art.decode?.();}catch{}
    if(!valid())return;d.classList.add('is-opening');
    const reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
    scene.timer=setTimeout(()=>{scene.busy=false;showCard();},reduced?0:1500);
   }
   art.onerror=()=>{if(valid())feedback.textContent='A imagem desta carta não carregou. Você pode continuar a abertura.';};
+  packet.onclick=tear;
   if(receipt.opened_at)showCard();else if(receipt.revealed_count)showCard();else controls.append(button('Abrir pacote',tear,true));
   d.addEventListener('close',()=>{clearTimeout(scene.timer);if(viewer===scene)viewer=null;if(who===uid())load(true);},{once:true});
  }

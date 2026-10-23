@@ -202,11 +202,13 @@
  // Admin category tabs preserve the authorization gate and original forms.
  setHeading('#view-admin','PAINEL DA CONVERGÊNCIA','Gerencie os recursos da Arena com acesso administrativo.');
  const adminGrid=$('#view-admin .admin-grid'),adminTabs=make('div','concept-admin-tabs');adminTabs.setAttribute('role','tablist');adminTabs.setAttribute('aria-label','Áreas administrativas');adminGrid.before(adminTabs);
- const adminGroups={Jogadores:['admin-reward-form'],Cartas:['admin-card-form'],Loja:['admin-shop-form'],Universo:['admin-lore-form'],Torneios:['tournament-create-form'],Recompensas:['admin-gift-form'],Comunicados:['admin-announcement-form']};
- const cards=[...adminGrid.children],groupFor=card=>Object.entries(adminGroups).find(([,ids])=>ids.some(id=>card.querySelector('#'+id)))?.[0]||'Cartas';
- const adminTournaments=panel('TORNEIOS E CHAVES','concept-admin-tournaments');adminTournaments.hidden=true;adminGrid.append(adminTournaments);
- for(const label of Object.keys(adminGroups)){const tab=button(label,()=>{cards.forEach(card=>card.hidden=groupFor(card)!==label);adminTournaments.hidden=label!=='Torneios';[...adminTabs.children].forEach(n=>n.setAttribute('aria-selected',String(n===tab)));});tab.setAttribute('role','tab');tab.setAttribute('aria-selected','false');adminTabs.append(tab);}
- adminTabs.firstElementChild?.click();
+ const adminGroups={Jogadores:['admin-reward-form'],'Criador de cartas':['admin-card-form'],Loja:['admin-shop-form'],Universo:['admin-lore-form'],Torneios:['tournament-create-form'],Recompensas:['admin-gift-form'],Comunicados:['admin-announcement-form']};
+ const adminSections=new Map();let activeAdminTab='Jogadores';
+ function chooseAdmin(label){activeAdminTab=label;for(const [key,nodes]of adminSections)for(const n of nodes)n.hidden=key!==label;for(const t of adminTabs.children)t.setAttribute('aria-selected',String(t.dataset.adminTab===label));window.dispatchEvent(new CustomEvent('mythic-admin-tab-changed',{detail:{tab:label}}));}
+ function registerAdmin(label,node){if(!node)return;if(!adminSections.has(label)){adminSections.set(label,[]);const tab=button(label,()=>chooseAdmin(label));tab.dataset.adminTab=label;tab.setAttribute('role','tab');tab.setAttribute('aria-selected','false');adminTabs.append(tab);}if(!adminSections.get(label).includes(node))adminSections.get(label).push(node);node.hidden=activeAdminTab!==label;}
+ for(const card of [...adminGrid.children])registerAdmin(Object.entries(adminGroups).find(([,ids])=>ids.some(id=>card.querySelector('#'+id)))?.[0]||'Cartas',card);
+ const adminTournaments=panel('TORNEIOS E CHAVES','concept-admin-tournaments');adminGrid.append(adminTournaments);registerAdmin('Torneios',adminTournaments);
+ window.MythicAdminMenu={register:registerAdmin,select:chooseAdmin};chooseAdmin(activeAdminTab);
  function syncTournaments(){const heading=make('h2','','TORNEIOS E CHAVES');adminTournaments.replaceChildren(heading);for(const id of ['tournament-list','tournament-round-list']){const source=$('#'+id);const clone=source.cloneNode(true);clone.removeAttribute('id');clone.querySelectorAll('[id]').forEach(n=>n.removeAttribute('id'));adminTournaments.append(clone);}}
  for(const id of ['tournament-list','tournament-round-list'])new MutationObserver(syncTournaments).observe($('#'+id),{childList:true});syncTournaments();
 

@@ -79,3 +79,4 @@ APLICAR EM ORDEM. Para esta atualização, somente 063 se até 062 já foi aplic
 202610220063_basic_packs_trixx_coins.sql
 202610230064_store_accounting_and_admin_test.sql
 202610230065_atlas_character_creator.sql
+202610230066_admin_game_modes.sql

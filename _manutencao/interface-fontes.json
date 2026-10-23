@@ -46,6 +46,7 @@
     "guild-progression.css",
     "basic-packs-store.css",
     "store-control.css",
-    "atlas-creator.css"
+    "atlas-creator.css",
+    "admin-tools.css"
   ]
 }

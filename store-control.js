@@ -25,7 +25,7 @@
  const totals=el('div','store-accounting-totals'),tableWrap=el('div','admin-table-wrap'),table=el('table','admin-table'),thead=el('thead'),tr=el('tr'),body=el('tbody'),pager=el('div','store-accounting-pager'),position=el('span'),feedback=el('p');feedback.setAttribute('role','status');
  for(const h of ['Data','Jogador','Operação','Produto','Moeda','Valor'])tr.append(el('th','',h));thead.append(tr);table.append(thead,body);tableWrap.append(table);
  const previous=button('← Anterior',()=>{offset=Math.max(0,offset-50);loadReport();}),next=button('Próxima →',()=>{offset+=50;loadReport();});pager.append(previous,position,next);panel.append(totals,feedback,tableWrap,pager,el('small','','Compras em Mythic Coins são registradas a partir desta atualização. O histórico premium disponível é importado. Créditos e recompensas são separados de compras; estes valores não representam faturamento em reais.'));
- document.querySelector('#admin-shop-form')?.closest('.admin-card')?.append(panel);
+ document.querySelector('#view-admin .admin-grid')?.append(panel);window.MythicAdminMenu?.register('Contabilidade',panel);
  const labels={purchase:'Compra',credit:'Crédito',reward:'Recompensa',adjustment:'Ajuste'};
  async function loadReport(){if(!api()?.isAdmin?.())return;const who=uid(),ticket=++reportRequest;previous.disabled=next.disabled=true;feedback.textContent='Carregando lançamentos…';try{
   const end=to.value?new Date(to.value+'T00:00:00'):null;if(end)end.setDate(end.getDate()+1);
@@ -35,6 +35,7 @@
   for(const row of data.rows){const line=el('tr');for(const v of [new Date(row.created_at).toLocaleString('pt-BR'),row.player_name,labels[row.kind],row.product,row.currency==='trixx'?'Trixx Coins':'Mythic Coins',fmt(row.amount)])line.append(el('td','',v));body.append(line);}
   feedback.textContent=reportCount?'':'Nenhum lançamento neste período.';position.textContent=`${reportCount?offset+1:0}–${Math.min(offset+50,reportCount)} de ${fmt(reportCount)}`;
  }catch(e){if(who===uid()&&ticket===reportRequest)feedback.textContent=e.message;}finally{if(who===uid()&&ticket===reportRequest){previous.disabled=offset===0;next.disabled=offset+50>=reportCount;}}}
+ window.addEventListener('mythic-admin-tab-changed',e=>{if(e.detail?.tab==='Contabilidade')loadReport();});
  window.MythicStoreControl={isTesting:()=>owner===uid()&&testing,refresh,preview};
  window.addEventListener('mythic-profile-loaded',refresh);
  window.addEventListener('mythic-view-changed',e=>{if(['store','admin'].includes(e.detail?.view))refresh();if(e.detail?.view==='admin'){offset=0;loadReport();}});
