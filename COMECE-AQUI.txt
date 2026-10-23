@@ -1,5 +1,5 @@
-ATUALIZAÇÃO 2026.10.22.4 — ÍCONES, NICKNAMES E NÍVEIS DE GUILDA
+ATUALIZAÇÃO 2026.10.22.5 — TAMANHO DOS CHIBIS NAS TELAS
 
-Leia GUILDAS-ICONES-NICKNAMES.md.
-Aplicar SQL 061 após o SQL 060; depois publicar pelo GitHub/Vercel.
-O site online e o banco não foram alterados por esta entrega.
+Leia CORRECAO-CHIBIS-NAS-TELAS.md.
+Aplicar sobre a versão 2026.10.22.4 e publicar pelo GitHub/Vercel.
+Esta correção não exige novo SQL.

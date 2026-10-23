@@ -14,12 +14,30 @@
  let frame=0;
  function sprites(){
   const focus={hestia:[1.36,'50% 39%'],hera:[1.30,'50% 38%'],demeter:[1.34,'50% 38%'],perseu:[1.33,'50% 38%']};
-  document.querySelectorAll('img[src*="avatars-chibi/"],.chibi-portrait-frame>img').forEach(n=>{
-   const key=(n.getAttribute('src')||'').match(/avatars-chibi\/(hestia|hera|demeter|perseu)\.webp(?:[?#]|$)/)?.[1];
-   if(!key){if(n.parentElement?.classList.contains('chibi-portrait-frame'))n.parentElement.replaceWith(n);return;}
-   let wrap=n.parentElement;if(!wrap.classList.contains('chibi-portrait-frame')){wrap=document.createElement('span');wrap.className='chibi-portrait-frame';n.before(wrap);wrap.append(n);}
-   wrap.style.setProperty('--portrait-scale',focus[key][0]);wrap.style.setProperty('--portrait-origin',focus[key][1]);
-  });document.querySelectorAll('img[data-chibi-ready]:not([src*="#chibi-"])').forEach(n=>{if(n.parentElement.classList.contains('chibi-frame'))n.parentElement.replaceWith(n);delete n.dataset.chibiReady;});document.querySelectorAll('img[src*="#chibi-"]').forEach(n=>{const match=n.getAttribute('src').match(/#chibi-(\d)-(\d)$/);if(!match)return;if(n.dataset.chibiReady==='true'&&n.dataset.chibiSource===n.getAttribute('src')&&n.parentElement.classList.contains('chibi-frame'))return;n.dataset.chibiReady='true';n.dataset.chibiSource=n.getAttribute('src');let wrap=n.parentElement;if(!wrap.classList.contains('chibi-frame')){wrap=document.createElement('span');wrap.className='chibi-frame';n.before(wrap);wrap.append(n);}wrap.style.setProperty('--chibi-col',match[1]);wrap.style.setProperty('--chibi-row',match[2]);});}
+  document.querySelectorAll('img[src*="avatars-chibi/"],img[src*="#chibi-"],img[data-chibi-ready],.chibi-frame>img,.chibi-portrait-frame>img').forEach(n=>{
+   const src=n.getAttribute('src')||'',key=src.match(/avatars-chibi\/(hestia|hera|demeter|perseu)\.webp(?:[?#]|$)/)?.[1],tile=src.match(/#chibi-(\d)-(\d)$/);
+   let wrap=n.parentElement;
+   if(!key&&!tile){
+    if(wrap?.classList.contains('chibi-frame')||wrap?.classList.contains('chibi-portrait-frame'))wrap.replaceWith(n);
+    delete n.dataset.chibiReady;delete n.dataset.chibiSource;return;
+   }
+   if(!wrap?.classList.contains('chibi-frame')&&!wrap?.classList.contains('chibi-portrait-frame')){
+    wrap=document.createElement('span');n.before(wrap);wrap.append(n);
+   }
+   // Both image formats use the existing size rules of each UI surface.
+   wrap.classList.add('chibi-frame');wrap.classList.toggle('chibi-portrait-frame',!!key);
+   if(key){
+    wrap.style.removeProperty('--chibi-col');wrap.style.removeProperty('--chibi-row');
+    wrap.style.setProperty('--portrait-scale',focus[key][0]);wrap.style.setProperty('--portrait-origin',focus[key][1]);
+    delete n.dataset.chibiReady;delete n.dataset.chibiSource;
+   }else{
+    wrap.style.removeProperty('--portrait-scale');wrap.style.removeProperty('--portrait-origin');
+    wrap.style.setProperty('--chibi-col',tile[1]);wrap.style.setProperty('--chibi-row',tile[2]);
+    n.dataset.chibiReady='true';n.dataset.chibiSource=src;
+   }
+  });
+ }
+
  function polish(){frame=0;sprites();const badge=$('.store-balance-icon');if(badge&&!badge.querySelector('img'))badge.replaceChildren(img('assets/identity-v2/coin.webp','Mythic Coins'));const coins=$('#profile-coins');if(coins&&!coins.previousElementSibling?.classList.contains('mythic-coin-icon')){const icon=img('assets/identity-v2/coin.webp','Mythic Coins');icon.className='mythic-coin-icon';coins.before(icon);}
   document.querySelectorAll('[data-item-id] img.mythic-coin-icon').forEach(n=>n.setAttribute('aria-hidden','true'));
  }
