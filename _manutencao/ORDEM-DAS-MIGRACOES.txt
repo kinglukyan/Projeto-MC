@@ -80,3 +80,5 @@ APLICAR EM ORDEM. Para esta atualização, somente 063 se até 062 já foi aplic
 202610230064_store_accounting_and_admin_test.sql
 202610230065_atlas_character_creator.sql
 202610230066_admin_game_modes.sql
+202610230067_security_invoker_meta_views.sql
+202610230068_experience_improvements.sql

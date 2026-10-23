@@ -1,1 +1,1 @@
-window.MythicRelease=Object.freeze({id:"d6785a89fc0f532a4f4a",version:"2026.10.23.6"});
+window.MythicRelease=Object.freeze({id:"e21740819dbe23ca5ff4",version:"2026.10.23.7"});

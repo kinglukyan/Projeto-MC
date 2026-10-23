@@ -333,7 +333,7 @@
   }
   window.MythicAdminCardBridge={draw:drawAdminCardPreview,read:()=>{if(!adminGuard())throw Error("Acesso restrito.");return {source:adminCardPreviewUrl||adminCardSourceUrl,fields:Object.fromEntries(["name","title","ability","faction","power"].map(k=>[k,$("#admin-card-"+k).value]))};},load:d=>{if(!adminGuard())return;$("#admin-card-id").value="modelo-em-branco";if(adminCardPreviewUrl)URL.revokeObjectURL(adminCardPreviewUrl);adminCardPreviewUrl=null;adminCardSourceUrl=d.source||null;$("#admin-card-image").value="";for(const k of ["name","title","ability","faction","power"]){const n=$("#admin-card-"+k);if(d.fields[k]!==undefined)n.value=String(d.fields[k]).slice(0,k==="ability"?220:k==="name"?40:45);}drawAdminCardPreview();},reset:()=>{if(adminCardPreviewUrl)URL.revokeObjectURL(adminCardPreviewUrl);adminCardPreviewUrl=null;adminCardSourceUrl=null;$("#admin-card-image").value="";const c=$("#admin-card-preview");c.width=c.width;}};
   async function downloadAdminCard(){
-    const status=$("#admin-card-status"),button=$("#admin-card-download");if(!adminGuard())return;button.disabled=true;
+    const status=$("#admin-card-status"),button=$("#admin-card-download");if(!adminGuard()||window.MythicCardStudio?.canExport?.()===false)return;button.disabled=true;
     try{if(!await drawAdminCardPreview())throw Error("Aguarde a prévia carregar antes de exportar.");const canvas=$("#admin-card-preview"),blob=await new Promise((resolve,reject)=>canvas.toBlob(file=>file?resolve(file):reject(new Error("Não foi possível gerar o PNG.")),"image/png"));const url=URL.createObjectURL(blob),link=document.createElement("a"),name=cardEditorValue("#admin-card-name").normalize("NFD").replace(/[\u0300-\u036f]/g,"").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"")||"nova-carta";link.href=url;link.download=`mythic-clash-${name}-1500x2100.png`;document.body.append(link);link.click();link.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);status.textContent="PNG em alta resolução baixado (1500 × 2100).";}catch(error){status.textContent=error.message||"Não foi possível baixar a carta.";}finally{button.disabled=false;}
   }
   function adminGuard(){if(!session||!adminAuthorized){notify("Acesso administrativo restrito.");return false;}return true;}
@@ -566,21 +566,28 @@
     const key=session.user.id+":"+matchId;if(matchRefreshes.has(key))return matchRefreshes.get(key);
     const task=fetchOnlineMatch(matchId).finally(()=>{if(matchRefreshes.get(key)===task)matchRefreshes.delete(key);});matchRefreshes.set(key,task);return task;
   }
+  let snapshotEpoch=0;
   async function fetchOnlineMatch(matchId){
-    if(!session||activeMatchId!==matchId)return;const uid=session.user.id;
+    if(!session||activeMatchId!==matchId)return;const uid=session.user.id,epoch=snapshotEpoch;
     const {data,error}=await supabase.rpc("get_online_match",{p_match_id:matchId});
     if(uid!==session?.user?.id||activeMatchId!==matchId)return;
-    const snapshot=JSON.stringify(data);if(error||!data?.match||snapshot===lastMatchSnapshot&&!forceNextMatchRender)return;forceNextMatchRender=false;lastMatchSnapshot=snapshot;
+    if(error||!data?.match||epoch!==snapshotEpoch)return;applyOnlineSnapshot(data,matchId,uid);
+  }
+  function applyOnlineSnapshot(data,matchId,uid){
+    if(uid!==session?.user?.id||activeMatchId!==matchId||!data?.match)return;
+    const snapshot=JSON.stringify(data);if(snapshot===lastMatchSnapshot&&!forceNextMatchRender)return;forceNextMatchRender=false;lastMatchSnapshot=snapshot;
     if(data.match.status!=='active'||data.match.state?.finished)closedMatches.add(uid+':'+matchId);
-    if(!error&&data?.match)window.dispatchEvent(new CustomEvent("mythic-online-match",{detail:{match:data.match,userId:session.user.id,playerName:profile?.nickname||profile?.display_name||"Você",playerIcon:profile?.equipped_avatar||"default",playerRating:profile?.rating_points||1000,opponentName:data.opponent_name,teammateName:data.teammate_name||null,participants:data.participants||[],myTeam:data.my_team||null,mySeat:data.my_seat||1,teamSize:data.team_size||1,opponentIcon:data.opponent_icon||"default",opponentRating:data.opponent_rating||1000}}));
+    if(data?.match)window.dispatchEvent(new CustomEvent("mythic-online-match",{detail:{match:data.match,userId:session.user.id,playerName:profile?.nickname||profile?.display_name||"Você",playerIcon:profile?.equipped_avatar||"default",playerRating:profile?.rating_points||1000,opponentName:data.opponent_name,teammateName:data.teammate_name||null,participants:data.participants||[],myTeam:data.my_team||null,mySeat:data.my_seat||1,teamSize:data.team_size||1,opponentIcon:data.opponent_icon||"default",opponentRating:data.opponent_rating||1000}}));
   }
 
+  let lastActionAttempt=null;
   async function submitAction(action){
     if(!session||!activeMatchId||actionPending)return false;
-    const uid=session.user.id,matchId=activeMatchId,actionId=++actionSequence,wasDisabled=$("#end-turn").disabled;actionPending=true;$("#end-turn").disabled=true;
-    try{const wireAction={...action,request_id:action.request_id||crypto.randomUUID()};const {data,error}=await supabase.rpc("submit_game_action",{p_match_id:matchId,p_action:wireAction});if(uid!==session?.user?.id||activeMatchId!==matchId)return;const result=Array.isArray(data)?data[0]:data;if(error){notify(displayError(error));return false;}else if(result?.state?._securityError){notify(result.state._securityError.message||"Ação rejeitada pelo servidor.");return false;}return true;}
+    const uid=session.user.id,matchId=activeMatchId,actionId=++actionSequence;actionPending=true;$("#end-turn").disabled=true;
+    const trace=window.MythicMatchPresentation?.begin('Servidor e sincronização');let accepted=false;
+    try{const fingerprint=JSON.stringify(action);if(!lastActionAttempt||lastActionAttempt.owner!==uid||lastActionAttempt.matchId!==matchId||lastActionAttempt.fingerprint!==fingerprint||lastActionAttempt.snapshot!==lastMatchSnapshot)lastActionAttempt={owner:uid,matchId,fingerprint,snapshot:lastMatchSnapshot,id:action.request_id||crypto.randomUUID()};const wireAction={...action,request_id:lastActionAttempt.id};const {data,error}=await supabase.rpc("submit_game_action_snapshot",{p_match_id:matchId,p_action:wireAction});if(uid!==session?.user?.id||activeMatchId!==matchId)return false;if(error){notify(displayError(error));return false;}if(!data?.accepted){notify(data?.message||"Ação rejeitada pelo servidor.");return false;}accepted=true;lastActionAttempt=null;snapshotEpoch++;applyOnlineSnapshot(data.snapshot,matchId,uid);return true;}
     catch(error){if(uid===session?.user?.id&&activeMatchId===matchId)notify(displayError(error));return false;}
-    finally{if(actionId===actionSequence){if(uid===session?.user?.id&&activeMatchId===matchId){const prior=lastMatchSnapshot;forceNextMatchRender=true;await refreshOnlineMatch(matchId).catch(()=>{});if(actionId===actionSequence&&prior===lastMatchSnapshot)$("#end-turn").disabled=wasDisabled;}if(actionId===actionSequence)actionPending=false;}}
+    finally{window.MythicMatchPresentation?.end(trace,accepted);if(actionId===actionSequence){actionPending=false;if(uid===session?.user?.id&&activeMatchId===matchId){if(!accepted)refreshOnlineMatch(matchId).catch(()=>{});window.MythicGame?.refreshBattle?.();}}}
   }
 
   async function expireTurn(){if(!session||!activeMatchId)return;const {error}=await supabase.rpc("expire_game_turns");if(error)notify(displayError(error));else await refreshOnlineMatch(activeMatchId);}
@@ -598,7 +605,7 @@
     if(uid!==session?.user?.id||activeMatchId!==matchId)return;
     forceNextMatchRender=true;await refreshOnlineMatch(matchId);
   }
-  function leaveMatch(){matchOpenEpoch++;matchOpens.clear();clearInterval(matchFallbackTicker);matchFallbackTicker=null;lastMatchSnapshot="";matchRefreshes.clear();actionSequence++;if(gameChannel)supabase.removeChannel(gameChannel);gameChannel=null;activeMatchId=null;actionPending=false;}
+  function leaveMatch(){lastActionAttempt=null;matchOpenEpoch++;matchOpens.clear();clearInterval(matchFallbackTicker);matchFallbackTicker=null;lastMatchSnapshot="";matchRefreshes.clear();actionSequence++;if(gameChannel)supabase.removeChannel(gameChannel);gameChannel=null;activeMatchId=null;actionPending=false;}
 
   document.addEventListener("visibilitychange",()=>{if(!document.hidden&&activeMatchId)refreshOnlineMatch(activeMatchId).catch(()=>{});});
 

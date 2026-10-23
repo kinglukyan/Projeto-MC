@@ -37,6 +37,7 @@
   "deck-identity.js",
   "deck-evaluator.js",
   "concept-theme.js",
+  "match-presentation.js",
   "practice-mode.js",
   "deck-builder.js",
   "sidebar-arcane.js",
