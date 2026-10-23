@@ -3511,3 +3511,12 @@ html body.mythic-rework.concept-ui #view-lore .lore-story-art[data-custom-banner
 @media(prefers-reduced-motion:reduce){.tiebreak-online-status.is-waiting::before{animation:none}}
 
 .tiebreak-pending-result[hidden]{display:none!important}
+
+/* guild-progression.css */
+/* Same face framing as the established chibi sprites, only for the four new portraits. */
+.chibi-portrait-frame{position:relative;display:inline-block;width:100%;height:100%;aspect-ratio:1;overflow:hidden;border-radius:inherit;background:#1c1028;vertical-align:middle}
+.chibi-portrait-frame>img{position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:none!important;max-height:none!important;padding:0!important;object-fit:cover!important;transform:scale(var(--portrait-scale))!important;transform-origin:var(--portrait-origin)!important}
+.guild-level-card{border-top:1px solid #a8894d;margin-top:1rem;padding-top:1rem;display:grid;gap:.65rem;clear:both}
+.guild-level-card progress{width:100%;height:14px;accent-color:#dcb968}
+.guild-level-card p{margin:0}.guild-level-card small{color:#d8c9e7}
+.guild-level-table{width:100%;border-collapse:collapse;margin-top:.7rem}.guild-level-table th,.guild-level-table td{padding:.5rem;text-align:left;border-bottom:1px solid #715a8055}

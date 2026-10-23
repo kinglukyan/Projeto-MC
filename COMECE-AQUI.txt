@@ -1,7 +1,5 @@
-ATUALIZAÇÃO 2026.10.22.3 — UNIVERSO, DESEMPATE ONLINE 1x1 E ÍCONES ÉPICOS
+ATUALIZAÇÃO 2026.10.22.4 — ÍCONES, NICKNAMES E NÍVEIS DE GUILDA
 
-Leia UNIVERSO-DESEMPATE-ICONES.md.
-Aplicar SQL 060 após 059 e publicar pelo GitHub/Vercel.
-Prévia das 17 artes: icones-epicos.html.
-Prompts e PNGs originais preservados em _manutencao.
-A publicação online e validação com duas contas permanecem pendentes.
+Leia GUILDAS-ICONES-NICKNAMES.md.
+Aplicar SQL 061 após o SQL 060; depois publicar pelo GitHub/Vercel.
+O site online e o banco não foram alterados por esta entrega.

@@ -1,3 +1,7 @@
+# ATUALIZAÇÃO MAIS RECENTE — 2026.10.22.4
+
+Seguir GUILDAS-ICONES-NICKNAMES.md e aplicar o SQL 061 depois do 060. As instruções anteriores abaixo são mantidas para instalações ainda não atualizadas.
+
 # ATUALIZAÇÃO MAIS RECENTE
 
 Para a correção do Universo, emblemas e Desempate online 1×1, seguir `UNIVERSO-DESEMPATE-ICONES.md` e aplicar o SQL 060 depois do 059. Abaixo estão as instruções da revisão anterior, ainda necessárias para instalações que não a receberam.

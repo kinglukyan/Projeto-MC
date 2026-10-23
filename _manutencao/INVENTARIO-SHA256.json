@@ -7,6 +7,10 @@
     "bytes": 1322,
     "sha256": "bcdaa7c2698dc2ca4d98ab3170fca4e545a0df0af3755923dd6e1fc46bfceeb2"
   },
+  "_manutencao/ALTERADOS-UNIVERSO-DESEMPATE.json": {
+    "bytes": 2919,
+    "sha256": "f36f07fd2d0e27702c4aa857a89e2188e8611529bd0f1f9dbbbd13768773f51a"
+  },
   "_manutencao/artes-originais/chibis/demeter.png": {
     "bytes": 2626415,
     "sha256": "13242a2052cbd57089cea3df7565d8de629062c35e86f962fa89ceaec2e819e7"
@@ -300,8 +304,8 @@
     "sha256": "3c8d191a8de78c887e276a5ce6203edd684b42579fcaca31e3794355b748a3ca"
   },
   "_manutencao/interface-fontes.json": {
-    "bytes": 1159,
-    "sha256": "48c14695b9b4d6b9a9c524bca3af32ba1396980c86f6454e3d5c8c44761f52da"
+    "bytes": 1189,
+    "sha256": "a183c9a2f763c7bec6b42c5fa070fe6924c263c769284aa4e5fa7c3b61a6de32"
   },
   "_manutencao/krishna-revisao.txt": {
     "bytes": 140,
@@ -316,8 +320,8 @@
     "sha256": "7d992abc721ba60ccf6b4049e650ae39af266a5ab41700bc60faebd269c8eed0"
   },
   "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
-    "bytes": 2916,
-    "sha256": "d0a32e5ae1be563c9b26cf7467880c53e3b0cad604a028fea9ae480a826133d8"
+    "bytes": 2964,
+    "sha256": "a2080a6dcbb8b0a40abd0546e29bcf3b077e11060a159fb7f69e3bb0f749ee21"
   },
   "_manutencao/otimizacao-entrada.json": {
     "bytes": 4687,
@@ -1024,8 +1028,8 @@
     "sha256": "62ea583eae52f12a160793ebccab9de924a5c94eae5e86eb5873434c04c3e835"
   },
   "arcane-upgrade.js": {
-    "bytes": 6614,
-    "sha256": "f05228a017091bdb5f1cd40840ea3041ba1c09160a614a12dd7d0a353f90e09b"
+    "bytes": 7373,
+    "sha256": "0a742dcb45e64fb6274dbdacd23506300b29608a874e47d924e0363579f11411"
   },
   "asset-manifest.json": {
     "bytes": 125014,
@@ -5192,8 +5196,8 @@
     "sha256": "67bf9932574b4178defffa5cabddf8e1be9e6cef9f65afd4635b6e02f40bd692"
   },
   "COMECE-AQUI.txt": {
-    "bytes": 349,
-    "sha256": "bb40345b6420337f59b84ffdf72915356808c463a40e0f32b644b532e5073fcb"
+    "bytes": 242,
+    "sha256": "74d8847a70470724d0003cb970a0c5374c535c4489cf18a5280a1bb550dc8965"
   },
   "CONCEPT-ART-ASSETS.json": {
     "bytes": 5044,
@@ -5349,7 +5353,7 @@
   },
   "entry-bootstrap.js": {
     "bytes": 10875,
-    "sha256": "8356b4c6d78f83320ecc0cc7173bcc507a2948d1bef5f6ec03ac6464a35949b9"
+    "sha256": "eadc5fd1e60ea9c299c5ab3d4c37848134466570125c7fc42a1e457ef127790a"
   },
   "entry-critical.css": {
     "bytes": 9109,
@@ -5392,12 +5396,12 @@
     "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
   },
   "game-interface.css": {
-    "bytes": 668065,
-    "sha256": "13147d9d96b2609dbcedcb9f445eae794067c92ff4fc39ec8e021dc280b095c3"
+    "bytes": 669121,
+    "sha256": "9dfa742260ff5fc7de0ad98059204f1d9c9173cde438d3853fd4badff08160b7"
   },
   "game-runtime.js": {
-    "bytes": 1418797,
-    "sha256": "4c820d5510ab231e3b9adfaa7cfce7a8e8081db3c2fb2132dec7a00bbd8742f5"
+    "bytes": 1421783,
+    "sha256": "34dbe6087896681c36c1fcbc6e6101ad8cfc9b39c3c869b70f0dc2bccdd5a3c4"
   },
   "gamepad-controls.js": {
     "bytes": 4231,
@@ -5430,6 +5434,14 @@
   "GUARDIAO-NORDICO.md": {
     "bytes": 2264,
     "sha256": "67e12531c8787898058a22637c0605d68ef9b08d8b8a7e31615e711436bcd780"
+  },
+  "guild-progression.css": {
+    "bytes": 1027,
+    "sha256": "94020b1831734e44515a02f3df393f60487f931cc32060d80a999cc3c8e333e3"
+  },
+  "GUILDAS-ICONES-NICKNAMES.md": {
+    "bytes": 4713,
+    "sha256": "081d5cd428881ff7629a3d98e7b776d84d6cb4bc2b8be86dda484352603945ac"
   },
   "HABILIDADES.md": {
     "bytes": 2440,
@@ -5476,8 +5488,8 @@
     "sha256": "6c2fbddad51fe270e87159b14f9acc22a7f8688324498dfe86e425c99cd55be1"
   },
   "index.html": {
-    "bytes": 77512,
-    "sha256": "999d8db512750ac46335d9722225af2b84c70ffc4184ea95d91af61a97f7a405"
+    "bytes": 77560,
+    "sha256": "72b0bfe486f8a6d9c7ed8bd2a068bebda881a99e8f3dbb29b7a43a2920db0925"
   },
   "JANELA-FLUTUANTE-FILA.md": {
     "bytes": 1623,
@@ -5604,12 +5616,12 @@
     "sha256": "2c8e64a486a61d104f421dcc66d5ae07a94a4e756c55f8de6452103580b973e5"
   },
   "online-tiebreak.js": {
-    "bytes": 8248,
-    "sha256": "141d39067a151422e75e6ee93eff83aef024216f8f6f99ee56858e4c68b0c67c"
+    "bytes": 8273,
+    "sha256": "b5002ea21b69f459cbd9f456ac13236cd3e928f1cbf76d4ce5cd8fa121adc168"
   },
   "online.js": {
-    "bytes": 148414,
-    "sha256": "0780aa6addb58867fe51f45446896d2d3f2bf6997c949fd9ede3a5184d0057f2"
+    "bytes": 149065,
+    "sha256": "d9976b2c96b1ce496d04f142df6290a8ef8d7ac3a40e160816f01b4e1566fdd7"
   },
   "PADROES-DE-ARTE.md": {
     "bytes": 2724,
@@ -5684,8 +5696,8 @@
     "sha256": "95262b15ee32ad83213907eb7c8fa516607dd3841caa050e01736094d00d2921"
   },
   "PUBLICAR-ESTA-REVISAO.md": {
-    "bytes": 2567,
-    "sha256": "17f40ddd0a500048348e083e2db893d9649cb9b97577bcfaad3d710e85057ccb"
+    "bytes": 2780,
+    "sha256": "7bd7c4ecb775fa4a81910f2c105ec4b56578ad850203ebf998cb6056b664817f"
   },
   "quality-updates.css": {
     "bytes": 14940,
@@ -5721,11 +5733,11 @@
   },
   "release-stamp.js": {
     "bytes": 88,
-    "sha256": "ce65055c96c02b762e05786dd6a99de990eb23c78d0b8efb16a3cd91bfad8d2b"
+    "sha256": "8eaef83b8709cd58557ee6a22e24b4d812cdea348b62d26bfa69ae3626064eb6"
   },
   "release.json": {
     "bytes": 54,
-    "sha256": "78319bd513a0ca954712bddcca66f0a387a1e431733399902cb221b4b983f841"
+    "sha256": "b46baef7a3caa06757fa1cdef2aed324fb275ab2729fda14de97a7f905e54fa5"
   },
   "remake-gallery.css": {
     "bytes": 1513,
@@ -5840,8 +5852,8 @@
     "sha256": "2b1fc248ef882d840767536bf387fe426dfda136dd2547e2a8e6367ce86900cb"
   },
   "social-hub.js": {
-    "bytes": 15211,
-    "sha256": "d92d729df25aca36d799d58e8ba2b314cefff6abda1084dac75ba881f1b051db"
+    "bytes": 16762,
+    "sha256": "a6dd664e25034826d95a9589e053edae02dd83750d1f0364824b941eed8e76b7"
   },
   "solo-tiebreak.js": {
     "bytes": 3857,
@@ -6147,6 +6159,10 @@
     "bytes": 10793,
     "sha256": "e1b16f0772a52df2faab4186d578d17549a7f9bf82afc5f602ab4f5b474ffa2d"
   },
+  "supabase/migrations/202610220061_guild_levels_unique_nicknames.sql": {
+    "bytes": 22260,
+    "sha256": "bc5fba18e6bf096309ec407abb4336874e0034a5704bbfeb4d6cb648c5fca193"
+  },
   "supabase/README.md": {
     "bytes": 2053,
     "sha256": "317190d2e911059045588edd73f6f78cecbcbf1f4df1c13dfff9aa4f8594c24e"
@@ -6157,7 +6173,7 @@
   },
   "sw.js": {
     "bytes": 4241,
-    "sha256": "4ebb87f97bfdfd70b300a265a37295d15eadfd53d9f69f0981efe627b7dbadaf"
+    "sha256": "328df86f39dcc4a0e409971b72a367e1934593220221461d5f3b1326c23d5d60"
   },
   "terrain-cards.js": {
     "bytes": 15141,
@@ -6216,8 +6232,8 @@
     "sha256": "c93a9bde6936fb5fde360f929aa139e8a9f2be0ddad24d877590201862e25178"
   },
   "version.json": {
-    "bytes": 108,
-    "sha256": "827df352a257f0afbdf6087ec89fbb93dea71a45e261882bde18b637c1b67033"
+    "bytes": 98,
+    "sha256": "439811ebd795473d0aab80659ba6f9526865484b96a43f055e75a394dcededfc"
   },
   "VERSO-OFICIAL-E-MOEDA.md": {
     "bytes": 933,

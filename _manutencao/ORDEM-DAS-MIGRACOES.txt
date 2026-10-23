@@ -1,4 +1,4 @@
-APLICAR EM ORDEM. Para esta atualização, somente 060 se até 059 já foi aplicado.
+APLICAR EM ORDEM. Para esta atualização, somente 061 se até 060 já foi aplicado.
 
 202609270001_online_game.sql
 202609270002_progression_store.sql
@@ -74,3 +74,4 @@ APLICAR EM ORDEM. Para esta atualização, somente 060 se até 059 já foi aplic
 202610220058_device_login_private.sql
 202610220059_solo_tiebreak.sql
 202610220060_online_tiebreak_1v1.sql
+202610220061_guild_levels_unique_nicknames.sql

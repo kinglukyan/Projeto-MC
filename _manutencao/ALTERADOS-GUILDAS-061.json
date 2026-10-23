@@ -1,0 +1,22 @@
+[
+  "_manutencao/interface-fontes.json",
+  "_manutencao/INVENTARIO-SHA256.json",
+  "_manutencao/ORDEM-DAS-MIGRACOES.txt",
+  "arcane-upgrade.js",
+  "COMECE-AQUI.txt",
+  "entry-bootstrap.js",
+  "game-interface.css",
+  "game-runtime.js",
+  "guild-progression.css",
+  "GUILDAS-ICONES-NICKNAMES.md",
+  "index.html",
+  "online-tiebreak.js",
+  "online.js",
+  "PUBLICAR-ESTA-REVISAO.md",
+  "release-stamp.js",
+  "release.json",
+  "social-hub.js",
+  "supabase/migrations/202610220061_guild_levels_unique_nicknames.sql",
+  "sw.js",
+  "version.json"
+]
