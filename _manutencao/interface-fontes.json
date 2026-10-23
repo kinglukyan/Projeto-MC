@@ -45,6 +45,7 @@
     "universe-online-update.css",
     "guild-progression.css",
     "basic-packs-store.css",
-    "store-control.css"
+    "store-control.css",
+    "atlas-creator.css"
   ]
 }

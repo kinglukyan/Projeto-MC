@@ -822,6 +822,32 @@
     finishDeviceLogin:async hash=>{const {error}=await supabase.auth.verifyOtp({token_hash:hash,type:'magiclink'});if(error)throw Error('O QR Code expirou ou já foi usado. Gere outro.');},
 retryConnection:async()=>{if(activeMatchId){await refreshOnlineMatch(activeMatchId);return;}await loadProfile();await loadCommunityHub();if(!document.querySelector('#view-guardian')?.hidden)await window.MythicGuardianCampaign?.refresh?.();},watchCustomMatch:async id=>{document.querySelector('[data-view="friends"]')?.click();$("#friends-spectator-panel").hidden=false;await watchFriendMatch(id);},refreshAdminAccess:loadAdminAccess,rewardProducts:()=>adminAuthorized?adminCatalog:storeItems,portalRequest,account:()=>session?.user||null,getWelcomeState:()=>welcomeRequest("get_welcome_state"),openStarterPack,completeWelcome:()=>welcomeRequest("complete_welcome"),refreshPresentation:()=>{emitConceptProfile();if(session){loadProfileAnalytics(session.user.id,"profile");loadCommunityHub().catch(()=>{});}},loadHonors:loadPlayerHonors,equipHonors:equipPlayerHonors,signOut:signOutAccount,saveDeckCounts,saveNamedDeck,saveBuilderDeck,deleteBuilderDeck,saveDeckPersonalization,createDirectInvite,resumeSavedQueue,repaintStore:renderStore,storeOwned:item=>ownedItems.has(item.item_id)||(item.kind==="card"&&Number(window.MythicCollectionCopies?.[item.card_id])>0),isConnected:()=>Boolean(session),showLogin,requireLogin,userId:()=>session?.user?.id||null,activeMatchId:()=>activeMatchId,openMatch:loadOnlineMatch,isAdmin:()=>adminAuthorized,openAdmin,submitAction,expireTurn,loadTieBreak,surrenderMatch,matchIsActive,leaveMatch,startQueue,startDuoQueue,respondDuoInvite,cancelQueue,convergeLobby,leaveLobby,openQueueLobby,refreshLobby,lobbyFriends,loadLobbyFriends:async()=>{await loadFriends();await syncPresence();return lobbyFriends();},getLobbyState:()=>({party:lobbyParty,busy:lobbyBusy,userId:session?.user?.id||null}),getQueueState:()=>({...floatingQueueState}),rankProgress:()=>profile&&session?window.MythicRank.from(profile.rating_points):null,findFriendByCode,profileReady:()=>accountReady,pvpUnlocked:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),tutorialCompleted:()=>Boolean(adminAuthorized||profile?.tutorial_completed||Number(profile?.xp||0)>=100),isTutorialComplete:()=>Boolean(profile?.tutorial_completed),completeTutorial:async()=>{if(!session)return false;const {data,error}=await supabase.rpc("complete_tutorial_once");if(!error){await loadProfile();if(profile?.tutorial_completed||Number(profile?.xp||0)>=100){try{localStorage.setItem("mythic-clash-tutorial-complete","true");localStorage.setItem("mythic-clash-level","2");}catch{}return true;}notify("Tutorial registrado, mas o perfil ainda não recebeu o nível 2. Atualize a migração de progressão no Supabase.");return false;}notify("Não foi possível registrar o tutorial. Tente novamente após verificar a atualização do banco.");return false;},recordGuardianMatch:async(matchId,outcome,playerPoints,opponentPoints)=>{if(!session)return;const {error}=await supabase.rpc("record_guardian_match",{p_match_id:matchId,p_outcome:outcome,p_player_points:playerPoints,p_opponent_points:opponentPoints});if(error)notify(displayError(error));else{await loadProfile();}},refreshProfile:loadProfile,whenProfileReady};
   window.addEventListener("mythic-availability-updated",()=>{if(storeItems.length)renderStore();});
+  window.MythicOnline.atlasPortraitUrl=path=>supabase.storage.from('atlas-portraits').getPublicUrl(path).data.publicUrl;
+  window.MythicOnline.saveAtlasCharacter=async(config,portraits,expected)=>{
+   const who=session?.user?.id;if(!who)throw Error('Entre na conta para salvar seu personagem.');
+   if(portraits.length!==3||new Set(portraits.map(p=>p.pose)).size!==3)throw Error('Prepare os três retratos antes de salvar.');
+   const revision=crypto.randomUUID(),uploaded=[];
+   try{for(const item of portraits){
+    if(session?.user?.id!==who)throw Error('A conta foi alterada.');
+    if(!['normal','falando','rindo'].includes(item.pose)||item.blob.type!=='image/webp'||item.blob.size>1048576)throw Error('Retrato inválido.');
+    const path=`${who}/${revision}/${item.pose}.webp`,{error}=await supabase.storage.from('atlas-portraits').upload(path,item.blob,{contentType:'image/webp',upsert:false});
+    if(error)throw Error(displayError(error));uploaded.push(path);
+   }}catch(error){if(session?.user?.id===who&&uploaded.length){try{await supabase.storage.from('atlas-portraits').remove(uploaded);}catch{}}throw error;}
+   if(session?.user?.id!==who)throw Error('A conta foi alterada.');
+   let result;
+   try{result=await portalRequest('save_atlas_character',{p_config:config,p_revision:revision,p_expected_revision:expected});}
+   catch(error){
+    if(session?.user?.id===who){
+     try{const saved=await portalRequest('get_atlas_character');if(saved?.revision===revision)return saved;
+      await supabase.storage.from('atlas-portraits').remove(uploaded);
+     }catch{}
+    }throw error;
+   }
+   if(session?.user?.id===who&&result?.previous_portraits){
+    const previous=Object.values(result.previous_portraits).filter(p=>typeof p==='string'&&p.startsWith(who+'/')&&!uploaded.includes(p));
+    if(previous.length)supabase.storage.from('atlas-portraits').remove(previous).catch(()=>{});
+   }return result;
+  };
   window.MythicOnline.loadPublicNews=loadPublicAnnouncement;window.MythicOnline.avatarAsset=resolveAvatarAsset;window.MythicOnline.playerName=()=>profile?.nickname||profile?.display_name||"Você";window.MythicOnline.playerIcon=()=>profile?.equipped_avatar||"default";window.MythicOnline.playerRating=()=>profile?.rating_points||1000;
 })();
 

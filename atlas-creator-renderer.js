@@ -1,0 +1,12 @@
+(() => {
+ 'use strict';
+ const art=window.MythicCreatorArt;if(!art)return;
+ const cache=new Map(),poses=['normal','falando','rindo'];
+ const defaults={version:2,name:'Kael',age:24,height:178,top:0,bottom:0,shoe:0,hair:1,skin:'bronzeada',hairColor:'castanho-original'};
+ const entry=c=>art.entries.find(a=>['top','bottom','shoe','hair'].every(k=>a[k]===c[k]));
+ function normalize(raw={}){const c={...defaults};for(const k of ['top','bottom','shoe','hair'])if(Number.isInteger(raw[k])&&raw[k]>=0&&raw[k]<art.names[k].length)c[k]=raw[k];if(raw.version!==2)Object.assign(c,{top:0,bottom:0,shoe:0,hair:1});for(const [k,min,max]of [['age',18,100],['height',140,220]])if(Number.isFinite(Number(raw[k])))c[k]=Math.max(min,Math.min(max,Math.round(Number(raw[k]))));if(typeof raw.name==='string')c.name=raw.name.normalize('NFC').replace(/[<>\x00-\x1f\x7f]/g,'').trim().slice(0,24);if(!entry(c)){const fallback=art.entries.find(a=>['top','bottom','shoe'].every(k=>a[k]===c[k]))||art.entries[0];for(const k of ['top','bottom','shoe','hair'])c[k]=fallback[k];}c.assetId=entry(c).id;return c;}
+ async function image(c){const a=entry(normalize(c));if(cache.has(a.id))return cache.get(a.id);const p=(async()=>{const url=window.MythicSecurity?.assetUrl?.(a.src)||a.src;if(window.MythicCreatorLoadImage)return window.MythicCreatorLoadImage(url);const i=new Image();i.decoding='async';i.src=url;await i.decode();return i;})();cache.set(a.id,p);try{const im=await p;if(cache.size>12)cache.delete(cache.keys().next().value);return im;}catch(e){cache.delete(a.id);throw e;}}
+ async function render(raw,pose='normal',portrait=false){const im=await image(raw),rect=art.rects[portrait?(poses.includes(pose)?pose:'normal'):'body'],[x,y,w,h]=rect,c=document.createElement('canvas');c.width=w;c.height=h;const ctx=c.getContext('2d');ctx.imageSmoothingQuality='high';ctx.drawImage(im,x*im.width/1536,y*im.height/1024,w*im.width/1536,h*im.height/1024,0,0,w,h);return c;}
+ async function portraits(c,onProgress=()=>{}){const rows=[];for(const pose of poses){const canvas=await render(c,pose,true),blob=await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(Error('Não foi possível preparar o retrato.')),'image/webp',.97));rows.push({pose,blob});onProgress(rows.length,poses.length);}return rows;}
+ window.MythicCreatorRenderer={defaults,names:art.names,poses,normalize,render,portraits,entry,entries:art.entries,preload:async(onProgress=()=>{})=>{await image(defaults);onProgress(1,1);}};
+})();
