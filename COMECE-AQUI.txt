@@ -1,5 +1,6 @@
-ATUALIZAÇÃO 2026.10.22.6 — DIÁLOGOS DO PRIMEIRO MAPA DO ATLAS
+ATUALIZAÇÃO 2026.10.23.1 — PACOTINHOS E TRIXX COINS
 
-Leia ATLAS-DIALOGOS-PRIMEIRO-MAPA.md.
-Aplicar SQL 062 depois do 061 e publicar pelo GitHub/Vercel.
-Se houver desafio 4 ou 15 da Grécia em andamento, terminar ou desistir antes de aplicar o SQL.
+Leia PACOTINHOS-E-TRIXX-COINS.md.
+Aplicar SQL 063 depois do 062 e publicar pelo GitHub/Vercel.
+Preço: 1.000 Trixx Coins por pacote.
+Recargas desativadas; motor de pagamentos será escolhido futuramente.

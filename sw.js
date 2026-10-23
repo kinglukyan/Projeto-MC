@@ -1,5 +1,5 @@
 // Content revisions preserve warm image caches across releases.
-const BUILD_ID='235a72031ff7b52f210b';
+const BUILD_ID='7bc1f0b03691bd471e27';
 const CACHE='mythic-clash-fast-shell-v1',MEDIA='mythic-clash-fast-media-v1';
 const MANIFEST=new URL('asset-manifest.json',self.registration.scope).href;
 let revisions={},optimized={},localManifest=null,manifestUpdate=null;

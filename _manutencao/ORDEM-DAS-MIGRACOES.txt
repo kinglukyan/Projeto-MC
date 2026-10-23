@@ -1,4 +1,4 @@
-APLICAR EM ORDEM. Para esta atualização, somente 062 se até 061 já foi aplicado.
+APLICAR EM ORDEM. Para esta atualização, somente 063 se até 062 já foi aplicado.
 
 202609270001_online_game.sql
 202609270002_progression_store.sql
@@ -76,3 +76,4 @@ APLICAR EM ORDEM. Para esta atualização, somente 062 se até 061 já foi aplic
 202610220060_online_tiebreak_1v1.sql
 202610220061_guild_levels_unique_nicknames.sql
 202610220062_atlas_athena_minotaur.sql
+202610220063_basic_packs_trixx_coins.sql
