@@ -48,6 +48,7 @@
     "store-control.css",
     "atlas-creator.css",
     "admin-tools.css",
-    "experience-improvements.css"
+    "experience-improvements.css",
+    "player-tools.css"
   ]
 }

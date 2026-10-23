@@ -73,5 +73,10 @@
   "basic-packs-store.js",
   "store-control.js",
   "admin-card-studio.js",
-  "admin-game-modes.js"
+  "admin-game-modes.js",
+  "player-tools-core.js",
+  "player-tools-services.js",
+  "player-tools-cards.js",
+  "player-tools-social.js",
+  "admin-player-tools.js"
 ]

@@ -1,0 +1,562 @@
+{
+  "ATUALIZACAO-ADMIN-066.md": {
+    "bytes": 2120,
+    "sha256": "773880997e5b9ae2f4d2a5c5d9a1e4c21e385b6b6904d22a04b9e6dfa7cd7a3a"
+  },
+  "CENTRAL-JOGADOR-069-071.md": {
+    "bytes": 6718,
+    "sha256": "8fff1d639e55052dc69ac5282a417996e79c2870e7b905ccd5f5a36abcfbf5d4"
+  },
+  "CORRECAO-SEGURANCA-VIEWS-067.md": {
+    "bytes": 2063,
+    "sha256": "e5f15455eecc6d91632993b91a6e58e55a642c57e4b7f6f552460ddbde23d460"
+  },
+  "CRIADOR-DE-PERSONAGENS-ATLAS.md": {
+    "bytes": 2170,
+    "sha256": "ca5f4e9cee97a6c54a02f58bdb527ffa78f93dca07407d7b80cf1dbcf11b3134"
+  },
+  "MELHORIAS-EXPERIENCIA-068.md": {
+    "bytes": 6048,
+    "sha256": "c0251b52423f68bf795eafb42d34f49bbf890d1069d8caec5a0233b0359e6aff"
+  },
+  "_manutencao/ORDEM-DAS-MIGRACOES.txt": {
+    "bytes": 3366,
+    "sha256": "873095f30eef8e26d7736436e2ebc709efc64940fcd0d0425bd7dafdd91f7ea9"
+  },
+  "_manutencao/atlas-creator/catalogo-kael.json": {
+    "bytes": 21011,
+    "sha256": "23304906fcd03a19067e129462aaf25824f25b505e621c3c5d0db4cf2b076dde"
+  },
+  "_manutencao/gerar-interface.cjs": {
+    "bytes": 3224,
+    "sha256": "aae387281c0848bdd70818ebb44706c12ed7664289efb74cd4b7c4dae4d1b5eb"
+  },
+  "_manutencao/gerar-runtime.cjs": {
+    "bytes": 4985,
+    "sha256": "350edb68f9db799f703ef8245cb610b8d9e3111f94c4f7feda64545a07d548de"
+  },
+  "_manutencao/interface-fontes.json": {
+    "bytes": 1356,
+    "sha256": "ddf2296ad0d88f6877cea817d2216de5a6389dfb10cb2e89c41215c2f374cce1"
+  },
+  "_manutencao/runtime-fontes.json": {
+    "bytes": 1850,
+    "sha256": "8d522e9095af7c6b44852439803cdc2549a139528b3f3aa963b24d3e798dc994"
+  },
+  "abilities-ui.js": {
+    "bytes": 7255,
+    "sha256": "f8e2a4c9c08a4124400e4eeed9045758e8d9b0e1457e454e6e52d9d364cb01e8"
+  },
+  "admin-card-studio.js": {
+    "bytes": 21474,
+    "sha256": "4fa5812e8ed3b5b84f2a1e02723d9d5a3217f4359a7818e77eae793be8cf35a6"
+  },
+  "admin-game-modes.js": {
+    "bytes": 7291,
+    "sha256": "3ec3079244b538bb718fff8efe0388ae0bc679c0afb19638bebc3217a8962a3d"
+  },
+  "admin-player-tools.js": {
+    "bytes": 6983,
+    "sha256": "3f2b61385c433c7ece9125486c573aaa04c802035016bb40e9b9c4e4f4aa1a84"
+  },
+  "admin-tools.css": {
+    "bytes": 1038,
+    "sha256": "1fa30c73d8c6c7b90576a1254ee730fd816f5dd246267ec42387ca2f70c3d95c"
+  },
+  "app.js": {
+    "bytes": 138897,
+    "sha256": "f031adc992d89d1956fdbfd373a89767b1abcff03c7c3e3b50a885954dcfab78"
+  },
+  "asset-manifest.json": {
+    "bytes": 145333,
+    "sha256": "863dbf4c9173f6cd394b9c905bca62101f2e5382d894b8821fe2becb3549d072"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--01-tunica-clara--curto.webp": {
+    "bytes": 315230,
+    "sha256": "57b923d36b2c01f042a61ccf8247815fdd4f5092cd3c39429874869edd86ef36"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--01-tunica-clara--longo.webp": {
+    "bytes": 341360,
+    "sha256": "09c2858d1725e16b50b69932fa4a1cffedbebec4b87ab050818149490f84171b"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--01-tunica-clara--medio.webp": {
+    "bytes": 326454,
+    "sha256": "2d210159449dced4b80830db3e623aeefb9576c87e758d50c11f981a5e5ed62f"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--02-camisa-vermelha--curto.webp": {
+    "bytes": 292716,
+    "sha256": "5e4ba518d0d317ab4c9bb04c59312590bc615f3015000fc77b133d35428c5449"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--02-camisa-vermelha--longo.webp": {
+    "bytes": 316130,
+    "sha256": "ce75496e9e4331822b0ff519d72b54cea7af92431775bfe37550ed3f3f29200c"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--02-camisa-vermelha--medio.webp": {
+    "bytes": 307292,
+    "sha256": "3c342b7504a4cce491e258ee8fb7543c6d0b505235963c561a456038ad437abd"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--03-armadura-couro--curto.webp": {
+    "bytes": 314252,
+    "sha256": "c527dc376a654ba8233a9d68d9d1745e0c7e9afad9569a5f584bdd8f6e8b313e"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--03-armadura-couro--longo.webp": {
+    "bytes": 338522,
+    "sha256": "b6f3656aceeea5d418338bf041d624a23d125663daaf6017fb4b0a05dbc90d99"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--03-armadura-couro--medio.webp": {
+    "bytes": 331122,
+    "sha256": "364c8d6b53f34a1395e37e013ff1dd75fcee3c82c4305fab8d1c0cb2c6fd0ae8"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--04-traje-nordico--curto.webp": {
+    "bytes": 331362,
+    "sha256": "2c8897a3d5cf03f5450f899f3764fe1ee53a19e36f581838baf395c81de1d616"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--04-traje-nordico--longo.webp": {
+    "bytes": 353180,
+    "sha256": "e47e371a45200cbf98b8c37e597bc1f3344214b5b2680276f0daee936c44e201"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--04-traje-nordico--medio.webp": {
+    "bytes": 341016,
+    "sha256": "345f574a793e6832870d7cf53e256b2bdc7ce19d69aff3f7df69a8f19e62cd74"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--05-veste-egipcia--curto.webp": {
+    "bytes": 312614,
+    "sha256": "5624e30f97b6f401ff38d21de96a4d5b427c9a2ffbc837c1adf43b63a7168630"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--05-veste-egipcia--longo.webp": {
+    "bytes": 336470,
+    "sha256": "36d61925ee6c8d4c153d5179b0b3daa209b5339ee22ddc57492e084374638245"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--05-veste-egipcia--medio.webp": {
+    "bytes": 318048,
+    "sha256": "68052c47df80a4d3e35fb1dda8f1fb1d019e8c932713ad500467af20f215fbd0"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--06-camisa-casual--curto.webp": {
+    "bytes": 266444,
+    "sha256": "dbe9fe7b3dda5200f91b97c8eadaa0a32601e5f9b619469b07ff6bebd56e7120"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--06-camisa-casual--longo.webp": {
+    "bytes": 290138,
+    "sha256": "2cf4e99407fdad6102e12c26c5f7fb005330d67b9a4a24f6bdaf89713b3eef07"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--01-preta--06-camisa-casual--medio.webp": {
+    "bytes": 273734,
+    "sha256": "34f4eb393c1dbb24a8f34301cf543af65bd7588c693e7562b03a5203e8ccbd70"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--01-tunica-clara--curto.webp": {
+    "bytes": 312864,
+    "sha256": "81920cf52250e2bfaab0b990f1a7ccac84fa3146df7612f506bb6bb5f80cedf0"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--01-tunica-clara--longo.webp": {
+    "bytes": 352396,
+    "sha256": "6c5635b64e4ccdf9f740d62efefe0b96f533de04360f81d26c8cc03e218f0f48"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--01-tunica-clara--medio.webp": {
+    "bytes": 337120,
+    "sha256": "7d2fbb548bf536c2447de1f92b103ffe11544d92d322c4c4d2ac5350263f74c8"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--02-camisa-vermelha--curto.webp": {
+    "bytes": 292876,
+    "sha256": "57755d43aa58e2372740e8d090f8352ecb5149858c1c93dc62d64b04f3a38a33"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--02-camisa-vermelha--longo.webp": {
+    "bytes": 318188,
+    "sha256": "59f00a62283fc1a0c1f1f3912991f471f5d8eb68f606582d527105a064169bb7"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--02-camisa-vermelha--medio.webp": {
+    "bytes": 307012,
+    "sha256": "07b7760aab6f77aa48bdd76c199796aa23c7af22b24ee423dd07d8f7074823b6"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--03-armadura-couro--curto.webp": {
+    "bytes": 343814,
+    "sha256": "61d7c0754850227297a7ef4f8edf53925d04d5dcf3d910b4d3aee883c9b42976"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--03-armadura-couro--longo.webp": {
+    "bytes": 336432,
+    "sha256": "6d0740e4bfe025dcbe5791f5493e798a785846ef047df02992b7b12fdaf548e6"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--03-armadura-couro--medio.webp": {
+    "bytes": 351880,
+    "sha256": "3c6994c56659f6a47969e830b319694608502d5be3fb0da21b02195c874021bc"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--04-traje-nordico--curto.webp": {
+    "bytes": 336890,
+    "sha256": "29c5b2f61459139140592c7f3340e1b67301595e99fc99caa78003e8772a0623"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--04-traje-nordico--longo.webp": {
+    "bytes": 353584,
+    "sha256": "c90706ac1814c907a02124064fcf832a56966634a44aa1305bc0b2fe4b72c99c"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--04-traje-nordico--medio.webp": {
+    "bytes": 344638,
+    "sha256": "0fb6f41bb00d1842554a17d22f7a5b9c934c049d365db9a57b67225ac1bb9554"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--05-veste-egipcia--curto.webp": {
+    "bytes": 314504,
+    "sha256": "6ca237542af85cffe284b89cc0b20137da9c13cccfc296fa4ef2d2069fb3c068"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--05-veste-egipcia--longo.webp": {
+    "bytes": 345166,
+    "sha256": "3b23a1eb722ed30e8a934a8dc74dc5992d720bef6e6b7785715a844e7d7fc42f"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--05-veste-egipcia--medio.webp": {
+    "bytes": 330106,
+    "sha256": "0ccc01dd76eafc8c576427efc9d1a13b6650a27ba8f4b5281a2422f7b2e286f5"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--06-camisa-casual--curto.webp": {
+    "bytes": 285502,
+    "sha256": "b40c110070d0c4f90192bc7b45e27acf1ad4ce30b8ccb80da3efd2e78082832d"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--06-camisa-casual--longo.webp": {
+    "bytes": 308496,
+    "sha256": "a37fd1117e57e82f5ae68b65e7f18dd0a481e675ce19eb916a853de5f7e4363f"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--02-bege--06-camisa-casual--medio.webp": {
+    "bytes": 291182,
+    "sha256": "a267b7d7a25e3c0926aaf097c1a3aca809720f72eba4eb87d13292a5c779847a"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--03-azul--01-tunica-clara--curto.webp": {
+    "bytes": 324386,
+    "sha256": "56d39d38c7e29a675111788a2f39633d6ad2262f2aaf0d9842633435d0fa769e"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--03-azul--01-tunica-clara--longo.webp": {
+    "bytes": 344876,
+    "sha256": "977bbf788034c28f4705e85818104ba31b5380bb4cc7c836be708cff4a0b5ed8"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--03-azul--01-tunica-clara--medio.webp": {
+    "bytes": 333202,
+    "sha256": "63225db7a88452f48f6d477dda093cbba676ee0902c38e4499402524f7f0f219"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--03-azul--02-camisa-vermelha--medio.webp": {
+    "bytes": 295166,
+    "sha256": "85a2c8cbf9dad00f9b8a767dbdd029422b0df08c55b53ccd28bf6c4a33133175"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--03-azul--03-armadura-couro--medio.webp": {
+    "bytes": 351258,
+    "sha256": "3382c9be744249f5b0e696b9a16b8f8c0f2699d7be22738645f6ce0739710a9c"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--03-azul--04-traje-nordico--medio.webp": {
+    "bytes": 341982,
+    "sha256": "f8128c881ae6ffe34fa15560339ebc3ff6637bb773dec30f23a538ea161e64f3"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--03-azul--05-veste-egipcia--medio.webp": {
+    "bytes": 336938,
+    "sha256": "502c7d898b0ca2a930381714e280bf2f601a774971958d17a82ac80d467a46be"
+  },
+  "assets/atlas-creator/kael/01-couro-preto--03-azul--06-camisa-casual--medio.webp": {
+    "bytes": 279498,
+    "sha256": "436c5ae0e506b61739f516f9a3f8a6ff2d59734d13b1a0a8dcce87169977332b"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--01-preta--01-tunica-clara--medio.webp": {
+    "bytes": 337736,
+    "sha256": "b4a45dd78ee7790727cf87eb7af764698315a5769060225477b960ce7463544d"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--01-preta--02-camisa-vermelha--medio.webp": {
+    "bytes": 315582,
+    "sha256": "9045cc6f92030c7745ab4248415a186458b704b26e5fb35dc6122e44c5687e63"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--01-preta--03-armadura-couro--medio.webp": {
+    "bytes": 341426,
+    "sha256": "491b34d0fe7d6214468d60c4bec13e8fed293ee868d3b6d99f9e58f3d61a22f6"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--01-preta--04-traje-nordico--medio.webp": {
+    "bytes": 352170,
+    "sha256": "16f36ef474a8d81a5b355f526ab17c1245d630f3cae9bdf368f7d81fe670bbde"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--01-preta--05-veste-egipcia--medio.webp": {
+    "bytes": 324898,
+    "sha256": "2717f6271e5ee02b69ce9237e8e18bd7087098b64a30654157898d09073c2266"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--01-preta--06-camisa-casual--medio.webp": {
+    "bytes": 283414,
+    "sha256": "65c7a233e70bb58977f18689928e02f5632ec0fa1bf2936d71f0fae1d98f3f11"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--02-bege--01-tunica-clara--medio.webp": {
+    "bytes": 342978,
+    "sha256": "ef7a212a9717c7810c73d10bf60c787cb064abb361d62b5913512da925528bbc"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--02-bege--02-camisa-vermelha--medio.webp": {
+    "bytes": 319010,
+    "sha256": "808b8389bc9ad5f070b6c81193739350ed9dfe0686a500da804d17b3308267b7"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--02-bege--03-armadura-couro--medio.webp": {
+    "bytes": 345466,
+    "sha256": "a7c1e2d0501d57dcc25493e09362ba3627bb99300396630576de92a195a81f7f"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--02-bege--04-traje-nordico--medio.webp": {
+    "bytes": 357332,
+    "sha256": "b0ab5ddbbd1ed6b44ffbeb731c14bb6b31474323ebdc7d5513f8a8995dbfc69b"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--02-bege--05-veste-egipcia--medio.webp": {
+    "bytes": 340114,
+    "sha256": "8ead932d6ac10815ca92edffbfb3b8cf65d892cab019de3d76c19015ea52c094"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--02-bege--06-camisa-casual--medio.webp": {
+    "bytes": 285130,
+    "sha256": "243f64d0c03feedefe6850028e2fc3cf6dbf3c97ee65f1a872460d32b82a91a4"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--03-azul--01-tunica-clara--medio.webp": {
+    "bytes": 335838,
+    "sha256": "7adc1145e971d8335c163a305800cad69d6aa1778400146d17e5b4c8efa53a9e"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--03-azul--02-camisa-vermelha--medio.webp": {
+    "bytes": 312628,
+    "sha256": "7928a7f4018cd003f7c4a84485c5e4a8ff60121ca09328bcb00ffce09fd5b2cd"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--03-azul--03-armadura-couro--medio.webp": {
+    "bytes": 353984,
+    "sha256": "5a7eab1f6048635e209fed2fb908510834dd717fbabe998911478d5abba5570b"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--03-azul--04-traje-nordico--medio.webp": {
+    "bytes": 355364,
+    "sha256": "8791656e06e32b9ee26d5b7c80c194a68007510a4fd2bb4b03db2d50bd561c83"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--03-azul--05-veste-egipcia--medio.webp": {
+    "bytes": 336514,
+    "sha256": "556bc2206981c91a604ce0c309693139fc1c3721cc04247a78812fd8853b747f"
+  },
+  "assets/atlas-creator/kael/02-viajante-clara--03-azul--06-camisa-casual--medio.webp": {
+    "bytes": 286884,
+    "sha256": "3bbfab950108736a69aa4968506d446367fa7b277c732ab6fc6ee86bcbb5d645"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--01-preta--01-tunica-clara--medio.webp": {
+    "bytes": 334370,
+    "sha256": "a1d54a8df14d9e6044e64fd6e644229a7bc217703c22bcbd88a0148335a3ed43"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--01-preta--02-camisa-vermelha--medio.webp": {
+    "bytes": 312866,
+    "sha256": "8a1a78b5b0387cc18b1dff54a48cfdf7421a7dae7f1f5510d3c3b712382d1ed7"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--01-preta--03-armadura-couro--medio.webp": {
+    "bytes": 347034,
+    "sha256": "4661063955d8af27a936cf0d71590683ca6a3546e86aae73d63b72018bc45b0e"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--01-preta--04-traje-nordico--medio.webp": {
+    "bytes": 347440,
+    "sha256": "d828bdedab4ae748e14575eb186917019be233bb8e5286d51819703d28f7f5c8"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--01-preta--05-veste-egipcia--medio.webp": {
+    "bytes": 325332,
+    "sha256": "e9f939979812d1df0717c76952647bc90af306e9b8e6035221db6b99a12aa0cd"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--01-preta--06-camisa-casual--medio.webp": {
+    "bytes": 277850,
+    "sha256": "8eb47973e914c9f40b0556ca77becdc11fd41449292c4abe179cefeb77fc8cfa"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--02-bege--01-tunica-clara--medio.webp": {
+    "bytes": 334506,
+    "sha256": "049b43cbf068bcaaba7a982c01074a17960c19c399d1aa103577f5db392d7b76"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--02-bege--02-camisa-vermelha--medio.webp": {
+    "bytes": 307860,
+    "sha256": "9a5970121dace90b449bd3990ed23956895d16090e02f6ca49d29873ce921e58"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--02-bege--03-armadura-couro--medio.webp": {
+    "bytes": 345542,
+    "sha256": "9bcf441870d409bf3888283761991bbe6ec77d3c148a7b0fb49bd46717a19ed8"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--02-bege--04-traje-nordico--medio.webp": {
+    "bytes": 364048,
+    "sha256": "6e655abe96ba003ed1e1613af8180994f171cea40a7e51414287ccccda812306"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--02-bege--05-veste-egipcia--medio.webp": {
+    "bytes": 338064,
+    "sha256": "31f330cd62c2a8eb7baeabbcf10151b040e041df54b62ce825337081ced99de7"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--02-bege--06-camisa-casual--medio.webp": {
+    "bytes": 291990,
+    "sha256": "75af6191b6367cb1ea68809868b6117fb31278fd36bb1f84fea6eb1403907cfc"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--03-azul--01-tunica-clara--medio.webp": {
+    "bytes": 338440,
+    "sha256": "f1f4ad4a87a1be05f847012a772c763a38853f41f7d169c6ad6c239d25c62c87"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--03-azul--02-camisa-vermelha--medio.webp": {
+    "bytes": 314142,
+    "sha256": "49a4ced9063796b906d9c02fd39d0a68dfbb5fe7f3ff05455dfcf79ad1e345c8"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--03-azul--03-armadura-couro--medio.webp": {
+    "bytes": 346616,
+    "sha256": "dd11f867f3bfe631cac692449481fe5cdd5703e4cf0b9539bceb323057928567"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--03-azul--04-traje-nordico--medio.webp": {
+    "bytes": 353226,
+    "sha256": "f139a9761831384457d2a398b617b61dff216a0ab36c434eb0841de2f688708a"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--03-azul--05-veste-egipcia--medio.webp": {
+    "bytes": 333100,
+    "sha256": "1a9f46d6baf356d36b3ab134b94479ccb8a6db5f41ba3f95619e4f383007e5ce"
+  },
+  "assets/atlas-creator/kael/03-combate-metal--03-azul--06-camisa-casual--medio.webp": {
+    "bytes": 293830,
+    "sha256": "ee36d9d9cdc26539b4bce3f12c5b0a7045bbb37791ea040dd7a12d02bd52b797"
+  },
+  "atlas-creator-data.js": {
+    "bytes": 15372,
+    "sha256": "93a40164e4c1a9f4ecbafeb5fc90bdcad4102e9a6b978f8cfe0cdb8808f1e6fd"
+  },
+  "atlas-creator-renderer.js": {
+    "bytes": 2487,
+    "sha256": "7e7c35969ac68ed777259e6db1ec154b5176b8ca8f57acad8d17e96be6585acd"
+  },
+  "atlas-creator.css": {
+    "bytes": 8380,
+    "sha256": "0d270655bca01372e7842e9a6aeee8ebd3a3fa9456e5f6d8b4ad375900732448"
+  },
+  "atlas-creator.js": {
+    "bytes": 17208,
+    "sha256": "39fcd0722cdc349853a7c603f345bb4dbaf8d60ed07eb44865fbebde79f75287"
+  },
+  "basic-packs-store.css": {
+    "bytes": 9058,
+    "sha256": "4d3f94206e944ace8b5512e38b896ff403d54ba0fb16233c87174ed969be3fc3"
+  },
+  "basic-packs-store.js": {
+    "bytes": 15810,
+    "sha256": "2e5ac1946e6004830cc99a4255361cb6707e261d13f31f02a6da1cba4183095e"
+  },
+  "combat-fx.js": {
+    "bytes": 19584,
+    "sha256": "886e9c21d36d959c93e52d9c4a6ab987a81ad046d1fffb7bc9204bf9a7f57e94"
+  },
+  "concept-theme.js": {
+    "bytes": 43050,
+    "sha256": "f725cfafffff9776187ee25524ce4a7caf21b1a733adf93d8495a8d2947adffc"
+  },
+  "criador-atlas-previa.html": {
+    "bytes": 905,
+    "sha256": "fd9d7453ddf966e323e0410bbc32a40227f3ce02d52d6b51cb3ab373dc141861"
+  },
+  "custom-lobby.js": {
+    "bytes": 11983,
+    "sha256": "ddf9566d732c0471a260c3eb7ee6130f3df6c69901d8bfd07a5e1d52c41dd8b9"
+  },
+  "entry-bootstrap.js": {
+    "bytes": 10875,
+    "sha256": "721e924b1d79dc04725703d5e82cf1b921bfae94d64c32a036efedd9267a81ee"
+  },
+  "entry-optimized.css": {
+    "bytes": 9148,
+    "sha256": "160249e566b7d0d79c0176ccd49ef3908933d4be926ec7d50249327654712a56"
+  },
+  "experience-improvements.css": {
+    "bytes": 4734,
+    "sha256": "bf4840cec4ccc5f0137f918d7bb0fdd071a6f63e78e988896713ac3e0d0f565f"
+  },
+  "game-fonts.css": {
+    "bytes": 402,
+    "sha256": "790fd0e879f517b1f7bd2a8e2aad5d1f5e6c8ab6164ded6d32269d4741acacd8"
+  },
+  "game-interface.css": {
+    "bytes": 701749,
+    "sha256": "8515c3fcb15503db5f8042077679238284a974e2cfffc5f737bbbefe78654425"
+  },
+  "game-runtime.js": {
+    "bytes": 1609648,
+    "sha256": "4d9f11eb9d94c7e638bc0361bb901d8e8f1b6957d8b0251d48200fc17ae25b57"
+  },
+  "guardian-campaign.css": {
+    "bytes": 22112,
+    "sha256": "41e93f619deb2481c17e9a6de11d646d26feae6254ee19770642a0f4f2cee3bc"
+  },
+  "guardian-campaign.js": {
+    "bytes": 34075,
+    "sha256": "4f391c2aff4dad4ab8c5c11316125ebeff6b7d463a2c1277e1765ad8e87ee090"
+  },
+  "index.html": {
+    "bytes": 77826,
+    "sha256": "0d4c03f34dcb6fc348520bf834ea2914e3ce6d245739fd36cc1c559a43ee5f2e"
+  },
+  "match-presentation.js": {
+    "bytes": 4218,
+    "sha256": "7479b92cb5e190623815a30e79c72784bd7a2e460fd349c50f47d0dde5ee378a"
+  },
+  "match-report.js": {
+    "bytes": 12023,
+    "sha256": "d1c2fe409d628df11d95d0f1b07d7bf2ba900891f74c57ab885f08ce411c94ce"
+  },
+  "online-tiebreak.js": {
+    "bytes": 8329,
+    "sha256": "363fbadac3d39b6b635bf4280a328f6b89bfca68225e3053d4ba0689ebb8ccc9"
+  },
+  "online.js": {
+    "bytes": 151950,
+    "sha256": "3766a8db4345633372e53a6a33e0d7b21f9c72fde39ea6fd2da174b4c71ae705"
+  },
+  "player-tools-cards.js": {
+    "bytes": 10998,
+    "sha256": "8ac66109893cf7c94fb36328fae289cc22bafbbc484b9b3fb81f2a642d675fb2"
+  },
+  "player-tools-core.js": {
+    "bytes": 12713,
+    "sha256": "47eafd28e9fd061e46fe88912bed574f61463dc64a3899c5fee477da01a4e125"
+  },
+  "player-tools-services.js": {
+    "bytes": 8491,
+    "sha256": "b4e67baa668b905992068e9545c27e9d266dec0e045b9c2ef9f952693539eaa3"
+  },
+  "player-tools-social.js": {
+    "bytes": 7516,
+    "sha256": "e7d23ca8bb27811c13f771a4441bf5a961a2ae48428e454bc934f03622a66614"
+  },
+  "player-tools.css": {
+    "bytes": 5502,
+    "sha256": "aa53cfb43d9f0c40d7fab961b2666b51baeb0ce92fffb5e594b70b85f42f4018"
+  },
+  "release-stamp.js": {
+    "bytes": 88,
+    "sha256": "d2ab4cebc0ba312c118e709e9dc1b12344d5c0eefb874ff325e25e2f54d9ea5d"
+  },
+  "release.json": {
+    "bytes": 54,
+    "sha256": "4ef66e0a380b3a55600de12f18e857d5991a54d815164bf92bd8cd41393a54ca"
+  },
+  "resource-download.js": {
+    "bytes": 5704,
+    "sha256": "afdd908ee8fa0401831b38b355f6858f7f6229c646901b3913c64318fd5d2db7"
+  },
+  "social-hub.js": {
+    "bytes": 16851,
+    "sha256": "a5d0a9ea096bf7974a3e7622033775020b2bad201baa394f440522222132d7e4"
+  },
+  "store-control.js": {
+    "bytes": 8168,
+    "sha256": "ac5424caf8d60d266fb7e4583072f0d3bedd178147ba870a43db12aa28d2a19f"
+  },
+  "supabase/migrations/202610230065_atlas_character_creator.sql": {
+    "bytes": 12806,
+    "sha256": "c6c9d342534f2a3979f394e4aa2bd849b317cf77d44fda747c2b2d6494c835c3"
+  },
+  "supabase/migrations/202610230066_admin_game_modes.sql": {
+    "bytes": 5369,
+    "sha256": "341cdf8fe7588a961abe314e64dbec7a17069a904b8fb9367565ce99937628db"
+  },
+  "supabase/migrations/202610230067_security_invoker_meta_views.sql": {
+    "bytes": 778,
+    "sha256": "60fdb647897c14423e431e69b752eea1488a05845fdf4c39e6e1a8e6acdcddbb"
+  },
+  "supabase/migrations/202610230068_experience_improvements.sql": {
+    "bytes": 8418,
+    "sha256": "4e88d49a16ff74b07794face532e38eab78f605fc825c1a497b00bc981474542"
+  },
+  "supabase/migrations/202610230069_player_services.sql": {
+    "bytes": 17265,
+    "sha256": "c7ebb0b95977feba8a7920e435abd786fc229b3f3c64009b58d2eab26c885536"
+  },
+  "supabase/migrations/202610230070_social_tools.sql": {
+    "bytes": 15158,
+    "sha256": "06f38748590fa9b528ebbd7a704d0917428b471966a6628e628432b7ba17c8c8"
+  },
+  "supabase/migrations/202610230071_operations_and_recovery.sql": {
+    "bytes": 16866,
+    "sha256": "a996633a0747490e961a0b4e1148d98914838f1a6cd0ba42316a92fe5998b245"
+  },
+  "sw.js": {
+    "bytes": 4241,
+    "sha256": "2615314e4dc393fce755a8802986442fd22b0bc99078a083900e2496abf874fd"
+  },
+  "version.json": {
+    "bytes": 92,
+    "sha256": "1d8e058047cc8ecf35ef92ab44b8c284343f498009d5bb5f2b91f0cd8b09e0d9"
+  }
+}

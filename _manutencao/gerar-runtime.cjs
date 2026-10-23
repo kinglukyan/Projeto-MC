@@ -6,6 +6,8 @@ function css(text){text=text.replace(/url\((['"]?)(assets\/[^)'"?#]+)([?#][^)'" 
 write('game-interface.css',css(read('game-interface.css')));write('entry-optimized.css',css(read('entry-critical.css')));write('game-fonts.css',read('game-fonts.css').replace(/font-display\s*:\s*\w+/g,'font-display:swap'));
 const sources=JSON.parse(read('_manutencao/runtime-fontes.json'));if(!sources.includes('site-updates.js'))sources.push('site-updates.js');write('_manutencao/runtime-fontes.json',JSON.stringify(sources,null,2));
 for(const s of sources){if(s.includes('..')||!s.endsWith('.js')||!fs.existsSync(path.join(root,s)))throw Error('Fonte inválida: '+s);}
+// Compile sources while bundling, so invalid JavaScript cannot become a release.
+for(const source of sources)new(require('vm').Script)(read(source),{filename:source});
 write('game-runtime.js',sources.map(n=>`/* ${n} */\n`+read(n).replace(/^\/\/# sourceMappingURL=.*$/gm,'')+'\n;').join('\n'));
 const assets={},sizes={};function walk(dir){if(path.basename(dir)==='new-greeks')return;for(const n of fs.readdirSync(dir)){const p=path.join(dir,n);if(fs.statSync(p).isDirectory())walk(p);else{const key=path.relative(root,p).split(path.sep).join('/');assets[key]=hash(fs.readFileSync(p));sizes[key]=fs.statSync(p).size;}}}walk(path.join(root,'assets'));
 write('asset-manifest.json',JSON.stringify({version:3,assets,sizes,optimized}));
