@@ -78,5 +78,6 @@
   "player-tools-services.js",
   "player-tools-cards.js",
   "player-tools-social.js",
-  "admin-player-tools.js"
+  "admin-player-tools.js",
+  "support-live.js"
 ]

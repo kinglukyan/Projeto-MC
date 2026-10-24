@@ -22,7 +22,7 @@ const contextItems=new Map();
 function context(view,items){let entries=contextItems.get(view);if(!entries){entries=new Map();contextItems.set(view,entries);}for(const [title,key]of items)entries.set(key,title);paintContext(view,entries);}
 function paintContext(view,entries){const root=document.querySelector('#view-'+view);if(!root)return;let row=root.querySelector(':scope > .tools-shortcuts');if(!row){row=el('nav',undefined,'tools-shortcuts');row.setAttribute('aria-label','Ferramentas adicionais');root.prepend(row);}for(const [key,title]of entries){if([...row.querySelectorAll('[data-tool-key]')].some(n=>n.dataset.toolKey===key))continue;const n=b(title,()=>open(key));n.dataset.toolKey=key;row.append(n);}}
 
-window.MythicPlayerTools={el,b,input,select,panel,rpc,service,social,admin,date,uid,cards,register,open,reload,error,context};
+window.MythicPlayerTools={el,b,input,select,panel,rpc,service,social,admin,date,uid,cards,register,open,reload,error,context,current:()=>dialog?.open?active:null};
 // Accessibility settings stay local until the player chooses to save them to the account.
 let prefs={text:100,contrast:false,symbols:false,clickMove:false};try{Object.assign(prefs,JSON.parse(localStorage.getItem('mythic-tools-accessibility')||'{}'));}catch{}
 function applyPrefs(){document.documentElement.style.setProperty('--player-text-scale',Math.max(100,Math.min(150,Number(prefs.text)||100))/100);document.body.classList.toggle('tools-text-large',Number(prefs.text)>100);document.body.classList.toggle('tools-contrast',!!prefs.contrast);document.body.classList.toggle('tools-symbols',!!prefs.symbols);document.body.classList.toggle('tools-click-move',!!prefs.clickMove);try{localStorage.setItem('mythic-tools-accessibility',JSON.stringify(prefs));}catch{}}

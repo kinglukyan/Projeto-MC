@@ -85,3 +85,4 @@ APLICAR EM ORDEM. Para esta atualização, somente 063 se até 062 já foi aplic
 202610230069_player_services.sql
 202610230070_social_tools.sql
 202610230071_operations_and_recovery.sql
+202610230072_operations_desktop.sql

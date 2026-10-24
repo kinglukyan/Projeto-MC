@@ -49,6 +49,7 @@
     "atlas-creator.css",
     "admin-tools.css",
     "experience-improvements.css",
-    "player-tools.css"
+    "player-tools.css",
+    "support-live.css"
   ]
 }

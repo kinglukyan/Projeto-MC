@@ -1,0 +1,98 @@
+-- 072: Central de Operações Windows e atendimento sincronizado. Após 071.
+begin;
+alter table public.support_tickets add column priority text not null default 'normal' check(priority in('normal','high','urgent')),add column assigned_to uuid references public.profiles(id),add column revision bigint not null default 1,add column last_player_at timestamptz,add column last_staff_at timestamptz;
+alter table public.support_messages add column client_request_id uuid;
+create unique index support_message_request072 on public.support_messages(author_id,client_request_id) where client_request_id is not null;
+create table public.ops_ticket_reads(ticket_id uuid references public.support_tickets(id) on delete cascade,reader_id uuid references public.profiles(id),seen_at timestamptz not null default now(),primary key(ticket_id,reader_id));
+create table public.ops_ticket_notes(id uuid primary key default gen_random_uuid(),ticket_id uuid not null references public.support_tickets(id),author_id uuid not null references public.profiles(id),body text not null check(length(body)between 3 and 4000),request_id uuid not null,created_at timestamptz not null default now(),unique(author_id,request_id));
+create table public.ops_incidents(id uuid primary key default gen_random_uuid(),title text not null check(length(title)between 3 and 120),body text not null check(length(body)between 3 and 8000),severity text not null check(severity in('low','medium','high','critical')),status text not null default 'open' check(status in('open','monitoring','resolved')),owner_id uuid not null references public.profiles(id),public_update_id uuid references public.player_updates(id),created_at timestamptz not null default now(),updated_at timestamptz not null default now(),revision bigint not null default 1);
+create table public.ops_outreach_requests(actor_id uuid references public.profiles(id),request_id uuid not null,player_id uuid references public.profiles(id),ticket_id uuid references public.support_tickets(id),primary key(actor_id,request_id));
+create table public.ops_audit(id bigint generated always as identity primary key,actor_id uuid not null references public.profiles(id),action text not null,subject_id text,details jsonb not null default '{}',created_at timestamptz not null default now());
+create index ops_audit_recent072 on public.ops_audit(created_at desc);
+create index ops_notes_ticket072 on public.ops_ticket_notes(ticket_id,created_at);
+create index support_queue072 on public.support_tickets(status,priority,updated_at desc);
+create index game_health_player072 on public.game_health_events(player_id,created_at desc);
+do $$declare t text;begin foreach t in array array['ops_ticket_reads','ops_ticket_notes','ops_incidents','ops_audit','ops_outreach_requests']loop execute format('alter table public.%I enable row level security',t);execute format('revoke all on public.%I from public,anon,authenticated',t);execute format('grant all on public.%I to service_role',t);end loop;end$$;
+update public.support_tickets t set last_player_at=(select max(created_at)from public.support_messages where ticket_id=t.id and author_id=t.player_id),last_staff_at=(select max(created_at)from public.support_messages where ticket_id=t.id and author_id<>t.player_id);
+create function public._ops_ticket_revision072()returns trigger language plpgsql security definer set search_path='' as $$begin new.revision:=old.revision+1;new.updated_at:=clock_timestamp();return new;end$$;
+create trigger ops_ticket_revision072 before update on public.support_tickets for each row execute function public._ops_ticket_revision072();
+create function public._ops_ticket_message072()returns trigger language plpgsql security definer set search_path='' as $$begin
+ update public.support_tickets set last_player_at=case when new.author_id=player_id then new.created_at else last_player_at end,last_staff_at=case when new.author_id<>player_id then new.created_at else last_staff_at end where id=new.ticket_id;return new;end$$;
+create trigger ops_ticket_message072 after insert on public.support_messages for each row execute function public._ops_ticket_message072();
+create function public.ops_admin(p_action text,p_data jsonb default '{}')returns jsonb language plpgsql security definer set search_path='' as $$
+declare u uuid:=auth.uid();v uuid;r jsonb;ticket public.support_tickets%rowtype;inc public.ops_incidents%rowtype;rows jsonb;hours integer;rid uuid;old_msg public.support_messages%rowtype;st text;body_text text;cutoff timestamptz;
+begin
+ if u is null or not public.is_site_admin()then raise exception 'Acesso restrito à administração.';end if;perform public._security_rpc_gate('ops_admin',150);
+ case p_action
+ when 'overview' then
+ hours:=greatest(1,least(168,coalesce((p_data->>'hours')::int,24)));cutoff:=now()-make_interval(hours=>hours);
+ return jsonb_build_object('server_time',now(),'operator',coalesce((select nickname from public.profiles where id=u),'Administrador'),'schema',72,'tickets',jsonb_build_object('open',(select count(*)from public.support_tickets where status='open'),'investigating',(select count(*)from public.support_tickets where status='investigating'),'waiting',(select count(*)from public.support_tickets where status='waiting'),'unread',(select count(*)from public.support_tickets t left join public.ops_ticket_reads r on r.ticket_id=t.id and r.reader_id=u where t.last_player_at>coalesce(r.seen_at,'epoch')),'urgent',(select count(*)from public.support_tickets where status<>'resolved' and priority='urgent'),'oldest_hours',(select round(extract(epoch from now()-min(created_at))/3600,1)from public.support_tickets where status='open')),'health',(select jsonb_build_object('samples',count(*),'failures',count(*)filter(where not status),'response_samples',count(*)filter(where kind='response'),'response_failures',count(*)filter(where kind='response'and not status),'disconnects',count(*)filter(where kind='disconnect'),'players',count(distinct player_id),'avg_ms',round(avg(duration)filter(where kind='response')),'p95_ms',percentile_disc(.95)within group(order by duration)filter(where kind='response'))from public.game_health_events where created_at>cutoff),'hours',hours,'timeline',coalesce((select jsonb_agg(to_jsonb(x)order by x.hour)from(select date_trunc('hour',created_at)hour,count(*)samples,count(*)filter(where not status)failures,count(*)filter(where kind='disconnect')disconnects,round(avg(duration)filter(where kind='response'))avg_ms from public.game_health_events where created_at>cutoff group by 1)x),'[]'),'groups',coalesce((select jsonb_agg(to_jsonb(x))from(select kind,phase,count(*)samples,count(*)filter(where not status)failures,round(avg(duration))avg_ms,percentile_disc(.95)within group(order by duration)p95_ms from public.game_health_events where created_at>cutoff group by kind,phase)x),'[]'),'incidents',coalesce((select jsonb_agg(to_jsonb(i))from public.ops_incidents i where status<>'resolved'),'[]'));
+ when 'tickets' then
+ return coalesce((select jsonb_agg(to_jsonb(x)order by x.rank desc,x.updated_at desc)from(select t.id,t.player_id,t.subject,t.match_id,t.status,t.priority,t.assigned_to,t.revision,t.created_at,t.updated_at,t.last_player_at,t.last_staff_at,coalesce(p.nickname,p.display_name)player,p.friend_code,coalesce(a.nickname,a.display_name)assignee,coalesce(t.last_player_at>coalesce(rd.seen_at,'epoch'),false)unread,case t.priority when 'urgent'then 3 when 'high'then 2 else 1 end rank from public.support_tickets t join public.profiles p on p.id=t.player_id left join public.profiles a on a.id=t.assigned_to left join public.ops_ticket_reads rd on rd.ticket_id=t.id and rd.reader_id=u where (coalesce(p_data->>'status','')='' or t.status=p_data->>'status')and(not coalesce((p_data->>'mine')::boolean,false)or t.assigned_to=u)and(coalesce(p_data->>'search','')=''or p.nickname ilike '%'||left(p_data->>'search',80)||'%'or t.subject ilike '%'||left(p_data->>'search',80)||'%'or t.id::text=left(p_data->>'search',80))order by rank desc,t.updated_at desc limit 100 offset greatest(0,least(10000,coalesce((p_data->>'offset')::int,0))))x),'[]');
+ when 'thread' then
+ v:=(p_data->>'id')::uuid;select * into ticket from public.support_tickets where id=v;if not found then raise exception 'Chamado não encontrado.';end if;
+ select coalesce(jsonb_agg(to_jsonb(x)order by created_at,id),'[]')into rows from(select m.id,m.body,m.screenshot,m.created_at,m.author_id<>ticket.player_id staff,coalesce(p.nickname,p.display_name)author from public.support_messages m join public.profiles p on p.id=m.author_id where m.ticket_id=v and(nullif(p_data->>'before','')is null or m.created_at<(p_data->>'before')::timestamptz)order by m.created_at desc,m.id desc limit 200)x;
+ if not coalesce((p_data->>'background')::boolean,false)then insert into public.ops_ticket_reads values(v,u,coalesce((select max((m->>'created_at')::timestamptz)from jsonb_array_elements(rows)m),'epoch'))on conflict(ticket_id,reader_id)do update set seen_at=greatest(public.ops_ticket_reads.seen_at,excluded.seen_at);end if;
+ return to_jsonb(ticket)||jsonb_build_object('player',(select coalesce(nickname,display_name)from public.profiles where id=ticket.player_id),'messages',rows,'notes',coalesce((select jsonb_agg(to_jsonb(x)order by created_at)from(select n.id,n.body,n.created_at,coalesce(p.nickname,p.display_name)author from public.ops_ticket_notes n join public.profiles p on p.id=n.author_id where n.ticket_id=v order by n.created_at desc limit 100)x),'[]'));
+ when 'reply' then
+ v:=(p_data->>'id')::uuid;rid:=(p_data->>'request')::uuid;body_text:=btrim(coalesce(p_data->>'body',''));st:=p_data->>'status';if rid is null or length(body_text)not between 3 and 4000 or st not in('open','investigating','waiting','resolved')or st is null then raise exception 'Confira a resposta e a situação do chamado.';end if;
+ select * into ticket from public.support_tickets where id=v for update;if not found then raise exception 'Chamado não encontrado.';end if;
+ select * into old_msg from public.support_messages where author_id=u and client_request_id=rid;if found then if old_msg.ticket_id<>v or old_msg.body<>body_text then raise exception 'Identificação de envio já utilizada.';end if;return jsonb_build_object('sent',true,'id',old_msg.id);end if;
+ if ticket.revision is distinct from(p_data->>'revision')::bigint then raise exception 'O chamado recebeu alterações. Atualize a conversa antes de enviar; seu texto está preservado.';end if;
+ insert into public.support_messages(ticket_id,author_id,body,client_request_id)values(v,u,body_text,rid)returning id into rid;update public.support_tickets set status=st,assigned_to=coalesce(assigned_to,u)where id=v;insert into public.ops_audit(actor_id,action,subject_id,details)values(u,'support_reply',v::text,jsonb_build_object('message',rid,'status',st));return jsonb_build_object('sent',true,'id',rid);
+ when 'ticket_update' then
+ v:=(p_data->>'id')::uuid;select * into ticket from public.support_tickets where id=v for update;if ticket.id is null or ticket.revision is distinct from(p_data->>'revision')::bigint then raise exception 'O chamado mudou. Atualize antes de salvar.';end if;
+ if p_data->>'priority'not in('normal','high','urgent')then raise exception 'Prioridade inválida.';end if;
+ if p_data->>'status'not in('open','investigating','waiting','resolved')then raise exception 'Situação inválida.';end if;
+ update public.support_tickets set priority=p_data->>'priority',status=p_data->>'status',assigned_to=case when p_data->>'assign'='me'then u when p_data->>'assign'='none'then null else assigned_to end where id=v;insert into public.ops_audit(actor_id,action,subject_id,details)values(u,'support_update',v::text,jsonb_build_object('status',p_data->>'status','priority',p_data->>'priority','assign',p_data->>'assign'));return '{}';
+ when 'note' then
+ v:=(p_data->>'id')::uuid;rid:=(p_data->>'request')::uuid;if rid is null then raise exception 'Identificação ausente.';end if;
+ insert into public.ops_ticket_notes(ticket_id,author_id,body,request_id)values(v,u,btrim(p_data->>'body'),rid)on conflict(author_id,request_id)do nothing;if found then update public.support_tickets set updated_at=clock_timestamp()where id=v;end if;insert into public.ops_audit(actor_id,action,subject_id)values(u,'internal_note',v::text);return '{}';
+ when 'incidents' then return coalesce((select jsonb_agg(to_jsonb(x)order by updated_at desc)from(select * from public.ops_incidents order by updated_at desc limit 100)x),'[]');
+ when 'incident_save' then
+ v:=coalesce(nullif(p_data->>'id','')::uuid,gen_random_uuid());select * into inc from public.ops_incidents where id=v for update;
+ if found and inc.revision is distinct from(p_data->>'revision')::bigint then raise exception 'O incidente mudou. Atualize antes de salvar.';end if;
+ insert into public.ops_incidents(id,title,body,severity,status,owner_id)values(v,btrim(p_data->>'title'),btrim(p_data->>'body'),p_data->>'severity',p_data->>'status',u)on conflict(id)do update set title=excluded.title,body=excluded.body,severity=excluded.severity,status=excluded.status,updated_at=clock_timestamp(),revision=public.ops_incidents.revision+1 returning * into inc;
+ if coalesce((p_data->>'publish')::boolean,false)then
+ if inc.public_update_id is null then insert into public.player_updates(category,title,body,published)values('issue',case when inc.status='resolved'then 'Resolvido · ' when inc.status='monitoring'then 'Monitorando · 'else ''end||inc.title,inc.body,true)returning id into rid;update public.ops_incidents set public_update_id=rid where id=v;
+ else update public.player_updates set title=(case when inc.status='resolved'then 'Resolvido · ' when inc.status='monitoring'then 'Monitorando · 'else ''end)||inc.title,body=inc.body,published=true,revision=revision+1,updated_at=clock_timestamp()where id=inc.public_update_id;end if;end if;
+ insert into public.ops_audit(actor_id,action,subject_id,details)values(u,'incident_save',v::text,jsonb_build_object('status',inc.status,'published',p_data->>'publish'));return jsonb_build_object('id',v);
+ when 'mode_set' then
+ perform 1 from public.game_mode_settings where mode_id=p_data->>'id' and updated_at=(p_data->>'expected')::timestamptz for update;if not found then raise exception 'A disponibilidade mudou. Atualize antes de salvar.';end if;
+ r:=public.admin_set_game_mode_details(p_data->>'id',(p_data->>'enabled')::boolean,p_data->>'reason');insert into public.ops_audit(actor_id,action,subject_id,details)values(u,'mode_set',p_data->>'id',jsonb_build_object('enabled',p_data->'enabled'));return r;
+ when 'moderate' then r:=public.admin_player_tools('moderate',p_data);insert into public.ops_audit(actor_id,action,subject_id,details)values(u,'moderate',p_data->>'id',jsonb_build_object('hide',p_data->'hide'));return r;
+ when 'player' then r:=public.admin_player_tools('player',p_data);insert into public.ops_audit(actor_id,action,subject_id)values(u,'player_view',p_data->>'id');return r;
+ when 'start_conversation' then
+ v:=(p_data->>'player')::uuid;rid:=(p_data->>'request')::uuid;body_text:=btrim(coalesce(p_data->>'body',''));
+ if rid is null or length(body_text)not between 3 and 4000 or length(btrim(coalesce(p_data->>'subject','')))not between 3 and 100 then raise exception 'Preencha assunto e mensagem.';end if;
+ perform pg_advisory_xact_lock(hashtextextended('ops-outreach:'||u::text||':'||rid::text,72));select ticket_id into v from public.ops_outreach_requests where actor_id=u and request_id=rid;
+ if found then return jsonb_build_object('id',v);end if;v:=(p_data->>'player')::uuid;
+ insert into public.support_tickets(player_id,subject,status,assigned_to)values(v,btrim(p_data->>'subject'),'waiting',u)returning * into ticket;
+ insert into public.support_messages(ticket_id,author_id,body,client_request_id)values(ticket.id,u,body_text,rid);
+ insert into public.ops_outreach_requests values(u,rid,v,ticket.id);insert into public.ops_audit(actor_id,action,subject_id)values(u,'support_started',ticket.id::text);return jsonb_build_object('id',ticket.id);
+ when 'affected' then
+ hours:=greatest(1,least(168,coalesce((p_data->>'hours')::int,24)));
+ return coalesce((select jsonb_agg(to_jsonb(x))from(select p.id,coalesce(p.nickname,p.display_name)player,p.friend_code,count(*)failures,max(e.created_at)last_at,count(*)filter(where e.kind='disconnect')disconnects from public.game_health_events e join public.profiles p on p.id=e.player_id where not e.status and e.created_at>now()-make_interval(hours=>hours)group by p.id order by failures desc limit 50)x),'[]');
+ when 'audit' then return coalesce((select jsonb_agg(to_jsonb(x)order by x.created_at desc)from(select a.id,a.action,a.subject_id,a.details,a.created_at,coalesce(p.nickname,p.display_name)actor from public.ops_audit a join public.profiles p on p.id=a.actor_id order by a.id desc limit 150)x),'[]');
+ else raise exception 'Operação inválida.';end case;
+end$$;
+create function public.player_support_live(p_action text,p_data jsonb default '{}')returns jsonb language plpgsql security definer set search_path='' as $$
+declare u uuid:=auth.uid();v uuid;t public.support_tickets%rowtype;rid uuid;row_msg public.support_messages%rowtype;body_text text;
+begin
+ if u is null then raise exception 'Entre na conta.';end if;perform public._security_rpc_gate('player_support_live',100);
+ case p_action
+ when 'list' then return coalesce((select jsonb_agg(jsonb_build_object('id',t.id,'subject',t.subject,'status',t.status,'match_id',t.match_id,'updated_at',t.updated_at,'created_at',t.created_at,'revision',t.revision,'unread',coalesce(t.last_staff_at>coalesce(r.seen_at,'epoch'),false))order by t.updated_at desc)from public.support_tickets t left join public.ops_ticket_reads r on r.ticket_id=t.id and r.reader_id=u where player_id=u),'[]');
+ when 'thread' then
+ v:=(p_data->>'id')::uuid;select * into t from public.support_tickets where id=v and player_id=u;if not found then raise exception 'Chamado não encontrado.';end if;
+ insert into public.ops_ticket_reads values(v,u,coalesce(t.last_staff_at,'epoch'))on conflict(ticket_id,reader_id)do update set seen_at=greatest(public.ops_ticket_reads.seen_at,excluded.seen_at);
+ return jsonb_build_object('id',v,'revision',t.revision,'status',t.status,'messages',coalesce((select jsonb_agg(to_jsonb(x)order by created_at,id)from(select id,body,screenshot,created_at,author_id<>u staff from public.support_messages where ticket_id=v order by created_at desc,id desc limit 200)x),'[]'));
+ when 'send' then
+ v:=(p_data->>'id')::uuid;rid:=(p_data->>'request')::uuid;body_text:=btrim(coalesce(p_data->>'body',''));if rid is null or length(body_text)not between 3 and 4000 then raise exception 'Escreva de 3 a 4000 caracteres.';end if;
+ select * into t from public.support_tickets where id=v and player_id=u for update;if not found then raise exception 'Chamado não encontrado.';end if;
+ select * into row_msg from public.support_messages where author_id=u and client_request_id=rid;if found then if row_msg.ticket_id<>v or row_msg.body<>body_text then raise exception 'Identificação já utilizada.';end if;return '{}';end if;
+ insert into public.support_messages(ticket_id,author_id,body,client_request_id)values(v,u,body_text,rid);update public.support_tickets set status='open'where id=v;return '{}';
+ else raise exception 'Operação inválida.';end case;
+end$$;
+revoke all on function public._ops_ticket_revision072(),public._ops_ticket_message072(),public.ops_admin(text,jsonb),public.player_support_live(text,jsonb)from public,anon,authenticated;
+grant execute on function public.ops_admin(text,jsonb),public.player_support_live(text,jsonb)to authenticated;
+notify pgrst,'reload schema';commit;
